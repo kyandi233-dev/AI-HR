@@ -1,0 +1,14 @@
+请根据提供的日常行为记录，独立评价行为性质和文本内容。只按给定 JSON 格式回答。
+
+请阅读下面一段个人行为记录：
+
+{behavior_text}
+
+评价下列方面：
+1. moral_valence：道德评价，1=非常不道德，4=道德中性，7=非常道德。
+2. moral_foundations：主要涉及的道德基础，可从关怀/伤害、公平/欺骗、忠诚/背叛、权威/颠覆、神圣/纯洁、自由/压迫中选取0–2个；不清楚时可为空数组。
+3. comprehensibility：事件是否容易理解，1=极不清楚，7=非常清楚。
+4. naturalness：是否像自然、可信的现实事件叙述，1=非常不自然，7=非常自然。
+
+仅输出 JSON：
+{{"moral_valence":null,"moral_foundations":[],"comprehensibility":null,"naturalness":null}}

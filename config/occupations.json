@@ -1,0 +1,26 @@
+{
+  "software_developer": {
+    "onet_code": "15-1252.00",
+    "onet_name": "Software Developers",
+    "target_job": "中级软件开发工程师（细分方向需审核）",
+    "status": "candidate"
+  },
+  "business_intelligence": {
+    "onet_code": "15-2051.01",
+    "onet_name": "Business Intelligence Analysts",
+    "target_job": "商业智能分析师",
+    "status": "candidate"
+  },
+  "customer_service": {
+    "onet_code": "43-4051.00",
+    "onet_name": "Customer Service Representatives",
+    "target_job": "客户服务代表（社会性技能占比高，待审核）",
+    "status": "candidate_review_required"
+  },
+  "logistics_analyst": {
+    "onet_code": "13-1081.02",
+    "onet_name": "Logistics Analysts",
+    "target_job": "物流分析师",
+    "status": "candidate"
+  }
+}
