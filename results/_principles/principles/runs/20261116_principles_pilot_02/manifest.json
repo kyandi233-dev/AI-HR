@@ -1,0 +1,18 @@
+{
+  "task": "principles",
+  "occupation": null,
+  "run_id": "20261116_principles_pilot_02",
+  "settings": {
+    "model": "deepseek-flash",
+    "thinking": "disabled",
+    "temperature": 0.0,
+    "max_tokens": 2200
+  },
+  "requests": {
+    "M12_T01": "1f85f9958ad4ffadd364b20fa463748d1aa9ae376fe1453e33d1443bab54dcd6",
+    "M21_T01": "728639157b5cec9905e53c02a4f16e664427103b5ab9b733caf7ac74c3589749",
+    "A12_T01": "cbabc851f4ef1cec849c1a4368fd2a445467bf1b92465b631154244b0cb175fb",
+    "A21_T01": "b13377c0aae09e4192f5d51c03d86931519bc2f142a2ed78e2a762c133ccae4e"
+  },
+  "runner_sha256": "ac46f4ccf56c507399c780e2f8da8f57fd5c8b5f29066d7bc93e173d0c058fdb"
+}

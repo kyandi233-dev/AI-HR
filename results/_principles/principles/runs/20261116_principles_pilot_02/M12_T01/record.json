@@ -1,0 +1,42 @@
+{
+  "run_id": "20261116_principles_pilot_02",
+  "record_unit": "api_request",
+  "task": "principles",
+  "task_id": "M12_T01",
+  "context": {
+    "condition": "M12",
+    "definition_order": [
+      "morality",
+      "ability"
+    ],
+    "task_order": [
+      "task1",
+      "task2"
+    ],
+    "repeat": 1
+  },
+  "python_version": "3.12.14",
+  "openai_sdk_version": "2.54.0",
+  "runner_sha256": "ac46f4ccf56c507399c780e2f8da8f57fd5c8b5f29066d7bc93e173d0c058fdb",
+  "request_sha256": "7e37eba54e13e5ef242deb12422bdcc6f28c2aee437d55feba553a9c30677f96",
+  "prompt_sha256": "707dc225aebc3ef84b992477da833702deba7bab229fdc1cc7bf529984261e1c",
+  "timestamp_utc": "2026-11-16T01:52:32+00:00",
+  "status": "ok",
+  "api_id": "42a9abd3-3a22-4d34-baa7-2eefa8f40b69",
+  "returned_model": "deepseek-flash",
+  "system_fingerprint": "bc19ba97cbe016479903222bb1578db6",
+  "finish_reason": "stop",
+  "usage": {
+    "completion_tokens": 213,
+    "prompt_tokens": 388,
+    "total_tokens": 601,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": {
+      "audio_tokens": null,
+      "cache_write_tokens": null,
+      "cached_tokens": 0
+    },
+    "prompt_cache_hit_tokens": 0,
+    "prompt_cache_miss_tokens": 388
+  }
+}

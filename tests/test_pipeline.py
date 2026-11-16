@@ -1,8 +1,11 @@
 """Offline tests only: do not call DeepSeek or O*NET."""
 from pathlib import Path
+import csv
 import importlib.util
 import json
+import os
 import tempfile
+from types import SimpleNamespace
 import unittest
 from unittest.mock import patch
 
@@ -28,6 +31,11 @@ class PipelineTests(unittest.TestCase):
     def setUpClass(cls):
         cls.config=hr.load_json(ROOT/'config/settings.json')
         cls.occ=hr.load_json(ROOT/'config/occupations.json')
+
+    def test_authentication_errors_redact_key_before_logging(self):
+        with patch.dict(os.environ,{'DEEPSEEK_API_KEY':'test-secret-key'}):
+            self.assertNotIn('test-secret-key',hr.safe_error_message('Your api key: test-secret-key is invalid'))
+            self.assertNotIn('test-***-key',hr.safe_error_message('Your api key: test-***-key is invalid'))
 
     def test_abstract_principles_no_job_and_four_orders(self):
         a=Args()
@@ -56,6 +64,70 @@ class PipelineTests(unittest.TestCase):
         self.assertTrue(t[0]['json_mode'])
         self.assertIn('FAIRNESS_001',t[0]['messages'][0]['content'])
         self.assertIn('中性',t[0]['messages'][0]['content'])
+
+    def test_principles_repeat_whole_prompt_in_independent_messages(self):
+        a=Args()
+        a.repeat=2
+        tasks=hr.make_tasks('principles',a,self.occ,self.config)
+        self.assertEqual(len(tasks),8)
+        for condition in ['M12','M21','A12','A21']:
+            repeats=[t for t in tasks if t['metadata']['condition']==condition]
+            self.assertEqual([t['metadata']['repeat'] for t in repeats],[1,2])
+            self.assertEqual(repeats[0]['messages'],repeats[1]['messages'])
+            self.assertIsNot(repeats[0]['messages'],repeats[1]['messages'])
+            for task in repeats:
+                self.assertEqual(len(task['messages']),1)
+                self.assertIn('任务一：',task['messages'][0]['content'])
+                self.assertIn('任务二：',task['messages'][0]['content'])
+
+    def test_record_and_export_identify_batch_without_duplicate_calls(self):
+        a=Args()
+        a.repeat=2
+        tasks=hr.make_tasks('principles',a,self.occ,self.config)[:2]
+        answer={k:{'priority':'专业能力信息','weight_ability':60,'weight_morality':40,
+                   'importance_ability':5,'importance_morality':3,'reason':'test'}
+                for k in ['task1','task2']}
+        response=SimpleNamespace(
+            id='test-response',model='test-model',system_fingerprint=None,
+            choices=[SimpleNamespace(finish_reason='stop',message=SimpleNamespace(
+                content=json.dumps(answer)))],model_dump=lambda **kw: {})
+        with tempfile.TemporaryDirectory() as tmp:
+            with patch.object(hr,'ROOT',Path(tmp)),patch.object(hr,'RESULTS',Path(tmp)),patch.object(hr,'api_request',return_value=(response,{})) as api:
+                for task in tasks:
+                    self.assertEqual(hr.record_task(task,self.config,a),'ok')
+                    record=hr.load_json(hr.path_for(task,a.run_id)/'record.json')
+                    self.assertEqual(record['run_id'],a.run_id)
+                    self.assertEqual(record['record_unit'],'api_request')
+                self.assertEqual(hr.record_task(tasks[0],self.config,a),'skip')
+                self.assertEqual(api.call_count,2)
+                # A legacy record still exports its batch from the directory.
+                legacy_path=hr.path_for(tasks[0],a.run_id)/'record.json'
+                legacy=hr.load_json(legacy_path)
+                del legacy['run_id']
+                del legacy['record_unit']
+                legacy_path.write_text(json.dumps(legacy),encoding='utf-8')
+                hr.export_results()
+                with (Path(tmp)/'all_results.csv').open(encoding='utf-8-sig',newline='') as fp:
+                    rows=list(csv.DictReader(fp))
+                self.assertEqual(len(rows),2)
+                self.assertEqual({r['run_id'] for r in rows},{a.run_id})
+                self.assertEqual({r['record_unit'] for r in rows},{'api_request'})
+                self.assertEqual({r['meta_repeat'] for r in rows},{'1','2'})
+                batch_dir=hr.path_for(tasks[0],a.run_id).parent
+                with (batch_dir/(a.run_id+'.csv')).open(encoding='utf-8-sig',newline='') as fp:
+                    self.assertEqual(list(csv.DictReader(fp)),rows)
+                # Historical failures belong to the same batch, even without new fields.
+                archived=legacy_path.parent/'failed_attempts'/'2026-11-16T00-00-00'
+                archived.mkdir(parents=True)
+                legacy['status']='error'
+                (archived/'record.json').write_text(json.dumps(legacy),encoding='utf-8')
+                hr.export_results()
+                with (batch_dir/(a.run_id+'.csv')).open(encoding='utf-8-sig',newline='') as fp:
+                    rows=list(csv.DictReader(fp))
+                self.assertEqual(len(rows),3)
+                self.assertEqual({r['run_id'] for r in rows},{a.run_id})
+                self.assertEqual(sum(r['status']=='ok' for r in rows),2)
+                self.assertEqual(sum(bool(r['attempt_archive']) for r in rows),1)
 
     def test_principle_validation(self):
         valid={'task1':{'priority':'专业能力信息','weight_ability':60,'weight_morality':40,'importance_ability':5,'importance_morality':3,'reason':'a'},

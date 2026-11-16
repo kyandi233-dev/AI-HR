@@ -1,0 +1,26 @@
+{
+  "run_id": "20261116_principles_pilot_02",
+  "stage": "pilot",
+  "planned_requests": 4,
+  "attempted_requests": 4,
+  "successful_responses": 4,
+  "failures": 0,
+  "repeat_per_condition": 1,
+  "conditions": [
+    "A12",
+    "A21",
+    "M12",
+    "M21"
+  ],
+  "conversation_mode": "Each request is stateless and contains exactly one user message with both principle questions; no history or cross-condition context.",
+  "model_requested": "deepseek-flash",
+  "models_returned": [
+    "deepseek-flash"
+  ],
+  "os": "Linux-6.18.57-x86_64-with-glibc2.41",
+  "python_version": "3.12.14",
+  "git_commit": "f7eeafd88702673cf977bd8f24f42f83cfcc7a62",
+  "working_tree_modified": true,
+  "total_tokens": 2350,
+  "notes": "This is a workflow pilot with one repeat per condition, not a formal statistical result. No automatic retries. Cost is determined by the provider billing."
+}

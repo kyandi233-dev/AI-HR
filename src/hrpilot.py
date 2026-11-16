@@ -49,6 +49,13 @@ def sha256(x: str | bytes):
 def now():
     return dt.datetime.now(dt.timezone.utc).isoformat(timespec='seconds')
 
+def safe_error_message(error):
+    message=str(error)
+    api_key=os.environ.get('DEEPSEEK_API_KEY','').strip()
+    if api_key:
+        message=message.replace(api_key,'[REDACTED]')
+    return re.sub(r'(?i)(api key:\s*).*?(?=\s+is invalid)',r'\1[REDACTED]',message)
+
 def sdk_version():
     try:
         return importlib.metadata.version('openai')
@@ -346,7 +353,8 @@ def record_task(task, settings, args):
             if old_file.is_file(): shutil.copy2(old_file, history/old_file.name)
     # Save exact scientific input BEFORE API call; never record auth token.
     (base/'request.json').write_text(json.dumps(request,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
-    metadata={'task':task['task'],'task_id':task['task_id'],'context':task['metadata'],
+    metadata={'run_id':args.run_id,'record_unit':'api_request',
+              'task':task['task'],'task_id':task['task_id'],'context':task['metadata'],
               'python_version':sys.version.split()[0],
               'openai_sdk_version':sdk_version(),
               'runner_sha256':sha256(Path(__file__).read_bytes()),
@@ -393,8 +401,8 @@ def record_task(task, settings, args):
         print('OK',base.relative_to(ROOT))
     except Exception as e:
         metadata['error_type']=type(e).__name__
-        metadata['error_message']=str(e)[:1000]
-        print('ERROR',base.relative_to(ROOT),type(e).__name__,str(e)[:200],file=sys.stderr)
+        metadata['error_message']=safe_error_message(e)[:1000]
+        print('ERROR',base.relative_to(ROOT),type(e).__name__,metadata['error_message'][:200],file=sys.stderr)
     meta_path.write_text(json.dumps(metadata,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
     if metadata['status']!='ok': return 'error'
     return 'ok'
@@ -441,9 +449,19 @@ def status(occ):
 
 def export_results():
     records=[]
+    batches={}
     for f in RESULTS.rglob('record.json'):
         d=load_json(f)
         row={k:v for k,v in d.items() if k not in ('usage','context')}
+        task_dir=f.parent
+        archived=task_dir.parent.name=='failed_attempts'
+        if archived:
+            task_dir=task_dir.parent.parent
+        batch_dir=task_dir.parent
+        # Older records identify their batch through runs/<run-id>/<task-id>/.
+        row.setdefault('run_id',batch_dir.name)
+        row.setdefault('record_unit','api_request')
+        row['attempt_archive']=f.parent.name if archived else ''
         row.update({f'meta_{k}':v for k,v in (d.get('context') or {}).items()})
         if d.get('usage'):
             row.update({f'token_{k}':v for k,v in d['usage'].items() if isinstance(v,int)})
@@ -452,10 +470,16 @@ def export_results():
             obj=load_json(parsed)
             row.update({'result_'+k:(canonical(v) if isinstance(v,(dict,list)) else v) for k,v in obj.items()})
         records.append(row)
-    out=RESULTS/'all_results.csv'
+        batches.setdefault(batch_dir,[]).append(row)
+    for batch_dir,rows in batches.items():
+        write_results_csv(batch_dir/(batch_dir.name+'.csv'),rows)
+    write_results_csv(RESULTS/'all_results.csv',records)
+
+
+def write_results_csv(out,records):
     fields=sorted(set().union(*(r.keys() for r in records))) if records else ['task','task_id','status']
     with out.open('w',encoding='utf-8-sig',newline='') as fp:
-        w=csv.DictWriter(fp,fieldnames=fields); w.writeheader(); w.writerows(records)
+        w=csv.DictWriter(fp,fieldnames=fields,lineterminator='\n'); w.writeheader(); w.writerows(records)
     print('已导出',len(records),'条记录：',out.relative_to(ROOT))
 
 
@@ -473,8 +497,8 @@ def main(argv=None):
     run.add_argument('--source',choices=['drafts','approved'],default='drafts',help='简历审读阶段读取什么')
     run.add_argument('--count',type=int,default=2,help='简历或道德草案生成数量')
     run.add_argument('--start-index',type=int,default=1)
-    run.add_argument('--repeat',type=int,default=1)
-    run.add_argument('--run-id',default='pilot01')
+    run.add_argument('--repeat',type=int,default=1,help='每个条件完整提示词的独立重复次数；原则调查每条含两个问题')
+    run.add_argument('--run-id',default='pilot01',help='实验批次编号；同一批次可分多次命令续跑')
     run.add_argument('--limit',type=int)
     run.add_argument('--execute',action='store_true',help='真正发送 API 请求并计费')
     run.add_argument('--retry-failed',action='store_true')

@@ -1,0 +1,38 @@
+{
+  "id": "20aa4320-1407-4e83-a007-3d2206368f4b",
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "logprobs": null,
+      "message": {
+        "content": "{\n  \"task1\": {\n    \"priority\": \"专业能力信息\",\n    \"weight_ability\": 95,\n    \"weight_morality\": 5,\n    \"importance_ability\": 7,\n    \"importance_morality\": 1,\n    \"reason\": \"判断候选人能否完成岗位专业工作，核心依据是教育、经历、技能和成果等专业胜任力证据；私人道德信息与岗位专业完成度基本无关，仅作极低权重参考。\"\n  },\n  \"task2\": {\n    \"priority\": \"专业能力信息\",\n    \"weight_ability\": 85,\n    \"weight_morality\": 15,\n    \"importance_ability\": 7,\n    \"importance_morality\": 3,\n    \"reason\": \"面试推荐应首先基于专业能力是否达到岗位要求；私人道德信息一般不作为初筛淘汰依据，但若存在明显诚信或职业操守风险，可作为低权重参考。\"\n  }\n}",
+        "refusal": null,
+        "role": "assistant",
+        "annotations": null,
+        "audio": null,
+        "function_call": null,
+        "tool_calls": null
+      }
+    }
+  ],
+  "created": 1794793967,
+  "model": "deepseek-flash",
+  "object": "chat.completion",
+  "moderation": null,
+  "service_tier": null,
+  "system_fingerprint": "bc19ba97cbe016479903222bb1578db6",
+  "usage": {
+    "completion_tokens": 204,
+    "prompt_tokens": 388,
+    "total_tokens": 592,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": {
+      "audio_tokens": null,
+      "cache_write_tokens": null,
+      "cached_tokens": 0
+    },
+    "prompt_cache_hit_tokens": 0,
+    "prompt_cache_miss_tokens": 388
+  }
+}

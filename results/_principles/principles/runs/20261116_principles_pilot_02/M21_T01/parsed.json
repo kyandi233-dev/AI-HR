@@ -1,0 +1,18 @@
+{
+  "task2": {
+    "priority": "专业能力信息",
+    "weight_ability": 85,
+    "weight_morality": 15,
+    "importance_ability": 7,
+    "importance_morality": 3,
+    "reason": "面试推荐应主要依据岗位胜任力证据，专业能力是预测工作表现的核心；私人道德信息仅作辅助参考，避免因非工作行为产生不当歧视。"
+  },
+  "task1": {
+    "priority": "专业能力信息",
+    "weight_ability": 95,
+    "weight_morality": 5,
+    "importance_ability": 7,
+    "importance_morality": 2,
+    "reason": "判断能否完成专业工作应几乎完全基于教育、经历、技能和成果等专业能力证据；私人道德与岗位专业胜任力无直接因果关系，权重极低。"
+  }
+}

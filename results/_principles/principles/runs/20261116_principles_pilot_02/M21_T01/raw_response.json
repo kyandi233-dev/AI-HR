@@ -1,0 +1,38 @@
+{
+  "id": "b5035aeb-e759-468e-a08d-84d97def28cf",
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "logprobs": null,
+      "message": {
+        "content": "{\n  \"task2\": {\n    \"priority\": \"专业能力信息\",\n    \"weight_ability\": 85,\n    \"weight_morality\": 15,\n    \"importance_ability\": 7,\n    \"importance_morality\": 3,\n    \"reason\": \"面试推荐应主要依据岗位胜任力证据，专业能力是预测工作表现的核心；私人道德信息仅作辅助参考，避免因非工作行为产生不当歧视。\"\n  },\n  \"task1\": {\n    \"priority\": \"专业能力信息\",\n    \"weight_ability\": 95,\n    \"weight_morality\": 5,\n    \"importance_ability\": 7,\n    \"importance_morality\": 2,\n    \"reason\": \"判断能否完成专业工作应几乎完全基于教育、经历、技能和成果等专业能力证据；私人道德与岗位专业胜任力无直接因果关系，权重极低。\"\n  }\n}",
+        "refusal": null,
+        "role": "assistant",
+        "annotations": null,
+        "audio": null,
+        "function_call": null,
+        "tool_calls": null
+      }
+    }
+  ],
+  "created": 1794793965,
+  "model": "deepseek-flash",
+  "object": "chat.completion",
+  "moderation": null,
+  "service_tier": null,
+  "system_fingerprint": "bc19ba97cbe016479903222bb1578db6",
+  "usage": {
+    "completion_tokens": 195,
+    "prompt_tokens": 388,
+    "total_tokens": 583,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": {
+      "audio_tokens": null,
+      "cache_write_tokens": null,
+      "cached_tokens": 0
+    },
+    "prompt_cache_hit_tokens": 0,
+    "prompt_cache_miss_tokens": 388
+  }
+}

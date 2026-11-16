@@ -105,6 +105,8 @@ py src/hrpilot.py run --task principles --run-id principles_pilot01 --repeat 1 -
 
 结果位于 `results/_principles/principles/runs/principles_pilot01/`。
 
+这里的 `run-id` 表示整批实验，`M12_T01` 等子目录才表示单次完整请求及其回复；每条回复同时包含两个问题的答案。新批次推荐命名为 `20261116_principles_pilot_01`（UTC 日期、任务、阶段、同日批次序号）。详细规则见 `docs/数据字段.md`。`--repeat N` 对每个条件的完整提示词独立重复 N 次，共 4N 次请求；同一 run-id 续跑会跳过已成功记录，不会新增重复。
+
 ## 4. 四职业资料准备（每个职业独立执行）
 
 职业候选项在 `config/occupations.json`。默认有：
@@ -212,7 +214,7 @@ py src/hrpilot.py run --task abc --occupation software_developer --run-id abc_de
 py src/hrpilot.py export
 ```
 
-得到 `results/all_results.csv`（供 Excel 查看），同时保留各职业、各任务的独立原始记录。
+得到 `results/all_results.csv`（全部批次，供 Excel 查看），以及各批次目录下的 `<run-id>.csv`（仅该批次，一次独立调用尝试一行）。同批次分次续跑的记录仍汇入同一份批次表；同时保留各职业、各任务的独立原始记录。
 
 常见失败：
 - 提示“缺少必要文件”：相应材料尚未由研究者审核并放入 `approved`。
