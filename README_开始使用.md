@@ -38,9 +38,9 @@ materials/
     drafts/                       尚未审核的配对背景故事 JSON
     approved/                     研究者审核后方可进入材料检验及 A/B/C
 results/
-  _principles/principles/         4种顺序平衡的独立结果
-  _morality/moral-generate/       道德故事生成记录
-  _morality/moral-check/          道德效价、基础分类、自然性、可理解性
+  principles/         4种顺序平衡的独立结果
+  morality/moral-generate/       道德故事生成记录
+  morality/moral-check/          道德效价、基础分类、自然性、可理解性
   software_developer/
     jd_generation/                JD 生成记录
     resume_generation/            简历生成记录
@@ -52,7 +52,7 @@ results/
 src/hrpilot.py                    唯一运行入口
 ```
 
-对不同任务使用独立 `run-id`；每次响应保存在 `.../runs/<run-id>/<task-id>/` 中，含原始 API 回复、完整请求、解析后的分值、模型与配置元数据。不存在自动覆盖原始记录的步骤。
+对不同任务使用独立 `run-id`；每批保存到一个 `<run-id>/` 目录，所有独立对话集中写入 `requests.jsonl`、`responses.jsonl`、`records.jsonl`，通过 `task_id` 和 `attempt` 关联。保留完整请求、原始回复、解析结果、模型与配置元数据；不为每次对话创建文件夹。
 
 每项任务的角色、规则、材料占位符和输出要求均在同一份模板内。模板跨职业复用，具体材料由 Python 填入；评分标准单独保存，由程序注入招聘评价模板。详见 `prompts/README.md`。
 
@@ -103,9 +103,9 @@ py src/hrpilot.py run --task principles --run-id principles_pilot01 --repeat 1 -
 
 四个条件：M12、M21、A12、A21（M=道德信息先定义；A=能力信息先定义；12=任务一先；21=任务二先）。都包含两个任务。每个任务使用一份完整提示词，所有调用只发当前一条 user 消息，绝不回传上一次会话历史。
 
-结果位于 `results/_principles/principles/runs/principles_pilot01/`。
+结果位于 `results/principles/principles_pilot01/`。
 
-这里的 `run-id` 表示整批实验，`M12_T01` 等子目录才表示单次完整请求及其回复；每条回复同时包含两个问题的答案。新批次推荐命名为 `20261116_principles_pilot_01`（UTC 日期、任务、阶段、同日批次序号）。详细规则见 `docs/数据字段.md`。`--repeat N` 对每个条件的完整提示词独立重复 N 次，共 4N 次请求；同一 run-id 续跑会跳过已成功记录，不会新增重复。
+这里的 `run-id` 表示整批实验，`M12_T01` 是 JSONL/CSV 中的单次测量编号。每条回复同时包含两个问题的答案。新批次推荐命名为 `20261116_principles_pilot_02`（UTC 日期、任务、阶段、同日批次序号）；CSV 文件名为 `20261116_principles_pilot_02.csv`。详细规则见 `docs/数据字段.md`。`--repeat N` 对每个条件独立重复 N 次，共 4N 次请求；同一批次续跑跳过成功记录。旧逐次目录用 `python src/hrpilot.py migrate-results` 备份并迁移，不会重新调用模型。
 
 ## 4. 四职业资料准备（每个职业独立执行）
 

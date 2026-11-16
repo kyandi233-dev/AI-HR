@@ -1,0 +1,30 @@
+{
+  "migrated_utc": "2026-11-16T03:00:45+00:00",
+  "source_layout": "_principles/principles/runs/20261116_principles_pilot_02",
+  "attempts": 4,
+  "source_file_sha256": {
+    "manifest.json": "14f8419df30b4bc1e5212443f20cfe29a8b26661552ab242d31a0099dd45424c",
+    "run_summary.json": "771eb43444b4cb2e291cb3160732edb2ed6ba37b1d47d6c9088da8d332fd1169",
+    "20261116_principles_pilot_02.csv": "f12e5eea1f32b671b73472dc6b0f3bcce8567e7a52dbac02f280c29bff33a974",
+    "A21_T01/answer.txt": "99bbc5c85fe5849e75627cee83efbfe056acbb40c80e65fa82d72de089d3fccb",
+    "A21_T01/raw_response.json": "ca6b63b56d9490164a1a53c2a722993990fb9a30fbd18bd989562c1f45d47a72",
+    "A21_T01/request.json": "f41e0e5f40d9ff2c18d00f1a63cd79ba0f2072511f91a745450880ce2987ddb0",
+    "A21_T01/parsed.json": "d1a36bd40da660f6313355b7c6e2303f573295557e8824585bb13e6f6da430c6",
+    "A21_T01/record.json": "50fa21d09d29017a53b3f66d9e2347c8c48e391cc7dea38592074d261e5bde64",
+    "M12_T01/answer.txt": "32148b1fd73c7abe3f0022422cce9f69f1ff530e0e5c5269a77ed82bff688142",
+    "M12_T01/raw_response.json": "71ce2cb9e140247ef215c86ab99444ef6089786e0bbbefba5a4c0cccaf135b49",
+    "M12_T01/request.json": "623b437f4fe70a96b667e146ab8ae93e4e66a4904bd653080f9e06e6580fb1a8",
+    "M12_T01/parsed.json": "e2d0bdb5ec6d758a00ab5ac6058e2c26786f8d81529dbed7fdf6c75ec55d3485",
+    "M12_T01/record.json": "9f36981aa47cb474851fcf64596aea8eb811a906a9656cf0d88c441cf53b529b",
+    "M21_T01/answer.txt": "8b233d94dac902f899a458b7b72264a7479d5c669c361b433df36c5dcbd4dd0d",
+    "M21_T01/raw_response.json": "e787dd955999404971371054ba47c253d14cb2a76a5e7baeb8cbbb2c9e1fea3d",
+    "M21_T01/request.json": "cbfa12149600467ac6926ec1ad3a1c4c8bd64c3629ef527570f18ad3d7c62e10",
+    "M21_T01/parsed.json": "21b90067650e646901060cb00210868a7b85b30bcd736e6c11035791f5f24a73",
+    "M21_T01/record.json": "5ae1a24017d3254383633e5c36414feedbcb0b5c2ea0e8760f0ba8c13d0f41c7",
+    "A12_T01/answer.txt": "30ee381f9092fd582eefe789f50297b565a0594c01bd2e1ec3d9765be7d13043",
+    "A12_T01/raw_response.json": "2500ab6d8511d5ad370654a7630572e1ac5f63ceee70489e0c7477df6b955a4b",
+    "A12_T01/request.json": "1c87a30146f4ee5b1028020b2c115068e5a35b691f7e4c4b82d75b54f7f3c64b",
+    "A12_T01/parsed.json": "49da8f19bd3fd0ecbf218a0bd083925fc31063ca765e02d38fd635b7f233a65f",
+    "A12_T01/record.json": "1370e426e22cf9a1c8211539cff6d0fe7e85b23b7836e57165ac6e334811ca17"
+  }
+}

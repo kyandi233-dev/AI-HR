@@ -80,54 +80,150 @@ class PipelineTests(unittest.TestCase):
                 self.assertIn('任务一：',task['messages'][0]['content'])
                 self.assertIn('任务二：',task['messages'][0]['content'])
 
-    def test_record_and_export_identify_batch_without_duplicate_calls(self):
+    def sample_answer(self):
+        return {k:{'priority':'专业能力信息','weight_ability':60,'weight_morality':40,
+                   'importance_ability':5,'importance_morality':3,'reason':'test'}
+                for k in ['task1','task2']}
+
+    def sample_response(self):
+        content=json.dumps(self.sample_answer(),ensure_ascii=False)
+        raw={'id':'test-response','model':'test-model','usage':{'total_tokens':42}}
+        return SimpleNamespace(
+            id='test-response',model='test-model',system_fingerprint=None,
+            choices=[SimpleNamespace(finish_reason='stop',message=SimpleNamespace(content=content))],
+            model_dump=lambda **kw:raw)
+
+    def test_batch_jsonl_resume_retry_and_export(self):
         a=Args()
         a.repeat=2
         tasks=hr.make_tasks('principles',a,self.occ,self.config)[:2]
-        answer={k:{'priority':'专业能力信息','weight_ability':60,'weight_morality':40,
-                   'importance_ability':5,'importance_morality':3,'reason':'test'}
-                for k in ['task1','task2']}
-        response=SimpleNamespace(
-            id='test-response',model='test-model',system_fingerprint=None,
-            choices=[SimpleNamespace(finish_reason='stop',message=SimpleNamespace(
-                content=json.dumps(answer)))],model_dump=lambda **kw: {})
         with tempfile.TemporaryDirectory() as tmp:
-            with patch.object(hr,'ROOT',Path(tmp)),patch.object(hr,'RESULTS',Path(tmp)),patch.object(hr,'api_request',return_value=(response,{})) as api:
-                for task in tasks:
-                    self.assertEqual(hr.record_task(task,self.config,a),'ok')
-                    record=hr.load_json(hr.path_for(task,a.run_id)/'record.json')
-                    self.assertEqual(record['run_id'],a.run_id)
-                    self.assertEqual(record['record_unit'],'api_request')
-                self.assertEqual(hr.record_task(tasks[0],self.config,a),'skip')
-                self.assertEqual(api.call_count,2)
-                # A legacy record still exports its batch from the directory.
-                legacy_path=hr.path_for(tasks[0],a.run_id)/'record.json'
-                legacy=hr.load_json(legacy_path)
-                del legacy['run_id']
-                del legacy['record_unit']
-                legacy_path.write_text(json.dumps(legacy),encoding='utf-8')
+            with patch.object(hr,'ROOT',Path(tmp)),patch.object(hr,'RESULTS',Path(tmp)/'results'):
+                with patch.object(hr,'api_request',side_effect=[RuntimeError('network failure'),(self.sample_response(),{})]) as api:
+                    self.assertEqual(hr.record_task(tasks[0],self.config,a),'error')
+                    self.assertEqual(hr.record_task(tasks[0],self.config,a),'skip')
+                    a.retry_failed=True
+                    self.assertEqual(hr.record_task(tasks[0],self.config,a),'ok')
+                    self.assertEqual(hr.record_task(tasks[0],self.config,a),'skip')
+                    self.assertEqual(api.call_count,2)
+                with patch.object(hr,'api_request',return_value=(self.sample_response(),{})):
+                    self.assertEqual(hr.record_task(tasks[1],self.config,a),'ok')
+                batch=hr.path_for(tasks[0],a.run_id)
+                self.assertEqual(batch,hr.path_for(tasks[1],a.run_id))
+                self.assertEqual(batch,Path(tmp)/'results'/'principles'/'test01')
+                self.assertFalse(any(p.is_dir() for p in batch.iterdir()))
+                requests=hr.read_jsonl(batch/'requests.jsonl')
+                records=hr.read_jsonl(batch/'records.jsonl')
+                self.assertEqual(len(requests),3)
+                self.assertEqual([r['attempt'] for r in records],[1,2,1])
+                self.assertEqual([r['status'] for r in records],['error','ok','ok'])
+                self.assertEqual(records[1]['parsed'],self.sample_answer())
+                self.assertEqual(len(hr.read_jsonl(batch/'responses.jsonl')),2)
+                # Same run/task ID cannot silently reuse changed scientific input.
+                changed={**tasks[0],'messages':[{'role':'user','content':'changed'}]}
+                with self.assertRaisesRegex(ValueError,'已变化'):
+                    hr.record_task(changed,self.config,a)
+                # A request saved before a crash is not automatically charged again.
+                interrupted={**requests[0],'task_id':'interrupted'}
+                interrupted['request']={**interrupted['request'],'task':{**tasks[0],'task_id':'interrupted'}}
+                hr.append_jsonl(batch/'requests.jsonl',interrupted)
+                a.retry_failed=False
+                with patch.object(hr,'api_request') as api:
+                    self.assertEqual(hr.record_task(interrupted['request']['task'],self.config,a),'skip')
+                    api.assert_not_called()
                 hr.export_results()
-                with (Path(tmp)/'all_results.csv').open(encoding='utf-8-sig',newline='') as fp:
-                    rows=list(csv.DictReader(fp))
-                self.assertEqual(len(rows),2)
-                self.assertEqual({r['run_id'] for r in rows},{a.run_id})
-                self.assertEqual({r['record_unit'] for r in rows},{'api_request'})
-                self.assertEqual({r['meta_repeat'] for r in rows},{'1','2'})
-                batch_dir=hr.path_for(tasks[0],a.run_id).parent
-                with (batch_dir/(a.run_id+'.csv')).open(encoding='utf-8-sig',newline='') as fp:
-                    self.assertEqual(list(csv.DictReader(fp)),rows)
-                # Historical failures belong to the same batch, even without new fields.
-                archived=legacy_path.parent/'failed_attempts'/'2026-11-16T00-00-00'
-                archived.mkdir(parents=True)
-                legacy['status']='error'
-                (archived/'record.json').write_text(json.dumps(legacy),encoding='utf-8')
-                hr.export_results()
-                with (batch_dir/(a.run_id+'.csv')).open(encoding='utf-8-sig',newline='') as fp:
+                with (batch/(a.run_id+'.csv')).open(encoding='utf-8-sig',newline='') as fp:
                     rows=list(csv.DictReader(fp))
                 self.assertEqual(len(rows),3)
                 self.assertEqual({r['run_id'] for r in rows},{a.run_id})
                 self.assertEqual(sum(r['status']=='ok' for r in rows),2)
-                self.assertEqual(sum(bool(r['attempt_archive']) for r in rows),1)
+                # Another batch must have its own CSV and join only in the global table.
+                a.run_id='test02'
+                with patch.object(hr,'api_request',return_value=(self.sample_response(),{})):
+                    hr.record_task(tasks[0],self.config,a)
+                hr.export_results()
+                with (Path(tmp)/'results'/'all_results.csv').open(encoding='utf-8-sig',newline='') as fp:
+                    all_rows=list(csv.DictReader(fp))
+                self.assertEqual(len(all_rows),4)
+                self.assertEqual({r['run_id'] for r in all_rows},{'test01','test02'})
+
+    def test_legacy_migration_preserves_answers_requests_and_retry_history(self):
+        a=Args()
+        task=hr.make_tasks('principles',a,self.occ,self.config)[0]
+        with tempfile.TemporaryDirectory() as tmp:
+            root=Path(tmp)
+            results=root/'results'
+            legacy=results/'_principles'/'principles'/'runs'/a.run_id
+            task_dir=legacy/task['task_id']
+            failed=task_dir/'failed_attempts'/'2026-11-16T00-00-00'
+            failed.mkdir(parents=True)
+            request={'task':task,'config':self.config['profiles']['evaluation'],
+                     'api_base_url':self.config['api_base_url']}
+            record={'task_id':task['task_id'],'status':'ok','context':task['metadata'],
+                    'timestamp_utc':'2026-11-16T00:00:01+00:00','runner_sha256':'original-program'}
+            for folder,status in [(failed,'error'),(task_dir,'ok')]:
+                (folder/'request.json').write_text(json.dumps(request),encoding='utf-8')
+                (folder/'record.json').write_text(json.dumps({**record,'status':status}),encoding='utf-8')
+            response=self.sample_response()
+            (task_dir/'raw_response.json').write_text(json.dumps(response.model_dump()),encoding='utf-8')
+            (task_dir/'answer.txt').write_text(response.choices[0].message.content,encoding='utf-8')
+            (task_dir/'parsed.json').write_text(json.dumps(self.sample_answer()),encoding='utf-8')
+            manifest={'task':'principles','run_id':a.run_id,'occupation':None,'runner_sha256':'original-program'}
+            (legacy/'manifest.json').write_text(json.dumps(manifest),encoding='utf-8')
+            original_manifest=(legacy/'manifest.json').read_bytes()
+            with patch.object(hr,'ROOT',root),patch.object(hr,'RESULTS',results),patch.object(hr,'api_request') as api:
+                target=hr.migrate_legacy_batch(legacy,root/'archives')
+                api.assert_not_called()
+                self.assertFalse(legacy.exists())
+                self.assertFalse(any(p.is_dir() for p in target.iterdir()))
+                self.assertEqual((target/'manifest.json').read_bytes(),original_manifest)
+                saved_request=json.loads(json.dumps(request))
+                self.assertEqual([r['request'] for r in hr.read_jsonl(target/'requests.jsonl')],[saved_request,saved_request])
+                records=hr.read_jsonl(target/'records.jsonl')
+                self.assertEqual([r['status'] for r in records],['error','ok'])
+                self.assertEqual([r['attempt'] for r in records],[1,2])
+                self.assertEqual(records[1]['parsed'],self.sample_answer())
+                self.assertEqual(records[1]['runner_sha256'],'original-program')
+                self.assertEqual(hr.read_jsonl(target/'responses.jsonl')[0]['answer'],response.choices[0].message.content)
+                self.assertEqual(len(list((root/'archives').glob('*/*.tar.gz'))),1)
+                hr.export_results()
+                # Conflicting destination never replaces either copy.
+                legacy.mkdir(parents=True)
+                (legacy/'manifest.json').write_bytes(original_manifest)
+                with self.assertRaisesRegex(ValueError,'已存在'):
+                    hr.migrate_legacy_batch(legacy,root/'archives')
+                self.assertTrue(legacy.exists())
+
+    def test_cli_new_batches_and_manifest_guard_without_network(self):
+        a=Args()
+        task=hr.make_tasks('principles',a,self.occ,self.config)[0]
+        with tempfile.TemporaryDirectory() as tmp:
+            results=Path(tmp)/'results'
+            config=Path(tmp)/'config'
+            config.mkdir()
+            (config/'settings.json').write_text(json.dumps(self.config),encoding='utf-8')
+            (config/'occupations.json').write_text(json.dumps(self.occ),encoding='utf-8')
+            with patch.object(hr,'ROOT',Path(tmp)),patch.object(hr,'RESULTS',results),patch.object(hr,'make_tasks',return_value=[task]),patch.dict(os.environ,{'DEEPSEEK_API_KEY':'test-key'}),patch.object(hr.time,'sleep'):
+                command=['run','--task','principles','--run-id','test01','--execute']
+                with patch.object(hr,'api_request',return_value=(self.sample_response(),{})) as api:
+                    self.assertEqual(hr.main(command),0)
+                    self.assertEqual(hr.main(command),0)
+                    self.assertEqual(api.call_count,1)
+                batch=hr.path_for(task,'test01')
+                manifest=hr.load_json(batch/'manifest.json')
+                manifest['runner_sha256']='changed-program'
+                (batch/'manifest.json').write_text(json.dumps(manifest),encoding='utf-8')
+                with patch.object(hr,'api_request') as api:
+                    with self.assertRaisesRegex(ValueError,'批次清单'):
+                        hr.main(command)
+                    api.assert_not_called()
+                old=results/'_principles'/'principles'/'runs'/'test02'
+                old.mkdir(parents=True)
+                (old/'manifest.json').write_text('{}',encoding='utf-8')
+                with patch.object(hr,'api_request') as api:
+                    with self.assertRaisesRegex(ValueError,'旧目录'):
+                        hr.main(['run','--task','principles','--run-id','test02','--execute'])
+                    api.assert_not_called()
 
     def test_principle_validation(self):
         valid={'task1':{'priority':'专业能力信息','weight_ability':60,'weight_morality':40,'importance_ability':5,'importance_morality':3,'reason':'a'},

@@ -14,6 +14,8 @@ import random
 import re
 import shutil
 import sys
+import tarfile
+import tempfile
 import time
 from typing import Any
 
@@ -274,18 +276,33 @@ def check_response(kind, text):
 
 
 def path_for(task, run_id):
+    """One directory per batch; individual invocations are JSONL rows."""
     kind=task['task']; m=task['metadata']
     if kind=='moral-relevance':
         folder=RESULTS/m['occupation']/'moral_relevance'
     elif kind in ['principles']:
-        folder=RESULTS/'_principles'/kind
+        folder=RESULTS/'principles'
     elif kind in ['moral-generate','moral-check']:
-        folder=RESULTS/'_morality'/kind
+        folder=RESULTS/'morality'/kind
     else:
         slug=m['occupation']
         folder=RESULTS/slug/({'jd':'jd_generation','resume':'resume_generation',
                           'resume-review':'resume_review','baseline':'baseline','abc':'abc'}[kind])
-    return folder/'runs'/run_id/task['task_id']
+    return folder/run_id
+
+
+def read_jsonl(path):
+    if not path.exists():
+        return []
+    with path.open(encoding='utf-8') as stream:
+        return [json.loads(line) for line in stream if line.strip()]
+
+
+def append_jsonl(path, value):
+    with path.open('a',encoding='utf-8') as stream:
+        stream.write(json.dumps(value,ensure_ascii=False,separators=(',',':'))+'\n')
+        stream.flush()
+        os.fsync(stream.fileno())
 
 
 def validate_run_id(run_id):
@@ -335,51 +352,49 @@ def record_task(task, settings, args):
     request={'task':task,'config':settings['profiles'][TASK_TO_PROFILE[task['task']]],
              'api_base_url':settings['api_base_url']}
     request_hash=sha256(canonical(request))
-    meta_path=base/'record.json'
-    if meta_path.exists():
-        old=load_json(meta_path)
-        if old.get('request_sha256')!=request_hash:
-            raise ValueError(f'同一run-id/task-id的材料或Prompt已变化：{base}，请使用新 run-id')
-        if old.get('status')=='ok':
-            print('SKIP 已有有效记录',base.relative_to(ROOT))
+    task_id=task['task_id']
+    requests=[r for r in read_jsonl(base/'requests.jsonl') if r['task_id']==task_id]
+    records=[r for r in read_jsonl(base/'records.jsonl') if r['task_id']==task_id]
+    if requests:
+        if any(sha256(canonical(r['request']))!=request_hash for r in requests):
+            raise ValueError(f'同一run-id/task-id的材料或Prompt已变化：{base}/{task_id}，请使用新 run-id')
+        last_request=requests[-1]
+        last_record=next((r for r in reversed(records) if r['attempt']==last_request['attempt']),None)
+        if last_record and last_record['status']=='ok':
+            print('SKIP 已有有效记录',task_id)
             return 'skip'
         if not args.retry_failed:
-            print('SKIP 上次失败，使用 --retry-failed 手动重试',base.relative_to(ROOT))
+            print('SKIP 上次失败或中断，使用 --retry-failed 手动重试',task_id)
             return 'skip'
-        # Preserve every failed attempt, including the raw response, before an explicit retry.
-        history=base/'failed_attempts'/now().replace(':','-')
-        history.mkdir(parents=True,exist_ok=False)
-        for old_file in base.iterdir():
-            if old_file.is_file(): shutil.copy2(old_file, history/old_file.name)
-    # Save exact scientific input BEFORE API call; never record auth token.
-    (base/'request.json').write_text(json.dumps(request,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
-    metadata={'run_id':args.run_id,'record_unit':'api_request',
-              'task':task['task'],'task_id':task['task_id'],'context':task['metadata'],
+    attempt=max((r['attempt'] for r in requests),default=0)+1
+    identity={'task_id':task_id,'attempt':attempt}
+    # Persist the full input before sending; a retry always receives a new attempt ID.
+    append_jsonl(base/'requests.jsonl',{**identity,'request':request})
+    metadata={'run_id':args.run_id,'record_unit':'api_request',**identity,
+              'task':task['task'],'context':task['metadata'],
               'python_version':sys.version.split()[0],
               'openai_sdk_version':sdk_version(),
               'runner_sha256':sha256(Path(__file__).read_bytes()),
               'request_sha256':request_hash,'prompt_sha256':sha256(canonical(task['messages'])),
               'timestamp_utc':now(),'status':'error'}
+    parsed=None
     try:
         response, kwargs = api_request(settings,task)
         raw=response.model_dump(mode='json')
-        (base/'raw_response.json').write_text(json.dumps(raw,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
+        content=response.choices[0].message.content if response.choices else None
+        append_jsonl(base/'responses.jsonl',{**identity,'raw_response':raw,'answer':content or ''})
         metadata['api_id']=getattr(response,'id',None)
         metadata['returned_model']=getattr(response,'model',None)
         metadata['system_fingerprint']=getattr(response,'system_fingerprint',None)
         metadata['finish_reason']=response.choices[0].finish_reason if response.choices else None
         metadata['usage']=raw.get('usage')
-        content=response.choices[0].message.content if response.choices else None
-        (base/'answer.txt').write_text(content or '',encoding='utf-8')
         if metadata['finish_reason']!='stop':
             raise ValueError('finish_reason='+str(metadata['finish_reason']))
         if task['json_mode']:
             parsed=check_response(task['task'],content)
             if task['task']=='moral-generate':
-                # Keep the normalized foundation code locally; generated text is still unapproved.
                 parsed['foundation']=task['metadata']['foundation']
                 parsed['pair_id']=task['metadata']['pair_id']
-            (base/'parsed.json').write_text(json.dumps(parsed,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
         else:
             if not content or not content.strip(): raise ValueError('生成的文本为空')
             if task['task']=='resume':
@@ -398,14 +413,13 @@ def record_task(task, settings, args):
                 raise ValueError('已有不同的道德草稿；请先审核或变更编号')
             draft.write_text(json.dumps(parsed,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
         metadata['status']='ok'
-        print('OK',base.relative_to(ROOT))
+        print('OK',base.relative_to(ROOT),task_id,f'attempt={attempt}')
     except Exception as e:
         metadata['error_type']=type(e).__name__
         metadata['error_message']=safe_error_message(e)[:1000]
-        print('ERROR',base.relative_to(ROOT),type(e).__name__,metadata['error_message'][:200],file=sys.stderr)
-    meta_path.write_text(json.dumps(metadata,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
-    if metadata['status']!='ok': return 'error'
-    return 'ok'
+        print('ERROR',task_id,type(e).__name__,metadata['error_message'][:200],file=sys.stderr)
+    append_jsonl(base/'records.jsonl',{**metadata,'parsed':parsed})
+    return metadata['status']
 
 
 def fetch_onet(args,occ):
@@ -447,33 +461,120 @@ def status(occ):
     print('  抽象原则调查不依赖任何职业材料')
 
 
+def legacy_attempts(batch):
+    """Read old per-invocation folders without changing their contents."""
+    for task_dir in sorted(p for p in batch.iterdir() if p.is_dir()):
+        history=sorted((task_dir/'failed_attempts').glob('*'))
+        attempt=0
+        for folder in [*history,task_dir]:
+            if not (folder/'request.json').exists():
+                continue
+            attempt+=1
+            request=load_json(folder/'request.json')
+            identity={'task_id':task_dir.name,'attempt':attempt}
+            record=load_json(folder/'record.json') if (folder/'record.json').exists() else None
+            parsed=load_json(folder/'parsed.json') if (folder/'parsed.json').exists() else None
+            raw=load_json(folder/'raw_response.json') if (folder/'raw_response.json').exists() else None
+            answer=(folder/'answer.txt').read_text(encoding='utf-8') if (folder/'answer.txt').exists() else None
+            yield identity,request,record,parsed,raw,answer
+
+
+def migrate_legacy_batch(batch, archive_root=None):
+    manifest=load_json(batch/'manifest.json')
+    attempts=list(legacy_attempts(batch))
+    sample=attempts[0][1]['task'] if attempts else {
+        'task':manifest['task'],'metadata':{'occupation':manifest.get('occupation')}}
+    target=path_for(sample,manifest['run_id'])
+    if target.exists():
+        raise ValueError(f'迁移目标已存在，保留原文件且不覆盖：{target}')
+    # Make and verify a byte-exact backup outside results before removing old folders.
+    archive_root=archive_root or ROOT.parent/'.archives'/'AI-HR'
+    archive_root.mkdir(parents=True,exist_ok=True)
+    backup_dir=Path(tempfile.mkdtemp(prefix='legacy-results-',dir=archive_root))
+    hashes={str(p.relative_to(batch)):sha256(p.read_bytes()) for p in batch.rglob('*') if p.is_file()}
+    archive=Path(shutil.make_archive(str(backup_dir/batch.name),'gztar',root_dir=batch.parent,base_dir=batch.name))
+    with tarfile.open(archive,'r:gz') as saved:
+        for name,digest in hashes.items():
+            with saved.extractfile(batch.name+'/'+name) as stream:
+                if sha256(stream.read())!=digest:
+                    raise ValueError('迁移备份校验失败；未删除原记录')
+    target.parent.mkdir(parents=True,exist_ok=True)
+    with tempfile.TemporaryDirectory(prefix='.migration-',dir=target.parent) as tmp:
+        staging=Path(tmp)/'batch'
+        staging.mkdir()
+        for name in ['manifest.json','run_summary.json']:
+            if (batch/name).exists():
+                shutil.copy2(batch/name,staging/name)
+        for name in ['requests.jsonl','responses.jsonl','records.jsonl']:
+            (staging/name).touch()
+        for identity,request,record,parsed,raw,answer in attempts:
+            append_jsonl(staging/'requests.jsonl',{**identity,'request':request})
+            if raw is not None or answer is not None:
+                append_jsonl(staging/'responses.jsonl',{**identity,'raw_response':raw,'answer':answer})
+            if record is not None:
+                append_jsonl(staging/'records.jsonl',{**record,**identity,'parsed':parsed})
+        # Verify every source object/text against the serialized destination.
+        requests=read_jsonl(staging/'requests.jsonl')
+        responses={(r['task_id'],r['attempt']):r for r in read_jsonl(staging/'responses.jsonl')}
+        records={(r['task_id'],r['attempt']):r for r in read_jsonl(staging/'records.jsonl')}
+        for expected,actual in zip(attempts,requests,strict=True):
+            identity,request,record,parsed,raw,answer=expected
+            if actual!={**identity,'request':request}:
+                raise ValueError('迁移请求校验失败；未删除原记录')
+            key=(identity['task_id'],identity['attempt'])
+            if record is not None:
+                if records[key]!={**record,**identity,'parsed':parsed}:
+                    raise ValueError('迁移结果校验失败；未删除原记录')
+            if raw is not None or answer is not None:
+                if responses[key]!={**identity,'raw_response':raw,'answer':answer}:
+                    raise ValueError('迁移原始响应校验失败；未删除原记录')
+        migration={'migrated_utc':now(),'source_layout':str(batch.relative_to(RESULTS)),
+                   'attempts':len(attempts),'source_file_sha256':hashes}
+        (staging/'migration.json').write_text(json.dumps(migration,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
+        current_hashes={str(p.relative_to(batch)):sha256(p.read_bytes()) for p in batch.rglob('*') if p.is_file()}
+        if current_hashes!=hashes:
+            raise ValueError('迁移期间原始文件发生变化；未删除原记录')
+        staging.rename(target)
+    shutil.rmtree(batch)
+    print('已迁移',len(attempts),'次尝试至',target,'；原文件备份：',archive)
+    return target
+
+
+def migrate_results():
+    for manifest in sorted(RESULTS.glob('**/runs/*/manifest.json')):
+        migrate_legacy_batch(manifest.parent)
+    # Remove empty legacy containers only; never remove unknown user files.
+    for folder in sorted((p for p in RESULTS.rglob('*') if p.is_dir()),key=lambda p:len(p.parts),reverse=True):
+        if not any(folder.iterdir()):
+            folder.rmdir()
+    export_results()
+
+
 def export_results():
-    records=[]
     batches={}
-    for f in RESULTS.rglob('record.json'):
-        d=load_json(f)
-        row={k:v for k,v in d.items() if k not in ('usage','context')}
-        task_dir=f.parent
-        archived=task_dir.parent.name=='failed_attempts'
-        if archived:
-            task_dir=task_dir.parent.parent
-        batch_dir=task_dir.parent
-        # Older records identify their batch through runs/<run-id>/<task-id>/.
-        row.setdefault('run_id',batch_dir.name)
-        row.setdefault('record_unit','api_request')
-        row['attempt_archive']=f.parent.name if archived else ''
-        row.update({f'meta_{k}':v for k,v in (d.get('context') or {}).items()})
-        if d.get('usage'):
-            row.update({f'token_{k}':v for k,v in d['usage'].items() if isinstance(v,int)})
-        parsed=f.parent/'parsed.json'
-        if parsed.exists():
-            obj=load_json(parsed)
-            row.update({'result_'+k:(canonical(v) if isinstance(v,(dict,list)) else v) for k,v in obj.items()})
-        records.append(row)
-        batches.setdefault(batch_dir,[]).append(row)
-    for batch_dir,rows in batches.items():
-        write_results_csv(batch_dir/(batch_dir.name+'.csv'),rows)
-    write_results_csv(RESULTS/'all_results.csv',records)
+    for source in sorted(RESULTS.rglob('records.jsonl')):
+        batches[source.parent]=read_jsonl(source)
+    # Compatibility when some legacy batches have not yet been migrated.
+    for manifest in sorted(RESULTS.glob('**/runs/*/manifest.json')):
+        batch=manifest.parent
+        batches[batch]=[{**record,**identity,'parsed':parsed}
+                       for identity,request,record,parsed,raw,answer in legacy_attempts(batch)
+                       if record is not None]
+    all_rows=[]
+    for batch,records in batches.items():
+        rows=[]
+        for d in records:
+            row={k:v for k,v in d.items() if k not in ('usage','context','parsed')}
+            row.setdefault('run_id',batch.name)
+            row.setdefault('record_unit','api_request')
+            row.update({f'meta_{k}':v for k,v in (d.get('context') or {}).items()})
+            row.update({f'token_{k}':v for k,v in (d.get('usage') or {}).items() if isinstance(v,int)})
+            row.update({'result_'+k:(canonical(v) if isinstance(v,(dict,list)) else v)
+                        for k,v in (d.get('parsed') or {}).items()})
+            rows.append(row)
+        write_results_csv(batch/(batch.name+'.csv'),rows)
+        all_rows.extend(rows)
+    write_results_csv(RESULTS/'all_results.csv',all_rows)
 
 
 def write_results_csv(out,records):
@@ -503,12 +604,14 @@ def main(argv=None):
     run.add_argument('--execute',action='store_true',help='真正发送 API 请求并计费')
     run.add_argument('--retry-failed',action='store_true')
     sub.add_parser('export',help='汇总已保存评分与元数据到 CSV')
+    sub.add_parser('migrate-results',help='备份并迁移旧对话目录为每批 JSONL；不调用 API')
     args=parser.parse_args(argv)
     occ=load_json(ROOT/'config/occupations.json')
     settings=load_json(ROOT/'config/settings.json')
     if args.command=='status':status(occ);return 0
     if args.command=='fetch-onet': fetch_onet(args,occ);return 0
     if args.command=='export':export_results();return 0
+    if args.command=='migrate-results':migrate_results();return 0
     if args.count<1 or args.start_index<1 or args.repeat<1 or (args.limit is not None and args.limit<1):
         raise ValueError('count/start-index/repeat/limit 必须是正整数')
     validate_run_id(args.run_id)
@@ -524,12 +627,14 @@ def main(argv=None):
             m=tasks[0]['messages']
             print('\n----- 第一条请求的完整 Prompt（role=user，最多显示12000字符） -----\n',m[0]['content'][:12000])
         return 0
+    if any(RESULTS.glob('**/runs/'+args.run_id+'/manifest.json')):
+        raise ValueError('该批次仍使用旧目录，请先运行 python src/hrpilot.py migrate-results；本次未发送请求')
     if len(tasks)>settings['max_requests_per_command']:
         raise ValueError(f"本批请求{len(tasks)}条，超过安全上限{settings['max_requests_per_command']}。先使用 --limit 或修改配置后有意识地扩展。")
     if not os.environ.get('DEEPSEEK_API_KEY','').strip():
         raise ValueError('请先在 PowerShell 中设置 DEEPSEEK_API_KEY；当前未发送请求')
     # Freeze the entire planned batch (not just --limit N) to prevent silent changes on resumption.
-    parent=path_for(tasks[0],args.run_id).parent
+    parent=path_for(tasks[0],args.run_id)
     parent.mkdir(parents=True,exist_ok=True)
     manifest={'task':args.task,'occupation':args.occupation,'run_id':args.run_id,
               'settings':settings['profiles'][TASK_TO_PROFILE[args.task]],
