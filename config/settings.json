@@ -23,6 +23,5 @@
   "reference_date": "2026-11-15",
   "api_timeout_seconds": 120,
   "request_pause_seconds": 0.5,
-  "max_requests_per_command": 12,
-  "max_response_text_length": 120000
+  "max_requests_per_command": null
 }

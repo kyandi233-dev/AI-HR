@@ -1,234 +1,175 @@
-# DeepSeek HR：可复用实验任务包 v1.0
+# AI-HR 实验任务包
 
-本项目是**程序与 Prompt 框架**，不是已经完成的数据集。四个职业只是旧方案里的候选项（可删换）；**没有导入历史生成的 Python 后端 JD 和 R01–R04**，也没有任何默认通过审核的道德故事。运行前必须从 O*NET 重新准备职业资料。
+这个项目负责将固定提示词、材料、条件和模型参数组成独立 API 请求，再保存输入、原始回答和可分析的数据。它不自动判断材料是否合格，也不自动完成统计推断。
 
-## 0. 研究流程
+**每个试次都使用独立新对话：只发送本次一条完整 user 消息，不带任何历史。** 原则实验每次回答两题；四个条件是四次独立请求。安排发送先后不会把多个试次合并为一个对话。
 
-职业材料：`O*NET 源页面 → 人工检查并存储职业资料 → 生成 JD 草稿 → 审核批准 JD → 独立生成简历草稿 → 审核批准简历 → A 基线筛选`。
+## 1. 当前进度
 
-私人材料：`六大道德主题 → 生成中性/负面配对草稿 → 人工审核 → 道德属性评定 → 各职业的直接专业关联评定 → 冻结材料`。
+截至 2026-11-17，仓库中的四个职业（软件开发、商业智能分析、客户服务、物流分析）只是候选登记，尚无保存的 O*NET 原始抓取、人工审核 profile、批准 JD 或简历。
 
-独立的抽象原则调查：`两类信息定义 + 两个一般招聘任务 → 四种顺序平衡 × 独立重复`。**此任务没有职业、没有 JD、没有简历。**
+已有原则流程预实验 `20261116_principles_pilot_02`：四个条件各一次，共四次成功。原始请求、响应和原时间均保留；目录整理不代表新运行。
 
-正式招聘：`每职业 × 每份批准简历 × A / 配对B / 配对C → 六项评分 + 自发的简短理由`。B/C 的差异只来自背景行为正文。
+此次更新没有执行新的 DeepSeek 实验，也没有新增职业抓取。
 
-## 1. 任务文件夹
+## 2. 安装与入口
 
-```text
-config/
-  occupations.json               四个候选职业及 O*NET 编码（可以调整）
-  settings.json                  唯一 API 参数配置源
-prompts/
-  README.md                       提示词入口、变量与使用规则
-  generation/                     材料生成：jd.txt / resume.txt / morality.txt
-  validation/                     材料检验：resume_review.txt / moral_check.txt / moral_relevance.txt
-  experiments/                    实验评价：principles.txt / hiring_rating.txt / score_rubric.txt
-materials/
-  occupations/
-    software_developer/
-      onet/                       原始 O*NET 抓取、人工核对的 profile.txt
-      job_setup.json              公司业务和岗位层级设定（需要填写）
-      jd/                         draft.txt / approved.txt
-      resumes/drafts/             自动生成草案 R01.txt ...
-      resumes/approved/           研究者确认的正式简历
-    business_intelligence/        同上
-    customer_service/             同上，是否适合排除社会性技能需进一步审议
-    logistics_analyst/            同上
-  morality/
-    drafts/                       尚未审核的配对背景故事 JSON
-    approved/                     研究者审核后方可进入材料检验及 A/B/C
-results/
-  principles/         4种顺序平衡的独立结果
-  morality/moral-generate/       道德故事生成记录
-  morality/moral-check/          道德效价、基础分类、自然性、可理解性
-  software_developer/
-    jd_generation/                JD 生成记录
-    resume_generation/            简历生成记录
-    resume_review/                简历文本审核记录
-    moral_relevance/              与本职业 JD 的专业关联检查
-    baseline/                     A 评分（材料筛选）
-    abc/                          A/B/C 正式评价（各职业分开）
-  ...                             其他职业同结构
-src/hrpilot.py                    唯一运行入口
-```
-
-对不同任务使用独立 `run-id`；每批保存到一个 `<run-id>/` 目录，所有独立对话集中写入 `requests.jsonl`、`responses.jsonl`、`records.jsonl`，通过 `task_id` 和 `attempt` 关联。保留完整请求、原始回复、解析结果、模型与配置元数据；不为每次对话创建文件夹。
-
-每项任务的角色、规则、材料占位符和输出要求均在同一份模板内。模板跨职业复用，具体材料由 Python 填入；评分标准单独保存，由程序注入招聘评价模板。详见 `prompts/README.md`。
-
-## 2. Windows / PowerShell 初次安装
-
-1. 解压 ZIP 到一个路径尽量简短的目录，如 `D:\Research\DeepSeek_HR_Framework`。
-2. 在该文件夹地址栏输入 `powershell` 回车。
-3. 检查 Python：
+本地建议放在 `D:\_Experiment\AI-HR`，避免同步盘占用。打开 PowerShell：
 
 ```powershell
-py --version
-```
-
-4. 安装依赖（只需要一次）：
-
-```powershell
+Set-Location "D:\_Experiment\AI-HR"
 py -m pip install -r requirements.txt
+py src/hrpilot.py status
 ```
 
-5. 从 https://platform.deepseek.com/ 获取 API Key。每次打开新的 PowerShell 会话时输入（密钥不会出现在已保存的代码文件里）：
+`src/hrpilot.py` 是保留的命令入口。默认仅预览，只有 `run ... --execute` 才发送模型请求并产生费用。`fetch-onet ... --execute` 下载 O*NET 网页，不调用模型。
+
+## 3. 原则实验：一次启动100个独立试次
+
+计划文件为 `config/batches/principles_100.json`：
+
+```json
+{
+  "task": "principles",
+  "run_id": "20261117_principles_main_01",
+  "stage": "main",
+  "repeat": 25,
+  "occupations": []
+}
+```
+
+`repeat=25` 表示每个条件25次，总共100次调用。每次包含 task1 专业能力判断和 task2 面试推荐判断，两题属于同一条回复。
+
+| 条件 | 定义顺序 | 问题顺序 |
+|---|---|---|
+| M12 | 道德→能力 | 任务一→任务二 |
+| M21 | 道德→能力 | 任务二→任务一 |
+| A12 | 能力→道德 | 任务一→任务二 |
+| A21 | 能力→道德 | 任务二→任务一 |
+
+计划按25轮安排，每轮四个条件各一次，轮内顺序由 run-id 确定。每一项仍是独立新对话。原则调查不读取任何职业、JD、简历或道德故事。
+
+预览（不发送 API，也不创建结果文件）：
+
+```powershell
+py src/hrpilot.py run --batch config/batches/principles_100.json
+```
+
+参数在 `config/settings.json` 的 `profiles.evaluation`，当前仍为 `deepseek-flash`、temperature=0、thinking=disabled、max_tokens=2200。尚未替研究者选定温度1。先确定参数，再正式收集；如要改成本批温度1，可在批次 JSON 中增加 `"profile_overrides": {"temperature": 1.0}`。生成材料和审核材料分别使用其他配置组。
+
+决定执行后，在终端设置密钥，然后运行：
 
 ```powershell
 $env:DEEPSEEK_API_KEY = Read-Host "DeepSeek API Key"
+py src/hrpilot.py run --batch config/batches/principles_100.json --execute
 ```
 
-**不要发送 API Key 给他人，不要将其写入 Word 或 CSV，不要上传到代码仓库。**
+不需要按12次分组。程序会逐条发送全部未完成项；`max_requests_per_command=null` 表示不设置额外请求数量上限，数量由批次计划限定。若自己设置了整数上限，则程序检查本次实际新发送数。
 
-程序**默认仅预览，不发送请求，也不计费**；只有命令最后有 `--execute` 时，才会真实访问 DeepSeek API（`fetch-onet` 的 `--execute` 仅抓取 O*NET）。
+如需暂停后继续，执行相同命令。成功项跳过；失败或中断项默认也不自动重发，避免不明确的再次收费。检查后可添加 `--retry-failed` 明确重试，保留旧尝试。可选 `--limit 10` 表示本次最多新发送10次，续跑会继续后面的未完成项；通常不必使用。
 
-## 3. 第一个可以立即测试的功能：抽象原则调查
+同批次的提示词、材料、参数、计划顺序及执行协议必须一致。更改这些内容使用新 run-id。只改 CSV 显示不会阻止续跑。不要同时启动多个进程写同一批次。
 
-原则调查不需要任何岗位材料。打开终端，运行：
+## 4. 输出：每个输入、输出分别一份JSON
+
+```text
+results/principles/20261117_principles_main_01/
+  batch.json
+  M12_T01_a01.input.json
+  M12_T01_a01.output.json
+  ...
+  results.csv
+```
+
+- `batch.json`：本批参数、顺序、全部试次输入摘要和执行协议版本。
+- `*.input.json`：完整提示词、条件、参数、编号、时间，不含密钥。
+- `*.output.json`：完整 API 原始响应、逐字回答、校验后的答案、状态及错误、模型和用量。网络失败时原始响应为 null。
+- `a01` 表示第一次尝试；手动重试另建 `a02`，不覆盖第一次。
+- `results.csv`：每次调用尝试一行，原答案字段展开为普通列。成功100次且无重试时100行；有失败重试时会多出尝试行，分析按 status=ok 筛选并保留试次标识。
+
+CSV保留批次、阶段、条件、重复、发送序号、请求/返回模型、温度、thinking、max_tokens、时间、状态、token用量和两题全部答案。哈希、SDK版本等审计细节放在 JSON。两个问题仍对应同一次调用，不应当作两次独立会话。
+
+实验运行结束自动导出，也可手动：
 
 ```powershell
-py src/hrpilot.py status
-py src/hrpilot.py run --task principles --run-id principles_pilot01 --repeat 1
+py src/hrpilot.py export --task principles
 ```
 
-第二行只打印准备发送的四个独立 Prompt 的摘要和第一条 Prompt；没有费用。
+总表按任务分别保存，例如 `results/principles/principles_all_results.csv`、`results/baseline/baseline_all_results.csv`、`results/hiring_abc/hiring_abc_all_results.csv`。不同实验不会混进同一张总表；同一实验的不同职业和批次通过 occupation、run_id、stage 区分。总表包含历史失败尝试，不会因再次 export 追加重复行。
 
-实际执行（四条 API 请求）：
+旧批次的 JSONL 和旧格式文件经逐条核对后保留在该批次的 `legacy/` 中；新的逐次 JSON 由原对象转换，不重新调用模型。尚未转换的本地旧数据运行：
 
 ```powershell
-py src/hrpilot.py run --task principles --run-id principles_pilot01 --repeat 1 --execute
+py src/hrpilot.py migrate-results
 ```
 
-若先测试其中一条，可先用 `--limit 1 --execute`，再执行不带 limit 的相同命令；成功记录会跳过，不重复计费。
+## 5. 职业资料与批次选择
 
-四个条件：M12、M21、A12、A21（M=道德信息先定义；A=能力信息先定义；12=任务一先；21=任务二先）。都包含两个任务。每个任务使用一份完整提示词，所有调用只发当前一条 user 消息，绝不回传上一次会话历史。
+`config/occupations.json` 是职业登记表，不是本批必须全部运行的名单。新增职业登记一次；本批不做某职业，无需删除其登记或历史材料。status 字段只是备注，不自动决定是否参与。
 
-结果位于 `results/principles/principles_pilot01/`。
+职业的材料放在 `materials/occupations/<职业ID>/`：
 
-这里的 `run-id` 表示整批实验，`M12_T01` 是 JSONL/CSV 中的单次测量编号。每条回复同时包含两个问题的答案。新批次推荐命名为 `20261116_principles_pilot_02`（UTC 日期、任务、阶段、同日批次序号）；CSV 文件名为 `20261116_principles_pilot_02.csv`。详细规则见 `docs/数据字段.md`。`--repeat N` 对每个条件独立重复 N 次，共 4N 次请求；同一批次续跑跳过成功记录。旧逐次目录用 `python src/hrpilot.py migrate-results` 备份并迁移，不会重新调用模型。
+```text
+onet/source_details.html        官方网页原文
+onet/source_details.txt         提取后的网页文字
+onet/source_metadata.json       来源URL、时间、摘要；不代表审核通过
+onet/profile.txt               研究者从来源中审核、选择的职业资料
+job_setup.json                 研究者提出的公司、细分岗位和层级设定
+jd/draft.txt                   生成的JD草稿
+jd/approved.txt                批准的岗位公告
+resumes/drafts/R01.txt          简历草稿
+resumes/approved/R01.txt        批准的简历
+```
 
-## 4. 四职业资料准备（每个职业独立执行）
+职业选择写在批次 JSON 的 occupations 列表中；`config/batches/hiring_example.json` 展示选择两个职业的 A/B/C 批次。它需要先准备批准材料，目前不能直接运行。也可用旧命令一次选择一个职业：`--occupation software_developer`。
 
-职业候选项在 `config/occupations.json`。默认有：
+准备流程：
 
-- `software_developer`：15-1252.00
-- `business_intelligence`：15-2051.01
-- `customer_service`：43-4051.00
-- `logistics_analyst`：13-1081.02
+1. 从 O*NET 下载原文；不把模型编造的信息当成职业来源。
+2. 人工核对 Tasks、Detailed Work Activities、Knowledge、专业技能、Education、Job Zone 等，选入 profile.txt。
+3. 填写并审核 job_setup.json，根据固定职业资料生成 JD 草稿。
+4. 核对后只将岗位公告放入 jd/approved.txt。
+5. 依据资料和批准 JD 独立生成简历，审核后放入 approved。
+6. 准备并审核道德配对故事，再做基线、材料检验和 A/B/C。
 
-先只测试一个职业时，使用：
+示例命令默认预览，添加 --execute 才实际下载或调用：
 
 ```powershell
 py src/hrpilot.py fetch-onet --occupation software_developer
-py src/hrpilot.py fetch-onet --occupation software_developer --execute
-```
-
-程序仅访问 `https://www.onetonline.org/link/details/15-1252.00`，下载页面原始 HTML、文字及来源时间/摘要。若网站限制自动请求，则从该**官方网站**人工复制职业条目。
-
-**必须人工查看** `materials/occupations/software_developer/onet/source_details.txt`，将与职业有关的 Tasks、Detailed Work Activities、Knowledge、专业技能、Education、Job Zone 等选入 `onet/profile.txt`。`profile.txt` 为人工认可的职业信息，程序不会自动把整个网页当成已验证材料。
-
-在 `materials/occupations/software_developer/job_setup.json` 填入 `company_profile` 和 `job_level`，并审查 `job_title`。
-
-预览 JD 生成 Prompt：
-
-```powershell
 py src/hrpilot.py run --task jd --occupation software_developer --run-id jd_dev01
-```
-
-实际生成 1 份 JD 草稿：
-
-```powershell
-py src/hrpilot.py run --task jd --occupation software_developer --run-id jd_dev01 --execute
-```
-
-在 `jd/draft.txt` 中会看到含「依据记录」和「岗位公告」的结果。人工核对后**只把岗位公告部分**复制到 `jd/approved.txt`。其他资料不能直接进入招聘评价。
-
-## 5. 生成简历（每次调用仅生成一份，独立会话）
-
-```powershell
 py src/hrpilot.py run --task resume --occupation software_developer --count 4 --run-id resume_dev01
-py src/hrpilot.py run --task resume --occupation software_developer --count 4 --run-id resume_dev01 --limit 2 --execute
-py src/hrpilot.py run --task resume --occupation software_developer --count 4 --run-id resume_dev01 --limit 4 --execute
-```
-
-生成的文本在 `resumes/drafts/R01.txt` ...。第二次会跳过已成功的 R01/R02；`--limit` 指按固定清单取前 N 项，不是额外增加 N 项。
-
-可先审读草稿：
-
-```powershell
 py src/hrpilot.py run --task resume-review --occupation software_developer --run-id review_dev01
-py src/hrpilot.py run --task resume-review --occupation software_developer --run-id review_dev01 --limit 4 --execute
-```
-
-人工审核后将符合条件的草稿复制到 `resumes/approved/`。如不改变内容即可原样复制。**不要先按评分调节简历以诱导 3 分。**
-
-## 6. 生成并审核私人道德材料
-
-以公平/欺骗主题为例：
-
-```powershell
 py src/hrpilot.py run --task moral-generate --foundation fairness --count 2 --run-id moral_fairness01
-py src/hrpilot.py run --task moral-generate --foundation fairness --count 2 --run-id moral_fairness01 --execute
-```
-
-输出草稿存于 `materials/morality/drafts/FAIRNESS_001.json` 等；每个 JSON 有 `pair_id`、`foundation`、`neutral`、`negative`。人工检查、修订后复制到 `materials/morality/approved/`。后台的标签不发送给招聘评价模型。
-
-道德效价/基础分类/自然性等通用预检：
-
-```powershell
 py src/hrpilot.py run --task moral-check --run-id moralcheck01
-py src/hrpilot.py run --task moral-check --run-id moralcheck01 --limit 4 --execute
-```
-
-如已有批准 JD，可分职业判断背景行为是否直接提供该职位的专业能力证据：
-
-```powershell
-py src/hrpilot.py run --task moral-relevance --occupation software_developer --run-id relevance_dev01 --limit 4 --execute
-```
-
-两种预检均只发送行为原文，不发送它的 `neutral`/`negative`/道德基础标签。
-
-## 7. 简历 A 基线评分与 A/B/C
-
-基线评分需要通过审核的 `jd/approved.txt` 和 `resumes/approved/RXX.txt`：
-
-```powershell
+py src/hrpilot.py run --task moral-relevance --occupation software_developer --run-id relevance_dev01
 py src/hrpilot.py run --task baseline --occupation software_developer --run-id baseline_dev01 --repeat 2
-py src/hrpilot.py run --task baseline --occupation software_developer --run-id baseline_dev01 --repeat 2 --limit 4 --execute
+py src/hrpilot.py run --task abc --occupation software_developer --run-id abc_dev01
 ```
 
-先导结果合格、材料冻结后，正式 A/B/C：
+道德故事放在 `materials/morality/drafts/`，审核后放入 `approved/`；每个 JSON 含 pair_id、foundation、neutral、negative。招聘评价只收到行为正文，不收到内部中性/负面/道德基础标签。材料生成、材料审核、原则、基线、A/B/C 分别建批次；不得用筛选数据代替正式数据。
+
+## 6. 程序和测试
+
+```text
+src/hrpilot.py                     保留的命令入口
+src/hrpilot_core/cli.py            命令与批次计划
+src/hrpilot_core/experiments/      原则、招聘实验的任务构造
+src/hrpilot_core/material_tasks/   材料生成、审核
+src/hrpilot_core/api.py            独立API调用
+src/hrpilot_core/storage.py        逐次JSON、失败与续跑
+src/hrpilot_core/batch.py          固定本批输入及执行协议
+src/hrpilot_core/exports.py        批次CSV和各实验总表
+src/hrpilot_core/migration.py      旧数据转换与原文件保留
+src/hrpilot_core/onet.py           职业来源抓取
+src/hrpilot_core/validation.py     回答合法性检查
+```
+
+运行离线程序检查：
 
 ```powershell
-py src/hrpilot.py run --task abc --occupation software_developer --run-id abc_dev01 --repeat 1
-py src/hrpilot.py run --task abc --occupation software_developer --run-id abc_dev01 --limit 6 --execute
+py -m unittest discover -s tests -v
 ```
 
-默认每条命令最多允许 12 次真实请求，以防误操作造成大额账单。完成一部分后可以使用更大的 `--limit` 续跑。需要做更多任务请在明确预算和批次数量后修改 `config/settings.json` 的 `max_requests_per_command`，最好仍保持小批次执行。
+测试使用临时材料和模拟 API，验证新会话、条件、100次存档、续跑、失败重试、CSV、旧数据转换及来源文件保存，不访问外网、不产生模型费用。测试通过不等于材料合格或研究结论成立。
 
-> **重要**：如果同一 run-id 中曾经执行过任务，再修改 Prompt、参数、JD、简历、道德故事或程序，重新运行会因 SHA256 不一致而拒绝继续。应该新建一个 run-id。不要删除旧数据或覆盖旧记录。
-
-## 8. 导出数据与排查
-
-```powershell
-py src/hrpilot.py export
-```
-
-得到 `results/all_results.csv`（全部批次，供 Excel 查看），以及各批次目录下的 `<run-id>.csv`（仅该批次，一次独立调用尝试一行）。同批次分次续跑的记录仍汇入同一份批次表；同时保留各职业、各任务的独立原始记录。
-
-常见失败：
-- 提示“缺少必要文件”：相应材料尚未由研究者审核并放入 `approved`。
-- HTTP 401：API Key 无效；402：API 余额不足；429：达到速率限制。
-- 输出不是 JSON 或字段不合法：原始回复和失败状态均保存，不会视为有效数据。需单独检查 Prompt 或手动发起明确的重试，保留失败记录。
-- 访问 O*NET 失败：手工从官方网站整理资料，不让模型自行捏造来源。
-
-## 9. 官方依据与技术边界
-
-- DeepSeek API：https://api-docs.deepseek.com/api/create-chat-completion/
-- 思考模式：https://api-docs.deepseek.com/guides/thinking_mode/
-- JSON Output：https://api-docs.deepseek.com/guides/json_mode/
-- O*NET：https://www.onetonline.org/
-
-当前模型名示例：`deepseek-flash`；参数配置明确 `thinking=disabled`、评价任务 `temperature=0`。**即使温度为 0，也不能保证重复调用逐字一致**。DeepSeek 思考模式默认启用，思考模式中的 temperature 不生效，因此在请求中显式关闭思考模式。API 返回 `system_fingerprint` 时连同模型名、Prompt、时间、配置和原始响应一起保存。
-
-运行前请阅读 `docs/研究协议与限制.md` 和 `docs/数据字段.md`。实际调用会消耗 API 余额，项目打包时没有执行任何真实 DeepSeek 请求。
+研究边界见 `docs/研究协议与限制.md`；字段详见 `docs/数据字段.md`。

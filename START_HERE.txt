@@ -1,22 +1,12 @@
-DeepSeek HR Research Framework v1.0
+AI-HR：先阅读 README_开始使用.md
 
-【本包不包含旧版 JD/简历，不包含真实测量数据】
+1. 在项目目录安装依赖：py -m pip install -r requirements.txt
+2. 查看职业资料状态：py src/hrpilot.py status
+3. 预览100次原则实验（无费用）：
+   py src/hrpilot.py run --batch config/batches/principles_100.json
+4. 当前评价温度仍是0、thinking关闭、max_tokens=2200。先确定参数再执行。
+5. 设置DEEPSEEK_API_KEY后，命令加--execute才调用模型。100次可一次启动，每次独立新对话。
+6. 每次输入/输出分别JSON，批次results.csv；总表按具体实验分别合并。
+7. 离线测试：py -m unittest discover -s tests -v
 
-Windows PowerShell：
-1) py --version     （需要 Python 3.10 或更新版本）
-2) py -m pip install -r requirements.txt
-3) py src/hrpilot.py status
-4) 预览抽象原则调查（不联网，不含 JD）：
-   py src/hrpilot.py run --task principles --run-id principles_pilot01 --repeat 1
-5) 在 DeepSeek 开发者平台获取 API Key 后设置环境变量：
-   $env:DEEPSEEK_API_KEY = Read-Host "DeepSeek API Key"
-6) 实际进行 1 次收费 API 请求（四条件中先执行第一条）：
-   py src/hrpilot.py run --task principles --run-id principles_pilot01 --repeat 1 --limit 1 --execute
-7) 查看 results/_principles/principles/runs/principles_pilot01/
-
-职业资料第一步：
-  py src/hrpilot.py fetch-onet --occupation software_developer --execute
-然后检查并整理 onet/source_details.txt 到 onet/profile.txt，再填写 job_setup.json。
-
-详细说明见 README_开始使用.md；协议见 docs/研究协议与限制.md。
-所有模型执行默认为预览，只有写入 --execute 才收费。
+当前四职业仅已登记，没有保存O*NET抓取或批准材料；原则实验不需要这些材料。

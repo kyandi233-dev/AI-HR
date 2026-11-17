@@ -55,8 +55,6 @@ py src/hrpilot.py run --task moral-generate --foundation fairness --run-id moral
 
 预览显示的是填入变量后的完整提示词。程序仍保存实际请求内容和摘要，以便复核同批次输入。
 
-## 原版与回退
+## 当前程序组织
 
-本次整理前的 17 份提示词、程序、测试及相关说明保存在 `backups/prompts-before-merge-20261115-124023/`，`sha256.json` 记录备份内容摘要。旧提示词备份在其 `prompts/` 中，移出的原文件另存于 `original-files/`。
-
-如需回退，应将该备份中的程序、测试、说明和原 prompts 一并恢复，避免新旧路径混用。现有材料、结果和项目外的原 ZIP 未变动。
+提示词原文未在2026-11-17的程序拆分中修改。原则定义和条件在src/hrpilot_core/experiments/principles.py，招聘条件在同目录hiring.py，材料生成/审核在src/hrpilot_core/material_tasks/。完整请求逐次保存为input.json，响应为output.json。旧批次原始JSONL保留在legacy/。

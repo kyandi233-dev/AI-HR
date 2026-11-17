@@ -1,0 +1,35 @@
+{
+  "format_version": 2,
+  "task": "principles",
+  "run_id": "20261116_principles_pilot_02",
+  "stage": "pilot",
+  "historical_import": true,
+  "planned_requests": 4,
+  "original_file_sha256": {
+    "migration.json": "c1bcf6dd09000e2929f87b0bcdc1e0c5776d32d354be54def666a7028fe7beed",
+    "requests.jsonl": "796ae7e5581a5226190cd87f383000eaf85b1fde5265da0f2a56a3c66da9b13c",
+    "20261116_principles_pilot_02.csv": "e1923cc9b92ad066017a0ce0bf12f25cbdb3c0e57b91cb673cc484027fd03990",
+    "manifest.json": "14f8419df30b4bc1e5212443f20cfe29a8b26661552ab242d31a0099dd45424c",
+    "responses.jsonl": "f490e6ff88358431ed09d3d627ac1d72d3dae7794ebc71a4e14651b5f5f6c31a",
+    "records.jsonl": "49a058780c672a5682cf113417550e86cbec842c7ffe1dcfca9e1721265296a2",
+    "run_summary.json": "771eb43444b4cb2e291cb3160732edb2ed6ba37b1d47d6c9088da8d332fd1169"
+  },
+  "original_manifest": {
+    "task": "principles",
+    "occupation": null,
+    "run_id": "20261116_principles_pilot_02",
+    "settings": {
+      "model": "deepseek-flash",
+      "thinking": "disabled",
+      "temperature": 0.0,
+      "max_tokens": 2200
+    },
+    "requests": {
+      "M12_T01": "1f85f9958ad4ffadd364b20fa463748d1aa9ae376fe1453e33d1443bab54dcd6",
+      "M21_T01": "728639157b5cec9905e53c02a4f16e664427103b5ab9b733caf7ac74c3589749",
+      "A12_T01": "cbabc851f4ef1cec849c1a4368fd2a445467bf1b92465b631154244b0cb175fb",
+      "A21_T01": "b13377c0aae09e4192f5d51c03d86931519bc2f142a2ed78e2a762c133ccae4e"
+    },
+    "runner_sha256": "ac46f4ccf56c507399c780e2f8da8f57fd5c8b5f29066d7bc93e173d0c058fdb"
+  }
+}
