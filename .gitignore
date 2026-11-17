@@ -15,3 +15,9 @@ results/*/abc/*/
 backups/
 
 .venv/
+
+# Each stage keeps its own results. Preserve the existing tracked pilot archive.
+/material_preparation/results/*/
+/experiments/*/results/*/
+!/experiments/exp_1_principles/results/20261116_principles_pilot_02/
+!/experiments/exp_1_principles/results/20261116_principles_pilot_02/**

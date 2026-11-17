@@ -1,0 +1,9 @@
+{
+  "task": "moral-relevance",
+  "run_id": "relevance_example_pilot01",
+  "stage": "pilot",
+  "occupations": [
+    "software_developer"
+  ],
+  "materials_version": "pilot_materials_v1"
+}

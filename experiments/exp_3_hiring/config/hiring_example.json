@@ -1,0 +1,11 @@
+{
+  "task": "abc",
+  "run_id": "hiring_example_pilot01",
+  "stage": "pilot",
+  "repeat": 1,
+  "occupations": [
+    "software_developer",
+    "logistics_analyst"
+  ],
+  "materials_version": "pilot_materials_v1"
+}

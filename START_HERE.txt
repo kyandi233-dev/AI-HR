@@ -1,12 +1,14 @@
-AI-HR：先阅读 README_开始使用.md
+AI-HR
 
-1. 在项目目录安装依赖：py -m pip install -r requirements.txt
-2. 查看职业资料状态：py src/hrpilot.py status
-3. 预览100次原则实验（无费用）：
-   py src/hrpilot.py run --batch config/batches/principles_100.json
-4. 当前评价温度仍是0、thinking关闭、max_tokens=2200。先确定参数再执行。
-5. 设置DEEPSEEK_API_KEY后，命令加--execute才调用模型。100次可一次启动，每次独立新对话。
-6. 每次输入/输出分别JSON，批次results.csv；总表按具体实验分别合并。
-7. 离线测试：py -m unittest discover -s tests -v
-
-当前四职业仅已登记，没有保存O*NET抓取或批准材料；原则实验不需要这些材料。
+- 项目说明：README.md。
+- 实验1：experiments/exp_1_principles/README.md。
+- 材料准备：material_preparation/README.md。
+- 实验2：experiments/exp_2_material_evaluation/README.md。
+- 实验3：experiments/exp_3_hiring/README.md。
+- 密钥：编辑项目根目录.env中的DEEPSEEK_API_KEY，后续实验共用。
+- 温度：所有任务temperature=1，thinking=disabled。
+- max_tokens：生成3000、材料审核/实验2评价1600、实验1/实验3评价2200。
+- Pilot数量：总共100次，每条件25次。
+- 预览：.\.venv\Scripts\python.exe -B experiments/exp_1_principles/run.py --limit 1
+- 四并发执行：.\.venv\Scripts\python.exe -B experiments/exp_1_principles/run.py --concurrency 4 --execute
+- 离线测试：.\.venv\Scripts\python.exe -B -m unittest discover -s tests -v

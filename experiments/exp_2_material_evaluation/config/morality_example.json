@@ -1,0 +1,7 @@
+{
+  "task": "moral-check",
+  "run_id": "morality_example_pilot01",
+  "stage": "pilot",
+  "occupations": [],
+  "materials_version": "pilot_materials_v1"
+}
