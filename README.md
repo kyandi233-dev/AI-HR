@@ -4,8 +4,8 @@
 
 - **实验1：原则判断。** 位置：`experiments/exp_1_principles/`。
 - **材料准备：职业来源、JD、简历、私人行为故事的生成与审核。** 位置：`material_preparation/`。
-- **实验2：材料属性独立评价。** 位置：`experiments/exp_2_material_evaluation/`。已实现故事属性、岗位关联性评价；简历能力量表待设计。
-- **实验3：A/B/C招聘评价。** 位置：`experiments/exp_3_hiring/`。
+- **实验2：材料属性独立评价。** 位置：`experiments/exp_2_material_evaluation/`。评价故事属性与岗位关联性。
+- **实验3：A/B/C招聘评价。** 位置：`experiments/exp_3_hiring/`。三个条件共用同一份简历。
 - **公共工具：请求、存档、材料版本和导出。** 位置：`shared/`。
 - **实验文件：** 各阶段集中保存脚本、`prompts/`、`config/`、`results/`；实验2、3另有 `materials/`。
 

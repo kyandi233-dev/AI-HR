@@ -350,7 +350,6 @@ class PipelineTests(unittest.TestCase):
         import subprocess
         entries=['experiments/exp_1_principles/run.py','experiments/exp_2_material_evaluation/evaluate_morality.py',
                  'experiments/exp_2_material_evaluation/evaluate_relevance.py',
-                 'experiments/exp_2_material_evaluation/evaluate_resumes.py',
                  'experiments/exp_2_material_evaluation/snapshot_materials.py',
                  'experiments/exp_3_hiring/run.py','experiments/exp_3_hiring/snapshot_materials.py',
                  'material_preparation/fetch_occupations.py','material_preparation/generate_jd.py',
@@ -362,9 +361,6 @@ class PipelineTests(unittest.TestCase):
         with patch.object(sys,'argv',['run.py','--batch',str(self.root/'experiments/exp_3_hiring/config/hiring_example.json')]),patch.object(storage,'api_request') as call:
             self.assertEqual(cli.task_main('principles'),2)
             call.assert_not_called()
-        result=subprocess.run([sys.executable,'-B',str(ROOT/'experiments/exp_2_material_evaluation/evaluate_resumes.py')],
-                              cwd=self.root,capture_output=True)
-        self.assertEqual(result.returncode,2)
 
     def test_missing_sdk_stops_before_freezing_or_recording_a_batch(self):
         cmd=['run','--task','principles','--run-id','missing_sdk','--execute']
