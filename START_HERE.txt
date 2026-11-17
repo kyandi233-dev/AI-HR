@@ -1,14 +1,29 @@
-AI-HR
+AI-HR 招聘评价研究
 
-- 项目说明：README.md。
-- 实验1：experiments/exp_1_principles/README.md。
-- 材料准备：material_preparation/README.md。
-- 实验2：experiments/exp_2_material_evaluation/README.md。
-- 实验3：experiments/exp_3_hiring/README.md。
-- 密钥：编辑项目根目录.env中的DEEPSEEK_API_KEY，后续实验共用。
-- 温度：所有任务temperature=1，thinking=disabled。
-- max_tokens：生成3000、材料审核/实验2评价1600、实验1/实验3评价2200。
-- Pilot数量：总共100次，每条件25次。
-- 预览：.\.venv\Scripts\python.exe -B experiments/exp_1_principles/run.py --limit 1
-- 四并发执行：.\.venv\Scripts\python.exe -B experiments/exp_1_principles/run.py --concurrency 4 --execute
-- 离线测试：.\.venv\Scripts\python.exe -B -m unittest discover -s tests -v
+先读这三份：
+- README.md：项目各部分功能和配置。
+- docs/实验流程.md：从打开终端到上传结果的完整操作流程。
+- docs/研究协议与限制.md：研究设计与分析范围。
+
+当前可运行：
+- 实验1：experiments/exp_1_principles/
+- 实验2、3：需要先准备并固定材料，见各自 README。
+
+核心命令（在项目根目录执行，虚拟环境已激活时用 python）：
+- 预览（不调用 API、不花钱、不写文件）：
+  .\.venv\Scripts\python.exe experiments/exp_1_principles/run.py
+- 正式执行（调用 API、写结果、产生费用）：
+  .\.venv\Scripts\python.exe experiments/exp_1_principles/run.py --execute
+- 新批次换名：
+  .\.venv\Scripts\python.exe experiments/exp_1_principles/run.py --run-id <新批次名> --execute
+- 失败重试：
+  .\.venv\Scripts\python.exe experiments/exp_1_principles/run.py --execute --retry-failed
+- 离线测试：
+  .\.venv\Scripts\python.exe -B -m unittest discover -s tests -v
+
+注意：
+- 不加 --execute 只预览，不调用 API。
+- 同一 run_id 重复运行会跳过已完成项。
+- 提示词、材料或参数改动后必须换新 run_id。
+- 密钥保存在项目根目录 .env，只填一次。
+- 结果默认不进 Git；上传用 git add -f 批次目录。

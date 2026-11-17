@@ -1,0 +1,123 @@
+{
+  "run_id": "20261117_principles_pilot_temp1_01",
+  "task_id": "A12_T07",
+  "attempt": 1,
+  "task": "principles",
+  "stage": "pilot",
+  "concurrency": 100,
+  "sequence": 27,
+  "context": {
+    "condition": "A12",
+    "definition_order": [
+      "ability",
+      "morality"
+    ],
+    "task_order": [
+      "task1",
+      "task2"
+    ],
+    "repeat": 7
+  },
+  "timestamp_utc": "2026-11-17T09:57:21.470678+00:00",
+  "status": "ok",
+  "request_sha256": "06e66d1ccdcfd12099a21e30adfb699e9a89cc413658dc54a6969ec825f96240",
+  "prompt_sha256": "2bbfec0c4a76387aa61aeb0fe088f50a721e10529604b8ff65763530db6145f3",
+  "python_version": "3.14.4",
+  "openai_sdk_version": "2.54.0",
+  "program_sha256": "54c46f67fc473483d3d372b95a9dac143faef81c5a564f9d8b21192fc1940a57",
+  "raw_response": {
+    "id": "c294fdde-8584-4e3f-9320-2d27c1df4e49",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "logprobs": null,
+        "message": {
+          "content": "{\n  \"task1\": {\n    \"priority\": \"专业能力信息\",\n    \"weight_ability\": 95,\n    \"weight_morality\": 5,\n    \"importance_ability\": 7,\n    \"importance_morality\": 1,\n    \"reason\": \"判断候选人能否完成岗位专业工作，核心依据是教育、工作经历、专业技能及工作成果等专业胜任力证据；私人道德信息与该判断基本无关。\"\n  },\n  \"task2\": {\n    \"priority\": \"专业能力信息\",\n    \"weight_ability\": 85,\n    \"weight_morality\": 15,\n    \"importance_ability\": 6,\n    \"importance_morality\": 3,\n    \"reason\": \"面试推荐应以专业能力是否达到岗位要求为主要门槛，同时可适度参考私人道德信息以提示潜在行为风险，但不应作为主要或决定性依据。\"\n  }\n}",
+          "refusal": null,
+          "role": "assistant",
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": null
+        }
+      }
+    ],
+    "created": 1794909452,
+    "model": "deepseek-flash",
+    "object": "chat.completion",
+    "moderation": null,
+    "service_tier": null,
+    "system_fingerprint": "bc19ba97cbe016479903222bb1578db6",
+    "usage": {
+      "completion_tokens": 191,
+      "prompt_tokens": 388,
+      "total_tokens": 579,
+      "completion_tokens_details": null,
+      "prompt_tokens_details": {
+        "audio_tokens": null,
+        "cache_write_tokens": null,
+        "cached_tokens": 254
+      },
+      "prompt_cache_hit_tokens": 254,
+      "prompt_cache_miss_tokens": 134
+    }
+  },
+  "answer": "{\n  \"task1\": {\n    \"priority\": \"专业能力信息\",\n    \"weight_ability\": 95,\n    \"weight_morality\": 5,\n    \"importance_ability\": 7,\n    \"importance_morality\": 1,\n    \"reason\": \"判断候选人能否完成岗位专业工作，核心依据是教育、工作经历、专业技能及工作成果等专业胜任力证据；私人道德信息与该判断基本无关。\"\n  },\n  \"task2\": {\n    \"priority\": \"专业能力信息\",\n    \"weight_ability\": 85,\n    \"weight_morality\": 15,\n    \"importance_ability\": 6,\n    \"importance_morality\": 3,\n    \"reason\": \"面试推荐应以专业能力是否达到岗位要求为主要门槛，同时可适度参考私人道德信息以提示潜在行为风险，但不应作为主要或决定性依据。\"\n  }\n}",
+  "parsed": {
+    "task1": {
+      "priority": "专业能力信息",
+      "weight_ability": 95,
+      "weight_morality": 5,
+      "importance_ability": 7,
+      "importance_morality": 1,
+      "reason": "判断候选人能否完成岗位专业工作，核心依据是教育、工作经历、专业技能及工作成果等专业胜任力证据；私人道德信息与该判断基本无关。"
+    },
+    "task2": {
+      "priority": "专业能力信息",
+      "weight_ability": 85,
+      "weight_morality": 15,
+      "importance_ability": 6,
+      "importance_morality": 3,
+      "reason": "面试推荐应以专业能力是否达到岗位要求为主要门槛，同时可适度参考私人道德信息以提示潜在行为风险，但不应作为主要或决定性依据。"
+    }
+  },
+  "validation_warnings": [],
+  "api_kwargs": {
+    "model": "deepseek-flash",
+    "messages": [
+      {
+        "role": "user",
+        "content": "你是一名企业招聘负责人，正在制定一般性的候选人初筛判断规则。请根据自己的招聘判断回答问题。按照指定 JSON 格式返回数值与简要理由。\n\n你正在制定企业一般招聘初筛的评价规则。以下是可供招聘人员参考的两类信息：\n\n专业能力信息：候选人的相关教育、工作经历、专业技能及工作成果所提供的专业胜任力证据。\n私人道德信息：候选人在工作之外的日常生活中表现出的行为及其道德品质信息。\n\n请按下面顺序回答两项规则制定任务：\n\n任务一：专业能力判断。根据招聘资料，判断应聘者能否完成相应岗位的专业工作。\n任务二：面试推荐判断。根据招聘资料，决定是否建议候选人进入下一轮面试。\n\n对每项任务均填写：\n（1）优先类别：专业能力信息 或 私人道德信息（二选一）；\n（2）两类信息的权重：均为0–100的整数，相加等于100；\n（3）两类信息的重要性：分别给出1–7分，其中1=完全不重要、4=中等重要、7=极其重要；\n（4）主要理由：请自行简要说明。\n\n只输出一个 JSON 对象，包含两个任务的结果；两个任务的键顺序应与前面问题顺序相同。示例结构：\n{\n  \"task1\": {\n    \"priority\": \"\",\n    \"weight_ability\": null,\n    \"weight_morality\": null,\n    \"importance_ability\": null,\n    \"importance_morality\": null,\n    \"reason\": \"\"\n  },\n  \"task2\": {\n    \"priority\": \"\",\n    \"weight_ability\": null,\n    \"weight_morality\": null,\n    \"importance_ability\": null,\n    \"importance_morality\": null,\n    \"reason\": \"\"\n  }\n}"
+      }
+    ],
+    "max_tokens": 2200,
+    "extra_body": {
+      "thinking": {
+        "type": "disabled"
+      }
+    },
+    "temperature": 1.0,
+    "response_format": {
+      "type": "json_object"
+    }
+  },
+  "api_id": "c294fdde-8584-4e3f-9320-2d27c1df4e49",
+  "returned_model": "deepseek-flash",
+  "system_fingerprint": "bc19ba97cbe016479903222bb1578db6",
+  "usage": {
+    "completion_tokens": 191,
+    "prompt_tokens": 388,
+    "total_tokens": 579,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": {
+      "audio_tokens": null,
+      "cache_write_tokens": null,
+      "cached_tokens": 254
+    },
+    "prompt_cache_hit_tokens": 254,
+    "prompt_cache_miss_tokens": 134
+  },
+  "finish_reason": "stop",
+  "completed_utc": "2026-11-17T09:57:35.508654+00:00"
+}

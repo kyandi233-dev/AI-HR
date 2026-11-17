@@ -1,0 +1,55 @@
+{
+  "run_id": "20261117_principles_pilot_temp1_01",
+  "task_id": "A21_T03",
+  "attempt": 1,
+  "task": "principles",
+  "stage": "pilot",
+  "concurrency": 100,
+  "sequence": 12,
+  "context": {
+    "condition": "A21",
+    "definition_order": [
+      "ability",
+      "morality"
+    ],
+    "task_order": [
+      "task2",
+      "task1"
+    ],
+    "repeat": 3
+  },
+  "timestamp_utc": "2026-11-17T09:57:21.434059+00:00",
+  "request": {
+    "task": {
+      "task": "principles",
+      "task_id": "A21_T03",
+      "metadata": {
+        "condition": "A21",
+        "definition_order": [
+          "ability",
+          "morality"
+        ],
+        "task_order": [
+          "task2",
+          "task1"
+        ],
+        "repeat": 3
+      },
+      "messages": [
+        {
+          "role": "user",
+          "content": "你是一名企业招聘负责人，正在制定一般性的候选人初筛判断规则。请根据自己的招聘判断回答问题。按照指定 JSON 格式返回数值与简要理由。\n\n你正在制定企业一般招聘初筛的评价规则。以下是可供招聘人员参考的两类信息：\n\n专业能力信息：候选人的相关教育、工作经历、专业技能及工作成果所提供的专业胜任力证据。\n私人道德信息：候选人在工作之外的日常生活中表现出的行为及其道德品质信息。\n\n请按下面顺序回答两项规则制定任务：\n\n任务二：面试推荐判断。根据招聘资料，决定是否建议候选人进入下一轮面试。\n任务一：专业能力判断。根据招聘资料，判断应聘者能否完成相应岗位的专业工作。\n\n对每项任务均填写：\n（1）优先类别：专业能力信息 或 私人道德信息（二选一）；\n（2）两类信息的权重：均为0–100的整数，相加等于100；\n（3）两类信息的重要性：分别给出1–7分，其中1=完全不重要、4=中等重要、7=极其重要；\n（4）主要理由：请自行简要说明。\n\n只输出一个 JSON 对象，包含两个任务的结果；两个任务的键顺序应与前面问题顺序相同。示例结构：\n{\n  \"task2\": {\n    \"priority\": \"\",\n    \"weight_ability\": null,\n    \"weight_morality\": null,\n    \"importance_ability\": null,\n    \"importance_morality\": null,\n    \"reason\": \"\"\n  },\n  \"task1\": {\n    \"priority\": \"\",\n    \"weight_ability\": null,\n    \"weight_morality\": null,\n    \"importance_ability\": null,\n    \"importance_morality\": null,\n    \"reason\": \"\"\n  }\n}"
+        }
+      ],
+      "json_mode": true
+    },
+    "config": {
+      "model": "deepseek-flash",
+      "thinking": "disabled",
+      "temperature": 1.0,
+      "max_tokens": 2200
+    },
+    "api_base_url": "https://api.deepseek.com"
+  },
+  "request_sha256": "3e458bcdc73eb38ddbd1631fb54d5d822b2ab81d8ffdbceddf68258b2e883e7f"
+}
