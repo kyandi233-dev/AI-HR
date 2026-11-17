@@ -13,3 +13,5 @@ results/*/abc/*/
 *.secret
 
 backups/
+
+.venv/
