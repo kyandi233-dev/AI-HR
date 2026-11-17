@@ -48,8 +48,14 @@ def write_json(path, value, exclusive=False):
         if os.path.exists(name): os.unlink(name)
 
 
+def records_dir(base):
+    return base/'records'
+
+
 def input_files(base, task_id=None):
-    files=list(base.glob('*.input.json'))
+    records=records_dir(base)
+    files=list(records.glob('*.input.json')) if records.is_dir() else []
+    files+=list(base.glob('*.input.json'))
     if task_id is not None:
         # Other workers may still be writing their input files.
         pattern=re.compile(re.escape(task_id)+r'_a[0-9]+\.input\.json')
@@ -99,6 +105,7 @@ def record_task(task, settings, args):
         raise ValueError('task_id 只能包含字母、数字、下划线、短横线')
     if not pending(task,settings,args): return 'skip'
     base=path_for(task,args.run_id)
+    records=records_dir(base)
     files=input_files(base,task['task_id'])
     attempt=max((c.load_json(p)['attempt'] for p in files),default=0)+1
     stem=f"{task['task_id']}_a{attempt:02}"
@@ -110,14 +117,14 @@ def record_task(task, settings, args):
     input_data={**identity,'timestamp_utc':c.now(),'request':request,
                 'request_sha256':c.sha256(c.canonical(request))}
     # Exclusive creation prevents two processes from charging the same attempt.
-    write_json(base/(stem+'.input.json'),input_data,exclusive=True)
+    write_json(records/(stem+'.input.json'),input_data,exclusive=True)
     result={**identity,'timestamp_utc':input_data['timestamp_utc'],'status':'interrupted',
             'request_sha256':input_data['request_sha256'],
             'prompt_sha256':c.sha256(c.canonical(task['messages'])),
             'python_version':sys.version.split()[0],'openai_sdk_version':c.sdk_version(),
             'program_sha256':c.program_sha256(),'raw_response':None,'answer':None,'parsed':None,
             'validation_warnings':[]}
-    out=base/(stem+'.output.json')
+    out=records/(stem+'.output.json')
     write_json(out,result)
     try:
         response,kwargs=api_request(settings,task)

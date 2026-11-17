@@ -51,8 +51,8 @@
 - **条件和任务：** `run.py`。
 - **完整模板：** `prompts/principles.txt`。
 - **模型参数：** `config/settings.json`。
-- **批次结果：** `results/<run-id>/`。
-- **逐次记录：** 输入JSON、原始回答、解析结果、时间、模型和用量。
+- **批次根目录：** `results/<run-id>/`，含 `batch.json` 和 `results.csv`。
+- **逐次记录：** `results/<run-id>/records/`，每次尝试一对 `*.input.json` 和 `*.output.json`，包含原始回答、解析结果、时间、模型和用量。
 - **结果表：** 每次尝试一行，包含两道题的答案；100次全部成功时为100行。
 - **并发记录：** `sequence` 为计划编号，时间字段为实际运行时间。
 - **理由检查：** 空白理由计为校验失败，原始回答保留。

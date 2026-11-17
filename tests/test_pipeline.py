@@ -104,8 +104,12 @@ class PipelineTests(unittest.TestCase):
             self.assertEqual(cli.main(cmd),0)
             self.assertEqual(call.call_count,100)
         base=self.root/'experiments/exp_1_principles/results/test01'
-        self.assertEqual(len(list(base.glob('*.input.json'))),100)
-        self.assertEqual(len(list(base.glob('*.output.json'))),100)
+        records=base/'records'
+        self.assertTrue(records.is_dir())
+        self.assertEqual(len(list(records.glob('*.input.json'))),100)
+        self.assertEqual(len(list(records.glob('*.output.json'))),100)
+        self.assertFalse(list(base.glob('*.input.json')))
+        self.assertTrue((base/'batch.json').is_file())
         rows=self.csv(base/'results.csv')
         self.assertEqual(len(rows),100)
         self.assertEqual(rows[0]['task1_weight_ability'],'60')
@@ -130,7 +134,8 @@ class PipelineTests(unittest.TestCase):
         with patch.object(storage,'api_request',side_effect=RuntimeError('network failure')):
             self.assertEqual(storage.record_task(t,self.settings,self.args),'error')
         base=storage.path_for(t,'test01')
-        first=c.load_json(next(base.glob('*.input.json')))
+        records=storage.records_dir(base)
+        first=c.load_json(next(records.glob('*.input.json')))
         with patch.object(storage,'api_request') as call:
             self.assertEqual(storage.record_task(t,self.settings,self.args),'skip'); call.assert_not_called()
         self.args.retry_failed=True
@@ -138,10 +143,10 @@ class PipelineTests(unittest.TestCase):
             self.assertEqual(storage.record_task(t,self.settings,self.args),'ok')
             self.assertEqual(storage.record_task(t,self.settings,self.args),'skip')
             self.assertEqual(call.call_count,1)
-        self.assertEqual(len(list(base.glob('*.input.json'))),2)
-        self.assertEqual(c.load_json(next(base.glob('*_a01.input.json'))),first)
+        self.assertEqual(len(list(records.glob('*.input.json'))),2)
+        self.assertEqual(c.load_json(next(records.glob('*_a01.input.json'))),first)
         t2=self.make()[1]; self.args.retry_failed=False
-        storage.write_json(base/(t2['task_id']+'_a01.input.json'),{'task_id':t2['task_id'],'attempt':1,'request':storage.request_for(t2,self.settings)})
+        storage.write_json(records/(t2['task_id']+'_a01.input.json'),{'task_id':t2['task_id'],'attempt':1,'request':storage.request_for(t2,self.settings)})
         self.assertFalse(storage.pending(t2,self.settings,self.args))
         changed={**t,'messages':[{'role':'user','content':'changed'}]}
         with self.assertRaisesRegex(ValueError,'输入已变化'): storage.pending(changed,self.settings,self.args)
@@ -151,7 +156,7 @@ class PipelineTests(unittest.TestCase):
         for t,resp in zip(self.make()[:2],[self.response({'task1':{}}),self.response(finish='length')]):
             with patch.object(storage,'api_request',return_value=(resp,{})):
                 self.assertEqual(storage.record_task(t,self.settings,self.args),'error')
-            out=c.load_json(storage.path_for(t,'test01')/(t['task_id']+'_a01.output.json'))
+            out=c.load_json(storage.records_dir(storage.path_for(t,'test01'))/(t['task_id']+'_a01.output.json'))
             self.assertIsNotNone(out['raw_response']); self.assertIsNone(out['parsed'])
 
     def test_freeze_rejects_parameter_changes_but_not_export_provenance(self):
@@ -450,9 +455,10 @@ class PipelineTests(unittest.TestCase):
         self.assertEqual(state['calls'],100)
         self.assertEqual(state['maximum'],4)
         base=self.root/'experiments/exp_1_principles/results/parallel01'
-        inputs=list(base.glob('*.input.json'))
+        records=base/'records'
+        inputs=list(records.glob('*.input.json'))
         self.assertEqual(len(inputs),100)
-        self.assertEqual(len(list(base.glob('*.output.json'))),100)
+        self.assertEqual(len(list(records.glob('*.output.json'))),100)
         for path in inputs:
             inp=c.load_json(path)
             out=c.load_json(path.with_name(path.name.replace('.input.json','.output.json')))
@@ -470,8 +476,9 @@ class PipelineTests(unittest.TestCase):
     def test_pending_ignores_other_workers_partial_input_files(self):
         task=self.make()[0]
         base=storage.path_for(task,self.args.run_id)
-        base.mkdir(parents=True)
-        (base/'OTHER_a01.input.json').write_text('{',encoding='utf-8')
+        records=storage.records_dir(base)
+        records.mkdir(parents=True)
+        (records/'OTHER_a01.input.json').write_text('{',encoding='utf-8')
         self.assertTrue(storage.pending(task,self.settings,self.args))
 
     def test_blank_reason_is_error_and_question_order_is_recorded_as_warning(self):
@@ -483,7 +490,7 @@ class PipelineTests(unittest.TestCase):
         task=next(t for t in self.make() if list(t['metadata']['task_order'])==['task2','task1'])
         with patch.object(storage,'api_request',return_value=(self.response(),{})):
             self.assertEqual(storage.record_task(task,self.settings,self.args),'ok')
-        output=c.load_json(next(storage.path_for(task,self.args.run_id).glob('*.output.json')))
+        output=c.load_json(next(storage.records_dir(storage.path_for(task,self.args.run_id)).glob('*.output.json')))
         self.assertEqual(list(output['parsed']),['task1','task2'])
         self.assertEqual(output['validation_warnings'],['任务键顺序与提示要求不同'])
 
