@@ -1,46 +1,32 @@
-# 实验2 材料独立评价
+# 实验2：私人行为材料评价
 
-## 评价内容
+## 1. 研究任务
 
-- **故事属性：** `evaluate_morality.py`，评价道德效价、道德基础归属、可理解性、自然性。
-- **岗位关联性：** `evaluate_relevance.py`，评价故事提供的岗位专业能力证据。
-- **补充指标：** 严重程度、可信程度的题目与量表待确定。
+本实验在招聘评价前测量私人行为故事的内容属性及其与目标岗位专业能力的关联性。评价对象是**行为故事**，不对候选人简历进行独立能力评分。
 
-## 配置与材料
+| 任务 | 程序入口 | 指标 |
+|---|---|---|
+| 道德属性评价 | `evaluate_morality.py` | 道德效价、道德基础归属、可理解性、自然性 |
+| 岗位关联性评价 | `evaluate_relevance.py` | 行为正文是否直接提供岗位专业知识、技术、经验或成果的证据 |
 
-- **模型参数：** `config/settings.json`，temperature=1、thinking=disabled、max_tokens=1600。
-- **完整提示词：** `prompts/`。
-- **固定材料：** `materials/<版本>/`。
-- **来源记录：** 材料版本内的 `manifest.json`。
-- **评价记录：** `results/`。
-- **密钥：** 项目根目录 `.env`，各次运行共用。
+- **评价方式**：中性与负面故事分别进入独立请求；关联性任务额外提供目标职业的 JD。
+- **评分范围**：数值指标采用1–7分；道德基础归属可选择0–2个标签。
+- **待完善内容**：严重程度、可信程度的专门量表，材料筛选阈值及拒答识别。
+- **与材料准备的关系**：`moral-check` 与 `material_preparation/review_morality.py` 当前使用同样的测量提示词，分别保留用途和记录，不应解释为独立测量方法。
 
-## 固定材料
+## 2. 配置与材料
 
-- **复制计划预览：**
+| 项目 | 位置 |
+|---|---|
+| 道德属性提示词 | `prompts/moral_check.txt` |
+| 岗位关联性提示词 | `prompts/moral_relevance.txt` |
+| 示例计划 | `config/morality_example.json`、`config/relevance_example.json` |
+| 模型参数 | `config/settings.json` |
+| 材料快照入口 | `snapshot_materials.py` |
+| 固定材料 | `materials/<版本>/` |
+| 结果 | `results/morality/`、`results/relevance/<职业ID>/` |
 
-```powershell
-.\.venv\Scripts\python.exe -B experiments/exp_2_material_evaluation/snapshot_materials.py --version pilot_materials_v1 --occupations software_developer --include-morality
-```
-
-- **复制文件：** 在命令末尾添加 `--execute`。
-- **修改材料：** 建立新版本，并在运行计划中更新 `materials_version`。
-
-## 运行评价
-
-- **故事属性预览：**
-
-```powershell
-.\.venv\Scripts\python.exe -B experiments/exp_2_material_evaluation/evaluate_morality.py --batch experiments/exp_2_material_evaluation/config/morality_example.json
-```
-
-- **岗位关联性预览：**
-
-```powershell
-.\.venv\Scripts\python.exe -B experiments/exp_2_material_evaluation/evaluate_relevance.py --batch experiments/exp_2_material_evaluation/config/relevance_example.json
-```
-
-- **采集：** 命令末尾添加 `--execute`。
-- **并发：** 添加 `--concurrency 4` 同时处理最多4个请求。
-- **评价次数：** 当前两个任务对每份故事各测一次。
-- **数据用途：** 本目录保存实验2评价；材料准备目录保存生成与质量审核记录。
+- **材料前提**：道德属性评价需要已批准且固定的故事材料；岗位关联性评价还需要对应的 JD。
+- **版本管理**：按所需职业和故事创建材料快照，修改材料则建立新版本。
+- **执行与输出**：运行命令、批次参数及校验规则见[运行指南](../../docs/运行指南.md)和[数据与存档](../../docs/数据与存档.md)。
+- **研究用途**：测量含义与筛选中的限制见[研究设计](../../docs/研究设计.md)。

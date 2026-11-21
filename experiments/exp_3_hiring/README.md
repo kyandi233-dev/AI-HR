@@ -1,50 +1,44 @@
-# 实验3 招聘评价
+# 实验3：招聘评价
 
-## 条件
+## 1. 研究任务与条件
 
-- **A：** 岗位要求＋简历。
-- **B：** 同一岗位要求＋同一简历＋私人非道德信息。
-- **C：** 同一岗位要求＋同一简历＋私人道德信息。
-- **当前故事方向：** 中性行为与负面私人道德行为配对。
-- **主要比较：** C－B。
-- **辅助比较：** B－A、C－A。
-- **配对规则：** B/C共用标题和导语，替换同一故事配对的行为正文。
-- **A的使用：** 每份简历的A供各故事配对共享，分析保留简历和配对编号。
+研究专业简历证据不变时，私人行为信息对模型招聘评价的影响。
 
-## 配置与文件
+| 条件 | 输入 | 用途 |
+|---|---|---|
+| `A` | 岗位描述＋专业简历 | 无私人背景的招聘评价 |
+| `B` | A条件材料＋中性私人行为摘要 | 控制补充私人信息的影响 |
+| `C` | A条件材料＋负面私人道德行为摘要 | 检验相对于中性信息的额外影响 |
 
-- **入口：** `run.py`。
-- **完整A/B/C任务名：** `abc`。
-- **单独运行A的任务名：** `baseline`。
-- **参数：** `config/settings.json`，temperature=1、thinking=disabled、max_tokens=2200。
-- **提示词和评分标准：** `prompts/`。
-- **固定材料：** `materials/<版本>/`。
-- **A/B/C结果：** `results/abc/<职业ID>/<run-id>/`。
-- **单独A结果：** `results/a_only/<职业ID>/<run-id>/`。
-- **密钥：** 项目根目录 `.env`。
+- **主要比较**：`C－B`。
+- **辅助比较**：`B－A`、`C－A`。
+- **控制关系**：B/C共用对应简历、JD、背景调查导语和故事配对编号，仅替换行为正文。
+- **调用结构**：各条件独立调用；同一简历每个重复轮次只有一条 A 记录，供多个 B/C 故事配对作为共享基线。分析时不得将其重复计为独立观测。
 
-## 固定材料
+## 2. 测量
 
-- **从实验2选取已评价材料：**
+- **专业能力**：教育与岗位匹配、相关工作经历、专业技能、项目或代表性成果，各1–5分。
+- **招聘推荐**：总体岗位适任性（1–5）及面试推荐概率（0–100%）。
+- **评价理由**：开放式文字，作为模型自陈依据保存。
+- **解释范围**：本实验测量模型基于提供材料的评价行为；不将评分直接视为候选人真实工作能力。
 
-```powershell
-.\.venv\Scripts\python.exe -B experiments/exp_3_hiring/snapshot_materials.py --version pilot_materials_v1 --occupations software_developer --include-morality --from-experiment exp_2_material_evaluation --from-version pilot_materials_v1
-```
+## 3. 执行任务与材料
 
-- **从批准目录选取：** 省略 `--from-experiment` 和 `--from-version`。
-- **复制文件：** 命令末尾添加 `--execute`。
-- **材料选择记录：** 记录职业、简历、故事的纳入与排除依据。
+| 项目 | 位置或名称 |
+|---|---|
+| 执行入口 | `run.py` |
+| 仅 A 条件 | `--task baseline` |
+| 完整 A/B/C | `--task abc` |
+| 招聘评价提示词 | `prompts/hiring_rating.txt` |
+| 统一评分锚点 | `prompts/score_rubric.txt` |
+| 示例批次计划 | `config/hiring_example.json` |
+| 默认模型参数 | `config/settings.json` |
+| 固定材料入口 | `snapshot_materials.py` |
+| 固定材料版本 | `materials/<版本>/` |
+| 实验结果 | `results/a_only/<职业ID>/<run_id>/`、`results/abc/<职业ID>/<run_id>/` |
 
-## 运行
-
-- **预览：**
-
-```powershell
-.\.venv\Scripts\python.exe -B experiments/exp_3_hiring/run.py --batch experiments/exp_3_hiring/config/hiring_example.json
-```
-
-- **采集：** 命令末尾添加 `--execute`。
-- **并发：** 添加 `--concurrency 4`。
-- **职业选择：** 修改计划中的 `occupations`。
-- **单独运行A：** 使用 `--task baseline --occupation software_developer --materials-version pilot_materials_v1 --run-id hiring_a_pilot01`。
-- **分析标识：** 保留职业、简历、故事配对、重复、批次和材料版本编号。
+- **材料前提**：需要已固定的 JD、批准简历及（执行 `abc` 时）配对行为材料。
+- **基线预评估**：`baseline` 可以用于预实验阶段的简历能力评分；当前不自动确定简历纳入名单，筛选标准及结果需单独记录。
+- **正式数据独立性**：预筛阶段 A 数据不充当正式 A 观测。正式评价应使用新的批次标识独立采集 A/B/C。
+- **当前快照范围**：材料复制脚本纳入来源目录的全部 `R*.txt` 简历；按特定编号筛选尚需人工管理材料。
+- **操作与分析**：通用命令见[运行指南](../../docs/运行指南.md)，配对和测量定义见[研究设计](../../docs/研究设计.md)，输出字段见[数据与存档](../../docs/数据与存档.md)。
