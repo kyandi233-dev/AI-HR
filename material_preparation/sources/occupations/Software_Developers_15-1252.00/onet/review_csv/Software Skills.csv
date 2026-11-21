@@ -1,0 +1,68 @@
+﻿No.,Software category,Examples shown on initial page
+1,Access software,— Citrix cloud computing software; PuTTY
+2,Administration software,— Software distribution management software
+3,Analytical or scientific software,— IBM SPSS Statistics Hot Technology ; SAS Hot Technology ; TensorFlow Hot Technology ; The MathWorks MATLAB Hot Technology ;  6 more
+4,Application server software,— Atlassian Bitbucket Hot Technology ; GitLab Hot Technology ; Red Hat OpenShift Hot Technology ; Spring Boot  ;  7 more
+5,Authentication server software,— Single sign-on SSO
+6,Backup or archival software,— Backup and archival software; Veritas NetBackup
+7,Business intelligence and data analysis software,— Alteryx software Hot Technology ; Google Looker Analytics Hot Technology ; Microsoft Power BI Hot Technology ; Tableau Hot Technology ;  4 more
+8,Cloud-based data access and sharing software,— Dropbox; Google Drive; Platform as a service PaaS; Slack Hot Technology
+9,Cloud-based management software,— Amazon Web Services AWS CloudFormation Hot Technology ; IBM WebSphere MQ Hot Technology ; Oracle Cloud software Hot Technology ; Splunk Enterprise Hot Technology ;  2 more
+10,Clustering software,— VMware
+11,Communications server software,— IBM Domino
+12,Computer based training software,— Moodle
+13,Configuration management software,— Chef Hot Technology ; IBM Terraform  ; Perforce Helix software; Puppet Hot Technology ;  6 more
+14,Content workflow software,— Atlassian JIRA  ; Emerald Software Group Emerald Green Office
+15,Customer relationship management CRM software,— Blackbaud The Raiser's Edge; Oracle Eloqua; Salesforce software Hot Technology
+16,Data base management system software,— Amazon DynamoDB Hot Technology ; Oracle Database Hot Technology ; Oracle PL/SQL Hot Technology ; Redis Hot Technology ;  21 more
+17,Data base reporting software,— Microsoft SQL Server Reporting Services SSRS Hot Technology ; Oracle Business Intelligence Discoverer; SAP Business Intelligence; SAP Crystal Reports;  3 more
+18,Data base user interface and query software,— Airtable; Blackboard software; GraphQL Hot Technology ; Prometheus Hot Technology ;  16 more
+19,Data mining software,— Google Analytics Hot Technology ; Snowflake Hot Technology
+20,Desktop communications software,— Skype
+21,Desktop publishing software,— Adobe InDesign Hot Technology ; Microsoft Publisher
+22,Development environment software,— Apache Kafka  ; Apache Maven Hot Technology ; Oracle Java 2 Platform Enterprise Edition J2EE Hot Technology ; Oracle SQL Developer Hot Technology ;  62 more
+23,Device drivers or system software,— Microsoft DirectX
+24,Document management software,— Adobe Acrobat Hot Technology ; Document management system software; Microsoft SharePoint Hot Technology
+25,Electronic mail software,— Google Gmail; IBM Notes; Microsoft Exchange; Microsoft Outlook Hot Technology
+26,Enterprise application integration software,— Jenkins CI  ; Microsoft Power Automate Hot Technology ; Microsoft Power Platform software Hot Technology ; Microsoft SQL Server Integration Services SSIS Hot Technology ;  7 more
+27,Enterprise resource planning ERP software,— Oracle PeopleSoft Hot Technology ; SAP ERP Hot Technology ; SAP software Hot Technology ; Workday software Hot Technology ;  9 more
+28,Enterprise system management software,— IBM Power Systems software
+29,Expert system software,— Ansible software Hot Technology
+30,File versioning software,— Apache Subversion SVN Hot Technology ; Git  ; Version control software
+31,Filesystem software,— File server software
+32,Financial analysis software,— Delphi Technology; Oracle E-Business Suite Financials
+33,Graphical user interface development software,— Figma Hot Technology ; Grafana Labs Grafana Cloud Hot Technology ; Graphical user interface GUI builder software; Salesforce Visualforce;  1 more
+34,Graphics or photo imaging software,— Adobe Creative Cloud software Hot Technology ; Adobe Illustrator Hot Technology ; JamBoard; Trimble SketchUp Pro Hot Technology ;  4 more
+35,Information retrieval or search software,— Apache Avro; LexisNexis
+36,Instant messaging software,— Blink; GroupMe
+37,Internet directory services software,— Microsoft Active Directory Hot Technology
+38,Internet protocol IP multimedia subsystem software,— Voice over internet protocol VoIP system software
+39,Map creation software,— ESRI ArcGIS software Hot Technology
+40,Metadata management software,— Informatica software Hot Technology ; Quest Erwin Data Modeler; Talend Data Fabric
+41,Network conferencing software,— LogMeIn GoToWebinar
+42,Network monitoring software,— Nagios; Wireshark
+43,Network operation system software,— IBM z/OS operating systems
+44,Network security and virtual private network VPN equipment software,— Firewall software; Virtual private networking VPN software
+45,Object or component oriented development software,— Apache Spark Hot Technology ; jQuery Hot Technology ; Scala Hot Technology ; TypeScript  ;  34 more
+46,Object oriented data base management software,— Hibernate ORM Hot Technology ; PostgreSQL
+47,Office suite software,— LibreOffice; Microsoft Office software Hot Technology
+48,Operating system software,— Apple iOS Hot Technology ; Google Android Hot Technology ; Microsoft Windows Server Hot Technology ; UNIX Shell Hot Technology ;  21 more
+49,Platform interconnectivity software,— Migration software
+50,Portal server software,— Apache HTTP Server
+51,Presentation software,— Google Slides; Microsoft PowerPoint Hot Technology
+52,Procedure management software,— Apache Airflow Hot Technology
+53,Process mapping and design software,— Microsoft Visio Hot Technology
+54,Program testing software,— Hewlett Packard LoadRunner; JUnit Hot Technology ; Selenium Hot Technology ; SonarQube;  21 more
+55,Project management software,— Atlassian Confluence Hot Technology ; Microsoft Team Foundation Server Hot Technology ; Microsoft Teams Hot Technology ; Oracle Primavera Enterprise Project Portfolio Management Hot Technology ;  1 more
+56,Requirements analysis and system architecture software,— IBM Rational RequisitePro; Requirements management software; Unified modeling language UML
+57,Sales and marketing software,— Marketo Marketing Automation Hot Technology
+58,Spreadsheet software,— Google Sheets Hot Technology ; Microsoft Excel Hot Technology
+59,Storage networking software,— Amazon Simple Storage Service S3; Storage area network SAN software
+60,Switch or router software,— Border Gateway Protocol BGP Hot Technology
+61,Transaction security and virus protection software,— Encryption software; McAfee; NortonLifeLock cybersecurity software
+62,Transaction server software,— Customer information control system CICS; IBM Middleware; Microsoft Internet Information Services (IIS); Object Management Group Object Request Broker;  1 more
+63,Video conferencing software,— Cisco Webex Hot Technology ; Google Meet; LogMeIn GoToMeeting; Zoom Hot Technology ;  1 more
+64,Video creation and editing software,— Adobe After Effects Hot Technology ; Flipgrid; Screencastify; YouTube;  1 more
+65,Web page creation and editing software,— Adobe Dreamweaver; Google Sites; Social media sites; WordPress Hot Technology ;  1 more
+66,Web platform development software,— Bootstrap Hot Technology ; React  ; Spring Framework  ; Vue.js Hot Technology ;  31 more
+67,Word processing software,— 3M Post-it App; Google Docs Hot Technology ; Microsoft OneNote; Microsoft Word Hot Technology ;  1 more

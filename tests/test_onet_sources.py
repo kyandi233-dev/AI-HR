@@ -127,6 +127,40 @@ class SourceTests(unittest.TestCase):
         finally:
             book.close()
 
+    def test_readable_layout_separates_native_modules_and_keeps_descriptions(self):
+        from material_preparation.occupation_review_layout import occupation_workbook
+        raw = HTML.replace('</main>', '''<div class="reportsection" id="WorkStyles"><h2>Work Styles</h2>
+        <table><thead><tr><th>Impact</th><th>Work Style</th></tr></thead><tbody>
+        <tr><td data-text="89">89</td><td data-text="Attention to Detail"><div class="order-2 flex-grow-1"><b>Attention to Detail</b> — Original full description.</div></td></tr>
+        </tbody></table></div></main>''')
+        data = parse_html(raw, 'https://example.test')
+        data['source'] = {'url':'https://example.test'}
+        book, specs = occupation_workbook(self.info,data,raw)
+        self.assertIn('Tasks',book.sheetnames)
+        self.assertIn('Work Styles',book.sheetnames)
+        self.assertNotIn('条目明细',book.sheetnames)
+        self.assertNotIn('原文段落',book.sheetnames)
+        self.assertEqual(specs['Tasks']['rows'][0], [1,'77','Core','Original one.'])
+        self.assertEqual(specs['Work Styles']['rows'][0][-1], '— Original full description.')
+        self.assertEqual(specs['New official section']['rows'][0][-1], 'Keep this exact sentence.')
+        self.assertIn('62 more',specs['Software Skills']['rows'][0][-1])
+        book.close()
+
+    def test_compact_summary_preserves_manual_entries_and_places_them_near_identity(self):
+        from material_preparation.occupation_review_layout import summary_rows,summary_workbook,HEADERS
+        self.fetch()
+        parse_occupation('example',self.info)
+        previous = {'15-1252.00':{'JD':'通过','审核备注':'Keep note','custom':'Keep custom'}}
+        rows, states = summary_rows(self.registry,previous,['custom'])
+        self.assertEqual(rows[0][HEADERS.index('JD')],'通过')
+        self.assertEqual(rows[0][HEADERS.index('审核备注')],'Keep note')
+        self.assertEqual(rows[0][-1],'Keep custom')
+        self.assertLess(HEADERS.index('JD'),10)
+        book = summary_workbook(rows,['custom'])
+        self.assertEqual(book.sheetnames,['职业汇总'])
+        self.assertEqual(book['职业汇总'].max_row,2)
+        book.close()
+
 
 if __name__ == '__main__':
     unittest.main()

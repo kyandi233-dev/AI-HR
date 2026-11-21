@@ -1,0 +1,12 @@
+﻿No.,Importance,Category,Task
+1,85,Core,"Develop plans to safeguard computer files against accidental or unauthorized modification, destruction, or disclosure and to meet emergency data processing needs."
+2,81,Core,Monitor current reports of computer viruses to determine when to update virus protection systems.
+3,80,Core,Encrypt data transmissions and erect firewalls to conceal confidential information as it is being transmitted and to keep out tainted digital transfers.
+4,78,Core,Perform risk assessments and execute tests of data processing system to ensure functioning of data processing activities and security measures.
+5,78,Core,"Modify computer security files to incorporate new software, correct errors, or change individual access status."
+6,76,Core,Review violations of computer security procedures and discuss procedures with violators to ensure violations are not repeated.
+7,74,Core,"Document computer security and emergency measures policies, procedures, and tests."
+8,74,Core,"Confer with users to discuss issues such as computer data access needs, security violations, and programming changes."
+9,72,Core,Monitor use of data files and regulate access to safeguard information in computer files.
+10,72,Core,Coordinate implementation of computer system plan with establishment personnel and outside vendors.
+11,70,Core,Train users and promote security awareness to ensure system security and to improve server and network efficiency.

@@ -1,0 +1,71 @@
+﻿大类编码,Job Family,Occupation,O*NET Code,职业资料文件,是否选用,人工分类,JD,简历1,简历2,审核备注,审核人,审核日期,资料状态,来源网址
+11,Management,Marketing Managers,11-2021.00,打开职业资料,,,,,,,,,已整理,https://www.onetonline.org/link/details/11-2021.00
+11,Management,Purchasing Managers,11-3061.00,打开职业资料,,,,,,,,,已整理,https://www.onetonline.org/link/details/11-3061.00
+11,Management,Human Resources Managers,11-3121.00,打开职业资料,,,,,,,,,已整理,https://www.onetonline.org/link/details/11-3121.00
+13,Business and Financial Operations,Human Resources Specialists,13-1071.00,打开职业资料,,,,,,,,,已整理,https://www.onetonline.org/link/details/13-1071.00
+13,Business and Financial Operations,Logistics Analysts,13-1081.02,打开职业资料,,,,,,,,,已整理,https://www.onetonline.org/link/details/13-1081.02
+13,Business and Financial Operations,Accountants and Auditors,13-2011.00,打开职业资料,,,,,,,,,已整理,https://www.onetonline.org/link/details/13-2011.00
+15,Computer and Mathematical,Information Security Analysts,15-1212.00,打开职业资料,,,,,,,,,已整理,https://www.onetonline.org/link/details/15-1212.00
+15,Computer and Mathematical,Software Developers,15-1252.00,打开职业资料,,,,,,,,,已整理,https://www.onetonline.org/link/details/15-1252.00
+15,Computer and Mathematical,Data Scientists,15-2051.00,打开职业资料,,,,,,,,,已整理,https://www.onetonline.org/link/details/15-2051.00
+15,Computer and Mathematical,Business Intelligence Analysts,15-2051.01,打开职业资料,,,,,,,,,已整理,https://www.onetonline.org/link/details/15-2051.01
+17,Architecture and Engineering,Civil Engineers,17-2051.00,打开职业资料,,,,,,,,,已整理,https://www.onetonline.org/link/details/17-2051.00
+17,Architecture and Engineering,Electrical Engineers,17-2071.00,打开职业资料,,,,,,,,,已整理,https://www.onetonline.org/link/details/17-2071.00
+17,Architecture and Engineering,Mechanical Engineers,17-2141.00,打开职业资料,,,,,,,,,已整理,https://www.onetonline.org/link/details/17-2141.00
+19,"Life, Physical, and Social Science",Chemists,19-2031.00,打开职业资料,,,,,,,,,已整理,https://www.onetonline.org/link/details/19-2031.00
+19,"Life, Physical, and Social Science","Environmental Scientists and Specialists, Including Health",19-2041.00,打开职业资料,,,,,,,,,已整理,https://www.onetonline.org/link/details/19-2041.00
+19,"Life, Physical, and Social Science",Industrial-Organizational Psychologists,19-3032.00,打开职业资料,,,,,,,,,已整理,https://www.onetonline.org/link/details/19-3032.00
+21,Community and Social Service,Mental Health Counselors,21-1014.00,打开职业资料,,,,,,,,,已整理,https://www.onetonline.org/link/details/21-1014.00
+21,Community and Social Service,"Child, Family, and School Social Workers",21-1021.00,打开职业资料,,,,,,,,,已整理,https://www.onetonline.org/link/details/21-1021.00
+21,Community and Social Service,Community Health Workers,21-1094.00,打开职业资料,,,,,,,,,已整理,https://www.onetonline.org/link/details/21-1094.00
+23,Legal,Lawyers,23-1011.00,打开职业资料,,,,,,,,,已整理,https://www.onetonline.org/link/details/23-1011.00
+23,Legal,Judicial Law Clerks,23-1012.00,打开职业资料,,,,,,,,,已整理,https://www.onetonline.org/link/details/23-1012.00
+23,Legal,Paralegals and Legal Assistants,23-2011.00,打开职业资料,,,,,,,,,已整理,https://www.onetonline.org/link/details/23-2011.00
+25,Educational Instruction and Library,"Elementary School Teachers, Except Special Education",25-2021.00,打开职业资料,,,,,,,,,已整理,https://www.onetonline.org/link/details/25-2021.00
+25,Educational Instruction and Library,"Secondary School Teachers, Except Special and Career/Technical Education",25-2031.00,打开职业资料,,,,,,,,,已整理,https://www.onetonline.org/link/details/25-2031.00
+25,Educational Instruction and Library,Librarians and Media Collections Specialists,25-4022.00,打开职业资料,,,,,,,,,已整理,https://www.onetonline.org/link/details/25-4022.00
+27,"Arts, Design, Entertainment, Sports, and Media",Graphic Designers,27-1024.00,打开职业资料,,,,,,,,,已整理,https://www.onetonline.org/link/details/27-1024.00
+27,"Arts, Design, Entertainment, Sports, and Media",Editors,27-3041.00,打开职业资料,,,,,,,,,已整理,https://www.onetonline.org/link/details/27-3041.00
+27,"Arts, Design, Entertainment, Sports, and Media",Technical Writers,27-3042.00,打开职业资料,,,,,,,,,已整理,https://www.onetonline.org/link/details/27-3042.00
+29,Healthcare Practitioners and Technical,Pharmacists,29-1051.00,打开职业资料,,,,,,,,,已整理,https://www.onetonline.org/link/details/29-1051.00
+29,Healthcare Practitioners and Technical,Physical Therapists,29-1123.00,打开职业资料,,,,,,,,,已整理,https://www.onetonline.org/link/details/29-1123.00
+29,Healthcare Practitioners and Technical,Registered Nurses,29-1141.00,打开职业资料,,,,,,,,,已整理,https://www.onetonline.org/link/details/29-1141.00
+31,Healthcare Support,Nursing Assistants,31-1131.00,打开职业资料,,,,,,,,,已整理,https://www.onetonline.org/link/details/31-1131.00
+31,Healthcare Support,Physical Therapist Assistants,31-2021.00,打开职业资料,,,,,,,,,已整理,https://www.onetonline.org/link/details/31-2021.00
+31,Healthcare Support,Medical Assistants,31-9092.00,打开职业资料,,,,,,,,,已整理,https://www.onetonline.org/link/details/31-9092.00
+33,Protective Service,Firefighters,33-2011.00,打开职业资料,,,,,,,,,已整理,https://www.onetonline.org/link/details/33-2011.00
+33,Protective Service,Police and Sheriff's Patrol Officers,33-3051.00,打开职业资料,,,,,,,,,已整理,https://www.onetonline.org/link/details/33-3051.00
+33,Protective Service,Security Guards,33-9032.00,打开职业资料,,,,,,,,,已整理,https://www.onetonline.org/link/details/33-9032.00
+35,Food Preparation and Serving Related,Chefs and Head Cooks,35-1011.00,打开职业资料,,,,,,,,,已整理,https://www.onetonline.org/link/details/35-1011.00
+35,Food Preparation and Serving Related,"Cooks, Restaurant",35-2014.00,打开职业资料,,,,,,,,,已整理,https://www.onetonline.org/link/details/35-2014.00
+35,Food Preparation and Serving Related,Waiters and Waitresses,35-3031.00,打开职业资料,,,,,,,,,已整理,https://www.onetonline.org/link/details/35-3031.00
+37,Building and Grounds Cleaning and Maintenance,"Janitors and Cleaners, Except Maids and Housekeeping Cleaners",37-2011.00,打开职业资料,,,,,,,,,已整理,https://www.onetonline.org/link/details/37-2011.00
+37,Building and Grounds Cleaning and Maintenance,Pest Control Workers,37-2021.00,打开职业资料,,,,,,,,,已整理,https://www.onetonline.org/link/details/37-2021.00
+37,Building and Grounds Cleaning and Maintenance,Landscaping and Groundskeeping Workers,37-3011.00,打开职业资料,,,,,,,,,已整理,https://www.onetonline.org/link/details/37-3011.00
+39,Personal Care and Service,Animal Trainers,39-2011.00,打开职业资料,,,,,,,,,已整理,https://www.onetonline.org/link/details/39-2011.00
+39,Personal Care and Service,"Hairdressers, Hairstylists, and Cosmetologists",39-5012.00,打开职业资料,,,,,,,,,已整理,https://www.onetonline.org/link/details/39-5012.00
+39,Personal Care and Service,Childcare Workers,39-9011.00,打开职业资料,,,,,,,,,已整理,https://www.onetonline.org/link/details/39-9011.00
+41,Sales and Related,Retail Salespersons,41-2031.00,打开职业资料,,,,,,,,,已整理,https://www.onetonline.org/link/details/41-2031.00
+41,Sales and Related,Insurance Sales Agents,41-3021.00,打开职业资料,,,,,,,,,已整理,https://www.onetonline.org/link/details/41-3021.00
+41,Sales and Related,Real Estate Sales Agents,41-9022.00,打开职业资料,,,,,,,,,已整理,https://www.onetonline.org/link/details/41-9022.00
+43,Office and Administrative Support,Billing and Posting Clerks,43-3021.00,打开职业资料,,,,,,,,,已整理,https://www.onetonline.org/link/details/43-3021.00
+43,Office and Administrative Support,Customer Service Representatives,43-4051.00,打开职业资料,,,,,,,,,已整理,https://www.onetonline.org/link/details/43-4051.00
+43,Office and Administrative Support,Receptionists and Information Clerks,43-4171.00,打开职业资料,,,,,,,,,已整理,https://www.onetonline.org/link/details/43-4171.00
+45,"Farming, Fishing, and Forestry",Agricultural Equipment Operators,45-2091.00,打开职业资料,,,,,,,,,已整理,https://www.onetonline.org/link/details/45-2091.00
+45,"Farming, Fishing, and Forestry","Farmworkers and Laborers, Crop, Nursery, and Greenhouse",45-2092.00,打开职业资料,,,,,,,,,已整理,https://www.onetonline.org/link/details/45-2092.00
+45,"Farming, Fishing, and Forestry",Forest and Conservation Workers,45-4011.00,打开职业资料,,,,,,,,,已整理,https://www.onetonline.org/link/details/45-4011.00
+47,Construction and Extraction,Carpenters,47-2031.00,打开职业资料,,,,,,,,,已整理,https://www.onetonline.org/link/details/47-2031.00
+47,Construction and Extraction,Electricians,47-2111.00,打开职业资料,,,,,,,,,已整理,https://www.onetonline.org/link/details/47-2111.00
+47,Construction and Extraction,"Plumbers, Pipefitters, and Steamfitters",47-2152.00,打开职业资料,,,,,,,,,已整理,https://www.onetonline.org/link/details/47-2152.00
+49,"Installation, Maintenance, and Repair",Automotive Service Technicians and Mechanics,49-3023.00,打开职业资料,,,,,,,,,已整理,https://www.onetonline.org/link/details/49-3023.00
+49,"Installation, Maintenance, and Repair","Heating, Air Conditioning, and Refrigeration Mechanics and Installers",49-9021.00,打开职业资料,,,,,,,,,已整理,https://www.onetonline.org/link/details/49-9021.00
+49,"Installation, Maintenance, and Repair",Industrial Machinery Mechanics,49-9041.00,打开职业资料,,,,,,,,,已整理,https://www.onetonline.org/link/details/49-9041.00
+51,Production,Bakers,51-3011.00,打开职业资料,,,,,,,,,已整理,https://www.onetonline.org/link/details/51-3011.00
+51,Production,Machinists,51-4041.00,打开职业资料,,,,,,,,,已整理,https://www.onetonline.org/link/details/51-4041.00
+51,Production,"Welders, Cutters, Solderers, and Brazers",51-4121.00,打开职业资料,,,,,,,,,已整理,https://www.onetonline.org/link/details/51-4121.00
+53,Transportation and Material Moving,"Airline Pilots, Copilots, and Flight Engineers",53-2011.00,打开职业资料,,,,,,,,,已整理,https://www.onetonline.org/link/details/53-2011.00
+53,Transportation and Material Moving,Heavy and Tractor-Trailer Truck Drivers,53-3032.00,打开职业资料,,,,,,,,,已整理,https://www.onetonline.org/link/details/53-3032.00
+53,Transportation and Material Moving,Industrial Truck and Tractor Operators,53-7051.00,打开职业资料,,,,,,,,,已整理,https://www.onetonline.org/link/details/53-7051.00
+55,Military Specific,Air Crew Members,55-3011.00,打开职业资料,,,,,,,,,资料有限（军职）,https://www.onetonline.org/link/details/55-3011.00
+55,Military Specific,Command and Control Center Specialists,55-3015.00,打开职业资料,,,,,,,,,资料有限（军职）,https://www.onetonline.org/link/details/55-3015.00
+55,Military Specific,Infantry,55-3016.00,打开职业资料,,,,,,,,,资料有限（军职）,https://www.onetonline.org/link/details/55-3016.00

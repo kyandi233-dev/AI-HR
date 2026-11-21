@@ -1,0 +1,18 @@
+﻿No.,Importance,Category,Task
+1,81,Core,"Direct engineering activities, ensuring compliance with environmental, safety, or other governmental regulations."
+2,75,Core,"Manage and direct the construction, operations, or maintenance activities at project site."
+3,75,Core,Inspect project sites to monitor progress and ensure conformance to design specifications and safety or sanitation standards.
+4,73,Core,"Compute load and grade requirements, water flow rates, or material stress factors to determine design specifications."
+5,72,Core,"Plan and design transportation or hydraulic systems or structures, using computer-assisted design or drawing tools."
+6,68,Core,"Provide technical advice to industrial or managerial personnel regarding design, construction, program modifications, or structural repairs."
+7,67,Core,"Analyze survey reports, maps, drawings, blueprints, aerial photography, or other topographical or geologic data."
+8,67,Core,"Direct or participate in surveying to lay out installations or establish reference points, grades, or elevations to guide construction."
+9,64,Core,"Estimate quantities and cost of materials, equipment, or labor to determine project feasibility."
+10,63,Core,"Prepare or present public reports on topics such as bid proposals, deeds, environmental impact statements, or property and right-of-way descriptions."
+11,50,Core,Design energy-efficient or environmentally sound civil structures.
+12,80,Supplemental,"Test soils or materials to determine the adequacy and strength of foundations, concrete, asphalt, or steel."
+13,64,Supplemental,Identify environmental risks and develop risk management strategies for civil engineering projects.
+14,52,Supplemental,Conduct studies of traffic patterns or environmental conditions to identify engineering problems and assess potential project impact.
+15,47,Supplemental,Develop or implement engineering solutions to clean up industrial accidents or other contaminated sites.
+16,39,Supplemental,"Design or engineer systems to efficiently dispose of chemical, biological, or other toxic wastes."
+17,-2,New,"Use drone technology for site surveying, inspection, and monitoring of infrastructure projects."

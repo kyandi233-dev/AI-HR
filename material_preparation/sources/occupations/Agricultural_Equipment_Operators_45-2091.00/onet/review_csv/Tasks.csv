@@ -1,0 +1,19 @@
+﻿No.,Importance,Category,Task
+1,88,Core,"Load and unload crops or containers of materials, manually or using conveyors, handtrucks, forklifts, or transfer augers."
+2,86,Core,"Mix specified materials or chemicals, and dump solutions, powders, or seeds into planter or sprayer machinery."
+3,83,Core,"Spray fertilizer or pesticide solutions to control insects, fungus and weed growth, and diseases, using hand sprayers."
+4,83,Core,Observe and listen to machinery operation to detect equipment malfunctions.
+5,82,Core,"Manipulate controls to set, activate, and adjust mechanisms on machinery."
+6,79,Core,"Operate or tend equipment used in agricultural production, such as tractors, combines, and irrigation equipment."
+7,76,Core,"Adjust, repair, and service farm machinery and notify supervisors when machinery malfunctions."
+8,73,Core,"Attach farm implements such as plows, discs, sprayers, or harvesters to tractors, using bolts and hand tools."
+9,81,Supplemental,"Load hoppers, containers, or conveyors to feed machines with products, using forklifts, transfer augers, suction gates, shovels, or pitchforks."
+10,80,Supplemental,"Direct and monitor the activities of work crews engaged in planting, weeding, or harvesting activities."
+11,79,Supplemental,"Operate towed machines such as seed drills or manure spreaders to plant, fertilize, dust, and spray crops."
+12,76,Supplemental,"Weigh crop-filled containers, and record weights and other identifying information."
+13,76,Supplemental,Walk beside or ride on planting machines while inserting plants in planter mechanisms at specified intervals.
+14,76,Supplemental,"Drive trucks to haul crops, supplies, tools, or farm workers."
+15,75,Supplemental,"Guide products on conveyors to regulate flow through machines, and to discard diseased or rotten products."
+16,74,Supplemental,"Position boxes or attach bags at discharge ends of machinery to catch products, removing and closing full containers."
+17,74,Supplemental,"Irrigate soil, using portable pipes or ditch systems, and maintain ditches or pipes and pumps."
+18,-2,New,"Operate drones to monitor crop health, growth and pest infestations, and apply targeted treatments."

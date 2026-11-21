@@ -269,58 +269,8 @@ def save_workbook(path, book):
 
 
 def main(argv=None):
-    parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('--output', type=Path, default=c.ROOT / 'material_preparation/review/职业与材料审核.xlsx')
-    parser.add_argument('--skip-individual', action='store_true', help='Reuse existing individual workbooks when only refreshing the summary')
-    parser.add_argument('--encode-cr', action='store_true', help='Encode literal CR in existing workbooks without changing any cell text or CSV')
-    args = parser.parse_args(argv)
-    registry = read_registry()
-    if args.encode_cr:
-        paths = [args.output] + [source_folder(info)/'职业资料.xlsx' for info in registry.values()]
-        for path in paths:
-            if path.exists():
-                # Work on a temporary copy; preserve the previous workbook if replacement fails.
-                fd, name = tempfile.mkstemp(suffix='.xlsx', dir=path.parent)
-                os.close(fd)
-                temp = Path(name)
-                try:
-                    shutil.copyfile(path, temp)
-                    if encode_carriage_returns(temp):
-                        backup = path.parent/'backups'/(path.stem+'_xml_'+c.now().replace(':','-').replace('+','_')+'.xlsx')
-                        backup.parent.mkdir(parents=True, exist_ok=True)
-                        shutil.copyfile(path, backup)
-                        os.replace(temp, path)
-                finally:
-                    if temp.exists():
-                        temp.unlink()
-        manifest = args.output.parent/'export_manifest.json'
-        if manifest.exists():
-            data = c.load_json(manifest)
-            data.update(exporter_sha256=digest(__file__), workbook_sha256=digest(args.output), xml_encoding_checked_utc=c.now())
-            write_json(manifest, data)
-        print('Excel原文换行编码检查完成，单元格内容和CSV未改写。')
-        return 0
-    previous, extra = existing_manual(args.output)
-    headers = {**SHEETS, '职业汇总': SUMMARY + MANUAL + extra}
-    rows, local = build_rows(registry, previous, extra)
-    save_workbook(args.output, make_workbook(rows, headers))
-    csv_dir = args.output.parent / 'csv'
-    for key, values in rows.items():
-        write_csv(csv_dir / (key + '.csv'), headers[key], values)
-    for slug, values in local.items():
-        folder = source_folder(registry[slug])
-        if args.skip_individual and (folder / '职业资料.xlsx').exists():
-            continue
-        save_workbook(folder / '职业资料.xlsx', make_workbook(values, headers))
-        for key, records in values.items():
-            write_csv(folder / 'csv' / (key + '.csv'), headers[key], records)
-    write_json(args.output.parent / 'export_manifest.json', {
-        'exported_utc': c.now(), 'exporter_sha256': digest(__file__),
-        'registry_sha256': digest(c.occupations_file()), 'workbook_sha256': digest(args.output),
-        'rows': {k: len(v) for k, v in rows.items()}, 'individual_workbooks': len(local),
-    })
-    print(f'导出：{args.output}；职业={len(registry)}；资料表={len(local)}；Tasks={len(rows["Tasks"])}')
-    return 0
+    from material_preparation.occupation_review_layout import run
+    return run(argv)
 
 
 if __name__ == '__main__':

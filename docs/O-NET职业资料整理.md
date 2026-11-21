@@ -52,6 +52,7 @@ material_preparation/sources/occupations/Software_Developers_15-1252.00/onet/
     structured_en.json
     职业资料.xlsx
     csv/
+    review_csv/
 ```
 
 - HTML按响应字节保存；TXT是正文文字提取，原始HTML始终保留。
@@ -60,12 +61,16 @@ material_preparation/sources/occupations/Software_Developers_15-1252.00/onet/
 - 表格和列表的隐藏行也解析。`N more`仅保留文字和链接，不访问。来源页原有顺序保持不变，不重新计算排名。
 - 一个工作情境条目可能包含多个回答比例；67个软件技能类别不等于67个工具名。培训和招聘入口不等于查询结果。
 - 学历只记录页面实际提供的项目，不补齐未显示的学历分布。
-- 长原文按顺序分段，避免Excel单元格32767字符限制，不截断原文。
+- 审核资料按原生条目和完整段落展示，不再按固定字符数切开单词。旧版分段原文CSV作为存档保留。
 - Excel导出使用XML字符引用保留原文中的CR/LF换行，避免Windows写入和XML读取自动转换内容；验证脚本逐项比较Excel、CSV及结构化原文。
 
-总审核文件：`material_preparation/review/职业与材料审核.xlsx`。包含职业汇总、模块目录、Tasks、全部条目明细、原文段落、页面链接和使用说明。CSV与这些源数据表使用同一份数据。
+总审核文件：`material_preparation/review/职业与材料审核.xlsx`，只含“职业汇总”一张表，每个职业一行，按大类和编码排列，人工审核列紧邻职业身份和资料链接。
 
-仅在各职业来源和解析结果不变、只需更新总表时，可用 `export_occupation_review.py --skip-individual` 复用已有的独立资料表。三个军事职业的初始页面声明不采集军职详细数据，保留概述和职业信息入口，总表标注“资料有限”，不生成不存在的Tasks等清单。
+每个职业的`职业资料.xlsx`按网页原栏目分sheet，例如Overview、Tasks、Knowledge、Work Styles；表格使用该栏目的原生字段。分数、条目名称和说明分列显示，不将导航按钮当成职业数据。Overview提供原始概述及栏目跳转目录。技术字段、JSON、网页导航和原始链接不再占据人工审核页面，完整HTML、JSON及旧CSV保留不改。
+
+新版可读表格的CSV位于`review_csv/`，与新版sheet使用相同数据；旧`csv/`存档不覆盖、不删除。
+
+仅在各职业来源和解析结果不变、独立表已经使用新版栏目布局时，可用 `export_occupation_review.py --summary-only` 只更新总表。三个军事职业的初始页面声明不采集军职详细数据，保留概述和职业信息入口，总表标注“资料有限”，不生成不存在的Tasks等清单。
 
 黄色人工列包括“是否选用、人工分类、JD、简历1、简历2、审核人、审核日期、审核备注”，首次为空。只在“职业汇总”的人工列填写审核记录；其他sheet由来源重新生成。再次导出按O*NET编码保留人工列及额外自定义列；原表先存入backups。来源内容变化时增加复核提示，不擅自撤销已有结论。关闭Excel后再运行导出。
 

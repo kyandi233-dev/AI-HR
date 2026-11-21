@@ -1,0 +1,60 @@
+﻿No.,Software category,Examples shown on initial page
+1,Access software,— Access management software; Citrix cloud computing software; IBM Tivoli Access Management TAM
+2,Administration software,— Cisco Systems CiscoWorks
+3,Analytical or scientific software,— SAS Hot Technology ; The MathWorks MATLAB Hot Technology
+4,Application server software,— Docker Hot Technology ; GitHub Hot Technology ; Oracle WebLogic Server; Red Hat OpenShift Hot Technology ;  1 more
+5,Authentication server software,— Diameter; IBM Tivoli Identity Management TIM; Password management software; Remote authentication dial-in user service RADIUS software
+6,Backup or archival software,— Backup and archival software; System and data disaster recovery software; Veritas NetBackup
+7,Business intelligence and data analysis software,— Apache Spark Hot Technology ; IBM Cognos Impromptu; Oracle Business Intelligence Enterprise Edition; Tableau Hot Technology ;  2 more
+8,Cloud-based management software,— Amazon Web Services AWS CloudFormation Hot Technology ; IBM WebSphere; Splunk Enterprise
+9,Cloud-based protection or security software,— Qualys Cloud Platform
+10,Clustering software,— VMware
+11,Communications server software,— IBM Domino
+12,Configuration management software,— Chef Hot Technology ; Patch and update management software; Perforce Helix software; Puppet Hot Technology ;  1 more
+13,Content workflow software,— Atlassian JIRA Hot Technology
+14,Customer relationship management CRM software,— Salesforce software Hot Technology
+15,Data base management system software,— Amazon DynamoDB Hot Technology ; Apache Hive Hot Technology ; Elasticsearch Hot Technology ; Oracle PL/SQL Hot Technology ;  9 more
+16,Data base reporting software,— Microsoft SQL Server Reporting Services SSRS Hot Technology ; SAP Crystal Reports
+17,Data base user interface and query software,— Amazon Elastic Compute Cloud EC2 Hot Technology ; Amazon Redshift Hot Technology ; Amazon Web Services AWS software  ; Blackboard software;  5 more
+18,Desktop communications software,— Secure shell SSH software
+19,Development environment software,— Apache Kafka Hot Technology ; Apache Maven Hot Technology ; Go Hot Technology ; Microsoft PowerShell  ;  14 more
+20,Document management software,— Microsoft SharePoint Hot Technology
+21,Electronic mail software,— IBM Notes; Microsoft Exchange
+22,Enterprise application integration software,— Atlassian Bamboo; Extensible markup language XML Hot Technology ; Microsoft SQL Server Integration Services SSIS Hot Technology ; Oracle Fusion Middleware
+23,Enterprise resource planning ERP software,— Microsoft Dynamics; Oracle Fusion Applications; Oracle PeopleSoft Hot Technology ; SAP software Hot Technology ;  3 more
+24,Enterprise system management software,— IBM Power Systems software
+25,Expert system software,— Ansible software Hot Technology
+26,File versioning software,— Apache Subversion SVN Hot Technology ; Git Hot Technology ; WinMerge
+27,Filesystem software,— Computer forensic software
+28,Financial analysis software,— Delphi Technology; Oracle E-Business Suite Financials
+29,Geographic information system,— ESRI ArcGIS software Hot Technology ; Geographic information system GIS software
+30,Human resources software,— Human resource management software HRMS
+31,Industrial control software,— Supervisory control and data acquisition SCADA software
+32,Information retrieval or search software,— LexisNexis
+33,Instant messaging software,— Blink
+34,Internet directory services software,— Active directory software; Berkeley Internet Domain Name BIND; Microsoft Active Directory Hot Technology ; Network directory services software;  1 more
+35,Internet protocol IP multimedia subsystem software,— Voice over internet protocol VoIP system software
+36,Medical software,— Epic Systems Hot Technology
+37,Network monitoring software,— Nagios; Sniffer Investigator; Symantec Blue Coat Data Loss Prevention; Wireshark;  15 more
+38,Network security and virtual private network VPN equipment software,— Imperva SecureSphere; IpFilter; Palo Alto Networks Next-Generation Security Platform; Trend Micro TippingPoint;  5 more
+39,Network security or virtual private network VPN management software,— HP Fortify; Intrusion detection system IDS; Intrusion prevention system IPS; Websense Data Loss Prevention;  4 more
+40,Object or component oriented development software,— C# Hot Technology ; Perl Hot Technology ; Scala Hot Technology ; Swift Hot Technology ;  6 more
+41,Object oriented data base management software,— PostgreSQL Hot Technology
+42,Office suite software,— Microsoft Office software
+43,Operating system software,— Bash Hot Technology ; Microsoft Windows Server Hot Technology ; Red Hat Enterprise Linux Hot Technology ; UNIX Shell Hot Technology ;  11 more
+44,Point of sale POS software,— Smart card management software
+45,Portal server software,— Apache HTTP Server
+46,Presentation software,— Microsoft PowerPoint
+47,Process mapping and design software,— Microsoft Visio Hot Technology
+48,Program testing software,— Conformance and validation testing software; MITRE ATT&CK software In Demand ; Selenium Hot Technology ; System testing software;  1 more
+49,Project management software,— Atlassian Confluence Hot Technology ; Microsoft Project Hot Technology ; Microsoft Teams Hot Technology
+50,Requirements analysis and system architecture software,— Unified modeling language UML
+51,Risk management data and analysis software,— ArcSight Enterprise Threat and Risk Management; eMASS In Demand
+52,Spreadsheet software,— Microsoft Excel
+53,Storage networking software,— Amazon Simple Storage Service S3
+54,Switch or router software,— Border Gateway Protocol BGP Hot Technology
+55,Transaction security and virus protection software,— HP WebInspect; NortonLifeLock cybersecurity software; Portswigger BurP Suite; Stack smashing protection SSP software;  22 more
+56,Transaction server software,— Customer information control system CICS
+57,Web page creation and editing software,— Google Sites
+58,Web platform development software,— Django Hot Technology ; Google Angular Hot Technology ; Microsoft ASP.NET Hot Technology ; Spring Framework Hot Technology ;  15 more
+59,Word processing software,— 3M Post-it App; Microsoft Word Hot Technology
