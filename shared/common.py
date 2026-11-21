@@ -98,10 +98,13 @@ def render(name: str, **kwargs):
 def job_files(slug, materials_root=None):
     preparation = ROOT/'material_preparation'
     d = (Path(materials_root) if materials_root else preparation/'approved')/'occupations'/slug
+    from material_preparation.onet_data import source_folder
+    registry = load_json(occupations_file())
+    source = source_folder(registry[slug]) if slug in registry else preparation/'sources/occupations'/slug/'onet'
     return {'profile':d/'onet/profile.txt', 'jd':d/'jd.txt', 'resumes':d/'resumes',
             'drafts':preparation/'drafts/occupations'/slug/'resumes',
             'jd_draft':preparation/'drafts/occupations'/slug/'jd.txt',
-            'source':preparation/'sources/occupations'/slug/'onet',
+            'source':source,
             'setup':preparation/'sources/occupations'/slug/'job_setup.json'}
 
 def read_job(slug, require_profile=True, require_jd=False, materials_root=None):

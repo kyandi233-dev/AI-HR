@@ -1,0 +1,16 @@
+{
+  "exported_utc": "2026-11-21T13:56:53.210195+00:00",
+  "exporter_sha256": "52868bad1416b743ca9ebac7b662e0767749eeeeb2a8f5dd505478df37fed02c",
+  "registry_sha256": "4941a4370db4ad1e061fa1ed5dd513800385ff63ea66bc891fb0bb7d6d46e0f0",
+  "workbook_sha256": "6af44b4b6ff009c64ad47aaaa1e674b1d0e3b3a269939263eb33a3543c4ab43f",
+  "rows": {
+    "职业汇总": 70,
+    "模块目录": 1413,
+    "Tasks": 1530,
+    "条目明细": 29535,
+    "原文段落": 42824,
+    "页面链接": 34665
+  },
+  "individual_workbooks": 70,
+  "xml_encoding_checked_utc": "2026-11-21T13:58:49.111001+00:00"
+}

@@ -1,0 +1,2 @@
+﻿run_id,stage,task,task_id,attempt,sequence,status,timestamp_utc,occupation,condition,repeat,resume_id,pair_id,background_type,materials_version,materials_sha256,requested_model,returned_model,temperature,thinking,max_tokens,finish_reason,prompt_tokens,completion_tokens,total_tokens,error_message,concurrency,validation_warnings
+software_jd_draft_20261121,development,jd,JD01,1,1,ok,2026-11-21T10:18:26.167517+00:00,software_developer,,,,,,,,deepseek-flash,deepseek-flash,1.0,disabled,3000,stop,1692,1683,3375,,1,

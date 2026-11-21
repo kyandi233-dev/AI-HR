@@ -259,8 +259,9 @@ class PipelineTests(unittest.TestCase):
 
     def test_onet_fresh_clone_creates_source_directory_without_approving_it(self):
         import bs4
-        response=SimpleNamespace(text='<html><main>'+('Occupational tasks and knowledge. '*100)+'</main></html>',
-                                 content=b'original-html',status_code=200,raise_for_status=lambda:None)
+        html='<html><main><h1>Software Developers 15-1252.00</h1>'+('Occupational tasks and knowledge. '*100)+'</main></html>'
+        response=SimpleNamespace(text=html,
+                                 content=html.encode(),status_code=200,raise_for_status=lambda:None)
         with patch('requests.get',return_value=response):
             onet.fetch_onet(SimpleNamespace(occupation='software_developer',execute=True),self.occupations)
         folder=c.job_files('software_developer')['source']

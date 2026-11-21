@@ -1,0 +1,2627 @@
+Software Developers
+15-1252.00
+Bright Outlook
+Updated 2026
+Research, design, and develop computer and network software or specialized utility programs. Analyze user needs and develop software solutions, applying principles and techniques of computer science, engineering, and mathematical analysis. Update software or enhance existing software capabilities. May work with computer hardware engineers to integrate hardware and software systems, and develop specifications and performance requirements. May maintain databases within an application area, working individually or coordinating database development as part of a team.
+Sample of reported job titles:
+Application Developer, Application Integration Engineer, Developer, DevOps Engineer (Development Operations Engineer), Infrastructure Engineer, Software Architect, Software Developer, Software Development Engineer, Software Engineer, Systems Engineer
+See the easy-read overview for Software Developers at My Next Move
+You will be leaving O*NET OnLine to visit our sister site My Next Move. You can return by using the
+Back
+button in your browser, or by choosing “O*NET OnLine” from the
+O*NET Sites
+menu at the bottom of any page in My Next Move.
+Yes, let’s go
+No, stay here
+Don’t ask again this session
+See the easy-read overview for Software Developers at My Next Move for Veterans
+You will be leaving O*NET OnLine to visit our sister site My Next Move for Veterans. You can return by using the
+Back
+button in your browser, or by choosing “O*NET OnLine” from the
+O*NET Sites
+menu at the bottom of any page in My Next Move for Veterans.
+Yes, let’s go
+No, stay here
+Don’t ask again this session
+Ver la perspectiva general fácil de leer para Diseñadores de Programas Software en Mi Próximo Paso
+Saldrá de O*NET OnLine para visitar nuestro sitio afiliado Mi Próximo Paso. Puede regresar usando el botón
+Atrás
+en su navegador, o eligiendo “O*NET OnLine” en el menú
+Sitios O*NET
+en la parte inferior de cualquier página en Mi Próximo Paso.
+Sí, vamos
+No, quédate aquí
+No preguntar de nuevo para esta sesión
+Contents
+Occupation-Specific Information
+Overview
+Tasks
+Occupational Requirements
+Work Activities
+Detailed Work Activities
+Work Context
+Experience Requirements
+Job Zone
+Training & Credentials
+Apprenticeship
+Worker Requirements
+Software Skills
+Essential Skills
+Transferable Skills
+Knowledge
+Education
+Worker Characteristics
+Abilities
+Career Interest Types
+Specific Interest Areas
+Work Styles
+Workforce Characteristics
+Wages & Employment
+Job Openings
+More Information
+Related Occupations
+Professional Associations
+Occupation-Specific Information
+Tasks
+Save Table:
+XLSX
+CSV
+10 of
+All
+17 displayed
+(
+Show all
+Show top 10
+)
+Importance
+Category
+Task
+77
+Core
+Analyze user needs and software requirements to determine feasibility of design within time and cost constraints.
+Related occupations
+73
+Core
+Develop or direct software system testing or validation procedures, programming, or documentation.
+Related occupations
+69
+Core
+Confer with systems analysts, engineers, programmers and others to design systems and to obtain information on project limitations and capabilities, performance requirements and interfaces.
+Related occupations
+69
+Core
+Modify existing software to correct errors, adapt it to new hardware, or upgrade interfaces and improve performance.
+Related occupations
+67
+Core
+Prepare reports or correspondence concerning project specifications, activities, or status.
+Related occupations
+65
+Core
+Analyze information to determine, recommend, and plan installation of a new system or modification of an existing system.
+Related occupations
+65
+Core
+Store, retrieve, and manipulate data for analysis of system capabilities and requirements.
+Related occupations
+64
+Core
+Design, develop and modify software systems, using scientific analysis and mathematical models to predict and measure outcomes and consequences of design.
+Related occupations
+63
+Core
+Determine system performance standards.
+Related occupations
+59
+Core
+Consult with customers or other departments on project status, proposals, or technical issues, such as software system design or maintenance.
+Related occupations
+58
+Core
+Confer with data processing or project managers to obtain information on limitations or capabilities for data processing projects.
+Related occupations
+78
+Supplemental
+Monitor functioning of equipment to ensure system operates in conformance with specifications.
+Related occupations
+69
+Supplemental
+Coordinate installation of software system.
+Related occupations
+63
+Supplemental
+Supervise the work of programmers, technologists and technicians and other engineering and scientific personnel.
+Related occupations
+53
+Supplemental
+Supervise and assign work to programmers, designers, technologists, technicians, or other engineering or scientific personnel.
+Related occupations
+52
+Supplemental
+Obtain and evaluate information on factors such as reporting formats required, costs, or security needs to determine hardware configuration.
+Related occupations
+48
+Supplemental
+Train users to use new or modified equipment.
+Related occupations
+Find occupations related to multiple tasks
+back to top
+Occupational Requirements
+Work Activities
+Save Table:
+XLSX
+CSV
+10 of
+All
+41 displayed
+(
+Show all
+Show top 10
+)
+Importance
+Work Activity
+90
+Working with Computers
+— Using computers and computer systems (including hardware and software) to program, write software, set up functions, enter data, or process information.
+Related occupations
+85
+Processing Information
+— Compiling, coding, categorizing, calculating, tabulating, auditing, or verifying information or data.
+Related occupations
+84
+Making Decisions and Solving Problems
+— Analyzing information and evaluating results to choose the best solution and solve problems.
+Related occupations
+83
+Thinking Creatively
+— Developing, designing, or creating new applications, ideas, relationships, systems, or products, including artistic contributions.
+Related occupations
+81
+Communicating with Supervisors, Peers, or Subordinates
+— Providing information to supervisors, co-workers, and subordinates by telephone, in written form, e-mail, or in person.
+Related occupations
+80
+Analyzing Data or Information
+— Identifying the underlying principles, reasons, or facts of information by breaking down information or data into separate parts.
+Related occupations
+78
+Updating and Using Relevant Knowledge
+— Keeping up-to-date technically and applying new knowledge to your job.
+Related occupations
+77
+Organizing, Planning, and Prioritizing Work
+— Developing specific goals and plans to prioritize, organize, and accomplish your work.
+Related occupations
+76
+Getting Information
+— Observing, receiving, and otherwise obtaining information from all relevant sources.
+Related occupations
+74
+Evaluating Information to Determine Compliance with Standards
+— Using relevant information and individual judgment to determine whether events or processes comply with laws, regulations, or standards.
+Related occupations
+70
+Documenting/Recording Information
+— Entering, transcribing, recording, storing, or maintaining information in written or electronic/magnetic form.
+Related occupations
+69
+Developing Objectives and Strategies
+— Establishing long-range objectives and specifying the strategies and actions to achieve them.
+Related occupations
+68
+Monitoring Processes, Materials, or Surroundings
+— Monitoring and reviewing information from materials, events, or the environment, to detect or assess problems.
+Related occupations
+67
+Identifying Objects, Actions, and Events
+— Identifying information by categorizing, estimating, recognizing differences or similarities, and detecting changes in circumstances or events.
+Related occupations
+65
+Interpreting the Meaning of Information for Others
+— Translating or explaining what information means and how it can be used.
+Related occupations
+64
+Establishing and Maintaining Interpersonal Relationships
+— Developing constructive and cooperative working relationships with others, and maintaining them over time.
+Related occupations
+58
+Scheduling Work and Activities
+— Scheduling events, programs, and activities, as well as the work of others.
+Related occupations
+57
+Providing Consultation and Advice to Others
+— Providing guidance and expert advice to management or other groups on technical, systems-, or process-related topics.
+Related occupations
+46
+Training and Teaching Others
+— Identifying the educational needs of others, developing formal educational or training programs or classes, and teaching or instructing others.
+Related occupations
+43
+Coaching and Developing Others
+— Identifying the developmental needs of others and coaching, mentoring, or otherwise helping others to improve their knowledge or skills.
+Related occupations
+42
+Estimating the Quantifiable Characteristics of Products, Events, or Information
+— Estimating sizes, distances, and quantities; or determining time, costs, resources, or materials needed to perform a work activity.
+Related occupations
+40
+Judging the Qualities of Objects, Services, or People
+— Assessing the value, importance, or quality of things or people.
+Related occupations
+38
+Communicating with People Outside the Organization
+— Communicating with people outside the organization, representing the organization to customers, the public, government, and other external sources. This information can be exchanged in person, in writing, or by telephone or e-mail.
+Related occupations
+35
+Resolving Conflicts and Negotiating with Others
+— Handling complaints, settling disputes, and resolving grievances and conflicts, or otherwise negotiating with others.
+Related occupations
+34
+Coordinating the Work and Activities of Others
+— Getting members of a group to work together to accomplish tasks.
+Related occupations
+33
+Performing Administrative Activities
+— Performing day-to-day administrative tasks such as maintaining information files and processing paperwork.
+Related occupations
+32
+Assisting and Caring for Others
+— Providing personal assistance, medical attention, emotional support, or other personal care to others such as coworkers, customers, or patients.
+Related occupations
+32
+Controlling Machines and Processes
+— Using either control mechanisms or direct physical activity to operate machines or processes (not including computers or vehicles).
+Related occupations
+31
+Developing and Building Teams
+— Encouraging and building mutual trust, respect, and cooperation among team members.
+Related occupations
+28
+Monitoring and Controlling Resources
+— Monitoring and controlling resources and overseeing the spending of money.
+Related occupations
+27
+Inspecting Equipment, Structures, or Materials
+— Inspecting equipment, structures, or materials to identify the cause of errors or other problems or defects.
+Related occupations
+17
+Drafting, Laying Out, and Specifying Technical Devices, Parts, and Equipment
+— Providing documentation, detailed instructions, drawings, or specifications to tell others about how devices, parts, equipment, or structures are to be fabricated, constructed, assembled, modified, maintained, or used.
+Related occupations
+17
+Guiding, Directing, and Motivating Subordinates
+— Providing guidance and direction to subordinates, including setting performance standards and monitoring performance.
+Related occupations
+17
+Performing General Physical Activities
+— Performing general physical activities includes doing activities that require considerable use of your arms and legs and moving your whole body, such as climbing, lifting, balancing, walking, stooping, and handling materials.
+Related occupations
+16
+Repairing and Maintaining Electronic Equipment
+— Servicing, repairing, calibrating, regulating, fine-tuning, or testing machines, devices, and equipment that operate primarily on the basis of electrical or electronic (not mechanical) principles.
+Related occupations
+15
+Selling or Influencing Others
+— Convincing others to buy merchandise/goods or to otherwise change their minds or actions.
+Related occupations
+13
+Staffing Organizational Units
+— Recruiting, interviewing, selecting, hiring, and promoting employees in an organization.
+Related occupations
+5
+Handling and Moving Objects
+— Using hands and arms in handling, installing, positioning, and moving materials, and manipulating things.
+Related occupations
+3
+Operating Vehicles, Mechanized Devices, or Equipment
+— Running, maneuvering, navigating, or driving vehicles or mechanized equipment, such as forklifts, passenger vehicles, aircraft, or watercraft.
+Related occupations
+3
+Performing for or Working Directly with the Public
+— Performing for people or dealing directly with the public. This includes serving customers in restaurants and stores, and receiving clients or guests.
+Related occupations
+2
+Repairing and Maintaining Mechanical Equipment
+— Servicing, repairing, adjusting, and testing machines, devices, moving parts, and equipment that operate primarily on the basis of mechanical (not electronic) principles.
+Related occupations
+back to top
+Detailed Work Activities
+Save Table:
+XLSX
+CSV
+10 of
+All
+18 displayed
+(
+Show all
+Show top 10
+)
+Monitor computer system performance to ensure proper operation.
+Related occupations
+Analyze project data to determine specifications or requirements.
+Related occupations
+Develop testing routines or procedures.
+Related occupations
+Manage information technology projects or system activities.
+Related occupations
+Modify software programs to improve performance.
+Related occupations
+Collaborate with others to determine design specifications or details.
+Related occupations
+Coordinate software or hardware installation.
+Related occupations
+Communicate project information to others.
+Related occupations
+Assess database performance.
+Related occupations
+Prepare data for analysis.
+Related occupations
+Apply mathematical principles or statistical approaches to solve problems in scientific or applied fields.
+Related occupations
+Design software applications.
+Related occupations
+Supervise information technology personnel.
+Related occupations
+Develop performance metrics or standards related to information technology.
+Related occupations
+Provide technical support for software maintenance or use.
+Related occupations
+Collaborate with others to resolve information technology issues.
+Related occupations
+Assign duties or work schedules to employees.
+Related occupations
+Teach others to use computer equipment or hardware.
+Related occupations
+Find occupations related to multiple detailed work activities
+back to top
+Work Context
+Save Table:
+XLSX
+CSV
+10 of
+All
+57 displayed
+(
+Show all
+Show top 10
+)
+Spend Time Sitting
+— How much does this job require sitting?
+95%
+95%
+responded:
+Continually or almost continually
+Related occupations
+Work With or Contribute to a Work Group or Team
+— How important is it to work with or contribute to a work group or team in this job?
+71%
+71%
+responded:
+Extremely important
+15%
+15%
+responded:
+Important
+Related occupations
+E-Mail
+— How frequently does your job require you to use E-mail?
+13%
+13%
+responded:
+Once a year or more but not every month
+Related occupations
+Freedom to Make Decisions
+— How much decision making freedom, without supervision, does the job offer?
+41%
+41%
+responded:
+A lot of freedom
+46%
+46%
+responded:
+Some freedom
+13%
+13%
+responded:
+Limited freedom
+Related occupations
+Importance of Being Exact or Accurate
+— How important is being very exact or highly accurate in performing this job?
+41%
+41%
+responded:
+Extremely important
+44%
+44%
+responded:
+Very important
+Related occupations
+Determine Tasks, Priorities and Goals
+— How much freedom does the worker have in determining the tasks, priorities, or goals of the job?
+Related occupations
+Contact With Others
+— How much does this job require the worker to be in contact with others (face-to-face, by telephone, or otherwise) in order to perform it?
+35%
+35%
+responded:
+Constant contact with others
+17%
+17%
+responded:
+Contact with others about half the time
+15%
+15%
+responded:
+Occasional contact with others
+Related occupations
+Coordinate or Lead Others in Accomplishing Work Activities
+— How important is it to coordinate or lead others (not as a supervisor or team leader) in accomplishing work activities in this job?
+16%
+16%
+responded:
+Extremely important
+46%
+46%
+responded:
+Very important
+Related occupations
+Time Pressure
+— How often does this job require the worker to meet strict deadlines?
+13%
+13%
+responded:
+Every day
+40%
+40%
+responded:
+Once a week or more but not every day
+34%
+34%
+responded:
+Once a month or more but not every week
+Related occupations
+Telephone Conversations
+— How often do you have telephone conversations in this job?
+Related occupations
+Work Outcomes and Results of Other Workers
+— How responsible is the worker for work outcomes and results of other workers?
+13%
+13%
+responded:
+Very high responsibility
+50%
+50%
+responded:
+High responsibility
+30%
+30%
+responded:
+Limited responsibility
+Related occupations
+Importance of Repeating Same Tasks
+— How important are continuous, repetitive, physical activities (like key entry) or mental activities (like checking entries in a ledger) to performing this job?
+Related occupations
+Indoors, Environmentally Controlled
+— How often does this job require working indoors in an environmentally controlled environment (like a warehouse with air conditioning)?
+25%
+25%
+responded:
+Once a year or more but not every month
+Related occupations
+Spend Time Using Your Hands to Handle, Control, or Feel Objects, Tools, or Controls
+— How much does this job require using your hands to handle, control, or feel objects, tools or controls?
+Related occupations
+Duration of Typical Work Week
+— Number of hours typically worked in one week.
+90%
+90%
+responded:
+40 hours
+Related occupations
+Level of Competition
+— To what extent does this job require the worker to compete or to be aware of competitive pressures?
+40%
+40%
+responded:
+Highly competitive
+30%
+30%
+responded:
+Moderately competitive
+Related occupations
+Face-to-Face Discussions with Individuals and Within Teams
+— How frequently does your job require face-to-face discussions with individuals and within teams?
+16%
+16%
+responded:
+Once a month or more but not every week
+25%
+25%
+responded:
+Once a year or more but not every month
+13%
+13%
+responded:
+Never
+Related occupations
+Spend Time Making Repetitive Motions
+— How much does this job require making repetitive motions?
+16%
+16%
+responded:
+Less than half the time
+42%
+42%
+responded:
+Never
+Related occupations
+Consequence of Error
+— How serious would the result usually be if the worker made a mistake that was not easily correctable?
+30%
+30%
+responded:
+Fairly serious
+13%
+13%
+responded:
+Not serious at all
+Related occupations
+Impact of Decisions on Co-workers or Company Results
+— What results do your decisions usually have on other people or the image or reputation or financial resources of your employer?
+49%
+49%
+responded:
+Moderate results
+31%
+31%
+responded:
+Minor results
+13%
+13%
+responded:
+No results
+Related occupations
+Frequency of Decision Making
+— How often is the worker required to make decisions that affect other people, the financial resources, and/or the image and reputation of the organization?
+39%
+39%
+responded:
+Once a year or more but not every month
+Related occupations
+Degree of Automation
+— How automated is the job?
+48%
+48%
+responded:
+Moderately automated
+17%
+17%
+responded:
+Slightly automated
+31%
+31%
+responded:
+Not at all automated
+Related occupations
+Health and Safety of Other Workers
+— How much responsibility is there for the health and safety of others in this job?
+13%
+13%
+responded:
+Very high responsibility
+58%
+58%
+responded:
+No responsibility
+Related occupations
+Deal With External Customers or the Public in General
+— How important is it to deal with external customers (as in retail sales) or the public in general (as in police work) in this job?
+Related occupations
+Conflict Situations
+— How frequently are there conflict situations the employee has to face in this job?
+Related occupations
+Physical Proximity
+— To what extent does this job require the worker to perform job tasks physically close to other people?
+31%
+31%
+responded:
+Slightly close (e.g., shared office)
+61%
+61%
+responded:
+I don't work near other people (beyond 100 ft.)
+Related occupations
+Public Speaking
+— How frequently does your job require public speaking (one speaker with an audience)?
+Related occupations
+Dealing With Unpleasant, Angry, or Discourteous People
+— How frequently does the worker have to deal with unpleasant, angry, or discourteous individuals as part of the job requirements?
+45%
+45%
+responded:
+Once a year or more but not every month
+55%
+55%
+responded:
+Never
+Related occupations
+Spend Time Standing
+— How much does this job require standing?
+Related occupations
+Pace Determined by Speed of Equipment
+— How important is it to this job that the pace is determined by the speed of equipment or machinery? (This does not refer to keeping busy at all times on this job.)
+16%
+16%
+responded:
+Important
+83%
+83%
+responded:
+Not important at all
+Related occupations
+Exposed to Cramped Work Space, Awkward Positions
+— How often does this job require working in cramped work spaces that requires getting into awkward positions?
+Related occupations
+Spend Time Walking or Running
+— How much does this job require walking or running?
+27%
+27%
+responded:
+Less than half the time
+72%
+72%
+responded:
+Never
+Related occupations
+Wear Common Protective or Safety Equipment such as Safety Shoes, Glasses, Gloves, Hearing Protection, Hard Hats, or Life Jackets
+— How often does this job require wearing common protective or safety equipment such as safety shoes, glasses, gloves, hearing protection, hard hats or life-jackets?
+Related occupations
+Exposed to High Places
+— How often does this job require exposure to high places?
+Related occupations
+Written Letters and Memos
+— How frequently does your job require written letters and memos?
+90%
+90%
+responded:
+Never
+Related occupations
+Exposed to Extremely Bright or Inadequate Lighting Conditions
+— How often does this job require working in extremely bright or inadequate lighting conditions?
+14%
+14%
+responded:
+Once a year or more but not every month
+84%
+84%
+responded:
+Never
+Related occupations
+Exposed to Sounds, Noise Levels that are Distracting or Uncomfortable
+— How often does this job require working exposed to sounds and noise levels that are distracting or uncomfortable?
+94%
+94%
+responded:
+Never
+Related occupations
+Indoors, Not Environmentally Controlled
+— How often does this job require working in an environment that is not environmentally controlled (like a warehouse without air conditioning)?
+95%
+95%
+responded:
+Never
+Related occupations
+Exposed to Contaminants
+— How often does this job require working exposed to contaminants (such as pollutants, gases, dust or odors)?
+97%
+97%
+responded:
+Never
+Related occupations
+Exposed to Disease or Infections
+— How often does this job require exposure to disease/infections?
+98%
+98%
+responded:
+Never
+Related occupations
+Exposed to Radiation
+— How often does this job require exposure to radiation?
+98%
+98%
+responded:
+Never
+Related occupations
+Exposed to Very Hot or Cold Temperatures
+— How often does this job require working in very hot (above 90 F degrees) or very cold (below 32 F degrees) temperatures?
+95%
+95%
+responded:
+Never
+Related occupations
+In an Enclosed Vehicle or Operate Enclosed Equipment
+— How often does this job require working in a closed vehicle or operate enclosed equipment (like a car)?
+98%
+98%
+responded:
+Never
+Related occupations
+Outdoors, Under Cover
+— How often does this job require working outdoors, under cover (like in an open shed)?
+98%
+98%
+responded:
+Never
+Related occupations
+Spend Time Bending or Twisting Your Body
+— How much does this job require bending or twisting your body?
+96%
+96%
+responded:
+Never
+Related occupations
+Spend Time Keeping or Regaining Balance
+— How much does this job require keeping or regaining your balance?
+98%
+98%
+responded:
+Never
+Related occupations
+Spend Time Kneeling, Crouching, Stooping, or Crawling
+— How much does this job require kneeling, crouching, stooping or crawling?
+98%
+98%
+responded:
+Never
+Related occupations
+Wear Specialized Protective or Safety Equipment such as Breathing Apparatus, Safety Harness, Full Protection Suits, or Radiation Protection
+— How often does this job require wearing specialized protective or safety equipment such as breathing apparatus, safety harness, full protection suits, or radiation protection?
+97%
+97%
+responded:
+Never
+Related occupations
+Work Schedules
+— How regular are the work schedules for this job?
+98%
+98%
+responded:
+Regular (established routine, set schedule)
+Related occupations
+Dealing with Violent or Physically Aggressive People
+— How frequently does this job require the worker to deal with physical aggression of violent individuals?
+100%
+100%
+responded:
+Never
+Related occupations
+Exposed to Hazardous Conditions
+— How often does this job require exposure to hazardous conditions?
+99%
+99%
+responded:
+Never
+Related occupations
+Exposed to Hazardous Equipment
+— How often does this job require exposure to hazardous equipment?
+99%
+99%
+responded:
+Never
+Related occupations
+Exposed to Minor Burns, Cuts, Bites, or Stings
+— How often does this job require exposure to minor burns, cuts, bites, or stings?
+100%
+100%
+responded:
+Never
+Related occupations
+Exposed to Whole Body Vibration
+— How often does this job require exposure to whole body vibration (like operating a jackhammer or earth moving equipment)?
+100%
+100%
+responded:
+Never
+Related occupations
+In an Open Vehicle or Operating Equipment
+— How often does this job require working in an open vehicle or operating equipment (like a tractor)?
+100%
+100%
+responded:
+Never
+Related occupations
+Outdoors, Exposed to All Weather Conditions
+— How often does this job require working outdoors, exposed to all weather conditions?
+99%
+99%
+responded:
+Never
+Related occupations
+Spend Time Climbing Ladders, Scaffolds, or Poles
+— How much does this job require climbing ladders, scaffolds, poles, etc.?
+99%
+99%
+responded:
+Never
+Related occupations
+back to top
+Experience Requirements
+Job Zone
+Save Table:
+XLSX
+CSV
+Title
+Job Zone Four: Considerable Preparation Needed
+Education
+Most of these occupations require a four-year bachelor's degree, but some do not.
+Related Experience
+A considerable amount of work-related skill, knowledge, or experience is needed for these occupations. For example, an accountant must complete four years of college and work for several years in accounting to be considered qualified.
+Job Training
+Employees in these occupations usually need several years of work-related experience, on-the-job training, and/or vocational training.
+Job Zone Examples
+Many of these occupations involve coordinating, supervising, managing, or training others. Examples include real estate brokers, sales managers, database administrators, graphic designers, conservation scientists, art directors, and cost estimators.
+SVP
+Range
+(7.0 to < 8.0)
+back to top
+Training & Credentials
+State training
+Select a State
+Alabama
+Alaska
+Arizona
+Arkansas
+California
+Colorado
+Connecticut
+Delaware
+District of Columbia
+Florida
+Georgia
+Hawaii
+Idaho
+Illinois
+Indiana
+Iowa
+Kansas
+Kentucky
+Louisiana
+Maine
+Maryland
+Massachusetts
+Michigan
+Minnesota
+Mississippi
+Missouri
+Montana
+Nebraska
+Nevada
+New Hampshire
+New Jersey
+New Mexico
+New York
+North Carolina
+North Dakota
+Ohio
+Oklahoma
+Oregon
+Pennsylvania
+Rhode Island
+South Carolina
+South Dakota
+Tennessee
+Texas
+Utah
+Vermont
+Virginia
+Washington
+West Virginia
+Wisconsin
+Wyoming
+American Samoa
+Guam
+Northern Mariana Islands
+Puerto Rico
+Virgin Islands
+Go
+Local training
+ZIP Code
+Go
+Certifications
+Find certifications nationwide
+State licenses
+Select a State
+Alabama
+Alaska
+Arizona
+Arkansas
+California
+Colorado
+Connecticut
+Delaware
+District of Columbia
+Florida
+Georgia
+Hawaii
+Idaho
+Illinois
+Indiana
+Iowa
+Kansas
+Kentucky
+Louisiana
+Maine
+Maryland
+Massachusetts
+Michigan
+Minnesota
+Mississippi
+Missouri
+Montana
+Nebraska
+Nevada
+New Hampshire
+New Jersey
+New Mexico
+New York
+North Carolina
+North Dakota
+Ohio
+Oklahoma
+Oregon
+Pennsylvania
+Rhode Island
+South Carolina
+South Dakota
+Tennessee
+Texas
+Utah
+Vermont
+Virginia
+Washington
+West Virginia
+Wisconsin
+Wyoming
+American Samoa
+Guam
+Northern Mariana Islands
+Puerto Rico
+Virgin Islands
+Go
+back to top
+Apprenticeship Opportunities
+All
+4 displayed
+Example apprenticeship titles for this occupation:
+Application Developer
+Commercial Drone Software Developer
+Devops Engineer (Nof)
+Software Developer (Nof)
+Specific title(s) listed above are vetted by industry and approved by the U.S. Department of Labor for use in a Registered Apprenticeship Program.
+Start your career and build your skillset. Visit
+Apprenticeship.gov
+external site
+to learn about opportunities related to this occupation.
+back to top
+Worker Requirements
+Software Skills
+Save Table:
+XLSX
+CSV
+10 of
+All
+67 displayed
+(
+Show all
+Show top 10
+)
+Access software
+— Citrix cloud computing software; PuTTY
+Related occupations
+Administration software
+— Software distribution management software
+Related occupations
+Analytical or scientific software
+— IBM SPSS Statistics
+Hot Technology
+; SAS
+Hot Technology
+; TensorFlow
+Hot Technology
+; The MathWorks MATLAB
+Hot Technology
+;
+6 more
+Related occupations
+Application server software
+— Atlassian Bitbucket
+Hot Technology
+; GitLab
+Hot Technology
+; Red Hat OpenShift
+Hot Technology
+; Spring Boot
+;
+7 more
+Related occupations
+Authentication server software
+— Single sign-on SSO
+Related occupations
+Backup or archival software
+— Backup and archival software; Veritas NetBackup
+Related occupations
+Business intelligence and data analysis software
+— Alteryx software
+Hot Technology
+; Google Looker Analytics
+Hot Technology
+; Microsoft Power BI
+Hot Technology
+; Tableau
+Hot Technology
+;
+4 more
+Related occupations
+Cloud-based data access and sharing software
+— Dropbox; Google Drive; Platform as a service PaaS; Slack
+Hot Technology
+Related occupations
+Cloud-based management software
+— Amazon Web Services AWS CloudFormation
+Hot Technology
+; IBM WebSphere MQ
+Hot Technology
+; Oracle Cloud software
+Hot Technology
+; Splunk Enterprise
+Hot Technology
+;
+2 more
+Related occupations
+Clustering software
+— VMware
+Related occupations
+Communications server software
+— IBM Domino
+Related occupations
+Computer based training software
+— Moodle
+Related occupations
+Configuration management software
+— Chef
+Hot Technology
+; IBM Terraform
+; Perforce Helix software; Puppet
+Hot Technology
+;
+6 more
+Related occupations
+Content workflow software
+— Atlassian JIRA
+; Emerald Software Group Emerald Green Office
+Related occupations
+Customer relationship management CRM software
+— Blackbaud The Raiser's Edge; Oracle Eloqua; Salesforce software
+Hot Technology
+Related occupations
+Data base management system software
+— Amazon DynamoDB
+Hot Technology
+; Oracle Database
+Hot Technology
+; Oracle PL/SQL
+Hot Technology
+; Redis
+Hot Technology
+;
+21 more
+Related occupations
+Data base reporting software
+— Microsoft SQL Server Reporting Services SSRS
+Hot Technology
+; Oracle Business Intelligence Discoverer; SAP Business Intelligence; SAP Crystal Reports
+;
+3 more
+Related occupations
+Data base user interface and query software
+— Airtable; Blackboard software; GraphQL
+Hot Technology
+; Prometheus
+Hot Technology
+;
+16 more
+Related occupations
+Data mining software
+— Google Analytics
+Hot Technology
+; Snowflake
+Hot Technology
+Related occupations
+Desktop communications software
+— Skype
+Related occupations
+Desktop publishing software
+— Adobe InDesign
+Hot Technology
+; Microsoft Publisher
+Related occupations
+Development environment software
+— Apache Kafka
+; Apache Maven
+Hot Technology
+; Oracle Java 2 Platform Enterprise Edition J2EE
+Hot Technology
+; Oracle SQL Developer
+Hot Technology
+;
+62 more
+Related occupations
+Device drivers or system software
+— Microsoft DirectX
+Related occupations
+Document management software
+— Adobe Acrobat
+Hot Technology
+; Document management system software; Microsoft SharePoint
+Hot Technology
+Related occupations
+Electronic mail software
+— Google Gmail; IBM Notes; Microsoft Exchange; Microsoft Outlook
+Hot Technology
+Related occupations
+Enterprise application integration software
+— Jenkins CI
+; Microsoft Power Automate
+Hot Technology
+; Microsoft Power Platform software
+Hot Technology
+; Microsoft SQL Server Integration Services SSIS
+Hot Technology
+;
+7 more
+Related occupations
+Enterprise resource planning ERP software
+— Oracle PeopleSoft
+Hot Technology
+; SAP ERP
+Hot Technology
+; SAP software
+Hot Technology
+; Workday software
+Hot Technology
+;
+9 more
+Related occupations
+Enterprise system management software
+— IBM Power Systems software
+Related occupations
+Expert system software
+— Ansible software
+Hot Technology
+Related occupations
+File versioning software
+— Apache Subversion SVN
+Hot Technology
+; Git
+; Version control software
+Related occupations
+Filesystem software
+— File server software
+Related occupations
+Financial analysis software
+— Delphi Technology; Oracle E-Business Suite Financials
+Related occupations
+Graphical user interface development software
+— Figma
+Hot Technology
+; Grafana Labs Grafana Cloud
+Hot Technology
+; Graphical user interface GUI builder software; Salesforce Visualforce
+;
+1 more
+Related occupations
+Graphics or photo imaging software
+— Adobe Creative Cloud software
+Hot Technology
+; Adobe Illustrator
+Hot Technology
+; JamBoard; Trimble SketchUp Pro
+Hot Technology
+;
+4 more
+Related occupations
+Information retrieval or search software
+— Apache Avro; LexisNexis
+Related occupations
+Instant messaging software
+— Blink; GroupMe
+Related occupations
+Internet directory services software
+— Microsoft Active Directory
+Hot Technology
+Related occupations
+Internet protocol IP multimedia subsystem software
+— Voice over internet protocol VoIP system software
+Related occupations
+Map creation software
+— ESRI ArcGIS software
+Hot Technology
+Related occupations
+Metadata management software
+— Informatica software
+Hot Technology
+; Quest Erwin Data Modeler; Talend Data Fabric
+Related occupations
+Network conferencing software
+— LogMeIn GoToWebinar
+Related occupations
+Network monitoring software
+— Nagios; Wireshark
+Related occupations
+Network operation system software
+— IBM z/OS operating systems
+Related occupations
+Network security and virtual private network VPN equipment software
+— Firewall software; Virtual private networking VPN software
+Related occupations
+Object or component oriented development software
+— Apache Spark
+Hot Technology
+; jQuery
+Hot Technology
+; Scala
+Hot Technology
+; TypeScript
+;
+34 more
+Related occupations
+Object oriented data base management software
+— Hibernate ORM
+Hot Technology
+; PostgreSQL
+Related occupations
+Office suite software
+— LibreOffice; Microsoft Office software
+Hot Technology
+Related occupations
+Operating system software
+— Apple iOS
+Hot Technology
+; Google Android
+Hot Technology
+; Microsoft Windows Server
+Hot Technology
+; UNIX Shell
+Hot Technology
+;
+21 more
+Related occupations
+Platform interconnectivity software
+— Migration software
+Related occupations
+Portal server software
+— Apache HTTP Server
+Related occupations
+Presentation software
+— Google Slides; Microsoft PowerPoint
+Hot Technology
+Related occupations
+Procedure management software
+— Apache Airflow
+Hot Technology
+Related occupations
+Process mapping and design software
+— Microsoft Visio
+Hot Technology
+Related occupations
+Program testing software
+— Hewlett Packard LoadRunner; JUnit
+Hot Technology
+; Selenium
+Hot Technology
+; SonarQube
+;
+21 more
+Related occupations
+Project management software
+— Atlassian Confluence
+Hot Technology
+; Microsoft Team Foundation Server
+Hot Technology
+; Microsoft Teams
+Hot Technology
+; Oracle Primavera Enterprise Project Portfolio Management
+Hot Technology
+;
+1 more
+Related occupations
+Requirements analysis and system architecture software
+— IBM Rational RequisitePro; Requirements management software; Unified modeling language UML
+Related occupations
+Sales and marketing software
+— Marketo Marketing Automation
+Hot Technology
+Related occupations
+Spreadsheet software
+— Google Sheets
+Hot Technology
+; Microsoft Excel
+Hot Technology
+Related occupations
+Storage networking software
+— Amazon Simple Storage Service S3; Storage area network SAN software
+Related occupations
+Switch or router software
+— Border Gateway Protocol BGP
+Hot Technology
+Related occupations
+Transaction security and virus protection software
+— Encryption software; McAfee; NortonLifeLock cybersecurity software
+Related occupations
+Transaction server software
+— Customer information control system CICS; IBM Middleware; Microsoft Internet Information Services (IIS); Object Management Group Object Request Broker
+;
+1 more
+Related occupations
+Video conferencing software
+— Cisco Webex
+Hot Technology
+; Google Meet; LogMeIn GoToMeeting; Zoom
+Hot Technology
+;
+1 more
+Related occupations
+Video creation and editing software
+— Adobe After Effects
+Hot Technology
+; Flipgrid; Screencastify; YouTube
+;
+1 more
+Related occupations
+Web page creation and editing software
+— Adobe Dreamweaver; Google Sites; Social media sites; WordPress
+Hot Technology
+;
+1 more
+Related occupations
+Web platform development software
+— Bootstrap
+Hot Technology
+; React
+; Spring Framework
+; Vue.js
+Hot Technology
+;
+31 more
+Related occupations
+Word processing software
+— 3M Post-it App; Google Docs
+Hot Technology
+; Microsoft OneNote; Microsoft Word
+Hot Technology
+;
+1 more
+Related occupations
+Hot Technologies are requirements most frequently included across all employer job postings.
+See all 152 Hot Technologies for this occupation.
+In Demand skills are frequently included in employer job postings for this occupation.
+See all 30 In Demand skills for this occupation.
+back to top
+Essential Skills
+Save Table:
+XLSX
+CSV
+All
+10 displayed
+Importance
+Essential Skill
+72
+Critical Thinking
+— Using logic and reasoning to identify the strengths and weaknesses of alternative solutions, conclusions, or approaches to problems.
+Related occupations
+63
+Active Learning
+— Understanding the implications of new information for both current and future problem-solving and decision-making.
+Related occupations
+63
+Reading Comprehension
+— Understanding written sentences and paragraphs in work-related documents.
+Related occupations
+60
+Active Listening
+— Giving full attention to what other people are saying, taking time to understand the points being made, asking questions as appropriate, and not interrupting at inappropriate times.
+Related occupations
+56
+Writing
+— Communicating effectively in writing as appropriate for the needs of the audience.
+Related occupations
+53
+Speaking
+— Talking to others to convey information effectively.
+Related occupations
+50
+Monitoring
+— Monitoring/Assessing performance of yourself, other individuals, or organizations to make improvements or take corrective action.
+Related occupations
+44
+Mathematics
+— Using mathematics to solve problems.
+Related occupations
+41
+Learning Strategies
+— Selecting and using training/instructional methods and procedures appropriate for the situation when learning or teaching new things.
+Related occupations
+28
+Science
+— Using scientific rules and methods to solve problems.
+Related occupations
+back to top
+Transferable Skills
+Save Table:
+XLSX
+CSV
+10 of
+All
+25 displayed
+(
+Show all
+Show top 10
+)
+Importance
+Transferable Skill
+75
+Programming
+— Writing computer programs for various purposes.
+Related occupations
+66
+Judgment and Decision Making
+— Considering the relative costs and benefits of potential actions to choose the most appropriate one.
+Related occupations
+63
+Systems Analysis
+— Determining how a system should work and how changes in conditions, operations, and the environment will affect outcomes.
+Related occupations
+60
+Complex Problem Solving
+— Identifying complex problems and reviewing related information to develop and evaluate options and implement solutions.
+Related occupations
+60
+Systems Evaluation
+— Identifying measures or indicators of system performance and the actions needed to improve or correct performance, relative to the goals of the system.
+Related occupations
+60
+Technology Design
+— Generating or adapting equipment and technology to serve user needs.
+Related occupations
+56
+Operations Analysis
+— Analyzing needs and product requirements to create a design.
+Related occupations
+53
+Time Management
+— Managing one's own time and the time of others.
+Related occupations
+50
+Coordination
+— Adjusting actions in relation to others' actions.
+Related occupations
+47
+Instructing
+— Teaching others how to do something.
+Related occupations
+47
+Service Orientation
+— Actively looking for ways to help people.
+Related occupations
+47
+Social Perceptiveness
+— Being aware of others' reactions and understanding why they react as they do.
+Related occupations
+44
+Operations Monitoring
+— Watching gauges, dials, or other indicators to make sure a machine is working properly.
+Related occupations
+44
+Persuasion
+— Persuading others to change their minds or behavior.
+Related occupations
+44
+Quality Control Analysis
+— Conducting tests and inspections of products, services, or processes to evaluate quality or performance.
+Related occupations
+41
+Negotiation
+— Bringing others together and trying to reconcile differences.
+Related occupations
+41
+Troubleshooting
+— Determining causes of operating errors and deciding what to do about it.
+Related occupations
+31
+Management of Personnel Resources
+— Motivating, developing, and directing people as they work, identifying the best people for the job.
+Related occupations
+28
+Equipment Selection
+— Determining the kind of tools and equipment needed to do a job.
+Related occupations
+25
+Operation and Control
+— Controlling operations of equipment or systems.
+Related occupations
+22
+Installation
+— Installing equipment, machines, wiring, or programs to meet specifications.
+Related occupations
+19
+Management of Financial Resources
+— Determining how money will be spent to get the work done, and accounting for these expenditures.
+Related occupations
+16
+Management of Material Resources
+— Obtaining and seeing to the appropriate use of equipment, facilities, and materials needed to do certain work.
+Related occupations
+6
+Equipment Maintenance
+— Performing routine maintenance on equipment and determining when and what kind of maintenance is needed.
+Related occupations
+3
+Repairing
+— Repairing machines or systems using the needed tools.
+Related occupations
+back to top
+Knowledge
+Save Table:
+XLSX
+CSV
+10 of
+All
+33 displayed
+(
+Show all
+Show top 10
+)
+Importance
+Knowledge
+94
+Computers and Electronics
+— Knowledge of circuit boards, processors, chips, electronic equipment, and computer hardware and software, including applications and programming.
+Related occupations
+64
+Customer and Personal Service
+— Knowledge of principles and processes for providing customer and personal services. This includes customer needs assessment, meeting quality standards for services, and evaluation of customer satisfaction.
+Related occupations
+64
+Mathematics
+— Knowledge of arithmetic, algebra, geometry, calculus, statistics, and their applications.
+Related occupations
+57
+English Language
+— Knowledge of the structure and content of the English language including the meaning and spelling of words, and rules of composition and grammar.
+Related occupations
+46
+Education and Training
+— Knowledge of principles and methods for curriculum and training design, teaching and instruction for individuals and groups, and the measurement of training effects.
+Related occupations
+45
+Engineering and Technology
+— Knowledge of the practical application of engineering science and technology. This includes applying principles, techniques, procedures, and equipment to the design and production of various goods and services.
+Related occupations
+43
+Design
+— Knowledge of design techniques, tools, and principles involved in production of precision technical plans, blueprints, drawings, and models.
+Related occupations
+41
+Telecommunications
+— Knowledge of transmission, broadcasting, switching, control, and operation of telecommunications systems.
+Related occupations
+39
+Production and Processing
+— Knowledge of raw materials, production processes, quality control, costs, and other techniques for maximizing the effective manufacture and distribution of goods.
+Related occupations
+39
+Public Safety and Security
+— Knowledge of relevant equipment, policies, procedures, and strategies to promote effective local, state, or national security operations for the protection of people, data, property, and institutions.
+Related occupations
+37
+Economics and Accounting
+— Knowledge of economic and accounting principles and practices, the financial markets, banking, and the analysis and reporting of financial data.
+Related occupations
+34
+Personnel and Human Resources
+— Knowledge of principles and procedures for personnel recruitment, selection, training, compensation and benefits, labor relations and negotiation, and personnel information systems.
+Related occupations
+31
+Administration and Management
+— Knowledge of business and management principles involved in strategic planning, resource allocation, human resources modeling, leadership technique, production methods, and coordination of people and resources.
+Related occupations
+30
+Sales and Marketing
+— Knowledge of principles and methods for showing, promoting, and selling products or services. This includes marketing strategy and tactics, product demonstration, sales techniques, and sales control systems.
+Related occupations
+28
+Administrative
+— Knowledge of administrative and office procedures and systems such as word processing, managing files and records, stenography and transcription, designing forms, and workplace terminology.
+Related occupations
+19
+Communications and Media
+— Knowledge of media production, communication, and dissemination techniques and methods. This includes alternative ways to inform and entertain via written, oral, and visual media.
+Related occupations
+19
+Law and Government
+— Knowledge of laws, legal codes, court procedures, precedents, government regulations, executive orders, agency rules, and the democratic political process.
+Related occupations
+18
+Transportation
+— Knowledge of principles and methods for moving people or goods by air, rail, sea, or road, including the relative costs and benefits.
+Related occupations
+15
+Psychology
+— Knowledge of human behavior and performance; individual differences in ability, personality, and interests; learning and motivation; psychological research methods; and the assessment and treatment of behavioral and affective disorders.
+Related occupations
+10
+Mechanical
+— Knowledge of machines and tools, including their designs, uses, repair, and maintenance.
+Related occupations
+8
+Sociology and Anthropology
+— Knowledge of group behavior and dynamics, societal trends and influences, human migrations, ethnicity, cultures, and their history and origins.
+Related occupations
+7
+Geography
+— Knowledge of principles and methods for describing the features of land, sea, and air masses, including their physical characteristics, locations, interrelationships, and distribution of plant, animal, and human life.
+Related occupations
+7
+Physics
+— Knowledge and prediction of physical principles, laws, their interrelationships, and applications to understanding fluid, material, and atmospheric dynamics, and mechanical, electrical, atomic and sub-atomic structures and processes.
+Related occupations
+6
+Chemistry
+— Knowledge of the chemical composition, structure, and properties of substances and of the chemical processes and transformations that they undergo. This includes uses of chemicals and their interactions, danger signs, production techniques, and disposal methods.
+Related occupations
+4
+Biology
+— Knowledge of plant and animal organisms, their tissues, cells, functions, interdependencies, and interactions with each other and the environment.
+Related occupations
+4
+Foreign Language
+— Knowledge of the structure and content of a foreign (non-English) language including the meaning and spelling of words, rules of composition and grammar, and pronunciation.
+Related occupations
+4
+Philosophy and Theology
+— Knowledge of different philosophical systems and religions. This includes their basic principles, values, ethics, ways of thinking, customs, practices, and their impact on human culture.
+Related occupations
+3
+Building and Construction
+— Knowledge of materials, methods, and the tools involved in the construction or repair of houses, buildings, or other structures such as highways and roads.
+Related occupations
+3
+Food Production
+— Knowledge of techniques and equipment for planting, growing, and harvesting food products (both plant and animal) for consumption, including storage/handling techniques.
+Related occupations
+1
+History and Archeology
+— Knowledge of historical events and their causes, indicators, and effects on civilizations and cultures.
+Related occupations
+1
+Therapy and Counseling
+— Knowledge of principles, methods, and procedures for diagnosis, treatment, and rehabilitation of physical and mental dysfunctions, and for career counseling and guidance.
+Related occupations
+0
+Fine Arts
+— Knowledge of the theory and techniques required to compose, produce, and perform works of music, dance, visual arts, drama, and sculpture.
+Related occupations
+0
+Medicine and Dentistry
+— Knowledge of the information and techniques needed to diagnose and treat human injuries, diseases, and deformities. This includes symptoms, treatment alternatives, drug properties and interactions, and preventive health-care measures.
+Related occupations
+back to top
+Education
+How much education does a new hire need to perform a job in this occupation? Respondents said:
+85%
+responded:
+Bachelor’s degree required
+5%
+responded:
+Associate’s degree or other 2-year degree required
+5%
+responded:
+Master’s degree required
+back to top
+Worker Characteristics
+Abilities
+Save Table:
+XLSX
+CSV
+10 of
+All
+52 displayed
+(
+Show all
+Show top 10
+)
+Importance
+Ability
+69
+Deductive Reasoning
+— The ability to apply general rules to specific problems to produce answers that make sense.
+Related occupations
+69
+Near Vision
+— The ability to see details at close range (within a few feet of the observer).
+Related occupations
+69
+Oral Comprehension
+— The ability to listen to and understand information and ideas presented through spoken words and sentences.
+Related occupations
+69
+Oral Expression
+— The ability to communicate information and ideas in speaking so others will understand.
+Related occupations
+69
+Problem Sensitivity
+— The ability to tell when something is wrong or is likely to go wrong. It does not involve solving the problem, only recognizing that there is a problem.
+Related occupations
+69
+Written Comprehension
+— The ability to read and understand information and ideas presented in writing.
+Related occupations
+66
+Information Ordering
+— The ability to arrange things or actions in a certain order or pattern according to a specific rule or set of rules (e.g., patterns of numbers, letters, words, pictures, mathematical operations).
+Related occupations
+63
+Category Flexibility
+— The ability to generate or use different sets of rules for combining or grouping things in different ways.
+Related occupations
+63
+Inductive Reasoning
+— The ability to combine pieces of information to form general rules or conclusions (includes finding a relationship among seemingly unrelated events).
+Related occupations
+63
+Written Expression
+— The ability to communicate information and ideas in writing so others will understand.
+Related occupations
+60
+Speech Recognition
+— The ability to identify and understand the speech of another person.
+Related occupations
+56
+Fluency of Ideas
+— The ability to come up with a number of ideas about a topic (the number of ideas is important, not their quality, correctness, or creativity).
+Related occupations
+53
+Originality
+— The ability to come up with unusual or clever ideas about a given topic or situation, or to develop creative ways to solve a problem.
+Related occupations
+53
+Selective Attention
+— The ability to concentrate on a task over a period of time without being distracted.
+Related occupations
+50
+Speech Clarity
+— The ability to speak clearly so others can understand you.
+Related occupations
+47
+Mathematical Reasoning
+— The ability to choose the right mathematical methods or formulas to solve a problem.
+Related occupations
+41
+Flexibility of Closure
+— The ability to identify or detect a known pattern (a figure, object, word, or sound) that is hidden in other distracting material.
+Related occupations
+41
+Perceptual Speed
+— The ability to quickly and accurately compare similarities and differences among sets of letters, numbers, objects, pictures, or patterns. The things to be compared may be presented at the same time or one after the other. This ability also includes comparing a presented object with a remembered object.
+Related occupations
+38
+Number Facility
+— The ability to add, subtract, multiply, or divide quickly and correctly.
+Related occupations
+38
+Speed of Closure
+— The ability to quickly make sense of, combine, and organize information into meaningful patterns.
+Related occupations
+35
+Far Vision
+— The ability to see details at a distance.
+Related occupations
+35
+Visualization
+— The ability to imagine how something will look after it is moved around or when its parts are moved or rearranged.
+Related occupations
+31
+Memorization
+— The ability to remember information such as words, numbers, pictures, and procedures.
+Related occupations
+25
+Time Sharing
+— The ability to shift back and forth between two or more activities or sources of information (such as speech, sounds, touch, or other sources).
+Related occupations
+25
+Visual Color Discrimination
+— The ability to match or detect differences between colors, including shades of color and brightness.
+Related occupations
+22
+Trunk Strength
+— The ability to use your abdominal and lower back muscles to support part of the body repeatedly or continuously over time without "giving out" or fatiguing.
+Related occupations
+19
+Arm-Hand Steadiness
+— The ability to keep your hand and arm steady while moving your arm or while holding your arm and hand in one position.
+Related occupations
+19
+Auditory Attention
+— The ability to focus on a single source of sound in the presence of other distracting sounds.
+Related occupations
+19
+Finger Dexterity
+— The ability to make precisely coordinated movements of the fingers of one or both hands to grasp, manipulate, or assemble very small objects.
+Related occupations
+19
+Hearing Sensitivity
+— The ability to detect or tell the differences between sounds that vary in pitch and loudness.
+Related occupations
+19
+Wrist-Finger Speed
+— The ability to make fast, simple, repeated movements of the fingers, hands, and wrists.
+Related occupations
+16
+Manual Dexterity
+— The ability to quickly move your hand, your hand together with your arm, or your two hands to grasp, manipulate, or assemble objects.
+Related occupations
+13
+Control Precision
+— The ability to quickly and repeatedly adjust the controls of a machine or a vehicle to exact positions.
+Related occupations
+13
+Depth Perception
+— The ability to judge which of several objects is closer or farther away from you, or to judge the distance between you and an object.
+Related occupations
+10
+Dynamic Strength
+— The ability to exert muscle force repeatedly or continuously over time. This involves muscular endurance and resistance to muscle fatigue.
+Related occupations
+3
+Response Orientation
+— The ability to choose quickly between two or more movements in response to two or more different signals (lights, sounds, pictures). It includes the speed with which the correct response is started with the hand, foot, or other body part.
+Related occupations
+0
+Dynamic Flexibility
+— The ability to quickly and repeatedly bend, stretch, twist, or reach out with your body, arms, and/or legs.
+Related occupations
+0
+Explosive Strength
+— The ability to use short bursts of muscle force to propel oneself (as in jumping or sprinting), or to throw an object.
+Related occupations
+0
+Extent Flexibility
+— The ability to bend, stretch, twist, or reach with your body, arms, and/or legs.
+Related occupations
+0
+Glare Sensitivity
+— The ability to see objects in the presence of a glare or bright lighting.
+Related occupations
+0
+Gross Body Coordination
+— The ability to coordinate the movement of your arms, legs, and torso together when the whole body is in motion.
+Related occupations
+0
+Gross Body Equilibrium
+— The ability to keep or regain your body balance or stay upright when in an unstable position.
+Related occupations
+0
+Multilimb Coordination
+— The ability to coordinate two or more limbs (for example, two arms, two legs, or one leg and one arm) while sitting, standing, or lying down. It does not involve performing the activities while the whole body is in motion.
+Related occupations
+0
+Night Vision
+— The ability to see under low-light conditions.
+Related occupations
+0
+Peripheral Vision
+— The ability to see objects or movement of objects to one's side when the eyes are looking ahead.
+Related occupations
+0
+Rate Control
+— The ability to time your movements or the movement of a piece of equipment in anticipation of changes in the speed and/or direction of a moving object or scene.
+Related occupations
+0
+Reaction Time
+— The ability to quickly respond (with the hand, finger, or foot) to a signal (sound, light, picture) when it appears.
+Related occupations
+0
+Sound Localization
+— The ability to tell the direction from which a sound originated.
+Related occupations
+0
+Spatial Orientation
+— The ability to know your location in relation to the environment or to know where other objects are in relation to you.
+Related occupations
+0
+Speed of Limb Movement
+— The ability to quickly move the arms and legs.
+Related occupations
+0
+Stamina
+— The ability to exert yourself physically over long periods of time without getting winded or out of breath.
+Related occupations
+0
+Static Strength
+— The ability to exert maximum muscle force to lift, push, pull, or carry objects.
+Related occupations
+back to top
+Career Interest Types
+Save Table:
+XLSX
+CSV
+All
+6 displayed
+Occupational Interest
+Career Interest Type
+84
+Investigative
+— Work involves studying and researching non-living objects, living organisms, disease or other forms of impairment, or human behavior. Investigative occupations are often associated with physical, life, medical, or social sciences, and can be found in the fields of humanities, mathematics/statistics, information technology, or health care service.
+Related occupations
+77
+Conventional
+— Work involves following procedures and regulations to organize information or data, typically in a business setting. Conventional occupations are often associated with office work, accounting, mathematics/statistics, information technology, finance, or human resources.
+Related occupations
+44
+Realistic
+— Work involves designing, building, or repairing of equipment, materials, or structures, engaging in physical activity, or working outdoors. Realistic occupations are often associated with engineering, mechanics and electronics, construction, woodworking, transportation, machine operation, agriculture, animal services, physical or manual labor, athletics, or protective services.
+Related occupations
+23
+Artistic
+— Work involves creating original visual artwork, performances, written works, food, or music for a variety of media, or applying artistic principles to the design of various objects and materials. Artistic occupations are often associated with visual arts, applied arts and design, performing arts, music, creative writing, media, or culinary art.
+Related occupations
+15
+Enterprising
+— Work involves managing, negotiating, marketing, or selling, typically in a business setting, or leading or advising people in political and legal situations. Enterprising occupations are often associated with business initiatives, sales, marketing/advertising, finance, management/administration, professional advising, public speaking, politics, or law.
+Related occupations
+14
+Social
+— Work involves helping, teaching, advising, assisting, or providing service to others. Social occupations are often associated with social, health care, personal service, teaching/education, or religious activities.
+Related occupations
+back to top
+Specific Interest Areas
+Save Table:
+XLSX
+CSV
+3 of
+All
+41 displayed
+(
+Show all
+Show top 3
+)
+Occupational Interest
+Specific Interest Area
+94
+Information Technology
+— Work involves designing, developing, testing, and maintaining computer software, hardware, networks, and systems.
+Related occupations
+68
+Mathematics/Statistics
+— Work involves developing and applying mathematics and statistical theory and methods.
+Related occupations
+61
+Engineering
+— Work involves applying science and technology to the design, building, testing, and use of electrical and electronic components, mechanical devices and machines, automotive, marine, and aerospace equipment and vehicles, materials, or structures.
+Related occupations
+30
+Mechanics/Electronics
+— Work involves maintaining and repairing of machinery, such as automotive engines, electronic equipment, computers, and communication systems.
+Related occupations
+22
+Management/Administration
+— Work involves planning, directing, or coordinating the daily operations of an organization, and overseeing personnel, business, or administrative services.
+Related occupations
+15
+Accounting
+— Work involves examining, analyzing, and interpreting accounting records for financial statements, or maintaining, auditing, or evaluating records and accounts.
+Related occupations
+13
+Office Work
+— Work involves clerical and administrative tasks for an organization such as answering phones, bookkeeping, updating records, scheduling appointments or meetings, and editing of documents and files.
+Related occupations
+12
+Physical Science
+— Work involves studying and researching non-living objects, materials, and phenomena through scientific disciplines such as physics, chemistry, astronomy, meteorology, or geology.
+Related occupations
+10
+Public Speaking
+— Work involves speaking before an audience to educate, entertain, or influence the listeners.
+Related occupations
+7
+Business Initiatives
+— Work involves creating strategic plans or taking actions to expand an organization's business or market share.
+Related occupations
+7
+Finance
+— Work involves directing and managing financial activities, such as planning and investments for an individual or organization to generate income.
+Related occupations
+7
+Teaching/Education
+— Work involves teaching through lectures, discussions, and demonstrations in one or more subjects.
+Related occupations
+6
+Applied Arts and Design
+— Work involves applying artistic principles to the design and creation of various objects and materials.
+Related occupations
+5
+Creative Writing
+— Work involves developing creative written works, such as novels, scripts, song lyrics, poetry, stories, or advertisements.
+Related occupations
+5
+Media
+— Work involves producing, developing, writing, directing, or presenting information through print, radio, television, or digital media.
+Related occupations
+4
+Human Resources
+— Work involves recruiting, selecting, and training job applicants, maintaining employee personnel records, administering compensation and employee-benefit programs, and conducting employee performance reviews.
+Related occupations
+4
+Life Science
+— Work involves studying and researching living organisms through scientific disciplines such as biology, botany, zoology, microbiology, physiology, biochemistry, or zoology.
+Related occupations
+4
+Marketing/Advertising
+— Work involves promoting or creating a public image for products, services, or organizations to attract interest, engagement, or sales.
+Related occupations
+4
+Medical Science
+— Work involves studying and researching the causes, nature, effects, and treatments of disease or other forms of impairment or illness.
+Related occupations
+4
+Personal Service
+— Work involves providing personal services to individuals in need of non-medical assistance such as helping arrange or plan for travel, meals, or events.
+Related occupations
+4
+Social Science
+— Work involves studying and researching human behavior, society, politics, and social relationships through scientific disciplines such as psychology, sociology, economics, or political science.
+Related occupations
+3
+Sales
+— Work involves selling goods or services.
+Related occupations
+3
+Visual Arts
+— Work involves creating original visual artwork for a variety of media and purposes using various techniques and software.
+Related occupations
+2
+Health Care Service
+— Work involves providing health care services to individuals to include the diagnosis, prevention, or treatment of diseases and other forms of illness or impairment.
+Related occupations
+2
+Humanities
+— Work involves studying and researching aspects of human history, culture, and language through disciplines such as history, philosophy, the language arts, or area/ethnic studies.
+Related occupations
+2
+Law
+— Work involves studying and applying legal knowledge.
+Related occupations
+2
+Professional Advising
+— Work involves providing expert advice, coaching, and counseling on topics such as careers, educational opportunities, and educational and professional development.
+Related occupations
+2
+Protective Service
+— Work involves maintaining order and protecting life and property by conducting investigations and enforcing laws and regulations to prevent or solve crimes.
+Related occupations
+2
+Social Service
+— Work involves providing social services and assistance to improve the well-being and social and psychological functioning of children and adults.
+Related occupations
+1
+Music
+— Work involves conducting, composing, or playing music or singing.
+Related occupations
+1
+Performing Arts
+— Work involves acting as a performer in dance, comedy, or dramatic productions, choreographing of dance performances, or producing of live or recorded entertainment.
+Related occupations
+1
+Politics
+— Work involves engaging in political activities to influence government policy.
+Related occupations
+1
+Transportation/Machine Operation
+— Work involves driving vehicles, such as vans, trucks, trains, and buses to transport people or materials. Work can also involve operating heavy equipment, such as cranes, forklifts, bulldozers, and backhoes to move materials or earth.
+Related occupations
+0
+Agriculture
+— Work involves planting, cultivating, and harvesting crops, plants, or trees, or raising farm animals. Work can also involve preparing plant and animal products for distribution to consumers, or protecting natural resources to maximize their use in farming.
+Related occupations
+0
+Animal Service
+— Work involves feeding, grooming, exercising, or otherwise providing care to promote and maintain the well-being of pets and other animals in settings such as kennels, animal shelters, and zoos.
+Related occupations
+0
+Athletics
+— Work involves training, practicing, or competing in athletic events, or supporting those participating in athletics through coaching, training, or officiating.
+Related occupations
+0
+Construction/Woodwork
+— Work involves constructing, installing, or repairing structures and fixtures made of wood.
+Related occupations
+0
+Culinary Art
+— Work involves preparing, cooking, and presenting food in a distinctive style usually associated with a specific culture or region.
+Related occupations
+0
+Nature/Outdoors
+— Work involves planning, restoring, and conserving natural areas and wildlife habitats.
+Related occupations
+0
+Physical/Manual Labor
+— Work involves manually unloading and moving freight, stock, luggage, or other materials, or performing other physical labor.
+Related occupations
+0
+Religious Activities
+— Work involves conducting religious worship, leading a church or other religious group, and offering moral guidance associated with beliefs and practices of a religious faith.
+Related occupations
+back to top
+Work Styles
+Save Table:
+XLSX
+CSV
+10 of
+All
+21 displayed
+(
+Show all
+Show top 10
+)
+Impact
+Work Style
+89
+Attention to Detail
+— A tendency to be detail-oriented, organized, and thorough in completing work.
+Related occupations
+84
+Innovation
+— A tendency to be inventive, to be imaginative, and to adopt new perspectives on ways to accomplish work.
+Related occupations
+80
+Dependability
+— A tendency to be reliable, responsible, and consistent in meeting work-related obligations.
+Related occupations
+78
+Intellectual Curiosity
+— A tendency to seek out and acquire new work-related knowledge and obtain a deep understanding of work-related subjects.
+Related occupations
+71
+Achievement Orientation
+— A tendency to establish and maintain personally challenging work-related goals, set high work-related standards, and exert high effort toward meeting those goals and standards.
+Related occupations
+70
+Adaptability
+— A tendency to be open to and comfortable with change, new experiences, or ideas at work.
+Related occupations
+60
+Integrity
+— A tendency to be honest and ethical at work.
+Related occupations
+59
+Cautiousness
+— A tendency to be careful, deliberate, and risk-avoidant when making work-related decisions or doing work.
+Related occupations
+59
+Perseverance
+— A tendency to exhibit determination and resolve to perform or complete tasks in the face of difficult circumstances or obstacles at work.
+Related occupations
+57
+Tolerance for Ambiguity
+— A tendency to be comfortable with ambiguity and uncertainty at work.
+Related occupations
+53
+Initiative
+— A tendency to be proactive and take on extra responsibilities and tasks that may fall outside of one's required work role.
+Related occupations
+49
+Self-Confidence
+— A tendency to believe in one's work-related capabilities and ability to control one's work-related outcomes.
+Related occupations
+42
+Stress Tolerance
+— A tendency to cope and function effectively in stressful situations at work.
+Related occupations
+40
+Cooperation
+— A tendency to be pleasant, helpful, and willing to assist others at work.
+Related occupations
+38
+Leadership Orientation
+— A tendency to lead, take charge, offer opinions, and provide direction at work.
+Related occupations
+29
+Social Orientation
+— A tendency to seek out, enjoy, and be energized by social interaction at work.
+Related occupations
+23
+Self-Control
+— A tendency to remain calm and composed and to manage emotions effectively in response to criticism or difficult situations at work.
+Related occupations
+22
+Sincerity
+— A tendency to be genuine and sincere in interactions with others at work, without concern for personal gain or self-interest.
+Related occupations
+19
+Humility
+— A tendency to be modest and humble when interacting with others at work.
+Related occupations
+16
+Optimism
+— A tendency to exhibit a positive attitude and positive emotions at work, even under difficult circumstances.
+Related occupations
+14
+Empathy
+— A tendency to show concern for others and be sensitive to others' needs and feelings at work.
+Related occupations
+back to top
+Workforce Characteristics
+Wages & Employment Trends
+Median wages
+(2025)
+$65.38 hourly, $135,980 annual
+State wages
+Select a State
+Alabama
+Alaska
+Arizona
+Arkansas
+California
+Colorado
+Connecticut
+Delaware
+District of Columbia
+Florida
+Georgia
+Hawaii
+Idaho
+Illinois
+Indiana
+Iowa
+Kansas
+Kentucky
+Louisiana
+Maine
+Maryland
+Massachusetts
+Michigan
+Minnesota
+Mississippi
+Missouri
+Montana
+Nebraska
+Nevada
+New Hampshire
+New Jersey
+New Mexico
+New York
+North Carolina
+North Dakota
+Ohio
+Oklahoma
+Oregon
+Pennsylvania
+Rhode Island
+South Carolina
+South Dakota
+Tennessee
+Texas
+Utah
+Vermont
+Virginia
+Washington
+West Virginia
+Wisconsin
+Wyoming
+American Samoa
+Guam
+Northern Mariana Islands
+Puerto Rico
+Virgin Islands
+Go
+Local wages
+ZIP Code
+Go
+Employment
+(2025)
+1,717,800 employees
+Projected growth
+(2025-2035)
+Much faster than average (7% or higher)
+Projected job openings
+(2025-2035)
+95,300
+State trends
+Select a State
+Alabama
+Alaska
+Arizona
+Arkansas
+California
+Colorado
+Connecticut
+Delaware
+District of Columbia
+Florida
+Georgia
+Hawaii
+Idaho
+Illinois
+Indiana
+Iowa
+Kansas
+Kentucky
+Louisiana
+Maine
+Maryland
+Massachusetts
+Michigan
+Minnesota
+Mississippi
+Missouri
+Montana
+Nebraska
+Nevada
+New Hampshire
+New Jersey
+New Mexico
+New York
+North Carolina
+North Dakota
+Ohio
+Oklahoma
+Oregon
+Pennsylvania
+Rhode Island
+South Carolina
+South Dakota
+Tennessee
+Texas
+Utah
+Vermont
+Virginia
+Washington
+West Virginia
+Wisconsin
+Wyoming
+American Samoa
+Guam
+Northern Mariana Islands
+Puerto Rico
+Virgin Islands
+Go
+Top industries
+(2025)
+Professional, Scientific, and Technical Services
+(40% employed in this sector)
+Information
+(20%)
+Finance and Insurance
+(11%)
+Source: Bureau of Labor Statistics
+2025 wage data
+external site
+and
+2025-2035 employment projections
+external site
+.
+“Projected growth” represents the estimated change in total employment over the projections period (2025-2035). “Projected job openings” represent openings due to growth and replacement.
+back to top
+Job Openings on the Web
+State job openings
+Select a State
+Alabama
+Alaska
+Arizona
+Arkansas
+California
+Colorado
+Connecticut
+Delaware
+District of Columbia
+Florida
+Georgia
+Hawaii
+Idaho
+Illinois
+Indiana
+Iowa
+Kansas
+Kentucky
+Louisiana
+Maine
+Maryland
+Massachusetts
+Michigan
+Minnesota
+Mississippi
+Missouri
+Montana
+Nebraska
+Nevada
+New Hampshire
+New Jersey
+New Mexico
+New York
+North Carolina
+North Dakota
+Ohio
+Oklahoma
+Oregon
+Pennsylvania
+Rhode Island
+South Carolina
+South Dakota
+Tennessee
+Texas
+Utah
+Vermont
+Virginia
+Washington
+West Virginia
+Wisconsin
+Wyoming
+American Samoa
+Guam
+Northern Mariana Islands
+Puerto Rico
+Virgin Islands
+Go
+Local job openings
+ZIP Code
+Go
+back to top
+More Information
+Related Occupations
+Save Table:
+XLSX
+CSV
+10 of
+All
+20 displayed
+(
+Show all
+Show top 10
+)
+17-2061.00
+Computer Hardware Engineers
+Bright Outlook
+15-1241.00
+Computer Network Architects
+Bright Outlook
+15-1251.00
+Computer Programmers
+15-1211.00
+Computer Systems Analysts
+Bright Outlook
+15-1299.08
+Computer Systems Engineers/Architects
+Bright Outlook
+15-1242.00
+Database Administrators
+15-1243.00
+Database Architects
+Bright Outlook
+15-1299.05
+Information Security Engineers
+Bright Outlook
+15-1253.00
+Software Quality Assurance Analysts and Testers
+Bright Outlook
+15-1254.00
+Web Developers
+Supplemental related occupations
+15-1255.00
+Web and Digital Interface Designers
+Bright Outlook
+15-1299.07
+Blockchain Engineers
+Bright Outlook
+11-3021.00
+Computer and Information Systems Managers
+Bright Outlook
+15-1243.01
+Data Warehousing Specialists
+Bright Outlook
+13-1082.00
+Project Management Specialists
+Bright Outlook
+15-1244.00
+Network and Computer Systems Administrators
+15-2051.00
+Data Scientists
+Bright Outlook
+17-2072.00
+Electronics Engineers, Except Computer
+15-1299.04
+Penetration Testers
+Bright Outlook
+15-1299.09
+Information Technology Project Managers
+Bright Outlook
+back to top
+Professional Associations
+Disclaimer:
+Sources are listed to provide additional information on related jobs, specialties, and/or industries.
+Links to non-DOL Internet sites are provided for your convenience and do not constitute an endorsement.
+O*NET Ally
+Actively assisted with the O*NET data collection, helping to identify occupational experts who can be surveyed about their work in the occupation.
+View the list of Allies
+National Associations
+5 of
+All
+27 displayed
+(
+Show all
+Show top 5
+)
+Association for Computing Machinery
+external site
+Association for Information Science and Technology
+external site
+Association for Information Systems
+external site
+Association for the Advancement of Artificial Intelligence
+external site
+Association for Women in Computing
+external site
+BCS, The Charted Institute for IT
+external site
+Computer Graphics Society
+external site
+Computer Professionals for Social Responsibility
+external site
+Computing Research Association
+external site
+IEEE Computer Society
+external site
+Information Processing Society of Japan
+external site
+Interaction Design Association
+external site
+International Association for Computer Information Systems
+external site
+International Association of Computer Science and Information Technology
+external site
+International Association of Engineers
+external site
+International Game Developers Association
+external site
+Internet Society
+external site
+National Center for Women and Information Technology
+external site
+National Society of Black Engineers
+external site
+Open Worldwide Application Security Project
+external site
+Python Software Foundation
+external site
+Rocky Mountain Oracle Users Group
+external site
+Society of Digital Agencies
+external site
+Software and Information Industry Association
+external site
+The Institution of Engineering and Technology
+external site
+User Experience Professionals Association International
+external site
+World Wide Web Consortium
+external site
+Regional Associations
+Midwest Association for Information Systems
+external site
+Southern Association for Information Systems
+external site
+Accreditation, Certification, & Unions
+CompTIA
+external site
+Project Management Institute
+external site
+back to top

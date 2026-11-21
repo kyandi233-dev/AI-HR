@@ -3,24 +3,630 @@
     "onet_code": "15-1252.00",
     "onet_name": "Software Developers",
     "target_job": "中级软件开发工程师（细分方向需审核）",
-    "status": "candidate"
+    "status": "candidate",
+    "job_family_code": "15",
+    "job_family_name": "Computer and Mathematical",
+    "source_url": "https://www.onetonline.org/link/details/15-1252.00"
   },
   "business_intelligence": {
     "onet_code": "15-2051.01",
     "onet_name": "Business Intelligence Analysts",
     "target_job": "商业智能分析师",
-    "status": "candidate"
+    "status": "candidate",
+    "job_family_code": "15",
+    "job_family_name": "Computer and Mathematical",
+    "source_url": "https://www.onetonline.org/link/details/15-2051.01"
   },
   "customer_service": {
     "onet_code": "43-4051.00",
     "onet_name": "Customer Service Representatives",
     "target_job": "客户服务代表（社会性技能占比高，待审核）",
-    "status": "candidate_review_required"
+    "status": "candidate_review_required",
+    "job_family_code": "43",
+    "job_family_name": "Office and Administrative Support",
+    "source_url": "https://www.onetonline.org/link/details/43-4051.00"
   },
   "logistics_analyst": {
     "onet_code": "13-1081.02",
     "onet_name": "Logistics Analysts",
     "target_job": "物流分析师",
-    "status": "candidate"
+    "status": "candidate",
+    "job_family_code": "13",
+    "job_family_name": "Business and Financial Operations",
+    "source_url": "https://www.onetonline.org/link/details/13-1081.02"
+  },
+  "marketing_managers": {
+    "onet_code": "11-2021.00",
+    "onet_name": "Marketing Managers",
+    "target_job": "Marketing Managers",
+    "status": "candidate",
+    "job_family_code": "11",
+    "job_family_name": "Management",
+    "source_url": "https://www.onetonline.org/link/details/11-2021.00"
+  },
+  "human_resources_managers": {
+    "onet_code": "11-3121.00",
+    "onet_name": "Human Resources Managers",
+    "target_job": "Human Resources Managers",
+    "status": "candidate",
+    "job_family_code": "11",
+    "job_family_name": "Management",
+    "source_url": "https://www.onetonline.org/link/details/11-3121.00"
+  },
+  "purchasing_managers": {
+    "onet_code": "11-3061.00",
+    "onet_name": "Purchasing Managers",
+    "target_job": "Purchasing Managers",
+    "status": "candidate",
+    "job_family_code": "11",
+    "job_family_name": "Management",
+    "source_url": "https://www.onetonline.org/link/details/11-3061.00"
+  },
+  "accountants_and_auditors": {
+    "onet_code": "13-2011.00",
+    "onet_name": "Accountants and Auditors",
+    "target_job": "Accountants and Auditors",
+    "status": "candidate",
+    "job_family_code": "13",
+    "job_family_name": "Business and Financial Operations",
+    "source_url": "https://www.onetonline.org/link/details/13-2011.00"
+  },
+  "human_resources_specialists": {
+    "onet_code": "13-1071.00",
+    "onet_name": "Human Resources Specialists",
+    "target_job": "Human Resources Specialists",
+    "status": "candidate",
+    "job_family_code": "13",
+    "job_family_name": "Business and Financial Operations",
+    "source_url": "https://www.onetonline.org/link/details/13-1071.00"
+  },
+  "data_scientists": {
+    "onet_code": "15-2051.00",
+    "onet_name": "Data Scientists",
+    "target_job": "Data Scientists",
+    "status": "candidate",
+    "job_family_code": "15",
+    "job_family_name": "Computer and Mathematical",
+    "source_url": "https://www.onetonline.org/link/details/15-2051.00"
+  },
+  "information_security_analysts": {
+    "onet_code": "15-1212.00",
+    "onet_name": "Information Security Analysts",
+    "target_job": "Information Security Analysts",
+    "status": "candidate",
+    "job_family_code": "15",
+    "job_family_name": "Computer and Mathematical",
+    "source_url": "https://www.onetonline.org/link/details/15-1212.00"
+  },
+  "civil_engineers": {
+    "onet_code": "17-2051.00",
+    "onet_name": "Civil Engineers",
+    "target_job": "Civil Engineers",
+    "status": "candidate",
+    "job_family_code": "17",
+    "job_family_name": "Architecture and Engineering",
+    "source_url": "https://www.onetonline.org/link/details/17-2051.00"
+  },
+  "electrical_engineers": {
+    "onet_code": "17-2071.00",
+    "onet_name": "Electrical Engineers",
+    "target_job": "Electrical Engineers",
+    "status": "candidate",
+    "job_family_code": "17",
+    "job_family_name": "Architecture and Engineering",
+    "source_url": "https://www.onetonline.org/link/details/17-2071.00"
+  },
+  "mechanical_engineers": {
+    "onet_code": "17-2141.00",
+    "onet_name": "Mechanical Engineers",
+    "target_job": "Mechanical Engineers",
+    "status": "candidate",
+    "job_family_code": "17",
+    "job_family_name": "Architecture and Engineering",
+    "source_url": "https://www.onetonline.org/link/details/17-2141.00"
+  },
+  "chemists": {
+    "onet_code": "19-2031.00",
+    "onet_name": "Chemists",
+    "target_job": "Chemists",
+    "status": "candidate",
+    "job_family_code": "19",
+    "job_family_name": "Life, Physical, and Social Science",
+    "source_url": "https://www.onetonline.org/link/details/19-2031.00"
+  },
+  "environmental_scientists_and_specialists_including_health": {
+    "onet_code": "19-2041.00",
+    "onet_name": "Environmental Scientists and Specialists, Including Health",
+    "target_job": "Environmental Scientists and Specialists, Including Health",
+    "status": "candidate",
+    "job_family_code": "19",
+    "job_family_name": "Life, Physical, and Social Science",
+    "source_url": "https://www.onetonline.org/link/details/19-2041.00"
+  },
+  "industrial_organizational_psychologists": {
+    "onet_code": "19-3032.00",
+    "onet_name": "Industrial-Organizational Psychologists",
+    "target_job": "Industrial-Organizational Psychologists",
+    "status": "candidate",
+    "job_family_code": "19",
+    "job_family_name": "Life, Physical, and Social Science",
+    "source_url": "https://www.onetonline.org/link/details/19-3032.00"
+  },
+  "mental_health_counselors": {
+    "onet_code": "21-1014.00",
+    "onet_name": "Mental Health Counselors",
+    "target_job": "Mental Health Counselors",
+    "status": "candidate",
+    "job_family_code": "21",
+    "job_family_name": "Community and Social Service",
+    "source_url": "https://www.onetonline.org/link/details/21-1014.00"
+  },
+  "child_family_and_school_social_workers": {
+    "onet_code": "21-1021.00",
+    "onet_name": "Child, Family, and School Social Workers",
+    "target_job": "Child, Family, and School Social Workers",
+    "status": "candidate",
+    "job_family_code": "21",
+    "job_family_name": "Community and Social Service",
+    "source_url": "https://www.onetonline.org/link/details/21-1021.00"
+  },
+  "community_health_workers": {
+    "onet_code": "21-1094.00",
+    "onet_name": "Community Health Workers",
+    "target_job": "Community Health Workers",
+    "status": "candidate",
+    "job_family_code": "21",
+    "job_family_name": "Community and Social Service",
+    "source_url": "https://www.onetonline.org/link/details/21-1094.00"
+  },
+  "lawyers": {
+    "onet_code": "23-1011.00",
+    "onet_name": "Lawyers",
+    "target_job": "Lawyers",
+    "status": "candidate",
+    "job_family_code": "23",
+    "job_family_name": "Legal",
+    "source_url": "https://www.onetonline.org/link/details/23-1011.00"
+  },
+  "paralegals_and_legal_assistants": {
+    "onet_code": "23-2011.00",
+    "onet_name": "Paralegals and Legal Assistants",
+    "target_job": "Paralegals and Legal Assistants",
+    "status": "candidate",
+    "job_family_code": "23",
+    "job_family_name": "Legal",
+    "source_url": "https://www.onetonline.org/link/details/23-2011.00"
+  },
+  "judicial_law_clerks": {
+    "onet_code": "23-1012.00",
+    "onet_name": "Judicial Law Clerks",
+    "target_job": "Judicial Law Clerks",
+    "status": "candidate",
+    "job_family_code": "23",
+    "job_family_name": "Legal",
+    "source_url": "https://www.onetonline.org/link/details/23-1012.00"
+  },
+  "elementary_school_teachers_except_special_education": {
+    "onet_code": "25-2021.00",
+    "onet_name": "Elementary School Teachers, Except Special Education",
+    "target_job": "Elementary School Teachers, Except Special Education",
+    "status": "candidate",
+    "job_family_code": "25",
+    "job_family_name": "Educational Instruction and Library",
+    "source_url": "https://www.onetonline.org/link/details/25-2021.00"
+  },
+  "secondary_school_teachers_except_special_and_career_technical_education": {
+    "onet_code": "25-2031.00",
+    "onet_name": "Secondary School Teachers, Except Special and Career/Technical Education",
+    "target_job": "Secondary School Teachers, Except Special and Career/Technical Education",
+    "status": "candidate",
+    "job_family_code": "25",
+    "job_family_name": "Educational Instruction and Library",
+    "source_url": "https://www.onetonline.org/link/details/25-2031.00"
+  },
+  "librarians_and_media_collections_specialists": {
+    "onet_code": "25-4022.00",
+    "onet_name": "Librarians and Media Collections Specialists",
+    "target_job": "Librarians and Media Collections Specialists",
+    "status": "candidate",
+    "job_family_code": "25",
+    "job_family_name": "Educational Instruction and Library",
+    "source_url": "https://www.onetonline.org/link/details/25-4022.00"
+  },
+  "graphic_designers": {
+    "onet_code": "27-1024.00",
+    "onet_name": "Graphic Designers",
+    "target_job": "Graphic Designers",
+    "status": "candidate",
+    "job_family_code": "27",
+    "job_family_name": "Arts, Design, Entertainment, Sports, and Media",
+    "source_url": "https://www.onetonline.org/link/details/27-1024.00"
+  },
+  "technical_writers": {
+    "onet_code": "27-3042.00",
+    "onet_name": "Technical Writers",
+    "target_job": "Technical Writers",
+    "status": "candidate",
+    "job_family_code": "27",
+    "job_family_name": "Arts, Design, Entertainment, Sports, and Media",
+    "source_url": "https://www.onetonline.org/link/details/27-3042.00"
+  },
+  "editors": {
+    "onet_code": "27-3041.00",
+    "onet_name": "Editors",
+    "target_job": "Editors",
+    "status": "candidate",
+    "job_family_code": "27",
+    "job_family_name": "Arts, Design, Entertainment, Sports, and Media",
+    "source_url": "https://www.onetonline.org/link/details/27-3041.00"
+  },
+  "registered_nurses": {
+    "onet_code": "29-1141.00",
+    "onet_name": "Registered Nurses",
+    "target_job": "Registered Nurses",
+    "status": "candidate",
+    "job_family_code": "29",
+    "job_family_name": "Healthcare Practitioners and Technical",
+    "source_url": "https://www.onetonline.org/link/details/29-1141.00"
+  },
+  "pharmacists": {
+    "onet_code": "29-1051.00",
+    "onet_name": "Pharmacists",
+    "target_job": "Pharmacists",
+    "status": "candidate",
+    "job_family_code": "29",
+    "job_family_name": "Healthcare Practitioners and Technical",
+    "source_url": "https://www.onetonline.org/link/details/29-1051.00"
+  },
+  "physical_therapists": {
+    "onet_code": "29-1123.00",
+    "onet_name": "Physical Therapists",
+    "target_job": "Physical Therapists",
+    "status": "candidate",
+    "job_family_code": "29",
+    "job_family_name": "Healthcare Practitioners and Technical",
+    "source_url": "https://www.onetonline.org/link/details/29-1123.00"
+  },
+  "nursing_assistants": {
+    "onet_code": "31-1131.00",
+    "onet_name": "Nursing Assistants",
+    "target_job": "Nursing Assistants",
+    "status": "candidate",
+    "job_family_code": "31",
+    "job_family_name": "Healthcare Support",
+    "source_url": "https://www.onetonline.org/link/details/31-1131.00"
+  },
+  "medical_assistants": {
+    "onet_code": "31-9092.00",
+    "onet_name": "Medical Assistants",
+    "target_job": "Medical Assistants",
+    "status": "candidate",
+    "job_family_code": "31",
+    "job_family_name": "Healthcare Support",
+    "source_url": "https://www.onetonline.org/link/details/31-9092.00"
+  },
+  "physical_therapist_assistants": {
+    "onet_code": "31-2021.00",
+    "onet_name": "Physical Therapist Assistants",
+    "target_job": "Physical Therapist Assistants",
+    "status": "candidate",
+    "job_family_code": "31",
+    "job_family_name": "Healthcare Support",
+    "source_url": "https://www.onetonline.org/link/details/31-2021.00"
+  },
+  "police_and_sheriff_s_patrol_officers": {
+    "onet_code": "33-3051.00",
+    "onet_name": "Police and Sheriff's Patrol Officers",
+    "target_job": "Police and Sheriff's Patrol Officers",
+    "status": "candidate",
+    "job_family_code": "33",
+    "job_family_name": "Protective Service",
+    "source_url": "https://www.onetonline.org/link/details/33-3051.00"
+  },
+  "firefighters": {
+    "onet_code": "33-2011.00",
+    "onet_name": "Firefighters",
+    "target_job": "Firefighters",
+    "status": "candidate",
+    "job_family_code": "33",
+    "job_family_name": "Protective Service",
+    "source_url": "https://www.onetonline.org/link/details/33-2011.00"
+  },
+  "security_guards": {
+    "onet_code": "33-9032.00",
+    "onet_name": "Security Guards",
+    "target_job": "Security Guards",
+    "status": "candidate",
+    "job_family_code": "33",
+    "job_family_name": "Protective Service",
+    "source_url": "https://www.onetonline.org/link/details/33-9032.00"
+  },
+  "chefs_and_head_cooks": {
+    "onet_code": "35-1011.00",
+    "onet_name": "Chefs and Head Cooks",
+    "target_job": "Chefs and Head Cooks",
+    "status": "candidate",
+    "job_family_code": "35",
+    "job_family_name": "Food Preparation and Serving Related",
+    "source_url": "https://www.onetonline.org/link/details/35-1011.00"
+  },
+  "cooks_restaurant": {
+    "onet_code": "35-2014.00",
+    "onet_name": "Cooks, Restaurant",
+    "target_job": "Cooks, Restaurant",
+    "status": "candidate",
+    "job_family_code": "35",
+    "job_family_name": "Food Preparation and Serving Related",
+    "source_url": "https://www.onetonline.org/link/details/35-2014.00"
+  },
+  "waiters_and_waitresses": {
+    "onet_code": "35-3031.00",
+    "onet_name": "Waiters and Waitresses",
+    "target_job": "Waiters and Waitresses",
+    "status": "candidate",
+    "job_family_code": "35",
+    "job_family_name": "Food Preparation and Serving Related",
+    "source_url": "https://www.onetonline.org/link/details/35-3031.00"
+  },
+  "janitors_and_cleaners_except_maids_and_housekeeping_cleaners": {
+    "onet_code": "37-2011.00",
+    "onet_name": "Janitors and Cleaners, Except Maids and Housekeeping Cleaners",
+    "target_job": "Janitors and Cleaners, Except Maids and Housekeeping Cleaners",
+    "status": "candidate",
+    "job_family_code": "37",
+    "job_family_name": "Building and Grounds Cleaning and Maintenance",
+    "source_url": "https://www.onetonline.org/link/details/37-2011.00"
+  },
+  "landscaping_and_groundskeeping_workers": {
+    "onet_code": "37-3011.00",
+    "onet_name": "Landscaping and Groundskeeping Workers",
+    "target_job": "Landscaping and Groundskeeping Workers",
+    "status": "candidate",
+    "job_family_code": "37",
+    "job_family_name": "Building and Grounds Cleaning and Maintenance",
+    "source_url": "https://www.onetonline.org/link/details/37-3011.00"
+  },
+  "pest_control_workers": {
+    "onet_code": "37-2021.00",
+    "onet_name": "Pest Control Workers",
+    "target_job": "Pest Control Workers",
+    "status": "candidate",
+    "job_family_code": "37",
+    "job_family_name": "Building and Grounds Cleaning and Maintenance",
+    "source_url": "https://www.onetonline.org/link/details/37-2021.00"
+  },
+  "hairdressers_hairstylists_and_cosmetologists": {
+    "onet_code": "39-5012.00",
+    "onet_name": "Hairdressers, Hairstylists, and Cosmetologists",
+    "target_job": "Hairdressers, Hairstylists, and Cosmetologists",
+    "status": "candidate",
+    "job_family_code": "39",
+    "job_family_name": "Personal Care and Service",
+    "source_url": "https://www.onetonline.org/link/details/39-5012.00"
+  },
+  "childcare_workers": {
+    "onet_code": "39-9011.00",
+    "onet_name": "Childcare Workers",
+    "target_job": "Childcare Workers",
+    "status": "candidate",
+    "job_family_code": "39",
+    "job_family_name": "Personal Care and Service",
+    "source_url": "https://www.onetonline.org/link/details/39-9011.00"
+  },
+  "animal_trainers": {
+    "onet_code": "39-2011.00",
+    "onet_name": "Animal Trainers",
+    "target_job": "Animal Trainers",
+    "status": "candidate",
+    "job_family_code": "39",
+    "job_family_name": "Personal Care and Service",
+    "source_url": "https://www.onetonline.org/link/details/39-2011.00"
+  },
+  "retail_salespersons": {
+    "onet_code": "41-2031.00",
+    "onet_name": "Retail Salespersons",
+    "target_job": "Retail Salespersons",
+    "status": "candidate",
+    "job_family_code": "41",
+    "job_family_name": "Sales and Related",
+    "source_url": "https://www.onetonline.org/link/details/41-2031.00"
+  },
+  "insurance_sales_agents": {
+    "onet_code": "41-3021.00",
+    "onet_name": "Insurance Sales Agents",
+    "target_job": "Insurance Sales Agents",
+    "status": "candidate",
+    "job_family_code": "41",
+    "job_family_name": "Sales and Related",
+    "source_url": "https://www.onetonline.org/link/details/41-3021.00"
+  },
+  "real_estate_sales_agents": {
+    "onet_code": "41-9022.00",
+    "onet_name": "Real Estate Sales Agents",
+    "target_job": "Real Estate Sales Agents",
+    "status": "candidate",
+    "job_family_code": "41",
+    "job_family_name": "Sales and Related",
+    "source_url": "https://www.onetonline.org/link/details/41-9022.00"
+  },
+  "billing_and_posting_clerks": {
+    "onet_code": "43-3021.00",
+    "onet_name": "Billing and Posting Clerks",
+    "target_job": "Billing and Posting Clerks",
+    "status": "candidate",
+    "job_family_code": "43",
+    "job_family_name": "Office and Administrative Support",
+    "source_url": "https://www.onetonline.org/link/details/43-3021.00"
+  },
+  "receptionists_and_information_clerks": {
+    "onet_code": "43-4171.00",
+    "onet_name": "Receptionists and Information Clerks",
+    "target_job": "Receptionists and Information Clerks",
+    "status": "candidate",
+    "job_family_code": "43",
+    "job_family_name": "Office and Administrative Support",
+    "source_url": "https://www.onetonline.org/link/details/43-4171.00"
+  },
+  "agricultural_equipment_operators": {
+    "onet_code": "45-2091.00",
+    "onet_name": "Agricultural Equipment Operators",
+    "target_job": "Agricultural Equipment Operators",
+    "status": "candidate",
+    "job_family_code": "45",
+    "job_family_name": "Farming, Fishing, and Forestry",
+    "source_url": "https://www.onetonline.org/link/details/45-2091.00"
+  },
+  "farmworkers_and_laborers_crop_nursery_and_greenhouse": {
+    "onet_code": "45-2092.00",
+    "onet_name": "Farmworkers and Laborers, Crop, Nursery, and Greenhouse",
+    "target_job": "Farmworkers and Laborers, Crop, Nursery, and Greenhouse",
+    "status": "candidate",
+    "job_family_code": "45",
+    "job_family_name": "Farming, Fishing, and Forestry",
+    "source_url": "https://www.onetonline.org/link/details/45-2092.00"
+  },
+  "forest_and_conservation_workers": {
+    "onet_code": "45-4011.00",
+    "onet_name": "Forest and Conservation Workers",
+    "target_job": "Forest and Conservation Workers",
+    "status": "candidate",
+    "job_family_code": "45",
+    "job_family_name": "Farming, Fishing, and Forestry",
+    "source_url": "https://www.onetonline.org/link/details/45-4011.00"
+  },
+  "electricians": {
+    "onet_code": "47-2111.00",
+    "onet_name": "Electricians",
+    "target_job": "Electricians",
+    "status": "candidate",
+    "job_family_code": "47",
+    "job_family_name": "Construction and Extraction",
+    "source_url": "https://www.onetonline.org/link/details/47-2111.00"
+  },
+  "carpenters": {
+    "onet_code": "47-2031.00",
+    "onet_name": "Carpenters",
+    "target_job": "Carpenters",
+    "status": "candidate",
+    "job_family_code": "47",
+    "job_family_name": "Construction and Extraction",
+    "source_url": "https://www.onetonline.org/link/details/47-2031.00"
+  },
+  "plumbers_pipefitters_and_steamfitters": {
+    "onet_code": "47-2152.00",
+    "onet_name": "Plumbers, Pipefitters, and Steamfitters",
+    "target_job": "Plumbers, Pipefitters, and Steamfitters",
+    "status": "candidate",
+    "job_family_code": "47",
+    "job_family_name": "Construction and Extraction",
+    "source_url": "https://www.onetonline.org/link/details/47-2152.00"
+  },
+  "automotive_service_technicians_and_mechanics": {
+    "onet_code": "49-3023.00",
+    "onet_name": "Automotive Service Technicians and Mechanics",
+    "target_job": "Automotive Service Technicians and Mechanics",
+    "status": "candidate",
+    "job_family_code": "49",
+    "job_family_name": "Installation, Maintenance, and Repair",
+    "source_url": "https://www.onetonline.org/link/details/49-3023.00"
+  },
+  "industrial_machinery_mechanics": {
+    "onet_code": "49-9041.00",
+    "onet_name": "Industrial Machinery Mechanics",
+    "target_job": "Industrial Machinery Mechanics",
+    "status": "candidate",
+    "job_family_code": "49",
+    "job_family_name": "Installation, Maintenance, and Repair",
+    "source_url": "https://www.onetonline.org/link/details/49-9041.00"
+  },
+  "heating_air_conditioning_and_refrigeration_mechanics_and_installers": {
+    "onet_code": "49-9021.00",
+    "onet_name": "Heating, Air Conditioning, and Refrigeration Mechanics and Installers",
+    "target_job": "Heating, Air Conditioning, and Refrigeration Mechanics and Installers",
+    "status": "candidate",
+    "job_family_code": "49",
+    "job_family_name": "Installation, Maintenance, and Repair",
+    "source_url": "https://www.onetonline.org/link/details/49-9021.00"
+  },
+  "machinists": {
+    "onet_code": "51-4041.00",
+    "onet_name": "Machinists",
+    "target_job": "Machinists",
+    "status": "candidate",
+    "job_family_code": "51",
+    "job_family_name": "Production",
+    "source_url": "https://www.onetonline.org/link/details/51-4041.00"
+  },
+  "welders_cutters_solderers_and_brazers": {
+    "onet_code": "51-4121.00",
+    "onet_name": "Welders, Cutters, Solderers, and Brazers",
+    "target_job": "Welders, Cutters, Solderers, and Brazers",
+    "status": "candidate",
+    "job_family_code": "51",
+    "job_family_name": "Production",
+    "source_url": "https://www.onetonline.org/link/details/51-4121.00"
+  },
+  "bakers": {
+    "onet_code": "51-3011.00",
+    "onet_name": "Bakers",
+    "target_job": "Bakers",
+    "status": "candidate",
+    "job_family_code": "51",
+    "job_family_name": "Production",
+    "source_url": "https://www.onetonline.org/link/details/51-3011.00"
+  },
+  "heavy_and_tractor_trailer_truck_drivers": {
+    "onet_code": "53-3032.00",
+    "onet_name": "Heavy and Tractor-Trailer Truck Drivers",
+    "target_job": "Heavy and Tractor-Trailer Truck Drivers",
+    "status": "candidate",
+    "job_family_code": "53",
+    "job_family_name": "Transportation and Material Moving",
+    "source_url": "https://www.onetonline.org/link/details/53-3032.00"
+  },
+  "airline_pilots_copilots_and_flight_engineers": {
+    "onet_code": "53-2011.00",
+    "onet_name": "Airline Pilots, Copilots, and Flight Engineers",
+    "target_job": "Airline Pilots, Copilots, and Flight Engineers",
+    "status": "candidate",
+    "job_family_code": "53",
+    "job_family_name": "Transportation and Material Moving",
+    "source_url": "https://www.onetonline.org/link/details/53-2011.00"
+  },
+  "industrial_truck_and_tractor_operators": {
+    "onet_code": "53-7051.00",
+    "onet_name": "Industrial Truck and Tractor Operators",
+    "target_job": "Industrial Truck and Tractor Operators",
+    "status": "candidate",
+    "job_family_code": "53",
+    "job_family_name": "Transportation and Material Moving",
+    "source_url": "https://www.onetonline.org/link/details/53-7051.00"
+  },
+  "infantry": {
+    "onet_code": "55-3016.00",
+    "onet_name": "Infantry",
+    "target_job": "Infantry",
+    "status": "candidate",
+    "job_family_code": "55",
+    "job_family_name": "Military Specific",
+    "source_url": "https://www.onetonline.org/link/details/55-3016.00"
+  },
+  "air_crew_members": {
+    "onet_code": "55-3011.00",
+    "onet_name": "Air Crew Members",
+    "target_job": "Air Crew Members",
+    "status": "candidate",
+    "job_family_code": "55",
+    "job_family_name": "Military Specific",
+    "source_url": "https://www.onetonline.org/link/details/55-3011.00"
+  },
+  "command_and_control_center_specialists": {
+    "onet_code": "55-3015.00",
+    "onet_name": "Command and Control Center Specialists",
+    "target_job": "Command and Control Center Specialists",
+    "status": "candidate",
+    "job_family_code": "55",
+    "job_family_name": "Military Specific",
+    "source_url": "https://www.onetonline.org/link/details/55-3015.00"
   }
 }

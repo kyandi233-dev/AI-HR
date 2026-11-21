@@ -1,0 +1,11 @@
+{
+  "url": "https://www.onetonline.org/link/details/19-2041.00",
+  "retrieved_utc": "2026-11-21T13:45:59.333704+00:00",
+  "status_code": 200,
+  "sha256_html": "68e95ccea238d3a4fa3793fde0acd8b6a01960ce08077af15ac017360b548edb",
+  "sha256_text": "898aee8caf6061896657d0009faf7a4ce4767db1158346e04ab0c1127cbb082e",
+  "source": "O*NET OnLine",
+  "researcher_reviewed": false,
+  "scope": "initial_details_response_only",
+  "followed_links": []
+}
