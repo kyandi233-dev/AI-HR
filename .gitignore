@@ -11,7 +11,7 @@ results/*/moral_relevance/*/
 results/*/baseline/*/
 results/*/abc/*/
 *.secret
-
+.vscode
 backups/
 
 .venv/
