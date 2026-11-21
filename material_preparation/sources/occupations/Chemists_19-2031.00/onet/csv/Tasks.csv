@@ -1,13 +1,13 @@
-﻿O*NET Code,Occupation,Job Family,Source Order,Importance,Category,Task,Source Key,Source URL
-19-2031.00,Chemists,"Life, Physical, and Social Science",1,80,Core,"Develop, improve, or customize products, equipment, formulas, processes, or analytical methods.",/link/moreinfo/task/1506?r=details&j=19-2031.00,https://www.onetonline.org/link/details/19-2031.00
-19-2031.00,Chemists,"Life, Physical, and Social Science",2,77,Core,"Analyze organic or inorganic compounds to determine chemical or physical properties, composition, structure, relationships, or reactions, using chromatography, spectroscopy, or spectrophotometry techniques.",/link/moreinfo/task/1505?r=details&j=19-2031.00,https://www.onetonline.org/link/details/19-2031.00
-19-2031.00,Chemists,"Life, Physical, and Social Science",3,74,Core,"Induce changes in composition of substances by introducing heat, light, energy, or chemical catalysts for quantitative or qualitative analysis.",/link/moreinfo/task/1510?r=details&j=19-2031.00,https://www.onetonline.org/link/details/19-2031.00
-19-2031.00,Chemists,"Life, Physical, and Social Science",4,73,Core,Conduct quality control tests.,/link/moreinfo/task/18475?r=details&j=19-2031.00,https://www.onetonline.org/link/details/19-2031.00
-19-2031.00,Chemists,"Life, Physical, and Social Science",5,73,Core,"Write technical papers or reports or prepare standards and specifications for processes, facilities, products, or tests.",/link/moreinfo/task/1511?r=details&j=19-2031.00,https://www.onetonline.org/link/details/19-2031.00
-19-2031.00,Chemists,"Life, Physical, and Social Science",6,73,Core,Maintain laboratory instruments to ensure proper working order and troubleshoot malfunctions when needed.,/link/moreinfo/task/18474?r=details&j=19-2031.00,https://www.onetonline.org/link/details/19-2031.00
-19-2031.00,Chemists,"Life, Physical, and Social Science",7,73,Core,"Prepare test solutions, compounds, or reagents for laboratory personnel to conduct tests.",/link/moreinfo/task/1513?r=details&j=19-2031.00,https://www.onetonline.org/link/details/19-2031.00
-19-2031.00,Chemists,"Life, Physical, and Social Science",8,71,Core,Compile and analyze test information to determine process or equipment operating efficiency or to diagnose malfunctions.,/link/moreinfo/task/1507?r=details&j=19-2031.00,https://www.onetonline.org/link/details/19-2031.00
-19-2031.00,Chemists,"Life, Physical, and Social Science",9,70,Core,"Confer with scientists or engineers to conduct analyses of research projects, interpret test results, or develop nonstandard tests.",/link/moreinfo/task/1508?r=details&j=19-2031.00,https://www.onetonline.org/link/details/19-2031.00
-19-2031.00,Chemists,"Life, Physical, and Social Science",10,67,Core,Evaluate laboratory safety procedures to ensure compliance with standards or to make improvements as needed.,/link/moreinfo/task/20388?r=details&j=19-2031.00,https://www.onetonline.org/link/details/19-2031.00
-19-2031.00,Chemists,"Life, Physical, and Social Science",11,65,Core,"Direct, coordinate, or advise personnel in test procedures for analyzing components or physical properties of materials.",/link/moreinfo/task/1509?r=details&j=19-2031.00,https://www.onetonline.org/link/details/19-2031.00
-19-2031.00,Chemists,"Life, Physical, and Social Science",12,61,Core,"Purchase laboratory supplies, such as chemicals, when supplies are low or near their expiration date.",/link/moreinfo/task/20389?r=details&j=19-2031.00,https://www.onetonline.org/link/details/19-2031.00
+﻿No.,Importance,Category,Task
+1,80,Core,"Develop, improve, or customize products, equipment, formulas, processes, or analytical methods."
+2,77,Core,"Analyze organic or inorganic compounds to determine chemical or physical properties, composition, structure, relationships, or reactions, using chromatography, spectroscopy, or spectrophotometry techniques."
+3,74,Core,"Induce changes in composition of substances by introducing heat, light, energy, or chemical catalysts for quantitative or qualitative analysis."
+4,73,Core,Conduct quality control tests.
+5,73,Core,"Write technical papers or reports or prepare standards and specifications for processes, facilities, products, or tests."
+6,73,Core,Maintain laboratory instruments to ensure proper working order and troubleshoot malfunctions when needed.
+7,73,Core,"Prepare test solutions, compounds, or reagents for laboratory personnel to conduct tests."
+8,71,Core,Compile and analyze test information to determine process or equipment operating efficiency or to diagnose malfunctions.
+9,70,Core,"Confer with scientists or engineers to conduct analyses of research projects, interpret test results, or develop nonstandard tests."
+10,67,Core,Evaluate laboratory safety procedures to ensure compliance with standards or to make improvements as needed.
+11,65,Core,"Direct, coordinate, or advise personnel in test procedures for analyzing components or physical properties of materials."
+12,61,Core,"Purchase laboratory supplies, such as chemicals, when supplies are low or near their expiration date."

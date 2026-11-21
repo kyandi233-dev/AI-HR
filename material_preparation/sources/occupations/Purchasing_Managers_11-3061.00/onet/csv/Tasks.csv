@@ -1,19 +1,19 @@
-﻿O*NET Code,Occupation,Job Family,Source Order,Importance,Category,Task,Source Key,Source URL
-11-3061.00,Purchasing Managers,Management,1,89,Core,"Develop and implement purchasing and contract management instructions, policies, and procedures.",/link/moreinfo/task/1027?r=details&j=11-3061.00,https://www.onetonline.org/link/details/11-3061.00
-11-3061.00,Purchasing Managers,Management,2,88,Core,"Locate vendors of materials, equipment or supplies, and interview them to determine product availability and terms of sales.",/link/moreinfo/task/1021?r=details&j=11-3061.00,https://www.onetonline.org/link/details/11-3061.00
-11-3061.00,Purchasing Managers,Management,3,81,Core,Prepare bid awards requiring board approval.,/link/moreinfo/task/1033?r=details&j=11-3061.00,https://www.onetonline.org/link/details/11-3061.00
-11-3061.00,Purchasing Managers,Management,4,80,Core,"Direct and coordinate activities of personnel engaged in buying, selling, and distributing materials, equipment, machinery, and supplies.",/link/moreinfo/task/1032?r=details&j=11-3061.00,https://www.onetonline.org/link/details/11-3061.00
-11-3061.00,Purchasing Managers,Management,5,80,Core,Review purchase order claims and contracts for conformance to company policy.,/link/moreinfo/task/1025?r=details&j=11-3061.00,https://www.onetonline.org/link/details/11-3061.00
-11-3061.00,Purchasing Managers,Management,6,80,Core,"Review, evaluate, and approve specifications for issuing and awarding bids.",/link/moreinfo/task/1031?r=details&j=11-3061.00,https://www.onetonline.org/link/details/11-3061.00
-11-3061.00,Purchasing Managers,Management,7,78,Core,Administer online purchasing systems.,/link/moreinfo/task/1035?r=details&j=11-3061.00,https://www.onetonline.org/link/details/11-3061.00
-11-3061.00,Purchasing Managers,Management,8,78,Core,Prepare and process requisitions and purchase orders for supplies and equipment.,/link/moreinfo/task/1022?r=details&j=11-3061.00,https://www.onetonline.org/link/details/11-3061.00
-11-3061.00,Purchasing Managers,Management,9,78,Core,"Interview and hire staff, and oversee staff training.",/link/moreinfo/task/1024?r=details&j=11-3061.00,https://www.onetonline.org/link/details/11-3061.00
-11-3061.00,Purchasing Managers,Management,10,78,Core,Develop cost reduction strategies and savings plans.,/link/moreinfo/task/21039?r=details&j=11-3061.00,https://www.onetonline.org/link/details/11-3061.00
-11-3061.00,Purchasing Managers,Management,11,78,Core,Control purchasing department budgets.,/link/moreinfo/task/1023?r=details&j=11-3061.00,https://www.onetonline.org/link/details/11-3061.00
-11-3061.00,Purchasing Managers,Management,12,77,Core,Resolve vendor or contractor grievances and claims against suppliers.,/link/moreinfo/task/1029?r=details&j=11-3061.00,https://www.onetonline.org/link/details/11-3061.00
-11-3061.00,Purchasing Managers,Management,13,76,Core,Analyze market and delivery systems to assess present and future material availability.,/link/moreinfo/task/1026?r=details&j=11-3061.00,https://www.onetonline.org/link/details/11-3061.00
-11-3061.00,Purchasing Managers,Management,14,75,Core,"Participate in the development of specifications for equipment, products, or substitute materials.",/link/moreinfo/task/1028?r=details&j=11-3061.00,https://www.onetonline.org/link/details/11-3061.00
-11-3061.00,Purchasing Managers,Management,15,75,Core,Maintain records of goods ordered and received.,/link/moreinfo/task/1020?r=details&j=11-3061.00,https://www.onetonline.org/link/details/11-3061.00
-11-3061.00,Purchasing Managers,Management,16,75,Core,Represent companies in negotiating contracts and formulating policies with suppliers.,/link/moreinfo/task/1030?r=details&j=11-3061.00,https://www.onetonline.org/link/details/11-3061.00
-11-3061.00,Purchasing Managers,Management,17,56,Core,Prepare reports regarding market conditions and merchandise costs.,/link/moreinfo/task/1034?r=details&j=11-3061.00,https://www.onetonline.org/link/details/11-3061.00
-11-3061.00,Purchasing Managers,Management,18,53,Core,Arrange for disposal of surplus materials.,/link/moreinfo/task/1036?r=details&j=11-3061.00,https://www.onetonline.org/link/details/11-3061.00
+﻿No.,Importance,Category,Task
+1,89,Core,"Develop and implement purchasing and contract management instructions, policies, and procedures."
+2,88,Core,"Locate vendors of materials, equipment or supplies, and interview them to determine product availability and terms of sales."
+3,81,Core,Prepare bid awards requiring board approval.
+4,80,Core,"Direct and coordinate activities of personnel engaged in buying, selling, and distributing materials, equipment, machinery, and supplies."
+5,80,Core,Review purchase order claims and contracts for conformance to company policy.
+6,80,Core,"Review, evaluate, and approve specifications for issuing and awarding bids."
+7,78,Core,Administer online purchasing systems.
+8,78,Core,Prepare and process requisitions and purchase orders for supplies and equipment.
+9,78,Core,"Interview and hire staff, and oversee staff training."
+10,78,Core,Develop cost reduction strategies and savings plans.
+11,78,Core,Control purchasing department budgets.
+12,77,Core,Resolve vendor or contractor grievances and claims against suppliers.
+13,76,Core,Analyze market and delivery systems to assess present and future material availability.
+14,75,Core,"Participate in the development of specifications for equipment, products, or substitute materials."
+15,75,Core,Maintain records of goods ordered and received.
+16,75,Core,Represent companies in negotiating contracts and formulating policies with suppliers.
+17,56,Core,Prepare reports regarding market conditions and merchandise costs.
+18,53,Core,Arrange for disposal of surplus materials.

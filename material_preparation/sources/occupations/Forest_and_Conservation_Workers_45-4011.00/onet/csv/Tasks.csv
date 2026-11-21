@@ -1,19 +1,19 @@
-﻿O*NET Code,Occupation,Job Family,Source Order,Importance,Category,Task,Source Key,Source URL
-45-4011.00,Forest and Conservation Workers,"Farming, Fishing, and Forestry",1,85,Core,Check equipment to ensure that it is operating properly.,/link/moreinfo/task/7026?r=details&j=45-4011.00,https://www.onetonline.org/link/details/45-4011.00
-45-4011.00,Forest and Conservation Workers,"Farming, Fishing, and Forestry",2,84,Core,Fight forest fires or perform prescribed burning tasks under the direction of fire suppression officers or forestry technicians.,/link/moreinfo/task/7028?r=details&j=45-4011.00,https://www.onetonline.org/link/details/45-4011.00
-45-4011.00,Forest and Conservation Workers,"Farming, Fishing, and Forestry",3,80,Core,"Perform fire protection or suppression duties, such as constructing fire breaks or disposing of brush.",/link/moreinfo/task/7029?r=details&j=45-4011.00,https://www.onetonline.org/link/details/45-4011.00
-45-4011.00,Forest and Conservation Workers,"Farming, Fishing, and Forestry",4,62,Core,"Confer with other workers to discuss issues, such as safety, cutting heights, or work needs.",/link/moreinfo/task/7027?r=details&j=45-4011.00,https://www.onetonline.org/link/details/45-4011.00
-45-4011.00,Forest and Conservation Workers,"Farming, Fishing, and Forestry",5,62,Supplemental,Maintain tallies of trees examined and counted during tree marking or measuring efforts.,/link/moreinfo/task/7035?r=details&j=45-4011.00,https://www.onetonline.org/link/details/45-4011.00
-45-4011.00,Forest and Conservation Workers,"Farming, Fishing, and Forestry",6,59,Supplemental,"Explain or enforce regulations regarding camping, vehicle use, fires, use of buildings, or sanitation.",/link/moreinfo/task/7041?r=details&j=45-4011.00,https://www.onetonline.org/link/details/45-4011.00
-45-4011.00,Forest and Conservation Workers,"Farming, Fishing, and Forestry",7,58,Supplemental,"Operate skidders, bulldozers, or other prime movers to pull a variety of scarification or site preparation equipment over areas to be regenerated.",/link/moreinfo/task/7042?r=details&j=45-4011.00,https://www.onetonline.org/link/details/45-4011.00
-45-4011.00,Forest and Conservation Workers,"Farming, Fishing, and Forestry",8,58,Supplemental,Spray or inject vegetation with insecticides to kill insects or to protect against disease or with herbicides to reduce competing vegetation.,/link/moreinfo/task/7032?r=details&j=45-4011.00,https://www.onetonline.org/link/details/45-4011.00
-45-4011.00,Forest and Conservation Workers,"Farming, Fishing, and Forestry",9,58,Supplemental,"Thin or space trees, using power thinning saws.",/link/moreinfo/task/7034?r=details&j=45-4011.00,https://www.onetonline.org/link/details/45-4011.00
-45-4011.00,Forest and Conservation Workers,"Farming, Fishing, and Forestry",10,57,Supplemental,"Identify diseased or undesirable trees and remove them, using power saws or hand saws.",/link/moreinfo/task/7031?r=details&j=45-4011.00,https://www.onetonline.org/link/details/45-4011.00
-45-4011.00,Forest and Conservation Workers,"Farming, Fishing, and Forestry",11,57,Supplemental,"Select or cut trees according to markings or sizes, types, or grades.",/link/moreinfo/task/7030?r=details&j=45-4011.00,https://www.onetonline.org/link/details/45-4011.00
-45-4011.00,Forest and Conservation Workers,"Farming, Fishing, and Forestry",12,51,Supplemental,"Prune or shear tree tops or limbs to control growth, increase density, or improve shape.",/link/moreinfo/task/7038?r=details&j=45-4011.00,https://www.onetonline.org/link/details/45-4011.00
-45-4011.00,Forest and Conservation Workers,"Farming, Fishing, and Forestry",13,50,Supplemental,"Maintain campsites or recreational areas, replenishing firewood or other supplies and cleaning kitchens or restrooms.",/link/moreinfo/task/7045?r=details&j=45-4011.00,https://www.onetonline.org/link/details/45-4011.00
-45-4011.00,Forest and Conservation Workers,"Farming, Fishing, and Forestry",14,48,Supplemental,"Erect signs or fences, using posthole diggers, shovels, or other hand tools.",/link/moreinfo/task/7037?r=details&j=45-4011.00,https://www.onetonline.org/link/details/45-4011.00
-45-4011.00,Forest and Conservation Workers,"Farming, Fishing, and Forestry",15,47,Supplemental,"Select tree seedlings, prepare the ground, or plant the trees in reforestation areas, using manual planting tools.",/link/moreinfo/task/7039?r=details&j=45-4011.00,https://www.onetonline.org/link/details/45-4011.00
-45-4011.00,Forest and Conservation Workers,"Farming, Fishing, and Forestry",16,42,Supplemental,"Provide assistance to forest survey crews by clearing site-lines, holding measuring tools, or setting stakes.",/link/moreinfo/task/7040?r=details&j=45-4011.00,https://www.onetonline.org/link/details/45-4011.00
-45-4011.00,Forest and Conservation Workers,"Farming, Fishing, and Forestry",17,29,Supplemental,"Sort tree seedlings, discarding substandard seedlings, according to standard charts or verbal instructions.",/link/moreinfo/task/20632?r=details&j=45-4011.00,https://www.onetonline.org/link/details/45-4011.00
-45-4011.00,Forest and Conservation Workers,"Farming, Fishing, and Forestry",18,-2,New,Create field maps using geographic information systems technology.,/link/moreinfo/task/1001387?r=details&j=45-4011.00,https://www.onetonline.org/link/details/45-4011.00
+﻿No.,Importance,Category,Task
+1,85,Core,Check equipment to ensure that it is operating properly.
+2,84,Core,Fight forest fires or perform prescribed burning tasks under the direction of fire suppression officers or forestry technicians.
+3,80,Core,"Perform fire protection or suppression duties, such as constructing fire breaks or disposing of brush."
+4,62,Core,"Confer with other workers to discuss issues, such as safety, cutting heights, or work needs."
+5,62,Supplemental,Maintain tallies of trees examined and counted during tree marking or measuring efforts.
+6,59,Supplemental,"Explain or enforce regulations regarding camping, vehicle use, fires, use of buildings, or sanitation."
+7,58,Supplemental,"Operate skidders, bulldozers, or other prime movers to pull a variety of scarification or site preparation equipment over areas to be regenerated."
+8,58,Supplemental,Spray or inject vegetation with insecticides to kill insects or to protect against disease or with herbicides to reduce competing vegetation.
+9,58,Supplemental,"Thin or space trees, using power thinning saws."
+10,57,Supplemental,"Identify diseased or undesirable trees and remove them, using power saws or hand saws."
+11,57,Supplemental,"Select or cut trees according to markings or sizes, types, or grades."
+12,51,Supplemental,"Prune or shear tree tops or limbs to control growth, increase density, or improve shape."
+13,50,Supplemental,"Maintain campsites or recreational areas, replenishing firewood or other supplies and cleaning kitchens or restrooms."
+14,48,Supplemental,"Erect signs or fences, using posthole diggers, shovels, or other hand tools."
+15,47,Supplemental,"Select tree seedlings, prepare the ground, or plant the trees in reforestation areas, using manual planting tools."
+16,42,Supplemental,"Provide assistance to forest survey crews by clearing site-lines, holding measuring tools, or setting stakes."
+17,29,Supplemental,"Sort tree seedlings, discarding substandard seedlings, according to standard charts or verbal instructions."
+18,-2,New,Create field maps using geographic information systems technology.

@@ -2,6 +2,7 @@
 import argparse
 import csv
 import math
+import os
 import textwrap
 from pathlib import Path
 from urllib.parse import urljoin
@@ -278,13 +279,20 @@ def snapshot_inputs(registry):
             path = folder/name
             if path.exists():
                 hashes[str(path.relative_to(c.ROOT))] = digest(path)
-        for path in (folder/'csv').glob('*.csv'):
-            hashes[str(path.relative_to(c.ROOT))] = digest(path)
-    for path in (c.ROOT/'material_preparation/review/csv').glob('*.csv'):
-        hashes[str(path.relative_to(c.ROOT))] = digest(path)
     for path in (c.ROOT/'material_preparation/prompts').glob('*.txt'):
         hashes[str(path.relative_to(c.ROOT))] = digest(path)
     return hashes
+
+
+def local_workbook_link(summary_path, target):
+    """A native relative filename, not a percent-encoded file URI (Excel/WPS compatible)."""
+    return os.path.relpath(Path(target).resolve(), start=Path(summary_path).resolve().parent)
+
+
+def workbook_jump_formula(target):
+    """Excel workbook reference syntax, opening the Overview sheet without file-URI encoding."""
+    reference = '['+str(Path(target).resolve())+']Overview!A1'
+    return '=HYPERLINK("'+reference.replace('"','""')+'","打开职业资料")'
 
 
 def run(argv=None):
@@ -297,7 +305,7 @@ def run(argv=None):
     previous, extra = existing_manual(args.output)
     # Technical columns from the old layout are not custom reviewer columns.
     extra = [key for key in extra if key not in HEADERS]
-    old_manifest_path = args.output.parent/'review_layout_manifest.json'
+    old_manifest_path = args.output.parent/'export_manifest.json'
     if old_manifest_path.exists():
         old_manifest = c.load_json(old_manifest_path)
         for code, state in old_manifest.get('occupations', {}).items():
@@ -321,10 +329,10 @@ def run(argv=None):
                 existing.close()
             continue
         book, specs = occupation_workbook(info, data, (folder/'source_details.html').read_bytes())
-        save_workbook(folder/'职业资料.xlsx', book)
+        save_workbook(folder/'职业资料.xlsx', book, keep_backup=False)
         book.close()
         for title, spec in specs.items():
-            write_review_csv(folder/'review_csv'/(title+'.csv'),spec['headers'],spec['rows'])
+            write_review_csv(folder/'csv'/(title+'.csv'),spec['headers'],spec['rows'])
         sheet_counts[info['onet_code']] = {key:len(spec['rows']) for key,spec in specs.items()}
         print('重排：',info['onet_name'],flush=True)
     book = summary_workbook(rows, extra)
@@ -332,11 +340,14 @@ def run(argv=None):
     for number, row in enumerate(rows,2):
         code = row[HEADERS.index('O*NET Code')]
         if states[code]['source_sha256']:
-            sheet.cell(number,5).hyperlink = (c.ROOT/states[code]['workbook']).as_uri()
+            sheet.cell(number,5).hyperlink = None
+            sheet.cell(number,5).value = workbook_jump_formula(c.ROOT/states[code]['workbook'])
             sheet.cell(number,5).font = Font(color='0563C1',underline='single',size=11)
-    save_workbook(args.output,book)
+    book.calculation.fullCalcOnLoad = True
+    book.calculation.forceFullCalc = True
+    save_workbook(args.output,book,keep_backup=False)
     book.close()
-    write_review_csv(args.output.parent/'review_csv/职业汇总.csv',HEADERS+extra,rows)
+    write_review_csv(args.output.parent/'职业汇总.csv',HEADERS+extra,rows)
     if snapshot_inputs(registry) != original:
         raise ValueError('An archived source, CSV, JSON, or prompt changed during layout export')
     write_json(old_manifest_path,{'layout_version':2,'exported_utc':c.now(),'script_sha256':digest(__file__),

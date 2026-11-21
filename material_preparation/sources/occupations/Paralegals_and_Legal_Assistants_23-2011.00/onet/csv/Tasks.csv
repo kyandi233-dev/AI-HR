@@ -1,15 +1,15 @@
-﻿O*NET Code,Occupation,Job Family,Source Order,Importance,Category,Task,Source Key,Source URL
-23-2011.00,Paralegals and Legal Assistants,Legal,1,85,Core,"Prepare affidavits or other documents, such as legal correspondence, and organize and maintain documents in paper or electronic filing system.",/link/moreinfo/task/18491?r=details&j=23-2011.00,https://www.onetonline.org/link/details/23-2011.00
-23-2011.00,Paralegals and Legal Assistants,Legal,2,83,Core,"Prepare, edit, or review legal documents, including legislation, briefs, pleadings, appeals, wills, contracts, and real estate closing statements.",/link/moreinfo/task/23994?r=details&j=23-2011.00,https://www.onetonline.org/link/details/23-2011.00
-23-2011.00,Paralegals and Legal Assistants,Legal,3,77,Core,"Investigate facts and law of cases and search pertinent sources, such as public records and internet sources, to determine causes of action and to prepare cases.",/link/moreinfo/task/21062?r=details&j=23-2011.00,https://www.onetonline.org/link/details/23-2011.00
-23-2011.00,Paralegals and Legal Assistants,Legal,4,74,Core,Prepare for trial by performing tasks such as organizing exhibits.,/link/moreinfo/task/18492?r=details&j=23-2011.00,https://www.onetonline.org/link/details/23-2011.00
-23-2011.00,Paralegals and Legal Assistants,Legal,5,73,Core,Meet with clients and other professionals to discuss details of cases.,/link/moreinfo/task/18493?r=details&j=23-2011.00,https://www.onetonline.org/link/details/23-2011.00
-23-2011.00,Paralegals and Legal Assistants,Legal,6,72,Core,"Gather and analyze research data, such as statutes, decisions, and legal articles, codes, and documents.",/link/moreinfo/task/1636?r=details&j=23-2011.00,https://www.onetonline.org/link/details/23-2011.00
-23-2011.00,Paralegals and Legal Assistants,Legal,7,72,Supplemental,File pleadings with court clerks.,/link/moreinfo/task/18494?r=details&j=23-2011.00,https://www.onetonline.org/link/details/23-2011.00
-23-2011.00,Paralegals and Legal Assistants,Legal,8,58,Supplemental,"Direct and coordinate law office activity, including delivery of subpoenas.",/link/moreinfo/task/1639?r=details&j=23-2011.00,https://www.onetonline.org/link/details/23-2011.00
-23-2011.00,Paralegals and Legal Assistants,Legal,9,50,Supplemental,Call upon witnesses to testify at hearings.,/link/moreinfo/task/1638?r=details&j=23-2011.00,https://www.onetonline.org/link/details/23-2011.00
-23-2011.00,Paralegals and Legal Assistants,Legal,10,50,Supplemental,"Arbitrate disputes between parties and assist in the real estate closing process, such as by reviewing title searches.",/link/moreinfo/task/18496?r=details&j=23-2011.00,https://www.onetonline.org/link/details/23-2011.00
-23-2011.00,Paralegals and Legal Assistants,Legal,11,48,Supplemental,Appraise and inventory real and personal property for estate planning.,/link/moreinfo/task/1642?r=details&j=23-2011.00,https://www.onetonline.org/link/details/23-2011.00
-23-2011.00,Paralegals and Legal Assistants,Legal,12,42,Supplemental,Keep and monitor legal volumes to ensure that the law library is up-to-date.,/link/moreinfo/task/1641?r=details&j=23-2011.00,https://www.onetonline.org/link/details/23-2011.00
-23-2011.00,Paralegals and Legal Assistants,Legal,13,-2,New,Manage attorneys' calendars and schedule meetings.,/link/moreinfo/task/1001427?r=details&j=23-2011.00,https://www.onetonline.org/link/details/23-2011.00
-23-2011.00,Paralegals and Legal Assistants,Legal,14,-2,New,"Request, review, and summarize relevant records for the cases.",/link/moreinfo/task/1001426?r=details&j=23-2011.00,https://www.onetonline.org/link/details/23-2011.00
+﻿No.,Importance,Category,Task
+1,85,Core,"Prepare affidavits or other documents, such as legal correspondence, and organize and maintain documents in paper or electronic filing system."
+2,83,Core,"Prepare, edit, or review legal documents, including legislation, briefs, pleadings, appeals, wills, contracts, and real estate closing statements."
+3,77,Core,"Investigate facts and law of cases and search pertinent sources, such as public records and internet sources, to determine causes of action and to prepare cases."
+4,74,Core,Prepare for trial by performing tasks such as organizing exhibits.
+5,73,Core,Meet with clients and other professionals to discuss details of cases.
+6,72,Core,"Gather and analyze research data, such as statutes, decisions, and legal articles, codes, and documents."
+7,72,Supplemental,File pleadings with court clerks.
+8,58,Supplemental,"Direct and coordinate law office activity, including delivery of subpoenas."
+9,50,Supplemental,Call upon witnesses to testify at hearings.
+10,50,Supplemental,"Arbitrate disputes between parties and assist in the real estate closing process, such as by reviewing title searches."
+11,48,Supplemental,Appraise and inventory real and personal property for estate planning.
+12,42,Supplemental,Keep and monitor legal volumes to ensure that the law library is up-to-date.
+13,-2,New,Manage attorneys' calendars and schedule meetings.
+14,-2,New,"Request, review, and summarize relevant records for the cases."

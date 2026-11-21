@@ -161,6 +161,34 @@ class SourceTests(unittest.TestCase):
         self.assertEqual(book['职业汇总'].max_row,2)
         book.close()
 
+    def test_native_relative_link_round_trips_chinese_filename(self):
+        from material_preparation.occupation_review_layout import local_workbook_link
+        summary=self.root/'review'/'职业与材料审核.xlsx'
+        target=self.root/'sources'/'A directory with spaces'/'职业资料.xlsx'
+        target.parent.mkdir(parents=True)
+        target.write_bytes(b'target-exists')
+        link=local_workbook_link(summary,target)
+        self.assertFalse(link.lower().startswith('file:'))
+        self.assertNotIn('%',link)
+        self.assertEqual((summary.parent/link).resolve(),target.resolve())
+        book=__import__('openpyxl').Workbook()
+        book.active['A1']='打开职业资料'
+        book.active['A1'].hyperlink=link
+        save_workbook(summary,book,keep_backup=False)
+        saved=load_workbook(summary)
+        try:
+            self.assertEqual(saved.active['A1'].hyperlink.target,link)
+        finally:
+            saved.close()
+
+    def test_excel_workbook_jump_formula_has_unicode_absolute_reference(self):
+        from material_preparation.occupation_review_layout import workbook_jump_formula
+        target=self.root/'sources'/'职业资料.xlsx'
+        formula=workbook_jump_formula(target)
+        self.assertEqual(formula,'=HYPERLINK("['+str(target.resolve())+']Overview!A1","打开职业资料")')
+        self.assertNotIn('file:',formula)
+        self.assertNotIn('%',formula)
+
 
 if __name__ == '__main__':
     unittest.main()

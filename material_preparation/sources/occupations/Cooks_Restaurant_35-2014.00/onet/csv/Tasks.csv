@@ -1,21 +1,21 @@
-﻿O*NET Code,Occupation,Job Family,Source Order,Importance,Category,Task,Source Key,Source URL
-35-2014.00,"Cooks, Restaurant",Food Preparation and Serving Related,1,94,Core,"Ensure food is stored and cooked at correct temperature by regulating temperature of ovens, broilers, grills, and roasters.",/link/moreinfo/task/18723?r=details&j=35-2014.00,https://www.onetonline.org/link/details/35-2014.00
-35-2014.00,"Cooks, Restaurant",Food Preparation and Serving Related,2,93,Core,"Inspect and clean food preparation areas, such as equipment, work surfaces, and serving areas, to ensure safe and sanitary food-handling practices.",/link/moreinfo/task/18722?r=details&j=35-2014.00,https://www.onetonline.org/link/details/35-2014.00
-35-2014.00,"Cooks, Restaurant",Food Preparation and Serving Related,3,92,Core,"Portion, arrange, and garnish food, and serve food to waiters or patrons.",/link/moreinfo/task/2173?r=details&j=35-2014.00,https://www.onetonline.org/link/details/35-2014.00
-35-2014.00,"Cooks, Restaurant",Food Preparation and Serving Related,4,91,Core,"Ensure freshness of food and ingredients by checking for quality, keeping track of old and new items, and rotating stock.",/link/moreinfo/task/18724?r=details&j=35-2014.00,https://www.onetonline.org/link/details/35-2014.00
-35-2014.00,"Cooks, Restaurant",Food Preparation and Serving Related,5,91,Core,Season and cook food according to recipes or personal judgment and experience.,/link/moreinfo/task/2170?r=details&j=35-2014.00,https://www.onetonline.org/link/details/35-2014.00
-35-2014.00,"Cooks, Restaurant",Food Preparation and Serving Related,6,89,Core,Coordinate and supervise work of kitchen staff.,/link/moreinfo/task/2180?r=details&j=35-2014.00,https://www.onetonline.org/link/details/35-2014.00
-35-2014.00,"Cooks, Restaurant",Food Preparation and Serving Related,7,88,Core,"Bake, roast, broil, and steam meats, fish, vegetables, and other foods.",/link/moreinfo/task/2176?r=details&j=35-2014.00,https://www.onetonline.org/link/details/35-2014.00
-35-2014.00,"Cooks, Restaurant",Food Preparation and Serving Related,8,87,Core,"Weigh, measure, and mix ingredients according to recipes or personal judgment, using various kitchen utensils and equipment.",/link/moreinfo/task/2172?r=details&j=35-2014.00,https://www.onetonline.org/link/details/35-2014.00
-35-2014.00,"Cooks, Restaurant",Food Preparation and Serving Related,9,85,Core,Turn or stir foods to ensure even cooking.,/link/moreinfo/task/2169?r=details&j=35-2014.00,https://www.onetonline.org/link/details/35-2014.00
-35-2014.00,"Cooks, Restaurant",Food Preparation and Serving Related,10,84,Core,"Observe and test foods to determine if they have been cooked sufficiently, using methods such as tasting, smelling, or piercing them with utensils.",/link/moreinfo/task/2171?r=details&j=35-2014.00,https://www.onetonline.org/link/details/35-2014.00
-35-2014.00,"Cooks, Restaurant",Food Preparation and Serving Related,11,83,Core,Substitute for or assist other cooks during emergencies or rush periods.,/link/moreinfo/task/2175?r=details&j=35-2014.00,https://www.onetonline.org/link/details/35-2014.00
-35-2014.00,"Cooks, Restaurant",Food Preparation and Serving Related,12,79,Core,"Wash, peel, cut, and seed fruits and vegetables to prepare them for consumption.",/link/moreinfo/task/2177?r=details&j=35-2014.00,https://www.onetonline.org/link/details/35-2014.00
-35-2014.00,"Cooks, Restaurant",Food Preparation and Serving Related,13,74,Core,"Bake breads, rolls, cakes, and pastries.",/link/moreinfo/task/2183?r=details&j=35-2014.00,https://www.onetonline.org/link/details/35-2014.00
-35-2014.00,"Cooks, Restaurant",Food Preparation and Serving Related,14,68,Core,"Carve and trim meats such as beef, veal, ham, pork, and lamb for hot or cold service, or for sandwiches.",/link/moreinfo/task/2179?r=details&j=35-2014.00,https://www.onetonline.org/link/details/35-2014.00
-35-2014.00,"Cooks, Restaurant",Food Preparation and Serving Related,15,78,Supplemental,Keep records and accounts.,/link/moreinfo/task/2185?r=details&j=35-2014.00,https://www.onetonline.org/link/details/35-2014.00
-35-2014.00,"Cooks, Restaurant",Food Preparation and Serving Related,16,77,Supplemental,Prepare relishes and hors d'oeuvres.,/link/moreinfo/task/2184?r=details&j=35-2014.00,https://www.onetonline.org/link/details/35-2014.00
-35-2014.00,"Cooks, Restaurant",Food Preparation and Serving Related,17,76,Supplemental,"Estimate expected food consumption, requisition or purchase supplies, or procure food from storage.",/link/moreinfo/task/2178?r=details&j=35-2014.00,https://www.onetonline.org/link/details/35-2014.00
-35-2014.00,"Cooks, Restaurant",Food Preparation and Serving Related,18,75,Supplemental,"Consult with supervisory staff to plan menus, taking into consideration factors such as costs and special event needs.",/link/moreinfo/task/2181?r=details&j=35-2014.00,https://www.onetonline.org/link/details/35-2014.00
-35-2014.00,"Cooks, Restaurant",Food Preparation and Serving Related,19,64,Supplemental,"Butcher and dress animals, fowl, or shellfish, or cut and bone meat prior to cooking.",/link/moreinfo/task/2182?r=details&j=35-2014.00,https://www.onetonline.org/link/details/35-2014.00
-35-2014.00,"Cooks, Restaurant",Food Preparation and Serving Related,20,62,Supplemental,Plan and price menu items.,/link/moreinfo/task/2186?r=details&j=35-2014.00,https://www.onetonline.org/link/details/35-2014.00
+﻿No.,Importance,Category,Task
+1,94,Core,"Ensure food is stored and cooked at correct temperature by regulating temperature of ovens, broilers, grills, and roasters."
+2,93,Core,"Inspect and clean food preparation areas, such as equipment, work surfaces, and serving areas, to ensure safe and sanitary food-handling practices."
+3,92,Core,"Portion, arrange, and garnish food, and serve food to waiters or patrons."
+4,91,Core,"Ensure freshness of food and ingredients by checking for quality, keeping track of old and new items, and rotating stock."
+5,91,Core,Season and cook food according to recipes or personal judgment and experience.
+6,89,Core,Coordinate and supervise work of kitchen staff.
+7,88,Core,"Bake, roast, broil, and steam meats, fish, vegetables, and other foods."
+8,87,Core,"Weigh, measure, and mix ingredients according to recipes or personal judgment, using various kitchen utensils and equipment."
+9,85,Core,Turn or stir foods to ensure even cooking.
+10,84,Core,"Observe and test foods to determine if they have been cooked sufficiently, using methods such as tasting, smelling, or piercing them with utensils."
+11,83,Core,Substitute for or assist other cooks during emergencies or rush periods.
+12,79,Core,"Wash, peel, cut, and seed fruits and vegetables to prepare them for consumption."
+13,74,Core,"Bake breads, rolls, cakes, and pastries."
+14,68,Core,"Carve and trim meats such as beef, veal, ham, pork, and lamb for hot or cold service, or for sandwiches."
+15,78,Supplemental,Keep records and accounts.
+16,77,Supplemental,Prepare relishes and hors d'oeuvres.
+17,76,Supplemental,"Estimate expected food consumption, requisition or purchase supplies, or procure food from storage."
+18,75,Supplemental,"Consult with supervisory staff to plan menus, taking into consideration factors such as costs and special event needs."
+19,64,Supplemental,"Butcher and dress animals, fowl, or shellfish, or cut and bone meat prior to cooking."
+20,62,Supplemental,Plan and price menu items.

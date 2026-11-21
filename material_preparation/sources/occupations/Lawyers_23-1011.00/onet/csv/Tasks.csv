@@ -1,23 +1,23 @@
-﻿O*NET Code,Occupation,Job Family,Source Order,Importance,Category,Task,Source Key,Source URL
-23-1011.00,Lawyers,Legal,1,89,Core,"Interpret laws, rulings and regulations for individuals and businesses.",/link/moreinfo/task/3774?r=details&j=23-1011.00,https://www.onetonline.org/link/details/23-1011.00
-23-1011.00,Lawyers,Legal,2,85,Core,"Analyze the probable outcomes of cases, using knowledge of legal precedents.",/link/moreinfo/task/3775?r=details&j=23-1011.00,https://www.onetonline.org/link/details/23-1011.00
-23-1011.00,Lawyers,Legal,3,85,Core,Gather evidence to formulate defense or to initiate legal actions by such means as interviewing clients and witnesses to ascertain the facts of a case.,/link/moreinfo/task/3778?r=details&j=23-1011.00,https://www.onetonline.org/link/details/23-1011.00
-23-1011.00,Lawyers,Legal,4,84,Core,Represent clients in court or before government agencies.,/link/moreinfo/task/3779?r=details&j=23-1011.00,https://www.onetonline.org/link/details/23-1011.00
-23-1011.00,Lawyers,Legal,5,83,Core,Evaluate findings and develop strategies and arguments in preparation for presentation of cases.,/link/moreinfo/task/3777?r=details&j=23-1011.00,https://www.onetonline.org/link/details/23-1011.00
-23-1011.00,Lawyers,Legal,6,82,Core,"Advise clients concerning business transactions, claim liability, advisability of prosecuting or defending lawsuits, or legal rights and obligations.",/link/moreinfo/task/3773?r=details&j=23-1011.00,https://www.onetonline.org/link/details/23-1011.00
-23-1011.00,Lawyers,Legal,7,80,Core,Examine legal data to determine advisability of defending or prosecuting lawsuit.,/link/moreinfo/task/3780?r=details&j=23-1011.00,https://www.onetonline.org/link/details/23-1011.00
-23-1011.00,Lawyers,Legal,8,80,Core,"Prepare, draft, and review legal documents, such as wills, deeds, patent applications, mortgages, leases, and contracts.",/link/moreinfo/task/20877?r=details&j=23-1011.00,https://www.onetonline.org/link/details/23-1011.00
-23-1011.00,Lawyers,Legal,9,76,Core,"Study Constitution, statutes, decisions, regulations, and ordinances of quasi-judicial bodies to determine ramifications for cases.",/link/moreinfo/task/3783?r=details&j=23-1011.00,https://www.onetonline.org/link/details/23-1011.00
-23-1011.00,Lawyers,Legal,10,76,Core,Negotiate settlements of civil disputes.,/link/moreinfo/task/3786?r=details&j=23-1011.00,https://www.onetonline.org/link/details/23-1011.00
-23-1011.00,Lawyers,Legal,11,75,Core,Supervise legal assistants.,/link/moreinfo/task/3789?r=details&j=23-1011.00,https://www.onetonline.org/link/details/23-1011.00
-23-1011.00,Lawyers,Legal,12,74,Core,Negotiate contractual agreements.,/link/moreinfo/task/23992?r=details&j=23-1011.00,https://www.onetonline.org/link/details/23-1011.00
-23-1011.00,Lawyers,Legal,13,71,Core,Confer with colleagues with specialties in appropriate areas of legal issue to establish and verify bases for legal proceedings.,/link/moreinfo/task/3787?r=details&j=23-1011.00,https://www.onetonline.org/link/details/23-1011.00
-23-1011.00,Lawyers,Legal,14,68,Core,Search for and examine public and other legal records to write opinions or establish ownership.,/link/moreinfo/task/3788?r=details&j=23-1011.00,https://www.onetonline.org/link/details/23-1011.00
-23-1011.00,Lawyers,Legal,15,66,Core,Perform administrative and management functions related to the practice of law.,/link/moreinfo/task/3790?r=details&j=23-1011.00,https://www.onetonline.org/link/details/23-1011.00
-23-1011.00,Lawyers,Legal,16,84,Supplemental,Present and summarize cases to judges and juries.,/link/moreinfo/task/3776?r=details&j=23-1011.00,https://www.onetonline.org/link/details/23-1011.00
-23-1011.00,Lawyers,Legal,17,84,Supplemental,"Select jurors, argue motions, meet with judges, and question witnesses during the course of a trial.",/link/moreinfo/task/3781?r=details&j=23-1011.00,https://www.onetonline.org/link/details/23-1011.00
-23-1011.00,Lawyers,Legal,18,82,Supplemental,Present evidence to defend clients or prosecute defendants in criminal or civil litigation.,/link/moreinfo/task/3782?r=details&j=23-1011.00,https://www.onetonline.org/link/details/23-1011.00
-23-1011.00,Lawyers,Legal,19,73,Supplemental,Probate wills and represent and advise executors and administrators of estates.,/link/moreinfo/task/3792?r=details&j=23-1011.00,https://www.onetonline.org/link/details/23-1011.00
-23-1011.00,Lawyers,Legal,20,72,Supplemental,"Prepare legal briefs and opinions, and file appeals in state and federal courts of appeal.",/link/moreinfo/task/3785?r=details&j=23-1011.00,https://www.onetonline.org/link/details/23-1011.00
-23-1011.00,Lawyers,Legal,21,69,Supplemental,"Act as agent, trustee, guardian, or executor for businesses or individuals.",/link/moreinfo/task/3791?r=details&j=23-1011.00,https://www.onetonline.org/link/details/23-1011.00
-23-1011.00,Lawyers,Legal,22,62,Supplemental,"Help develop federal and state programs, draft and interpret laws and legislation, and establish enforcement procedures.",/link/moreinfo/task/3793?r=details&j=23-1011.00,https://www.onetonline.org/link/details/23-1011.00
+﻿No.,Importance,Category,Task
+1,89,Core,"Interpret laws, rulings and regulations for individuals and businesses."
+2,85,Core,"Analyze the probable outcomes of cases, using knowledge of legal precedents."
+3,85,Core,Gather evidence to formulate defense or to initiate legal actions by such means as interviewing clients and witnesses to ascertain the facts of a case.
+4,84,Core,Represent clients in court or before government agencies.
+5,83,Core,Evaluate findings and develop strategies and arguments in preparation for presentation of cases.
+6,82,Core,"Advise clients concerning business transactions, claim liability, advisability of prosecuting or defending lawsuits, or legal rights and obligations."
+7,80,Core,Examine legal data to determine advisability of defending or prosecuting lawsuit.
+8,80,Core,"Prepare, draft, and review legal documents, such as wills, deeds, patent applications, mortgages, leases, and contracts."
+9,76,Core,"Study Constitution, statutes, decisions, regulations, and ordinances of quasi-judicial bodies to determine ramifications for cases."
+10,76,Core,Negotiate settlements of civil disputes.
+11,75,Core,Supervise legal assistants.
+12,74,Core,Negotiate contractual agreements.
+13,71,Core,Confer with colleagues with specialties in appropriate areas of legal issue to establish and verify bases for legal proceedings.
+14,68,Core,Search for and examine public and other legal records to write opinions or establish ownership.
+15,66,Core,Perform administrative and management functions related to the practice of law.
+16,84,Supplemental,Present and summarize cases to judges and juries.
+17,84,Supplemental,"Select jurors, argue motions, meet with judges, and question witnesses during the course of a trial."
+18,82,Supplemental,Present evidence to defend clients or prosecute defendants in criminal or civil litigation.
+19,73,Supplemental,Probate wills and represent and advise executors and administrators of estates.
+20,72,Supplemental,"Prepare legal briefs and opinions, and file appeals in state and federal courts of appeal."
+21,69,Supplemental,"Act as agent, trustee, guardian, or executor for businesses or individuals."
+22,62,Supplemental,"Help develop federal and state programs, draft and interpret laws and legislation, and establish enforcement procedures."

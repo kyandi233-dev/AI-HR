@@ -6,11 +6,12 @@ if __name__ == '__main__' and not __package__:
 
 import argparse
 import csv
+import os
 from pathlib import Path
 from openpyxl import load_workbook
 from shared import common as c
 from material_preparation.onet_data import read_registry, source_folder, source_identity, digest
-from material_preparation.occupation_review_layout import HEADERS, occupation_workbook, summary_rows
+from material_preparation.occupation_review_layout import HEADERS, occupation_workbook, summary_rows, workbook_jump_formula
 
 
 def compare(actual, expected, label):
@@ -23,7 +24,7 @@ def compare(actual, expected, label):
 
 
 def verify(path):
-    manifest = c.load_json(path.parent/'review_layout_manifest.json')
+    manifest = c.load_json(path.parent/'export_manifest.json')
     for relative, sha in manifest['unchanged_inputs'].items():
         if digest(c.ROOT/relative) != sha:
             raise ValueError(f'Archived input was changed: {relative}')
@@ -41,7 +42,7 @@ def verify(path):
         # Summary records must retain official identity, order and all reviewer fields.
         for a,b in zip(values[1:],expected):
             for i,name in enumerate(headers):
-                if name == '资料状态':
+                if name in ['资料状态','职业资料文件']:
                     continue
                 if (a[i] or '') != (b[i] or ''):
                     raise ValueError(f'Summary field mismatch: {name}')
@@ -49,6 +50,17 @@ def verify(path):
             raise ValueError('Summary occupation count mismatch')
     finally:
         book.close()
+    links_book = load_workbook(path,read_only=False)
+    try:
+        for row in links_book['职业汇总'].iter_rows(min_row=2):
+            code = row[3].value
+            expected_target = (c.ROOT/manifest['occupations'][code]['workbook']).resolve()
+            if row[4].value != workbook_jump_formula(expected_target) or row[4].hyperlink:
+                raise ValueError(f'Invalid Excel workbook jump formula: {code}')
+            if not expected_target.is_file():
+                raise ValueError(f'Workbook target does not exist: {code}: {expected_target}')
+    finally:
+        links_book.close()
     counts = {}
     for info in registry.values():
         folder = source_folder(info)
@@ -64,15 +76,18 @@ def verify(path):
                         list(expected_book[name].iter_rows(values_only=True)),info['onet_name']+'/'+name)
             for title,spec in specs.items():
                 counts[title] = counts.get(title,0)+len(spec['rows'])
-                with (folder/'review_csv'/(title+'.csv')).open(encoding='utf-8-sig',newline='') as file:
+                with (folder/'csv'/(title+'.csv')).open(encoding='utf-8-sig',newline='') as file:
                     csv_values = list(csv.reader(file))
                 expected_csv = [spec['headers']]+[[str(v) if v is not None else '' for v in row] for row in spec['rows']]
                 compare(csv_values,expected_csv,info['onet_name']+'/'+title+'.csv')
         finally:
             actual_book.close()
             expected_book.close()
-    with (path.parent/'review_csv/职业汇总.csv').open(encoding='utf-8-sig',newline='') as file:
-        compare(list(csv.reader(file)),[[str(v) if v is not None else '' for v in row] for row in values],'summary CSV')
+    csv_expected = [[str(v) if v is not None else '' for v in row] for row in values]
+    for row in csv_expected[1:]:
+        row[headers.index('职业资料文件')] = '打开职业资料'
+    with (path.parent/'职业汇总.csv').open(encoding='utf-8-sig',newline='') as file:
+        compare(list(csv.reader(file)),csv_expected,'summary CSV')
     print(f'核验通过：职业={len(registry)}；独立资料表={len(registry)}；Tasks={counts.get("Tasks",0)}；全部栏目、CSV及原始存档一致。')
 
 

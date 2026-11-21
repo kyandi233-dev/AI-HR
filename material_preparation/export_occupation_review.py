@@ -250,7 +250,7 @@ def encode_carriage_returns(path):
     return True
 
 
-def save_workbook(path, book):
+def save_workbook(path, book, keep_backup=True):
     path.parent.mkdir(parents=True, exist_ok=True)
     fd, temp = tempfile.mkstemp(suffix='.xlsx', dir=path.parent)
     os.close(fd)
@@ -258,7 +258,7 @@ def save_workbook(path, book):
         book.save(temp)
         encode_carriage_returns(Path(temp))
         # On Windows replacing an open workbook fails, preserving the user's old file.
-        if path.exists():
+        if path.exists() and keep_backup:
             backup = path.parent / 'backups' / (path.stem + '_' + c.now().replace(':', '-').replace('+', '_') + '.xlsx')
             backup.parent.mkdir(parents=True, exist_ok=True)
             shutil.copyfile(path, backup)

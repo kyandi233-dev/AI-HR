@@ -1,22 +1,22 @@
-﻿O*NET Code,Occupation,Job Family,Source Order,Importance,Category,Task,Source Key,Source URL
-31-2021.00,Physical Therapist Assistants,Healthcare Support,1,97,Core,"Instruct, motivate, safeguard, and assist patients as they practice exercises or functional activities.",/link/moreinfo/task/2008?r=details&j=31-2021.00,https://www.onetonline.org/link/details/31-2021.00
-31-2021.00,Physical Therapist Assistants,Healthcare Support,2,97,Core,"Document patient information, such as notes on their progress.",/link/moreinfo/task/21192?r=details&j=31-2021.00,https://www.onetonline.org/link/details/31-2021.00
-31-2021.00,Physical Therapist Assistants,Healthcare Support,3,96,Core,Observe patients during treatments to compile and evaluate data on their responses and progress and provide results to physical therapist in person or through progress notes.,/link/moreinfo/task/15247?r=details&j=31-2021.00,https://www.onetonline.org/link/details/31-2021.00
-31-2021.00,Physical Therapist Assistants,Healthcare Support,4,92,Core,"Instruct patients in proper body mechanics and in ways to improve functional mobility, such as aquatic exercise.",/link/moreinfo/task/21193?r=details&j=31-2021.00,https://www.onetonline.org/link/details/31-2021.00
-31-2021.00,Physical Therapist Assistants,Healthcare Support,5,89,Core,Secure patients into or onto therapy equipment.,/link/moreinfo/task/2013?r=details&j=31-2021.00,https://www.onetonline.org/link/details/31-2021.00
-31-2021.00,Physical Therapist Assistants,Healthcare Support,6,88,Core,"Confer with physical therapy staff or others to discuss and evaluate patient information for planning, modifying, or coordinating treatment.",/link/moreinfo/task/2009?r=details&j=31-2021.00,https://www.onetonline.org/link/details/31-2021.00
-31-2021.00,Physical Therapist Assistants,Healthcare Support,7,86,Core,"Administer active or passive manual therapeutic exercises, therapeutic massage, aquatic physical therapy, or heat, light, sound, or electrical modality treatments, such as ultrasound.",/link/moreinfo/task/15248?r=details&j=31-2021.00,https://www.onetonline.org/link/details/31-2021.00
-31-2021.00,Physical Therapist Assistants,Healthcare Support,8,86,Core,"Transport patients to and from treatment areas, lifting and transferring them according to positioning requirements.",/link/moreinfo/task/2016?r=details&j=31-2021.00,https://www.onetonline.org/link/details/31-2021.00
-31-2021.00,Physical Therapist Assistants,Healthcare Support,9,82,Core,Clean work area and check and store equipment after treatment.,/link/moreinfo/task/2018?r=details&j=31-2021.00,https://www.onetonline.org/link/details/31-2021.00
-31-2021.00,Physical Therapist Assistants,Healthcare Support,10,82,Core,Communicate with or instruct caregivers or family members on patient therapeutic activities or treatment plans.,/link/moreinfo/task/15249?r=details&j=31-2021.00,https://www.onetonline.org/link/details/31-2021.00
-31-2021.00,Physical Therapist Assistants,Healthcare Support,11,79,Core,"Measure patients' range-of-joint motion, body parts, or vital signs to determine effects of treatments or for patient evaluations.",/link/moreinfo/task/2012?r=details&j=31-2021.00,https://www.onetonline.org/link/details/31-2021.00
-31-2021.00,Physical Therapist Assistants,Healthcare Support,12,79,Core,"Train patients in the use of orthopedic braces, prostheses, or supportive devices.",/link/moreinfo/task/2015?r=details&j=31-2021.00,https://www.onetonline.org/link/details/31-2021.00
-31-2021.00,Physical Therapist Assistants,Healthcare Support,13,76,Core,Monitor operation of equipment and record use of equipment and administration of treatment.,/link/moreinfo/task/2017?r=details&j=31-2021.00,https://www.onetonline.org/link/details/31-2021.00
-31-2021.00,Physical Therapist Assistants,Healthcare Support,14,72,Core,"Assist patients to dress, undress, or put on and remove supportive devices, such as braces, splints, or slings.",/link/moreinfo/task/2019?r=details&j=31-2021.00,https://www.onetonline.org/link/details/31-2021.00
-31-2021.00,Physical Therapist Assistants,Healthcare Support,15,72,Core,"Attend or conduct continuing education courses, seminars, or in-service activities.",/link/moreinfo/task/15250?r=details&j=31-2021.00,https://www.onetonline.org/link/details/31-2021.00
-31-2021.00,Physical Therapist Assistants,Healthcare Support,16,71,Core,"Fit patients for orthopedic braces, prostheses, or supportive devices, such as crutches.",/link/moreinfo/task/2014?r=details&j=31-2021.00,https://www.onetonline.org/link/details/31-2021.00
-31-2021.00,Physical Therapist Assistants,Healthcare Support,17,64,Core,"Perform postural drainage, percussions, or vibrations or teach deep breathing exercises to treat respiratory conditions.",/link/moreinfo/task/2023?r=details&j=31-2021.00,https://www.onetonline.org/link/details/31-2021.00
-31-2021.00,Physical Therapist Assistants,Healthcare Support,18,52,Core,"Perform clerical duties, such as taking inventory, ordering supplies, answering telephone, taking messages, or filling out forms.",/link/moreinfo/task/2021?r=details&j=31-2021.00,https://www.onetonline.org/link/details/31-2021.00
-31-2021.00,Physical Therapist Assistants,Healthcare Support,19,73,Supplemental,Prepare treatment areas and electrotherapy equipment for use by physiotherapists.,/link/moreinfo/task/2022?r=details&j=31-2021.00,https://www.onetonline.org/link/details/31-2021.00
-31-2021.00,Physical Therapist Assistants,Healthcare Support,20,72,Supplemental,"Administer traction to relieve neck or back pain, using intermittent or static traction equipment.",/link/moreinfo/task/2020?r=details&j=31-2021.00,https://www.onetonline.org/link/details/31-2021.00
-31-2021.00,Physical Therapist Assistants,Healthcare Support,21,47,Supplemental,Perform therapeutic wound care.,/link/moreinfo/task/21194?r=details&j=31-2021.00,https://www.onetonline.org/link/details/31-2021.00
+﻿No.,Importance,Category,Task
+1,97,Core,"Instruct, motivate, safeguard, and assist patients as they practice exercises or functional activities."
+2,97,Core,"Document patient information, such as notes on their progress."
+3,96,Core,Observe patients during treatments to compile and evaluate data on their responses and progress and provide results to physical therapist in person or through progress notes.
+4,92,Core,"Instruct patients in proper body mechanics and in ways to improve functional mobility, such as aquatic exercise."
+5,89,Core,Secure patients into or onto therapy equipment.
+6,88,Core,"Confer with physical therapy staff or others to discuss and evaluate patient information for planning, modifying, or coordinating treatment."
+7,86,Core,"Administer active or passive manual therapeutic exercises, therapeutic massage, aquatic physical therapy, or heat, light, sound, or electrical modality treatments, such as ultrasound."
+8,86,Core,"Transport patients to and from treatment areas, lifting and transferring them according to positioning requirements."
+9,82,Core,Clean work area and check and store equipment after treatment.
+10,82,Core,Communicate with or instruct caregivers or family members on patient therapeutic activities or treatment plans.
+11,79,Core,"Measure patients' range-of-joint motion, body parts, or vital signs to determine effects of treatments or for patient evaluations."
+12,79,Core,"Train patients in the use of orthopedic braces, prostheses, or supportive devices."
+13,76,Core,Monitor operation of equipment and record use of equipment and administration of treatment.
+14,72,Core,"Assist patients to dress, undress, or put on and remove supportive devices, such as braces, splints, or slings."
+15,72,Core,"Attend or conduct continuing education courses, seminars, or in-service activities."
+16,71,Core,"Fit patients for orthopedic braces, prostheses, or supportive devices, such as crutches."
+17,64,Core,"Perform postural drainage, percussions, or vibrations or teach deep breathing exercises to treat respiratory conditions."
+18,52,Core,"Perform clerical duties, such as taking inventory, ordering supplies, answering telephone, taking messages, or filling out forms."
+19,73,Supplemental,Prepare treatment areas and electrotherapy equipment for use by physiotherapists.
+20,72,Supplemental,"Administer traction to relieve neck or back pain, using intermittent or static traction equipment."
+21,47,Supplemental,Perform therapeutic wound care.
