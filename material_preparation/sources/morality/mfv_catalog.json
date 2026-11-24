@@ -1,0 +1,2659 @@
+{
+  "schema_version": 1,
+  "paper": {
+    "authors": "Clifford, Iyengar, Cabeza, & Sinnott-Armstrong",
+    "year": 2015,
+    "title": "Moral foundations vignettes: A standardized stimulus database of scenarios based on moral foundations theory",
+    "doi": "https://doi.org/10.3758/s13428-014-0551-2",
+    "full_text_url": "https://drive.google.com/file/d/1rDfEUrfPLsx43hswCbIoaYbItrq4MyB8/view"
+  },
+  "provenance": {
+    "source_url": "https://docs.google.com/spreadsheets/d/10lQN5TKQCpl7LRuc39of7qXQgRWVAFau/edit",
+    "retrieved_date": "2026-11-24",
+    "identifier_note": "source_id为本项目编号，library_item_number来自用户材料库；不是原作者刺激编号。",
+    "correction": "材料库关于自由未进入推荐集的文字有误；原论文表6含自由。原标签保留，foundation字段已规范化。",
+    "evidence_note": "评价数据为原条目的人类归类与错误程度，不能当作中文改编或模型材料效度；推荐状态按原论文表6核对。"
+  },
+  "items": [
+    {
+      "source_id": "mfv_001",
+      "library_item_number": 1,
+      "foundation": "care",
+      "source_category_label": "关怀（情感伤害）",
+      "original_en": "You see a teenage boy chuckling at an amputee he passes by while on the subway.",
+      "translation_zh": "你看到一个十几岁的男孩在地铁上经过一位截肢者时，冲着他偷笑。",
+      "classification_proportions": {
+        "care": 0.83,
+        "fairness": 0,
+        "loyalty": 0,
+        "authority": 0.03,
+        "sanctity": 0.1,
+        "liberty": 0.03,
+        "not_wrong": 0
+      },
+      "wrongness_mean_0_4": 3.4,
+      "recommended": true,
+      "use_as_seed": true
+    },
+    {
+      "source_id": "mfv_002",
+      "library_item_number": 2,
+      "foundation": "care",
+      "source_category_label": "关怀（情感伤害）",
+      "original_en": "You see a girl laughing at another student forgetting her lines at a school play.",
+      "translation_zh": "你看到一个女孩嘲笑另一个在学校话剧演出中忘词的同学。",
+      "classification_proportions": {
+        "care": 0.73,
+        "fairness": 0.03,
+        "loyalty": 0.07,
+        "authority": 0,
+        "sanctity": 0,
+        "liberty": 0.13,
+        "not_wrong": 0.03
+      },
+      "wrongness_mean_0_4": 2.4,
+      "recommended": true,
+      "use_as_seed": true
+    },
+    {
+      "source_id": "mfv_003",
+      "library_item_number": 3,
+      "foundation": "care",
+      "source_category_label": "关怀（情感伤害）",
+      "original_en": "You see a woman commenting out loud about how fat another woman looks in her jeans.",
+      "translation_zh": "你看到一个女人大声评论另一个女人穿牛仔裤看起来有多胖。",
+      "classification_proportions": {
+        "care": 0.73,
+        "fairness": 0.07,
+        "loyalty": 0,
+        "authority": 0.03,
+        "sanctity": 0.03,
+        "liberty": 0.13,
+        "not_wrong": 0
+      },
+      "wrongness_mean_0_4": 3,
+      "recommended": true,
+      "use_as_seed": true
+    },
+    {
+      "source_id": "mfv_004",
+      "library_item_number": 4,
+      "foundation": "care",
+      "source_category_label": "关怀（情感伤害）",
+      "original_en": "You see a man quickly canceling a blind date as soon as he sees the woman.",
+      "translation_zh": "你看到一个男人一见到女方就立刻取消了相亲。",
+      "classification_proportions": {
+        "care": 0.72,
+        "fairness": 0.16,
+        "loyalty": 0,
+        "authority": 0,
+        "sanctity": 0.06,
+        "liberty": 0.03,
+        "not_wrong": 0.03
+      },
+      "wrongness_mean_0_4": 3,
+      "recommended": true,
+      "use_as_seed": true
+    },
+    {
+      "source_id": "mfv_005",
+      "library_item_number": 5,
+      "foundation": "care",
+      "source_category_label": "关怀（情感伤害）",
+      "original_en": "You see a boy telling a woman that she looks just like her overweight bulldog.",
+      "translation_zh": "你看到一个男孩对一个女人说，她看起来就像她自己养的那只超重的斗牛犬。",
+      "classification_proportions": {
+        "care": 0.72,
+        "fairness": 0,
+        "loyalty": 0,
+        "authority": 0.13,
+        "sanctity": 0,
+        "liberty": 0.16,
+        "not_wrong": 0
+      },
+      "wrongness_mean_0_4": 3.3,
+      "recommended": true,
+      "use_as_seed": true
+    },
+    {
+      "source_id": "mfv_006",
+      "library_item_number": 6,
+      "foundation": "care",
+      "source_category_label": "关怀（情感伤害）",
+      "original_en": "You see a girl laughing when she realizes her friend’s dad is the janitor.",
+      "translation_zh": "你看到一个女孩在发现朋友的爸爸是清洁工时哈哈大笑。",
+      "classification_proportions": {
+        "care": 0.7,
+        "fairness": 0.07,
+        "loyalty": 0,
+        "authority": 0.03,
+        "sanctity": 0.07,
+        "liberty": 0.1,
+        "not_wrong": 0.03
+      },
+      "wrongness_mean_0_4": 2.9,
+      "recommended": true,
+      "use_as_seed": true
+    },
+    {
+      "source_id": "mfv_007",
+      "library_item_number": 7,
+      "foundation": "care",
+      "source_category_label": "关怀（情感伤害）",
+      "original_en": "You see a man snickering as he passes by a cancer patient with a bald head.",
+      "translation_zh": "你看到一个男人经过一位光头癌症患者时窃笑。",
+      "classification_proportions": {
+        "care": 0.69,
+        "fairness": 0,
+        "loyalty": 0,
+        "authority": 0.03,
+        "sanctity": 0.17,
+        "liberty": 0.1,
+        "not_wrong": 0
+      },
+      "wrongness_mean_0_4": 3.4,
+      "recommended": true,
+      "use_as_seed": true
+    },
+    {
+      "source_id": "mfv_008",
+      "library_item_number": 8,
+      "foundation": "care",
+      "source_category_label": "关怀（情感伤害）",
+      "original_en": "You see a girl saying that another girl is too ugly to be a varsity cheerleader.",
+      "translation_zh": "你看到一个女孩说另一个女孩太丑了，不配当校队啦啦队员。",
+      "classification_proportions": {
+        "care": 0.69,
+        "fairness": 0.03,
+        "loyalty": 0,
+        "authority": 0,
+        "sanctity": 0.07,
+        "liberty": 0.14,
+        "not_wrong": 0.07
+      },
+      "wrongness_mean_0_4": 2.8,
+      "recommended": true,
+      "use_as_seed": true
+    },
+    {
+      "source_id": "mfv_009",
+      "library_item_number": 9,
+      "foundation": "care",
+      "source_category_label": "关怀（情感伤害）",
+      "original_en": "You see a teenage girl openly staring at a disfigured woman as she walks past.",
+      "translation_zh": "你看到一个十几岁的女孩在一位毁容的女性走过时毫不掩饰地盯着她看。",
+      "classification_proportions": {
+        "care": 0.68,
+        "fairness": 0,
+        "loyalty": 0,
+        "authority": 0.03,
+        "sanctity": 0.03,
+        "liberty": 0.03,
+        "not_wrong": 0.23
+      },
+      "wrongness_mean_0_4": 2,
+      "recommended": true,
+      "use_as_seed": true
+    },
+    {
+      "source_id": "mfv_010",
+      "library_item_number": 10,
+      "foundation": "care",
+      "source_category_label": "关怀（情感伤害）",
+      "original_en": "You see a boy making fun of his brother for getting dumped by his girlfriend.",
+      "translation_zh": "你看到一个男孩取笑他哥哥被女朋友甩了。",
+      "classification_proportions": {
+        "care": 0.68,
+        "fairness": 0,
+        "loyalty": 0.13,
+        "authority": 0,
+        "sanctity": 0,
+        "liberty": 0.1,
+        "not_wrong": 0.1
+      },
+      "wrongness_mean_0_4": 2.2,
+      "recommended": true,
+      "use_as_seed": true
+    },
+    {
+      "source_id": "mfv_011",
+      "library_item_number": 11,
+      "foundation": "care",
+      "source_category_label": "关怀（情感伤害）",
+      "original_en": "You see a man laughing at a disabled co-worker while at an office softball game.",
+      "translation_zh": "你看到一个男人在办公室垒球赛上嘲笑一位残疾同事。",
+      "classification_proportions": {
+        "care": 0.68,
+        "fairness": 0.06,
+        "loyalty": 0,
+        "authority": 0,
+        "sanctity": 0.06,
+        "liberty": 0.19,
+        "not_wrong": 0
+      },
+      "wrongness_mean_0_4": 3.5,
+      "recommended": true,
+      "use_as_seed": true
+    },
+    {
+      "source_id": "mfv_012",
+      "library_item_number": 12,
+      "foundation": "care",
+      "source_category_label": "关怀（情感伤害）",
+      "original_en": "You see a man loudly telling his wife that the dinner she cooked tastes awful.",
+      "translation_zh": "你看到一个男人大声对妻子说，她做的晚饭难吃极了。",
+      "classification_proportions": {
+        "care": 0.66,
+        "fairness": 0,
+        "loyalty": 0.03,
+        "authority": 0.03,
+        "sanctity": 0.13,
+        "liberty": 0.06,
+        "not_wrong": 0.09
+      },
+      "wrongness_mean_0_4": 2.4,
+      "recommended": true,
+      "use_as_seed": true
+    },
+    {
+      "source_id": "mfv_013",
+      "library_item_number": 13,
+      "foundation": "care",
+      "source_category_label": "关怀（情感伤害）",
+      "original_en": "You see a man telling a woman that her painting looks like it was done by children.",
+      "translation_zh": "你看到一个男人对一个女人说，她的画看起来像小孩子画的。",
+      "classification_proportions": {
+        "care": 0.66,
+        "fairness": 0,
+        "loyalty": 0,
+        "authority": 0.06,
+        "sanctity": 0,
+        "liberty": 0.16,
+        "not_wrong": 0.13
+      },
+      "wrongness_mean_0_4": 1.9,
+      "recommended": true,
+      "use_as_seed": true
+    },
+    {
+      "source_id": "mfv_014",
+      "library_item_number": 14,
+      "foundation": "care",
+      "source_category_label": "关怀（情感伤害）",
+      "original_en": "You see a woman clearly avoiding sitting next to an obese woman on the bus.",
+      "translation_zh": "你看到一个女人在公交车上明显躲着不坐在一位肥胖女性旁边。",
+      "classification_proportions": {
+        "care": 0.64,
+        "fairness": 0.07,
+        "loyalty": 0,
+        "authority": 0.04,
+        "sanctity": 0.04,
+        "liberty": 0.04,
+        "not_wrong": 0.18
+      },
+      "wrongness_mean_0_4": 2,
+      "recommended": true,
+      "use_as_seed": true
+    },
+    {
+      "source_id": "mfv_015",
+      "library_item_number": 15,
+      "foundation": "care",
+      "source_category_label": "关怀（情感伤害）",
+      "original_en": "You see a girl telling a boy that his older brother is much more attractive than him.",
+      "translation_zh": "你看到一个女孩对一个男孩说，他哥哥比他帅多了。",
+      "classification_proportions": {
+        "care": 0.63,
+        "fairness": 0.03,
+        "loyalty": 0,
+        "authority": 0.03,
+        "sanctity": 0.03,
+        "liberty": 0.03,
+        "not_wrong": 0.25
+      },
+      "wrongness_mean_0_4": 1.4,
+      "recommended": true,
+      "use_as_seed": true
+    },
+    {
+      "source_id": "mfv_016",
+      "library_item_number": 16,
+      "foundation": "care",
+      "source_category_label": "关怀（情感伤害）",
+      "original_en": "You see a girl telling her classmate that she looks like she has gained weight.",
+      "translation_zh": "你看到一个女孩对她的同学说，她看起来好像长胖了。",
+      "classification_proportions": {
+        "care": 0.6,
+        "fairness": 0,
+        "loyalty": 0.03,
+        "authority": 0.03,
+        "sanctity": 0.13,
+        "liberty": 0.1,
+        "not_wrong": 0.1
+      },
+      "wrongness_mean_0_4": 2.2,
+      "recommended": true,
+      "use_as_seed": true
+    },
+    {
+      "source_id": "mfv_017",
+      "library_item_number": 17,
+      "foundation": "care",
+      "source_category_label": "关怀（人身伤害·动物）",
+      "original_en": "You see a woman swerving her car in order to intentionally run over a squirrel.",
+      "translation_zh": "你看到一个女人猛打方向盘，故意开车碾过一只松鼠。",
+      "classification_proportions": {
+        "care": 0.87,
+        "fairness": 0.03,
+        "loyalty": 0,
+        "authority": 0,
+        "sanctity": 0.05,
+        "liberty": 0.03,
+        "not_wrong": 0.03
+      },
+      "wrongness_mean_0_4": 3.2,
+      "recommended": true,
+      "use_as_seed": true
+    },
+    {
+      "source_id": "mfv_018",
+      "library_item_number": 18,
+      "foundation": "care",
+      "source_category_label": "关怀（人身伤害·动物）",
+      "original_en": "You see a woman throwing her cat across the room for scratching the furniture.",
+      "translation_zh": "你看到一个女人因为猫抓坏了家具，把它扔到了房间的另一头。",
+      "classification_proportions": {
+        "care": 0.85,
+        "fairness": 0.02,
+        "loyalty": 0,
+        "authority": 0.02,
+        "sanctity": 0.05,
+        "liberty": 0.05,
+        "not_wrong": 0
+      },
+      "wrongness_mean_0_4": 3.2,
+      "recommended": true,
+      "use_as_seed": true
+    },
+    {
+      "source_id": "mfv_019",
+      "library_item_number": 19,
+      "foundation": "care",
+      "source_category_label": "关怀（人身伤害·动物）",
+      "original_en": "You see a boy throwing rocks at cows that are grazing in the local pasture.",
+      "translation_zh": "你看到一个男孩朝在当地牧场吃草的奶牛扔石头。",
+      "classification_proportions": {
+        "care": 0.85,
+        "fairness": 0,
+        "loyalty": 0.02,
+        "authority": 0.05,
+        "sanctity": 0.05,
+        "liberty": 0.02,
+        "not_wrong": 0
+      },
+      "wrongness_mean_0_4": 3.3,
+      "recommended": true,
+      "use_as_seed": true
+    },
+    {
+      "source_id": "mfv_020",
+      "library_item_number": 20,
+      "foundation": "care",
+      "source_category_label": "关怀（人身伤害·动物）",
+      "original_en": "You see a man lashing his pony with a whip for breaking loose from its pen.",
+      "translation_zh": "你看到一个男人因为小马挣脱了围栏而用鞭子抽打它。",
+      "classification_proportions": {
+        "care": 0.83,
+        "fairness": 0,
+        "loyalty": 0,
+        "authority": 0.02,
+        "sanctity": 0.07,
+        "liberty": 0.05,
+        "not_wrong": 0.02
+      },
+      "wrongness_mean_0_4": 2.9,
+      "recommended": true,
+      "use_as_seed": true
+    },
+    {
+      "source_id": "mfv_021",
+      "library_item_number": 21,
+      "foundation": "care",
+      "source_category_label": "关怀（人身伤害·动物）",
+      "original_en": "You see a boy setting a series of traps to kill stray cats in his neighborhood.",
+      "translation_zh": "你看到一个男孩设置了一连串陷阱来捕杀小区里的流浪猫。",
+      "classification_proportions": {
+        "care": 0.81,
+        "fairness": 0,
+        "loyalty": 0.03,
+        "authority": 0,
+        "sanctity": 0.14,
+        "liberty": 0,
+        "not_wrong": 0.03
+      },
+      "wrongness_mean_0_4": 3.6,
+      "recommended": true,
+      "use_as_seed": true
+    },
+    {
+      "source_id": "mfv_022",
+      "library_item_number": 22,
+      "foundation": "care",
+      "source_category_label": "关怀（人身伤害·动物）",
+      "original_en": "You see a zoo trainer jabbing a dolphin to get it to entertain his customers.",
+      "translation_zh": "你看到一名动物园驯兽师为了逗乐游客而猛戳海豚。",
+      "classification_proportions": {
+        "care": 0.76,
+        "fairness": 0.02,
+        "loyalty": 0.05,
+        "authority": 0.05,
+        "sanctity": 0.02,
+        "liberty": 0.07,
+        "not_wrong": 0.02
+      },
+      "wrongness_mean_0_4": 3.2,
+      "recommended": true,
+      "use_as_seed": true
+    },
+    {
+      "source_id": "mfv_023",
+      "library_item_number": 23,
+      "foundation": "care",
+      "source_category_label": "关怀（人身伤害·动物）",
+      "original_en": "You see someone leaving his dog outside in the rain after it dug in the trash.",
+      "translation_zh": "你看到某人在狗翻过垃圾桶后，把它留在外面的雨中。",
+      "classification_proportions": {
+        "care": 0.75,
+        "fairness": 0,
+        "loyalty": 0.08,
+        "authority": 0.03,
+        "sanctity": 0.05,
+        "liberty": 0.03,
+        "not_wrong": 0.08
+      },
+      "wrongness_mean_0_4": 2.7,
+      "recommended": true,
+      "use_as_seed": true
+    },
+    {
+      "source_id": "mfv_024",
+      "library_item_number": 24,
+      "foundation": "care",
+      "source_category_label": "关怀（人身伤害·动物）",
+      "original_en": "You see a girl shooting geese repeatedly with a pellet gun out in the woods.",
+      "translation_zh": "你看到一个女孩在树林里用气枪反复射击大雁。",
+      "classification_proportions": {
+        "care": 0.69,
+        "fairness": 0,
+        "loyalty": 0,
+        "authority": 0.05,
+        "sanctity": 0.13,
+        "liberty": 0.05,
+        "not_wrong": 0.08
+      },
+      "wrongness_mean_0_4": 3,
+      "recommended": true,
+      "use_as_seed": true
+    },
+    {
+      "source_id": "mfv_025",
+      "library_item_number": 25,
+      "foundation": "care",
+      "source_category_label": "关怀（人身伤害·动物）",
+      "original_en": "You see a woman snatching away her dog’s food for making a mess in the living room.",
+      "translation_zh": "你看到一个女人因为狗把客厅弄得一团糟而抢走了它的食物。",
+      "classification_proportions": {
+        "care": 0.63,
+        "fairness": 0.06,
+        "loyalty": 0.03,
+        "authority": 0,
+        "sanctity": 0.03,
+        "liberty": 0.09,
+        "not_wrong": 0.17
+      },
+      "wrongness_mean_0_4": 2.2,
+      "recommended": false,
+      "use_as_seed": true
+    },
+    {
+      "source_id": "mfv_026",
+      "library_item_number": 26,
+      "foundation": "care",
+      "source_category_label": "关怀（人身伤害·人类）",
+      "original_en": "You see a woman throwing a stapler at her colleague who is snoring during her talk.",
+      "translation_zh": "你看到一个女人朝在她演讲时打鼾的同事扔订书机。",
+      "classification_proportions": {
+        "care": 0.78,
+        "fairness": 0.03,
+        "loyalty": 0.03,
+        "authority": 0.08,
+        "sanctity": 0,
+        "liberty": 0.05,
+        "not_wrong": 0.03
+      },
+      "wrongness_mean_0_4": 3,
+      "recommended": false,
+      "use_as_seed": true
+    },
+    {
+      "source_id": "mfv_027",
+      "library_item_number": 27,
+      "foundation": "care",
+      "source_category_label": "关怀（人身伤害·人类）",
+      "original_en": "You see a teacher hitting a student’s hand with a ruler for falling asleep in class.",
+      "translation_zh": "你看到一位老师因为学生在课堂上睡着而用尺子打他的手。",
+      "classification_proportions": {
+        "care": 0.78,
+        "fairness": 0,
+        "loyalty": 0.03,
+        "authority": 0.05,
+        "sanctity": 0.03,
+        "liberty": 0.08,
+        "not_wrong": 0.03
+      },
+      "wrongness_mean_0_4": 2.7,
+      "recommended": true,
+      "use_as_seed": true
+    },
+    {
+      "source_id": "mfv_028",
+      "library_item_number": 28,
+      "foundation": "care",
+      "source_category_label": "关怀（人身伤害·人类）",
+      "original_en": "You see a woman slapping another woman who she is arguing with in the parking lot.",
+      "translation_zh": "你看到一个女人在停车场打了正在和她争吵的另一个女人一巴掌。",
+      "classification_proportions": {
+        "care": 0.78,
+        "fairness": 0,
+        "loyalty": 0,
+        "authority": 0.03,
+        "sanctity": 0.05,
+        "liberty": 0.13,
+        "not_wrong": 0.03
+      },
+      "wrongness_mean_0_4": 2.8,
+      "recommended": false,
+      "use_as_seed": true
+    },
+    {
+      "source_id": "mfv_029",
+      "library_item_number": 29,
+      "foundation": "care",
+      "source_category_label": "关怀（人身伤害·人类）",
+      "original_en": "You see a girl throwing her hot coffee on a woman who is dating her ex-boyfriend",
+      "translation_zh": "你看到一个女孩把热咖啡泼在一个正和她前男友约会的女人身上。",
+      "classification_proportions": {
+        "care": 0.73,
+        "fairness": 0,
+        "loyalty": 0.08,
+        "authority": 0.05,
+        "sanctity": 0.05,
+        "liberty": 0.08,
+        "not_wrong": 0.03
+      },
+      "wrongness_mean_0_4": 3.3,
+      "recommended": false,
+      "use_as_seed": true
+    },
+    {
+      "source_id": "mfv_030",
+      "library_item_number": 30,
+      "foundation": "care",
+      "source_category_label": "关怀（人身伤害·人类）",
+      "original_en": "You see a wife hitting her husband on the side of his head for coming home late.",
+      "translation_zh": "你看到一位妻子因为丈夫回家晚而打他的脑袋。",
+      "classification_proportions": {
+        "care": 0.69,
+        "fairness": 0.08,
+        "loyalty": 0.05,
+        "authority": 0,
+        "sanctity": 0.03,
+        "liberty": 0.15,
+        "not_wrong": 0
+      },
+      "wrongness_mean_0_4": 2.9,
+      "recommended": false,
+      "use_as_seed": true
+    },
+    {
+      "source_id": "mfv_031",
+      "library_item_number": 31,
+      "foundation": "care",
+      "source_category_label": "关怀（人身伤害·人类）",
+      "original_en": "You see a boy placing a thumbtack sticking up on the chair of another student.",
+      "translation_zh": "你看到一个男孩把一枚图钉尖朝上放在另一个同学的椅子上。",
+      "classification_proportions": {
+        "care": 0.65,
+        "fairness": 0,
+        "loyalty": 0.1,
+        "authority": 0.08,
+        "sanctity": 0.03,
+        "liberty": 0.13,
+        "not_wrong": 0.03
+      },
+      "wrongness_mean_0_4": 2.8,
+      "recommended": true,
+      "use_as_seed": true
+    },
+    {
+      "source_id": "mfv_032",
+      "library_item_number": 32,
+      "foundation": "care",
+      "source_category_label": "关怀（人身伤害·人类）",
+      "original_en": "You see a woman spanking her child with a spatula for getting bad grades in school.",
+      "translation_zh": "你看到一个女人因为孩子在学校成绩差而用锅铲打他的屁股。",
+      "classification_proportions": {
+        "care": 0.62,
+        "fairness": 0.03,
+        "loyalty": 0.05,
+        "authority": 0,
+        "sanctity": 0.05,
+        "liberty": 0.1,
+        "not_wrong": 0.15
+      },
+      "wrongness_mean_0_4": 2.6,
+      "recommended": true,
+      "use_as_seed": true
+    },
+    {
+      "source_id": "mfv_033",
+      "library_item_number": 33,
+      "foundation": "fairness",
+      "source_category_label": "公平",
+      "original_en": "You see a student copying a classmate’s answer sheet on a makeup final exam.",
+      "translation_zh": "你看到一名学生在期末补考时抄袭同学的答题纸。",
+      "classification_proportions": {
+        "care": 0,
+        "fairness": 1,
+        "loyalty": 0,
+        "authority": 0,
+        "sanctity": 0,
+        "liberty": 0,
+        "not_wrong": 0
+      },
+      "wrongness_mean_0_4": 3.4,
+      "recommended": true,
+      "use_as_seed": true
+    },
+    {
+      "source_id": "mfv_034",
+      "library_item_number": 34,
+      "foundation": "fairness",
+      "source_category_label": "公平",
+      "original_en": "You see a runner taking a shortcut on the course during the marathon in order to win.",
+      "translation_zh": "你看到一名跑者在马拉松比赛中抄近道以便获胜。",
+      "classification_proportions": {
+        "care": 0,
+        "fairness": 0.97,
+        "loyalty": 0.03,
+        "authority": 0,
+        "sanctity": 0,
+        "liberty": 0,
+        "not_wrong": 0
+      },
+      "wrongness_mean_0_4": 3.4,
+      "recommended": true,
+      "use_as_seed": true
+    },
+    {
+      "source_id": "mfv_035",
+      "library_item_number": 35,
+      "foundation": "fairness",
+      "source_category_label": "公平",
+      "original_en": "You see a tenant bribing a landlord to be the first to get their apartment repainted.",
+      "translation_zh": "你看到一位租客贿赂房东，好让自己的公寓最先被重新粉刷。",
+      "classification_proportions": {
+        "care": 0,
+        "fairness": 0.97,
+        "loyalty": 0,
+        "authority": 0,
+        "sanctity": 0,
+        "liberty": 0.03,
+        "not_wrong": 0
+      },
+      "wrongness_mean_0_4": 2.2,
+      "recommended": true,
+      "use_as_seed": true
+    },
+    {
+      "source_id": "mfv_036",
+      "library_item_number": 36,
+      "foundation": "fairness",
+      "source_category_label": "公平",
+      "original_en": "You see a soccer player pretending to be seriously fouled by an opposing player.",
+      "translation_zh": "你看到一名足球运动员假装被对方球员严重犯规。",
+      "classification_proportions": {
+        "care": 0,
+        "fairness": 0.94,
+        "loyalty": 0.03,
+        "authority": 0,
+        "sanctity": 0,
+        "liberty": 0.03,
+        "not_wrong": 0
+      },
+      "wrongness_mean_0_4": 2.5,
+      "recommended": true,
+      "use_as_seed": true
+    },
+    {
+      "source_id": "mfv_037",
+      "library_item_number": 37,
+      "foundation": "fairness",
+      "source_category_label": "公平",
+      "original_en": "You see someone cheating in a card game while playing with a group of strangers.",
+      "translation_zh": "你看到某人在和一群陌生人玩牌时作弊。",
+      "classification_proportions": {
+        "care": 0.03,
+        "fairness": 0.93,
+        "loyalty": 0,
+        "authority": 0.03,
+        "sanctity": 0,
+        "liberty": 0,
+        "not_wrong": 0
+      },
+      "wrongness_mean_0_4": 2.6,
+      "recommended": true,
+      "use_as_seed": true
+    },
+    {
+      "source_id": "mfv_038",
+      "library_item_number": 38,
+      "foundation": "fairness",
+      "source_category_label": "公平",
+      "original_en": "You see a professor giving a bad grade to a student just because he dislikes him.",
+      "translation_zh": "你看到一位教授仅仅因为不喜欢一名学生就给他打低分。",
+      "classification_proportions": {
+        "care": 0.03,
+        "fairness": 0.93,
+        "loyalty": 0.03,
+        "authority": 0,
+        "sanctity": 0,
+        "liberty": 0,
+        "not_wrong": 0
+      },
+      "wrongness_mean_0_4": 3.7,
+      "recommended": true,
+      "use_as_seed": true
+    },
+    {
+      "source_id": "mfv_039",
+      "library_item_number": 39,
+      "foundation": "fairness",
+      "source_category_label": "公平",
+      "original_en": "You see a referee intentionally making bad calls that help his favored team win.",
+      "translation_zh": "你看到一名裁判故意做出有利于他偏爱的球队获胜的误判。",
+      "classification_proportions": {
+        "care": 0,
+        "fairness": 0.9,
+        "loyalty": 0.03,
+        "authority": 0.03,
+        "sanctity": 0.03,
+        "liberty": 0,
+        "not_wrong": 0
+      },
+      "wrongness_mean_0_4": 3,
+      "recommended": true,
+      "use_as_seed": true
+    },
+    {
+      "source_id": "mfv_040",
+      "library_item_number": 40,
+      "foundation": "fairness",
+      "source_category_label": "公平",
+      "original_en": "You see a manager taking half the doughnuts from a box, leaving little for others.",
+      "translation_zh": "你看到一位经理从盒子里拿走一半的甜甜圈，只给其他人留下很少。",
+      "classification_proportions": {
+        "care": 0.03,
+        "fairness": 0.9,
+        "loyalty": 0,
+        "authority": 0,
+        "sanctity": 0,
+        "liberty": 0,
+        "not_wrong": 0.07
+      },
+      "wrongness_mean_0_4": 2,
+      "recommended": false,
+      "use_as_seed": true
+    },
+    {
+      "source_id": "mfv_041",
+      "library_item_number": 41,
+      "foundation": "fairness",
+      "source_category_label": "公平",
+      "original_en": "You see a judge taking on a criminal case although he is friends with the defendant.",
+      "translation_zh": "你看到一位法官虽然与被告是朋友，仍然接手了这起刑事案件。",
+      "classification_proportions": {
+        "care": 0,
+        "fairness": 0.89,
+        "loyalty": 0.04,
+        "authority": 0,
+        "sanctity": 0,
+        "liberty": 0,
+        "not_wrong": 0.07
+      },
+      "wrongness_mean_0_4": 3.1,
+      "recommended": true,
+      "use_as_seed": true
+    },
+    {
+      "source_id": "mfv_042",
+      "library_item_number": 42,
+      "foundation": "fairness",
+      "source_category_label": "公平",
+      "original_en": "You see a student getting an A on a group project when he didn’t do his part.",
+      "translation_zh": "你看到一名学生在小组作业中没有尽自己的那份力，却得了A。",
+      "classification_proportions": {
+        "care": 0,
+        "fairness": 0.88,
+        "loyalty": 0.09,
+        "authority": 0,
+        "sanctity": 0.03,
+        "liberty": 0,
+        "not_wrong": 0
+      },
+      "wrongness_mean_0_4": 2.8,
+      "recommended": false,
+      "use_as_seed": true
+    },
+    {
+      "source_id": "mfv_043",
+      "library_item_number": 43,
+      "foundation": "fairness",
+      "source_category_label": "公平",
+      "original_en": "You see an employee lying about how many hours she worked during the week.",
+      "translation_zh": "你看到一名员工虚报她这周的工作时长。",
+      "classification_proportions": {
+        "care": 0,
+        "fairness": 0.87,
+        "loyalty": 0.03,
+        "authority": 0.03,
+        "sanctity": 0.03,
+        "liberty": 0,
+        "not_wrong": 0.03
+      },
+      "wrongness_mean_0_4": 2.9,
+      "recommended": true,
+      "use_as_seed": true
+    },
+    {
+      "source_id": "mfv_044",
+      "library_item_number": 44,
+      "foundation": "fairness",
+      "source_category_label": "公平",
+      "original_en": "You see a woman getting hired only because her father is close friends with the boss.",
+      "translation_zh": "你看到一个女人仅仅因为她父亲和老板是好朋友而被录用。",
+      "classification_proportions": {
+        "care": 0,
+        "fairness": 0.84,
+        "loyalty": 0.03,
+        "authority": 0.03,
+        "sanctity": 0,
+        "liberty": 0.03,
+        "not_wrong": 0.06
+      },
+      "wrongness_mean_0_4": 2.4,
+      "recommended": false,
+      "use_as_seed": true
+    },
+    {
+      "source_id": "mfv_045",
+      "library_item_number": 45,
+      "foundation": "fairness",
+      "source_category_label": "公平",
+      "original_en": "You see a girl asking for allowance even though her brother did her chores for her.",
+      "translation_zh": "你看到一个女孩虽然家务活都是哥哥替她做的，却还是索要零花钱。",
+      "classification_proportions": {
+        "care": 0.03,
+        "fairness": 0.82,
+        "loyalty": 0.03,
+        "authority": 0.06,
+        "sanctity": 0.06,
+        "liberty": 0,
+        "not_wrong": 0
+      },
+      "wrongness_mean_0_4": 2.7,
+      "recommended": false,
+      "use_as_seed": true
+    },
+    {
+      "source_id": "mfv_046",
+      "library_item_number": 46,
+      "foundation": "fairness",
+      "source_category_label": "公平",
+      "original_en": "You see a girl taking all the Halloween candy from a bowl, leaving none for others.",
+      "translation_zh": "你看到一个女孩把碗里的万圣节糖果全部拿走，一点都没给别人留。",
+      "classification_proportions": {
+        "care": 0.06,
+        "fairness": 0.74,
+        "loyalty": 0.1,
+        "authority": 0.06,
+        "sanctity": 0.03,
+        "liberty": 0,
+        "not_wrong": 0
+      },
+      "wrongness_mean_0_4": 2.5,
+      "recommended": false,
+      "use_as_seed": true
+    },
+    {
+      "source_id": "mfv_047",
+      "library_item_number": 47,
+      "foundation": "fairness",
+      "source_category_label": "公平",
+      "original_en": "You see a politician using federal tax dollars to build an extension on his home.",
+      "translation_zh": "你看到一名政客挪用联邦税款给自己的房子加盖扩建。",
+      "classification_proportions": {
+        "care": 0.03,
+        "fairness": 0.71,
+        "loyalty": 0.19,
+        "authority": 0.03,
+        "sanctity": 0,
+        "liberty": 0.03,
+        "not_wrong": 0
+      },
+      "wrongness_mean_0_4": 3.8,
+      "recommended": true,
+      "use_as_seed": true
+    },
+    {
+      "source_id": "mfv_048",
+      "library_item_number": 48,
+      "foundation": "fairness",
+      "source_category_label": "公平",
+      "original_en": "You see a boy skipping to the front of the line because his friend is an employee.",
+      "translation_zh": "你看到一个男孩因为朋友是店员而插队排到最前面。",
+      "classification_proportions": {
+        "care": 0.03,
+        "fairness": 0.7,
+        "loyalty": 0.03,
+        "authority": 0.03,
+        "sanctity": 0.03,
+        "liberty": 0.03,
+        "not_wrong": 0.13
+      },
+      "wrongness_mean_0_4": 2.4,
+      "recommended": true,
+      "use_as_seed": true
+    },
+    {
+      "source_id": "mfv_049",
+      "library_item_number": 49,
+      "foundation": "fairness",
+      "source_category_label": "公平",
+      "original_en": "You see a woman lying about the number of vacation days she has taken at work.",
+      "translation_zh": "你看到一个女人虚报自己休过的年假天数。",
+      "classification_proportions": {
+        "care": 0,
+        "fairness": 0.6,
+        "loyalty": 0.1,
+        "authority": 0.07,
+        "sanctity": 0,
+        "liberty": 0,
+        "not_wrong": 0.23
+      },
+      "wrongness_mean_0_4": 2.2,
+      "recommended": true,
+      "use_as_seed": true
+    },
+    {
+      "source_id": "mfv_050",
+      "library_item_number": 50,
+      "foundation": "loyalty",
+      "source_category_label": "忠诚",
+      "original_en": "You see an employee joking with competitors about how bad his company did last year.",
+      "translation_zh": "你看到一名员工和竞争对手开玩笑，说自己的公司去年业绩有多差。",
+      "classification_proportions": {
+        "care": 0,
+        "fairness": 0.03,
+        "loyalty": 0.84,
+        "authority": 0.03,
+        "sanctity": 0.03,
+        "liberty": 0,
+        "not_wrong": 0.06
+      },
+      "wrongness_mean_0_4": 2,
+      "recommended": true,
+      "use_as_seed": true
+    },
+    {
+      "source_id": "mfv_051",
+      "library_item_number": 51,
+      "foundation": "loyalty",
+      "source_category_label": "忠诚",
+      "original_en": "You see a coach celebrating with the opposing team’s players who just won the game.",
+      "translation_zh": "你看到一位教练和刚刚赢得比赛的对方球队球员一起庆祝。",
+      "classification_proportions": {
+        "care": 0,
+        "fairness": 0.03,
+        "loyalty": 0.76,
+        "authority": 0,
+        "sanctity": 0,
+        "liberty": 0.03,
+        "not_wrong": 0.17
+      },
+      "wrongness_mean_0_4": 1.8,
+      "recommended": true,
+      "use_as_seed": true
+    },
+    {
+      "source_id": "mfv_052",
+      "library_item_number": 52,
+      "foundation": "loyalty",
+      "source_category_label": "忠诚",
+      "original_en": "You see a former US General saying publicly he would never buy any American product.",
+      "translation_zh": "你看到一位美国前将军公开表示，他永远不会购买任何美国产品。",
+      "classification_proportions": {
+        "care": 0,
+        "fairness": 0,
+        "loyalty": 0.75,
+        "authority": 0.06,
+        "sanctity": 0.03,
+        "liberty": 0,
+        "not_wrong": 0.16
+      },
+      "wrongness_mean_0_4": 2.5,
+      "recommended": true,
+      "use_as_seed": true
+    },
+    {
+      "source_id": "mfv_053",
+      "library_item_number": 53,
+      "foundation": "loyalty",
+      "source_category_label": "忠诚",
+      "original_en": "You see a mayor saying that the neighboring town is a much better town.",
+      "translation_zh": "你看到一位市长说邻近的城镇比本市好得多。",
+      "classification_proportions": {
+        "care": 0,
+        "fairness": 0.03,
+        "loyalty": 0.74,
+        "authority": 0.03,
+        "sanctity": 0.03,
+        "liberty": 0,
+        "not_wrong": 0.16
+      },
+      "wrongness_mean_0_4": 1.6,
+      "recommended": true,
+      "use_as_seed": true
+    },
+    {
+      "source_id": "mfv_054",
+      "library_item_number": 54,
+      "foundation": "loyalty",
+      "source_category_label": "忠诚",
+      "original_en": "You see the US Ambassador joking in Great Britain about the stupidity of Americans.",
+      "translation_zh": "你看到美国大使在英国拿美国人的愚蠢开玩笑。",
+      "classification_proportions": {
+        "care": 0.03,
+        "fairness": 0,
+        "loyalty": 0.74,
+        "authority": 0.16,
+        "sanctity": 0,
+        "liberty": 0,
+        "not_wrong": 0.06
+      },
+      "wrongness_mean_0_4": 2.8,
+      "recommended": true,
+      "use_as_seed": true
+    },
+    {
+      "source_id": "mfv_055",
+      "library_item_number": 55,
+      "foundation": "loyalty",
+      "source_category_label": "忠诚",
+      "original_en": "You see a man leaving his family business to go work for their main competitor.",
+      "translation_zh": "你看到一个男人离开家族企业，跳槽到他们的主要竞争对手那里工作。",
+      "classification_proportions": {
+        "care": 0,
+        "fairness": 0.03,
+        "loyalty": 0.73,
+        "authority": 0,
+        "sanctity": 0.03,
+        "liberty": 0,
+        "not_wrong": 0.2
+      },
+      "wrongness_mean_0_4": 1.7,
+      "recommended": true,
+      "use_as_seed": true
+    },
+    {
+      "source_id": "mfv_056",
+      "library_item_number": 56,
+      "foundation": "loyalty",
+      "source_category_label": "忠诚",
+      "original_en": "You see a teacher publicly saying she hopes another school wins the math contest.",
+      "translation_zh": "你看到一位老师公开表示，她希望另一所学校赢得数学竞赛。",
+      "classification_proportions": {
+        "care": 0.12,
+        "fairness": 0,
+        "loyalty": 0.69,
+        "authority": 0,
+        "sanctity": 0.04,
+        "liberty": 0,
+        "not_wrong": 0.15
+      },
+      "wrongness_mean_0_4": 1.9,
+      "recommended": true,
+      "use_as_seed": true
+    },
+    {
+      "source_id": "mfv_057",
+      "library_item_number": 57,
+      "foundation": "loyalty",
+      "source_category_label": "忠诚",
+      "original_en": "You see a head cheerleader booing her high school’s team during a homecoming game.",
+      "translation_zh": "你看到啦啦队队长在返校节比赛中给自己的高中球队喝倒彩。",
+      "classification_proportions": {
+        "care": 0.07,
+        "fairness": 0,
+        "loyalty": 0.69,
+        "authority": 0.07,
+        "sanctity": 0,
+        "liberty": 0.07,
+        "not_wrong": 0.1
+      },
+      "wrongness_mean_0_4": 2.3,
+      "recommended": true,
+      "use_as_seed": true
+    },
+    {
+      "source_id": "mfv_058",
+      "library_item_number": 58,
+      "foundation": "loyalty",
+      "source_category_label": "忠诚",
+      "original_en": "You see the class president saying on TV that her rival college is a better school.",
+      "translation_zh": "你看到学生会主席在电视上说，她的对手大学是更好的学校。",
+      "classification_proportions": {
+        "care": 0,
+        "fairness": 0,
+        "loyalty": 0.68,
+        "authority": 0.06,
+        "sanctity": 0,
+        "liberty": 0,
+        "not_wrong": 0.26
+      },
+      "wrongness_mean_0_4": 1.4,
+      "recommended": true,
+      "use_as_seed": true
+    },
+    {
+      "source_id": "mfv_059",
+      "library_item_number": 59,
+      "foundation": "loyalty",
+      "source_category_label": "忠诚",
+      "original_en": "You see a Hollywood star agreeing with a foreign dictator’s denunciation of the US.",
+      "translation_zh": "你看到一位好莱坞明星赞同某个外国独裁者对美国的谴责。",
+      "classification_proportions": {
+        "care": 0,
+        "fairness": 0.03,
+        "loyalty": 0.67,
+        "authority": 0,
+        "sanctity": 0.03,
+        "liberty": 0,
+        "not_wrong": 0.27
+      },
+      "wrongness_mean_0_4": 2.2,
+      "recommended": true,
+      "use_as_seed": true
+    },
+    {
+      "source_id": "mfv_060",
+      "library_item_number": 60,
+      "foundation": "loyalty",
+      "source_category_label": "忠诚",
+      "original_en": "You see a college president singing a rival school’s fight song during a pep rally.",
+      "translation_zh": "你看到一位大学校长在赛前动员会上唱对手学校的战歌。",
+      "classification_proportions": {
+        "care": 0,
+        "fairness": 0,
+        "loyalty": 0.66,
+        "authority": 0.07,
+        "sanctity": 0.03,
+        "liberty": 0,
+        "not_wrong": 0.24
+      },
+      "wrongness_mean_0_4": 1.7,
+      "recommended": true,
+      "use_as_seed": true
+    },
+    {
+      "source_id": "mfv_061",
+      "library_item_number": 61,
+      "foundation": "loyalty",
+      "source_category_label": "忠诚",
+      "original_en": "You see a man secretly voting against his wife in a local beauty pageant.",
+      "translation_zh": "你看到一个男人在当地选美比赛中偷偷投票反对自己的妻子。",
+      "classification_proportions": {
+        "care": 0.1,
+        "fairness": 0.07,
+        "loyalty": 0.66,
+        "authority": 0,
+        "sanctity": 0,
+        "liberty": 0,
+        "not_wrong": 0.17
+      },
+      "wrongness_mean_0_4": 1.9,
+      "recommended": true,
+      "use_as_seed": true
+    },
+    {
+      "source_id": "mfv_062",
+      "library_item_number": 62,
+      "foundation": "loyalty",
+      "source_category_label": "忠诚",
+      "original_en": "You see an American telling foreigners that the US is an evil force in the world.",
+      "translation_zh": "你看到一个美国人对外国人说，美国是世界上一股邪恶势力。",
+      "classification_proportions": {
+        "care": 0.1,
+        "fairness": 0,
+        "loyalty": 0.66,
+        "authority": 0.03,
+        "sanctity": 0.03,
+        "liberty": 0.03,
+        "not_wrong": 0.14
+      },
+      "wrongness_mean_0_4": 2.7,
+      "recommended": true,
+      "use_as_seed": true
+    },
+    {
+      "source_id": "mfv_063",
+      "library_item_number": 63,
+      "foundation": "loyalty",
+      "source_category_label": "忠诚",
+      "original_en": "You see the coach’s wife sponsoring a bake sale for her husband’s rival team.",
+      "translation_zh": "你看到教练的妻子为她丈夫的对手球队赞助了一场烘焙义卖。",
+      "classification_proportions": {
+        "care": 0,
+        "fairness": 0.06,
+        "loyalty": 0.65,
+        "authority": 0,
+        "sanctity": 0,
+        "liberty": 0,
+        "not_wrong": 0.29
+      },
+      "wrongness_mean_0_4": 1.5,
+      "recommended": true,
+      "use_as_seed": true
+    },
+    {
+      "source_id": "mfv_064",
+      "library_item_number": 64,
+      "foundation": "loyalty",
+      "source_category_label": "忠诚",
+      "original_en": "You see a former Secretary of State publicly giving up his citizenship to the US.",
+      "translation_zh": "你看到一位前国务卿公开放弃自己的美国国籍。",
+      "classification_proportions": {
+        "care": 0,
+        "fairness": 0.03,
+        "loyalty": 0.62,
+        "authority": 0.1,
+        "sanctity": 0,
+        "liberty": 0.07,
+        "not_wrong": 0.17
+      },
+      "wrongness_mean_0_4": 2.1,
+      "recommended": true,
+      "use_as_seed": true
+    },
+    {
+      "source_id": "mfv_065",
+      "library_item_number": 65,
+      "foundation": "loyalty",
+      "source_category_label": "忠诚",
+      "original_en": "You see a US swimmer cheering as a Chinese foe beats his teammate to win the gold.",
+      "translation_zh": "你看到一名美国游泳运动员在中国对手击败自己的队友夺得金牌时欢呼喝彩。",
+      "classification_proportions": {
+        "care": 0.02,
+        "fairness": 0.02,
+        "loyalty": 0.61,
+        "authority": 0.07,
+        "sanctity": 0,
+        "liberty": 0,
+        "not_wrong": 0.27
+      },
+      "wrongness_mean_0_4": 1.8,
+      "recommended": true,
+      "use_as_seed": true
+    },
+    {
+      "source_id": "mfv_066",
+      "library_item_number": 66,
+      "foundation": "authority",
+      "source_category_label": "权威",
+      "original_en": "You see a girl ignoring her father’s orders by taking the car after her curfew.",
+      "translation_zh": "你看到一个女孩无视父亲的命令，在宵禁时间过后把车开了出去。",
+      "classification_proportions": {
+        "care": 0.03,
+        "fairness": 0,
+        "loyalty": 0.06,
+        "authority": 0.81,
+        "sanctity": 0.03,
+        "liberty": 0,
+        "not_wrong": 0.06
+      },
+      "wrongness_mean_0_4": 2.5,
+      "recommended": true,
+      "use_as_seed": true
+    },
+    {
+      "source_id": "mfv_067",
+      "library_item_number": 67,
+      "foundation": "authority",
+      "source_category_label": "权威",
+      "original_en": "You see a woman refusing to stand when the judge walks into the courtroom.",
+      "translation_zh": "你看到一个女人在法官走进法庭时拒绝起立。",
+      "classification_proportions": {
+        "care": 0.03,
+        "fairness": 0,
+        "loyalty": 0,
+        "authority": 0.8,
+        "sanctity": 0.03,
+        "liberty": 0,
+        "not_wrong": 0.13
+      },
+      "wrongness_mean_0_4": 2,
+      "recommended": false,
+      "use_as_seed": true
+    },
+    {
+      "source_id": "mfv_068",
+      "library_item_number": 68,
+      "foundation": "authority",
+      "source_category_label": "权威",
+      "original_en": "You see a girl repeatedly interrupting her teacher as he explains a new concept.",
+      "translation_zh": "你看到一个女孩在老师讲解新概念时反复打断他。",
+      "classification_proportions": {
+        "care": 0,
+        "fairness": 0.03,
+        "loyalty": 0,
+        "authority": 0.8,
+        "sanctity": 0,
+        "liberty": 0,
+        "not_wrong": 0.17
+      },
+      "wrongness_mean_0_4": 2,
+      "recommended": true,
+      "use_as_seed": true
+    },
+    {
+      "source_id": "mfv_069",
+      "library_item_number": 69,
+      "foundation": "authority",
+      "source_category_label": "权威",
+      "original_en": "You see a woman spray painting graffiti across the steps of the local courthouse.",
+      "translation_zh": "你看到一个女人在当地法院的台阶上喷涂涂鸦。",
+      "classification_proportions": {
+        "care": 0.03,
+        "fairness": 0,
+        "loyalty": 0,
+        "authority": 0.78,
+        "sanctity": 0.16,
+        "liberty": 0,
+        "not_wrong": 0.03
+      },
+      "wrongness_mean_0_4": 3.3,
+      "recommended": false,
+      "use_as_seed": true
+    },
+    {
+      "source_id": "mfv_070",
+      "library_item_number": 70,
+      "foundation": "authority",
+      "source_category_label": "权威",
+      "original_en": "You see an intern disobeying an order to dress professionally and comb his hair.",
+      "translation_zh": "你看到一名实习生违抗穿着职业装并梳理头发的命令。",
+      "classification_proportions": {
+        "care": 0.03,
+        "fairness": 0,
+        "loyalty": 0,
+        "authority": 0.78,
+        "sanctity": 0,
+        "liberty": 0,
+        "not_wrong": 0.19
+      },
+      "wrongness_mean_0_4": 1.9,
+      "recommended": true,
+      "use_as_seed": true
+    },
+    {
+      "source_id": "mfv_071",
+      "library_item_number": 71,
+      "foundation": "authority",
+      "source_category_label": "权威",
+      "original_en": "You see a man turn his back and walk away while his boss questions his work.",
+      "translation_zh": "你看到一个男人在老板质疑他的工作时转过身走开了。",
+      "classification_proportions": {
+        "care": 0.02,
+        "fairness": 0,
+        "loyalty": 0.02,
+        "authority": 0.78,
+        "sanctity": 0,
+        "liberty": 0,
+        "not_wrong": 0.17
+      },
+      "wrongness_mean_0_4": 2.1,
+      "recommended": true,
+      "use_as_seed": true
+    },
+    {
+      "source_id": "mfv_072",
+      "library_item_number": 72,
+      "foundation": "authority",
+      "source_category_label": "权威",
+      "original_en": "You see a staff member talking loudly and interrupting the mayor’s speech to the public.",
+      "translation_zh": "你看到一名工作人员大声说话，打断了市长对公众的演讲。",
+      "classification_proportions": {
+        "care": 0,
+        "fairness": 0.08,
+        "loyalty": 0.08,
+        "authority": 0.76,
+        "sanctity": 0.05,
+        "liberty": 0.03,
+        "not_wrong": 0
+      },
+      "wrongness_mean_0_4": 2.8,
+      "recommended": true,
+      "use_as_seed": true
+    },
+    {
+      "source_id": "mfv_073",
+      "library_item_number": 73,
+      "foundation": "authority",
+      "source_category_label": "权威",
+      "original_en": "You see a teenage girl coming home late and ignoring her parents’ strict curfew.",
+      "translation_zh": "你看到一个十几岁的女孩很晚才回家，无视父母严格的宵禁规定。",
+      "classification_proportions": {
+        "care": 0.03,
+        "fairness": 0.03,
+        "loyalty": 0.03,
+        "authority": 0.75,
+        "sanctity": 0.03,
+        "liberty": 0,
+        "not_wrong": 0.13
+      },
+      "wrongness_mean_0_4": 2.3,
+      "recommended": true,
+      "use_as_seed": true
+    },
+    {
+      "source_id": "mfv_074",
+      "library_item_number": 74,
+      "foundation": "authority",
+      "source_category_label": "权威",
+      "original_en": "You see a boy spray-painting anarchy symbols on the side of the police station.",
+      "translation_zh": "你看到一个男孩在警察局的墙上喷涂无政府主义符号。",
+      "classification_proportions": {
+        "care": 0.06,
+        "fairness": 0,
+        "loyalty": 0,
+        "authority": 0.75,
+        "sanctity": 0.09,
+        "liberty": 0.03,
+        "not_wrong": 0.06
+      },
+      "wrongness_mean_0_4": 2.9,
+      "recommended": false,
+      "use_as_seed": true
+    },
+    {
+      "source_id": "mfv_075",
+      "library_item_number": 75,
+      "foundation": "authority",
+      "source_category_label": "权威",
+      "original_en": "You see an employee trying to undermine all of her boss’ ideas in front of others.",
+      "translation_zh": "你看到一名员工当着其他人的面试图否定老板的所有想法。",
+      "classification_proportions": {
+        "care": 0.07,
+        "fairness": 0,
+        "loyalty": 0.13,
+        "authority": 0.73,
+        "sanctity": 0,
+        "liberty": 0,
+        "not_wrong": 0.07
+      },
+      "wrongness_mean_0_4": 2.6,
+      "recommended": true,
+      "use_as_seed": true
+    },
+    {
+      "source_id": "mfv_076",
+      "library_item_number": 76,
+      "foundation": "authority",
+      "source_category_label": "权威",
+      "original_en": "You see a teaching assistant talking back to the teacher in front of the classrom.",
+      "translation_zh": "你看到一名助教当着全班同学的面顶撞老师。",
+      "classification_proportions": {
+        "care": 0.03,
+        "fairness": 0,
+        "loyalty": 0.13,
+        "authority": 0.72,
+        "sanctity": 0.03,
+        "liberty": 0.03,
+        "not_wrong": 0.08
+      },
+      "wrongness_mean_0_4": 2.5,
+      "recommended": true,
+      "use_as_seed": true
+    },
+    {
+      "source_id": "mfv_077",
+      "library_item_number": 77,
+      "foundation": "authority",
+      "source_category_label": "权威",
+      "original_en": "You see a group of women having a long and loud conversation during a church sermon.",
+      "translation_zh": "你看到一群女人在教堂布道时长时间大声交谈。",
+      "classification_proportions": {
+        "care": 0.03,
+        "fairness": 0,
+        "loyalty": 0.15,
+        "authority": 0.72,
+        "sanctity": 0.1,
+        "liberty": 0,
+        "not_wrong": 0
+      },
+      "wrongness_mean_0_4": 2.8,
+      "recommended": true,
+      "use_as_seed": true
+    },
+    {
+      "source_id": "mfv_078",
+      "library_item_number": 78,
+      "foundation": "authority",
+      "source_category_label": "权威",
+      "original_en": "You see a star player ignoring her coach’s order to come to the bench during a game.",
+      "translation_zh": "你看到一名明星球员在比赛中无视教练让她回到替补席的命令。",
+      "classification_proportions": {
+        "care": 0,
+        "fairness": 0.1,
+        "loyalty": 0.13,
+        "authority": 0.71,
+        "sanctity": 0,
+        "liberty": 0,
+        "not_wrong": 0.06
+      },
+      "wrongness_mean_0_4": 2.1,
+      "recommended": true,
+      "use_as_seed": true
+    },
+    {
+      "source_id": "mfv_079",
+      "library_item_number": 79,
+      "foundation": "authority",
+      "source_category_label": "权威",
+      "original_en": "You see a player publicly yelling at his soccer coach during a playoff game.",
+      "translation_zh": "你看到一名球员在季后赛中当众对自己的足球教练大喊大叫。",
+      "classification_proportions": {
+        "care": 0.07,
+        "fairness": 0.03,
+        "loyalty": 0.03,
+        "authority": 0.69,
+        "sanctity": 0.03,
+        "liberty": 0.1,
+        "not_wrong": 0.03
+      },
+      "wrongness_mean_0_4": 2.1,
+      "recommended": true,
+      "use_as_seed": true
+    },
+    {
+      "source_id": "mfv_080",
+      "library_item_number": 80,
+      "foundation": "authority",
+      "source_category_label": "权威",
+      "original_en": "You see a man secretly watching sports on his cell phone during a pastor’s sermon.",
+      "translation_zh": "你看到一个男人在牧师布道时偷偷用手机看体育比赛。",
+      "classification_proportions": {
+        "care": 0.07,
+        "fairness": 0.03,
+        "loyalty": 0.03,
+        "authority": 0.69,
+        "sanctity": 0,
+        "liberty": 0,
+        "not_wrong": 0.17
+      },
+      "wrongness_mean_0_4": 1.8,
+      "recommended": true,
+      "use_as_seed": true
+    },
+    {
+      "source_id": "mfv_081",
+      "library_item_number": 81,
+      "foundation": "authority",
+      "source_category_label": "权威",
+      "original_en": "You see a boy turning up the TV as his father talks about his military service.",
+      "translation_zh": "你看到一个男孩在父亲讲述他的服役经历时把电视音量调大。",
+      "classification_proportions": {
+        "care": 0.13,
+        "fairness": 0,
+        "loyalty": 0,
+        "authority": 0.65,
+        "sanctity": 0,
+        "liberty": 0,
+        "not_wrong": 0.23
+      },
+      "wrongness_mean_0_4": 2.1,
+      "recommended": true,
+      "use_as_seed": true
+    },
+    {
+      "source_id": "mfv_082",
+      "library_item_number": 82,
+      "foundation": "authority",
+      "source_category_label": "权威",
+      "original_en": "You see a student stating that her professor is a fool during an afternoon class.",
+      "translation_zh": "你看到一名学生在下午的课上公然说她的教授是个傻瓜。",
+      "classification_proportions": {
+        "care": 0.13,
+        "fairness": 0.03,
+        "loyalty": 0.06,
+        "authority": 0.65,
+        "sanctity": 0,
+        "liberty": 0,
+        "not_wrong": 0.13
+      },
+      "wrongness_mean_0_4": 2,
+      "recommended": true,
+      "use_as_seed": true
+    },
+    {
+      "source_id": "mfv_083",
+      "library_item_number": 83,
+      "foundation": "sanctity",
+      "source_category_label": "圣洁",
+      "original_en": "You see a man having sex with a frozen chicken before cooking it for dinner.",
+      "translation_zh": "你看到一个男人在做晚饭前和一只冷冻的鸡发生性关系。",
+      "classification_proportions": {
+        "care": 0,
+        "fairness": 0,
+        "loyalty": 0,
+        "authority": 0.03,
+        "sanctity": 0.88,
+        "liberty": 0.03,
+        "not_wrong": 0.06
+      },
+      "wrongness_mean_0_4": 3,
+      "recommended": true,
+      "use_as_seed": true
+    },
+    {
+      "source_id": "mfv_084",
+      "library_item_number": 84,
+      "foundation": "sanctity",
+      "source_category_label": "圣洁",
+      "original_en": "You see a very drunk woman making out with multiple strangers on the city bus.",
+      "translation_zh": "你看到一个烂醉的女人在公交车里和多个陌生人接吻亲热。",
+      "classification_proportions": {
+        "care": 0.03,
+        "fairness": 0.08,
+        "loyalty": 0.03,
+        "authority": 0,
+        "sanctity": 0.85,
+        "liberty": 0,
+        "not_wrong": 0.03
+      },
+      "wrongness_mean_0_4": 3,
+      "recommended": false,
+      "use_as_seed": true
+    },
+    {
+      "source_id": "mfv_085",
+      "library_item_number": 85,
+      "foundation": "sanctity",
+      "source_category_label": "圣洁",
+      "original_en": "You see a family eating the carcass of their pet dog that had been run over.",
+      "translation_zh": "你看到一家人吃他们那被车撞死的宠物狗的尸体。",
+      "classification_proportions": {
+        "care": 0.03,
+        "fairness": 0.03,
+        "loyalty": 0.06,
+        "authority": 0.03,
+        "sanctity": 0.84,
+        "liberty": 0,
+        "not_wrong": 0
+      },
+      "wrongness_mean_0_4": 3.2,
+      "recommended": false,
+      "use_as_seed": true
+    },
+    {
+      "source_id": "mfv_086",
+      "library_item_number": 86,
+      "foundation": "sanctity",
+      "source_category_label": "圣洁",
+      "original_en": "You see a drunk elderly man offering to have oral sex with anyone in the bar.",
+      "translation_zh": "你看到一个喝醉的老人在酒吧里提出和任何人进行口交。",
+      "classification_proportions": {
+        "care": 0.06,
+        "fairness": 0,
+        "loyalty": 0,
+        "authority": 0.06,
+        "sanctity": 0.84,
+        "liberty": 0,
+        "not_wrong": 0.03
+      },
+      "wrongness_mean_0_4": 3.4,
+      "recommended": true,
+      "use_as_seed": true
+    },
+    {
+      "source_id": "mfv_087",
+      "library_item_number": 87,
+      "foundation": "sanctity",
+      "source_category_label": "圣洁",
+      "original_en": "You see a teenager urinating in the wave pool at a crowded amusement park.",
+      "translation_zh": "你看到一个青少年在拥挤的游乐园造浪池里小便。",
+      "classification_proportions": {
+        "care": 0.13,
+        "fairness": 0,
+        "loyalty": 0.03,
+        "authority": 0,
+        "sanctity": 0.84,
+        "liberty": 0,
+        "not_wrong": 0
+      },
+      "wrongness_mean_0_4": 3.4,
+      "recommended": false,
+      "use_as_seed": true
+    },
+    {
+      "source_id": "mfv_088",
+      "library_item_number": 88,
+      "foundation": "sanctity",
+      "source_category_label": "圣洁",
+      "original_en": "You see a man in a bar using his phone to watch people having sex with animals.",
+      "translation_zh": "你看到一个男人在酒吧里用手机观看人与动物发生性关系的视频。",
+      "classification_proportions": {
+        "care": 0.1,
+        "fairness": 0.06,
+        "loyalty": 0.03,
+        "authority": 0.03,
+        "sanctity": 0.77,
+        "liberty": 0,
+        "not_wrong": 0
+      },
+      "wrongness_mean_0_4": 3.3,
+      "recommended": true,
+      "use_as_seed": true
+    },
+    {
+      "source_id": "mfv_089",
+      "library_item_number": 89,
+      "foundation": "sanctity",
+      "source_category_label": "圣洁",
+      "original_en": "You see a teenage male in a dorm bathroom secretly using a stranger’s toothbrush.",
+      "translation_zh": "你看到一个十几岁的男生在宿舍卫生间里偷用陌生人的牙刷。",
+      "classification_proportions": {
+        "care": 0.13,
+        "fairness": 0,
+        "loyalty": 0,
+        "authority": 0,
+        "sanctity": 0.77,
+        "liberty": 0.03,
+        "not_wrong": 0.06
+      },
+      "wrongness_mean_0_4": 2.6,
+      "recommended": false,
+      "use_as_seed": true
+    },
+    {
+      "source_id": "mfv_090",
+      "library_item_number": 90,
+      "foundation": "sanctity",
+      "source_category_label": "圣洁",
+      "original_en": "You see a woman having intimate relations with a recently deceased loved one.",
+      "translation_zh": "你看到一个女人与刚去世不久的爱人发生亲密关系。",
+      "classification_proportions": {
+        "care": 0.06,
+        "fairness": 0,
+        "loyalty": 0.03,
+        "authority": 0.03,
+        "sanctity": 0.74,
+        "liberty": 0.03,
+        "not_wrong": 0.1
+      },
+      "wrongness_mean_0_4": 3.3,
+      "recommended": true,
+      "use_as_seed": true
+    },
+    {
+      "source_id": "mfv_091",
+      "library_item_number": 91,
+      "foundation": "sanctity",
+      "source_category_label": "圣洁",
+      "original_en": "You see a homosexual in a gay bar offering sex to anyone who buys him a drink.",
+      "translation_zh": "你看到一名同性恋者在同性恋酒吧里提出，谁请他喝酒他就和谁发生性关系。",
+      "classification_proportions": {
+        "care": 0.03,
+        "fairness": 0,
+        "loyalty": 0,
+        "authority": 0.07,
+        "sanctity": 0.73,
+        "liberty": 0.03,
+        "not_wrong": 0.13
+      },
+      "wrongness_mean_0_4": 2.6,
+      "recommended": true,
+      "use_as_seed": true
+    },
+    {
+      "source_id": "mfv_092",
+      "library_item_number": 92,
+      "foundation": "sanctity",
+      "source_category_label": "圣洁",
+      "original_en": "You see an employee at a morgue eating his pepperoni pizza off of a dead body.",
+      "translation_zh": "你看到一名太平间员工把意大利辣香肠披萨放在尸体上吃。",
+      "classification_proportions": {
+        "care": 0.07,
+        "fairness": 0,
+        "loyalty": 0,
+        "authority": 0.1,
+        "sanctity": 0.73,
+        "liberty": 0,
+        "not_wrong": 0.1
+      },
+      "wrongness_mean_0_4": 3.2,
+      "recommended": true,
+      "use_as_seed": true
+    },
+    {
+      "source_id": "mfv_093",
+      "library_item_number": 93,
+      "foundation": "sanctity",
+      "source_category_label": "圣洁",
+      "original_en": "You see a girl and her sister making out with each other just for practice.",
+      "translation_zh": "你看到一个女孩和她妹妹仅仅为了练习而互相接吻亲热。",
+      "classification_proportions": {
+        "care": 0.03,
+        "fairness": 0.03,
+        "loyalty": 0,
+        "authority": 0,
+        "sanctity": 0.71,
+        "liberty": 0,
+        "not_wrong": 0.23
+      },
+      "wrongness_mean_0_4": 2.8,
+      "recommended": false,
+      "use_as_seed": true
+    },
+    {
+      "source_id": "mfv_094",
+      "library_item_number": 94,
+      "foundation": "sanctity",
+      "source_category_label": "圣洁",
+      "original_en": "You see a story about a remote tribe eating the flesh of their deceased members.",
+      "translation_zh": "你看到一则关于某个偏远部落食用逝去族人肉体的报道。",
+      "classification_proportions": {
+        "care": 0.03,
+        "fairness": 0.03,
+        "loyalty": 0,
+        "authority": 0,
+        "sanctity": 0.69,
+        "liberty": 0,
+        "not_wrong": 0.24
+      },
+      "wrongness_mean_0_4": 2.3,
+      "recommended": true,
+      "use_as_seed": true
+    },
+    {
+      "source_id": "mfv_095",
+      "library_item_number": 95,
+      "foundation": "sanctity",
+      "source_category_label": "圣洁",
+      "original_en": "You see a woman burping and farting loudly while eating at a fast food truck.",
+      "translation_zh": "你看到一个女人在快餐车旁吃东西时大声打嗝放屁。",
+      "classification_proportions": {
+        "care": 0.03,
+        "fairness": 0,
+        "loyalty": 0,
+        "authority": 0.06,
+        "sanctity": 0.68,
+        "liberty": 0.03,
+        "not_wrong": 0.19
+      },
+      "wrongness_mean_0_4": 2.1,
+      "recommended": false,
+      "use_as_seed": true
+    },
+    {
+      "source_id": "mfv_096",
+      "library_item_number": 96,
+      "foundation": "sanctity",
+      "source_category_label": "圣洁",
+      "original_en": "You see a man searching through the trash to find women’s discarded underwear.",
+      "translation_zh": "你看到一个男人在垃圾堆里翻找女人丢弃的内衣。",
+      "classification_proportions": {
+        "care": 0.09,
+        "fairness": 0,
+        "loyalty": 0.03,
+        "authority": 0.12,
+        "sanctity": 0.67,
+        "liberty": 0.03,
+        "not_wrong": 0.06
+      },
+      "wrongness_mean_0_4": 3,
+      "recommended": true,
+      "use_as_seed": true
+    },
+    {
+      "source_id": "mfv_097",
+      "library_item_number": 97,
+      "foundation": "sanctity",
+      "source_category_label": "圣洁",
+      "original_en": "You see two first cousins getting married to each other in an elaborate wedding.",
+      "translation_zh": "你看到一对嫡亲表兄妹举行了一场隆重的婚礼结为夫妻。",
+      "classification_proportions": {
+        "care": 0.03,
+        "fairness": 0,
+        "loyalty": 0,
+        "authority": 0.13,
+        "sanctity": 0.66,
+        "liberty": 0.03,
+        "not_wrong": 0.16
+      },
+      "wrongness_mean_0_4": 2.7,
+      "recommended": true,
+      "use_as_seed": true
+    },
+    {
+      "source_id": "mfv_098",
+      "library_item_number": 98,
+      "foundation": "sanctity",
+      "source_category_label": "圣洁",
+      "original_en": "You see a single man ordering an inflatable sex doll that looks like his secretary.",
+      "translation_zh": "你看到一个单身男人订购了一个长得像他秘书的充气性爱玩偶。",
+      "classification_proportions": {
+        "care": 0,
+        "fairness": 0.06,
+        "loyalty": 0,
+        "authority": 0.03,
+        "sanctity": 0.65,
+        "liberty": 0,
+        "not_wrong": 0.26
+      },
+      "wrongness_mean_0_4": 1.5,
+      "recommended": true,
+      "use_as_seed": true
+    },
+    {
+      "source_id": "mfv_099",
+      "library_item_number": 99,
+      "foundation": "sanctity",
+      "source_category_label": "圣洁",
+      "original_en": "You see a college student drinking until she vomits on herself and falls asleep.",
+      "translation_zh": "你看到一名大学生喝酒喝到吐了自己一身然后睡着了。",
+      "classification_proportions": {
+        "care": 0.05,
+        "fairness": 0,
+        "loyalty": 0,
+        "authority": 0.05,
+        "sanctity": 0.64,
+        "liberty": 0,
+        "not_wrong": 0.26
+      },
+      "wrongness_mean_0_4": 2.3,
+      "recommended": false,
+      "use_as_seed": true
+    },
+    {
+      "source_id": "mfv_100",
+      "library_item_number": 100,
+      "foundation": "liberty",
+      "source_category_label": "自由（候选基础，作者最终未纳入推荐集）",
+      "original_en": "You see a man telling his fiance that she has to switch to his political party.",
+      "translation_zh": "你看到一个男人对他的未婚妻说，她必须改投他所在的政党。",
+      "classification_proportions": {
+        "care": 0,
+        "fairness": 0.03,
+        "loyalty": 0.03,
+        "authority": 0,
+        "sanctity": 0,
+        "liberty": 0.9,
+        "not_wrong": 0.03
+      },
+      "wrongness_mean_0_4": 2.9,
+      "recommended": true,
+      "use_as_seed": true
+    },
+    {
+      "source_id": "mfv_101",
+      "library_item_number": 101,
+      "foundation": "liberty",
+      "source_category_label": "自由（候选基础，作者最终未纳入推荐集）",
+      "original_en": "You see a father requiring his son to become a commercial airline pilot like him.",
+      "translation_zh": "你看到一位父亲要求儿子像他一样成为一名民航飞行员。",
+      "classification_proportions": {
+        "care": 0,
+        "fairness": 0.04,
+        "loyalty": 0,
+        "authority": 0,
+        "sanctity": 0,
+        "liberty": 0.85,
+        "not_wrong": 0.12
+      },
+      "wrongness_mean_0_4": 1.9,
+      "recommended": true,
+      "use_as_seed": true
+    },
+    {
+      "source_id": "mfv_102",
+      "library_item_number": 102,
+      "foundation": "liberty",
+      "source_category_label": "自由（候选基础，作者最终未纳入推荐集）",
+      "original_en": "You see a man blocking his wife from leaving home or interacting with others.",
+      "translation_zh": "你看到一个男人阻止妻子出门或与其他人来往。",
+      "classification_proportions": {
+        "care": 0.06,
+        "fairness": 0.06,
+        "loyalty": 0,
+        "authority": 0.03,
+        "sanctity": 0,
+        "liberty": 0.84,
+        "not_wrong": 0
+      },
+      "wrongness_mean_0_4": 3.3,
+      "recommended": false,
+      "use_as_seed": true
+    },
+    {
+      "source_id": "mfv_103",
+      "library_item_number": 103,
+      "foundation": "liberty",
+      "source_category_label": "自由（候选基础，作者最终未纳入推荐集）",
+      "original_en": "You see a manager coercing her employees into eating at her brother’s diner.",
+      "translation_zh": "你看到一位经理强迫员工们去她哥哥开的小餐馆吃饭。",
+      "classification_proportions": {
+        "care": 0,
+        "fairness": 0.1,
+        "loyalty": 0.03,
+        "authority": 0.03,
+        "sanctity": 0.03,
+        "liberty": 0.77,
+        "not_wrong": 0.03
+      },
+      "wrongness_mean_0_4": 2.2,
+      "recommended": false,
+      "use_as_seed": true
+    },
+    {
+      "source_id": "mfv_104",
+      "library_item_number": 104,
+      "foundation": "liberty",
+      "source_category_label": "自由（候选基础，作者最终未纳入推荐集）",
+      "original_en": "You see a man telling his girlfriend that she must convert to his religion.",
+      "translation_zh": "你看到一个男人对他的女友说，她必须皈依他的宗教。",
+      "classification_proportions": {
+        "care": 0,
+        "fairness": 0.13,
+        "loyalty": 0.03,
+        "authority": 0.06,
+        "sanctity": 0,
+        "liberty": 0.77,
+        "not_wrong": 0
+      },
+      "wrongness_mean_0_4": 2.5,
+      "recommended": true,
+      "use_as_seed": true
+    },
+    {
+      "source_id": "mfv_105",
+      "library_item_number": 105,
+      "foundation": "liberty",
+      "source_category_label": "自由（候选基础，作者最终未纳入推荐集）",
+      "original_en": "You see a mother telling her son that she is going to choose all of his friends.",
+      "translation_zh": "你看到一位母亲对儿子说，他的所有朋友都要由她来挑选。",
+      "classification_proportions": {
+        "care": 0.03,
+        "fairness": 0,
+        "loyalty": 0,
+        "authority": 0.03,
+        "sanctity": 0,
+        "liberty": 0.75,
+        "not_wrong": 0.19
+      },
+      "wrongness_mean_0_4": 2.2,
+      "recommended": true,
+      "use_as_seed": true
+    },
+    {
+      "source_id": "mfv_106",
+      "library_item_number": 106,
+      "foundation": "liberty",
+      "source_category_label": "自由（候选基础，作者最终未纳入推荐集）",
+      "original_en": "You see a man forbidding his wife to wear clothing that he has not first approved.",
+      "translation_zh": "你看到一个男人禁止妻子穿任何未经他事先同意的衣服。",
+      "classification_proportions": {
+        "care": 0.06,
+        "fairness": 0.1,
+        "loyalty": 0.03,
+        "authority": 0,
+        "sanctity": 0.03,
+        "liberty": 0.74,
+        "not_wrong": 0.03
+      },
+      "wrongness_mean_0_4": 3.1,
+      "recommended": true,
+      "use_as_seed": true
+    },
+    {
+      "source_id": "mfv_107",
+      "library_item_number": 107,
+      "foundation": "liberty",
+      "source_category_label": "自由（候选基础，作者最终未纳入推荐集）",
+      "original_en": "You see a boss ordering an employee to revoke his citizenship in his home country.",
+      "translation_zh": "你看到一位老板命令一名员工放弃自己祖国的国籍。",
+      "classification_proportions": {
+        "care": 0.03,
+        "fairness": 0.07,
+        "loyalty": 0.17,
+        "authority": 0.03,
+        "sanctity": 0,
+        "liberty": 0.7,
+        "not_wrong": 0
+      },
+      "wrongness_mean_0_4": 3.3,
+      "recommended": false,
+      "use_as_seed": true
+    },
+    {
+      "source_id": "mfv_108",
+      "library_item_number": 108,
+      "foundation": "liberty",
+      "source_category_label": "自由（候选基础，作者最终未纳入推荐集）",
+      "original_en": "You see a boss pressuring employees to buy goods from her family’s general store.",
+      "translation_zh": "你看到一位老板施压员工去她家开的杂货店买东西。",
+      "classification_proportions": {
+        "care": 0.03,
+        "fairness": 0.1,
+        "loyalty": 0.03,
+        "authority": 0,
+        "sanctity": 0.1,
+        "liberty": 0.69,
+        "not_wrong": 0.03
+      },
+      "wrongness_mean_0_4": 2.7,
+      "recommended": true,
+      "use_as_seed": true
+    },
+    {
+      "source_id": "mfv_109",
+      "library_item_number": 109,
+      "foundation": "liberty",
+      "source_category_label": "自由（候选基础，作者最终未纳入推荐集）",
+      "original_en": "You see a woman pressuring her daughter to become a famous evening news anchor.",
+      "translation_zh": "你看到一个女人强迫女儿成为著名的晚间新闻主播。",
+      "classification_proportions": {
+        "care": 0.03,
+        "fairness": 0,
+        "loyalty": 0,
+        "authority": 0.03,
+        "sanctity": 0,
+        "liberty": 0.68,
+        "not_wrong": 0.26
+      },
+      "wrongness_mean_0_4": 1.5,
+      "recommended": true,
+      "use_as_seed": true
+    },
+    {
+      "source_id": "mfv_110",
+      "library_item_number": 110,
+      "foundation": "liberty",
+      "source_category_label": "自由（候选基础，作者最终未纳入推荐集）",
+      "original_en": "You see a public leader on TV trying to ban the wearing of hooded sweatshirts.",
+      "translation_zh": "你看到一位公众人物在电视上试图禁止人们穿连帽衫。",
+      "classification_proportions": {
+        "care": 0.03,
+        "fairness": 0.19,
+        "loyalty": 0.03,
+        "authority": 0,
+        "sanctity": 0,
+        "liberty": 0.65,
+        "not_wrong": 0.1
+      },
+      "wrongness_mean_0_4": 2.7,
+      "recommended": true,
+      "use_as_seed": true
+    },
+    {
+      "source_id": "mfv_111",
+      "library_item_number": 111,
+      "foundation": "liberty",
+      "source_category_label": "自由（候选基础，作者最终未纳入推荐集）",
+      "original_en": "You see a mother forcing her daughter to enroll as a pre-med student in college.",
+      "translation_zh": "你看到一位母亲强迫女儿在大学注册为医学预科生。",
+      "classification_proportions": {
+        "care": 0.1,
+        "fairness": 0.06,
+        "loyalty": 0,
+        "authority": 0.06,
+        "sanctity": 0.03,
+        "liberty": 0.65,
+        "not_wrong": 0.1
+      },
+      "wrongness_mean_0_4": 2.3,
+      "recommended": true,
+      "use_as_seed": true
+    },
+    {
+      "source_id": "mfv_112",
+      "library_item_number": 112,
+      "foundation": "liberty",
+      "source_category_label": "自由（候选基础，作者最终未纳入推荐集）",
+      "original_en": "You see a father requiring his son to take up the family restaurant business.",
+      "translation_zh": "你看到一位父亲要求儿子接手家族的餐馆生意。",
+      "classification_proportions": {
+        "care": 0.03,
+        "fairness": 0.03,
+        "loyalty": 0,
+        "authority": 0.07,
+        "sanctity": 0.03,
+        "liberty": 0.62,
+        "not_wrong": 0.21
+      },
+      "wrongness_mean_0_4": 1.5,
+      "recommended": true,
+      "use_as_seed": true
+    },
+    {
+      "source_id": "mfv_113",
+      "library_item_number": 113,
+      "foundation": "liberty",
+      "source_category_label": "自由（候选基础，作者最终未纳入推荐集）",
+      "original_en": "You see a teacher ordering a student to get a normal haircut before coming to class.",
+      "translation_zh": "你看到一位老师命令一名学生剪一个正常的发型之后再来上课。",
+      "classification_proportions": {
+        "care": 0,
+        "fairness": 0.19,
+        "loyalty": 0,
+        "authority": 0,
+        "sanctity": 0.08,
+        "liberty": 0.62,
+        "not_wrong": 0.12
+      },
+      "wrongness_mean_0_4": 2.8,
+      "recommended": false,
+      "use_as_seed": true
+    },
+    {
+      "source_id": "mfv_114",
+      "library_item_number": 114,
+      "foundation": "liberty",
+      "source_category_label": "自由（候选基础，作者最终未纳入推荐集）",
+      "original_en": "You see a teenager at a cafeteria forcing a younger student to pay for her lunch.",
+      "translation_zh": "你看到一个青少年在食堂强迫一个低年级学生替她付午餐钱。",
+      "classification_proportions": {
+        "care": 0.13,
+        "fairness": 0.1,
+        "loyalty": 0.03,
+        "authority": 0.06,
+        "sanctity": 0.03,
+        "liberty": 0.61,
+        "not_wrong": 0.03
+      },
+      "wrongness_mean_0_4": 3,
+      "recommended": false,
+      "use_as_seed": true
+    },
+    {
+      "source_id": "mfv_115",
+      "library_item_number": 115,
+      "foundation": "liberty",
+      "source_category_label": "自由（候选基础，作者最终未纳入推荐集）",
+      "original_en": "You see a mayor trying to ban people from hugging and kissing in public in his city.",
+      "translation_zh": "你看到一位市长试图在他所在的城市禁止人们在公共场合拥抱和亲吻。",
+      "classification_proportions": {
+        "care": 0.05,
+        "fairness": 0.08,
+        "loyalty": 0.03,
+        "authority": 0.1,
+        "sanctity": 0,
+        "liberty": 0.69,
+        "not_wrong": 0.05
+      },
+      "wrongness_mean_0_4": 3.2,
+      "recommended": false,
+      "use_as_seed": true
+    },
+    {
+      "source_id": "mfv_116",
+      "library_item_number": 116,
+      "foundation": "liberty",
+      "source_category_label": "自由（候选基础，作者最终未纳入推荐集）",
+      "original_en": "You see a pastor banning his congregants from wearing bright colors in the church.",
+      "translation_zh": "你看到一位牧师禁止教众在教堂里穿颜色鲜艳的衣服。",
+      "classification_proportions": {
+        "care": 0.03,
+        "fairness": 0.03,
+        "loyalty": 0.08,
+        "authority": 0.1,
+        "sanctity": 0.03,
+        "liberty": 0.62,
+        "not_wrong": 0.13
+      },
+      "wrongness_mean_0_4": 2.6,
+      "recommended": true,
+      "use_as_seed": true
+    },
+    {
+      "source_id": "mfv_117",
+      "library_item_number": 117,
+      "foundation": "social_norm",
+      "source_category_label": "社会规范（非道德控制条件）",
+      "original_en": "You see someone using an old rotary phone and refusing to go buy a new one.",
+      "translation_zh": "你看到某人在用老式拨盘电话，而且拒绝去买一部新的。",
+      "classification_proportions": {
+        "care": 0,
+        "fairness": 0,
+        "loyalty": 0,
+        "authority": 0,
+        "sanctity": 0,
+        "liberty": 0,
+        "not_wrong": 1
+      },
+      "wrongness_mean_0_4": 0,
+      "recommended": false,
+      "use_as_seed": false
+    },
+    {
+      "source_id": "mfv_118",
+      "library_item_number": 118,
+      "foundation": "social_norm",
+      "source_category_label": "社会规范（非道德控制条件）",
+      "original_en": "You see a man staying inside his home with the shades drawn on a rare sunny day.",
+      "translation_zh": "你看到一个男人在难得的大晴天里拉上窗帘待在家里。",
+      "classification_proportions": {
+        "care": 0,
+        "fairness": 0,
+        "loyalty": 0,
+        "authority": 0,
+        "sanctity": 0,
+        "liberty": 0,
+        "not_wrong": 1
+      },
+      "wrongness_mean_0_4": 0.1,
+      "recommended": false,
+      "use_as_seed": false
+    },
+    {
+      "source_id": "mfv_119",
+      "library_item_number": 119,
+      "foundation": "social_norm",
+      "source_category_label": "社会规范（非道德控制条件）",
+      "original_en": "You see a woman drinking her entire cup of coffee using a stirring spoon.",
+      "translation_zh": "你看到一个女人用搅拌勺喝完了整杯咖啡。",
+      "classification_proportions": {
+        "care": 0,
+        "fairness": 0,
+        "loyalty": 0,
+        "authority": 0.03,
+        "sanctity": 0,
+        "liberty": 0,
+        "not_wrong": 0.97
+      },
+      "wrongness_mean_0_4": 0.2,
+      "recommended": false,
+      "use_as_seed": false
+    },
+    {
+      "source_id": "mfv_120",
+      "library_item_number": 120,
+      "foundation": "social_norm",
+      "source_category_label": "社会规范（非道德控制条件）",
+      "original_en": "You see a woman eating dessert before her main entree arrives on the table.",
+      "translation_zh": "你看到一个女人在主菜上桌前先吃了甜点。",
+      "classification_proportions": {
+        "care": 0,
+        "fairness": 0.03,
+        "loyalty": 0,
+        "authority": 0,
+        "sanctity": 0,
+        "liberty": 0,
+        "not_wrong": 0.97
+      },
+      "wrongness_mean_0_4": 0.2,
+      "recommended": false,
+      "use_as_seed": false
+    },
+    {
+      "source_id": "mfv_121",
+      "library_item_number": 121,
+      "foundation": "social_norm",
+      "source_category_label": "社会规范（非道德控制条件）",
+      "original_en": "You see a woman continuing to wear a large sun hat inside her apartment complex.",
+      "translation_zh": "你看到一个女人在公寓楼里一直戴着大遮阳帽。",
+      "classification_proportions": {
+        "care": 0,
+        "fairness": 0,
+        "loyalty": 0,
+        "authority": 0,
+        "sanctity": 0.03,
+        "liberty": 0,
+        "not_wrong": 0.97
+      },
+      "wrongness_mean_0_4": 0.2,
+      "recommended": false,
+      "use_as_seed": false
+    },
+    {
+      "source_id": "mfv_122",
+      "library_item_number": 122,
+      "foundation": "social_norm",
+      "source_category_label": "社会规范（非道德控制条件）",
+      "original_en": "You see someone at the school gym lifting free weights in nice business clothes.",
+      "translation_zh": "你看到某人在学校健身房穿着笔挺的商务装举哑铃。",
+      "classification_proportions": {
+        "care": 0,
+        "fairness": 0.04,
+        "loyalty": 0,
+        "authority": 0,
+        "sanctity": 0,
+        "liberty": 0,
+        "not_wrong": 0.96
+      },
+      "wrongness_mean_0_4": 0.2,
+      "recommended": false,
+      "use_as_seed": false
+    },
+    {
+      "source_id": "mfv_123",
+      "library_item_number": 123,
+      "foundation": "social_norm",
+      "source_category_label": "社会规范（非道德控制条件）",
+      "original_en": "You see a man eating a bowl of cereal in the morning with water instead of milk.",
+      "translation_zh": "你看到一个男人早上吃一碗麦片，用水代替牛奶泡着吃。",
+      "classification_proportions": {
+        "care": 0,
+        "fairness": 0.03,
+        "loyalty": 0.03,
+        "authority": 0,
+        "sanctity": 0,
+        "liberty": 0,
+        "not_wrong": 0.94
+      },
+      "wrongness_mean_0_4": 0.1,
+      "recommended": false,
+      "use_as_seed": false
+    },
+    {
+      "source_id": "mfv_124",
+      "library_item_number": 124,
+      "foundation": "social_norm",
+      "source_category_label": "社会规范（非道德控制条件）",
+      "original_en": "You see a woman using a fork to eat a bowl of vanilla ice cream and marshmallows.",
+      "translation_zh": "你看到一个女人用叉子吃一碗香草冰淇淋和棉花糖。",
+      "classification_proportions": {
+        "care": 0,
+        "fairness": 0,
+        "loyalty": 0,
+        "authority": 0,
+        "sanctity": 0.03,
+        "liberty": 0.03,
+        "not_wrong": 0.94
+      },
+      "wrongness_mean_0_4": 0.1,
+      "recommended": false,
+      "use_as_seed": false
+    },
+    {
+      "source_id": "mfv_125",
+      "library_item_number": 125,
+      "foundation": "social_norm",
+      "source_category_label": "社会规范（非道德控制条件）",
+      "original_en": "You see a man putting ketchup all over his chicken Caesar salad while at lunch.",
+      "translation_zh": "你看到一个男人在午餐时往他的鸡肉凯撒沙拉上浇满番茄酱。",
+      "classification_proportions": {
+        "care": 0,
+        "fairness": 0.03,
+        "loyalty": 0,
+        "authority": 0,
+        "sanctity": 0.03,
+        "liberty": 0,
+        "not_wrong": 0.94
+      },
+      "wrongness_mean_0_4": 0.2,
+      "recommended": false,
+      "use_as_seed": false
+    },
+    {
+      "source_id": "mfv_126",
+      "library_item_number": 126,
+      "foundation": "social_norm",
+      "source_category_label": "社会规范（非道德控制条件）",
+      "original_en": "You see a man wearing clothes that are clearly several sizes too big for his body.",
+      "translation_zh": "你看到一个男人穿着明显比他身材大好几码的衣服。",
+      "classification_proportions": {
+        "care": 0,
+        "fairness": 0,
+        "loyalty": 0,
+        "authority": 0.03,
+        "sanctity": 0.03,
+        "liberty": 0,
+        "not_wrong": 0.93
+      },
+      "wrongness_mean_0_4": 0.3,
+      "recommended": false,
+      "use_as_seed": false
+    },
+    {
+      "source_id": "mfv_127",
+      "library_item_number": 127,
+      "foundation": "social_norm",
+      "source_category_label": "社会规范（非道德控制条件）",
+      "original_en": "You see a man walking down a dark hallway while still wearing his sunglasses.",
+      "translation_zh": "你看到一个男人在黑暗的走廊里走着，还戴着墨镜。",
+      "classification_proportions": {
+        "care": 0.03,
+        "fairness": 0,
+        "loyalty": 0,
+        "authority": 0,
+        "sanctity": 0.03,
+        "liberty": 0,
+        "not_wrong": 0.93
+      },
+      "wrongness_mean_0_4": 0.2,
+      "recommended": false,
+      "use_as_seed": false
+    },
+    {
+      "source_id": "mfv_128",
+      "library_item_number": 128,
+      "foundation": "social_norm",
+      "source_category_label": "社会规范（非道德控制条件）",
+      "original_en": "You see someone driving around in a dirty car that has not been washed recently.",
+      "translation_zh": "你看到某人开着一辆最近都没洗过的脏车四处转悠。",
+      "classification_proportions": {
+        "care": 0,
+        "fairness": 0,
+        "loyalty": 0,
+        "authority": 0.03,
+        "sanctity": 0.06,
+        "liberty": 0,
+        "not_wrong": 0.91
+      },
+      "wrongness_mean_0_4": 0.2,
+      "recommended": false,
+      "use_as_seed": false
+    },
+    {
+      "source_id": "mfv_129",
+      "library_item_number": 129,
+      "foundation": "social_norm",
+      "source_category_label": "社会规范（非道德控制条件）",
+      "original_en": "You see a woman watching a game on television in black-and-white instead of color.",
+      "translation_zh": "你看到一个女人看比赛时用的是黑白电视，而不是彩色电视。",
+      "classification_proportions": {
+        "care": 0,
+        "fairness": 0,
+        "loyalty": 0.03,
+        "authority": 0,
+        "sanctity": 0.07,
+        "liberty": 0,
+        "not_wrong": 0.9
+      },
+      "wrongness_mean_0_4": 0.1,
+      "recommended": false,
+      "use_as_seed": false
+    },
+    {
+      "source_id": "mfv_130",
+      "library_item_number": 130,
+      "foundation": "social_norm",
+      "source_category_label": "社会规范（非道德控制条件）",
+      "original_en": "You see someone reading the ending of a spy novel before reading the beginning.",
+      "translation_zh": "你看到某人在读间谍小说的开头之前先读了结局。",
+      "classification_proportions": {
+        "care": 0.04,
+        "fairness": 0,
+        "loyalty": 0.04,
+        "authority": 0,
+        "sanctity": 0,
+        "liberty": 0.04,
+        "not_wrong": 0.89
+      },
+      "wrongness_mean_0_4": 0.2,
+      "recommended": false,
+      "use_as_seed": false
+    },
+    {
+      "source_id": "mfv_131",
+      "library_item_number": 131,
+      "foundation": "social_norm",
+      "source_category_label": "社会规范（非道德控制条件）",
+      "original_en": "You see a teenage girl wearing a long trench coat on a hot summer afternoon.",
+      "translation_zh": "你看到一个十几岁的女孩在炎热的夏日下午穿着长款风衣。",
+      "classification_proportions": {
+        "care": 0.03,
+        "fairness": 0.03,
+        "loyalty": 0,
+        "authority": 0.06,
+        "sanctity": 0,
+        "liberty": 0,
+        "not_wrong": 0.88
+      },
+      "wrongness_mean_0_4": 0.2,
+      "recommended": false,
+      "use_as_seed": false
+    },
+    {
+      "source_id": "mfv_132",
+      "library_item_number": 132,
+      "foundation": "social_norm",
+      "source_category_label": "社会规范（非道德控制条件）",
+      "original_en": "You see a woman answering a phone call with the word “goodbye” instead of “hello.",
+      "translation_zh": "你看到一个女人接电话时说的是“再见”而不是“你好”。",
+      "classification_proportions": {
+        "care": 0.03,
+        "fairness": 0,
+        "loyalty": 0,
+        "authority": 0.1,
+        "sanctity": 0,
+        "liberty": 0,
+        "not_wrong": 0.87
+      },
+      "wrongness_mean_0_4": 0.5,
+      "recommended": false,
+      "use_as_seed": false
+    }
+  ]
+}

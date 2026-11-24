@@ -97,23 +97,32 @@ def render(name: str, **kwargs):
 
 def job_files(slug, materials_root=None):
     preparation = ROOT/'material_preparation'
-    d = (Path(materials_root) if materials_root else preparation/'approved')/'occupations'/slug
-    from material_preparation.onet_data import source_folder
+    from material_preparation.onet_data import source_folder, directory_name
     registry = load_json(occupations_file())
+    key = directory_name(registry[slug]) if slug in registry else slug
+    base = (Path(materials_root) if materials_root else preparation/'approved')/'occupations'
+    d = base/key
+    # Existing experiment snapshots retain their original internal keys.
+    legacy = base/slug
+    if not d.exists() and any(legacy.glob('jd.txt')):
+        d = legacy
     source = source_folder(registry[slug]) if slug in registry else preparation/'sources/occupations'/slug/'onet'
     return {'profile':d/'onet/profile.txt', 'jd':d/'jd.txt', 'resumes':d/'resumes',
-            'drafts':preparation/'drafts/occupations'/slug/'resumes',
-            'jd_draft':preparation/'drafts/occupations'/slug/'jd.txt',
+            'drafts':preparation/'drafts/occupations'/key/'resumes',
+            'jd_draft':preparation/'drafts/occupations'/key/'jd.txt',
+            'structured':source/'structured_en.json',
             'source':source,
             'setup':preparation/'sources/occupations'/slug/'job_setup.json'}
 
-def read_job(slug, require_profile=True, require_jd=False, materials_root=None):
+def read_job(slug, require_profile=True, require_jd=False, materials_root=None, verbatim_jd=False):
     paths=job_files(slug,materials_root)
     data = {'paths':paths}
     if require_profile:
         data['profile'] = load_text(paths['profile'])
     if require_jd:
         data['jd'] = load_text(paths['jd'])
+        if verbatim_jd:
+            data['jd'] = paths['jd'].read_bytes().decode('utf-8')
     return data
 
 def list_resumes(slug, source='approved', materials_root=None):

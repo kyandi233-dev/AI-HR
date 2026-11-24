@@ -1,0 +1,79 @@
+{
+  "version": "resume_levels_fixed_dates_v2",
+  "levels": {
+    "medium": {
+      "name": "中等水平：普通合格、接近岗位基本要求",
+      "education": "本科，专业与目标岗位相关，具备必要专业学习；不增加高学历、名校或突出荣誉。",
+      "experience": "累计3—4年相关工作经历，承担过岗位常规专业任务，可独立完成日常工作，不安排团队管理或大型架构设计职责。",
+      "skills": "具备JD核心知识和技能的常规应用能力，工具选择与经历一致，不写专家级掌握或覆盖全部技术。",
+      "accomplishments": "一项范围清楚的常规项目或专业任务，说明个人工作和基本交付结果，不写重大创新或突出业绩。",
+      "cognitive_evidence": "用识别一般问题、核对信息、比较常规处理方案等经历体现分析和问题解决能力，不直接夸赞能力。",
+      "timelines": [
+        {
+          "education_period": "2019.09—2023.06",
+          "work_periods": [
+            "2023.07—2024.12",
+            "2025.01—2026.10"
+          ],
+          "project_period": "2026.06—2026.08",
+          "total_work_months": 40
+        },
+        {
+          "education_period": "2018.09—2022.06",
+          "work_periods": [
+            "2023.01—2024.06",
+            "2024.07—2026.10"
+          ],
+          "project_period": "2026.06—2026.08",
+          "total_work_months": 46
+        }
+      ]
+    },
+    "low": {
+      "name": "低水平：与岗位要求仅部分匹配",
+      "education": "同样为本科，专业与目标岗位仅部分相关；保留一些基础课程或学习经历，但不额外赋予充分的岗位专门训练。",
+      "experience": "累计1—2年相关经历，主要承担助理、基础操作或在他人指导下完成的任务，低于JD的3年门槛；不编写离谱履历或时间矛盾。",
+      "skills": "掌握部分基础知识及常用工具的基本操作，尚未体现JD全部核心技能或独立处理复杂任务的能力。用真实的工作范围体现，不直接自称能力不足。",
+      "accomplishments": "一项较小范围的项目或工作任务，主要提供基础支持，交代可辨认的参与内容和有限交付，不夸大为独立主导。",
+      "cognitive_evidence": "体现按既定步骤整理、核对或完成基础工作，可以识别简单异常并交由他人进一步处理；不虚构灾难性错误、失职或道德问题。",
+      "timelines": [
+        {
+          "education_period": "2020.09—2024.06",
+          "work_periods": [
+            "2025.05—2025.12",
+            "2026.01—2026.10"
+          ],
+          "project_period": "2026.06—2026.08",
+          "total_work_months": 18
+        },
+        {
+          "education_period": "2020.09—2024.06",
+          "work_periods": [
+            "2025.11—2026.04",
+            "2026.05—2026.10"
+          ],
+          "project_period": "2026.06—2026.08",
+          "total_work_months": 12
+        }
+      ]
+    }
+  },
+  "education_majors": {
+    "information_security_analysts": {
+      "medium": "信息安全",
+      "low": "电子商务"
+    },
+    "software_developer": {
+      "medium": "软件工程",
+      "low": "工商管理"
+    },
+    "data_scientists": {
+      "medium": "统计学",
+      "low": "市场营销"
+    },
+    "business_intelligence": {
+      "medium": "信息管理与信息系统",
+      "low": "公共事业管理"
+    }
+  }
+}

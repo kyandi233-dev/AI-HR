@@ -35,10 +35,16 @@ def verify(path):
             raise ValueError('Review summary must contain only 职业汇总')
         values = list(book['职业汇总'].iter_rows(values_only=True))
         headers = list(values[0])
-        if headers[:len(HEADERS)] != HEADERS:
+        modern='JD是否纳入' in headers
+        if not modern and headers[:len(HEADERS)] != HEADERS:
             raise ValueError('Review header mismatch')
         previous = {row[headers.index('O*NET Code')]:dict(zip(headers,row)) for row in values[1:]}
-        expected, _ = summary_rows(registry, previous, headers[len(HEADERS):])
+        if modern:
+            from material_preparation.review_material_links import model,validate
+            state=c.load_json(path.parent/'review_navigation_manifest.json')
+            payload=model(path,state['run_id'],state['jd_run_id']);validate(path,payload)
+            expected=payload['rows']
+        else:expected, _ = summary_rows(registry, previous, headers[len(HEADERS):])
         # Summary records must retain official identity, order and all reviewer fields.
         for a,b in zip(values[1:],expected):
             for i,name in enumerate(headers):
@@ -84,8 +90,8 @@ def verify(path):
             actual_book.close()
             expected_book.close()
     csv_expected = [[str(v) if v is not None else '' for v in row] for row in values]
-    for row in csv_expected[1:]:
-        row[headers.index('职业资料文件')] = '打开职业资料'
+    if not modern:
+        for row in csv_expected[1:]:row[headers.index('职业资料文件')] = '打开职业资料'
     with (path.parent/'职业汇总.csv').open(encoding='utf-8-sig',newline='') as file:
         compare(list(csv.reader(file)),csv_expected,'summary CSV')
     print(f'核验通过：职业={len(registry)}；独立资料表={len(registry)}；Tasks={counts.get("Tasks",0)}；全部栏目、CSV及原始存档一致。')

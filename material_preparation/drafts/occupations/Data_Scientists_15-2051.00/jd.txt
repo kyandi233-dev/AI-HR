@@ -1,0 +1,32 @@
+【依据记录开始】
+岗位简介：对应 Overview 概述（顺序1），概括“将原始数据转化为有意义信息并可视化、解读与报告”的核心目的。
+职责1：对应 Tasks 第1、8条（分析/处理大规模数据、清洗与整理原始数据）及 Detailed Work Activities 第9、1条，合并为数据清洗与分析。
+职责2：对应 Tasks 第3、7、10条（模型测试验证与重构、按统计指标比较模型、特征选择）及 Detailed Work Activities 第4条，合并为建模与评估。
+职责3：对应 Tasks 第2条（图表可视化）及 Detailed Work Activities 第3条，保留可视化职责。
+职责4：对应 Tasks 第4、5、6条（汇报结果、提出数据驱动方案、识别可用数据分析解决的业务问题）及 Detailed Work Activities 第2、5、6条，合并为结果汇报与建议。
+任职要求1（学历）：Education 中占比最高为“Bachelor’s degree required”48%，其次硕士44%，故转换为“本科及以上”；Job Zone Four 用于理解整体准备背景。
+任职要求2（经验）：本轮共同设定“3年以上相关工作经验”；相关经验范围参考 Job Zone Four 的“相当程度的工作技能、知识或经验”。
+任职要求3（专业知识与工具）：Knowledge 第1条 Mathematics、第2条 Computers and Electronics；Software Skills 中 TensorFlow、Python 相关未见直接条目，故取 SAS、TensorFlow、Microsoft Power BI 为例（Software Skills 第1、3条）。
+任职要求4（认知能力）：Essential Skills 第1条 Mathematics、第2条 Critical Thinking；Transferable Skills 第1条 Complex Problem Solving，合并为分析与问题解决能力。
+任职要求5（持续学习）：Essential Skills 第4条 Active Learning；Tasks 第13条（阅读文献跟踪分析趋势与技术）。
+【依据记录结束】
+
+【岗位公告开始】
+职位名称：数据科学家
+
+岗位简介
+运用数据分析与可视化手段，将原始数据转化为可供业务决策参考的信息与洞察。
+
+工作职责
+1. 使用统计软件清洗、整理并分析大规模数据集，识别变量间的关系与趋势。
+2. 构建、测试并验证预测模型，运用统计指标比较模型表现并优化特征选择。
+3. 制作图表及其他可视化成果，直观呈现数据分析结果。
+4. 向管理层及业务相关方汇报分析结论，并就业务问题提出数据驱动的解决方案建议。
+
+任职要求
+1. 本科及以上学历。
+2. 3年以上相关工作经验，具备数据分析或建模的实际项目经历。
+3. 掌握数学与统计方法，熟悉 SAS、TensorFlow、Power BI 等分析与可视化工具。
+4. 具备较强的逻辑分析与复杂问题解决能力，能评估不同方案的优劣并形成可靠结论。
+5. 具备主动学习能力，能够持续跟进新的分析技术与方法。
+【岗位公告结束】

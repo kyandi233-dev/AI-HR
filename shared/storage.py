@@ -28,7 +28,7 @@ def path_for(task, run_id):
     kind=task['task']; meta=task['metadata']
     folder=results_root(kind)
     if kind!='principles': folder=folder/RESULT_NAMES[kind]
-    if meta.get('occupation'): folder=folder/meta['occupation']
+    if meta.get('occupation'): folder=folder/meta.get('material_directory',meta['occupation'])
     return folder/run_id
 
 
@@ -86,6 +86,11 @@ def pending(task, settings, args):
 def save_draft(task, content, parsed):
     kind=task['task']; meta=task['metadata']
     if kind=='moral-generate':
+        if meta.get('generation_protocol'):
+            from material_preparation.morality_inputs import validate_generated
+            validate_generated(parsed,task)
+        if parsed.get('status')=='not_adaptable':
+            return  # Keep the successful response and rejection reason, but no material draft.
         parsed['foundation']=meta['foundation']; parsed['pair_id']=meta['pair_id']
         path=c.ROOT/'material_preparation/drafts/morality'/(meta['pair_id']+'.json')
         if path.exists() and c.load_json(path)!=parsed:
@@ -95,9 +100,9 @@ def save_draft(task, content, parsed):
         paths=c.job_files(meta['occupation'])
         path=paths['jd_draft'] if kind=='jd' else paths['drafts']/(meta['resume_id']+'.txt')
         path.parent.mkdir(parents=True,exist_ok=True)
-        if path.exists() and path.read_text(encoding='utf-8')!=content:
+        if path.exists() and path.read_bytes().decode('utf-8')!=content:
             raise ValueError('已有同名不同草稿；请先归档或变更编号')
-        path.write_text(content,encoding='utf-8')
+        path.write_bytes(content.encode('utf-8'))
 
 
 def record_task(task, settings, args):
@@ -115,6 +120,7 @@ def record_task(task, settings, args):
               'concurrency':getattr(args,'concurrency',1),
               'sequence':getattr(args,'sequence',None),'context':task['metadata']}
     input_data={**identity,'timestamp_utc':c.now(),'request':request,
+                'transport':{'api_timeout_seconds':settings['api_timeout_seconds'],'stream':bool(settings.get('_stream'))},
                 'request_sha256':c.sha256(c.canonical(request))}
     # Exclusive creation prevents two processes from charging the same attempt.
     write_json(records/(stem+'.input.json'),input_data,exclusive=True)
@@ -122,6 +128,7 @@ def record_task(task, settings, args):
             'request_sha256':input_data['request_sha256'],
             'prompt_sha256':c.sha256(c.canonical(task['messages'])),
             'python_version':sys.version.split()[0],'openai_sdk_version':c.sdk_version(),
+            'api_timeout_seconds':settings['api_timeout_seconds'],
             'program_sha256':c.program_sha256(),'raw_response':None,'answer':None,'parsed':None,
             'validation_warnings':[]}
     out=records/(stem+'.output.json')
@@ -140,6 +147,9 @@ def record_task(task, settings, args):
         if result['finish_reason']!='stop':
             raise ValueError('finish_reason='+str(result['finish_reason']))
         if not content or not content.strip(): raise ValueError('空白响应')
+        if task['task']=='resume' and task['metadata'].get('employment_plan'):
+            from material_preparation.resume_inputs import validate_resume_text
+            validate_resume_text(content,task['metadata'])
         parsed=check_response(task['task'],content) if task['json_mode'] else None
         if task['task']=='principles':
             returned_order=[key for key in parsed if key in ('task1','task2')]
@@ -149,6 +159,14 @@ def record_task(task, settings, args):
         result.update(parsed=parsed,status='ok')
         print('OK',task['task_id'],f'attempt={attempt}')
     except Exception as exc:
+        if getattr(exc,'partial_response',None) is not None:
+            result['raw_response']=exc.partial_response.model_dump(mode='json')
+            result['answer']=exc.partial_response.choices[0].message.content
+        chain=[]; cause=exc.__cause__
+        while cause is not None and len(chain)<4:
+            chain.append({'type':type(cause).__name__,'message':c.safe_error_message(cause)[:1000]})
+            cause=cause.__cause__
+        result['error_chain']=chain
         result.update(status='error',error_type=type(exc).__name__,error_message=c.safe_error_message(exc)[:1000])
         print('ERROR',task['task_id'],result['error_message'][:200],file=sys.stderr)
     result['completed_utc']=c.now()

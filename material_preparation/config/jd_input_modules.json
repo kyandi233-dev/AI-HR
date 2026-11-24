@@ -1,0 +1,14 @@
+{
+  "version": "jd_modules_v1",
+  "modules": [
+    "Overview",
+    "Tasks",
+    "DetailedWorkActivities",
+    "JobZone",
+    "SoftwareSkills",
+    "Knowledge",
+    "Education",
+    "EssentialSkills",
+    "TransferableSkills"
+  ]
+}

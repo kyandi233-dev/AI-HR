@@ -33,9 +33,12 @@ def check_response(kind, text):
     elif kind=='moral-relevance':
         iv(parsed,'direct_professional_relevance',1,7)
     elif kind=='moral-generate':
-        for k in ['pair_id','foundation','neutral','negative']:
+        keys=['pair_id','foundation'] if parsed.get('status')=='not_adaptable' else ['pair_id','foundation','neutral','negative']
+        for k in keys:
             if not isinstance(parsed.get(k),str) or not parsed[k].strip():
                 raise ValueError(f'缺少{k}')
+        if parsed.get('status')=='not_adaptable' and (not isinstance(parsed.get('rejection_reason'),str) or not parsed['rejection_reason'].strip()):
+            raise ValueError('不适配必须说明原因')
     elif kind=='resume-review':
         iv(parsed,'naturalness',1,7);iv(parsed,'professional_plausibility',1,7)
     return parsed

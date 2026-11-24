@@ -1,0 +1,32 @@
+【依据记录开始】
+- 岗位简介：基于 Overview 概述中“Plan, implement, upgrade, or monitor security measures for the protection of computer networks and information”及“Assess system vulnerabilities…propose and implement risk mitigation strategies”概括。
+- 职责1：Tasks 第1、3、5条（制定文件保护计划、加密传输与防火墙、维护安全文件与访问状态），合并为安全方案与防护措施；Detailed Work Activities 第1、3条对应。
+- 职责2：Tasks 第4、9条（风险评估与系统测试、监控数据文件使用与访问管制），合并为风险评估与访问监控；Detailed Work Activities 第4、9条对应。
+- 职责3：Tasks 第6、7、8条（审查违规并沟通、记录安全与应急政策程序、与用户沟通访问需求与违规问题），合并为违规处理与制度文档；Detailed Work Activities 第5、6、7条对应。
+- 职责4：Tasks 第11条（培训用户、提升安全意识）；Detailed Work Activities 第10条对应。
+- 任职要求1（学历）：Education 中“Bachelor’s degree required”占53%，为最高比例，转换为“本科及以上”；Job Zone 说明多数需四年制学士学位但非全部，仅作背景理解。
+- 任职要求2（经验）：本轮共同设定“3年以上相关工作经验”；Job Zone 说明需相当程度的工作技能与经验，仅作背景理解，不另设年限。
+- 任职要求3（专业知识与工具）：Knowledge 第1条 Computers and Electronics、第5条 Telecommunications；Software Skills 中选择 Palo Alto Networks Next-Generation Security Platform、Splunk Enterprise、Wireshark 作为举例，对应 Tasks 第3、4、9条。
+- 任职要求4（认知能力）：Essential Skills 第2条 Critical Thinking、Transferable Skills 第1条 Complex Problem Solving，合并为分析判断与问题解决能力，用于风险评估与故障排查。
+- 任职要求5（持续学习）：Essential Skills 第7条 Active Learning、Tasks 第2条（跟踪病毒报告并更新防护系统）、Detailed Work Activities 第2条（更新行业技术趋势知识），合并为跟踪安全动态并持续学习的要求。
+【依据记录结束】
+
+【岗位公告开始】
+职位名称：信息安全分析师
+
+岗位简介
+负责规划、实施、升级和监控计算机网络与信息的安全措施，评估系统漏洞并推动风险缓解策略落地。
+
+工作职责
+1. 制定计算机文件防篡改、防破坏和防泄露的保护方案，落实传输加密、防火墙等防护措施，并维护安全文件与访问状态。
+2. 开展风险评估与数据处理系统测试，监控数据文件使用并管制访问权限，确保安全措施有效运行。
+3. 审查安全程序违规情况并与相关人员沟通纠正，记录安全与应急措施的政策、程序和测试结果。
+4. 组织用户安全培训，提升安全意识，促进服务器与网络运行效率。
+
+任职要求
+1. 本科及以上学历。
+2. 3年以上相关工作经验，具备信息安全防护、风险评估或系统安全运维等领域的实践积累。
+3. 掌握计算机与电子系统、电信传输等专业知识，能使用 Palo Alto Networks Next-Generation Security Platform、Splunk Enterprise、Wireshark 等工具开展安全监控与分析。
+4. 具备较强的分析判断与复杂问题解决能力，能用于漏洞评估、风险研判和故障排查。
+5. 能够主动跟踪病毒报告与行业技术趋势，持续更新防护系统与安全知识。
+【岗位公告结束】

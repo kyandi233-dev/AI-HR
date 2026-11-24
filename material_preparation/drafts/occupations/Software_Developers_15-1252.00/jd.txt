@@ -1,0 +1,32 @@
+【依据记录开始】
+岗位简介：对应 Overview（研究、设计、开发计算机与网络软件或专用程序，分析用户需求并开发软件方案）；Tasks 第1、8条。
+职责1：分析用户需求与软件需求，判断设计在时间与成本约束下的可行性——Tasks 第1条（重要性77，Core）；Detailed Work Activities 第2条。
+职责2：设计、开发与修改软件系统，并制定测试或验证程序、编程与文档——Tasks 第8条（64，Core）、第2条（73，Core）；Detailed Work Activities 第3、12条。
+职责3：修改现有软件以纠错、适配新硬件或升级接口与性能，并监控系统运行是否符合规格——Tasks 第4条（69，Core）、第12条（78，Supplemental）；Detailed Work Activities 第1、5条。
+职责4：与系统分析师、工程师、程序员等协作确定系统设计、性能要求与接口，并就项目状态与技术问题沟通——Tasks 第3条（69，Core）、第10条（59，Core）；Detailed Work Activities 第6、8条。
+任职要求1（学历）：Education 中85%回答本科，故要求本科及以上；原始比例85%本科、5%副学士、5%硕士，按占比最高层次转换。Job Zone Four 作背景参考。
+任职要求2（经验）：本轮共同设定，3年以上相关工作经验；相关经验范围包括软件开发、软件测试与系统维护等。
+任职要求3（专业知识与工具）：Knowledge 中 Computers and Electronics 重要性94、Mathematics 64；Software Skills 中 Development environment software、Web platform development software、Data base management system software；工具举例取 Git、React、PostgreSQL（各栏目顺序定位）。
+任职要求4（认知能力）：Essential Skills 中 Critical Thinking 72、Active Learning 63；Transferable Skills 中 Complex Problem Solving 60、Judgment and Decision Making 66；合并为分析判断与问题解决能力要求。
+任职要求5（系统分析与程序设计）：Transferable Skills 中 Programming 75、Systems Analysis 63、Systems Evaluation 60；Tasks 第9条（确定系统性能标准）。
+【依据记录结束】
+
+【岗位公告开始】
+职位名称：软件开发工程师
+
+岗位简介
+负责研究、设计并开发计算机与网络软件或专用程序，分析用户需求并形成可行的软件解决方案。
+
+工作职责
+1. 分析用户需求与软件需求，评估设计方案在时间与成本约束下的可行性。
+2. 设计、开发并修改软件系统，制定测试或验证程序及相关技术文档。
+3. 修改现有软件以纠正错误、适配新硬件或升级接口与性能，并监控系统运行是否符合规格。
+4. 与系统分析师、工程师、程序员等协作确定系统设计与性能要求，并就项目进展和技术问题保持沟通。
+
+任职要求
+1. 本科及以上学历。
+2. 3年以上相关工作经验，具备软件开发、测试或系统维护等实践背景。
+3. 掌握计算机与电子领域知识及必要数学基础，能使用 Git、React、PostgreSQL 等开发与数据工具。
+4. 具备较强的分析判断与问题解决能力，能评估不同方案的优劣并持续学习新技术。
+5. 具备程序设计与系统分析能力，能够确定系统性能标准并据此改进系统表现。
+【岗位公告结束】

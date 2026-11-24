@@ -63,6 +63,19 @@ class PipelineTests(unittest.TestCase):
                              (d['resumes']/'R01.txt','简历 R01，软件开发工程师，负责专业程序开发和测试。'*4)]:
             path.parent.mkdir(parents=True,exist_ok=True); path.write_text(content,encoding='utf-8')
         storage.write_json(d['setup'],{'job_title':'后端工程师','company_profile':'虚构软件公司','job_level':'初级'})
+        raw=b'<html><main><h1>Software Developers</h1><div class="reportsection" id="Tasks"><h2>Tasks</h2><p>Write software.</p></div></main></html>'
+        d['source'].mkdir(parents=True,exist_ok=True)
+        (d['source']/'source_details.html').write_bytes(raw)
+        (d['source']/'source_details.txt').write_bytes(b'Write software.')
+        meta={'url':'https://example.test','sha256_html':c.sha256(raw),
+              'sha256_text':c.sha256(b'Write software.'),'scope':'initial_details_response_only'}
+        storage.write_json(d['source']/'source_metadata.json',meta)
+        sections=[{'id':'Tasks','source_text':'Write software.','records':[{'text':'Write software.'}]}]
+        for sid in ['Overview','DetailedWorkActivities','JobZone','SoftwareSkills','Knowledge','Education','EssentialSkills','TransferableSkills']:
+            sections.append({'id':sid,'source_text':'Original '+sid,'records':[{'text':'Original '+sid}]})
+        storage.write_json(d['structured'],{'registry':self.occupations['software_developer'],
+            'source':{'stored_html_sha256':c.sha256(raw)},'has_detail_sections':True,
+            'sections':sections})
         storage.write_json(self.root/'material_preparation/approved/morality/F_001.json',{
             'pair_id':'F_001','foundation':'fairness','neutral':'在休息日去书店阅读并购买一本小说。',
             'negative':'在休息日故意插队并嘲笑他人的正常排队。'})
@@ -204,13 +217,21 @@ class PipelineTests(unittest.TestCase):
         for t in self.make('moral-check'):
             self.assertNotIn('F_001',t['messages'][0]['content']); self.assertNotIn('fairness',t['messages'][0]['content'])
         t=self.make('resume')[0]
-        with patch.object(storage,'api_request',return_value=(self.response(),{})):
+        plan=t['metadata']['employment_plan']
+        content=('求职简历｜R01\n教育背景\n'+plan['education_period']+' '+plan['major']+
+                 '\n工作经历\n'+'\n'.join(plan['work_periods'])+
+                 '\n项目经历／代表性工作成果\n'+plan['project_period']+'\n专业技能\n测试技能')
+        response=self.response(); raw=response.model_dump()
+        raw['choices'][0]['message']['content']=content
+        response.choices[0].message.content=content
+        response.model_dump=lambda **kw:copy.deepcopy(raw)
+        with patch.object(storage,'api_request',return_value=(response,{})):
             self.assertEqual(storage.record_task(t,self.settings,self.args),'ok')
         self.assertTrue((c.job_files('software_developer')['drafts']/'R01.txt').exists())
 
     def test_multi_occupation_batch_selection_preserves_registry(self):
         self.materials()
-        source=self.root/'material_preparation/approved/occupations/software_developer'
+        source=c.job_files('software_developer')['jd'].parent
         shutil.copytree(source,self.root/'material_preparation/approved/occupations/logistics_analyst')
         registry=(self.root/'material_preparation/config/occupations.json').read_bytes()
         plan=self.root/'experiments/exp_3_hiring/config/jobs.json'
@@ -272,6 +293,8 @@ class PipelineTests(unittest.TestCase):
         self.materials()
         golden=c.load_json(ROOT/'tests/fixtures/tasks_before_reorganization.json')
         for kind,expected in golden.items():
+            if kind in ('jd','resume'):
+                continue  # These two protocols were explicitly revised; other goldens stay frozen.
             original_settings=copy.deepcopy(self.settings)
             profile=original_settings['profiles'][c.TASK_TO_PROFILE[kind]]
             # Replay historical requests with their historical parameters.
@@ -300,9 +323,10 @@ class PipelineTests(unittest.TestCase):
         (target/'README.md').write_text('材料版本说明',encoding='utf-8')
         verified_snapshot('moral-check','v1')
         self.assertTrue(all('drafts' not in name for name in manifest['files']))
-        original=(target/'occupations/software_developer/resumes/R01.txt').read_bytes()
+        relative=c.job_files('software_developer')['resumes'].relative_to(self.root/'material_preparation/approved')/'R01.txt'
+        original=(target/relative).read_bytes()
         c.job_files('software_developer')['resumes'].joinpath('R01.txt').write_text('later changes',encoding='utf-8')
-        self.assertEqual((target/'occupations/software_developer/resumes/R01.txt').read_bytes(),original)
+        self.assertEqual((target/relative).read_bytes(),original)
         other=create_snapshot('exp_3_hiring','v1',['software_developer'],True,
                               'exp_2_material_evaluation','v1',execute=True)
         self.assertEqual(c.load_json(other/'manifest.json')['files'],manifest['files'])

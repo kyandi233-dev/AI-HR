@@ -1,5 +1,23 @@
 """One stateless API request per trial; SDK retries disabled."""
 from .common import TASK_TO_PROFILE, load_api_key
+from types import SimpleNamespace
+
+
+def assemble_stream(chunks):
+    content=''.join(choice.get('delta',{}).get('content') or ''
+                    for chunk in chunks for choice in chunk.get('choices',[]) if choice.get('index',0)==0)
+    finishes=[choice['finish_reason'] for chunk in chunks for choice in chunk.get('choices',[])
+              if choice.get('index',0)==0 and choice.get('finish_reason')]
+    last=chunks[-1] if chunks else {}
+    usage=next((chunk['usage'] for chunk in reversed(chunks) if chunk.get('usage')),None)
+    raw={'id':last.get('id'),'model':last.get('model'),'system_fingerprint':last.get('system_fingerprint'),
+         'usage':usage,'response_assembled_from_stream':True,'stream_chunks':chunks,
+         'choices':[{'index':0,'finish_reason':finishes[-1] if finishes else None,
+                     'message':{'role':'assistant','content':content}}]}
+    return SimpleNamespace(id=raw['id'],model=raw['model'],system_fingerprint=raw['system_fingerprint'],
+                           choices=[SimpleNamespace(finish_reason=raw['choices'][0]['finish_reason'],
+                                                    message=SimpleNamespace(content=content))],
+                           model_dump=lambda **kw:raw)
 
 
 def request_kwargs(settings,task):
@@ -34,4 +52,14 @@ def api_request(settings,task):
     kwargs=request_kwargs(settings,task)
     with OpenAI(api_key=api_key,base_url=settings['api_base_url'],
                 timeout=float(settings['api_timeout_seconds']),max_retries=0) as client:
+        if settings.get('_stream'):
+            kwargs.update(stream=True,stream_options={'include_usage':True})
+            chunks=[]
+            try:
+                for chunk in client.chat.completions.create(**kwargs):
+                    chunks.append(chunk.model_dump(mode='json'))
+            except Exception as error:
+                error.partial_response=assemble_stream(chunks)
+                raise
+            return assemble_stream(chunks),kwargs
         return client.chat.completions.create(**kwargs),kwargs

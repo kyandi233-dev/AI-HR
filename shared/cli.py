@@ -18,7 +18,7 @@ def status(occupations):
         paths=c.job_files(slug); folder=paths['source']
         raw=all((folder/n).is_file() for n in ['source_details.html','source_details.txt','source_metadata.json'])
         print(f"{slug} ({info['onet_code']}) 原始抓取={'有' if raw else '无'} "
-              f"审核资料={'有' if paths['profile'].exists() else '无'} "
+              f"结构化资料={'有' if paths['structured'].exists() else '无'} "
               f"批准JD={'有' if paths['jd'].exists() else '无'} "
               f"批准简历={len(list(paths['resumes'].glob('R*.txt')))}")
     print('以上为职业材料准备状态；原则实验使用自身的定义与问题。')
@@ -26,10 +26,10 @@ def status(occupations):
 
 def read_plan(args):
     data=c.load_json(args.batch) if args.batch else {}
-    allowed={'task','run_id','stage','repeat','count','start_index','source','foundation','occupations','profile_overrides','materials_version','concurrency'}
+    allowed={'task','run_id','stage','repeat','count','start_index','source','foundation','occupations','profile_overrides','materials_version','concurrency','levels','jd_run_id'}
     if set(data)-allowed: raise ValueError('批次计划包含未知字段：'+str(set(data)-allowed))
     defaults={'task':None,'run_id':'pilot01','stage':'pilot','repeat':1,'count':2,
-              'start_index':1,'source':'drafts','foundation':None,'materials_version':None}
+              'start_index':1,'source':'drafts','foundation':None,'materials_version':None,'levels':None,'jd_run_id':None}
     for name,default in defaults.items():
         if getattr(args,name,None) is None: setattr(args,name,data.get(name,default))
     if args.task not in c.TASK_TO_PROFILE: raise ValueError('请指定有效的 --task 或批次计划中的 task')
@@ -63,6 +63,8 @@ def main(argv=None,allowed_tasks=None):
     select.add_argument('--occupation'); select.add_argument('--occupations',nargs='+')
     run.add_argument('--foundation',choices=c.FOUNDATIONS)
     run.add_argument('--source',choices=['drafts','approved'])
+    run.add_argument('--levels',nargs='+',choices=['medium','low'])
+    run.add_argument('--jd-run-id',help='明确指定已有JD批次作为简历输入，不自动批准材料')
     for name in ['count','start-index','repeat']: run.add_argument('--'+name,type=int)
     run.add_argument('--run-id'); run.add_argument('--stage',choices=['pilot','main','development'])
     run.add_argument('--materials-version',help='实验2或3的本地固定材料版本，位于该实验 materials/<版本>/')

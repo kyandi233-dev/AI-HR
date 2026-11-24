@@ -300,6 +300,13 @@ def run(argv=None):
     parser.add_argument('--output',type=Path,default=c.ROOT/'material_preparation/review/职业与材料审核.xlsx')
     parser.add_argument('--summary-only',action='store_true',help='Refresh only the summary when existing native-section workbooks are unchanged')
     args = parser.parse_args(argv)
+    modern=None
+    if args.output.exists():
+        current=load_workbook(args.output,read_only=True)
+        try:
+            if 'JD是否纳入' in [cell.value for cell in next(current['职业汇总'].iter_rows())]:
+                modern=c.load_json(args.output.parent/'review_navigation_manifest.json')
+        finally:current.close()
     registry = read_registry()
     original = snapshot_inputs(registry)
     previous, extra = existing_manual(args.output)
@@ -335,6 +342,15 @@ def run(argv=None):
             write_review_csv(folder/'csv'/(title+'.csv'),spec['headers'],spec['rows'])
         sheet_counts[info['onet_code']] = {key:len(spec['rows']) for key,spec in specs.items()}
         print('重排：',info['onet_name'],flush=True)
+    if modern:
+        from material_preparation.review_material_links import run as file_review
+        file_review(['--review',str(args.output),'--run-id',modern['run_id'],
+                     '--jd-run-id',modern['jd_run_id'],'--execute'])
+        if snapshot_inputs(registry)!=original:raise ValueError('原始存档或提示词变化')
+        write_json(old_manifest_path,{'layout_version':3,'exported_utc':c.now(),'script_sha256':digest(__file__),
+            'workbook_sha256':digest(args.output),'occupations':states,'sheet_counts':sheet_counts,'unchanged_inputs':original})
+        print('保留新版文件链接与纳入列；独立职业资料表：',len(sheet_counts))
+        return 0
     book = summary_workbook(rows, extra)
     sheet = book['职业汇总']
     for number, row in enumerate(rows,2):
