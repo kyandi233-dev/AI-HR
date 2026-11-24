@@ -1,4 +1,4 @@
-"""Export the morality master and three independent reviewers; preserve keyed human inputs."""
+"""Export the morality master and configured independent reviewers; preserve keyed human inputs."""
 if __name__ == '__main__' and not __package__:
     import sys
     from pathlib import Path
@@ -21,6 +21,7 @@ from material_preparation.morality_inputs import validate_generated
 from material_preparation.run_morality_generation import preview
 from material_preparation.run_material_generation import immutable_bytes
 from material_preparation.export_individual_reviews import finish_workbook
+from material_preparation.reviewer_config import load_team, reviewer_file
 
 FIRST_ROW = 6
 REVIEW_HEADERS = ['材料编号','道德主题','生成状态','配对正文','可理解性','自然性','负面效价','中性效价',
@@ -173,14 +174,13 @@ def sheet_spec(rows, headers, target):
 
 
 def make_payload(config, protocol, catalog, tasks, settings, root, run_id):
-    people = config['reviewers']
-    if len(people) != 3 or len(set(people)) != 3 or any(not re.fullmatch(r'[^<>:"/\\|?*]+', p) or p != p.strip() for p in people):
-        raise ValueError('需要三名文件名有效、名称不同的审核员')
+    team = load_team(config)
+    people = team['reviewers']
     current = material_rows(tasks, settings, root, run_id)
     specs, reviews = [], {}
     before = {}
     for person in people:
-        target = review_root() / (person + '.xlsx')
+        target = reviewer_file(team, 'mority', person, review_root())
         before[str(target)] = c.sha256(target.read_bytes()) if target.exists() else None
         rows = preserve(current, read_saved(target, REVIEW_MANUAL))
         for row in rows:
@@ -201,7 +201,7 @@ def make_payload(config, protocol, catalog, tasks, settings, root, run_id):
             raise ValueError('最终纳入选项无效')
     specs.insert(0, {**sheet_spec(master_rows, headers, master), 'kind': 'master', 'title': '道德材料汇总', 'manual': MASTER_MANUAL})
     return {'specs': specs, 'protocol': protocol, 'catalog': catalog,
-            'run_id': run_id, 'config': config}, before
+            'run_id': run_id, 'config': config, 'reviewers': people}, before
 
 
 def validate_workbook(path, spec):
@@ -266,12 +266,13 @@ def run(argv=None):
         shutil.copyfile(work / (str(index) + '.xlsx'), pending_file)
         pending_file.replace(target)
     manifest = {'run_id': run_id, 'exported_utc': c.now(), 'planned_pairs': len(tasks),
+                'reviewers': payload['reviewers'],
                 'generated_pairs': sum(row[5] == '已生成' for row in payload['specs'][0]['rows']),
                 'preview_directory': str(work), 'protocol_sha256': tasks[0]['metadata']['protocol_sha256'],
                 'catalog_sha256': tasks[0]['metadata']['catalog_sha256'], 'prompt_sha256': tasks[0]['metadata']['prompt_sha256'],
                 'files': [{'path': s['review'], 'sha256': c.sha256(Path(s['review']).read_bytes())} for s in payload['specs']]}
     (review_root().parent / 'morality_review_manifest.json').write_text(c.canonical(manifest) + '\n', encoding='utf-8')
-    print('已生成1份总表和3份独立审核表；待生成任务不计为已有正文。预览：', work)
+    print('已生成1份总表和',len(payload['reviewers']),'份独立审核表；待生成任务不计为已有正文。预览：', work)
     return 0
 
 

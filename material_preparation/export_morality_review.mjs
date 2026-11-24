@@ -43,7 +43,7 @@ function standards(w) {
   s.getRange('A4').values=[['先打开正文再填写黄色列；待生成任务不可作材料审核结论。']];
   let row=14;
   const sections=[['原作者通用规则',p.author_general_rules],['本研究配对规则',p.study_rules],
-                  ['评价说明',[p.human_validation_note,p.review_scale_note,'明显专业证据只作文本初筛，正式岗位关联性仍需结合对应JD；三人意见不自动转为最终纳入决定。']],
+                  ['评价说明',[p.human_validation_note,p.review_scale_note,'明显专业证据只作文本初筛，正式岗位关联性仍需结合对应JD；各成员意见不自动转为最终纳入决定。']],
                   ['文献来源',p.references.map(x=>`${x.citation} ${x.location} ${x.url}`)]];
   for(const [label,lines] of sections){
     s.getRange(`A${row}:D${row}`).format.fill='#EAF0F5';s.getRange(`A${row}`).values=[[label]];
@@ -80,7 +80,7 @@ for(let index=0;index<payload.specs.length;index++){
   const rows=spec.rows.map(row=>row.map(v=>v&&typeof v==='object'&&v.date?new Date(v.date):v));
   const last=table(s,spec.headers,rows,widths,'MoralityReview');
   title(s,spec.title,'黄色列为人工填写；只审查已生成正文。此文件可刷新，按材料编号与版本保留意见。');
-  s.getRange('A4').values=[['未调用模型时正文链接为空；总表导入三人意见，最终是否纳入由研究者填写。']];
+  s.getRange('A4').values=[['未调用模型时正文链接为空；总表导入'+payload.reviewers.length+'名成员意见，最终是否纳入由研究者填写。']];
   s.getRange('A2').values=[['计划任务']];s.getRange('B2').values=[[rows.length]];
   const statusCol=col(spec.headers.indexOf('生成状态')+1);
   s.getRange('D2').values=[['已生成正文']];s.getRange('E2').formulas=[[`=COUNTIFS(${statusCol}6:${statusCol}${last},"已生成")`]];

@@ -29,9 +29,9 @@
 
 当前审核总表只有“职业汇总”一页，JD和四份简历各配独立“是否纳入”列（1纳入、0不纳入、留空待审），不再设置人工分类。材料列直接打开drafts中的原始文本；简历1/2为中等，3/4为低水平。刷新入口为 `review_material_links.py`，原 `review_navigation.py` 亦转向此入口。只更新链接时使用 `--links-only --execute`，不改总表单元格内容或审核意见。
 
-三人独立审核使用 `review/occupation/审核员A.xlsx`、B、C及 `review/mority/审核员A.xlsx`、B、C；目录名沿用用户指定的mority。职业个人表只列入总表已选职业的成功生成材料，当前每人20项（4份JD、16份简历），不以尚未填写的最终“是否纳入”列作为前置条件。道德个人表只列入 `config/human_review.json` 中明确选择、且已有完整正文的配对；当前未生成道德正文，三份表为空模板。
+四名成员为gsc、lkx、lxy、wjy，名单和实际文件名统一在`config/human_review.json`维护。职业个人表位于`review/occupation/`，沿用`JD+resume_gsc.xlsx`、`lJD+resume_kx.xlsx`、`JD+resume_lxy.xlsx`、`JD+resume_wjy.xlsx`；道德个人表位于`review/mority/`，沿用`moral_<成员>.xlsx`。职业个人表当前每人20项（4份JD、16份简历）；道德表当前每人268个待生成任务，正文和评分为空。
 
-运行 `export_individual_reviews.py --execute` 创建或刷新六份个人表；不加参数只预览，不调用模型，也不写总表。每人只改自己的两份文件中的黄色审核列。程序按材料编号、批次和摘要保留意见；已审核材料被换版或取消选择时停止覆盖。范围、版本和链接未变时不重写已有文件，减少GitHub同步时的无关改动。个人意见不自动写回总表，最终纳入仍由负责人确认。
+运行`export_individual_reviews.py --execute`刷新四份职业个人表，不加参数只预览；道德四份个人表及道德总表由`export_morality_review.py`刷新，两者均不调用模型。每人只改自己的黄色审核列。程序按材料编号和版本保留意见；已审核材料换版或移除时停止覆盖。职业个人表范围、版本、链接和标题未变时不重写；道德总表刷新时读取四人结论，最终纳入仍由负责人确认。
 
 `review`只存审核表和审核记录，正文统一来自drafts。已按用户授权删除16份额外排版副本，相关导出、刷新及批准脚本不再创建或加工副本。简历批准时逐字节复制原稿；JD批准时只执行约定的岗位公告边界提取。短横线等格式要求由提示词约束后续生成，已有原始回答不改动。清理脚本为 `cleanup_review_copies.py`，收据记录在 `review/review_copy_cleanup.json`。
 
@@ -45,7 +45,7 @@
 | `generate_jd.py` | 生成目标岗位描述 |
 | `generate_resumes.py` | 生成与 JD 匹配的匿名简历 |
 | `run_morality_generation.py` | 按MFV来源与固定协议构造全量输入，显式执行后生成配对摘要 |
-| `export_morality_review.py` | 汇总来源、生成状态及三名审核员的独立审查资料 |
+| `export_morality_review.py` | 按共享名单汇总来源、生成状态及四名成员的独立审查资料 |
 | `generate_morality.py` | 旧版按主题自由起草的兼容入口；新材料使用上述来源驱动流程 |
 | `review_resumes.py` | 审核简历自然性、专业合理性及时间线 |
 | `review_morality.py` | 辅助审核道德故事文本 |

@@ -1,5 +1,19 @@
 {
-  "reviewers": ["审核员A", "审核员B", "审核员C"],
+  "reviewers": ["gsc", "lkx", "lxy", "wjy"],
+  "review_files": {
+    "occupation": {
+      "gsc": "JD+resume_gsc.xlsx",
+      "lkx": "lJD+resume_kx.xlsx",
+      "lxy": "JD+resume_lxy.xlsx",
+      "wjy": "JD+resume_wjy.xlsx"
+    },
+    "mority": {
+      "gsc": "moral_gsc.xlsx",
+      "lkx": "moral_lkx.xlsx",
+      "lxy": "moral_lxy.xlsx",
+      "wjy": "moral_wjy.xlsx"
+    }
+  },
   "jd_run_id": "jd_modules_20261124",
   "resume_run_id": "resumes_medium_low_dates_20261124",
   "morality_pairs": []

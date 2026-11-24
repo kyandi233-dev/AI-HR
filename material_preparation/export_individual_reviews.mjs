@@ -32,7 +32,7 @@ for(let index=0;index<specs.length;index++){
   s.tables.add(`A5:${end}${last}`,true,'ReviewerMaterials');
   w.recalculate();
   const out=await SpreadsheetFile.exportXlsx(w);await out.save(path.join(outDir,index+'.authored.xlsx'));
-  if(index===0||index===3){
+  if(index===0||spec.group!==specs[index-1].group){
     const image=await w.render({sheetName:'材料审核',range:spec.group==='occupation'?'A1:J11':'A1:G8',format:'png',scale:1});
     await fs.writeFile(path.join(outDir,spec.group+'.png'),new Uint8Array(await image.arrayBuffer()));
   }

@@ -5,10 +5,6 @@
   "include_nonrecommended": true,
   "variants_per_mfv": 2,
   "novel_per_foundation": 6,
-  "reviewers": [
-    "审核员A",
-    "审核员B",
-    "审核员C"
-  ],
+  "review_config": "material_preparation/config/human_review.json",
   "prompt": "material_preparation/prompts/morality_pool.txt"
 }

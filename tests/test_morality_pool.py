@@ -82,6 +82,23 @@ class MoralityPoolTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, '完全相同'):
             validate_generated({**good, 'neutral': good['negative']}, tasks[0])
 
+    def test_reviewer_rename_does_not_change_requests_or_rewrite_historical_plan(self):
+        with tempfile.TemporaryDirectory() as temp, patch.object(c, 'ROOT', Path(temp)):
+            self.small_project(Path(temp))
+            _, _, _, tasks, _, folder, _ = preview()
+            plan_path = folder / 'plan.json'
+            legacy = c.load_json(plan_path)
+            legacy['config']['reviewers'] = ['oldA', 'oldB', 'oldC']
+            plan_path.write_text(c.canonical(legacy), encoding='utf-8')
+            before = plan_path.read_bytes()
+            config_path = Path(temp) / 'material_preparation/config/morality_generation.json'
+            config = c.load_json(config_path)
+            config['review_config'] = 'material_preparation/config/team_renamed.json'
+            config_path.write_text(c.canonical(config), encoding='utf-8')
+            _, _, _, changed_tasks, *_ = preview()
+            self.assertEqual(tasks, changed_tasks)
+            self.assertEqual(plan_path.read_bytes(), before)
+
     def test_rejected_response_is_not_a_material_draft(self):
         with tempfile.TemporaryDirectory() as temp, patch.object(c, 'ROOT', Path(temp)):
             self.small_project(Path(temp))

@@ -21,6 +21,7 @@ from material_preparation.run_material_generation import is_selected
 from material_preparation.review_material_links import read_review,external_links
 from material_preparation.resume_inputs import generated_jd
 from material_preparation.review_navigation import xml,encoded,Q
+from material_preparation.reviewer_config import safe_name
 
 OCCUPATION_HEADERS=['材料编号','职业','O*NET编码','材料类型','材料文件','职业资料',
                     '审核结论','问题类型','问题说明','审核日期','材料批次','原稿SHA256']
@@ -28,12 +29,6 @@ MORITY_HEADERS=['材料编号','道德主题','配对材料文件','审核结论
 MANUAL=['审核结论','问题类型','问题说明','审核日期']
 FIRST_ROW=6
 TECHNICAL={'材料批次','材料版本','原稿SHA256'}
-
-
-def safe_name(name):
-    if not isinstance(name,str) or not name.strip() or re.search(r'[<>:"/\\|?*]',name) or name.strip()!=name or name.endswith('.'):
-        raise ValueError('审核员文件名无效')
-    return name
 
 
 def occupation_items(master,config):
@@ -142,6 +137,9 @@ def validate(path,payload):
         if w.sheetnames!=['材料审核']:raise ValueError('个人表页数错误')
         s=w.active
         if [cell.value for cell in s[5]]!=payload['headers']:raise ValueError('个人表表头错误')
+        if payload.get('reviewer'):
+            expected_title=payload['reviewer']+' · '+('职业材料审核' if payload['group']=='occupation' else '道德材料审核')
+            if s['A2'].value!=expected_title:raise ValueError('个人表审核员标题需要更新')
         actual_ids=[s.cell(r,1).value for r in range(FIRST_ROW,s.max_row+1) if s.cell(r,1).value]
         if actual_ids!=[row[0] for row in payload['rows']]:raise ValueError('个人表材料范围不匹配')
         for n,name in enumerate(payload['headers'],1):
@@ -179,8 +177,8 @@ def run(argv=None):
     base=Path.home()/'.cache/codex-runtimes/codex-primary-runtime/dependencies/node'
     p.add_argument('--node',type=Path,default=base/'bin/node.exe');p.add_argument('--node-modules',type=Path,default=base/'node_modules')
     args=p.parse_args(argv);config=c.load_json(args.config)
-    if len(config['reviewers'])!=3 or len(set(config['reviewers']))!=3:raise ValueError('需要三名不同审核员')
-    for name in config['reviewers']:safe_name(name)
+    from material_preparation.reviewer_config import load_team,reviewer_file
+    config=load_team(config)
     for key in ('jd_run_id','resume_run_id'):validate_run_id(config[key])
     master=args.master.resolve();master_sha=c.sha256(master.read_bytes())
     groups={'occupation':(OCCUPATION_HEADERS,occupation_items(master,config)),
@@ -192,11 +190,11 @@ def run(argv=None):
         for row in items:
             for target in row['_links'].values():protected[target]=c.sha256(Path(target).read_bytes())
         for reviewer in config['reviewers']:
-            target=master.parent/group/(reviewer+'.xlsx')
+            target=reviewer_file(config,group,reviewer,master.parent/group)
             personal_before[str(target)]=c.sha256(target.read_bytes()) if target.exists() else None
             rows,links=preserve_reviews(target,headers,items)
             specs.append({'group':group,'reviewer':reviewer,'review':str(target),'headers':headers,'rows':rows,'links':links})
-        print(group,': 每人',len(items),'项；三份独立Excel')
+        print(group,': 每人',len(items),'项；',len(config['reviewers']),'份独立Excel')
     if not args.execute:print('仅预览；总表、正文和个人表均未写入。');return 0
     current=set()
     for spec in specs:

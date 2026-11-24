@@ -23,13 +23,23 @@ def preview(config_path=None, run_id=None):
     settings = c.load_settings('moral-generate')
     root = c.ROOT / 'material_preparation/results/morality_generation' / run_id
     plan = {'task': 'moral-generate', 'run_id': run_id, 'stage': 'pilot', 'occupations': [],
-            'protocol_version': protocol['protocol_version'], 'config': config,
+            'protocol_version': protocol['protocol_version'],
+            'config': {k: v for k, v in config.items() if k not in ('reviewers', 'review_files', 'review_config')},
             'requests': [{'pair_id': t['task_id'], 'source_id': t['metadata']['spec']['source_id'],
                           'request_sha256': c.sha256(c.canonical(request_for(t, settings)))} for t in tasks]}
     # Validate every request and any previous immutable plan before writing files.
     for task in tasks:
         request_kwargs(settings, task)
-    immutable_json(root / 'plan.json', plan)
+    plan_path = root / 'plan.json'
+    if plan_path.exists():
+        existing = c.load_json(plan_path)
+        existing['config'] = {k: v for k, v in existing['config'].items()
+                              if k not in ('reviewers', 'review_files', 'review_config')}
+        if existing != plan:
+            raise ValueError('已有不同内容，不覆盖：' + str(plan_path))
+        # Historical plans retain their original bytes; reviewer names are not scientific inputs.
+    else:
+        immutable_json(plan_path, plan)
     for task in tasks:
         base = path_for(task, run_id)
         immutable_bytes(base / (task['task_id'] + '.prompt.txt'), task['messages'][0]['content'].encode('utf-8'))
