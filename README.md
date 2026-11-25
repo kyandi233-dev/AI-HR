@@ -92,7 +92,7 @@
 | GitHub 网页单文件上传 | 最大 25 MiB |
 | 仓库总体规模 | 建议保持在 1 GiB 以下；强烈建议不超过 5 GiB |
 
-- **数据管理**：新实验结果目录默认被 `.gitignore` 排除；仅按需将选定批次纳入版本管理。
+- **数据管理**：材料准备记录（`material_preparation/results/`）随仓库同步以便团队核查与分批续跑；新实验结果目录（`experiments/*/results/`）默认被 `.gitignore` 排除，仅按需将选定批次纳入版本管理。
 - **敏感配置**：`.env` 与虚拟环境不纳入 Git；不得提交 API 密钥。
 - **数据追溯**：实验材料及批次记录使用文件摘要；不在上传前手工修改原始结果。
 - **依据**：[GitHub Docs：About large files on GitHub](https://docs.github.com/en/repositories/working-with-files/managing-large-files/about-large-files-on-github)。实际平台规则以官方文档为准。

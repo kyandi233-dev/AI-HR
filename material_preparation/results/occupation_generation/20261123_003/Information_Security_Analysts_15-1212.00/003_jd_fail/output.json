@@ -1,0 +1,31 @@
+{
+  "run_id": "jd_four_occupations_20261123",
+  "task_id": "JD01",
+  "attempt": 1,
+  "task": "jd",
+  "stage": "pilot",
+  "concurrency": 1,
+  "sequence": 1,
+  "context": {
+    "occupation": "information_security_analysts",
+    "material_directory": "Information_Security_Analysts_15-1212.00",
+    "onet_code": "15-1212.00",
+    "structured_sha256": "84492f19a477c4154356deb16065c4831e0056a0f363afdfa8e688e9983baba9",
+    "source_html_sha256": "bb46d674c2f7f02914e447b9f0afa059e944841695cf821042305fb76018c002",
+    "input_json_sha256": "419d16ca7ee5616e87467aa2f7871e10fe11fc01cc025b7411103d30033bd14e"
+  },
+  "timestamp_utc": "2026-11-23T13:55:11.921954+00:00",
+  "status": "error",
+  "request_sha256": "3a8e35266d212a7b9a722a47da6915ceef31b36427c9652f606061ee7dfa6463",
+  "prompt_sha256": "3ac1042acddcf887ad41d5865f08cb27e395622b2195804e470d4c27c4bf0ccc",
+  "python_version": "3.14.6",
+  "openai_sdk_version": "2.54.0",
+  "program_sha256": "97d59c6fdfd05dfb24d7a4e5b4256f4117e295a72a59c7b6139d7750448815bc",
+  "raw_response": null,
+  "answer": null,
+  "parsed": null,
+  "validation_warnings": [],
+  "error_type": "APITimeoutError",
+  "error_message": "Request timed out.",
+  "completed_utc": "2026-11-23T13:57:13.077253+00:00"
+}

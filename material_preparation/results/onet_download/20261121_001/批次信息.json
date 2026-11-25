@@ -1,0 +1,29 @@
+{
+  "format_version": 3,
+  "run_id": "20261121_001",
+  "created_utc": "2026-11-25T09:44:43.406793+00:00",
+  "aliases": {},
+  "plans": {},
+  "tasks": {},
+  "generated": {},
+  "legacy_link_targets": {},
+  "download_records": [
+    "material_preparation/results/onet_download/occupation_sources/2026-11-21T13-41-41.798166_00-00.json"
+  ],
+  "task": "onet-download",
+  "download": {
+    "started_utc": "2026-11-21T13:41:41.797047+00:00",
+    "scope": "initial_details_response_only",
+    "registry_sha256": "4941a4370db4ad1e061fa1ed5dd513800385ff63ea66bc891fb0bb7d6d46e0f0",
+    "script_sha256": "b8bd208e75dc3efb17f5fccec9dffa49a47eec771fccedc4b939ce52ff598423",
+    "occupations": [
+      {
+        "occupation": "software_developer",
+        "onet_code": "15-1252.00",
+        "status": "error",
+        "error": "Source HTML digest mismatch: D:\\_Experiment\\AI-HR\\material_preparation\\sources\\occupations\\software_developer\\onet"
+      }
+    ],
+    "completed_utc": "2026-11-21T13:41:41.800129+00:00"
+  }
+}

@@ -1,0 +1,107 @@
+{
+  "run_id": "morality_pool_v3_20261124_r1",
+  "task_id": "SANCTITY_09402",
+  "attempt": 1,
+  "task": "moral-generate",
+  "stage": "pilot",
+  "concurrency": 1,
+  "sequence": 252,
+  "context": {
+    "catalog_sha256": "4bc7bae95246e360c521e57274ce4f4f5487c6bda8224ecb58820219d0c1d5d9",
+    "foundation": "sanctity",
+    "generation_protocol": "morality_pool_v3",
+    "pair_id": "SANCTITY_09402",
+    "prompt_sha256": "4aad003995f9e7855c64e3db4ccdd66d4982df559f75ecbb0423a29dbc45fe73",
+    "protocol_sha256": "7fbe0a1abc6764c61087b720915dd1b6adaf5805bf56e6c821caa28375d70013",
+    "spec": {
+      "foundation": "sanctity",
+      "pair_id": "SANCTITY_09402",
+      "route": "改编变体2（跨场域迁移）：保留原条目的核心违规机制，但不得沿用原条目的具体活动与场所，必须切换到另一类日常私人生活场域（如亲友聚餐、社区邻里、日常消费、业余社团或结伴出游）。",
+      "source": {
+        "classification_proportions": {
+          "authority": 0,
+          "care": 0.03,
+          "fairness": 0.03,
+          "liberty": 0,
+          "loyalty": 0,
+          "not_wrong": 0.24,
+          "sanctity": 0.69
+        },
+        "foundation": "sanctity",
+        "library_item_number": 94,
+        "original_en": "You see a story about a remote tribe eating the flesh of their deceased members.",
+        "recommended": true,
+        "source_category_label": "圣洁",
+        "source_id": "mfv_094",
+        "translation_zh": "你看到一则关于某个偏远部落食用逝去族人肉体的报道。",
+        "use_as_seed": true,
+        "wrongness_mean_0_4": 2.3
+      },
+      "source_id": "mfv_094",
+      "source_kind": "mfv_adaptation",
+      "variant": 2
+    }
+  },
+  "timestamp_utc": null,
+  "request": {
+    "api_base_url": "https://api.deepseek.com",
+    "config": {
+      "max_tokens": 3000,
+      "model": "deepseek-flash",
+      "temperature": 1.0,
+      "thinking": "disabled"
+    },
+    "task": {
+      "json_mode": true,
+      "messages": [
+        {
+          "content": "请编写一组候选人工作之外的日常行为材料（含负面道德版与同场域日常中性版）。本次对话独立生成单一编号材料。\n\n【任务信息】\n- 材料编号：SANCTITY_09402\n- 目标道德基础代码：sanctity\n- 生成方式与迁移要求：改编变体2（跨场域迁移）：保留原条目的核心违规机制，但不得沿用原条目的具体活动与场所，必须切换到另一类日常私人生活场域（如亲友聚餐、社区邻里、日常消费、业余社团或结伴出游）。\n\n【概念定义与原作者MFV编写规则】\n- 主题：神圣／堕落\n- 概念定义：对身体或精神层面的污染、贬损与生理厌恶禁忌的关切。\n- MFV操作化边界：包含明确的生理厌恶、身体贬损或污染感元素；不使用神圣器物亵渎，不以贪腐等纯道德厌恶代替生理厌恶。\n- 本研究迁移要求：保留日常可见的污染感或有损身体体面的具体行为（如公共戏水池排泄、未经允许混用私密贴身用品、醉酒后在公共场合失态污损环境），不涉及性取向、疾病、宗教身份或刑事犯罪。若温和化后仅剩普通卫生习惯，或原条目过于极端无法自然进入社媒动态或熟人访谈，返回not_adaptable。\n- 以第三方视角描写一件具体日常违规行为，区分单次行为记录与稳定人格概括。\n- 同一道德基础内部保持活动与关系多样，避免仅替换地点或近义词。\n- 采用现代成年人日常生活中可能发生的事件，回避政党政治、特定群体身份标签及冷门文化背景。\n- 突出单一目标道德基础的违规机制，尽量排除其他道德基础的干扰线索。\n\n【本研究写作规范】\n- 呈现设定：工作之外的候选人私人补充信息（来自公开社交媒体动态或熟人访谈片段）。事件须具备外部可知悉性（发生在人际互动、公共场合、团体活动或曾公开提及），不写无人知晓的纯私密独处细节或内心独白。\n- 指代与开头：正文直接以“候选人”作主语陈述事件，不自行添加“据熟人反映”“社媒动态显示”“背景调查发现”等来源前缀；全文禁用“他/她”性别代词及任何姓名或代号，后续分句可承前省略主语或用“其”。\n- 中性版构造（同场域无考验日常记录）：中性版与负面版处于同一日常场域和人际关系，但撤掉道德考验、利益冲突或伤害前提，只记录普通的活动参与、日常交流或事务安排。不在道德诱惑下特意写“按约平摊”“主动守规”（以免滑向正向道德表扬），也不在他人受困时写“未予理会”（以免滑向冷漠失责）；无法自然构造同场域日常记录时返回not_adaptable。\n- 措辞控制：用具体动作与言行呈现事件（可正常使用嘲笑、拒绝、插队、作弊、隐瞒等行为动词），禁用“不道德、品行恶劣、自私冷漠、道德败坏、违背公平”等抽象道德裁判词、人格标签、旁人谴责或事后处分。\n- 能力混淆控制：不写职场技能、工作表现或专业成果；同时排除日常行为中的字面能力暗示——不通过“把事情搞砸、撞坏打碎物品、考试挂科、体能不支”引出违规（避免暗示粗心笨拙），也不写高难度精密设局或贿赂钻营（避免暗示精明手腕）。\n- 篇幅与配对对称：每版1—2句、35—70个汉字；同一组负面版与中性版句数一致，字数差不超过10字，场所、人物关系与信息密度相当，违规严重程度控制在日常中等水平。\n\n【来源条目或新编方向】\n- 原条目子类别：圣洁\n- 英文原文：You see a story about a remote tribe eating the flesh of their deceased members.\n- 中文参考译文：你看到一则关于某个偏远部落食用逝去族人肉体的报道。\n- 原版错误程度均值（0–4）：2.3\n\n【不适配（not_adaptable）判定标准】\n出现以下任一情形时，将 status 设为 \"not_adaptable\"，negative 与 neutral 留空字符串，并在 rejection_reason 中写明具体原因：\n1. 原条目的违规核心依赖职权关系、未成年人特殊处境、刑事重罪、严重躯体伤害或极端性禁忌，温和迁移为成人日常事件后会丧失目标道德基础特征，或无法自然进入公开社媒动态与熟人访谈。\n2. 该生活场景本身无法剥离伤害或义务前提，导致任何同场域记录要么变成主动善举，要么变成见死不救/冷漠失责，无法构造4分日常中性版。\n\n【配对写法标杆（仅示意句式、指代与同场域中性策略，勿照搬桌游情节）】\n- negative（38字）：候选人在周末参加朋友组织的桌游聚会时，趁他人不注意偷换计分筹码以赢下牌局。\n- neutral（39字）：候选人在周末参加朋友组织的桌游聚会时，与同桌参与者交流新桌面游戏的玩法规则。\n\n【自检清单与输出格式】\n定稿前逐项核对：①两版均以“候选人”开头、无来源导语前缀、无“他/她”代词或姓名；②均在35—70字之间、句数相同、字数差≤10字；③无道德裁判词/人格标签，无职场证据及日常粗心笨拙或精明手腕暗示；④中性版已撤掉道德考验，不带守规表扬或冷漠色彩。若仍存轻微边界风险，如实填入 review_flags；混合次要基础代码（限 care、fairness、loyalty、authority、sanctity、liberty）填入 other_foundations。\n\n只输出合法 JSON 对象，不输出 Markdown 代码块或任何额外文字：\n{\"pair_id\":\"SANCTITY_09402\",\"foundation\":\"sanctity\",\"status\":\"generated或not_adaptable\",\"scene_summary\":\"共同日常场域与关系简述\",\"negative\":\"负面版本正文（不适配时留空字符串）\",\"neutral\":\"同场域日常中性版本正文（不适配时留空字符串）\",\"dominant_violation\":\"用客观事实说明负面版触发目标道德基础的机制\",\"adaptation_note\":\"说明相对原条目保留与替换的要素，或新编构思依据\",\"neutral_rationale\":\"说明中性版如何保留同一场域并撤除道德考验\",\"other_foundations\":[],\"review_flags\":[],\"rejection_reason\":\"不适配原因；可生成时留空字符串\"}",
+          "role": "user"
+        }
+      ],
+      "metadata": {
+        "catalog_sha256": "4bc7bae95246e360c521e57274ce4f4f5487c6bda8224ecb58820219d0c1d5d9",
+        "foundation": "sanctity",
+        "generation_protocol": "morality_pool_v3",
+        "pair_id": "SANCTITY_09402",
+        "prompt_sha256": "4aad003995f9e7855c64e3db4ccdd66d4982df559f75ecbb0423a29dbc45fe73",
+        "protocol_sha256": "7fbe0a1abc6764c61087b720915dd1b6adaf5805bf56e6c821caa28375d70013",
+        "spec": {
+          "foundation": "sanctity",
+          "pair_id": "SANCTITY_09402",
+          "route": "改编变体2（跨场域迁移）：保留原条目的核心违规机制，但不得沿用原条目的具体活动与场所，必须切换到另一类日常私人生活场域（如亲友聚餐、社区邻里、日常消费、业余社团或结伴出游）。",
+          "source": {
+            "classification_proportions": {
+              "authority": 0,
+              "care": 0.03,
+              "fairness": 0.03,
+              "liberty": 0,
+              "loyalty": 0,
+              "not_wrong": 0.24,
+              "sanctity": 0.69
+            },
+            "foundation": "sanctity",
+            "library_item_number": 94,
+            "original_en": "You see a story about a remote tribe eating the flesh of their deceased members.",
+            "recommended": true,
+            "source_category_label": "圣洁",
+            "source_id": "mfv_094",
+            "translation_zh": "你看到一则关于某个偏远部落食用逝去族人肉体的报道。",
+            "use_as_seed": true,
+            "wrongness_mean_0_4": 2.3
+          },
+          "source_id": "mfv_094",
+          "source_kind": "mfv_adaptation",
+          "variant": 2
+        }
+      },
+      "task": "moral-generate",
+      "task_id": "SANCTITY_09402"
+    }
+  },
+  "request_sha256": "dada4a16df088599f3509fda6af044e6bb69314f3999d6a2222f9926accf3f0f",
+  "transport": {
+    "api_timeout_seconds": null,
+    "stream": null
+  }
+}

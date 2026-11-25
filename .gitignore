@@ -15,11 +15,12 @@ results/*/abc/*/
 backups/
 
 .venv/
+*.executing.lock
+.*.pending.xlsx
 
-# Material results use onet_download/occupation_generation/morality_generation.
-# Ignore batch payloads; keep the migration map in config/results_layout.json tracked.
-# Preserve the existing tracked experiment pilot archive.
-/material_preparation/results/*/
+# Material preparation results (onet_download/occupation_generation/morality_generation)
+# and config/results_layout.json are tracked in Git for team review and continuation.
+# Large formal experiment result batches stay ignored by default unless explicitly added.
 /experiments/*/results/*/
 !/experiments/exp_1_principles/results/20261116_principles_pilot_02/
 !/experiments/exp_1_principles/results/20261116_principles_pilot_02/**

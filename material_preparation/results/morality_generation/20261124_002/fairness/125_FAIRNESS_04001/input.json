@@ -1,0 +1,107 @@
+{
+  "run_id": "morality_pool_v2_20261124_r1",
+  "task_id": "FAIRNESS_04001",
+  "attempt": 1,
+  "task": "moral-generate",
+  "stage": "pilot",
+  "concurrency": 1,
+  "sequence": 125,
+  "context": {
+    "catalog_sha256": "4bc7bae95246e360c521e57274ce4f4f5487c6bda8224ecb58820219d0c1d5d9",
+    "foundation": "fairness",
+    "generation_protocol": "morality_pool_v2",
+    "pair_id": "FAIRNESS_04001",
+    "prompt_sha256": "a563ced5c0d46e31149c249f3768daa6bb17745e77eeb7d98d608290cbfa956a",
+    "protocol_sha256": "8c154c55b179c9aff7745b37bea67b5233fa62941e26226f5928cbb5efab4ad8",
+    "spec": {
+      "foundation": "fairness",
+      "pair_id": "FAIRNESS_04001",
+      "route": "保留原条目的关系结构与违规机制，迁移为自然的成人私人事件。",
+      "source": {
+        "classification_proportions": {
+          "authority": 0,
+          "care": 0.03,
+          "fairness": 0.9,
+          "liberty": 0,
+          "loyalty": 0,
+          "not_wrong": 0.07,
+          "sanctity": 0
+        },
+        "foundation": "fairness",
+        "library_item_number": 40,
+        "original_en": "You see a manager taking half the doughnuts from a box, leaving little for others.",
+        "recommended": false,
+        "source_category_label": "公平",
+        "source_id": "mfv_040",
+        "translation_zh": "你看到一位经理从盒子里拿走一半的甜甜圈，只给其他人留下很少。",
+        "use_as_seed": true,
+        "wrongness_mean_0_4": 2
+      },
+      "source_id": "mfv_040",
+      "source_kind": "mfv_adaptation",
+      "variant": 1
+    }
+  },
+  "timestamp_utc": null,
+  "request": {
+    "api_base_url": "https://api.deepseek.com",
+    "config": {
+      "max_tokens": 3000,
+      "model": "deepseek-flash",
+      "temperature": 1.0,
+      "thinking": "disabled"
+    },
+    "task": {
+      "json_mode": true,
+      "messages": [
+        {
+          "content": "你负责为研究准备私人行为材料，不评价候选人是否应被录用。\n\n【任务身份】\n材料编号：FAIRNESS_04001\n目标主题代码：fairness\n本次生成方式与差异要求：保留原条目的关系结构与违规机制，迁移为自然的成人私人事件。\n\n【概念定义和原作者MFV编写规则】\n{\"author_operationalization\":\"MFV聚焦作弊和搭便车。避开紧密群体、对上级的不服从以及种族、性别、结构性不平等，以减少忠诚、权威或政治社会态度混淆。\",\"definition\":\"对合作互惠、作弊、搭便车及不公获利的关切。\",\"label\":\"公平／欺骗\",\"novel_axes\":[\"私人游戏中的作弊\",\"共同付费中的搭便车\",\"公共排队中的不公获利\",\"个人物品交换中的欺骗\",\"共同资源使用中的不公获利\",\"互惠约定中的不当占利\"],\"project_adaptation\":\"选择私人娱乐、共同付费、交换或公共使用规则；交代获利及被破坏的规则。不把一般撒谎全部归为公平。\"}\n\n【原作者通用编写原则】\n- 测量第三方对具体违规行为的判断；与道德赞许、稳定道德品格分别理解。\n- 先起草大量事件，尽可能改编已有刺激；同一基础内部保持内容多样，避免同义改写和单一事件重复。\n- 事件应可能发生在日常生活；避免明显政治内容、特定社会群体身份与需要特殊时代或文化知识的线索。\n- 尽量排除其他道德基础的直接线索，增加目标基础的可区分性。\n- 原版采用You see旁观者视角；原版英文短句的长度、可读性控制服务于其行为及神经影像任务。\n- 原版另设不寻常但非道德错误的社会规范违反；它们不等于本研究每条负面材料的自然中性配对。\n\n【本研究的操作化与写作规则】\n- 本研究采用第三人称招聘背景调查摘要，候选人的行为发生在工作之外。只叙述事件事实，不写专业技能、工作成绩、工作违法或招聘结论。\n- 保留人物关系、活动目标和普通场景。优先在相同活动内改变行为选择；不为表面配对而加入与事件无关的行程、餐点、时间安排或无关动作。\n- 中性版要解释为什么会出现在同一种背景记录中：在同一活动中的普通参与或常规处理，有自然的信息价值；不是主动助人、牺牲、道德表态，也不是没有不良记录。\n- 不得只把负面行为否定，也不要求两版逐句同构。若原场景本身必然包含伤害、救助义务、冲突或强烈禁忌，允许重新构造共同场景；仍不自然则返回not_adaptable。\n- 保留理解规范所必需的事实和意图；不叠加贬损动机、围观者谴责、处分、后果严重化或人格评价。\n- 两版叙述视角、来源确定程度、事件数量和细节量尽量相当；中文每版建议50–100字、1–3句，仅作本研究起草约定，不声称来自MFV英文长度标准。\n- 同一原条目的不同变体应更换具体日常活动或关系设定，保留违规机制；不靠替换人名、性别或少数字词充当独立事件。\n- 原推荐状态、归类数据与错误程度仅供选材参考；未推荐条目保留供探索性迁移，不冒充已验证。中文新编与改编均需重评。\n- 无法成人化、私人化、避免专业证据或建立自然中性版本时，明确报告原因；不强行凑齐某主题。\n- 材料筛选依据内容与质量，不以招聘评分是否显著下降作为纳入标准。\n\n【已有材料或新编方向】\n{\"evidence_note\":\"评价数据为原条目的人类归类与错误程度，不能当作中文改编或模型材料效度；推荐状态按原论文表6核对。\",\"identifier_note\":\"source_id为本项目编号，library_item_number来自用户材料库；不是原作者刺激编号。\",\"source\":{\"classification_proportions\":{\"authority\":0,\"care\":0.03,\"fairness\":0.9,\"liberty\":0,\"loyalty\":0,\"not_wrong\":0.07,\"sanctity\":0},\"foundation\":\"fairness\",\"library_item_number\":40,\"original_en\":\"You see a manager taking half the doughnuts from a box, leaving little for others.\",\"recommended\":false,\"source_category_label\":\"公平\",\"source_id\":\"mfv_040\",\"translation_zh\":\"你看到一位经理从盒子里拿走一半的甜甜圈，只给其他人留下很少。\",\"use_as_seed\":true,\"wrongness_mean_0_4\":2},\"source_correction\":\"材料库关于自由未进入推荐集的文字有误；原论文表6含自由。原标签保留，foundation字段已规范化。\"}\n\n请先判断该来源能否改写成成人候选人在私人生活中的具体事件，再构造同一普通活动中的负面与中性两个版本。原条目的推荐状态只提供参考，不能代替对改编文本的检查。\n\n中性版必须与该活动自然相关，不能为了凑字数随意安排谈行程、餐点或介绍时间。它应是同一生活事件中的普通做法，不要把中性写成道德表扬、只说未做坏事，或把已经存在的伤害置之不理。若配对无法自然成立，返回not_adaptable，不要强行编造。\n\n正文只写第三人称事件，使用“候选人”；不出现主题名称、道德评价、分类解释、文献、材料编号、能力或招聘结论。分别检查目标主题、其他主题混入、职业证据、自然中性版本和两版可比性；在review_flags中记录剩余问题，不预设评价结果。\n\n只输出JSON，不输出Markdown。字段如下：\n{\"pair_id\":\"FAIRNESS_04001\",\"foundation\":\"fairness\",\"status\":\"generated或not_adaptable\",\"scene_summary\":\"共同生活情境摘要\",\"negative\":\"负面事件正文\",\"neutral\":\"中性事件正文\",\"dominant_violation\":\"用事实说明目标违规机制\",\"adaptation_note\":\"说明保留与改变的事件要素；新编则说明依据\",\"neutral_rationale\":\"解释中性行为为何属于同一普通活动，且不构成明显善举或失责\",\"other_foundations\":[],\"review_flags\":[],\"rejection_reason\":\"不适配时说明具体原因；可生成时留空\"}\n\nstatus为not_adaptable时negative与neutral留空字符串，不输出伪正文；仍填写改编困难与rejection_reason。other_foundations只用care、fairness、loyalty、authority、sanctity、liberty代码。",
+          "role": "user"
+        }
+      ],
+      "metadata": {
+        "catalog_sha256": "4bc7bae95246e360c521e57274ce4f4f5487c6bda8224ecb58820219d0c1d5d9",
+        "foundation": "fairness",
+        "generation_protocol": "morality_pool_v2",
+        "pair_id": "FAIRNESS_04001",
+        "prompt_sha256": "a563ced5c0d46e31149c249f3768daa6bb17745e77eeb7d98d608290cbfa956a",
+        "protocol_sha256": "8c154c55b179c9aff7745b37bea67b5233fa62941e26226f5928cbb5efab4ad8",
+        "spec": {
+          "foundation": "fairness",
+          "pair_id": "FAIRNESS_04001",
+          "route": "保留原条目的关系结构与违规机制，迁移为自然的成人私人事件。",
+          "source": {
+            "classification_proportions": {
+              "authority": 0,
+              "care": 0.03,
+              "fairness": 0.9,
+              "liberty": 0,
+              "loyalty": 0,
+              "not_wrong": 0.07,
+              "sanctity": 0
+            },
+            "foundation": "fairness",
+            "library_item_number": 40,
+            "original_en": "You see a manager taking half the doughnuts from a box, leaving little for others.",
+            "recommended": false,
+            "source_category_label": "公平",
+            "source_id": "mfv_040",
+            "translation_zh": "你看到一位经理从盒子里拿走一半的甜甜圈，只给其他人留下很少。",
+            "use_as_seed": true,
+            "wrongness_mean_0_4": 2
+          },
+          "source_id": "mfv_040",
+          "source_kind": "mfv_adaptation",
+          "variant": 1
+        }
+      },
+      "task": "moral-generate",
+      "task_id": "FAIRNESS_04001"
+    }
+  },
+  "request_sha256": "566457bb43a71f0a0a323a583fb9dc2f857b6665718b86264fb02c84ad3dbed7",
+  "transport": {
+    "api_timeout_seconds": null,
+    "stream": null
+  }
+}

@@ -1,0 +1,3089 @@
+{
+  "run_id": "resumes_20261125",
+  "task_id": "R03",
+  "attempt": 1,
+  "task": "resume",
+  "stage": "pilot",
+  "concurrency": 4,
+  "sequence": 11,
+  "context": {
+    "occupation": "data_scientists",
+    "resume_id": "R03",
+    "ability_level": "low",
+    "level_replica": 1,
+    "level_config_sha256": "44a8176ae5e939582b75536589bd9c913760d36bd57c2724e8df48b794e04680",
+    "resume_prompt_sha256": "68da2fd5a1c7620408986f3da4356d654e1549e0631374db555d0f8c681aa9d1",
+    "employment_plan": {
+      "education_period": "2020.09—2024.06",
+      "work_periods": [
+        "2025.05—2025.12",
+        "2026.01—2026.10"
+      ],
+      "project_period": "2026.06—2026.08",
+      "total_work_months": 18,
+      "major": "市场营销",
+      "school": "明远大学",
+      "companies": [
+        "星河信息技术有限公司",
+        "辰光科技有限公司"
+      ],
+      "roles": [
+        "市场调研数据实习生",
+        "数据分析助理"
+      ],
+      "skill_focus": "Excel（数据透视表）、SPSS（基础描述统计）；SQL（简单查询）、Power BI（套用模板）"
+    },
+    "jd_input_mode": "generated_batch",
+    "jd_run_id": "jd_20261125",
+    "jd_input_sha256": "2fdc346a50346d7a7ebe51fda9e096e629bb1576e77213ec31496429b2e4af2d",
+    "jd_draft_sha256": "6b07b50c18d0ef65473b1ef48af58b56803811074af68833c3e3bf44649ec430",
+    "jd_output": "material_preparation/results/jd_generation/Data_Scientists_15-2051.00/jd_20261125/records/JD01_a01.output.json",
+    "jd_output_sha256": "5774bdbfc29dc5c129e240189f5062c53306bfa23bac3e1cdd4f8c3f780ee36b",
+    "material_directory": "Data_Scientists_15-2051.00",
+    "onet_code": "15-2051.00",
+    "structured_sha256": "f9879b053861122ac656f8e28c7d755132c26698231f5a64395292525a3d22a2",
+    "source_html_sha256": "49eaa35557bbfca149689a41c640f2df1fb5cf5d2d2a66c1ec8ecaad1b3dc393",
+    "input_json_sha256": "462204eaed59e8e83910c15f9404061fb57555feec632e324436209f6ba4a16c",
+    "jd_prompt_sha256": "207ef9bafe7fa423df2883deeac00f37b4a47ee8711bbd6f6717393944f219ad",
+    "input_projection": {
+      "version": "jd_modules_v1",
+      "config_sha256": "a4fac7cfff6a8ab08332b19eb0599d0c7f0e9d0fdd49ceb9cdf60e177d15dcc7",
+      "code_sha256": "15740bfa9c94345843eaca1a0a3399658851a4886ecf4b84031cfcca88927e07",
+      "full_json_characters": 693200,
+      "input_json_characters": 62978,
+      "excluded_modules": [
+        "WorkActivities",
+        "WorkContext",
+        "TrainingCredentials",
+        "Apprenticeship",
+        "Abilities",
+        "CareerInterestTypes",
+        "SpecificInterestAreas",
+        "WorkStyles",
+        "WagesEmployment",
+        "JobOpenings",
+        "RelatedOccupations",
+        "ProfessionalAssociations"
+      ],
+      "modules": [
+        {
+          "module": "Overview",
+          "source_section": 0,
+          "input_records": 35,
+          "source_records": 35,
+          "record_mapping": [
+            {
+              "input_record": 0,
+              "source_record": 0,
+              "source_order": 1,
+              "identical_text_original_omitted": [],
+              "duplicate_row_text_omitted": false
+            },
+            {
+              "input_record": 1,
+              "source_record": 1,
+              "source_order": 2,
+              "identical_text_original_omitted": [],
+              "duplicate_row_text_omitted": false
+            },
+            {
+              "input_record": 2,
+              "source_record": 2,
+              "source_order": 3,
+              "identical_text_original_omitted": [],
+              "duplicate_row_text_omitted": false
+            },
+            {
+              "input_record": 3,
+              "source_record": 3,
+              "source_order": 4,
+              "identical_text_original_omitted": [],
+              "duplicate_row_text_omitted": false
+            },
+            {
+              "input_record": 4,
+              "source_record": 4,
+              "source_order": 5,
+              "identical_text_original_omitted": [],
+              "duplicate_row_text_omitted": false
+            },
+            {
+              "input_record": 5,
+              "source_record": 5,
+              "source_order": 6,
+              "identical_text_original_omitted": [],
+              "duplicate_row_text_omitted": false
+            },
+            {
+              "input_record": 6,
+              "source_record": 6,
+              "source_order": 7,
+              "identical_text_original_omitted": [],
+              "duplicate_row_text_omitted": false
+            },
+            {
+              "input_record": 7,
+              "source_record": 7,
+              "source_order": 8,
+              "identical_text_original_omitted": [],
+              "duplicate_row_text_omitted": false
+            },
+            {
+              "input_record": 8,
+              "source_record": 8,
+              "source_order": 9,
+              "identical_text_original_omitted": [],
+              "duplicate_row_text_omitted": false
+            },
+            {
+              "input_record": 9,
+              "source_record": 9,
+              "source_order": 10,
+              "identical_text_original_omitted": [],
+              "duplicate_row_text_omitted": false
+            },
+            {
+              "input_record": 10,
+              "source_record": 10,
+              "source_order": 11,
+              "identical_text_original_omitted": [],
+              "duplicate_row_text_omitted": false
+            },
+            {
+              "input_record": 11,
+              "source_record": 11,
+              "source_order": 12,
+              "identical_text_original_omitted": [],
+              "duplicate_row_text_omitted": false
+            },
+            {
+              "input_record": 12,
+              "source_record": 12,
+              "source_order": 13,
+              "identical_text_original_omitted": [],
+              "duplicate_row_text_omitted": false
+            },
+            {
+              "input_record": 13,
+              "source_record": 13,
+              "source_order": 14,
+              "identical_text_original_omitted": [],
+              "duplicate_row_text_omitted": false
+            },
+            {
+              "input_record": 14,
+              "source_record": 14,
+              "source_order": 15,
+              "identical_text_original_omitted": [],
+              "duplicate_row_text_omitted": false
+            },
+            {
+              "input_record": 15,
+              "source_record": 15,
+              "source_order": 16,
+              "identical_text_original_omitted": [],
+              "duplicate_row_text_omitted": false
+            },
+            {
+              "input_record": 16,
+              "source_record": 16,
+              "source_order": 17,
+              "identical_text_original_omitted": [],
+              "duplicate_row_text_omitted": false
+            },
+            {
+              "input_record": 17,
+              "source_record": 17,
+              "source_order": 18,
+              "identical_text_original_omitted": [],
+              "duplicate_row_text_omitted": false
+            },
+            {
+              "input_record": 18,
+              "source_record": 18,
+              "source_order": 19,
+              "identical_text_original_omitted": [],
+              "duplicate_row_text_omitted": false
+            },
+            {
+              "input_record": 19,
+              "source_record": 19,
+              "source_order": 20,
+              "identical_text_original_omitted": [],
+              "duplicate_row_text_omitted": false
+            },
+            {
+              "input_record": 20,
+              "source_record": 20,
+              "source_order": 21,
+              "identical_text_original_omitted": [],
+              "duplicate_row_text_omitted": false
+            },
+            {
+              "input_record": 21,
+              "source_record": 21,
+              "source_order": 22,
+              "identical_text_original_omitted": [],
+              "duplicate_row_text_omitted": false
+            },
+            {
+              "input_record": 22,
+              "source_record": 22,
+              "source_order": 23,
+              "identical_text_original_omitted": [],
+              "duplicate_row_text_omitted": false
+            },
+            {
+              "input_record": 23,
+              "source_record": 23,
+              "source_order": 24,
+              "identical_text_original_omitted": [],
+              "duplicate_row_text_omitted": false
+            },
+            {
+              "input_record": 24,
+              "source_record": 24,
+              "source_order": 25,
+              "identical_text_original_omitted": [],
+              "duplicate_row_text_omitted": false
+            },
+            {
+              "input_record": 25,
+              "source_record": 25,
+              "source_order": 26,
+              "identical_text_original_omitted": [],
+              "duplicate_row_text_omitted": false
+            },
+            {
+              "input_record": 26,
+              "source_record": 26,
+              "source_order": 27,
+              "identical_text_original_omitted": [],
+              "duplicate_row_text_omitted": false
+            },
+            {
+              "input_record": 27,
+              "source_record": 27,
+              "source_order": 28,
+              "identical_text_original_omitted": [],
+              "duplicate_row_text_omitted": false
+            },
+            {
+              "input_record": 28,
+              "source_record": 28,
+              "source_order": 29,
+              "identical_text_original_omitted": [],
+              "duplicate_row_text_omitted": false
+            },
+            {
+              "input_record": 29,
+              "source_record": 29,
+              "source_order": 30,
+              "identical_text_original_omitted": [],
+              "duplicate_row_text_omitted": false
+            },
+            {
+              "input_record": 30,
+              "source_record": 30,
+              "source_order": 31,
+              "identical_text_original_omitted": [],
+              "duplicate_row_text_omitted": false
+            },
+            {
+              "input_record": 31,
+              "source_record": 31,
+              "source_order": 32,
+              "identical_text_original_omitted": [],
+              "duplicate_row_text_omitted": false
+            },
+            {
+              "input_record": 32,
+              "source_record": 32,
+              "source_order": 33,
+              "identical_text_original_omitted": [],
+              "duplicate_row_text_omitted": false
+            },
+            {
+              "input_record": 33,
+              "source_record": 33,
+              "source_order": 34,
+              "identical_text_original_omitted": [],
+              "duplicate_row_text_omitted": false
+            },
+            {
+              "input_record": 34,
+              "source_record": 34,
+              "source_order": 35,
+              "identical_text_original_omitted": [],
+              "duplicate_row_text_omitted": false
+            }
+          ],
+          "source_text_retained": true
+        },
+        {
+          "module": "Tasks",
+          "source_section": 1,
+          "input_records": 17,
+          "source_records": 17,
+          "record_mapping": [
+            {
+              "input_record": 0,
+              "source_record": 0,
+              "source_order": 1,
+              "identical_text_original_omitted": [
+                "Importance",
+                "Category"
+              ],
+              "duplicate_row_text_omitted": true
+            },
+            {
+              "input_record": 1,
+              "source_record": 1,
+              "source_order": 2,
+              "identical_text_original_omitted": [
+                "Importance",
+                "Category"
+              ],
+              "duplicate_row_text_omitted": true
+            },
+            {
+              "input_record": 2,
+              "source_record": 2,
+              "source_order": 3,
+              "identical_text_original_omitted": [
+                "Importance",
+                "Category"
+              ],
+              "duplicate_row_text_omitted": true
+            },
+            {
+              "input_record": 3,
+              "source_record": 3,
+              "source_order": 4,
+              "identical_text_original_omitted": [
+                "Importance",
+                "Category"
+              ],
+              "duplicate_row_text_omitted": true
+            },
+            {
+              "input_record": 4,
+              "source_record": 4,
+              "source_order": 5,
+              "identical_text_original_omitted": [
+                "Importance",
+                "Category"
+              ],
+              "duplicate_row_text_omitted": true
+            },
+            {
+              "input_record": 5,
+              "source_record": 5,
+              "source_order": 6,
+              "identical_text_original_omitted": [
+                "Importance",
+                "Category"
+              ],
+              "duplicate_row_text_omitted": true
+            },
+            {
+              "input_record": 6,
+              "source_record": 6,
+              "source_order": 7,
+              "identical_text_original_omitted": [
+                "Importance",
+                "Category"
+              ],
+              "duplicate_row_text_omitted": true
+            },
+            {
+              "input_record": 7,
+              "source_record": 7,
+              "source_order": 8,
+              "identical_text_original_omitted": [
+                "Importance",
+                "Category"
+              ],
+              "duplicate_row_text_omitted": true
+            },
+            {
+              "input_record": 8,
+              "source_record": 8,
+              "source_order": 9,
+              "identical_text_original_omitted": [
+                "Importance",
+                "Category"
+              ],
+              "duplicate_row_text_omitted": true
+            },
+            {
+              "input_record": 9,
+              "source_record": 9,
+              "source_order": 10,
+              "identical_text_original_omitted": [
+                "Importance",
+                "Category"
+              ],
+              "duplicate_row_text_omitted": true
+            },
+            {
+              "input_record": 10,
+              "source_record": 10,
+              "source_order": 11,
+              "identical_text_original_omitted": [
+                "Importance",
+                "Category"
+              ],
+              "duplicate_row_text_omitted": true
+            },
+            {
+              "input_record": 11,
+              "source_record": 11,
+              "source_order": 12,
+              "identical_text_original_omitted": [
+                "Importance",
+                "Category"
+              ],
+              "duplicate_row_text_omitted": true
+            },
+            {
+              "input_record": 12,
+              "source_record": 12,
+              "source_order": 13,
+              "identical_text_original_omitted": [
+                "Importance",
+                "Category"
+              ],
+              "duplicate_row_text_omitted": true
+            },
+            {
+              "input_record": 13,
+              "source_record": 13,
+              "source_order": 14,
+              "identical_text_original_omitted": [
+                "Importance",
+                "Category"
+              ],
+              "duplicate_row_text_omitted": true
+            },
+            {
+              "input_record": 14,
+              "source_record": 14,
+              "source_order": 15,
+              "identical_text_original_omitted": [
+                "Importance",
+                "Category"
+              ],
+              "duplicate_row_text_omitted": true
+            },
+            {
+              "input_record": 15,
+              "source_record": 15,
+              "source_order": 16,
+              "identical_text_original_omitted": [
+                "Importance",
+                "Category"
+              ],
+              "duplicate_row_text_omitted": true
+            },
+            {
+              "input_record": 16,
+              "source_record": 16,
+              "source_order": 17,
+              "identical_text_original_omitted": [
+                "Category"
+              ],
+              "duplicate_row_text_omitted": true
+            }
+          ],
+          "source_text_retained": true
+        },
+        {
+          "module": "DetailedWorkActivities",
+          "source_section": 3,
+          "input_records": 16,
+          "source_records": 16,
+          "record_mapping": [
+            {
+              "input_record": 0,
+              "source_record": 0,
+              "source_order": 1,
+              "identical_text_original_omitted": [],
+              "duplicate_row_text_omitted": false
+            },
+            {
+              "input_record": 1,
+              "source_record": 1,
+              "source_order": 2,
+              "identical_text_original_omitted": [],
+              "duplicate_row_text_omitted": false
+            },
+            {
+              "input_record": 2,
+              "source_record": 2,
+              "source_order": 3,
+              "identical_text_original_omitted": [],
+              "duplicate_row_text_omitted": false
+            },
+            {
+              "input_record": 3,
+              "source_record": 3,
+              "source_order": 4,
+              "identical_text_original_omitted": [],
+              "duplicate_row_text_omitted": false
+            },
+            {
+              "input_record": 4,
+              "source_record": 4,
+              "source_order": 5,
+              "identical_text_original_omitted": [],
+              "duplicate_row_text_omitted": false
+            },
+            {
+              "input_record": 5,
+              "source_record": 5,
+              "source_order": 6,
+              "identical_text_original_omitted": [],
+              "duplicate_row_text_omitted": false
+            },
+            {
+              "input_record": 6,
+              "source_record": 6,
+              "source_order": 7,
+              "identical_text_original_omitted": [],
+              "duplicate_row_text_omitted": false
+            },
+            {
+              "input_record": 7,
+              "source_record": 7,
+              "source_order": 8,
+              "identical_text_original_omitted": [],
+              "duplicate_row_text_omitted": false
+            },
+            {
+              "input_record": 8,
+              "source_record": 8,
+              "source_order": 9,
+              "identical_text_original_omitted": [],
+              "duplicate_row_text_omitted": false
+            },
+            {
+              "input_record": 9,
+              "source_record": 9,
+              "source_order": 10,
+              "identical_text_original_omitted": [],
+              "duplicate_row_text_omitted": false
+            },
+            {
+              "input_record": 10,
+              "source_record": 10,
+              "source_order": 11,
+              "identical_text_original_omitted": [],
+              "duplicate_row_text_omitted": false
+            },
+            {
+              "input_record": 11,
+              "source_record": 11,
+              "source_order": 12,
+              "identical_text_original_omitted": [],
+              "duplicate_row_text_omitted": false
+            },
+            {
+              "input_record": 12,
+              "source_record": 12,
+              "source_order": 13,
+              "identical_text_original_omitted": [],
+              "duplicate_row_text_omitted": false
+            },
+            {
+              "input_record": 13,
+              "source_record": 13,
+              "source_order": 14,
+              "identical_text_original_omitted": [],
+              "duplicate_row_text_omitted": false
+            },
+            {
+              "input_record": 14,
+              "source_record": 14,
+              "source_order": 15,
+              "identical_text_original_omitted": [],
+              "duplicate_row_text_omitted": false
+            },
+            {
+              "input_record": 15,
+              "source_record": 15,
+              "source_order": 16,
+              "identical_text_original_omitted": [],
+              "duplicate_row_text_omitted": false
+            }
+          ],
+          "source_text_retained": true
+        },
+        {
+          "module": "JobZone",
+          "source_section": 5,
+          "input_records": 6,
+          "source_records": 6,
+          "record_mapping": [
+            {
+              "input_record": 0,
+              "source_record": 0,
+              "source_order": 1,
+              "identical_text_original_omitted": [],
+              "duplicate_row_text_omitted": false
+            },
+            {
+              "input_record": 1,
+              "source_record": 1,
+              "source_order": 2,
+              "identical_text_original_omitted": [],
+              "duplicate_row_text_omitted": false
+            },
+            {
+              "input_record": 2,
+              "source_record": 2,
+              "source_order": 3,
+              "identical_text_original_omitted": [],
+              "duplicate_row_text_omitted": false
+            },
+            {
+              "input_record": 3,
+              "source_record": 3,
+              "source_order": 4,
+              "identical_text_original_omitted": [],
+              "duplicate_row_text_omitted": false
+            },
+            {
+              "input_record": 4,
+              "source_record": 4,
+              "source_order": 5,
+              "identical_text_original_omitted": [],
+              "duplicate_row_text_omitted": false
+            },
+            {
+              "input_record": 5,
+              "source_record": 5,
+              "source_order": 6,
+              "identical_text_original_omitted": [],
+              "duplicate_row_text_omitted": false
+            }
+          ],
+          "source_text_retained": true
+        },
+        {
+          "module": "SoftwareSkills",
+          "source_section": 8,
+          "input_records": 26,
+          "source_records": 26,
+          "record_mapping": [
+            {
+              "input_record": 0,
+              "source_record": 0,
+              "source_order": 1,
+              "identical_text_original_omitted": [],
+              "duplicate_row_text_omitted": false
+            },
+            {
+              "input_record": 1,
+              "source_record": 1,
+              "source_order": 2,
+              "identical_text_original_omitted": [],
+              "duplicate_row_text_omitted": false
+            },
+            {
+              "input_record": 2,
+              "source_record": 2,
+              "source_order": 3,
+              "identical_text_original_omitted": [],
+              "duplicate_row_text_omitted": false
+            },
+            {
+              "input_record": 3,
+              "source_record": 3,
+              "source_order": 4,
+              "identical_text_original_omitted": [],
+              "duplicate_row_text_omitted": false
+            },
+            {
+              "input_record": 4,
+              "source_record": 4,
+              "source_order": 5,
+              "identical_text_original_omitted": [],
+              "duplicate_row_text_omitted": false
+            },
+            {
+              "input_record": 5,
+              "source_record": 5,
+              "source_order": 6,
+              "identical_text_original_omitted": [],
+              "duplicate_row_text_omitted": false
+            },
+            {
+              "input_record": 6,
+              "source_record": 6,
+              "source_order": 7,
+              "identical_text_original_omitted": [],
+              "duplicate_row_text_omitted": false
+            },
+            {
+              "input_record": 7,
+              "source_record": 7,
+              "source_order": 8,
+              "identical_text_original_omitted": [],
+              "duplicate_row_text_omitted": false
+            },
+            {
+              "input_record": 8,
+              "source_record": 8,
+              "source_order": 9,
+              "identical_text_original_omitted": [],
+              "duplicate_row_text_omitted": false
+            },
+            {
+              "input_record": 9,
+              "source_record": 9,
+              "source_order": 10,
+              "identical_text_original_omitted": [],
+              "duplicate_row_text_omitted": false
+            },
+            {
+              "input_record": 10,
+              "source_record": 10,
+              "source_order": 11,
+              "identical_text_original_omitted": [],
+              "duplicate_row_text_omitted": false
+            },
+            {
+              "input_record": 11,
+              "source_record": 11,
+              "source_order": 12,
+              "identical_text_original_omitted": [],
+              "duplicate_row_text_omitted": false
+            },
+            {
+              "input_record": 12,
+              "source_record": 12,
+              "source_order": 13,
+              "identical_text_original_omitted": [],
+              "duplicate_row_text_omitted": false
+            },
+            {
+              "input_record": 13,
+              "source_record": 13,
+              "source_order": 14,
+              "identical_text_original_omitted": [],
+              "duplicate_row_text_omitted": false
+            },
+            {
+              "input_record": 14,
+              "source_record": 14,
+              "source_order": 15,
+              "identical_text_original_omitted": [],
+              "duplicate_row_text_omitted": false
+            },
+            {
+              "input_record": 15,
+              "source_record": 15,
+              "source_order": 16,
+              "identical_text_original_omitted": [],
+              "duplicate_row_text_omitted": false
+            },
+            {
+              "input_record": 16,
+              "source_record": 16,
+              "source_order": 17,
+              "identical_text_original_omitted": [],
+              "duplicate_row_text_omitted": false
+            },
+            {
+              "input_record": 17,
+              "source_record": 17,
+              "source_order": 18,
+              "identical_text_original_omitted": [],
+              "duplicate_row_text_omitted": false
+            },
+            {
+              "input_record": 18,
+              "source_record": 18,
+              "source_order": 19,
+              "identical_text_original_omitted": [],
+              "duplicate_row_text_omitted": false
+            },
+            {
+              "input_record": 19,
+              "source_record": 19,
+              "source_order": 20,
+              "identical_text_original_omitted": [],
+              "duplicate_row_text_omitted": false
+            },
+            {
+              "input_record": 20,
+              "source_record": 20,
+              "source_order": 21,
+              "identical_text_original_omitted": [],
+              "duplicate_row_text_omitted": false
+            },
+            {
+              "input_record": 21,
+              "source_record": 21,
+              "source_order": 22,
+              "identical_text_original_omitted": [],
+              "duplicate_row_text_omitted": false
+            },
+            {
+              "input_record": 22,
+              "source_record": 22,
+              "source_order": 23,
+              "identical_text_original_omitted": [],
+              "duplicate_row_text_omitted": false
+            },
+            {
+              "input_record": 23,
+              "source_record": 23,
+              "source_order": 24,
+              "identical_text_original_omitted": [],
+              "duplicate_row_text_omitted": false
+            },
+            {
+              "input_record": 24,
+              "source_record": 24,
+              "source_order": 25,
+              "identical_text_original_omitted": [],
+              "duplicate_row_text_omitted": false
+            },
+            {
+              "input_record": 25,
+              "source_record": 25,
+              "source_order": 26,
+              "identical_text_original_omitted": [],
+              "duplicate_row_text_omitted": false
+            }
+          ],
+          "source_text_retained": true
+        },
+        {
+          "module": "Knowledge",
+          "source_section": 11,
+          "input_records": 33,
+          "source_records": 33,
+          "record_mapping": [
+            {
+              "input_record": 0,
+              "source_record": 0,
+              "source_order": 1,
+              "identical_text_original_omitted": [
+                "Importance"
+              ],
+              "duplicate_row_text_omitted": true
+            },
+            {
+              "input_record": 1,
+              "source_record": 1,
+              "source_order": 2,
+              "identical_text_original_omitted": [
+                "Importance"
+              ],
+              "duplicate_row_text_omitted": true
+            },
+            {
+              "input_record": 2,
+              "source_record": 2,
+              "source_order": 3,
+              "identical_text_original_omitted": [
+                "Importance"
+              ],
+              "duplicate_row_text_omitted": true
+            },
+            {
+              "input_record": 3,
+              "source_record": 3,
+              "source_order": 4,
+              "identical_text_original_omitted": [
+                "Importance"
+              ],
+              "duplicate_row_text_omitted": true
+            },
+            {
+              "input_record": 4,
+              "source_record": 4,
+              "source_order": 5,
+              "identical_text_original_omitted": [
+                "Importance"
+              ],
+              "duplicate_row_text_omitted": true
+            },
+            {
+              "input_record": 5,
+              "source_record": 5,
+              "source_order": 6,
+              "identical_text_original_omitted": [
+                "Importance"
+              ],
+              "duplicate_row_text_omitted": true
+            },
+            {
+              "input_record": 6,
+              "source_record": 6,
+              "source_order": 7,
+              "identical_text_original_omitted": [
+                "Importance"
+              ],
+              "duplicate_row_text_omitted": true
+            },
+            {
+              "input_record": 7,
+              "source_record": 7,
+              "source_order": 8,
+              "identical_text_original_omitted": [
+                "Importance"
+              ],
+              "duplicate_row_text_omitted": true
+            },
+            {
+              "input_record": 8,
+              "source_record": 8,
+              "source_order": 9,
+              "identical_text_original_omitted": [
+                "Importance"
+              ],
+              "duplicate_row_text_omitted": true
+            },
+            {
+              "input_record": 9,
+              "source_record": 9,
+              "source_order": 10,
+              "identical_text_original_omitted": [
+                "Importance"
+              ],
+              "duplicate_row_text_omitted": true
+            },
+            {
+              "input_record": 10,
+              "source_record": 10,
+              "source_order": 11,
+              "identical_text_original_omitted": [
+                "Importance"
+              ],
+              "duplicate_row_text_omitted": true
+            },
+            {
+              "input_record": 11,
+              "source_record": 11,
+              "source_order": 12,
+              "identical_text_original_omitted": [
+                "Importance"
+              ],
+              "duplicate_row_text_omitted": true
+            },
+            {
+              "input_record": 12,
+              "source_record": 12,
+              "source_order": 13,
+              "identical_text_original_omitted": [
+                "Importance"
+              ],
+              "duplicate_row_text_omitted": true
+            },
+            {
+              "input_record": 13,
+              "source_record": 13,
+              "source_order": 14,
+              "identical_text_original_omitted": [
+                "Importance"
+              ],
+              "duplicate_row_text_omitted": true
+            },
+            {
+              "input_record": 14,
+              "source_record": 14,
+              "source_order": 15,
+              "identical_text_original_omitted": [
+                "Importance"
+              ],
+              "duplicate_row_text_omitted": true
+            },
+            {
+              "input_record": 15,
+              "source_record": 15,
+              "source_order": 16,
+              "identical_text_original_omitted": [
+                "Importance"
+              ],
+              "duplicate_row_text_omitted": true
+            },
+            {
+              "input_record": 16,
+              "source_record": 16,
+              "source_order": 17,
+              "identical_text_original_omitted": [
+                "Importance"
+              ],
+              "duplicate_row_text_omitted": true
+            },
+            {
+              "input_record": 17,
+              "source_record": 17,
+              "source_order": 18,
+              "identical_text_original_omitted": [
+                "Importance"
+              ],
+              "duplicate_row_text_omitted": true
+            },
+            {
+              "input_record": 18,
+              "source_record": 18,
+              "source_order": 19,
+              "identical_text_original_omitted": [
+                "Importance"
+              ],
+              "duplicate_row_text_omitted": true
+            },
+            {
+              "input_record": 19,
+              "source_record": 19,
+              "source_order": 20,
+              "identical_text_original_omitted": [
+                "Importance"
+              ],
+              "duplicate_row_text_omitted": true
+            },
+            {
+              "input_record": 20,
+              "source_record": 20,
+              "source_order": 21,
+              "identical_text_original_omitted": [
+                "Importance"
+              ],
+              "duplicate_row_text_omitted": true
+            },
+            {
+              "input_record": 21,
+              "source_record": 21,
+              "source_order": 22,
+              "identical_text_original_omitted": [
+                "Importance"
+              ],
+              "duplicate_row_text_omitted": true
+            },
+            {
+              "input_record": 22,
+              "source_record": 22,
+              "source_order": 23,
+              "identical_text_original_omitted": [
+                "Importance"
+              ],
+              "duplicate_row_text_omitted": true
+            },
+            {
+              "input_record": 23,
+              "source_record": 23,
+              "source_order": 24,
+              "identical_text_original_omitted": [
+                "Importance"
+              ],
+              "duplicate_row_text_omitted": true
+            },
+            {
+              "input_record": 24,
+              "source_record": 24,
+              "source_order": 25,
+              "identical_text_original_omitted": [
+                "Importance"
+              ],
+              "duplicate_row_text_omitted": true
+            },
+            {
+              "input_record": 25,
+              "source_record": 25,
+              "source_order": 26,
+              "identical_text_original_omitted": [
+                "Importance"
+              ],
+              "duplicate_row_text_omitted": true
+            },
+            {
+              "input_record": 26,
+              "source_record": 26,
+              "source_order": 27,
+              "identical_text_original_omitted": [
+                "Importance"
+              ],
+              "duplicate_row_text_omitted": true
+            },
+            {
+              "input_record": 27,
+              "source_record": 27,
+              "source_order": 28,
+              "identical_text_original_omitted": [
+                "Importance"
+              ],
+              "duplicate_row_text_omitted": true
+            },
+            {
+              "input_record": 28,
+              "source_record": 28,
+              "source_order": 29,
+              "identical_text_original_omitted": [
+                "Importance"
+              ],
+              "duplicate_row_text_omitted": true
+            },
+            {
+              "input_record": 29,
+              "source_record": 29,
+              "source_order": 30,
+              "identical_text_original_omitted": [
+                "Importance"
+              ],
+              "duplicate_row_text_omitted": true
+            },
+            {
+              "input_record": 30,
+              "source_record": 30,
+              "source_order": 31,
+              "identical_text_original_omitted": [
+                "Importance"
+              ],
+              "duplicate_row_text_omitted": true
+            },
+            {
+              "input_record": 31,
+              "source_record": 31,
+              "source_order": 32,
+              "identical_text_original_omitted": [
+                "Importance"
+              ],
+              "duplicate_row_text_omitted": true
+            },
+            {
+              "input_record": 32,
+              "source_record": 32,
+              "source_order": 33,
+              "identical_text_original_omitted": [
+                "Importance"
+              ],
+              "duplicate_row_text_omitted": true
+            }
+          ],
+          "source_text_retained": true
+        },
+        {
+          "module": "Education",
+          "source_section": 12,
+          "input_records": 3,
+          "source_records": 3,
+          "record_mapping": [
+            {
+              "input_record": 0,
+              "source_record": 0,
+              "source_order": 1,
+              "identical_text_original_omitted": [],
+              "duplicate_row_text_omitted": false
+            },
+            {
+              "input_record": 1,
+              "source_record": 1,
+              "source_order": 2,
+              "identical_text_original_omitted": [],
+              "duplicate_row_text_omitted": false
+            },
+            {
+              "input_record": 2,
+              "source_record": 2,
+              "source_order": 3,
+              "identical_text_original_omitted": [],
+              "duplicate_row_text_omitted": false
+            }
+          ],
+          "source_text_retained": true
+        },
+        {
+          "module": "EssentialSkills",
+          "source_section": 9,
+          "input_records": 10,
+          "source_records": 10,
+          "record_mapping": [
+            {
+              "input_record": 0,
+              "source_record": 0,
+              "source_order": 1,
+              "identical_text_original_omitted": [
+                "Importance"
+              ],
+              "duplicate_row_text_omitted": true
+            },
+            {
+              "input_record": 1,
+              "source_record": 1,
+              "source_order": 2,
+              "identical_text_original_omitted": [
+                "Importance"
+              ],
+              "duplicate_row_text_omitted": true
+            },
+            {
+              "input_record": 2,
+              "source_record": 2,
+              "source_order": 3,
+              "identical_text_original_omitted": [
+                "Importance"
+              ],
+              "duplicate_row_text_omitted": true
+            },
+            {
+              "input_record": 3,
+              "source_record": 3,
+              "source_order": 4,
+              "identical_text_original_omitted": [
+                "Importance"
+              ],
+              "duplicate_row_text_omitted": true
+            },
+            {
+              "input_record": 4,
+              "source_record": 4,
+              "source_order": 5,
+              "identical_text_original_omitted": [
+                "Importance"
+              ],
+              "duplicate_row_text_omitted": true
+            },
+            {
+              "input_record": 5,
+              "source_record": 5,
+              "source_order": 6,
+              "identical_text_original_omitted": [
+                "Importance"
+              ],
+              "duplicate_row_text_omitted": true
+            },
+            {
+              "input_record": 6,
+              "source_record": 6,
+              "source_order": 7,
+              "identical_text_original_omitted": [
+                "Importance"
+              ],
+              "duplicate_row_text_omitted": true
+            },
+            {
+              "input_record": 7,
+              "source_record": 7,
+              "source_order": 8,
+              "identical_text_original_omitted": [
+                "Importance"
+              ],
+              "duplicate_row_text_omitted": true
+            },
+            {
+              "input_record": 8,
+              "source_record": 8,
+              "source_order": 9,
+              "identical_text_original_omitted": [
+                "Importance"
+              ],
+              "duplicate_row_text_omitted": true
+            },
+            {
+              "input_record": 9,
+              "source_record": 9,
+              "source_order": 10,
+              "identical_text_original_omitted": [
+                "Importance"
+              ],
+              "duplicate_row_text_omitted": true
+            }
+          ],
+          "source_text_retained": true
+        },
+        {
+          "module": "TransferableSkills",
+          "source_section": 10,
+          "input_records": 25,
+          "source_records": 25,
+          "record_mapping": [
+            {
+              "input_record": 0,
+              "source_record": 0,
+              "source_order": 1,
+              "identical_text_original_omitted": [
+                "Importance"
+              ],
+              "duplicate_row_text_omitted": true
+            },
+            {
+              "input_record": 1,
+              "source_record": 1,
+              "source_order": 2,
+              "identical_text_original_omitted": [
+                "Importance"
+              ],
+              "duplicate_row_text_omitted": true
+            },
+            {
+              "input_record": 2,
+              "source_record": 2,
+              "source_order": 3,
+              "identical_text_original_omitted": [
+                "Importance"
+              ],
+              "duplicate_row_text_omitted": true
+            },
+            {
+              "input_record": 3,
+              "source_record": 3,
+              "source_order": 4,
+              "identical_text_original_omitted": [
+                "Importance"
+              ],
+              "duplicate_row_text_omitted": true
+            },
+            {
+              "input_record": 4,
+              "source_record": 4,
+              "source_order": 5,
+              "identical_text_original_omitted": [
+                "Importance"
+              ],
+              "duplicate_row_text_omitted": true
+            },
+            {
+              "input_record": 5,
+              "source_record": 5,
+              "source_order": 6,
+              "identical_text_original_omitted": [
+                "Importance"
+              ],
+              "duplicate_row_text_omitted": true
+            },
+            {
+              "input_record": 6,
+              "source_record": 6,
+              "source_order": 7,
+              "identical_text_original_omitted": [
+                "Importance"
+              ],
+              "duplicate_row_text_omitted": true
+            },
+            {
+              "input_record": 7,
+              "source_record": 7,
+              "source_order": 8,
+              "identical_text_original_omitted": [
+                "Importance"
+              ],
+              "duplicate_row_text_omitted": true
+            },
+            {
+              "input_record": 8,
+              "source_record": 8,
+              "source_order": 9,
+              "identical_text_original_omitted": [
+                "Importance"
+              ],
+              "duplicate_row_text_omitted": true
+            },
+            {
+              "input_record": 9,
+              "source_record": 9,
+              "source_order": 10,
+              "identical_text_original_omitted": [
+                "Importance"
+              ],
+              "duplicate_row_text_omitted": true
+            },
+            {
+              "input_record": 10,
+              "source_record": 10,
+              "source_order": 11,
+              "identical_text_original_omitted": [
+                "Importance"
+              ],
+              "duplicate_row_text_omitted": true
+            },
+            {
+              "input_record": 11,
+              "source_record": 11,
+              "source_order": 12,
+              "identical_text_original_omitted": [
+                "Importance"
+              ],
+              "duplicate_row_text_omitted": true
+            },
+            {
+              "input_record": 12,
+              "source_record": 12,
+              "source_order": 13,
+              "identical_text_original_omitted": [
+                "Importance"
+              ],
+              "duplicate_row_text_omitted": true
+            },
+            {
+              "input_record": 13,
+              "source_record": 13,
+              "source_order": 14,
+              "identical_text_original_omitted": [
+                "Importance"
+              ],
+              "duplicate_row_text_omitted": true
+            },
+            {
+              "input_record": 14,
+              "source_record": 14,
+              "source_order": 15,
+              "identical_text_original_omitted": [
+                "Importance"
+              ],
+              "duplicate_row_text_omitted": true
+            },
+            {
+              "input_record": 15,
+              "source_record": 15,
+              "source_order": 16,
+              "identical_text_original_omitted": [
+                "Importance"
+              ],
+              "duplicate_row_text_omitted": true
+            },
+            {
+              "input_record": 16,
+              "source_record": 16,
+              "source_order": 17,
+              "identical_text_original_omitted": [
+                "Importance"
+              ],
+              "duplicate_row_text_omitted": true
+            },
+            {
+              "input_record": 17,
+              "source_record": 17,
+              "source_order": 18,
+              "identical_text_original_omitted": [
+                "Importance"
+              ],
+              "duplicate_row_text_omitted": true
+            },
+            {
+              "input_record": 18,
+              "source_record": 18,
+              "source_order": 19,
+              "identical_text_original_omitted": [
+                "Importance"
+              ],
+              "duplicate_row_text_omitted": true
+            },
+            {
+              "input_record": 19,
+              "source_record": 19,
+              "source_order": 20,
+              "identical_text_original_omitted": [
+                "Importance"
+              ],
+              "duplicate_row_text_omitted": true
+            },
+            {
+              "input_record": 20,
+              "source_record": 20,
+              "source_order": 21,
+              "identical_text_original_omitted": [
+                "Importance"
+              ],
+              "duplicate_row_text_omitted": true
+            },
+            {
+              "input_record": 21,
+              "source_record": 21,
+              "source_order": 22,
+              "identical_text_original_omitted": [
+                "Importance"
+              ],
+              "duplicate_row_text_omitted": true
+            },
+            {
+              "input_record": 22,
+              "source_record": 22,
+              "source_order": 23,
+              "identical_text_original_omitted": [
+                "Importance"
+              ],
+              "duplicate_row_text_omitted": true
+            },
+            {
+              "input_record": 23,
+              "source_record": 23,
+              "source_order": 24,
+              "identical_text_original_omitted": [
+                "Importance"
+              ],
+              "duplicate_row_text_omitted": true
+            },
+            {
+              "input_record": 24,
+              "source_record": 24,
+              "source_order": 25,
+              "identical_text_original_omitted": [
+                "Importance"
+              ],
+              "duplicate_row_text_omitted": true
+            }
+          ],
+          "source_text_retained": true
+        }
+      ]
+    }
+  },
+  "timestamp_utc": "2026-11-25T01:12:06.440172+00:00",
+  "request": {
+    "task": {
+      "task": "resume",
+      "task_id": "R03",
+      "metadata": {
+        "occupation": "data_scientists",
+        "resume_id": "R03",
+        "ability_level": "low",
+        "level_replica": 1,
+        "level_config_sha256": "44a8176ae5e939582b75536589bd9c913760d36bd57c2724e8df48b794e04680",
+        "resume_prompt_sha256": "68da2fd5a1c7620408986f3da4356d654e1549e0631374db555d0f8c681aa9d1",
+        "employment_plan": {
+          "education_period": "2020.09—2024.06",
+          "work_periods": [
+            "2025.05—2025.12",
+            "2026.01—2026.10"
+          ],
+          "project_period": "2026.06—2026.08",
+          "total_work_months": 18,
+          "major": "市场营销",
+          "school": "明远大学",
+          "companies": [
+            "星河信息技术有限公司",
+            "辰光科技有限公司"
+          ],
+          "roles": [
+            "市场调研数据实习生",
+            "数据分析助理"
+          ],
+          "skill_focus": "Excel（数据透视表）、SPSS（基础描述统计）；SQL（简单查询）、Power BI（套用模板）"
+        },
+        "jd_input_mode": "generated_batch",
+        "jd_run_id": "jd_20261125",
+        "jd_input_sha256": "2fdc346a50346d7a7ebe51fda9e096e629bb1576e77213ec31496429b2e4af2d",
+        "jd_draft_sha256": "6b07b50c18d0ef65473b1ef48af58b56803811074af68833c3e3bf44649ec430",
+        "jd_output": "material_preparation/results/jd_generation/Data_Scientists_15-2051.00/jd_20261125/records/JD01_a01.output.json",
+        "jd_output_sha256": "5774bdbfc29dc5c129e240189f5062c53306bfa23bac3e1cdd4f8c3f780ee36b",
+        "material_directory": "Data_Scientists_15-2051.00",
+        "onet_code": "15-2051.00",
+        "structured_sha256": "f9879b053861122ac656f8e28c7d755132c26698231f5a64395292525a3d22a2",
+        "source_html_sha256": "49eaa35557bbfca149689a41c640f2df1fb5cf5d2d2a66c1ec8ecaad1b3dc393",
+        "input_json_sha256": "462204eaed59e8e83910c15f9404061fb57555feec632e324436209f6ba4a16c",
+        "jd_prompt_sha256": "207ef9bafe7fa423df2883deeac00f37b4a47ee8711bbd6f6717393944f219ad",
+        "input_projection": {
+          "version": "jd_modules_v1",
+          "config_sha256": "a4fac7cfff6a8ab08332b19eb0599d0c7f0e9d0fdd49ceb9cdf60e177d15dcc7",
+          "code_sha256": "15740bfa9c94345843eaca1a0a3399658851a4886ecf4b84031cfcca88927e07",
+          "full_json_characters": 693200,
+          "input_json_characters": 62978,
+          "excluded_modules": [
+            "WorkActivities",
+            "WorkContext",
+            "TrainingCredentials",
+            "Apprenticeship",
+            "Abilities",
+            "CareerInterestTypes",
+            "SpecificInterestAreas",
+            "WorkStyles",
+            "WagesEmployment",
+            "JobOpenings",
+            "RelatedOccupations",
+            "ProfessionalAssociations"
+          ],
+          "modules": [
+            {
+              "module": "Overview",
+              "source_section": 0,
+              "input_records": 35,
+              "source_records": 35,
+              "record_mapping": [
+                {
+                  "input_record": 0,
+                  "source_record": 0,
+                  "source_order": 1,
+                  "identical_text_original_omitted": [],
+                  "duplicate_row_text_omitted": false
+                },
+                {
+                  "input_record": 1,
+                  "source_record": 1,
+                  "source_order": 2,
+                  "identical_text_original_omitted": [],
+                  "duplicate_row_text_omitted": false
+                },
+                {
+                  "input_record": 2,
+                  "source_record": 2,
+                  "source_order": 3,
+                  "identical_text_original_omitted": [],
+                  "duplicate_row_text_omitted": false
+                },
+                {
+                  "input_record": 3,
+                  "source_record": 3,
+                  "source_order": 4,
+                  "identical_text_original_omitted": [],
+                  "duplicate_row_text_omitted": false
+                },
+                {
+                  "input_record": 4,
+                  "source_record": 4,
+                  "source_order": 5,
+                  "identical_text_original_omitted": [],
+                  "duplicate_row_text_omitted": false
+                },
+                {
+                  "input_record": 5,
+                  "source_record": 5,
+                  "source_order": 6,
+                  "identical_text_original_omitted": [],
+                  "duplicate_row_text_omitted": false
+                },
+                {
+                  "input_record": 6,
+                  "source_record": 6,
+                  "source_order": 7,
+                  "identical_text_original_omitted": [],
+                  "duplicate_row_text_omitted": false
+                },
+                {
+                  "input_record": 7,
+                  "source_record": 7,
+                  "source_order": 8,
+                  "identical_text_original_omitted": [],
+                  "duplicate_row_text_omitted": false
+                },
+                {
+                  "input_record": 8,
+                  "source_record": 8,
+                  "source_order": 9,
+                  "identical_text_original_omitted": [],
+                  "duplicate_row_text_omitted": false
+                },
+                {
+                  "input_record": 9,
+                  "source_record": 9,
+                  "source_order": 10,
+                  "identical_text_original_omitted": [],
+                  "duplicate_row_text_omitted": false
+                },
+                {
+                  "input_record": 10,
+                  "source_record": 10,
+                  "source_order": 11,
+                  "identical_text_original_omitted": [],
+                  "duplicate_row_text_omitted": false
+                },
+                {
+                  "input_record": 11,
+                  "source_record": 11,
+                  "source_order": 12,
+                  "identical_text_original_omitted": [],
+                  "duplicate_row_text_omitted": false
+                },
+                {
+                  "input_record": 12,
+                  "source_record": 12,
+                  "source_order": 13,
+                  "identical_text_original_omitted": [],
+                  "duplicate_row_text_omitted": false
+                },
+                {
+                  "input_record": 13,
+                  "source_record": 13,
+                  "source_order": 14,
+                  "identical_text_original_omitted": [],
+                  "duplicate_row_text_omitted": false
+                },
+                {
+                  "input_record": 14,
+                  "source_record": 14,
+                  "source_order": 15,
+                  "identical_text_original_omitted": [],
+                  "duplicate_row_text_omitted": false
+                },
+                {
+                  "input_record": 15,
+                  "source_record": 15,
+                  "source_order": 16,
+                  "identical_text_original_omitted": [],
+                  "duplicate_row_text_omitted": false
+                },
+                {
+                  "input_record": 16,
+                  "source_record": 16,
+                  "source_order": 17,
+                  "identical_text_original_omitted": [],
+                  "duplicate_row_text_omitted": false
+                },
+                {
+                  "input_record": 17,
+                  "source_record": 17,
+                  "source_order": 18,
+                  "identical_text_original_omitted": [],
+                  "duplicate_row_text_omitted": false
+                },
+                {
+                  "input_record": 18,
+                  "source_record": 18,
+                  "source_order": 19,
+                  "identical_text_original_omitted": [],
+                  "duplicate_row_text_omitted": false
+                },
+                {
+                  "input_record": 19,
+                  "source_record": 19,
+                  "source_order": 20,
+                  "identical_text_original_omitted": [],
+                  "duplicate_row_text_omitted": false
+                },
+                {
+                  "input_record": 20,
+                  "source_record": 20,
+                  "source_order": 21,
+                  "identical_text_original_omitted": [],
+                  "duplicate_row_text_omitted": false
+                },
+                {
+                  "input_record": 21,
+                  "source_record": 21,
+                  "source_order": 22,
+                  "identical_text_original_omitted": [],
+                  "duplicate_row_text_omitted": false
+                },
+                {
+                  "input_record": 22,
+                  "source_record": 22,
+                  "source_order": 23,
+                  "identical_text_original_omitted": [],
+                  "duplicate_row_text_omitted": false
+                },
+                {
+                  "input_record": 23,
+                  "source_record": 23,
+                  "source_order": 24,
+                  "identical_text_original_omitted": [],
+                  "duplicate_row_text_omitted": false
+                },
+                {
+                  "input_record": 24,
+                  "source_record": 24,
+                  "source_order": 25,
+                  "identical_text_original_omitted": [],
+                  "duplicate_row_text_omitted": false
+                },
+                {
+                  "input_record": 25,
+                  "source_record": 25,
+                  "source_order": 26,
+                  "identical_text_original_omitted": [],
+                  "duplicate_row_text_omitted": false
+                },
+                {
+                  "input_record": 26,
+                  "source_record": 26,
+                  "source_order": 27,
+                  "identical_text_original_omitted": [],
+                  "duplicate_row_text_omitted": false
+                },
+                {
+                  "input_record": 27,
+                  "source_record": 27,
+                  "source_order": 28,
+                  "identical_text_original_omitted": [],
+                  "duplicate_row_text_omitted": false
+                },
+                {
+                  "input_record": 28,
+                  "source_record": 28,
+                  "source_order": 29,
+                  "identical_text_original_omitted": [],
+                  "duplicate_row_text_omitted": false
+                },
+                {
+                  "input_record": 29,
+                  "source_record": 29,
+                  "source_order": 30,
+                  "identical_text_original_omitted": [],
+                  "duplicate_row_text_omitted": false
+                },
+                {
+                  "input_record": 30,
+                  "source_record": 30,
+                  "source_order": 31,
+                  "identical_text_original_omitted": [],
+                  "duplicate_row_text_omitted": false
+                },
+                {
+                  "input_record": 31,
+                  "source_record": 31,
+                  "source_order": 32,
+                  "identical_text_original_omitted": [],
+                  "duplicate_row_text_omitted": false
+                },
+                {
+                  "input_record": 32,
+                  "source_record": 32,
+                  "source_order": 33,
+                  "identical_text_original_omitted": [],
+                  "duplicate_row_text_omitted": false
+                },
+                {
+                  "input_record": 33,
+                  "source_record": 33,
+                  "source_order": 34,
+                  "identical_text_original_omitted": [],
+                  "duplicate_row_text_omitted": false
+                },
+                {
+                  "input_record": 34,
+                  "source_record": 34,
+                  "source_order": 35,
+                  "identical_text_original_omitted": [],
+                  "duplicate_row_text_omitted": false
+                }
+              ],
+              "source_text_retained": true
+            },
+            {
+              "module": "Tasks",
+              "source_section": 1,
+              "input_records": 17,
+              "source_records": 17,
+              "record_mapping": [
+                {
+                  "input_record": 0,
+                  "source_record": 0,
+                  "source_order": 1,
+                  "identical_text_original_omitted": [
+                    "Importance",
+                    "Category"
+                  ],
+                  "duplicate_row_text_omitted": true
+                },
+                {
+                  "input_record": 1,
+                  "source_record": 1,
+                  "source_order": 2,
+                  "identical_text_original_omitted": [
+                    "Importance",
+                    "Category"
+                  ],
+                  "duplicate_row_text_omitted": true
+                },
+                {
+                  "input_record": 2,
+                  "source_record": 2,
+                  "source_order": 3,
+                  "identical_text_original_omitted": [
+                    "Importance",
+                    "Category"
+                  ],
+                  "duplicate_row_text_omitted": true
+                },
+                {
+                  "input_record": 3,
+                  "source_record": 3,
+                  "source_order": 4,
+                  "identical_text_original_omitted": [
+                    "Importance",
+                    "Category"
+                  ],
+                  "duplicate_row_text_omitted": true
+                },
+                {
+                  "input_record": 4,
+                  "source_record": 4,
+                  "source_order": 5,
+                  "identical_text_original_omitted": [
+                    "Importance",
+                    "Category"
+                  ],
+                  "duplicate_row_text_omitted": true
+                },
+                {
+                  "input_record": 5,
+                  "source_record": 5,
+                  "source_order": 6,
+                  "identical_text_original_omitted": [
+                    "Importance",
+                    "Category"
+                  ],
+                  "duplicate_row_text_omitted": true
+                },
+                {
+                  "input_record": 6,
+                  "source_record": 6,
+                  "source_order": 7,
+                  "identical_text_original_omitted": [
+                    "Importance",
+                    "Category"
+                  ],
+                  "duplicate_row_text_omitted": true
+                },
+                {
+                  "input_record": 7,
+                  "source_record": 7,
+                  "source_order": 8,
+                  "identical_text_original_omitted": [
+                    "Importance",
+                    "Category"
+                  ],
+                  "duplicate_row_text_omitted": true
+                },
+                {
+                  "input_record": 8,
+                  "source_record": 8,
+                  "source_order": 9,
+                  "identical_text_original_omitted": [
+                    "Importance",
+                    "Category"
+                  ],
+                  "duplicate_row_text_omitted": true
+                },
+                {
+                  "input_record": 9,
+                  "source_record": 9,
+                  "source_order": 10,
+                  "identical_text_original_omitted": [
+                    "Importance",
+                    "Category"
+                  ],
+                  "duplicate_row_text_omitted": true
+                },
+                {
+                  "input_record": 10,
+                  "source_record": 10,
+                  "source_order": 11,
+                  "identical_text_original_omitted": [
+                    "Importance",
+                    "Category"
+                  ],
+                  "duplicate_row_text_omitted": true
+                },
+                {
+                  "input_record": 11,
+                  "source_record": 11,
+                  "source_order": 12,
+                  "identical_text_original_omitted": [
+                    "Importance",
+                    "Category"
+                  ],
+                  "duplicate_row_text_omitted": true
+                },
+                {
+                  "input_record": 12,
+                  "source_record": 12,
+                  "source_order": 13,
+                  "identical_text_original_omitted": [
+                    "Importance",
+                    "Category"
+                  ],
+                  "duplicate_row_text_omitted": true
+                },
+                {
+                  "input_record": 13,
+                  "source_record": 13,
+                  "source_order": 14,
+                  "identical_text_original_omitted": [
+                    "Importance",
+                    "Category"
+                  ],
+                  "duplicate_row_text_omitted": true
+                },
+                {
+                  "input_record": 14,
+                  "source_record": 14,
+                  "source_order": 15,
+                  "identical_text_original_omitted": [
+                    "Importance",
+                    "Category"
+                  ],
+                  "duplicate_row_text_omitted": true
+                },
+                {
+                  "input_record": 15,
+                  "source_record": 15,
+                  "source_order": 16,
+                  "identical_text_original_omitted": [
+                    "Importance",
+                    "Category"
+                  ],
+                  "duplicate_row_text_omitted": true
+                },
+                {
+                  "input_record": 16,
+                  "source_record": 16,
+                  "source_order": 17,
+                  "identical_text_original_omitted": [
+                    "Category"
+                  ],
+                  "duplicate_row_text_omitted": true
+                }
+              ],
+              "source_text_retained": true
+            },
+            {
+              "module": "DetailedWorkActivities",
+              "source_section": 3,
+              "input_records": 16,
+              "source_records": 16,
+              "record_mapping": [
+                {
+                  "input_record": 0,
+                  "source_record": 0,
+                  "source_order": 1,
+                  "identical_text_original_omitted": [],
+                  "duplicate_row_text_omitted": false
+                },
+                {
+                  "input_record": 1,
+                  "source_record": 1,
+                  "source_order": 2,
+                  "identical_text_original_omitted": [],
+                  "duplicate_row_text_omitted": false
+                },
+                {
+                  "input_record": 2,
+                  "source_record": 2,
+                  "source_order": 3,
+                  "identical_text_original_omitted": [],
+                  "duplicate_row_text_omitted": false
+                },
+                {
+                  "input_record": 3,
+                  "source_record": 3,
+                  "source_order": 4,
+                  "identical_text_original_omitted": [],
+                  "duplicate_row_text_omitted": false
+                },
+                {
+                  "input_record": 4,
+                  "source_record": 4,
+                  "source_order": 5,
+                  "identical_text_original_omitted": [],
+                  "duplicate_row_text_omitted": false
+                },
+                {
+                  "input_record": 5,
+                  "source_record": 5,
+                  "source_order": 6,
+                  "identical_text_original_omitted": [],
+                  "duplicate_row_text_omitted": false
+                },
+                {
+                  "input_record": 6,
+                  "source_record": 6,
+                  "source_order": 7,
+                  "identical_text_original_omitted": [],
+                  "duplicate_row_text_omitted": false
+                },
+                {
+                  "input_record": 7,
+                  "source_record": 7,
+                  "source_order": 8,
+                  "identical_text_original_omitted": [],
+                  "duplicate_row_text_omitted": false
+                },
+                {
+                  "input_record": 8,
+                  "source_record": 8,
+                  "source_order": 9,
+                  "identical_text_original_omitted": [],
+                  "duplicate_row_text_omitted": false
+                },
+                {
+                  "input_record": 9,
+                  "source_record": 9,
+                  "source_order": 10,
+                  "identical_text_original_omitted": [],
+                  "duplicate_row_text_omitted": false
+                },
+                {
+                  "input_record": 10,
+                  "source_record": 10,
+                  "source_order": 11,
+                  "identical_text_original_omitted": [],
+                  "duplicate_row_text_omitted": false
+                },
+                {
+                  "input_record": 11,
+                  "source_record": 11,
+                  "source_order": 12,
+                  "identical_text_original_omitted": [],
+                  "duplicate_row_text_omitted": false
+                },
+                {
+                  "input_record": 12,
+                  "source_record": 12,
+                  "source_order": 13,
+                  "identical_text_original_omitted": [],
+                  "duplicate_row_text_omitted": false
+                },
+                {
+                  "input_record": 13,
+                  "source_record": 13,
+                  "source_order": 14,
+                  "identical_text_original_omitted": [],
+                  "duplicate_row_text_omitted": false
+                },
+                {
+                  "input_record": 14,
+                  "source_record": 14,
+                  "source_order": 15,
+                  "identical_text_original_omitted": [],
+                  "duplicate_row_text_omitted": false
+                },
+                {
+                  "input_record": 15,
+                  "source_record": 15,
+                  "source_order": 16,
+                  "identical_text_original_omitted": [],
+                  "duplicate_row_text_omitted": false
+                }
+              ],
+              "source_text_retained": true
+            },
+            {
+              "module": "JobZone",
+              "source_section": 5,
+              "input_records": 6,
+              "source_records": 6,
+              "record_mapping": [
+                {
+                  "input_record": 0,
+                  "source_record": 0,
+                  "source_order": 1,
+                  "identical_text_original_omitted": [],
+                  "duplicate_row_text_omitted": false
+                },
+                {
+                  "input_record": 1,
+                  "source_record": 1,
+                  "source_order": 2,
+                  "identical_text_original_omitted": [],
+                  "duplicate_row_text_omitted": false
+                },
+                {
+                  "input_record": 2,
+                  "source_record": 2,
+                  "source_order": 3,
+                  "identical_text_original_omitted": [],
+                  "duplicate_row_text_omitted": false
+                },
+                {
+                  "input_record": 3,
+                  "source_record": 3,
+                  "source_order": 4,
+                  "identical_text_original_omitted": [],
+                  "duplicate_row_text_omitted": false
+                },
+                {
+                  "input_record": 4,
+                  "source_record": 4,
+                  "source_order": 5,
+                  "identical_text_original_omitted": [],
+                  "duplicate_row_text_omitted": false
+                },
+                {
+                  "input_record": 5,
+                  "source_record": 5,
+                  "source_order": 6,
+                  "identical_text_original_omitted": [],
+                  "duplicate_row_text_omitted": false
+                }
+              ],
+              "source_text_retained": true
+            },
+            {
+              "module": "SoftwareSkills",
+              "source_section": 8,
+              "input_records": 26,
+              "source_records": 26,
+              "record_mapping": [
+                {
+                  "input_record": 0,
+                  "source_record": 0,
+                  "source_order": 1,
+                  "identical_text_original_omitted": [],
+                  "duplicate_row_text_omitted": false
+                },
+                {
+                  "input_record": 1,
+                  "source_record": 1,
+                  "source_order": 2,
+                  "identical_text_original_omitted": [],
+                  "duplicate_row_text_omitted": false
+                },
+                {
+                  "input_record": 2,
+                  "source_record": 2,
+                  "source_order": 3,
+                  "identical_text_original_omitted": [],
+                  "duplicate_row_text_omitted": false
+                },
+                {
+                  "input_record": 3,
+                  "source_record": 3,
+                  "source_order": 4,
+                  "identical_text_original_omitted": [],
+                  "duplicate_row_text_omitted": false
+                },
+                {
+                  "input_record": 4,
+                  "source_record": 4,
+                  "source_order": 5,
+                  "identical_text_original_omitted": [],
+                  "duplicate_row_text_omitted": false
+                },
+                {
+                  "input_record": 5,
+                  "source_record": 5,
+                  "source_order": 6,
+                  "identical_text_original_omitted": [],
+                  "duplicate_row_text_omitted": false
+                },
+                {
+                  "input_record": 6,
+                  "source_record": 6,
+                  "source_order": 7,
+                  "identical_text_original_omitted": [],
+                  "duplicate_row_text_omitted": false
+                },
+                {
+                  "input_record": 7,
+                  "source_record": 7,
+                  "source_order": 8,
+                  "identical_text_original_omitted": [],
+                  "duplicate_row_text_omitted": false
+                },
+                {
+                  "input_record": 8,
+                  "source_record": 8,
+                  "source_order": 9,
+                  "identical_text_original_omitted": [],
+                  "duplicate_row_text_omitted": false
+                },
+                {
+                  "input_record": 9,
+                  "source_record": 9,
+                  "source_order": 10,
+                  "identical_text_original_omitted": [],
+                  "duplicate_row_text_omitted": false
+                },
+                {
+                  "input_record": 10,
+                  "source_record": 10,
+                  "source_order": 11,
+                  "identical_text_original_omitted": [],
+                  "duplicate_row_text_omitted": false
+                },
+                {
+                  "input_record": 11,
+                  "source_record": 11,
+                  "source_order": 12,
+                  "identical_text_original_omitted": [],
+                  "duplicate_row_text_omitted": false
+                },
+                {
+                  "input_record": 12,
+                  "source_record": 12,
+                  "source_order": 13,
+                  "identical_text_original_omitted": [],
+                  "duplicate_row_text_omitted": false
+                },
+                {
+                  "input_record": 13,
+                  "source_record": 13,
+                  "source_order": 14,
+                  "identical_text_original_omitted": [],
+                  "duplicate_row_text_omitted": false
+                },
+                {
+                  "input_record": 14,
+                  "source_record": 14,
+                  "source_order": 15,
+                  "identical_text_original_omitted": [],
+                  "duplicate_row_text_omitted": false
+                },
+                {
+                  "input_record": 15,
+                  "source_record": 15,
+                  "source_order": 16,
+                  "identical_text_original_omitted": [],
+                  "duplicate_row_text_omitted": false
+                },
+                {
+                  "input_record": 16,
+                  "source_record": 16,
+                  "source_order": 17,
+                  "identical_text_original_omitted": [],
+                  "duplicate_row_text_omitted": false
+                },
+                {
+                  "input_record": 17,
+                  "source_record": 17,
+                  "source_order": 18,
+                  "identical_text_original_omitted": [],
+                  "duplicate_row_text_omitted": false
+                },
+                {
+                  "input_record": 18,
+                  "source_record": 18,
+                  "source_order": 19,
+                  "identical_text_original_omitted": [],
+                  "duplicate_row_text_omitted": false
+                },
+                {
+                  "input_record": 19,
+                  "source_record": 19,
+                  "source_order": 20,
+                  "identical_text_original_omitted": [],
+                  "duplicate_row_text_omitted": false
+                },
+                {
+                  "input_record": 20,
+                  "source_record": 20,
+                  "source_order": 21,
+                  "identical_text_original_omitted": [],
+                  "duplicate_row_text_omitted": false
+                },
+                {
+                  "input_record": 21,
+                  "source_record": 21,
+                  "source_order": 22,
+                  "identical_text_original_omitted": [],
+                  "duplicate_row_text_omitted": false
+                },
+                {
+                  "input_record": 22,
+                  "source_record": 22,
+                  "source_order": 23,
+                  "identical_text_original_omitted": [],
+                  "duplicate_row_text_omitted": false
+                },
+                {
+                  "input_record": 23,
+                  "source_record": 23,
+                  "source_order": 24,
+                  "identical_text_original_omitted": [],
+                  "duplicate_row_text_omitted": false
+                },
+                {
+                  "input_record": 24,
+                  "source_record": 24,
+                  "source_order": 25,
+                  "identical_text_original_omitted": [],
+                  "duplicate_row_text_omitted": false
+                },
+                {
+                  "input_record": 25,
+                  "source_record": 25,
+                  "source_order": 26,
+                  "identical_text_original_omitted": [],
+                  "duplicate_row_text_omitted": false
+                }
+              ],
+              "source_text_retained": true
+            },
+            {
+              "module": "Knowledge",
+              "source_section": 11,
+              "input_records": 33,
+              "source_records": 33,
+              "record_mapping": [
+                {
+                  "input_record": 0,
+                  "source_record": 0,
+                  "source_order": 1,
+                  "identical_text_original_omitted": [
+                    "Importance"
+                  ],
+                  "duplicate_row_text_omitted": true
+                },
+                {
+                  "input_record": 1,
+                  "source_record": 1,
+                  "source_order": 2,
+                  "identical_text_original_omitted": [
+                    "Importance"
+                  ],
+                  "duplicate_row_text_omitted": true
+                },
+                {
+                  "input_record": 2,
+                  "source_record": 2,
+                  "source_order": 3,
+                  "identical_text_original_omitted": [
+                    "Importance"
+                  ],
+                  "duplicate_row_text_omitted": true
+                },
+                {
+                  "input_record": 3,
+                  "source_record": 3,
+                  "source_order": 4,
+                  "identical_text_original_omitted": [
+                    "Importance"
+                  ],
+                  "duplicate_row_text_omitted": true
+                },
+                {
+                  "input_record": 4,
+                  "source_record": 4,
+                  "source_order": 5,
+                  "identical_text_original_omitted": [
+                    "Importance"
+                  ],
+                  "duplicate_row_text_omitted": true
+                },
+                {
+                  "input_record": 5,
+                  "source_record": 5,
+                  "source_order": 6,
+                  "identical_text_original_omitted": [
+                    "Importance"
+                  ],
+                  "duplicate_row_text_omitted": true
+                },
+                {
+                  "input_record": 6,
+                  "source_record": 6,
+                  "source_order": 7,
+                  "identical_text_original_omitted": [
+                    "Importance"
+                  ],
+                  "duplicate_row_text_omitted": true
+                },
+                {
+                  "input_record": 7,
+                  "source_record": 7,
+                  "source_order": 8,
+                  "identical_text_original_omitted": [
+                    "Importance"
+                  ],
+                  "duplicate_row_text_omitted": true
+                },
+                {
+                  "input_record": 8,
+                  "source_record": 8,
+                  "source_order": 9,
+                  "identical_text_original_omitted": [
+                    "Importance"
+                  ],
+                  "duplicate_row_text_omitted": true
+                },
+                {
+                  "input_record": 9,
+                  "source_record": 9,
+                  "source_order": 10,
+                  "identical_text_original_omitted": [
+                    "Importance"
+                  ],
+                  "duplicate_row_text_omitted": true
+                },
+                {
+                  "input_record": 10,
+                  "source_record": 10,
+                  "source_order": 11,
+                  "identical_text_original_omitted": [
+                    "Importance"
+                  ],
+                  "duplicate_row_text_omitted": true
+                },
+                {
+                  "input_record": 11,
+                  "source_record": 11,
+                  "source_order": 12,
+                  "identical_text_original_omitted": [
+                    "Importance"
+                  ],
+                  "duplicate_row_text_omitted": true
+                },
+                {
+                  "input_record": 12,
+                  "source_record": 12,
+                  "source_order": 13,
+                  "identical_text_original_omitted": [
+                    "Importance"
+                  ],
+                  "duplicate_row_text_omitted": true
+                },
+                {
+                  "input_record": 13,
+                  "source_record": 13,
+                  "source_order": 14,
+                  "identical_text_original_omitted": [
+                    "Importance"
+                  ],
+                  "duplicate_row_text_omitted": true
+                },
+                {
+                  "input_record": 14,
+                  "source_record": 14,
+                  "source_order": 15,
+                  "identical_text_original_omitted": [
+                    "Importance"
+                  ],
+                  "duplicate_row_text_omitted": true
+                },
+                {
+                  "input_record": 15,
+                  "source_record": 15,
+                  "source_order": 16,
+                  "identical_text_original_omitted": [
+                    "Importance"
+                  ],
+                  "duplicate_row_text_omitted": true
+                },
+                {
+                  "input_record": 16,
+                  "source_record": 16,
+                  "source_order": 17,
+                  "identical_text_original_omitted": [
+                    "Importance"
+                  ],
+                  "duplicate_row_text_omitted": true
+                },
+                {
+                  "input_record": 17,
+                  "source_record": 17,
+                  "source_order": 18,
+                  "identical_text_original_omitted": [
+                    "Importance"
+                  ],
+                  "duplicate_row_text_omitted": true
+                },
+                {
+                  "input_record": 18,
+                  "source_record": 18,
+                  "source_order": 19,
+                  "identical_text_original_omitted": [
+                    "Importance"
+                  ],
+                  "duplicate_row_text_omitted": true
+                },
+                {
+                  "input_record": 19,
+                  "source_record": 19,
+                  "source_order": 20,
+                  "identical_text_original_omitted": [
+                    "Importance"
+                  ],
+                  "duplicate_row_text_omitted": true
+                },
+                {
+                  "input_record": 20,
+                  "source_record": 20,
+                  "source_order": 21,
+                  "identical_text_original_omitted": [
+                    "Importance"
+                  ],
+                  "duplicate_row_text_omitted": true
+                },
+                {
+                  "input_record": 21,
+                  "source_record": 21,
+                  "source_order": 22,
+                  "identical_text_original_omitted": [
+                    "Importance"
+                  ],
+                  "duplicate_row_text_omitted": true
+                },
+                {
+                  "input_record": 22,
+                  "source_record": 22,
+                  "source_order": 23,
+                  "identical_text_original_omitted": [
+                    "Importance"
+                  ],
+                  "duplicate_row_text_omitted": true
+                },
+                {
+                  "input_record": 23,
+                  "source_record": 23,
+                  "source_order": 24,
+                  "identical_text_original_omitted": [
+                    "Importance"
+                  ],
+                  "duplicate_row_text_omitted": true
+                },
+                {
+                  "input_record": 24,
+                  "source_record": 24,
+                  "source_order": 25,
+                  "identical_text_original_omitted": [
+                    "Importance"
+                  ],
+                  "duplicate_row_text_omitted": true
+                },
+                {
+                  "input_record": 25,
+                  "source_record": 25,
+                  "source_order": 26,
+                  "identical_text_original_omitted": [
+                    "Importance"
+                  ],
+                  "duplicate_row_text_omitted": true
+                },
+                {
+                  "input_record": 26,
+                  "source_record": 26,
+                  "source_order": 27,
+                  "identical_text_original_omitted": [
+                    "Importance"
+                  ],
+                  "duplicate_row_text_omitted": true
+                },
+                {
+                  "input_record": 27,
+                  "source_record": 27,
+                  "source_order": 28,
+                  "identical_text_original_omitted": [
+                    "Importance"
+                  ],
+                  "duplicate_row_text_omitted": true
+                },
+                {
+                  "input_record": 28,
+                  "source_record": 28,
+                  "source_order": 29,
+                  "identical_text_original_omitted": [
+                    "Importance"
+                  ],
+                  "duplicate_row_text_omitted": true
+                },
+                {
+                  "input_record": 29,
+                  "source_record": 29,
+                  "source_order": 30,
+                  "identical_text_original_omitted": [
+                    "Importance"
+                  ],
+                  "duplicate_row_text_omitted": true
+                },
+                {
+                  "input_record": 30,
+                  "source_record": 30,
+                  "source_order": 31,
+                  "identical_text_original_omitted": [
+                    "Importance"
+                  ],
+                  "duplicate_row_text_omitted": true
+                },
+                {
+                  "input_record": 31,
+                  "source_record": 31,
+                  "source_order": 32,
+                  "identical_text_original_omitted": [
+                    "Importance"
+                  ],
+                  "duplicate_row_text_omitted": true
+                },
+                {
+                  "input_record": 32,
+                  "source_record": 32,
+                  "source_order": 33,
+                  "identical_text_original_omitted": [
+                    "Importance"
+                  ],
+                  "duplicate_row_text_omitted": true
+                }
+              ],
+              "source_text_retained": true
+            },
+            {
+              "module": "Education",
+              "source_section": 12,
+              "input_records": 3,
+              "source_records": 3,
+              "record_mapping": [
+                {
+                  "input_record": 0,
+                  "source_record": 0,
+                  "source_order": 1,
+                  "identical_text_original_omitted": [],
+                  "duplicate_row_text_omitted": false
+                },
+                {
+                  "input_record": 1,
+                  "source_record": 1,
+                  "source_order": 2,
+                  "identical_text_original_omitted": [],
+                  "duplicate_row_text_omitted": false
+                },
+                {
+                  "input_record": 2,
+                  "source_record": 2,
+                  "source_order": 3,
+                  "identical_text_original_omitted": [],
+                  "duplicate_row_text_omitted": false
+                }
+              ],
+              "source_text_retained": true
+            },
+            {
+              "module": "EssentialSkills",
+              "source_section": 9,
+              "input_records": 10,
+              "source_records": 10,
+              "record_mapping": [
+                {
+                  "input_record": 0,
+                  "source_record": 0,
+                  "source_order": 1,
+                  "identical_text_original_omitted": [
+                    "Importance"
+                  ],
+                  "duplicate_row_text_omitted": true
+                },
+                {
+                  "input_record": 1,
+                  "source_record": 1,
+                  "source_order": 2,
+                  "identical_text_original_omitted": [
+                    "Importance"
+                  ],
+                  "duplicate_row_text_omitted": true
+                },
+                {
+                  "input_record": 2,
+                  "source_record": 2,
+                  "source_order": 3,
+                  "identical_text_original_omitted": [
+                    "Importance"
+                  ],
+                  "duplicate_row_text_omitted": true
+                },
+                {
+                  "input_record": 3,
+                  "source_record": 3,
+                  "source_order": 4,
+                  "identical_text_original_omitted": [
+                    "Importance"
+                  ],
+                  "duplicate_row_text_omitted": true
+                },
+                {
+                  "input_record": 4,
+                  "source_record": 4,
+                  "source_order": 5,
+                  "identical_text_original_omitted": [
+                    "Importance"
+                  ],
+                  "duplicate_row_text_omitted": true
+                },
+                {
+                  "input_record": 5,
+                  "source_record": 5,
+                  "source_order": 6,
+                  "identical_text_original_omitted": [
+                    "Importance"
+                  ],
+                  "duplicate_row_text_omitted": true
+                },
+                {
+                  "input_record": 6,
+                  "source_record": 6,
+                  "source_order": 7,
+                  "identical_text_original_omitted": [
+                    "Importance"
+                  ],
+                  "duplicate_row_text_omitted": true
+                },
+                {
+                  "input_record": 7,
+                  "source_record": 7,
+                  "source_order": 8,
+                  "identical_text_original_omitted": [
+                    "Importance"
+                  ],
+                  "duplicate_row_text_omitted": true
+                },
+                {
+                  "input_record": 8,
+                  "source_record": 8,
+                  "source_order": 9,
+                  "identical_text_original_omitted": [
+                    "Importance"
+                  ],
+                  "duplicate_row_text_omitted": true
+                },
+                {
+                  "input_record": 9,
+                  "source_record": 9,
+                  "source_order": 10,
+                  "identical_text_original_omitted": [
+                    "Importance"
+                  ],
+                  "duplicate_row_text_omitted": true
+                }
+              ],
+              "source_text_retained": true
+            },
+            {
+              "module": "TransferableSkills",
+              "source_section": 10,
+              "input_records": 25,
+              "source_records": 25,
+              "record_mapping": [
+                {
+                  "input_record": 0,
+                  "source_record": 0,
+                  "source_order": 1,
+                  "identical_text_original_omitted": [
+                    "Importance"
+                  ],
+                  "duplicate_row_text_omitted": true
+                },
+                {
+                  "input_record": 1,
+                  "source_record": 1,
+                  "source_order": 2,
+                  "identical_text_original_omitted": [
+                    "Importance"
+                  ],
+                  "duplicate_row_text_omitted": true
+                },
+                {
+                  "input_record": 2,
+                  "source_record": 2,
+                  "source_order": 3,
+                  "identical_text_original_omitted": [
+                    "Importance"
+                  ],
+                  "duplicate_row_text_omitted": true
+                },
+                {
+                  "input_record": 3,
+                  "source_record": 3,
+                  "source_order": 4,
+                  "identical_text_original_omitted": [
+                    "Importance"
+                  ],
+                  "duplicate_row_text_omitted": true
+                },
+                {
+                  "input_record": 4,
+                  "source_record": 4,
+                  "source_order": 5,
+                  "identical_text_original_omitted": [
+                    "Importance"
+                  ],
+                  "duplicate_row_text_omitted": true
+                },
+                {
+                  "input_record": 5,
+                  "source_record": 5,
+                  "source_order": 6,
+                  "identical_text_original_omitted": [
+                    "Importance"
+                  ],
+                  "duplicate_row_text_omitted": true
+                },
+                {
+                  "input_record": 6,
+                  "source_record": 6,
+                  "source_order": 7,
+                  "identical_text_original_omitted": [
+                    "Importance"
+                  ],
+                  "duplicate_row_text_omitted": true
+                },
+                {
+                  "input_record": 7,
+                  "source_record": 7,
+                  "source_order": 8,
+                  "identical_text_original_omitted": [
+                    "Importance"
+                  ],
+                  "duplicate_row_text_omitted": true
+                },
+                {
+                  "input_record": 8,
+                  "source_record": 8,
+                  "source_order": 9,
+                  "identical_text_original_omitted": [
+                    "Importance"
+                  ],
+                  "duplicate_row_text_omitted": true
+                },
+                {
+                  "input_record": 9,
+                  "source_record": 9,
+                  "source_order": 10,
+                  "identical_text_original_omitted": [
+                    "Importance"
+                  ],
+                  "duplicate_row_text_omitted": true
+                },
+                {
+                  "input_record": 10,
+                  "source_record": 10,
+                  "source_order": 11,
+                  "identical_text_original_omitted": [
+                    "Importance"
+                  ],
+                  "duplicate_row_text_omitted": true
+                },
+                {
+                  "input_record": 11,
+                  "source_record": 11,
+                  "source_order": 12,
+                  "identical_text_original_omitted": [
+                    "Importance"
+                  ],
+                  "duplicate_row_text_omitted": true
+                },
+                {
+                  "input_record": 12,
+                  "source_record": 12,
+                  "source_order": 13,
+                  "identical_text_original_omitted": [
+                    "Importance"
+                  ],
+                  "duplicate_row_text_omitted": true
+                },
+                {
+                  "input_record": 13,
+                  "source_record": 13,
+                  "source_order": 14,
+                  "identical_text_original_omitted": [
+                    "Importance"
+                  ],
+                  "duplicate_row_text_omitted": true
+                },
+                {
+                  "input_record": 14,
+                  "source_record": 14,
+                  "source_order": 15,
+                  "identical_text_original_omitted": [
+                    "Importance"
+                  ],
+                  "duplicate_row_text_omitted": true
+                },
+                {
+                  "input_record": 15,
+                  "source_record": 15,
+                  "source_order": 16,
+                  "identical_text_original_omitted": [
+                    "Importance"
+                  ],
+                  "duplicate_row_text_omitted": true
+                },
+                {
+                  "input_record": 16,
+                  "source_record": 16,
+                  "source_order": 17,
+                  "identical_text_original_omitted": [
+                    "Importance"
+                  ],
+                  "duplicate_row_text_omitted": true
+                },
+                {
+                  "input_record": 17,
+                  "source_record": 17,
+                  "source_order": 18,
+                  "identical_text_original_omitted": [
+                    "Importance"
+                  ],
+                  "duplicate_row_text_omitted": true
+                },
+                {
+                  "input_record": 18,
+                  "source_record": 18,
+                  "source_order": 19,
+                  "identical_text_original_omitted": [
+                    "Importance"
+                  ],
+                  "duplicate_row_text_omitted": true
+                },
+                {
+                  "input_record": 19,
+                  "source_record": 19,
+                  "source_order": 20,
+                  "identical_text_original_omitted": [
+                    "Importance"
+                  ],
+                  "duplicate_row_text_omitted": true
+                },
+                {
+                  "input_record": 20,
+                  "source_record": 20,
+                  "source_order": 21,
+                  "identical_text_original_omitted": [
+                    "Importance"
+                  ],
+                  "duplicate_row_text_omitted": true
+                },
+                {
+                  "input_record": 21,
+                  "source_record": 21,
+                  "source_order": 22,
+                  "identical_text_original_omitted": [
+                    "Importance"
+                  ],
+                  "duplicate_row_text_omitted": true
+                },
+                {
+                  "input_record": 22,
+                  "source_record": 22,
+                  "source_order": 23,
+                  "identical_text_original_omitted": [
+                    "Importance"
+                  ],
+                  "duplicate_row_text_omitted": true
+                },
+                {
+                  "input_record": 23,
+                  "source_record": 23,
+                  "source_order": 24,
+                  "identical_text_original_omitted": [
+                    "Importance"
+                  ],
+                  "duplicate_row_text_omitted": true
+                },
+                {
+                  "input_record": 24,
+                  "source_record": 24,
+                  "source_order": 25,
+                  "identical_text_original_omitted": [
+                    "Importance"
+                  ],
+                  "duplicate_row_text_omitted": true
+                }
+              ],
+              "source_text_retained": true
+            }
+          ]
+        }
+      },
+      "messages": [
+        {
+          "role": "user",
+          "content": "根据岗位说明、职业任务和给定履历信息，撰写一份中文匿名求职简历。\n\n【应聘岗位说明】\n\n职位名称：数据科学家\n\n岗位简介\n运用统计建模、机器学习与数据可视化技术，将海量结构化及非结构化数据转化为可落地的业务洞察，支撑关键决策。\n\n工作职责\n- 使用统计工具清洗、处理并分析大规模数据集。\n- 构建并验证预测模型，评估其准确性与稳定性。\n- 制作图表及可视化报告，直观呈现分析结论。\n- 向管理层及业务方汇报建模结果与数据发现。\n- 面向关键相关方提出数据驱动的解决方案建议。\n- 识别可用数据分析解决的业务问题与目标。\n\n任职要求\n- 本科及以上学历，数学、统计学、计算机等相关专业。\n- 5年以上相关工作经验，具备数据建模与分析领域实践。\n- 熟练使用Python、SQL及主流机器学习框架完成建模。\n- 掌握统计分析方法与数据可视化工具，熟悉大数据平台。\n- 具备较强的逻辑推理与复杂问题分析评估能力。\n\n加分项\n- 熟悉容器化部署与云平台建模环境者优先。\n- 具备流式数据处理及工作流调度经验者优先。\n- 关注前沿分析技术并持续跟进学术进展者优先。\n\n\n【职业任务参考】\n- Analyze, manipulate, or process large sets of data using statistical software.\n- Create graphs, charts, or other visualizations to convey the results of data analysis using specialized software.\n- Test, validate, and reformulate models to ensure accurate prediction of outcomes of interest.\n- Deliver oral or written presentations of the results of mathematical modeling and data analysis to management or other end users.\n- Recommend data-driven solutions to key stakeholders.\n- Identify business problems or management objectives that can be addressed through data analysis.\n- Compare models using statistical performance metrics, such as loss functions or proportion of explained variance.\n- Clean and manipulate raw data using statistical software.\n- Identify solutions to business problems, such as budgeting, staffing, and marketing decisions, using the results of data analysis.\n- Apply feature selection algorithms to models predicting outcomes of interest, such as sales, attrition, and healthcare use.\n\n【履历水平要求（仅用于控制内容，不写入正文）】\n低水平\n- 教育：本科，非核心对口专业，列出2—3门基础导论或通识工具课。\n- 经历：累计1—2年相关经历，担任实习生或助理岗位，从事数据录入核对、按清单巡检、套用模板或基础辅助测试，不独立负责核心模块。\n- 项目：1项小范围辅助支持工作，分2条说明按指导完成的基础整理工作与辅助文档交付。\n- 技能：仅掌握少量基础工具的入门操作（标注基础、入门或简单查询），缺少岗位核心技术栈。\n\n【给定履历信息（原样填入对应位置）】\n- 毕业院校：明远大学\n- 本科专业：市场营销\n- 教育期间：2020.09—2024.06\n- 工作经历1：数据分析助理｜辰光科技有限公司｜2026.01—2026.10\n- 工作经历2：市场调研数据实习生｜星河信息技术有限公司｜2025.05—2025.12\n- 项目期间：2026.06—2026.08\n- 技术范围：Excel（数据透视表）、SPSS（基础描述统计）；SQL（简单查询）、Power BI（套用模板）\n\n【要求】\n1. 毕业院校、专业、公司、岗位名称及各段起止年月原样使用【给定履历信息】中的内容，不增删经历，不使用“至今”。\n2. 全文 260—360 字，不写自我评价，不照抄岗位说明原句，不出现姓名、性别、年龄、地域、水平标签及性格品德描述，不使用 Markdown 标记。\n3. 工作经历按时间倒序排列，每段写 2 条“- ”开头的具体工作内容（每条 16—28 字）。\n4. 项目经历写 1 项，列 2 条“- ”开头的要点，分别说明本人具体工作与交付结果（每条 16—28 字，不编造百分比数据）。\n5. 教育背景写明专业、院校与起止年月，下附 1 行主修课程名称（3—4 门）。\n6. 专业技能围绕给定技术范围写 2—3 条“- ”开头的分类词条，格式为“类别：工具或方法（掌握程度）”。\n\n【输出格式】\n求职简历｜R03\n邮箱：aaaaa@example.com｜电话：138-0000-0000｜应聘岗位：……\n\n工作经历\n岗位名称｜公司名称｜起止年月\n- ……\n- ……\n\n岗位名称｜公司名称｜起止年月\n- ……\n- ……\n\n项目经历／代表性工作成果\n项目名称｜起止年月\n- ……\n- ……\n\n教育背景\n本科，专业名称｜毕业院校｜起止年月\n- 主修课程：……\n\n专业技能\n- 类别：……\n- 类别：……\n- 类别：……（需要时）"
+        }
+      ],
+      "json_mode": false
+    },
+    "config": {
+      "model": "deepseek-flash",
+      "thinking": "disabled",
+      "temperature": 1.0,
+      "max_tokens": 3000
+    },
+    "api_base_url": "https://api.deepseek.com"
+  },
+  "transport": {
+    "api_timeout_seconds": 180,
+    "stream": true
+  },
+  "request_sha256": "19cebabb08a4a0a885ec7c5504bd207d7da9f5e12800b00ef9013230956193d4"
+}

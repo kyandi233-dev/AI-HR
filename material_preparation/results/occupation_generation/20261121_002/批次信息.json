@@ -1,0 +1,44 @@
+{
+  "format_version": 3,
+  "run_id": "20261121_002",
+  "created_utc": "2026-11-25T09:44:35.663941+00:00",
+  "aliases": {
+    "resume": [
+      "software_resumes_draft_20261121",
+      "20261121_002"
+    ]
+  },
+  "plans": {
+    "resume": {
+      "task": "resume",
+      "run_id": "software_resumes_draft_20261121"
+    }
+  },
+  "tasks": {
+    "resume|Software_Developers_15-1252.00|R01": {
+      "sequence": 1,
+      "group": "Software_Developers_15-1252.00",
+      "task_id": "R01",
+      "task": "resume"
+    },
+    "resume|Software_Developers_15-1252.00|R02": {
+      "sequence": 2,
+      "group": "Software_Developers_15-1252.00",
+      "task_id": "R02",
+      "task": "resume"
+    }
+  },
+  "generated": {},
+  "legacy_link_targets": {},
+  "parameters": {
+    "resume": {
+      "model": {
+        "model": "deepseek-flash",
+        "thinking": "disabled",
+        "temperature": 1.0,
+        "max_tokens": 3000
+      },
+      "api_base_url": "https://api.deepseek.com"
+    }
+  }
+}

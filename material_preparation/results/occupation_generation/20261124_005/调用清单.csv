@@ -1,0 +1,5 @@
+﻿序号,类型,职业或维度,材料编号,目标水平,尝试次数,状态,输入,输出,当前草稿,错误说明
+1,jd,business_intelligence,JD01,,1,未执行,material_preparation/results/occupation_generation/20261124_005/Business_Intelligence_Analysts_15-2051.01/001_jd/input.json,,,
+2,jd,data_scientists,JD01,,1,未执行,material_preparation/results/occupation_generation/20261124_005/Data_Scientists_15-2051.00/002_jd/input.json,,,
+3,jd,information_security_analysts,JD01,,1,未执行,material_preparation/results/occupation_generation/20261124_005/Information_Security_Analysts_15-1212.00/003_jd/input.json,,,
+4,jd,software_developer,JD01,,1,未执行,material_preparation/results/occupation_generation/20261124_005/Software_Developers_15-1252.00/004_jd/input.json,,,

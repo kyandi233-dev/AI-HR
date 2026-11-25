@@ -1,0 +1,3287 @@
+{
+  "run_id": "jd_scannable_v3_20261124",
+  "task_id": "JD01",
+  "attempt": 1,
+  "task": "jd",
+  "stage": "pilot",
+  "concurrency": 1,
+  "sequence": 3,
+  "context": {
+    "input_json_sha256": "2819b7f9ed6cf3c4e8832599c502deaf505b18dccfe51baed857d4de6b516a64",
+    "input_projection": {
+      "code_sha256": "15740bfa9c94345843eaca1a0a3399658851a4886ecf4b84031cfcca88927e07",
+      "config_sha256": "a4fac7cfff6a8ab08332b19eb0599d0c7f0e9d0fdd49ceb9cdf60e177d15dcc7",
+      "excluded_modules": [
+        "WorkActivities",
+        "WorkContext",
+        "TrainingCredentials",
+        "Apprenticeship",
+        "Abilities",
+        "CareerInterestTypes",
+        "SpecificInterestAreas",
+        "WorkStyles",
+        "WagesEmployment",
+        "JobOpenings",
+        "RelatedOccupations",
+        "ProfessionalAssociations"
+      ],
+      "full_json_characters": 705897,
+      "input_json_characters": 70455,
+      "modules": [
+        {
+          "input_records": 35,
+          "module": "Overview",
+          "record_mapping": [
+            {
+              "duplicate_row_text_omitted": false,
+              "identical_text_original_omitted": [],
+              "input_record": 0,
+              "source_order": 1,
+              "source_record": 0
+            },
+            {
+              "duplicate_row_text_omitted": false,
+              "identical_text_original_omitted": [],
+              "input_record": 1,
+              "source_order": 2,
+              "source_record": 1
+            },
+            {
+              "duplicate_row_text_omitted": false,
+              "identical_text_original_omitted": [],
+              "input_record": 2,
+              "source_order": 3,
+              "source_record": 2
+            },
+            {
+              "duplicate_row_text_omitted": false,
+              "identical_text_original_omitted": [],
+              "input_record": 3,
+              "source_order": 4,
+              "source_record": 3
+            },
+            {
+              "duplicate_row_text_omitted": false,
+              "identical_text_original_omitted": [],
+              "input_record": 4,
+              "source_order": 5,
+              "source_record": 4
+            },
+            {
+              "duplicate_row_text_omitted": false,
+              "identical_text_original_omitted": [],
+              "input_record": 5,
+              "source_order": 6,
+              "source_record": 5
+            },
+            {
+              "duplicate_row_text_omitted": false,
+              "identical_text_original_omitted": [],
+              "input_record": 6,
+              "source_order": 7,
+              "source_record": 6
+            },
+            {
+              "duplicate_row_text_omitted": false,
+              "identical_text_original_omitted": [],
+              "input_record": 7,
+              "source_order": 8,
+              "source_record": 7
+            },
+            {
+              "duplicate_row_text_omitted": false,
+              "identical_text_original_omitted": [],
+              "input_record": 8,
+              "source_order": 9,
+              "source_record": 8
+            },
+            {
+              "duplicate_row_text_omitted": false,
+              "identical_text_original_omitted": [],
+              "input_record": 9,
+              "source_order": 10,
+              "source_record": 9
+            },
+            {
+              "duplicate_row_text_omitted": false,
+              "identical_text_original_omitted": [],
+              "input_record": 10,
+              "source_order": 11,
+              "source_record": 10
+            },
+            {
+              "duplicate_row_text_omitted": false,
+              "identical_text_original_omitted": [],
+              "input_record": 11,
+              "source_order": 12,
+              "source_record": 11
+            },
+            {
+              "duplicate_row_text_omitted": false,
+              "identical_text_original_omitted": [],
+              "input_record": 12,
+              "source_order": 13,
+              "source_record": 12
+            },
+            {
+              "duplicate_row_text_omitted": false,
+              "identical_text_original_omitted": [],
+              "input_record": 13,
+              "source_order": 14,
+              "source_record": 13
+            },
+            {
+              "duplicate_row_text_omitted": false,
+              "identical_text_original_omitted": [],
+              "input_record": 14,
+              "source_order": 15,
+              "source_record": 14
+            },
+            {
+              "duplicate_row_text_omitted": false,
+              "identical_text_original_omitted": [],
+              "input_record": 15,
+              "source_order": 16,
+              "source_record": 15
+            },
+            {
+              "duplicate_row_text_omitted": false,
+              "identical_text_original_omitted": [],
+              "input_record": 16,
+              "source_order": 17,
+              "source_record": 16
+            },
+            {
+              "duplicate_row_text_omitted": false,
+              "identical_text_original_omitted": [],
+              "input_record": 17,
+              "source_order": 18,
+              "source_record": 17
+            },
+            {
+              "duplicate_row_text_omitted": false,
+              "identical_text_original_omitted": [],
+              "input_record": 18,
+              "source_order": 19,
+              "source_record": 18
+            },
+            {
+              "duplicate_row_text_omitted": false,
+              "identical_text_original_omitted": [],
+              "input_record": 19,
+              "source_order": 20,
+              "source_record": 19
+            },
+            {
+              "duplicate_row_text_omitted": false,
+              "identical_text_original_omitted": [],
+              "input_record": 20,
+              "source_order": 21,
+              "source_record": 20
+            },
+            {
+              "duplicate_row_text_omitted": false,
+              "identical_text_original_omitted": [],
+              "input_record": 21,
+              "source_order": 22,
+              "source_record": 21
+            },
+            {
+              "duplicate_row_text_omitted": false,
+              "identical_text_original_omitted": [],
+              "input_record": 22,
+              "source_order": 23,
+              "source_record": 22
+            },
+            {
+              "duplicate_row_text_omitted": false,
+              "identical_text_original_omitted": [],
+              "input_record": 23,
+              "source_order": 24,
+              "source_record": 23
+            },
+            {
+              "duplicate_row_text_omitted": false,
+              "identical_text_original_omitted": [],
+              "input_record": 24,
+              "source_order": 25,
+              "source_record": 24
+            },
+            {
+              "duplicate_row_text_omitted": false,
+              "identical_text_original_omitted": [],
+              "input_record": 25,
+              "source_order": 26,
+              "source_record": 25
+            },
+            {
+              "duplicate_row_text_omitted": false,
+              "identical_text_original_omitted": [],
+              "input_record": 26,
+              "source_order": 27,
+              "source_record": 26
+            },
+            {
+              "duplicate_row_text_omitted": false,
+              "identical_text_original_omitted": [],
+              "input_record": 27,
+              "source_order": 28,
+              "source_record": 27
+            },
+            {
+              "duplicate_row_text_omitted": false,
+              "identical_text_original_omitted": [],
+              "input_record": 28,
+              "source_order": 29,
+              "source_record": 28
+            },
+            {
+              "duplicate_row_text_omitted": false,
+              "identical_text_original_omitted": [],
+              "input_record": 29,
+              "source_order": 30,
+              "source_record": 29
+            },
+            {
+              "duplicate_row_text_omitted": false,
+              "identical_text_original_omitted": [],
+              "input_record": 30,
+              "source_order": 31,
+              "source_record": 30
+            },
+            {
+              "duplicate_row_text_omitted": false,
+              "identical_text_original_omitted": [],
+              "input_record": 31,
+              "source_order": 32,
+              "source_record": 31
+            },
+            {
+              "duplicate_row_text_omitted": false,
+              "identical_text_original_omitted": [],
+              "input_record": 32,
+              "source_order": 33,
+              "source_record": 32
+            },
+            {
+              "duplicate_row_text_omitted": false,
+              "identical_text_original_omitted": [],
+              "input_record": 33,
+              "source_order": 34,
+              "source_record": 33
+            },
+            {
+              "duplicate_row_text_omitted": false,
+              "identical_text_original_omitted": [],
+              "input_record": 34,
+              "source_order": 35,
+              "source_record": 34
+            }
+          ],
+          "source_records": 35,
+          "source_section": 0,
+          "source_text_retained": true
+        },
+        {
+          "input_records": 11,
+          "module": "Tasks",
+          "record_mapping": [
+            {
+              "duplicate_row_text_omitted": true,
+              "identical_text_original_omitted": [
+                "Importance",
+                "Category"
+              ],
+              "input_record": 0,
+              "source_order": 1,
+              "source_record": 0
+            },
+            {
+              "duplicate_row_text_omitted": true,
+              "identical_text_original_omitted": [
+                "Importance",
+                "Category"
+              ],
+              "input_record": 1,
+              "source_order": 2,
+              "source_record": 1
+            },
+            {
+              "duplicate_row_text_omitted": true,
+              "identical_text_original_omitted": [
+                "Importance",
+                "Category"
+              ],
+              "input_record": 2,
+              "source_order": 3,
+              "source_record": 2
+            },
+            {
+              "duplicate_row_text_omitted": true,
+              "identical_text_original_omitted": [
+                "Importance",
+                "Category"
+              ],
+              "input_record": 3,
+              "source_order": 4,
+              "source_record": 3
+            },
+            {
+              "duplicate_row_text_omitted": true,
+              "identical_text_original_omitted": [
+                "Importance",
+                "Category"
+              ],
+              "input_record": 4,
+              "source_order": 5,
+              "source_record": 4
+            },
+            {
+              "duplicate_row_text_omitted": true,
+              "identical_text_original_omitted": [
+                "Importance",
+                "Category"
+              ],
+              "input_record": 5,
+              "source_order": 6,
+              "source_record": 5
+            },
+            {
+              "duplicate_row_text_omitted": true,
+              "identical_text_original_omitted": [
+                "Importance",
+                "Category"
+              ],
+              "input_record": 6,
+              "source_order": 7,
+              "source_record": 6
+            },
+            {
+              "duplicate_row_text_omitted": true,
+              "identical_text_original_omitted": [
+                "Importance",
+                "Category"
+              ],
+              "input_record": 7,
+              "source_order": 8,
+              "source_record": 7
+            },
+            {
+              "duplicate_row_text_omitted": true,
+              "identical_text_original_omitted": [
+                "Importance",
+                "Category"
+              ],
+              "input_record": 8,
+              "source_order": 9,
+              "source_record": 8
+            },
+            {
+              "duplicate_row_text_omitted": true,
+              "identical_text_original_omitted": [
+                "Importance",
+                "Category"
+              ],
+              "input_record": 9,
+              "source_order": 10,
+              "source_record": 9
+            },
+            {
+              "duplicate_row_text_omitted": true,
+              "identical_text_original_omitted": [
+                "Importance",
+                "Category"
+              ],
+              "input_record": 10,
+              "source_order": 11,
+              "source_record": 10
+            }
+          ],
+          "source_records": 11,
+          "source_section": 1,
+          "source_text_retained": true
+        },
+        {
+          "input_records": 10,
+          "module": "DetailedWorkActivities",
+          "record_mapping": [
+            {
+              "duplicate_row_text_omitted": false,
+              "identical_text_original_omitted": [],
+              "input_record": 0,
+              "source_order": 1,
+              "source_record": 0
+            },
+            {
+              "duplicate_row_text_omitted": false,
+              "identical_text_original_omitted": [],
+              "input_record": 1,
+              "source_order": 2,
+              "source_record": 1
+            },
+            {
+              "duplicate_row_text_omitted": false,
+              "identical_text_original_omitted": [],
+              "input_record": 2,
+              "source_order": 3,
+              "source_record": 2
+            },
+            {
+              "duplicate_row_text_omitted": false,
+              "identical_text_original_omitted": [],
+              "input_record": 3,
+              "source_order": 4,
+              "source_record": 3
+            },
+            {
+              "duplicate_row_text_omitted": false,
+              "identical_text_original_omitted": [],
+              "input_record": 4,
+              "source_order": 5,
+              "source_record": 4
+            },
+            {
+              "duplicate_row_text_omitted": false,
+              "identical_text_original_omitted": [],
+              "input_record": 5,
+              "source_order": 6,
+              "source_record": 5
+            },
+            {
+              "duplicate_row_text_omitted": false,
+              "identical_text_original_omitted": [],
+              "input_record": 6,
+              "source_order": 7,
+              "source_record": 6
+            },
+            {
+              "duplicate_row_text_omitted": false,
+              "identical_text_original_omitted": [],
+              "input_record": 7,
+              "source_order": 8,
+              "source_record": 7
+            },
+            {
+              "duplicate_row_text_omitted": false,
+              "identical_text_original_omitted": [],
+              "input_record": 8,
+              "source_order": 9,
+              "source_record": 8
+            },
+            {
+              "duplicate_row_text_omitted": false,
+              "identical_text_original_omitted": [],
+              "input_record": 9,
+              "source_order": 10,
+              "source_record": 9
+            }
+          ],
+          "source_records": 10,
+          "source_section": 3,
+          "source_text_retained": true
+        },
+        {
+          "input_records": 6,
+          "module": "JobZone",
+          "record_mapping": [
+            {
+              "duplicate_row_text_omitted": false,
+              "identical_text_original_omitted": [],
+              "input_record": 0,
+              "source_order": 1,
+              "source_record": 0
+            },
+            {
+              "duplicate_row_text_omitted": false,
+              "identical_text_original_omitted": [],
+              "input_record": 1,
+              "source_order": 2,
+              "source_record": 1
+            },
+            {
+              "duplicate_row_text_omitted": false,
+              "identical_text_original_omitted": [],
+              "input_record": 2,
+              "source_order": 3,
+              "source_record": 2
+            },
+            {
+              "duplicate_row_text_omitted": false,
+              "identical_text_original_omitted": [],
+              "input_record": 3,
+              "source_order": 4,
+              "source_record": 3
+            },
+            {
+              "duplicate_row_text_omitted": false,
+              "identical_text_original_omitted": [],
+              "input_record": 4,
+              "source_order": 5,
+              "source_record": 4
+            },
+            {
+              "duplicate_row_text_omitted": false,
+              "identical_text_original_omitted": [],
+              "input_record": 5,
+              "source_order": 6,
+              "source_record": 5
+            }
+          ],
+          "source_records": 6,
+          "source_section": 5,
+          "source_text_retained": true
+        },
+        {
+          "input_records": 59,
+          "module": "SoftwareSkills",
+          "record_mapping": [
+            {
+              "duplicate_row_text_omitted": false,
+              "identical_text_original_omitted": [],
+              "input_record": 0,
+              "source_order": 1,
+              "source_record": 0
+            },
+            {
+              "duplicate_row_text_omitted": false,
+              "identical_text_original_omitted": [],
+              "input_record": 1,
+              "source_order": 2,
+              "source_record": 1
+            },
+            {
+              "duplicate_row_text_omitted": false,
+              "identical_text_original_omitted": [],
+              "input_record": 2,
+              "source_order": 3,
+              "source_record": 2
+            },
+            {
+              "duplicate_row_text_omitted": false,
+              "identical_text_original_omitted": [],
+              "input_record": 3,
+              "source_order": 4,
+              "source_record": 3
+            },
+            {
+              "duplicate_row_text_omitted": false,
+              "identical_text_original_omitted": [],
+              "input_record": 4,
+              "source_order": 5,
+              "source_record": 4
+            },
+            {
+              "duplicate_row_text_omitted": false,
+              "identical_text_original_omitted": [],
+              "input_record": 5,
+              "source_order": 6,
+              "source_record": 5
+            },
+            {
+              "duplicate_row_text_omitted": false,
+              "identical_text_original_omitted": [],
+              "input_record": 6,
+              "source_order": 7,
+              "source_record": 6
+            },
+            {
+              "duplicate_row_text_omitted": false,
+              "identical_text_original_omitted": [],
+              "input_record": 7,
+              "source_order": 8,
+              "source_record": 7
+            },
+            {
+              "duplicate_row_text_omitted": false,
+              "identical_text_original_omitted": [],
+              "input_record": 8,
+              "source_order": 9,
+              "source_record": 8
+            },
+            {
+              "duplicate_row_text_omitted": false,
+              "identical_text_original_omitted": [],
+              "input_record": 9,
+              "source_order": 10,
+              "source_record": 9
+            },
+            {
+              "duplicate_row_text_omitted": false,
+              "identical_text_original_omitted": [],
+              "input_record": 10,
+              "source_order": 11,
+              "source_record": 10
+            },
+            {
+              "duplicate_row_text_omitted": false,
+              "identical_text_original_omitted": [],
+              "input_record": 11,
+              "source_order": 12,
+              "source_record": 11
+            },
+            {
+              "duplicate_row_text_omitted": false,
+              "identical_text_original_omitted": [],
+              "input_record": 12,
+              "source_order": 13,
+              "source_record": 12
+            },
+            {
+              "duplicate_row_text_omitted": false,
+              "identical_text_original_omitted": [],
+              "input_record": 13,
+              "source_order": 14,
+              "source_record": 13
+            },
+            {
+              "duplicate_row_text_omitted": false,
+              "identical_text_original_omitted": [],
+              "input_record": 14,
+              "source_order": 15,
+              "source_record": 14
+            },
+            {
+              "duplicate_row_text_omitted": false,
+              "identical_text_original_omitted": [],
+              "input_record": 15,
+              "source_order": 16,
+              "source_record": 15
+            },
+            {
+              "duplicate_row_text_omitted": false,
+              "identical_text_original_omitted": [],
+              "input_record": 16,
+              "source_order": 17,
+              "source_record": 16
+            },
+            {
+              "duplicate_row_text_omitted": false,
+              "identical_text_original_omitted": [],
+              "input_record": 17,
+              "source_order": 18,
+              "source_record": 17
+            },
+            {
+              "duplicate_row_text_omitted": false,
+              "identical_text_original_omitted": [],
+              "input_record": 18,
+              "source_order": 19,
+              "source_record": 18
+            },
+            {
+              "duplicate_row_text_omitted": false,
+              "identical_text_original_omitted": [],
+              "input_record": 19,
+              "source_order": 20,
+              "source_record": 19
+            },
+            {
+              "duplicate_row_text_omitted": false,
+              "identical_text_original_omitted": [],
+              "input_record": 20,
+              "source_order": 21,
+              "source_record": 20
+            },
+            {
+              "duplicate_row_text_omitted": false,
+              "identical_text_original_omitted": [],
+              "input_record": 21,
+              "source_order": 22,
+              "source_record": 21
+            },
+            {
+              "duplicate_row_text_omitted": false,
+              "identical_text_original_omitted": [],
+              "input_record": 22,
+              "source_order": 23,
+              "source_record": 22
+            },
+            {
+              "duplicate_row_text_omitted": false,
+              "identical_text_original_omitted": [],
+              "input_record": 23,
+              "source_order": 24,
+              "source_record": 23
+            },
+            {
+              "duplicate_row_text_omitted": false,
+              "identical_text_original_omitted": [],
+              "input_record": 24,
+              "source_order": 25,
+              "source_record": 24
+            },
+            {
+              "duplicate_row_text_omitted": false,
+              "identical_text_original_omitted": [],
+              "input_record": 25,
+              "source_order": 26,
+              "source_record": 25
+            },
+            {
+              "duplicate_row_text_omitted": false,
+              "identical_text_original_omitted": [],
+              "input_record": 26,
+              "source_order": 27,
+              "source_record": 26
+            },
+            {
+              "duplicate_row_text_omitted": false,
+              "identical_text_original_omitted": [],
+              "input_record": 27,
+              "source_order": 28,
+              "source_record": 27
+            },
+            {
+              "duplicate_row_text_omitted": false,
+              "identical_text_original_omitted": [],
+              "input_record": 28,
+              "source_order": 29,
+              "source_record": 28
+            },
+            {
+              "duplicate_row_text_omitted": false,
+              "identical_text_original_omitted": [],
+              "input_record": 29,
+              "source_order": 30,
+              "source_record": 29
+            },
+            {
+              "duplicate_row_text_omitted": false,
+              "identical_text_original_omitted": [],
+              "input_record": 30,
+              "source_order": 31,
+              "source_record": 30
+            },
+            {
+              "duplicate_row_text_omitted": false,
+              "identical_text_original_omitted": [],
+              "input_record": 31,
+              "source_order": 32,
+              "source_record": 31
+            },
+            {
+              "duplicate_row_text_omitted": false,
+              "identical_text_original_omitted": [],
+              "input_record": 32,
+              "source_order": 33,
+              "source_record": 32
+            },
+            {
+              "duplicate_row_text_omitted": false,
+              "identical_text_original_omitted": [],
+              "input_record": 33,
+              "source_order": 34,
+              "source_record": 33
+            },
+            {
+              "duplicate_row_text_omitted": false,
+              "identical_text_original_omitted": [],
+              "input_record": 34,
+              "source_order": 35,
+              "source_record": 34
+            },
+            {
+              "duplicate_row_text_omitted": false,
+              "identical_text_original_omitted": [],
+              "input_record": 35,
+              "source_order": 36,
+              "source_record": 35
+            },
+            {
+              "duplicate_row_text_omitted": false,
+              "identical_text_original_omitted": [],
+              "input_record": 36,
+              "source_order": 37,
+              "source_record": 36
+            },
+            {
+              "duplicate_row_text_omitted": false,
+              "identical_text_original_omitted": [],
+              "input_record": 37,
+              "source_order": 38,
+              "source_record": 37
+            },
+            {
+              "duplicate_row_text_omitted": false,
+              "identical_text_original_omitted": [],
+              "input_record": 38,
+              "source_order": 39,
+              "source_record": 38
+            },
+            {
+              "duplicate_row_text_omitted": false,
+              "identical_text_original_omitted": [],
+              "input_record": 39,
+              "source_order": 40,
+              "source_record": 39
+            },
+            {
+              "duplicate_row_text_omitted": false,
+              "identical_text_original_omitted": [],
+              "input_record": 40,
+              "source_order": 41,
+              "source_record": 40
+            },
+            {
+              "duplicate_row_text_omitted": false,
+              "identical_text_original_omitted": [],
+              "input_record": 41,
+              "source_order": 42,
+              "source_record": 41
+            },
+            {
+              "duplicate_row_text_omitted": false,
+              "identical_text_original_omitted": [],
+              "input_record": 42,
+              "source_order": 43,
+              "source_record": 42
+            },
+            {
+              "duplicate_row_text_omitted": false,
+              "identical_text_original_omitted": [],
+              "input_record": 43,
+              "source_order": 44,
+              "source_record": 43
+            },
+            {
+              "duplicate_row_text_omitted": false,
+              "identical_text_original_omitted": [],
+              "input_record": 44,
+              "source_order": 45,
+              "source_record": 44
+            },
+            {
+              "duplicate_row_text_omitted": false,
+              "identical_text_original_omitted": [],
+              "input_record": 45,
+              "source_order": 46,
+              "source_record": 45
+            },
+            {
+              "duplicate_row_text_omitted": false,
+              "identical_text_original_omitted": [],
+              "input_record": 46,
+              "source_order": 47,
+              "source_record": 46
+            },
+            {
+              "duplicate_row_text_omitted": false,
+              "identical_text_original_omitted": [],
+              "input_record": 47,
+              "source_order": 48,
+              "source_record": 47
+            },
+            {
+              "duplicate_row_text_omitted": false,
+              "identical_text_original_omitted": [],
+              "input_record": 48,
+              "source_order": 49,
+              "source_record": 48
+            },
+            {
+              "duplicate_row_text_omitted": false,
+              "identical_text_original_omitted": [],
+              "input_record": 49,
+              "source_order": 50,
+              "source_record": 49
+            },
+            {
+              "duplicate_row_text_omitted": false,
+              "identical_text_original_omitted": [],
+              "input_record": 50,
+              "source_order": 51,
+              "source_record": 50
+            },
+            {
+              "duplicate_row_text_omitted": false,
+              "identical_text_original_omitted": [],
+              "input_record": 51,
+              "source_order": 52,
+              "source_record": 51
+            },
+            {
+              "duplicate_row_text_omitted": false,
+              "identical_text_original_omitted": [],
+              "input_record": 52,
+              "source_order": 53,
+              "source_record": 52
+            },
+            {
+              "duplicate_row_text_omitted": false,
+              "identical_text_original_omitted": [],
+              "input_record": 53,
+              "source_order": 54,
+              "source_record": 53
+            },
+            {
+              "duplicate_row_text_omitted": false,
+              "identical_text_original_omitted": [],
+              "input_record": 54,
+              "source_order": 55,
+              "source_record": 54
+            },
+            {
+              "duplicate_row_text_omitted": false,
+              "identical_text_original_omitted": [],
+              "input_record": 55,
+              "source_order": 56,
+              "source_record": 55
+            },
+            {
+              "duplicate_row_text_omitted": false,
+              "identical_text_original_omitted": [],
+              "input_record": 56,
+              "source_order": 57,
+              "source_record": 56
+            },
+            {
+              "duplicate_row_text_omitted": false,
+              "identical_text_original_omitted": [],
+              "input_record": 57,
+              "source_order": 58,
+              "source_record": 57
+            },
+            {
+              "duplicate_row_text_omitted": false,
+              "identical_text_original_omitted": [],
+              "input_record": 58,
+              "source_order": 59,
+              "source_record": 58
+            }
+          ],
+          "source_records": 59,
+          "source_section": 8,
+          "source_text_retained": true
+        },
+        {
+          "input_records": 33,
+          "module": "Knowledge",
+          "record_mapping": [
+            {
+              "duplicate_row_text_omitted": true,
+              "identical_text_original_omitted": [
+                "Importance"
+              ],
+              "input_record": 0,
+              "source_order": 1,
+              "source_record": 0
+            },
+            {
+              "duplicate_row_text_omitted": true,
+              "identical_text_original_omitted": [
+                "Importance"
+              ],
+              "input_record": 1,
+              "source_order": 2,
+              "source_record": 1
+            },
+            {
+              "duplicate_row_text_omitted": true,
+              "identical_text_original_omitted": [
+                "Importance"
+              ],
+              "input_record": 2,
+              "source_order": 3,
+              "source_record": 2
+            },
+            {
+              "duplicate_row_text_omitted": true,
+              "identical_text_original_omitted": [
+                "Importance"
+              ],
+              "input_record": 3,
+              "source_order": 4,
+              "source_record": 3
+            },
+            {
+              "duplicate_row_text_omitted": true,
+              "identical_text_original_omitted": [
+                "Importance"
+              ],
+              "input_record": 4,
+              "source_order": 5,
+              "source_record": 4
+            },
+            {
+              "duplicate_row_text_omitted": true,
+              "identical_text_original_omitted": [
+                "Importance"
+              ],
+              "input_record": 5,
+              "source_order": 6,
+              "source_record": 5
+            },
+            {
+              "duplicate_row_text_omitted": true,
+              "identical_text_original_omitted": [
+                "Importance"
+              ],
+              "input_record": 6,
+              "source_order": 7,
+              "source_record": 6
+            },
+            {
+              "duplicate_row_text_omitted": true,
+              "identical_text_original_omitted": [
+                "Importance"
+              ],
+              "input_record": 7,
+              "source_order": 8,
+              "source_record": 7
+            },
+            {
+              "duplicate_row_text_omitted": true,
+              "identical_text_original_omitted": [
+                "Importance"
+              ],
+              "input_record": 8,
+              "source_order": 9,
+              "source_record": 8
+            },
+            {
+              "duplicate_row_text_omitted": true,
+              "identical_text_original_omitted": [
+                "Importance"
+              ],
+              "input_record": 9,
+              "source_order": 10,
+              "source_record": 9
+            },
+            {
+              "duplicate_row_text_omitted": true,
+              "identical_text_original_omitted": [
+                "Importance"
+              ],
+              "input_record": 10,
+              "source_order": 11,
+              "source_record": 10
+            },
+            {
+              "duplicate_row_text_omitted": true,
+              "identical_text_original_omitted": [
+                "Importance"
+              ],
+              "input_record": 11,
+              "source_order": 12,
+              "source_record": 11
+            },
+            {
+              "duplicate_row_text_omitted": true,
+              "identical_text_original_omitted": [
+                "Importance"
+              ],
+              "input_record": 12,
+              "source_order": 13,
+              "source_record": 12
+            },
+            {
+              "duplicate_row_text_omitted": true,
+              "identical_text_original_omitted": [
+                "Importance"
+              ],
+              "input_record": 13,
+              "source_order": 14,
+              "source_record": 13
+            },
+            {
+              "duplicate_row_text_omitted": true,
+              "identical_text_original_omitted": [
+                "Importance"
+              ],
+              "input_record": 14,
+              "source_order": 15,
+              "source_record": 14
+            },
+            {
+              "duplicate_row_text_omitted": true,
+              "identical_text_original_omitted": [
+                "Importance"
+              ],
+              "input_record": 15,
+              "source_order": 16,
+              "source_record": 15
+            },
+            {
+              "duplicate_row_text_omitted": true,
+              "identical_text_original_omitted": [
+                "Importance"
+              ],
+              "input_record": 16,
+              "source_order": 17,
+              "source_record": 16
+            },
+            {
+              "duplicate_row_text_omitted": true,
+              "identical_text_original_omitted": [
+                "Importance"
+              ],
+              "input_record": 17,
+              "source_order": 18,
+              "source_record": 17
+            },
+            {
+              "duplicate_row_text_omitted": true,
+              "identical_text_original_omitted": [
+                "Importance"
+              ],
+              "input_record": 18,
+              "source_order": 19,
+              "source_record": 18
+            },
+            {
+              "duplicate_row_text_omitted": true,
+              "identical_text_original_omitted": [
+                "Importance"
+              ],
+              "input_record": 19,
+              "source_order": 20,
+              "source_record": 19
+            },
+            {
+              "duplicate_row_text_omitted": true,
+              "identical_text_original_omitted": [
+                "Importance"
+              ],
+              "input_record": 20,
+              "source_order": 21,
+              "source_record": 20
+            },
+            {
+              "duplicate_row_text_omitted": true,
+              "identical_text_original_omitted": [
+                "Importance"
+              ],
+              "input_record": 21,
+              "source_order": 22,
+              "source_record": 21
+            },
+            {
+              "duplicate_row_text_omitted": true,
+              "identical_text_original_omitted": [
+                "Importance"
+              ],
+              "input_record": 22,
+              "source_order": 23,
+              "source_record": 22
+            },
+            {
+              "duplicate_row_text_omitted": true,
+              "identical_text_original_omitted": [
+                "Importance"
+              ],
+              "input_record": 23,
+              "source_order": 24,
+              "source_record": 23
+            },
+            {
+              "duplicate_row_text_omitted": true,
+              "identical_text_original_omitted": [
+                "Importance"
+              ],
+              "input_record": 24,
+              "source_order": 25,
+              "source_record": 24
+            },
+            {
+              "duplicate_row_text_omitted": true,
+              "identical_text_original_omitted": [
+                "Importance"
+              ],
+              "input_record": 25,
+              "source_order": 26,
+              "source_record": 25
+            },
+            {
+              "duplicate_row_text_omitted": true,
+              "identical_text_original_omitted": [
+                "Importance"
+              ],
+              "input_record": 26,
+              "source_order": 27,
+              "source_record": 26
+            },
+            {
+              "duplicate_row_text_omitted": true,
+              "identical_text_original_omitted": [
+                "Importance"
+              ],
+              "input_record": 27,
+              "source_order": 28,
+              "source_record": 27
+            },
+            {
+              "duplicate_row_text_omitted": true,
+              "identical_text_original_omitted": [
+                "Importance"
+              ],
+              "input_record": 28,
+              "source_order": 29,
+              "source_record": 28
+            },
+            {
+              "duplicate_row_text_omitted": true,
+              "identical_text_original_omitted": [
+                "Importance"
+              ],
+              "input_record": 29,
+              "source_order": 30,
+              "source_record": 29
+            },
+            {
+              "duplicate_row_text_omitted": true,
+              "identical_text_original_omitted": [
+                "Importance"
+              ],
+              "input_record": 30,
+              "source_order": 31,
+              "source_record": 30
+            },
+            {
+              "duplicate_row_text_omitted": true,
+              "identical_text_original_omitted": [
+                "Importance"
+              ],
+              "input_record": 31,
+              "source_order": 32,
+              "source_record": 31
+            },
+            {
+              "duplicate_row_text_omitted": true,
+              "identical_text_original_omitted": [
+                "Importance"
+              ],
+              "input_record": 32,
+              "source_order": 33,
+              "source_record": 32
+            }
+          ],
+          "source_records": 33,
+          "source_section": 11,
+          "source_text_retained": true
+        },
+        {
+          "input_records": 3,
+          "module": "Education",
+          "record_mapping": [
+            {
+              "duplicate_row_text_omitted": false,
+              "identical_text_original_omitted": [],
+              "input_record": 0,
+              "source_order": 1,
+              "source_record": 0
+            },
+            {
+              "duplicate_row_text_omitted": false,
+              "identical_text_original_omitted": [],
+              "input_record": 1,
+              "source_order": 2,
+              "source_record": 1
+            },
+            {
+              "duplicate_row_text_omitted": false,
+              "identical_text_original_omitted": [],
+              "input_record": 2,
+              "source_order": 3,
+              "source_record": 2
+            }
+          ],
+          "source_records": 3,
+          "source_section": 12,
+          "source_text_retained": true
+        },
+        {
+          "input_records": 10,
+          "module": "EssentialSkills",
+          "record_mapping": [
+            {
+              "duplicate_row_text_omitted": true,
+              "identical_text_original_omitted": [
+                "Importance"
+              ],
+              "input_record": 0,
+              "source_order": 1,
+              "source_record": 0
+            },
+            {
+              "duplicate_row_text_omitted": true,
+              "identical_text_original_omitted": [
+                "Importance"
+              ],
+              "input_record": 1,
+              "source_order": 2,
+              "source_record": 1
+            },
+            {
+              "duplicate_row_text_omitted": true,
+              "identical_text_original_omitted": [
+                "Importance"
+              ],
+              "input_record": 2,
+              "source_order": 3,
+              "source_record": 2
+            },
+            {
+              "duplicate_row_text_omitted": true,
+              "identical_text_original_omitted": [
+                "Importance"
+              ],
+              "input_record": 3,
+              "source_order": 4,
+              "source_record": 3
+            },
+            {
+              "duplicate_row_text_omitted": true,
+              "identical_text_original_omitted": [
+                "Importance"
+              ],
+              "input_record": 4,
+              "source_order": 5,
+              "source_record": 4
+            },
+            {
+              "duplicate_row_text_omitted": true,
+              "identical_text_original_omitted": [
+                "Importance"
+              ],
+              "input_record": 5,
+              "source_order": 6,
+              "source_record": 5
+            },
+            {
+              "duplicate_row_text_omitted": true,
+              "identical_text_original_omitted": [
+                "Importance"
+              ],
+              "input_record": 6,
+              "source_order": 7,
+              "source_record": 6
+            },
+            {
+              "duplicate_row_text_omitted": true,
+              "identical_text_original_omitted": [
+                "Importance"
+              ],
+              "input_record": 7,
+              "source_order": 8,
+              "source_record": 7
+            },
+            {
+              "duplicate_row_text_omitted": true,
+              "identical_text_original_omitted": [
+                "Importance"
+              ],
+              "input_record": 8,
+              "source_order": 9,
+              "source_record": 8
+            },
+            {
+              "duplicate_row_text_omitted": true,
+              "identical_text_original_omitted": [
+                "Importance"
+              ],
+              "input_record": 9,
+              "source_order": 10,
+              "source_record": 9
+            }
+          ],
+          "source_records": 10,
+          "source_section": 9,
+          "source_text_retained": true
+        },
+        {
+          "input_records": 25,
+          "module": "TransferableSkills",
+          "record_mapping": [
+            {
+              "duplicate_row_text_omitted": true,
+              "identical_text_original_omitted": [
+                "Importance"
+              ],
+              "input_record": 0,
+              "source_order": 1,
+              "source_record": 0
+            },
+            {
+              "duplicate_row_text_omitted": true,
+              "identical_text_original_omitted": [
+                "Importance"
+              ],
+              "input_record": 1,
+              "source_order": 2,
+              "source_record": 1
+            },
+            {
+              "duplicate_row_text_omitted": true,
+              "identical_text_original_omitted": [
+                "Importance"
+              ],
+              "input_record": 2,
+              "source_order": 3,
+              "source_record": 2
+            },
+            {
+              "duplicate_row_text_omitted": true,
+              "identical_text_original_omitted": [
+                "Importance"
+              ],
+              "input_record": 3,
+              "source_order": 4,
+              "source_record": 3
+            },
+            {
+              "duplicate_row_text_omitted": true,
+              "identical_text_original_omitted": [
+                "Importance"
+              ],
+              "input_record": 4,
+              "source_order": 5,
+              "source_record": 4
+            },
+            {
+              "duplicate_row_text_omitted": true,
+              "identical_text_original_omitted": [
+                "Importance"
+              ],
+              "input_record": 5,
+              "source_order": 6,
+              "source_record": 5
+            },
+            {
+              "duplicate_row_text_omitted": true,
+              "identical_text_original_omitted": [
+                "Importance"
+              ],
+              "input_record": 6,
+              "source_order": 7,
+              "source_record": 6
+            },
+            {
+              "duplicate_row_text_omitted": true,
+              "identical_text_original_omitted": [
+                "Importance"
+              ],
+              "input_record": 7,
+              "source_order": 8,
+              "source_record": 7
+            },
+            {
+              "duplicate_row_text_omitted": true,
+              "identical_text_original_omitted": [
+                "Importance"
+              ],
+              "input_record": 8,
+              "source_order": 9,
+              "source_record": 8
+            },
+            {
+              "duplicate_row_text_omitted": true,
+              "identical_text_original_omitted": [
+                "Importance"
+              ],
+              "input_record": 9,
+              "source_order": 10,
+              "source_record": 9
+            },
+            {
+              "duplicate_row_text_omitted": true,
+              "identical_text_original_omitted": [
+                "Importance"
+              ],
+              "input_record": 10,
+              "source_order": 11,
+              "source_record": 10
+            },
+            {
+              "duplicate_row_text_omitted": true,
+              "identical_text_original_omitted": [
+                "Importance"
+              ],
+              "input_record": 11,
+              "source_order": 12,
+              "source_record": 11
+            },
+            {
+              "duplicate_row_text_omitted": true,
+              "identical_text_original_omitted": [
+                "Importance"
+              ],
+              "input_record": 12,
+              "source_order": 13,
+              "source_record": 12
+            },
+            {
+              "duplicate_row_text_omitted": true,
+              "identical_text_original_omitted": [
+                "Importance"
+              ],
+              "input_record": 13,
+              "source_order": 14,
+              "source_record": 13
+            },
+            {
+              "duplicate_row_text_omitted": true,
+              "identical_text_original_omitted": [
+                "Importance"
+              ],
+              "input_record": 14,
+              "source_order": 15,
+              "source_record": 14
+            },
+            {
+              "duplicate_row_text_omitted": true,
+              "identical_text_original_omitted": [
+                "Importance"
+              ],
+              "input_record": 15,
+              "source_order": 16,
+              "source_record": 15
+            },
+            {
+              "duplicate_row_text_omitted": true,
+              "identical_text_original_omitted": [
+                "Importance"
+              ],
+              "input_record": 16,
+              "source_order": 17,
+              "source_record": 16
+            },
+            {
+              "duplicate_row_text_omitted": true,
+              "identical_text_original_omitted": [
+                "Importance"
+              ],
+              "input_record": 17,
+              "source_order": 18,
+              "source_record": 17
+            },
+            {
+              "duplicate_row_text_omitted": true,
+              "identical_text_original_omitted": [
+                "Importance"
+              ],
+              "input_record": 18,
+              "source_order": 19,
+              "source_record": 18
+            },
+            {
+              "duplicate_row_text_omitted": true,
+              "identical_text_original_omitted": [
+                "Importance"
+              ],
+              "input_record": 19,
+              "source_order": 20,
+              "source_record": 19
+            },
+            {
+              "duplicate_row_text_omitted": true,
+              "identical_text_original_omitted": [
+                "Importance"
+              ],
+              "input_record": 20,
+              "source_order": 21,
+              "source_record": 20
+            },
+            {
+              "duplicate_row_text_omitted": true,
+              "identical_text_original_omitted": [
+                "Importance"
+              ],
+              "input_record": 21,
+              "source_order": 22,
+              "source_record": 21
+            },
+            {
+              "duplicate_row_text_omitted": true,
+              "identical_text_original_omitted": [
+                "Importance"
+              ],
+              "input_record": 22,
+              "source_order": 23,
+              "source_record": 22
+            },
+            {
+              "duplicate_row_text_omitted": true,
+              "identical_text_original_omitted": [
+                "Importance"
+              ],
+              "input_record": 23,
+              "source_order": 24,
+              "source_record": 23
+            },
+            {
+              "duplicate_row_text_omitted": true,
+              "identical_text_original_omitted": [
+                "Importance"
+              ],
+              "input_record": 24,
+              "source_order": 25,
+              "source_record": 24
+            }
+          ],
+          "source_records": 25,
+          "source_section": 10,
+          "source_text_retained": true
+        }
+      ],
+      "version": "jd_modules_v1"
+    },
+    "jd_prompt_sha256": "64929f67616b60fa7f59febec1cbdf809625b348d238ae08363372d1d7c84dab",
+    "material_directory": "Information_Security_Analysts_15-1212.00",
+    "occupation": "information_security_analysts",
+    "onet_code": "15-1212.00",
+    "source_html_sha256": "bb46d674c2f7f02914e447b9f0afa059e944841695cf821042305fb76018c002",
+    "structured_sha256": "84492f19a477c4154356deb16065c4831e0056a0f363afdfa8e688e9983baba9"
+  },
+  "timestamp_utc": null,
+  "request": {
+    "api_base_url": "https://api.deepseek.com",
+    "config": {
+      "max_tokens": 3000,
+      "model": "deepseek-flash",
+      "temperature": 1.0,
+      "thinking": "disabled"
+    },
+    "task": {
+      "json_mode": false,
+      "messages": [
+        {
+          "content": "请根据输入的 O*NET 职业资料，撰写一份干练、地道的中文企业社招岗位说明（JD）及简明的来源依据记录。\n\n【职业信息】\n职业名称：Information Security Analysts\nO*NET 编码：15-1212.00\n\n【职业资料】\n{\"occupation_name\":\"Information Security Analysts\",\"onet_code\":\"15-1212.00\",\"sections\":[{\"id\":\"Overview\",\"title\":\"\",\"record_count\":35,\"records\":[{\"kind\":\"list_item\",\"group\":\"1\",\"order\":1,\"text\":\"Summary\"},{\"kind\":\"list_item\",\"group\":\"1\",\"order\":2,\"text\":\"Details\"},{\"kind\":\"list_item\",\"group\":\"1\",\"order\":3,\"text\":\"More Custom Easy Read Veterans Español\"},{\"kind\":\"list_item\",\"group\":\"1\",\"order\":4,\"text\":\"Custom\"},{\"kind\":\"list_item\",\"group\":\"1\",\"order\":5,\"text\":\"Easy Read\"},{\"kind\":\"list_item\",\"group\":\"1\",\"order\":6,\"text\":\"Veterans\"},{\"kind\":\"list_item\",\"group\":\"1\",\"order\":7,\"text\":\"Español\"},{\"kind\":\"list_item\",\"group\":\"2\",\"order\":8,\"text\":\"Occupation-Specific Information\"},{\"kind\":\"list_item\",\"group\":\"2\",\"order\":9,\"text\":\"Overview\"},{\"kind\":\"list_item\",\"group\":\"2\",\"order\":10,\"text\":\"Tasks\"},{\"kind\":\"list_item\",\"group\":\"3\",\"order\":11,\"text\":\"Occupational Requirements\"},{\"kind\":\"list_item\",\"group\":\"3\",\"order\":12,\"text\":\"Work Activities\"},{\"kind\":\"list_item\",\"group\":\"3\",\"order\":13,\"text\":\"Detailed Work Activities\"},{\"kind\":\"list_item\",\"group\":\"3\",\"order\":14,\"text\":\"Work Context\"},{\"kind\":\"list_item\",\"group\":\"4\",\"order\":15,\"text\":\"Experience Requirements\"},{\"kind\":\"list_item\",\"group\":\"4\",\"order\":16,\"text\":\"Job Zone\"},{\"kind\":\"list_item\",\"group\":\"4\",\"order\":17,\"text\":\"Training & Credentials\"},{\"kind\":\"list_item\",\"group\":\"4\",\"order\":18,\"text\":\"Apprenticeship\"},{\"kind\":\"list_item\",\"group\":\"5\",\"order\":19,\"text\":\"Worker Requirements\"},{\"kind\":\"list_item\",\"group\":\"5\",\"order\":20,\"text\":\"Software Skills\"},{\"kind\":\"list_item\",\"group\":\"5\",\"order\":21,\"text\":\"Essential Skills\"},{\"kind\":\"list_item\",\"group\":\"5\",\"order\":22,\"text\":\"Transferable Skills\"},{\"kind\":\"list_item\",\"group\":\"5\",\"order\":23,\"text\":\"Knowledge\"},{\"kind\":\"list_item\",\"group\":\"5\",\"order\":24,\"text\":\"Education\"},{\"kind\":\"list_item\",\"group\":\"6\",\"order\":25,\"text\":\"Worker Characteristics\"},{\"kind\":\"list_item\",\"group\":\"6\",\"order\":26,\"text\":\"Abilities\"},{\"kind\":\"list_item\",\"group\":\"6\",\"order\":27,\"text\":\"Career Interest Types\"},{\"kind\":\"list_item\",\"group\":\"6\",\"order\":28,\"text\":\"Specific Interest Areas\"},{\"kind\":\"list_item\",\"group\":\"6\",\"order\":29,\"text\":\"Work Styles\"},{\"kind\":\"list_item\",\"group\":\"7\",\"order\":30,\"text\":\"Workforce Characteristics\"},{\"kind\":\"list_item\",\"group\":\"7\",\"order\":31,\"text\":\"Wages & Employment\"},{\"kind\":\"list_item\",\"group\":\"7\",\"order\":32,\"text\":\"Job Openings\"},{\"kind\":\"list_item\",\"group\":\"8\",\"order\":33,\"text\":\"More Information\"},{\"kind\":\"list_item\",\"group\":\"8\",\"order\":34,\"text\":\"Related Occupations\"},{\"kind\":\"list_item\",\"group\":\"8\",\"order\":35,\"text\":\"Professional Associations\"}],\"source_text\":\"Information Security Analysts\\n15-1212.00\\nBright Outlook\\nUpdated 2026\\nPlan, implement, upgrade, or monitor security measures for the protection of computer networks and information. Assess system vulnerabilities for security risks and propose and implement risk mitigation strategies. May ensure appropriate security controls are in place that will safeguard digital files and vital electronic infrastructure. May respond to computer security breaches and viruses.\\nSample of reported job titles:\\nInformation Security Officer, Information Security Specialist, Information Systems Security Analyst, Information Systems Security Officer (ISSO), Information Technology Security Analyst (IT Security Analyst), Network Security Analyst, Security Analyst, Systems Analyst\\nSummary\\nDetails\\nMore\\nCustom\\nEasy Read\\nVeterans\\nEspañol\\nCustom\\nEasy Read\\nVeterans\\nEspañol\\nSee the easy-read overview for Information Security Analysts at My Next Move\\nYou will be leaving O*NET OnLine to visit our sister site My Next Move. You can return by using the\\nBack\\nbutton in your browser, or by choosing “O*NET OnLine” from the\\nO*NET Sites\\nmenu at the bottom of any page in My Next Move.\\nYes, let’s go\\nNo, stay here\\nDon’t ask again this session\\nSee the easy-read overview for Information Security Analysts at My Next Move for Veterans\\nYou will be leaving O*NET OnLine to visit our sister site My Next Move for Veterans. You can return by using the\\nBack\\nbutton in your browser, or by choosing “O*NET OnLine” from the\\nO*NET Sites\\nmenu at the bottom of any page in My Next Move for Veterans.\\nYes, let’s go\\nNo, stay here\\nDon’t ask again this session\\nVer la perspectiva general fácil de leer para Analistas de Seguridad de la Información en Mi Próximo Paso\\nSaldrá de O*NET OnLine para visitar nuestro sitio afiliado Mi Próximo Paso. Puede regresar usando el botón\\nAtrás\\nen su navegador, o eligiendo “O*NET OnLine” en el menú\\nSitios O*NET\\nen la parte inferior de cualquier página en Mi Próximo Paso.\\nSí, vamos\\nNo, quédate aquí\\nNo preguntar de nuevo para esta sesión\\nContents\\nOccupation-Specific Information\\nOverview\\nTasks\\nOccupational Requirements\\nWork Activities\\nDetailed Work Activities\\nWork Context\\nExperience Requirements\\nJob Zone\\nTraining & Credentials\\nApprenticeship\\nWorker Requirements\\nSoftware Skills\\nEssential Skills\\nTransferable Skills\\nKnowledge\\nEducation\\nWorker Characteristics\\nAbilities\\nCareer Interest Types\\nSpecific Interest Areas\\nWork Styles\\nWorkforce Characteristics\\nWages & Employment\\nJob Openings\\nMore Information\\nRelated Occupations\\nProfessional Associations\\nOccupation-Specific Information\\nback to top\\nOccupational Requirements\\nback to top\\nback to top\\nback to top\\nExperience Requirements\\nback to top\\nback to top\\nback to top\\nWorker Requirements\\nback to top\\nback to top\\nback to top\\nback to top\\nback to top\\nWorker Characteristics\\nback to top\\nback to top\\nback to top\\nback to top\\nWorkforce Characteristics\\nback to top\\nback to top\\nMore Information\\nback to top\\nback to top\"},{\"id\":\"Tasks\",\"title\":\"Tasks\",\"record_count\":11,\"records\":[{\"kind\":\"table_row\",\"group\":\"1\",\"order\":1,\"fields\":[{\"name\":\"Importance\",\"value\":\"85\"},{\"name\":\"Category\",\"value\":\"Core\"},{\"name\":\"Task\",\"value\":\"Develop plans to safeguard computer files against accidental or unauthorized modification, destruction, or disclosure and to meet emergency data processing needs.\",\"text_original\":\"Develop plans to safeguard computer files against accidental or unauthorized modification, destruction, or disclosure and to meet emergency data processing needs. Related occupations\"}]},{\"kind\":\"table_row\",\"group\":\"1\",\"order\":2,\"fields\":[{\"name\":\"Importance\",\"value\":\"81\"},{\"name\":\"Category\",\"value\":\"Core\"},{\"name\":\"Task\",\"value\":\"Monitor current reports of computer viruses to determine when to update virus protection systems.\",\"text_original\":\"Monitor current reports of computer viruses to determine when to update virus protection systems. Related occupations\"}]},{\"kind\":\"table_row\",\"group\":\"1\",\"order\":3,\"fields\":[{\"name\":\"Importance\",\"value\":\"80\"},{\"name\":\"Category\",\"value\":\"Core\"},{\"name\":\"Task\",\"value\":\"Encrypt data transmissions and erect firewalls to conceal confidential information as it is being transmitted and to keep out tainted digital transfers.\",\"text_original\":\"Encrypt data transmissions and erect firewalls to conceal confidential information as it is being transmitted and to keep out tainted digital transfers. Related occupations\"}]},{\"kind\":\"table_row\",\"group\":\"1\",\"order\":4,\"fields\":[{\"name\":\"Importance\",\"value\":\"78\"},{\"name\":\"Category\",\"value\":\"Core\"},{\"name\":\"Task\",\"value\":\"Perform risk assessments and execute tests of data processing system to ensure functioning of data processing activities and security measures.\",\"text_original\":\"Perform risk assessments and execute tests of data processing system to ensure functioning of data processing activities and security measures. Related occupations\"}]},{\"kind\":\"table_row\",\"group\":\"1\",\"order\":5,\"fields\":[{\"name\":\"Importance\",\"value\":\"78\"},{\"name\":\"Category\",\"value\":\"Core\"},{\"name\":\"Task\",\"value\":\"Modify computer security files to incorporate new software, correct errors, or change individual access status.\",\"text_original\":\"Modify computer security files to incorporate new software, correct errors, or change individual access status. Related occupations\"}]},{\"kind\":\"table_row\",\"group\":\"1\",\"order\":6,\"fields\":[{\"name\":\"Importance\",\"value\":\"76\"},{\"name\":\"Category\",\"value\":\"Core\"},{\"name\":\"Task\",\"value\":\"Review violations of computer security procedures and discuss procedures with violators to ensure violations are not repeated.\",\"text_original\":\"Review violations of computer security procedures and discuss procedures with violators to ensure violations are not repeated. Related occupations\"}]},{\"kind\":\"table_row\",\"group\":\"1\",\"order\":7,\"fields\":[{\"name\":\"Importance\",\"value\":\"74\"},{\"name\":\"Category\",\"value\":\"Core\"},{\"name\":\"Task\",\"value\":\"Document computer security and emergency measures policies, procedures, and tests.\",\"text_original\":\"Document computer security and emergency measures policies, procedures, and tests. Related occupations\"}]},{\"kind\":\"table_row\",\"group\":\"1\",\"order\":8,\"fields\":[{\"name\":\"Importance\",\"value\":\"74\"},{\"name\":\"Category\",\"value\":\"Core\"},{\"name\":\"Task\",\"value\":\"Confer with users to discuss issues such as computer data access needs, security violations, and programming changes.\",\"text_original\":\"Confer with users to discuss issues such as computer data access needs, security violations, and programming changes. Related occupations\"}]},{\"kind\":\"table_row\",\"group\":\"1\",\"order\":9,\"fields\":[{\"name\":\"Importance\",\"value\":\"72\"},{\"name\":\"Category\",\"value\":\"Core\"},{\"name\":\"Task\",\"value\":\"Monitor use of data files and regulate access to safeguard information in computer files.\",\"text_original\":\"Monitor use of data files and regulate access to safeguard information in computer files. Related occupations\"}]},{\"kind\":\"table_row\",\"group\":\"1\",\"order\":10,\"fields\":[{\"name\":\"Importance\",\"value\":\"72\"},{\"name\":\"Category\",\"value\":\"Core\"},{\"name\":\"Task\",\"value\":\"Coordinate implementation of computer system plan with establishment personnel and outside vendors.\",\"text_original\":\"Coordinate implementation of computer system plan with establishment personnel and outside vendors. Related occupations\"}]},{\"kind\":\"table_row\",\"group\":\"1\",\"order\":11,\"fields\":[{\"name\":\"Importance\",\"value\":\"70\"},{\"name\":\"Category\",\"value\":\"Core\"},{\"name\":\"Task\",\"value\":\"Train users and promote security awareness to ensure system security and to improve server and network efficiency.\",\"text_original\":\"Train users and promote security awareness to ensure system security and to improve server and network efficiency. Related occupations\"}]}],\"source_text\":\"Tasks\\nSave Table:\\nXLSX\\nCSV\\n10 of\\nAll\\n11 displayed\\n(\\nShow all\\nShow top 10\\n)\\nImportance\\nCategory\\nTask\\n85\\nCore\\nDevelop plans to safeguard computer files against accidental or unauthorized modification, destruction, or disclosure and to meet emergency data processing needs.\\nRelated occupations\\n81\\nCore\\nMonitor current reports of computer viruses to determine when to update virus protection systems.\\nRelated occupations\\n80\\nCore\\nEncrypt data transmissions and erect firewalls to conceal confidential information as it is being transmitted and to keep out tainted digital transfers.\\nRelated occupations\\n78\\nCore\\nPerform risk assessments and execute tests of data processing system to ensure functioning of data processing activities and security measures.\\nRelated occupations\\n78\\nCore\\nModify computer security files to incorporate new software, correct errors, or change individual access status.\\nRelated occupations\\n76\\nCore\\nReview violations of computer security procedures and discuss procedures with violators to ensure violations are not repeated.\\nRelated occupations\\n74\\nCore\\nDocument computer security and emergency measures policies, procedures, and tests.\\nRelated occupations\\n74\\nCore\\nConfer with users to discuss issues such as computer data access needs, security violations, and programming changes.\\nRelated occupations\\n72\\nCore\\nMonitor use of data files and regulate access to safeguard information in computer files.\\nRelated occupations\\n72\\nCore\\nCoordinate implementation of computer system plan with establishment personnel and outside vendors.\\nRelated occupations\\n70\\nCore\\nTrain users and promote security awareness to ensure system security and to improve server and network efficiency.\\nRelated occupations\\nFind occupations related to multiple tasks\"},{\"id\":\"DetailedWorkActivities\",\"title\":\"Detailed Work Activities\",\"record_count\":10,\"records\":[{\"kind\":\"list_item\",\"group\":\"1\",\"order\":1,\"text\":\"Develop computer or information security policies or procedures. Related occupations\"},{\"kind\":\"list_item\",\"group\":\"1\",\"order\":2,\"text\":\"Update knowledge about emerging industry or technology trends. Related occupations\"},{\"kind\":\"list_item\",\"group\":\"1\",\"order\":3,\"text\":\"Implement security measures for computer or information systems. Related occupations\"},{\"kind\":\"list_item\",\"group\":\"1\",\"order\":4,\"text\":\"Test computer system operations to ensure proper functioning. Related occupations\"},{\"kind\":\"list_item\",\"group\":\"1\",\"order\":5,\"text\":\"Collaborate with others to resolve information technology issues. Related occupations\"},{\"kind\":\"list_item\",\"group\":\"1\",\"order\":6,\"text\":\"Document operational procedures. Related occupations\"},{\"kind\":\"list_item\",\"group\":\"1\",\"order\":7,\"text\":\"Troubleshoot issues with computer applications or systems. Related occupations\"},{\"kind\":\"list_item\",\"group\":\"1\",\"order\":8,\"text\":\"Coordinate project activities with other personnel or departments. Related occupations\"},{\"kind\":\"list_item\",\"group\":\"1\",\"order\":9,\"text\":\"Monitor the security of digital information. Related occupations\"},{\"kind\":\"list_item\",\"group\":\"1\",\"order\":10,\"text\":\"Train others in computer interface or software use. Related occupations\"}],\"source_text\":\"Detailed Work Activities\\nSave Table:\\nXLSX\\nCSV\\nAll\\n10 displayed\\nDevelop computer or information security policies or procedures.\\nRelated occupations\\nUpdate knowledge about emerging industry or technology trends.\\nRelated occupations\\nImplement security measures for computer or information systems.\\nRelated occupations\\nTest computer system operations to ensure proper functioning.\\nRelated occupations\\nCollaborate with others to resolve information technology issues.\\nRelated occupations\\nDocument operational procedures.\\nRelated occupations\\nTroubleshoot issues with computer applications or systems.\\nRelated occupations\\nCoordinate project activities with other personnel or departments.\\nRelated occupations\\nMonitor the security of digital information.\\nRelated occupations\\nTrain others in computer interface or software use.\\nRelated occupations\\nFind occupations related to multiple detailed work activities\"},{\"id\":\"JobZone\",\"title\":\"Job Zone\",\"record_count\":6,\"records\":[{\"kind\":\"field\",\"group\":\"1\",\"order\":1,\"text\":\"Title\\nJob Zone Four: Considerable Preparation Needed\"},{\"kind\":\"field\",\"group\":\"1\",\"order\":2,\"text\":\"Education\\nMost of these occupations require a four-year bachelor's degree, but some do not.\"},{\"kind\":\"field\",\"group\":\"1\",\"order\":3,\"text\":\"Related Experience\\nA considerable amount of work-related skill, knowledge, or experience is needed for these occupations. For example, an accountant must complete four years of college and work for several years in accounting to be considered qualified.\"},{\"kind\":\"field\",\"group\":\"1\",\"order\":4,\"text\":\"Job Training\\nEmployees in these occupations usually need several years of work-related experience, on-the-job training, and/or vocational training.\"},{\"kind\":\"field\",\"group\":\"1\",\"order\":5,\"text\":\"Job Zone Examples\\nMany of these occupations involve coordinating, supervising, managing, or training others. Examples include real estate brokers, sales managers, database administrators, graphic designers, conservation scientists, art directors, and cost estimators.\"},{\"kind\":\"field\",\"group\":\"1\",\"order\":6,\"text\":\"SVP Range\\n(7.0 to < 8.0)\"}],\"source_text\":\"Job Zone\\nSave Table:\\nXLSX\\nCSV\\nTitle\\nJob Zone Four: Considerable Preparation Needed\\nEducation\\nMost of these occupations require a four-year bachelor's degree, but some do not.\\nRelated Experience\\nA considerable amount of work-related skill, knowledge, or experience is needed for these occupations. For example, an accountant must complete four years of college and work for several years in accounting to be considered qualified.\\nJob Training\\nEmployees in these occupations usually need several years of work-related experience, on-the-job training, and/or vocational training.\\nJob Zone Examples\\nMany of these occupations involve coordinating, supervising, managing, or training others. Examples include real estate brokers, sales managers, database administrators, graphic designers, conservation scientists, art directors, and cost estimators.\\nSVP\\nRange\\n(7.0 to < 8.0)\"},{\"id\":\"SoftwareSkills\",\"title\":\"Software Skills\",\"record_count\":59,\"records\":[{\"kind\":\"list_item\",\"group\":\"1\",\"order\":1,\"text\":\"Access software — Access management software; Citrix cloud computing software; IBM Tivoli Access Management TAM Related occupations\"},{\"kind\":\"list_item\",\"group\":\"1\",\"order\":2,\"text\":\"Administration software — Cisco Systems CiscoWorks Related occupations\"},{\"kind\":\"list_item\",\"group\":\"1\",\"order\":3,\"text\":\"Analytical or scientific software — SAS Hot Technology ; The MathWorks MATLAB Hot Technology Related occupations\"},{\"kind\":\"list_item\",\"group\":\"1\",\"order\":4,\"text\":\"Application server software — Docker Hot Technology ; GitHub Hot Technology ; Oracle WebLogic Server; Red Hat OpenShift Hot Technology ; 1 more Related occupations\"},{\"kind\":\"list_item\",\"group\":\"1\",\"order\":5,\"text\":\"Authentication server software — Diameter; IBM Tivoli Identity Management TIM; Password management software; Remote authentication dial-in user service RADIUS software Related occupations\"},{\"kind\":\"list_item\",\"group\":\"1\",\"order\":6,\"text\":\"Backup or archival software — Backup and archival software; System and data disaster recovery software; Veritas NetBackup Related occupations\"},{\"kind\":\"list_item\",\"group\":\"1\",\"order\":7,\"text\":\"Business intelligence and data analysis software — Apache Spark Hot Technology ; IBM Cognos Impromptu; Oracle Business Intelligence Enterprise Edition; Tableau Hot Technology ; 2 more Related occupations\"},{\"kind\":\"list_item\",\"group\":\"1\",\"order\":8,\"text\":\"Cloud-based management software — Amazon Web Services AWS CloudFormation Hot Technology ; IBM WebSphere; Splunk Enterprise Related occupations\"},{\"kind\":\"list_item\",\"group\":\"1\",\"order\":9,\"text\":\"Cloud-based protection or security software — Qualys Cloud Platform Related occupations\"},{\"kind\":\"list_item\",\"group\":\"1\",\"order\":10,\"text\":\"Clustering software — VMware Related occupations\"},{\"kind\":\"list_item\",\"group\":\"1\",\"order\":11,\"text\":\"Communications server software — IBM Domino Related occupations\"},{\"kind\":\"list_item\",\"group\":\"1\",\"order\":12,\"text\":\"Configuration management software — Chef Hot Technology ; Patch and update management software; Perforce Helix software; Puppet Hot Technology ; 1 more Related occupations\"},{\"kind\":\"list_item\",\"group\":\"1\",\"order\":13,\"text\":\"Content workflow software — Atlassian JIRA Hot Technology Related occupations\"},{\"kind\":\"list_item\",\"group\":\"1\",\"order\":14,\"text\":\"Customer relationship management CRM software — Salesforce software Hot Technology Related occupations\"},{\"kind\":\"list_item\",\"group\":\"1\",\"order\":15,\"text\":\"Data base management system software — Amazon DynamoDB Hot Technology ; Apache Hive Hot Technology ; Elasticsearch Hot Technology ; Oracle PL/SQL Hot Technology ; 9 more Related occupations\"},{\"kind\":\"list_item\",\"group\":\"1\",\"order\":16,\"text\":\"Data base reporting software — Microsoft SQL Server Reporting Services SSRS Hot Technology ; SAP Crystal Reports Related occupations\"},{\"kind\":\"list_item\",\"group\":\"1\",\"order\":17,\"text\":\"Data base user interface and query software — Amazon Elastic Compute Cloud EC2 Hot Technology ; Amazon Redshift Hot Technology ; Amazon Web Services AWS software ; Blackboard software ; 5 more Related occupations\"},{\"kind\":\"list_item\",\"group\":\"1\",\"order\":18,\"text\":\"Desktop communications software — Secure shell SSH software Related occupations\"},{\"kind\":\"list_item\",\"group\":\"1\",\"order\":19,\"text\":\"Development environment software — Apache Kafka Hot Technology ; Apache Maven Hot Technology ; Go Hot Technology ; Microsoft PowerShell ; 14 more Related occupations\"},{\"kind\":\"list_item\",\"group\":\"1\",\"order\":20,\"text\":\"Document management software — Microsoft SharePoint Hot Technology Related occupations\"},{\"kind\":\"list_item\",\"group\":\"1\",\"order\":21,\"text\":\"Electronic mail software — IBM Notes; Microsoft Exchange Related occupations\"},{\"kind\":\"list_item\",\"group\":\"1\",\"order\":22,\"text\":\"Enterprise application integration software — Atlassian Bamboo; Extensible markup language XML Hot Technology ; Microsoft SQL Server Integration Services SSIS Hot Technology ; Oracle Fusion Middleware Related occupations\"},{\"kind\":\"list_item\",\"group\":\"1\",\"order\":23,\"text\":\"Enterprise resource planning ERP software — Microsoft Dynamics; Oracle Fusion Applications; Oracle PeopleSoft Hot Technology ; SAP software Hot Technology ; 3 more Related occupations\"},{\"kind\":\"list_item\",\"group\":\"1\",\"order\":24,\"text\":\"Enterprise system management software — IBM Power Systems software Related occupations\"},{\"kind\":\"list_item\",\"group\":\"1\",\"order\":25,\"text\":\"Expert system software — Ansible software Hot Technology Related occupations\"},{\"kind\":\"list_item\",\"group\":\"1\",\"order\":26,\"text\":\"File versioning software — Apache Subversion SVN Hot Technology ; Git Hot Technology ; WinMerge Related occupations\"},{\"kind\":\"list_item\",\"group\":\"1\",\"order\":27,\"text\":\"Filesystem software — Computer forensic software Related occupations\"},{\"kind\":\"list_item\",\"group\":\"1\",\"order\":28,\"text\":\"Financial analysis software — Delphi Technology; Oracle E-Business Suite Financials Related occupations\"},{\"kind\":\"list_item\",\"group\":\"1\",\"order\":29,\"text\":\"Geographic information system — ESRI ArcGIS software Hot Technology ; Geographic information system GIS software Related occupations\"},{\"kind\":\"list_item\",\"group\":\"1\",\"order\":30,\"text\":\"Human resources software — Human resource management software HRMS Related occupations\"},{\"kind\":\"list_item\",\"group\":\"1\",\"order\":31,\"text\":\"Industrial control software — Supervisory control and data acquisition SCADA software Related occupations\"},{\"kind\":\"list_item\",\"group\":\"1\",\"order\":32,\"text\":\"Information retrieval or search software — LexisNexis Related occupations\"},{\"kind\":\"list_item\",\"group\":\"1\",\"order\":33,\"text\":\"Instant messaging software — Blink Related occupations\"},{\"kind\":\"list_item\",\"group\":\"1\",\"order\":34,\"text\":\"Internet directory services software — Active directory software; Berkeley Internet Domain Name BIND; Microsoft Active Directory Hot Technology ; Network directory services software ; 1 more Related occupations\"},{\"kind\":\"list_item\",\"group\":\"1\",\"order\":35,\"text\":\"Internet protocol IP multimedia subsystem software — Voice over internet protocol VoIP system software Related occupations\"},{\"kind\":\"list_item\",\"group\":\"1\",\"order\":36,\"text\":\"Medical software — Epic Systems Hot Technology Related occupations\"},{\"kind\":\"list_item\",\"group\":\"1\",\"order\":37,\"text\":\"Network monitoring software — Nagios; Sniffer Investigator; Symantec Blue Coat Data Loss Prevention; Wireshark ; 15 more Related occupations\"},{\"kind\":\"list_item\",\"group\":\"1\",\"order\":38,\"text\":\"Network security and virtual private network VPN equipment software — Imperva SecureSphere; IpFilter; Palo Alto Networks Next-Generation Security Platform; Trend Micro TippingPoint ; 5 more Related occupations\"},{\"kind\":\"list_item\",\"group\":\"1\",\"order\":39,\"text\":\"Network security or virtual private network VPN management software — HP Fortify; Intrusion detection system IDS; Intrusion prevention system IPS; Websense Data Loss Prevention ; 4 more Related occupations\"},{\"kind\":\"list_item\",\"group\":\"1\",\"order\":40,\"text\":\"Object or component oriented development software — C# Hot Technology ; Perl Hot Technology ; Scala Hot Technology ; Swift Hot Technology ; 6 more Related occupations\"},{\"kind\":\"list_item\",\"group\":\"1\",\"order\":41,\"text\":\"Object oriented data base management software — PostgreSQL Hot Technology Related occupations\"},{\"kind\":\"list_item\",\"group\":\"1\",\"order\":42,\"text\":\"Office suite software — Microsoft Office software Related occupations\"},{\"kind\":\"list_item\",\"group\":\"1\",\"order\":43,\"text\":\"Operating system software — Bash Hot Technology ; Microsoft Windows Server Hot Technology ; Red Hat Enterprise Linux Hot Technology ; UNIX Shell Hot Technology ; 11 more Related occupations\"},{\"kind\":\"list_item\",\"group\":\"1\",\"order\":44,\"text\":\"Point of sale POS software — Smart card management software Related occupations\"},{\"kind\":\"list_item\",\"group\":\"1\",\"order\":45,\"text\":\"Portal server software — Apache HTTP Server Related occupations\"},{\"kind\":\"list_item\",\"group\":\"1\",\"order\":46,\"text\":\"Presentation software — Microsoft PowerPoint Related occupations\"},{\"kind\":\"list_item\",\"group\":\"1\",\"order\":47,\"text\":\"Process mapping and design software — Microsoft Visio Hot Technology Related occupations\"},{\"kind\":\"list_item\",\"group\":\"1\",\"order\":48,\"text\":\"Program testing software — Conformance and validation testing software; MITRE ATT&CK software In Demand ; Selenium Hot Technology ; System testing software ; 1 more Related occupations\"},{\"kind\":\"list_item\",\"group\":\"1\",\"order\":49,\"text\":\"Project management software — Atlassian Confluence Hot Technology ; Microsoft Project Hot Technology ; Microsoft Teams Hot Technology Related occupations\"},{\"kind\":\"list_item\",\"group\":\"1\",\"order\":50,\"text\":\"Requirements analysis and system architecture software — Unified modeling language UML Related occupations\"},{\"kind\":\"list_item\",\"group\":\"1\",\"order\":51,\"text\":\"Risk management data and analysis software — ArcSight Enterprise Threat and Risk Management; eMASS In Demand Related occupations\"},{\"kind\":\"list_item\",\"group\":\"1\",\"order\":52,\"text\":\"Spreadsheet software — Microsoft Excel Related occupations\"},{\"kind\":\"list_item\",\"group\":\"1\",\"order\":53,\"text\":\"Storage networking software — Amazon Simple Storage Service S3 Related occupations\"},{\"kind\":\"list_item\",\"group\":\"1\",\"order\":54,\"text\":\"Switch or router software — Border Gateway Protocol BGP Hot Technology Related occupations\"},{\"kind\":\"list_item\",\"group\":\"1\",\"order\":55,\"text\":\"Transaction security and virus protection software — HP WebInspect; NortonLifeLock cybersecurity software; Portswigger BurP Suite; Stack smashing protection SSP software ; 22 more Related occupations\"},{\"kind\":\"list_item\",\"group\":\"1\",\"order\":56,\"text\":\"Transaction server software — Customer information control system CICS Related occupations\"},{\"kind\":\"list_item\",\"group\":\"1\",\"order\":57,\"text\":\"Web page creation and editing software — Google Sites Related occupations\"},{\"kind\":\"list_item\",\"group\":\"1\",\"order\":58,\"text\":\"Web platform development software — Django Hot Technology ; Google Angular Hot Technology ; Microsoft ASP.NET Hot Technology ; Spring Framework Hot Technology ; 15 more Related occupations\"},{\"kind\":\"list_item\",\"group\":\"1\",\"order\":59,\"text\":\"Word processing software — 3M Post-it App; Microsoft Word Hot Technology Related occupations\"}],\"source_text\":\"Software Skills\\nSave Table:\\nXLSX\\nCSV\\n10 of\\nAll\\n59 displayed\\n(\\nShow all\\nShow top 10\\n)\\nAccess software\\n— Access management software; Citrix cloud computing software; IBM Tivoli Access Management TAM\\nRelated occupations\\nAdministration software\\n— Cisco Systems CiscoWorks\\nRelated occupations\\nAnalytical or scientific software\\n— SAS\\nHot Technology\\n; The MathWorks MATLAB\\nHot Technology\\nRelated occupations\\nApplication server software\\n— Docker\\nHot Technology\\n; GitHub\\nHot Technology\\n; Oracle WebLogic Server; Red Hat OpenShift\\nHot Technology\\n;\\n1 more\\nRelated occupations\\nAuthentication server software\\n— Diameter; IBM Tivoli Identity Management TIM; Password management software; Remote authentication dial-in user service RADIUS software\\nRelated occupations\\nBackup or archival software\\n— Backup and archival software; System and data disaster recovery software; Veritas NetBackup\\nRelated occupations\\nBusiness intelligence and data analysis software\\n— Apache Spark\\nHot Technology\\n; IBM Cognos Impromptu; Oracle Business Intelligence Enterprise Edition; Tableau\\nHot Technology\\n;\\n2 more\\nRelated occupations\\nCloud-based management software\\n— Amazon Web Services AWS CloudFormation\\nHot Technology\\n; IBM WebSphere; Splunk Enterprise\\nRelated occupations\\nCloud-based protection or security software\\n— Qualys Cloud Platform\\nRelated occupations\\nClustering software\\n— VMware\\nRelated occupations\\nCommunications server software\\n— IBM Domino\\nRelated occupations\\nConfiguration management software\\n— Chef\\nHot Technology\\n; Patch and update management software; Perforce Helix software; Puppet\\nHot Technology\\n;\\n1 more\\nRelated occupations\\nContent workflow software\\n— Atlassian JIRA\\nHot Technology\\nRelated occupations\\nCustomer relationship management CRM software\\n— Salesforce software\\nHot Technology\\nRelated occupations\\nData base management system software\\n— Amazon DynamoDB\\nHot Technology\\n; Apache Hive\\nHot Technology\\n; Elasticsearch\\nHot Technology\\n; Oracle PL/SQL\\nHot Technology\\n;\\n9 more\\nRelated occupations\\nData base reporting software\\n— Microsoft SQL Server Reporting Services SSRS\\nHot Technology\\n; SAP Crystal Reports\\nRelated occupations\\nData base user interface and query software\\n— Amazon Elastic Compute Cloud EC2\\nHot Technology\\n; Amazon Redshift\\nHot Technology\\n; Amazon Web Services AWS software\\n; Blackboard software\\n;\\n5 more\\nRelated occupations\\nDesktop communications software\\n— Secure shell SSH software\\nRelated occupations\\nDevelopment environment software\\n— Apache Kafka\\nHot Technology\\n; Apache Maven\\nHot Technology\\n; Go\\nHot Technology\\n; Microsoft PowerShell\\n;\\n14 more\\nRelated occupations\\nDocument management software\\n— Microsoft SharePoint\\nHot Technology\\nRelated occupations\\nElectronic mail software\\n— IBM Notes; Microsoft Exchange\\nRelated occupations\\nEnterprise application integration software\\n— Atlassian Bamboo; Extensible markup language XML\\nHot Technology\\n; Microsoft SQL Server Integration Services SSIS\\nHot Technology\\n; Oracle Fusion Middleware\\nRelated occupations\\nEnterprise resource planning ERP software\\n— Microsoft Dynamics; Oracle Fusion Applications; Oracle PeopleSoft\\nHot Technology\\n; SAP software\\nHot Technology\\n;\\n3 more\\nRelated occupations\\nEnterprise system management software\\n— IBM Power Systems software\\nRelated occupations\\nExpert system software\\n— Ansible software\\nHot Technology\\nRelated occupations\\nFile versioning software\\n— Apache Subversion SVN\\nHot Technology\\n; Git\\nHot Technology\\n; WinMerge\\nRelated occupations\\nFilesystem software\\n— Computer forensic software\\nRelated occupations\\nFinancial analysis software\\n— Delphi Technology; Oracle E-Business Suite Financials\\nRelated occupations\\nGeographic information system\\n— ESRI ArcGIS software\\nHot Technology\\n; Geographic information system GIS software\\nRelated occupations\\nHuman resources software\\n— Human resource management software HRMS\\nRelated occupations\\nIndustrial control software\\n— Supervisory control and data acquisition SCADA software\\nRelated occupations\\nInformation retrieval or search software\\n— LexisNexis\\nRelated occupations\\nInstant messaging software\\n— Blink\\nRelated occupations\\nInternet directory services software\\n— Active directory software; Berkeley Internet Domain Name BIND; Microsoft Active Directory\\nHot Technology\\n; Network directory services software\\n;\\n1 more\\nRelated occupations\\nInternet protocol IP multimedia subsystem software\\n— Voice over internet protocol VoIP system software\\nRelated occupations\\nMedical software\\n— Epic Systems\\nHot Technology\\nRelated occupations\\nNetwork monitoring software\\n— Nagios; Sniffer Investigator; Symantec Blue Coat Data Loss Prevention; Wireshark\\n;\\n15 more\\nRelated occupations\\nNetwork security and virtual private network VPN equipment software\\n— Imperva SecureSphere; IpFilter; Palo Alto Networks Next-Generation Security Platform; Trend Micro TippingPoint\\n;\\n5 more\\nRelated occupations\\nNetwork security or virtual private network VPN management software\\n— HP Fortify; Intrusion detection system IDS; Intrusion prevention system IPS; Websense Data Loss Prevention\\n;\\n4 more\\nRelated occupations\\nObject or component oriented development software\\n— C#\\nHot Technology\\n; Perl\\nHot Technology\\n; Scala\\nHot Technology\\n; Swift\\nHot Technology\\n;\\n6 more\\nRelated occupations\\nObject oriented data base management software\\n— PostgreSQL\\nHot Technology\\nRelated occupations\\nOffice suite software\\n— Microsoft Office software\\nRelated occupations\\nOperating system software\\n— Bash\\nHot Technology\\n; Microsoft Windows Server\\nHot Technology\\n; Red Hat Enterprise Linux\\nHot Technology\\n; UNIX Shell\\nHot Technology\\n;\\n11 more\\nRelated occupations\\nPoint of sale POS software\\n— Smart card management software\\nRelated occupations\\nPortal server software\\n— Apache HTTP Server\\nRelated occupations\\nPresentation software\\n— Microsoft PowerPoint\\nRelated occupations\\nProcess mapping and design software\\n— Microsoft Visio\\nHot Technology\\nRelated occupations\\nProgram testing software\\n— Conformance and validation testing software; MITRE ATT&CK software\\nIn Demand\\n; Selenium\\nHot Technology\\n; System testing software\\n;\\n1 more\\nRelated occupations\\nProject management software\\n— Atlassian Confluence\\nHot Technology\\n; Microsoft Project\\nHot Technology\\n; Microsoft Teams\\nHot Technology\\nRelated occupations\\nRequirements analysis and system architecture software\\n— Unified modeling language UML\\nRelated occupations\\nRisk management data and analysis software\\n— ArcSight Enterprise Threat and Risk Management; eMASS\\nIn Demand\\nRelated occupations\\nSpreadsheet software\\n— Microsoft Excel\\nRelated occupations\\nStorage networking software\\n— Amazon Simple Storage Service S3\\nRelated occupations\\nSwitch or router software\\n— Border Gateway Protocol BGP\\nHot Technology\\nRelated occupations\\nTransaction security and virus protection software\\n— HP WebInspect; NortonLifeLock cybersecurity software; Portswigger BurP Suite; Stack smashing protection SSP software\\n;\\n22 more\\nRelated occupations\\nTransaction server software\\n— Customer information control system CICS\\nRelated occupations\\nWeb page creation and editing software\\n— Google Sites\\nRelated occupations\\nWeb platform development software\\n— Django\\nHot Technology\\n; Google Angular\\nHot Technology\\n; Microsoft ASP.NET\\nHot Technology\\n; Spring Framework\\nHot Technology\\n;\\n15 more\\nRelated occupations\\nWord processing software\\n— 3M Post-it App; Microsoft Word\\nHot Technology\\nRelated occupations\\nHot Technologies are requirements most frequently included across all employer job postings.\\nSee all 93 Hot Technologies for this occupation.\\nIn Demand skills are frequently included in employer job postings for this occupation.\\nSee all 14 In Demand skills for this occupation.\"},{\"id\":\"Knowledge\",\"title\":\"Knowledge\",\"record_count\":33,\"records\":[{\"kind\":\"table_row\",\"group\":\"1\",\"order\":1,\"fields\":[{\"name\":\"Importance\",\"value\":\"84\"},{\"name\":\"Knowledge\",\"value\":\"Computers and Electronics\",\"text_original\":\"Computers and Electronics — Knowledge of circuit boards, processors, chips, electronic equipment, and computer hardware and software, including applications and programming. Related occupations\"}]},{\"kind\":\"table_row\",\"group\":\"1\",\"order\":2,\"fields\":[{\"name\":\"Importance\",\"value\":\"82\"},{\"name\":\"Knowledge\",\"value\":\"English Language\",\"text_original\":\"English Language — Knowledge of the structure and content of the English language including the meaning and spelling of words, and rules of composition and grammar. Related occupations\"}]},{\"kind\":\"table_row\",\"group\":\"1\",\"order\":3,\"fields\":[{\"name\":\"Importance\",\"value\":\"67\"},{\"name\":\"Knowledge\",\"value\":\"Administration and Management\",\"text_original\":\"Administration and Management — Knowledge of business and management principles involved in strategic planning, resource allocation, human resources modeling, leadership technique, production methods, and coordination of people and resources. Related occupations\"}]},{\"kind\":\"table_row\",\"group\":\"1\",\"order\":4,\"fields\":[{\"name\":\"Importance\",\"value\":\"66\"},{\"name\":\"Knowledge\",\"value\":\"Engineering and Technology\",\"text_original\":\"Engineering and Technology — Knowledge of the practical application of engineering science and technology. This includes applying principles, techniques, procedures, and equipment to the design and production of various goods and services. Related occupations\"}]},{\"kind\":\"table_row\",\"group\":\"1\",\"order\":5,\"fields\":[{\"name\":\"Importance\",\"value\":\"66\"},{\"name\":\"Knowledge\",\"value\":\"Telecommunications\",\"text_original\":\"Telecommunications — Knowledge of transmission, broadcasting, switching, control, and operation of telecommunications systems. Related occupations\"}]},{\"kind\":\"table_row\",\"group\":\"1\",\"order\":6,\"fields\":[{\"name\":\"Importance\",\"value\":\"61\"},{\"name\":\"Knowledge\",\"value\":\"Customer and Personal Service\",\"text_original\":\"Customer and Personal Service — Knowledge of principles and processes for providing customer and personal services. This includes customer needs assessment, meeting quality standards for services, and evaluation of customer satisfaction. Related occupations\"}]},{\"kind\":\"table_row\",\"group\":\"1\",\"order\":7,\"fields\":[{\"name\":\"Importance\",\"value\":\"57\"},{\"name\":\"Knowledge\",\"value\":\"Public Safety and Security\",\"text_original\":\"Public Safety and Security — Knowledge of relevant equipment, policies, procedures, and strategies to promote effective local, state, or national security operations for the protection of people, data, property, and institutions. Related occupations\"}]},{\"kind\":\"table_row\",\"group\":\"1\",\"order\":8,\"fields\":[{\"name\":\"Importance\",\"value\":\"55\"},{\"name\":\"Knowledge\",\"value\":\"Education and Training\",\"text_original\":\"Education and Training — Knowledge of principles and methods for curriculum and training design, teaching and instruction for individuals and groups, and the measurement of training effects. Related occupations\"}]},{\"kind\":\"table_row\",\"group\":\"1\",\"order\":9,\"fields\":[{\"name\":\"Importance\",\"value\":\"47\"},{\"name\":\"Knowledge\",\"value\":\"Mathematics\",\"text_original\":\"Mathematics — Knowledge of arithmetic, algebra, geometry, calculus, statistics, and their applications. Related occupations\"}]},{\"kind\":\"table_row\",\"group\":\"1\",\"order\":10,\"fields\":[{\"name\":\"Importance\",\"value\":\"45\"},{\"name\":\"Knowledge\",\"value\":\"Communications and Media\",\"text_original\":\"Communications and Media — Knowledge of media production, communication, and dissemination techniques and methods. This includes alternative ways to inform and entertain via written, oral, and visual media. Related occupations\"}]},{\"kind\":\"table_row\",\"group\":\"1\",\"order\":11,\"fields\":[{\"name\":\"Importance\",\"value\":\"43\"},{\"name\":\"Knowledge\",\"value\":\"Law and Government\",\"text_original\":\"Law and Government — Knowledge of laws, legal codes, court procedures, precedents, government regulations, executive orders, agency rules, and the democratic political process. Related occupations\"}]},{\"kind\":\"table_row\",\"group\":\"1\",\"order\":12,\"fields\":[{\"name\":\"Importance\",\"value\":\"42\"},{\"name\":\"Knowledge\",\"value\":\"Administrative\",\"text_original\":\"Administrative — Knowledge of administrative and office procedures and systems such as word processing, managing files and records, stenography and transcription, designing forms, and workplace terminology. Related occupations\"}]},{\"kind\":\"table_row\",\"group\":\"1\",\"order\":13,\"fields\":[{\"name\":\"Importance\",\"value\":\"36\"},{\"name\":\"Knowledge\",\"value\":\"Personnel and Human Resources\",\"text_original\":\"Personnel and Human Resources — Knowledge of principles and procedures for personnel recruitment, selection, training, compensation and benefits, labor relations and negotiation, and personnel information systems. Related occupations\"}]},{\"kind\":\"table_row\",\"group\":\"1\",\"order\":14,\"fields\":[{\"name\":\"Importance\",\"value\":\"35\"},{\"name\":\"Knowledge\",\"value\":\"Design\",\"text_original\":\"Design — Knowledge of design techniques, tools, and principles involved in production of precision technical plans, blueprints, drawings, and models. Related occupations\"}]},{\"kind\":\"table_row\",\"group\":\"1\",\"order\":15,\"fields\":[{\"name\":\"Importance\",\"value\":\"35\"},{\"name\":\"Knowledge\",\"value\":\"Production and Processing\",\"text_original\":\"Production and Processing — Knowledge of raw materials, production processes, quality control, costs, and other techniques for maximizing the effective manufacture and distribution of goods. Related occupations\"}]},{\"kind\":\"table_row\",\"group\":\"1\",\"order\":16,\"fields\":[{\"name\":\"Importance\",\"value\":\"32\"},{\"name\":\"Knowledge\",\"value\":\"Economics and Accounting\",\"text_original\":\"Economics and Accounting — Knowledge of economic and accounting principles and practices, the financial markets, banking, and the analysis and reporting of financial data. Related occupations\"}]},{\"kind\":\"table_row\",\"group\":\"1\",\"order\":17,\"fields\":[{\"name\":\"Importance\",\"value\":\"27\"},{\"name\":\"Knowledge\",\"value\":\"Psychology\",\"text_original\":\"Psychology — Knowledge of human behavior and performance; individual differences in ability, personality, and interests; learning and motivation; psychological research methods; and the assessment and treatment of behavioral and affective disorders. Related occupations\"}]},{\"kind\":\"table_row\",\"group\":\"1\",\"order\":18,\"fields\":[{\"name\":\"Importance\",\"value\":\"18\"},{\"name\":\"Knowledge\",\"value\":\"Sociology and Anthropology\",\"text_original\":\"Sociology and Anthropology — Knowledge of group behavior and dynamics, societal trends and influences, human migrations, ethnicity, cultures, and their history and origins. Related occupations\"}]},{\"kind\":\"table_row\",\"group\":\"1\",\"order\":19,\"fields\":[{\"name\":\"Importance\",\"value\":\"17\"},{\"name\":\"Knowledge\",\"value\":\"Mechanical\",\"text_original\":\"Mechanical — Knowledge of machines and tools, including their designs, uses, repair, and maintenance. Related occupations\"}]},{\"kind\":\"table_row\",\"group\":\"1\",\"order\":20,\"fields\":[{\"name\":\"Importance\",\"value\":\"15\"},{\"name\":\"Knowledge\",\"value\":\"Geography\",\"text_original\":\"Geography — Knowledge of principles and methods for describing the features of land, sea, and air masses, including their physical characteristics, locations, interrelationships, and distribution of plant, animal, and human life. Related occupations\"}]},{\"kind\":\"table_row\",\"group\":\"1\",\"order\":21,\"fields\":[{\"name\":\"Importance\",\"value\":\"15\"},{\"name\":\"Knowledge\",\"value\":\"Transportation\",\"text_original\":\"Transportation — Knowledge of principles and methods for moving people or goods by air, rail, sea, or road, including the relative costs and benefits. Related occupations\"}]},{\"kind\":\"table_row\",\"group\":\"1\",\"order\":22,\"fields\":[{\"name\":\"Importance\",\"value\":\"13\"},{\"name\":\"Knowledge\",\"value\":\"Sales and Marketing\",\"text_original\":\"Sales and Marketing — Knowledge of principles and methods for showing, promoting, and selling products or services. This includes marketing strategy and tactics, product demonstration, sales techniques, and sales control systems. Related occupations\"}]},{\"kind\":\"table_row\",\"group\":\"1\",\"order\":23,\"fields\":[{\"name\":\"Importance\",\"value\":\"9\"},{\"name\":\"Knowledge\",\"value\":\"Building and Construction\",\"text_original\":\"Building and Construction — Knowledge of materials, methods, and the tools involved in the construction or repair of houses, buildings, or other structures such as highways and roads. Related occupations\"}]},{\"kind\":\"table_row\",\"group\":\"1\",\"order\":24,\"fields\":[{\"name\":\"Importance\",\"value\":\"9\"},{\"name\":\"Knowledge\",\"value\":\"Physics\",\"text_original\":\"Physics — Knowledge and prediction of physical principles, laws, their interrelationships, and applications to understanding fluid, material, and atmospheric dynamics, and mechanical, electrical, atomic and sub-atomic structures and processes. Related occupations\"}]},{\"kind\":\"table_row\",\"group\":\"1\",\"order\":25,\"fields\":[{\"name\":\"Importance\",\"value\":\"8\"},{\"name\":\"Knowledge\",\"value\":\"Foreign Language\",\"text_original\":\"Foreign Language — Knowledge of the structure and content of a foreign (non-English) language including the meaning and spelling of words, rules of composition and grammar, and pronunciation. Related occupations\"}]},{\"kind\":\"table_row\",\"group\":\"1\",\"order\":26,\"fields\":[{\"name\":\"Importance\",\"value\":\"6\"},{\"name\":\"Knowledge\",\"value\":\"Chemistry\",\"text_original\":\"Chemistry — Knowledge of the chemical composition, structure, and properties of substances and of the chemical processes and transformations that they undergo. This includes uses of chemicals and their interactions, danger signs, production techniques, and disposal methods. Related occupations\"}]},{\"kind\":\"table_row\",\"group\":\"1\",\"order\":27,\"fields\":[{\"name\":\"Importance\",\"value\":\"5\"},{\"name\":\"Knowledge\",\"value\":\"Philosophy and Theology\",\"text_original\":\"Philosophy and Theology — Knowledge of different philosophical systems and religions. This includes their basic principles, values, ethics, ways of thinking, customs, practices, and their impact on human culture. Related occupations\"}]},{\"kind\":\"table_row\",\"group\":\"1\",\"order\":28,\"fields\":[{\"name\":\"Importance\",\"value\":\"3\"},{\"name\":\"Knowledge\",\"value\":\"History and Archeology\",\"text_original\":\"History and Archeology — Knowledge of historical events and their causes, indicators, and effects on civilizations and cultures. Related occupations\"}]},{\"kind\":\"table_row\",\"group\":\"1\",\"order\":29,\"fields\":[{\"name\":\"Importance\",\"value\":\"3\"},{\"name\":\"Knowledge\",\"value\":\"Therapy and Counseling\",\"text_original\":\"Therapy and Counseling — Knowledge of principles, methods, and procedures for diagnosis, treatment, and rehabilitation of physical and mental dysfunctions, and for career counseling and guidance. Related occupations\"}]},{\"kind\":\"table_row\",\"group\":\"1\",\"order\":30,\"fields\":[{\"name\":\"Importance\",\"value\":\"2\"},{\"name\":\"Knowledge\",\"value\":\"Medicine and Dentistry\",\"text_original\":\"Medicine and Dentistry — Knowledge of the information and techniques needed to diagnose and treat human injuries, diseases, and deformities. This includes symptoms, treatment alternatives, drug properties and interactions, and preventive health-care measures. Related occupations\"}]},{\"kind\":\"table_row\",\"group\":\"1\",\"order\":31,\"fields\":[{\"name\":\"Importance\",\"value\":\"1\"},{\"name\":\"Knowledge\",\"value\":\"Biology\",\"text_original\":\"Biology — Knowledge of plant and animal organisms, their tissues, cells, functions, interdependencies, and interactions with each other and the environment. Related occupations\"}]},{\"kind\":\"table_row\",\"group\":\"1\",\"order\":32,\"fields\":[{\"name\":\"Importance\",\"value\":\"1\"},{\"name\":\"Knowledge\",\"value\":\"Fine Arts\",\"text_original\":\"Fine Arts — Knowledge of the theory and techniques required to compose, produce, and perform works of music, dance, visual arts, drama, and sculpture. Related occupations\"}]},{\"kind\":\"table_row\",\"group\":\"1\",\"order\":33,\"fields\":[{\"name\":\"Importance\",\"value\":\"1\"},{\"name\":\"Knowledge\",\"value\":\"Food Production\",\"text_original\":\"Food Production — Knowledge of techniques and equipment for planting, growing, and harvesting food products (both plant and animal) for consumption, including storage/handling techniques. Related occupations\"}]}],\"source_text\":\"Knowledge\\nSave Table:\\nXLSX\\nCSV\\n10 of\\nAll\\n33 displayed\\n(\\nShow all\\nShow top 10\\n)\\nImportance\\nKnowledge\\n84\\nComputers and Electronics\\n— Knowledge of circuit boards, processors, chips, electronic equipment, and computer hardware and software, including applications and programming.\\nRelated occupations\\n82\\nEnglish Language\\n— Knowledge of the structure and content of the English language including the meaning and spelling of words, and rules of composition and grammar.\\nRelated occupations\\n67\\nAdministration and Management\\n— Knowledge of business and management principles involved in strategic planning, resource allocation, human resources modeling, leadership technique, production methods, and coordination of people and resources.\\nRelated occupations\\n66\\nEngineering and Technology\\n— Knowledge of the practical application of engineering science and technology. This includes applying principles, techniques, procedures, and equipment to the design and production of various goods and services.\\nRelated occupations\\n66\\nTelecommunications\\n— Knowledge of transmission, broadcasting, switching, control, and operation of telecommunications systems.\\nRelated occupations\\n61\\nCustomer and Personal Service\\n— Knowledge of principles and processes for providing customer and personal services. This includes customer needs assessment, meeting quality standards for services, and evaluation of customer satisfaction.\\nRelated occupations\\n57\\nPublic Safety and Security\\n— Knowledge of relevant equipment, policies, procedures, and strategies to promote effective local, state, or national security operations for the protection of people, data, property, and institutions.\\nRelated occupations\\n55\\nEducation and Training\\n— Knowledge of principles and methods for curriculum and training design, teaching and instruction for individuals and groups, and the measurement of training effects.\\nRelated occupations\\n47\\nMathematics\\n— Knowledge of arithmetic, algebra, geometry, calculus, statistics, and their applications.\\nRelated occupations\\n45\\nCommunications and Media\\n— Knowledge of media production, communication, and dissemination techniques and methods. This includes alternative ways to inform and entertain via written, oral, and visual media.\\nRelated occupations\\n43\\nLaw and Government\\n— Knowledge of laws, legal codes, court procedures, precedents, government regulations, executive orders, agency rules, and the democratic political process.\\nRelated occupations\\n42\\nAdministrative\\n— Knowledge of administrative and office procedures and systems such as word processing, managing files and records, stenography and transcription, designing forms, and workplace terminology.\\nRelated occupations\\n36\\nPersonnel and Human Resources\\n— Knowledge of principles and procedures for personnel recruitment, selection, training, compensation and benefits, labor relations and negotiation, and personnel information systems.\\nRelated occupations\\n35\\nDesign\\n— Knowledge of design techniques, tools, and principles involved in production of precision technical plans, blueprints, drawings, and models.\\nRelated occupations\\n35\\nProduction and Processing\\n— Knowledge of raw materials, production processes, quality control, costs, and other techniques for maximizing the effective manufacture and distribution of goods.\\nRelated occupations\\n32\\nEconomics and Accounting\\n— Knowledge of economic and accounting principles and practices, the financial markets, banking, and the analysis and reporting of financial data.\\nRelated occupations\\n27\\nPsychology\\n— Knowledge of human behavior and performance; individual differences in ability, personality, and interests; learning and motivation; psychological research methods; and the assessment and treatment of behavioral and affective disorders.\\nRelated occupations\\n18\\nSociology and Anthropology\\n— Knowledge of group behavior and dynamics, societal trends and influences, human migrations, ethnicity, cultures, and their history and origins.\\nRelated occupations\\n17\\nMechanical\\n— Knowledge of machines and tools, including their designs, uses, repair, and maintenance.\\nRelated occupations\\n15\\nGeography\\n— Knowledge of principles and methods for describing the features of land, sea, and air masses, including their physical characteristics, locations, interrelationships, and distribution of plant, animal, and human life.\\nRelated occupations\\n15\\nTransportation\\n— Knowledge of principles and methods for moving people or goods by air, rail, sea, or road, including the relative costs and benefits.\\nRelated occupations\\n13\\nSales and Marketing\\n— Knowledge of principles and methods for showing, promoting, and selling products or services. This includes marketing strategy and tactics, product demonstration, sales techniques, and sales control systems.\\nRelated occupations\\n9\\nBuilding and Construction\\n— Knowledge of materials, methods, and the tools involved in the construction or repair of houses, buildings, or other structures such as highways and roads.\\nRelated occupations\\n9\\nPhysics\\n— Knowledge and prediction of physical principles, laws, their interrelationships, and applications to understanding fluid, material, and atmospheric dynamics, and mechanical, electrical, atomic and sub-atomic structures and processes.\\nRelated occupations\\n8\\nForeign Language\\n— Knowledge of the structure and content of a foreign (non-English) language including the meaning and spelling of words, rules of composition and grammar, and pronunciation.\\nRelated occupations\\n6\\nChemistry\\n— Knowledge of the chemical composition, structure, and properties of substances and of the chemical processes and transformations that they undergo. This includes uses of chemicals and their interactions, danger signs, production techniques, and disposal methods.\\nRelated occupations\\n5\\nPhilosophy and Theology\\n— Knowledge of different philosophical systems and religions. This includes their basic principles, values, ethics, ways of thinking, customs, practices, and their impact on human culture.\\nRelated occupations\\n3\\nHistory and Archeology\\n— Knowledge of historical events and their causes, indicators, and effects on civilizations and cultures.\\nRelated occupations\\n3\\nTherapy and Counseling\\n— Knowledge of principles, methods, and procedures for diagnosis, treatment, and rehabilitation of physical and mental dysfunctions, and for career counseling and guidance.\\nRelated occupations\\n2\\nMedicine and Dentistry\\n— Knowledge of the information and techniques needed to diagnose and treat human injuries, diseases, and deformities. This includes symptoms, treatment alternatives, drug properties and interactions, and preventive health-care measures.\\nRelated occupations\\n1\\nBiology\\n— Knowledge of plant and animal organisms, their tissues, cells, functions, interdependencies, and interactions with each other and the environment.\\nRelated occupations\\n1\\nFine Arts\\n— Knowledge of the theory and techniques required to compose, produce, and perform works of music, dance, visual arts, drama, and sculpture.\\nRelated occupations\\n1\\nFood Production\\n— Knowledge of techniques and equipment for planting, growing, and harvesting food products (both plant and animal) for consumption, including storage/handling techniques.\\nRelated occupations\"},{\"id\":\"Education\",\"title\":\"Education\",\"record_count\":3,\"records\":[{\"kind\":\"list_item\",\"group\":\"1\",\"order\":1,\"text\":\"53% responded: Bachelor’s degree required\"},{\"kind\":\"list_item\",\"group\":\"1\",\"order\":2,\"text\":\"23% responded: Post-baccalaureate certificate required\"},{\"kind\":\"list_item\",\"group\":\"1\",\"order\":3,\"text\":\"13% responded: Associate’s degree or other 2-year degree required\"}],\"source_text\":\"Education\\nHow much education does a new hire need to perform a job in this occupation? Respondents said:\\n53%\\nresponded:\\nBachelor’s degree required\\n23%\\nresponded:\\nPost-baccalaureate certificate required\\n13%\\nresponded:\\nAssociate’s degree or other 2-year degree required\"},{\"id\":\"EssentialSkills\",\"title\":\"Essential Skills\",\"record_count\":10,\"records\":[{\"kind\":\"table_row\",\"group\":\"1\",\"order\":1,\"fields\":[{\"name\":\"Importance\",\"value\":\"75\"},{\"name\":\"Essential Skill\",\"value\":\"Reading Comprehension\",\"text_original\":\"Reading Comprehension — Understanding written sentences and paragraphs in work-related documents. Related occupations\"}]},{\"kind\":\"table_row\",\"group\":\"1\",\"order\":2,\"fields\":[{\"name\":\"Importance\",\"value\":\"72\"},{\"name\":\"Essential Skill\",\"value\":\"Critical Thinking\",\"text_original\":\"Critical Thinking — Using logic and reasoning to identify the strengths and weaknesses of alternative solutions, conclusions, or approaches to problems. Related occupations\"}]},{\"kind\":\"table_row\",\"group\":\"1\",\"order\":3,\"fields\":[{\"name\":\"Importance\",\"value\":\"69\"},{\"name\":\"Essential Skill\",\"value\":\"Active Listening\",\"text_original\":\"Active Listening — Giving full attention to what other people are saying, taking time to understand the points being made, asking questions as appropriate, and not interrupting at inappropriate times. Related occupations\"}]},{\"kind\":\"table_row\",\"group\":\"1\",\"order\":4,\"fields\":[{\"name\":\"Importance\",\"value\":\"66\"},{\"name\":\"Essential Skill\",\"value\":\"Speaking\",\"text_original\":\"Speaking — Talking to others to convey information effectively. Related occupations\"}]},{\"kind\":\"table_row\",\"group\":\"1\",\"order\":5,\"fields\":[{\"name\":\"Importance\",\"value\":\"63\"},{\"name\":\"Essential Skill\",\"value\":\"Writing\",\"text_original\":\"Writing — Communicating effectively in writing as appropriate for the needs of the audience. Related occupations\"}]},{\"kind\":\"table_row\",\"group\":\"1\",\"order\":6,\"fields\":[{\"name\":\"Importance\",\"value\":\"60\"},{\"name\":\"Essential Skill\",\"value\":\"Monitoring\",\"text_original\":\"Monitoring — Monitoring/Assessing performance of yourself, other individuals, or organizations to make improvements or take corrective action. Related occupations\"}]},{\"kind\":\"table_row\",\"group\":\"1\",\"order\":7,\"fields\":[{\"name\":\"Importance\",\"value\":\"56\"},{\"name\":\"Essential Skill\",\"value\":\"Active Learning\",\"text_original\":\"Active Learning — Understanding the implications of new information for both current and future problem-solving and decision-making. Related occupations\"}]},{\"kind\":\"table_row\",\"group\":\"1\",\"order\":8,\"fields\":[{\"name\":\"Importance\",\"value\":\"47\"},{\"name\":\"Essential Skill\",\"value\":\"Learning Strategies\",\"text_original\":\"Learning Strategies — Selecting and using training/instructional methods and procedures appropriate for the situation when learning or teaching new things. Related occupations\"}]},{\"kind\":\"table_row\",\"group\":\"1\",\"order\":9,\"fields\":[{\"name\":\"Importance\",\"value\":\"31\"},{\"name\":\"Essential Skill\",\"value\":\"Mathematics\",\"text_original\":\"Mathematics — Using mathematics to solve problems. Related occupations\"}]},{\"kind\":\"table_row\",\"group\":\"1\",\"order\":10,\"fields\":[{\"name\":\"Importance\",\"value\":\"22\"},{\"name\":\"Essential Skill\",\"value\":\"Science\",\"text_original\":\"Science — Using scientific rules and methods to solve problems. Related occupations\"}]}],\"source_text\":\"Essential Skills\\nSave Table:\\nXLSX\\nCSV\\nAll\\n10 displayed\\nImportance\\nEssential Skill\\n75\\nReading Comprehension\\n— Understanding written sentences and paragraphs in work-related documents.\\nRelated occupations\\n72\\nCritical Thinking\\n— Using logic and reasoning to identify the strengths and weaknesses of alternative solutions, conclusions, or approaches to problems.\\nRelated occupations\\n69\\nActive Listening\\n— Giving full attention to what other people are saying, taking time to understand the points being made, asking questions as appropriate, and not interrupting at inappropriate times.\\nRelated occupations\\n66\\nSpeaking\\n— Talking to others to convey information effectively.\\nRelated occupations\\n63\\nWriting\\n— Communicating effectively in writing as appropriate for the needs of the audience.\\nRelated occupations\\n60\\nMonitoring\\n— Monitoring/Assessing performance of yourself, other individuals, or organizations to make improvements or take corrective action.\\nRelated occupations\\n56\\nActive Learning\\n— Understanding the implications of new information for both current and future problem-solving and decision-making.\\nRelated occupations\\n47\\nLearning Strategies\\n— Selecting and using training/instructional methods and procedures appropriate for the situation when learning or teaching new things.\\nRelated occupations\\n31\\nMathematics\\n— Using mathematics to solve problems.\\nRelated occupations\\n22\\nScience\\n— Using scientific rules and methods to solve problems.\\nRelated occupations\"},{\"id\":\"TransferableSkills\",\"title\":\"Transferable Skills\",\"record_count\":25,\"records\":[{\"kind\":\"table_row\",\"group\":\"1\",\"order\":1,\"fields\":[{\"name\":\"Importance\",\"value\":\"69\"},{\"name\":\"Transferable Skill\",\"value\":\"Complex Problem Solving\",\"text_original\":\"Complex Problem Solving — Identifying complex problems and reviewing related information to develop and evaluate options and implement solutions. Related occupations\"}]},{\"kind\":\"table_row\",\"group\":\"1\",\"order\":2,\"fields\":[{\"name\":\"Importance\",\"value\":\"60\"},{\"name\":\"Transferable Skill\",\"value\":\"Judgment and Decision Making\",\"text_original\":\"Judgment and Decision Making — Considering the relative costs and benefits of potential actions to choose the most appropriate one. Related occupations\"}]},{\"kind\":\"table_row\",\"group\":\"1\",\"order\":3,\"fields\":[{\"name\":\"Importance\",\"value\":\"60\"},{\"name\":\"Transferable Skill\",\"value\":\"Systems Analysis\",\"text_original\":\"Systems Analysis — Determining how a system should work and how changes in conditions, operations, and the environment will affect outcomes. Related occupations\"}]},{\"kind\":\"table_row\",\"group\":\"1\",\"order\":4,\"fields\":[{\"name\":\"Importance\",\"value\":\"53\"},{\"name\":\"Transferable Skill\",\"value\":\"Time Management\",\"text_original\":\"Time Management — Managing one's own time and the time of others. Related occupations\"}]},{\"kind\":\"table_row\",\"group\":\"1\",\"order\":5,\"fields\":[{\"name\":\"Importance\",\"value\":\"50\"},{\"name\":\"Transferable Skill\",\"value\":\"Coordination\",\"text_original\":\"Coordination — Adjusting actions in relation to others' actions. Related occupations\"}]},{\"kind\":\"table_row\",\"group\":\"1\",\"order\":6,\"fields\":[{\"name\":\"Importance\",\"value\":\"50\"},{\"name\":\"Transferable Skill\",\"value\":\"Operations Monitoring\",\"text_original\":\"Operations Monitoring — Watching gauges, dials, or other indicators to make sure a machine is working properly. Related occupations\"}]},{\"kind\":\"table_row\",\"group\":\"1\",\"order\":7,\"fields\":[{\"name\":\"Importance\",\"value\":\"50\"},{\"name\":\"Transferable Skill\",\"value\":\"Quality Control Analysis\",\"text_original\":\"Quality Control Analysis — Conducting tests and inspections of products, services, or processes to evaluate quality or performance. Related occupations\"}]},{\"kind\":\"table_row\",\"group\":\"1\",\"order\":8,\"fields\":[{\"name\":\"Importance\",\"value\":\"50\"},{\"name\":\"Transferable Skill\",\"value\":\"Systems Evaluation\",\"text_original\":\"Systems Evaluation — Identifying measures or indicators of system performance and the actions needed to improve or correct performance, relative to the goals of the system. Related occupations\"}]},{\"kind\":\"table_row\",\"group\":\"1\",\"order\":9,\"fields\":[{\"name\":\"Importance\",\"value\":\"47\"},{\"name\":\"Transferable Skill\",\"value\":\"Instructing\",\"text_original\":\"Instructing — Teaching others how to do something. Related occupations\"}]},{\"kind\":\"table_row\",\"group\":\"1\",\"order\":10,\"fields\":[{\"name\":\"Importance\",\"value\":\"47\"},{\"name\":\"Transferable Skill\",\"value\":\"Management of Personnel Resources\",\"text_original\":\"Management of Personnel Resources — Motivating, developing, and directing people as they work, identifying the best people for the job. Related occupations\"}]},{\"kind\":\"table_row\",\"group\":\"1\",\"order\":11,\"fields\":[{\"name\":\"Importance\",\"value\":\"47\"},{\"name\":\"Transferable Skill\",\"value\":\"Service Orientation\",\"text_original\":\"Service Orientation — Actively looking for ways to help people. Related occupations\"}]},{\"kind\":\"table_row\",\"group\":\"1\",\"order\":12,\"fields\":[{\"name\":\"Importance\",\"value\":\"44\"},{\"name\":\"Transferable Skill\",\"value\":\"Social Perceptiveness\",\"text_original\":\"Social Perceptiveness — Being aware of others' reactions and understanding why they react as they do. Related occupations\"}]},{\"kind\":\"table_row\",\"group\":\"1\",\"order\":13,\"fields\":[{\"name\":\"Importance\",\"value\":\"41\"},{\"name\":\"Transferable Skill\",\"value\":\"Negotiation\",\"text_original\":\"Negotiation — Bringing others together and trying to reconcile differences. Related occupations\"}]},{\"kind\":\"table_row\",\"group\":\"1\",\"order\":14,\"fields\":[{\"name\":\"Importance\",\"value\":\"41\"},{\"name\":\"Transferable Skill\",\"value\":\"Persuasion\",\"text_original\":\"Persuasion — Persuading others to change their minds or behavior. Related occupations\"}]},{\"kind\":\"table_row\",\"group\":\"1\",\"order\":15,\"fields\":[{\"name\":\"Importance\",\"value\":\"41\"},{\"name\":\"Transferable Skill\",\"value\":\"Programming\",\"text_original\":\"Programming — Writing computer programs for various purposes. Related occupations\"}]},{\"kind\":\"table_row\",\"group\":\"1\",\"order\":16,\"fields\":[{\"name\":\"Importance\",\"value\":\"38\"},{\"name\":\"Transferable Skill\",\"value\":\"Operations Analysis\",\"text_original\":\"Operations Analysis — Analyzing needs and product requirements to create a design. Related occupations\"}]},{\"kind\":\"table_row\",\"group\":\"1\",\"order\":17,\"fields\":[{\"name\":\"Importance\",\"value\":\"28\"},{\"name\":\"Transferable Skill\",\"value\":\"Technology Design\",\"text_original\":\"Technology Design — Generating or adapting equipment and technology to serve user needs. Related occupations\"}]},{\"kind\":\"table_row\",\"group\":\"1\",\"order\":18,\"fields\":[{\"name\":\"Importance\",\"value\":\"28\"},{\"name\":\"Transferable Skill\",\"value\":\"Troubleshooting\",\"text_original\":\"Troubleshooting — Determining causes of operating errors and deciding what to do about it. Related occupations\"}]},{\"kind\":\"table_row\",\"group\":\"1\",\"order\":19,\"fields\":[{\"name\":\"Importance\",\"value\":\"19\"},{\"name\":\"Transferable Skill\",\"value\":\"Equipment Selection\",\"text_original\":\"Equipment Selection — Determining the kind of tools and equipment needed to do a job. Related occupations\"}]},{\"kind\":\"table_row\",\"group\":\"1\",\"order\":20,\"fields\":[{\"name\":\"Importance\",\"value\":\"19\"},{\"name\":\"Transferable Skill\",\"value\":\"Management of Financial Resources\",\"text_original\":\"Management of Financial Resources — Determining how money will be spent to get the work done, and accounting for these expenditures. Related occupations\"}]},{\"kind\":\"table_row\",\"group\":\"1\",\"order\":21,\"fields\":[{\"name\":\"Importance\",\"value\":\"19\"},{\"name\":\"Transferable Skill\",\"value\":\"Management of Material Resources\",\"text_original\":\"Management of Material Resources — Obtaining and seeing to the appropriate use of equipment, facilities, and materials needed to do certain work. Related occupations\"}]},{\"kind\":\"table_row\",\"group\":\"1\",\"order\":22,\"fields\":[{\"name\":\"Importance\",\"value\":\"19\"},{\"name\":\"Transferable Skill\",\"value\":\"Operation and Control\",\"text_original\":\"Operation and Control — Controlling operations of equipment or systems. Related occupations\"}]},{\"kind\":\"table_row\",\"group\":\"1\",\"order\":23,\"fields\":[{\"name\":\"Importance\",\"value\":\"16\"},{\"name\":\"Transferable Skill\",\"value\":\"Equipment Maintenance\",\"text_original\":\"Equipment Maintenance — Performing routine maintenance on equipment and determining when and what kind of maintenance is needed. Related occupations\"}]},{\"kind\":\"table_row\",\"group\":\"1\",\"order\":24,\"fields\":[{\"name\":\"Importance\",\"value\":\"16\"},{\"name\":\"Transferable Skill\",\"value\":\"Repairing\",\"text_original\":\"Repairing — Repairing machines or systems using the needed tools. Related occupations\"}]},{\"kind\":\"table_row\",\"group\":\"1\",\"order\":25,\"fields\":[{\"name\":\"Importance\",\"value\":\"13\"},{\"name\":\"Transferable Skill\",\"value\":\"Installation\",\"text_original\":\"Installation — Installing equipment, machines, wiring, or programs to meet specifications. Related occupations\"}]}],\"source_text\":\"Transferable Skills\\nSave Table:\\nXLSX\\nCSV\\n10 of\\nAll\\n25 displayed\\n(\\nShow all\\nShow top 10\\n)\\nImportance\\nTransferable Skill\\n69\\nComplex Problem Solving\\n— Identifying complex problems and reviewing related information to develop and evaluate options and implement solutions.\\nRelated occupations\\n60\\nJudgment and Decision Making\\n— Considering the relative costs and benefits of potential actions to choose the most appropriate one.\\nRelated occupations\\n60\\nSystems Analysis\\n— Determining how a system should work and how changes in conditions, operations, and the environment will affect outcomes.\\nRelated occupations\\n53\\nTime Management\\n— Managing one's own time and the time of others.\\nRelated occupations\\n50\\nCoordination\\n— Adjusting actions in relation to others' actions.\\nRelated occupations\\n50\\nOperations Monitoring\\n— Watching gauges, dials, or other indicators to make sure a machine is working properly.\\nRelated occupations\\n50\\nQuality Control Analysis\\n— Conducting tests and inspections of products, services, or processes to evaluate quality or performance.\\nRelated occupations\\n50\\nSystems Evaluation\\n— Identifying measures or indicators of system performance and the actions needed to improve or correct performance, relative to the goals of the system.\\nRelated occupations\\n47\\nInstructing\\n— Teaching others how to do something.\\nRelated occupations\\n47\\nManagement of Personnel Resources\\n— Motivating, developing, and directing people as they work, identifying the best people for the job.\\nRelated occupations\\n47\\nService Orientation\\n— Actively looking for ways to help people.\\nRelated occupations\\n44\\nSocial Perceptiveness\\n— Being aware of others' reactions and understanding why they react as they do.\\nRelated occupations\\n41\\nNegotiation\\n— Bringing others together and trying to reconcile differences.\\nRelated occupations\\n41\\nPersuasion\\n— Persuading others to change their minds or behavior.\\nRelated occupations\\n41\\nProgramming\\n— Writing computer programs for various purposes.\\nRelated occupations\\n38\\nOperations Analysis\\n— Analyzing needs and product requirements to create a design.\\nRelated occupations\\n28\\nTechnology Design\\n— Generating or adapting equipment and technology to serve user needs.\\nRelated occupations\\n28\\nTroubleshooting\\n— Determining causes of operating errors and deciding what to do about it.\\nRelated occupations\\n19\\nEquipment Selection\\n— Determining the kind of tools and equipment needed to do a job.\\nRelated occupations\\n19\\nManagement of Financial Resources\\n— Determining how money will be spent to get the work done, and accounting for these expenditures.\\nRelated occupations\\n19\\nManagement of Material Resources\\n— Obtaining and seeing to the appropriate use of equipment, facilities, and materials needed to do certain work.\\nRelated occupations\\n19\\nOperation and Control\\n— Controlling operations of equipment or systems.\\nRelated occupations\\n16\\nEquipment Maintenance\\n— Performing routine maintenance on equipment and determining when and what kind of maintenance is needed.\\nRelated occupations\\n16\\nRepairing\\n— Repairing machines or systems using the needed tools.\\nRelated occupations\\n13\\nInstallation\\n— Installing equipment, machines, wiring, or programs to meet specifications.\\nRelated occupations\"}]}\n\n【正文写作规范】\n1. 语体与反机翻红线：采用国内成熟科技或现代企业真实社招 JD 语体。严禁字面直译 O*NET 英文分类词（如严禁写“掌握计算机与电子领域知识”“查询数据存储库”“促进服务器运行效率”等生硬翻译腔，必须转化为地道行业表达，如“熟悉计算机系统与网络基础”“开发数据仓库查询与业务报表”）。\n2. 栏目结构与篇幅：全文控制在 240—350 字，包含职位名称、岗位简介、工作职责、任职要求、加分项五个部分。职位名称使用该职业标准中文岗位名，不加初级/高级职级、公司名或行业限定。\n3. 岗位简介：用 2 句简练自然的话（45—75字）说明岗位的核心职能与业务技术定位，不喊企业文化或价值观口号。\n4. 工作职责（5—6条短横线词条）：以 Tasks 核心条目为主、结合 Detailed Work Activities 提炼。每条统一以“- ”开头，严格控制在 14—24 字的干练动宾短句；一条只写一件事，不用“并……同时……以及……”堆砌长句。\n5. 任职要求（5条短横线词条）：每条以“- ”开头，控制在 12—28 字，依次对应：\n   - 学历与专业：按 Education 最高占比层次写明学历及对口专业方向（如“- 本科及以上学历，计算机、统计学或相关专业”）。\n   - 经验门槛：统一要求“- 5年以上相关工作经验”（并点明具体对口方向）。\n   - 核心技术与语言（第3条）及专业工具与方法（第4条）：结合主要职责与 Software Skills、Knowledge 提炼。优先使用行业通用工具简称（如 Git、Docker、PostgreSQL、PyTorch、Spark、Power BI、Splunk、Wireshark）；若资料已包含某生态框架或数据库（如 PyTorch/TensorFlow 或 PostgreSQL/PL/SQL），可直接写出对应基础语言简称（Python、SQL）并在依据记录注明；严禁照抄冗长的商业产品全称（如须将长品牌套件归纳为“下一代防火墙”等通用术语）。\n   - 专业认知能力（第5条）：从 Essential Skills、Transferable Skills 提炼 1—2 项面向复杂业务或技术问题的分析判断、方案评估能力。\n6. 加分项（2—3条短横线词条）：从资料中的进阶平台、自动化工具或细分领域方法中选取非强制优先条件（每条 10—22 字），拉开候选人区分度。\n7. 排除项：严禁在任职要求或加分项中出现诚信、合作、沟通、共情、协调、责任心、团队精神等品格或人际特征要求；正文不出现 O*NET 栏目名或统计数字。\n\n【风格参考示例（仅示意句式节奏与颗粒度，勿照搬岗位内容）】\n职位名称：界面设计师\n\n岗位简介\n负责移动端与 Web 产品的界面视觉设计及设计规范建设，结合用户交互反馈持续优化产品体验与视觉一致性。\n\n工作职责\n- 设计移动端与 Web 端核心业务界面\n- 建立并维护跨端组件库与视觉规范\n- 制作高保真交互原型并开展可用性走查\n- 跟踪用户测试反馈并迭代界面细节\n- 输出标准化设计标注与交付文档\n\n任职要求\n- 本科及以上学历，视觉传达、数字媒体或相关专业\n- 5年以上 UI/UX 界面设计相关工作经验\n- 精通 Figma、Sketch、Illustrator 等主流设计工具\n- 熟悉响应式布局规范、交互原型设计与可用性测试方法\n- 具备复杂业务场景下的设计问题拆解与方案比选能力\n\n加分项\n- 了解 HTML、CSS 基础前端实现原理\n- 具备动效设计工具实操经验\n- 有大型设计系统（Design System）搭建经历\n\n【依据记录规范】\n按“岗位简介 → 工作职责 → 任职要求 → 加分项”顺序，用简短条目定位对应的 O*NET 栏目与条目序号（学历注明原始最高占比，5年经验注明“统一设定”，推导出的基础语言简称简要注明依据框架）。不抄写英文长句。\n\n【输出格式】\n严格输出以下两个区块，四个边界标记原样保留且各出现一次，不使用 Markdown 代码块或加粗符号，区块外不输出任何额外文字：\n\n【依据记录开始】\n逐项简短来源记录。\n【依据记录结束】\n\n【岗位公告开始】\n职位名称：……\n\n岗位简介\n……\n\n工作职责\n- ……\n\n任职要求\n- ……\n\n加分项\n- ……\n【岗位公告结束】",
+          "role": "user"
+        }
+      ],
+      "metadata": {
+        "input_json_sha256": "2819b7f9ed6cf3c4e8832599c502deaf505b18dccfe51baed857d4de6b516a64",
+        "input_projection": {
+          "code_sha256": "15740bfa9c94345843eaca1a0a3399658851a4886ecf4b84031cfcca88927e07",
+          "config_sha256": "a4fac7cfff6a8ab08332b19eb0599d0c7f0e9d0fdd49ceb9cdf60e177d15dcc7",
+          "excluded_modules": [
+            "WorkActivities",
+            "WorkContext",
+            "TrainingCredentials",
+            "Apprenticeship",
+            "Abilities",
+            "CareerInterestTypes",
+            "SpecificInterestAreas",
+            "WorkStyles",
+            "WagesEmployment",
+            "JobOpenings",
+            "RelatedOccupations",
+            "ProfessionalAssociations"
+          ],
+          "full_json_characters": 705897,
+          "input_json_characters": 70455,
+          "modules": [
+            {
+              "input_records": 35,
+              "module": "Overview",
+              "record_mapping": [
+                {
+                  "duplicate_row_text_omitted": false,
+                  "identical_text_original_omitted": [],
+                  "input_record": 0,
+                  "source_order": 1,
+                  "source_record": 0
+                },
+                {
+                  "duplicate_row_text_omitted": false,
+                  "identical_text_original_omitted": [],
+                  "input_record": 1,
+                  "source_order": 2,
+                  "source_record": 1
+                },
+                {
+                  "duplicate_row_text_omitted": false,
+                  "identical_text_original_omitted": [],
+                  "input_record": 2,
+                  "source_order": 3,
+                  "source_record": 2
+                },
+                {
+                  "duplicate_row_text_omitted": false,
+                  "identical_text_original_omitted": [],
+                  "input_record": 3,
+                  "source_order": 4,
+                  "source_record": 3
+                },
+                {
+                  "duplicate_row_text_omitted": false,
+                  "identical_text_original_omitted": [],
+                  "input_record": 4,
+                  "source_order": 5,
+                  "source_record": 4
+                },
+                {
+                  "duplicate_row_text_omitted": false,
+                  "identical_text_original_omitted": [],
+                  "input_record": 5,
+                  "source_order": 6,
+                  "source_record": 5
+                },
+                {
+                  "duplicate_row_text_omitted": false,
+                  "identical_text_original_omitted": [],
+                  "input_record": 6,
+                  "source_order": 7,
+                  "source_record": 6
+                },
+                {
+                  "duplicate_row_text_omitted": false,
+                  "identical_text_original_omitted": [],
+                  "input_record": 7,
+                  "source_order": 8,
+                  "source_record": 7
+                },
+                {
+                  "duplicate_row_text_omitted": false,
+                  "identical_text_original_omitted": [],
+                  "input_record": 8,
+                  "source_order": 9,
+                  "source_record": 8
+                },
+                {
+                  "duplicate_row_text_omitted": false,
+                  "identical_text_original_omitted": [],
+                  "input_record": 9,
+                  "source_order": 10,
+                  "source_record": 9
+                },
+                {
+                  "duplicate_row_text_omitted": false,
+                  "identical_text_original_omitted": [],
+                  "input_record": 10,
+                  "source_order": 11,
+                  "source_record": 10
+                },
+                {
+                  "duplicate_row_text_omitted": false,
+                  "identical_text_original_omitted": [],
+                  "input_record": 11,
+                  "source_order": 12,
+                  "source_record": 11
+                },
+                {
+                  "duplicate_row_text_omitted": false,
+                  "identical_text_original_omitted": [],
+                  "input_record": 12,
+                  "source_order": 13,
+                  "source_record": 12
+                },
+                {
+                  "duplicate_row_text_omitted": false,
+                  "identical_text_original_omitted": [],
+                  "input_record": 13,
+                  "source_order": 14,
+                  "source_record": 13
+                },
+                {
+                  "duplicate_row_text_omitted": false,
+                  "identical_text_original_omitted": [],
+                  "input_record": 14,
+                  "source_order": 15,
+                  "source_record": 14
+                },
+                {
+                  "duplicate_row_text_omitted": false,
+                  "identical_text_original_omitted": [],
+                  "input_record": 15,
+                  "source_order": 16,
+                  "source_record": 15
+                },
+                {
+                  "duplicate_row_text_omitted": false,
+                  "identical_text_original_omitted": [],
+                  "input_record": 16,
+                  "source_order": 17,
+                  "source_record": 16
+                },
+                {
+                  "duplicate_row_text_omitted": false,
+                  "identical_text_original_omitted": [],
+                  "input_record": 17,
+                  "source_order": 18,
+                  "source_record": 17
+                },
+                {
+                  "duplicate_row_text_omitted": false,
+                  "identical_text_original_omitted": [],
+                  "input_record": 18,
+                  "source_order": 19,
+                  "source_record": 18
+                },
+                {
+                  "duplicate_row_text_omitted": false,
+                  "identical_text_original_omitted": [],
+                  "input_record": 19,
+                  "source_order": 20,
+                  "source_record": 19
+                },
+                {
+                  "duplicate_row_text_omitted": false,
+                  "identical_text_original_omitted": [],
+                  "input_record": 20,
+                  "source_order": 21,
+                  "source_record": 20
+                },
+                {
+                  "duplicate_row_text_omitted": false,
+                  "identical_text_original_omitted": [],
+                  "input_record": 21,
+                  "source_order": 22,
+                  "source_record": 21
+                },
+                {
+                  "duplicate_row_text_omitted": false,
+                  "identical_text_original_omitted": [],
+                  "input_record": 22,
+                  "source_order": 23,
+                  "source_record": 22
+                },
+                {
+                  "duplicate_row_text_omitted": false,
+                  "identical_text_original_omitted": [],
+                  "input_record": 23,
+                  "source_order": 24,
+                  "source_record": 23
+                },
+                {
+                  "duplicate_row_text_omitted": false,
+                  "identical_text_original_omitted": [],
+                  "input_record": 24,
+                  "source_order": 25,
+                  "source_record": 24
+                },
+                {
+                  "duplicate_row_text_omitted": false,
+                  "identical_text_original_omitted": [],
+                  "input_record": 25,
+                  "source_order": 26,
+                  "source_record": 25
+                },
+                {
+                  "duplicate_row_text_omitted": false,
+                  "identical_text_original_omitted": [],
+                  "input_record": 26,
+                  "source_order": 27,
+                  "source_record": 26
+                },
+                {
+                  "duplicate_row_text_omitted": false,
+                  "identical_text_original_omitted": [],
+                  "input_record": 27,
+                  "source_order": 28,
+                  "source_record": 27
+                },
+                {
+                  "duplicate_row_text_omitted": false,
+                  "identical_text_original_omitted": [],
+                  "input_record": 28,
+                  "source_order": 29,
+                  "source_record": 28
+                },
+                {
+                  "duplicate_row_text_omitted": false,
+                  "identical_text_original_omitted": [],
+                  "input_record": 29,
+                  "source_order": 30,
+                  "source_record": 29
+                },
+                {
+                  "duplicate_row_text_omitted": false,
+                  "identical_text_original_omitted": [],
+                  "input_record": 30,
+                  "source_order": 31,
+                  "source_record": 30
+                },
+                {
+                  "duplicate_row_text_omitted": false,
+                  "identical_text_original_omitted": [],
+                  "input_record": 31,
+                  "source_order": 32,
+                  "source_record": 31
+                },
+                {
+                  "duplicate_row_text_omitted": false,
+                  "identical_text_original_omitted": [],
+                  "input_record": 32,
+                  "source_order": 33,
+                  "source_record": 32
+                },
+                {
+                  "duplicate_row_text_omitted": false,
+                  "identical_text_original_omitted": [],
+                  "input_record": 33,
+                  "source_order": 34,
+                  "source_record": 33
+                },
+                {
+                  "duplicate_row_text_omitted": false,
+                  "identical_text_original_omitted": [],
+                  "input_record": 34,
+                  "source_order": 35,
+                  "source_record": 34
+                }
+              ],
+              "source_records": 35,
+              "source_section": 0,
+              "source_text_retained": true
+            },
+            {
+              "input_records": 11,
+              "module": "Tasks",
+              "record_mapping": [
+                {
+                  "duplicate_row_text_omitted": true,
+                  "identical_text_original_omitted": [
+                    "Importance",
+                    "Category"
+                  ],
+                  "input_record": 0,
+                  "source_order": 1,
+                  "source_record": 0
+                },
+                {
+                  "duplicate_row_text_omitted": true,
+                  "identical_text_original_omitted": [
+                    "Importance",
+                    "Category"
+                  ],
+                  "input_record": 1,
+                  "source_order": 2,
+                  "source_record": 1
+                },
+                {
+                  "duplicate_row_text_omitted": true,
+                  "identical_text_original_omitted": [
+                    "Importance",
+                    "Category"
+                  ],
+                  "input_record": 2,
+                  "source_order": 3,
+                  "source_record": 2
+                },
+                {
+                  "duplicate_row_text_omitted": true,
+                  "identical_text_original_omitted": [
+                    "Importance",
+                    "Category"
+                  ],
+                  "input_record": 3,
+                  "source_order": 4,
+                  "source_record": 3
+                },
+                {
+                  "duplicate_row_text_omitted": true,
+                  "identical_text_original_omitted": [
+                    "Importance",
+                    "Category"
+                  ],
+                  "input_record": 4,
+                  "source_order": 5,
+                  "source_record": 4
+                },
+                {
+                  "duplicate_row_text_omitted": true,
+                  "identical_text_original_omitted": [
+                    "Importance",
+                    "Category"
+                  ],
+                  "input_record": 5,
+                  "source_order": 6,
+                  "source_record": 5
+                },
+                {
+                  "duplicate_row_text_omitted": true,
+                  "identical_text_original_omitted": [
+                    "Importance",
+                    "Category"
+                  ],
+                  "input_record": 6,
+                  "source_order": 7,
+                  "source_record": 6
+                },
+                {
+                  "duplicate_row_text_omitted": true,
+                  "identical_text_original_omitted": [
+                    "Importance",
+                    "Category"
+                  ],
+                  "input_record": 7,
+                  "source_order": 8,
+                  "source_record": 7
+                },
+                {
+                  "duplicate_row_text_omitted": true,
+                  "identical_text_original_omitted": [
+                    "Importance",
+                    "Category"
+                  ],
+                  "input_record": 8,
+                  "source_order": 9,
+                  "source_record": 8
+                },
+                {
+                  "duplicate_row_text_omitted": true,
+                  "identical_text_original_omitted": [
+                    "Importance",
+                    "Category"
+                  ],
+                  "input_record": 9,
+                  "source_order": 10,
+                  "source_record": 9
+                },
+                {
+                  "duplicate_row_text_omitted": true,
+                  "identical_text_original_omitted": [
+                    "Importance",
+                    "Category"
+                  ],
+                  "input_record": 10,
+                  "source_order": 11,
+                  "source_record": 10
+                }
+              ],
+              "source_records": 11,
+              "source_section": 1,
+              "source_text_retained": true
+            },
+            {
+              "input_records": 10,
+              "module": "DetailedWorkActivities",
+              "record_mapping": [
+                {
+                  "duplicate_row_text_omitted": false,
+                  "identical_text_original_omitted": [],
+                  "input_record": 0,
+                  "source_order": 1,
+                  "source_record": 0
+                },
+                {
+                  "duplicate_row_text_omitted": false,
+                  "identical_text_original_omitted": [],
+                  "input_record": 1,
+                  "source_order": 2,
+                  "source_record": 1
+                },
+                {
+                  "duplicate_row_text_omitted": false,
+                  "identical_text_original_omitted": [],
+                  "input_record": 2,
+                  "source_order": 3,
+                  "source_record": 2
+                },
+                {
+                  "duplicate_row_text_omitted": false,
+                  "identical_text_original_omitted": [],
+                  "input_record": 3,
+                  "source_order": 4,
+                  "source_record": 3
+                },
+                {
+                  "duplicate_row_text_omitted": false,
+                  "identical_text_original_omitted": [],
+                  "input_record": 4,
+                  "source_order": 5,
+                  "source_record": 4
+                },
+                {
+                  "duplicate_row_text_omitted": false,
+                  "identical_text_original_omitted": [],
+                  "input_record": 5,
+                  "source_order": 6,
+                  "source_record": 5
+                },
+                {
+                  "duplicate_row_text_omitted": false,
+                  "identical_text_original_omitted": [],
+                  "input_record": 6,
+                  "source_order": 7,
+                  "source_record": 6
+                },
+                {
+                  "duplicate_row_text_omitted": false,
+                  "identical_text_original_omitted": [],
+                  "input_record": 7,
+                  "source_order": 8,
+                  "source_record": 7
+                },
+                {
+                  "duplicate_row_text_omitted": false,
+                  "identical_text_original_omitted": [],
+                  "input_record": 8,
+                  "source_order": 9,
+                  "source_record": 8
+                },
+                {
+                  "duplicate_row_text_omitted": false,
+                  "identical_text_original_omitted": [],
+                  "input_record": 9,
+                  "source_order": 10,
+                  "source_record": 9
+                }
+              ],
+              "source_records": 10,
+              "source_section": 3,
+              "source_text_retained": true
+            },
+            {
+              "input_records": 6,
+              "module": "JobZone",
+              "record_mapping": [
+                {
+                  "duplicate_row_text_omitted": false,
+                  "identical_text_original_omitted": [],
+                  "input_record": 0,
+                  "source_order": 1,
+                  "source_record": 0
+                },
+                {
+                  "duplicate_row_text_omitted": false,
+                  "identical_text_original_omitted": [],
+                  "input_record": 1,
+                  "source_order": 2,
+                  "source_record": 1
+                },
+                {
+                  "duplicate_row_text_omitted": false,
+                  "identical_text_original_omitted": [],
+                  "input_record": 2,
+                  "source_order": 3,
+                  "source_record": 2
+                },
+                {
+                  "duplicate_row_text_omitted": false,
+                  "identical_text_original_omitted": [],
+                  "input_record": 3,
+                  "source_order": 4,
+                  "source_record": 3
+                },
+                {
+                  "duplicate_row_text_omitted": false,
+                  "identical_text_original_omitted": [],
+                  "input_record": 4,
+                  "source_order": 5,
+                  "source_record": 4
+                },
+                {
+                  "duplicate_row_text_omitted": false,
+                  "identical_text_original_omitted": [],
+                  "input_record": 5,
+                  "source_order": 6,
+                  "source_record": 5
+                }
+              ],
+              "source_records": 6,
+              "source_section": 5,
+              "source_text_retained": true
+            },
+            {
+              "input_records": 59,
+              "module": "SoftwareSkills",
+              "record_mapping": [
+                {
+                  "duplicate_row_text_omitted": false,
+                  "identical_text_original_omitted": [],
+                  "input_record": 0,
+                  "source_order": 1,
+                  "source_record": 0
+                },
+                {
+                  "duplicate_row_text_omitted": false,
+                  "identical_text_original_omitted": [],
+                  "input_record": 1,
+                  "source_order": 2,
+                  "source_record": 1
+                },
+                {
+                  "duplicate_row_text_omitted": false,
+                  "identical_text_original_omitted": [],
+                  "input_record": 2,
+                  "source_order": 3,
+                  "source_record": 2
+                },
+                {
+                  "duplicate_row_text_omitted": false,
+                  "identical_text_original_omitted": [],
+                  "input_record": 3,
+                  "source_order": 4,
+                  "source_record": 3
+                },
+                {
+                  "duplicate_row_text_omitted": false,
+                  "identical_text_original_omitted": [],
+                  "input_record": 4,
+                  "source_order": 5,
+                  "source_record": 4
+                },
+                {
+                  "duplicate_row_text_omitted": false,
+                  "identical_text_original_omitted": [],
+                  "input_record": 5,
+                  "source_order": 6,
+                  "source_record": 5
+                },
+                {
+                  "duplicate_row_text_omitted": false,
+                  "identical_text_original_omitted": [],
+                  "input_record": 6,
+                  "source_order": 7,
+                  "source_record": 6
+                },
+                {
+                  "duplicate_row_text_omitted": false,
+                  "identical_text_original_omitted": [],
+                  "input_record": 7,
+                  "source_order": 8,
+                  "source_record": 7
+                },
+                {
+                  "duplicate_row_text_omitted": false,
+                  "identical_text_original_omitted": [],
+                  "input_record": 8,
+                  "source_order": 9,
+                  "source_record": 8
+                },
+                {
+                  "duplicate_row_text_omitted": false,
+                  "identical_text_original_omitted": [],
+                  "input_record": 9,
+                  "source_order": 10,
+                  "source_record": 9
+                },
+                {
+                  "duplicate_row_text_omitted": false,
+                  "identical_text_original_omitted": [],
+                  "input_record": 10,
+                  "source_order": 11,
+                  "source_record": 10
+                },
+                {
+                  "duplicate_row_text_omitted": false,
+                  "identical_text_original_omitted": [],
+                  "input_record": 11,
+                  "source_order": 12,
+                  "source_record": 11
+                },
+                {
+                  "duplicate_row_text_omitted": false,
+                  "identical_text_original_omitted": [],
+                  "input_record": 12,
+                  "source_order": 13,
+                  "source_record": 12
+                },
+                {
+                  "duplicate_row_text_omitted": false,
+                  "identical_text_original_omitted": [],
+                  "input_record": 13,
+                  "source_order": 14,
+                  "source_record": 13
+                },
+                {
+                  "duplicate_row_text_omitted": false,
+                  "identical_text_original_omitted": [],
+                  "input_record": 14,
+                  "source_order": 15,
+                  "source_record": 14
+                },
+                {
+                  "duplicate_row_text_omitted": false,
+                  "identical_text_original_omitted": [],
+                  "input_record": 15,
+                  "source_order": 16,
+                  "source_record": 15
+                },
+                {
+                  "duplicate_row_text_omitted": false,
+                  "identical_text_original_omitted": [],
+                  "input_record": 16,
+                  "source_order": 17,
+                  "source_record": 16
+                },
+                {
+                  "duplicate_row_text_omitted": false,
+                  "identical_text_original_omitted": [],
+                  "input_record": 17,
+                  "source_order": 18,
+                  "source_record": 17
+                },
+                {
+                  "duplicate_row_text_omitted": false,
+                  "identical_text_original_omitted": [],
+                  "input_record": 18,
+                  "source_order": 19,
+                  "source_record": 18
+                },
+                {
+                  "duplicate_row_text_omitted": false,
+                  "identical_text_original_omitted": [],
+                  "input_record": 19,
+                  "source_order": 20,
+                  "source_record": 19
+                },
+                {
+                  "duplicate_row_text_omitted": false,
+                  "identical_text_original_omitted": [],
+                  "input_record": 20,
+                  "source_order": 21,
+                  "source_record": 20
+                },
+                {
+                  "duplicate_row_text_omitted": false,
+                  "identical_text_original_omitted": [],
+                  "input_record": 21,
+                  "source_order": 22,
+                  "source_record": 21
+                },
+                {
+                  "duplicate_row_text_omitted": false,
+                  "identical_text_original_omitted": [],
+                  "input_record": 22,
+                  "source_order": 23,
+                  "source_record": 22
+                },
+                {
+                  "duplicate_row_text_omitted": false,
+                  "identical_text_original_omitted": [],
+                  "input_record": 23,
+                  "source_order": 24,
+                  "source_record": 23
+                },
+                {
+                  "duplicate_row_text_omitted": false,
+                  "identical_text_original_omitted": [],
+                  "input_record": 24,
+                  "source_order": 25,
+                  "source_record": 24
+                },
+                {
+                  "duplicate_row_text_omitted": false,
+                  "identical_text_original_omitted": [],
+                  "input_record": 25,
+                  "source_order": 26,
+                  "source_record": 25
+                },
+                {
+                  "duplicate_row_text_omitted": false,
+                  "identical_text_original_omitted": [],
+                  "input_record": 26,
+                  "source_order": 27,
+                  "source_record": 26
+                },
+                {
+                  "duplicate_row_text_omitted": false,
+                  "identical_text_original_omitted": [],
+                  "input_record": 27,
+                  "source_order": 28,
+                  "source_record": 27
+                },
+                {
+                  "duplicate_row_text_omitted": false,
+                  "identical_text_original_omitted": [],
+                  "input_record": 28,
+                  "source_order": 29,
+                  "source_record": 28
+                },
+                {
+                  "duplicate_row_text_omitted": false,
+                  "identical_text_original_omitted": [],
+                  "input_record": 29,
+                  "source_order": 30,
+                  "source_record": 29
+                },
+                {
+                  "duplicate_row_text_omitted": false,
+                  "identical_text_original_omitted": [],
+                  "input_record": 30,
+                  "source_order": 31,
+                  "source_record": 30
+                },
+                {
+                  "duplicate_row_text_omitted": false,
+                  "identical_text_original_omitted": [],
+                  "input_record": 31,
+                  "source_order": 32,
+                  "source_record": 31
+                },
+                {
+                  "duplicate_row_text_omitted": false,
+                  "identical_text_original_omitted": [],
+                  "input_record": 32,
+                  "source_order": 33,
+                  "source_record": 32
+                },
+                {
+                  "duplicate_row_text_omitted": false,
+                  "identical_text_original_omitted": [],
+                  "input_record": 33,
+                  "source_order": 34,
+                  "source_record": 33
+                },
+                {
+                  "duplicate_row_text_omitted": false,
+                  "identical_text_original_omitted": [],
+                  "input_record": 34,
+                  "source_order": 35,
+                  "source_record": 34
+                },
+                {
+                  "duplicate_row_text_omitted": false,
+                  "identical_text_original_omitted": [],
+                  "input_record": 35,
+                  "source_order": 36,
+                  "source_record": 35
+                },
+                {
+                  "duplicate_row_text_omitted": false,
+                  "identical_text_original_omitted": [],
+                  "input_record": 36,
+                  "source_order": 37,
+                  "source_record": 36
+                },
+                {
+                  "duplicate_row_text_omitted": false,
+                  "identical_text_original_omitted": [],
+                  "input_record": 37,
+                  "source_order": 38,
+                  "source_record": 37
+                },
+                {
+                  "duplicate_row_text_omitted": false,
+                  "identical_text_original_omitted": [],
+                  "input_record": 38,
+                  "source_order": 39,
+                  "source_record": 38
+                },
+                {
+                  "duplicate_row_text_omitted": false,
+                  "identical_text_original_omitted": [],
+                  "input_record": 39,
+                  "source_order": 40,
+                  "source_record": 39
+                },
+                {
+                  "duplicate_row_text_omitted": false,
+                  "identical_text_original_omitted": [],
+                  "input_record": 40,
+                  "source_order": 41,
+                  "source_record": 40
+                },
+                {
+                  "duplicate_row_text_omitted": false,
+                  "identical_text_original_omitted": [],
+                  "input_record": 41,
+                  "source_order": 42,
+                  "source_record": 41
+                },
+                {
+                  "duplicate_row_text_omitted": false,
+                  "identical_text_original_omitted": [],
+                  "input_record": 42,
+                  "source_order": 43,
+                  "source_record": 42
+                },
+                {
+                  "duplicate_row_text_omitted": false,
+                  "identical_text_original_omitted": [],
+                  "input_record": 43,
+                  "source_order": 44,
+                  "source_record": 43
+                },
+                {
+                  "duplicate_row_text_omitted": false,
+                  "identical_text_original_omitted": [],
+                  "input_record": 44,
+                  "source_order": 45,
+                  "source_record": 44
+                },
+                {
+                  "duplicate_row_text_omitted": false,
+                  "identical_text_original_omitted": [],
+                  "input_record": 45,
+                  "source_order": 46,
+                  "source_record": 45
+                },
+                {
+                  "duplicate_row_text_omitted": false,
+                  "identical_text_original_omitted": [],
+                  "input_record": 46,
+                  "source_order": 47,
+                  "source_record": 46
+                },
+                {
+                  "duplicate_row_text_omitted": false,
+                  "identical_text_original_omitted": [],
+                  "input_record": 47,
+                  "source_order": 48,
+                  "source_record": 47
+                },
+                {
+                  "duplicate_row_text_omitted": false,
+                  "identical_text_original_omitted": [],
+                  "input_record": 48,
+                  "source_order": 49,
+                  "source_record": 48
+                },
+                {
+                  "duplicate_row_text_omitted": false,
+                  "identical_text_original_omitted": [],
+                  "input_record": 49,
+                  "source_order": 50,
+                  "source_record": 49
+                },
+                {
+                  "duplicate_row_text_omitted": false,
+                  "identical_text_original_omitted": [],
+                  "input_record": 50,
+                  "source_order": 51,
+                  "source_record": 50
+                },
+                {
+                  "duplicate_row_text_omitted": false,
+                  "identical_text_original_omitted": [],
+                  "input_record": 51,
+                  "source_order": 52,
+                  "source_record": 51
+                },
+                {
+                  "duplicate_row_text_omitted": false,
+                  "identical_text_original_omitted": [],
+                  "input_record": 52,
+                  "source_order": 53,
+                  "source_record": 52
+                },
+                {
+                  "duplicate_row_text_omitted": false,
+                  "identical_text_original_omitted": [],
+                  "input_record": 53,
+                  "source_order": 54,
+                  "source_record": 53
+                },
+                {
+                  "duplicate_row_text_omitted": false,
+                  "identical_text_original_omitted": [],
+                  "input_record": 54,
+                  "source_order": 55,
+                  "source_record": 54
+                },
+                {
+                  "duplicate_row_text_omitted": false,
+                  "identical_text_original_omitted": [],
+                  "input_record": 55,
+                  "source_order": 56,
+                  "source_record": 55
+                },
+                {
+                  "duplicate_row_text_omitted": false,
+                  "identical_text_original_omitted": [],
+                  "input_record": 56,
+                  "source_order": 57,
+                  "source_record": 56
+                },
+                {
+                  "duplicate_row_text_omitted": false,
+                  "identical_text_original_omitted": [],
+                  "input_record": 57,
+                  "source_order": 58,
+                  "source_record": 57
+                },
+                {
+                  "duplicate_row_text_omitted": false,
+                  "identical_text_original_omitted": [],
+                  "input_record": 58,
+                  "source_order": 59,
+                  "source_record": 58
+                }
+              ],
+              "source_records": 59,
+              "source_section": 8,
+              "source_text_retained": true
+            },
+            {
+              "input_records": 33,
+              "module": "Knowledge",
+              "record_mapping": [
+                {
+                  "duplicate_row_text_omitted": true,
+                  "identical_text_original_omitted": [
+                    "Importance"
+                  ],
+                  "input_record": 0,
+                  "source_order": 1,
+                  "source_record": 0
+                },
+                {
+                  "duplicate_row_text_omitted": true,
+                  "identical_text_original_omitted": [
+                    "Importance"
+                  ],
+                  "input_record": 1,
+                  "source_order": 2,
+                  "source_record": 1
+                },
+                {
+                  "duplicate_row_text_omitted": true,
+                  "identical_text_original_omitted": [
+                    "Importance"
+                  ],
+                  "input_record": 2,
+                  "source_order": 3,
+                  "source_record": 2
+                },
+                {
+                  "duplicate_row_text_omitted": true,
+                  "identical_text_original_omitted": [
+                    "Importance"
+                  ],
+                  "input_record": 3,
+                  "source_order": 4,
+                  "source_record": 3
+                },
+                {
+                  "duplicate_row_text_omitted": true,
+                  "identical_text_original_omitted": [
+                    "Importance"
+                  ],
+                  "input_record": 4,
+                  "source_order": 5,
+                  "source_record": 4
+                },
+                {
+                  "duplicate_row_text_omitted": true,
+                  "identical_text_original_omitted": [
+                    "Importance"
+                  ],
+                  "input_record": 5,
+                  "source_order": 6,
+                  "source_record": 5
+                },
+                {
+                  "duplicate_row_text_omitted": true,
+                  "identical_text_original_omitted": [
+                    "Importance"
+                  ],
+                  "input_record": 6,
+                  "source_order": 7,
+                  "source_record": 6
+                },
+                {
+                  "duplicate_row_text_omitted": true,
+                  "identical_text_original_omitted": [
+                    "Importance"
+                  ],
+                  "input_record": 7,
+                  "source_order": 8,
+                  "source_record": 7
+                },
+                {
+                  "duplicate_row_text_omitted": true,
+                  "identical_text_original_omitted": [
+                    "Importance"
+                  ],
+                  "input_record": 8,
+                  "source_order": 9,
+                  "source_record": 8
+                },
+                {
+                  "duplicate_row_text_omitted": true,
+                  "identical_text_original_omitted": [
+                    "Importance"
+                  ],
+                  "input_record": 9,
+                  "source_order": 10,
+                  "source_record": 9
+                },
+                {
+                  "duplicate_row_text_omitted": true,
+                  "identical_text_original_omitted": [
+                    "Importance"
+                  ],
+                  "input_record": 10,
+                  "source_order": 11,
+                  "source_record": 10
+                },
+                {
+                  "duplicate_row_text_omitted": true,
+                  "identical_text_original_omitted": [
+                    "Importance"
+                  ],
+                  "input_record": 11,
+                  "source_order": 12,
+                  "source_record": 11
+                },
+                {
+                  "duplicate_row_text_omitted": true,
+                  "identical_text_original_omitted": [
+                    "Importance"
+                  ],
+                  "input_record": 12,
+                  "source_order": 13,
+                  "source_record": 12
+                },
+                {
+                  "duplicate_row_text_omitted": true,
+                  "identical_text_original_omitted": [
+                    "Importance"
+                  ],
+                  "input_record": 13,
+                  "source_order": 14,
+                  "source_record": 13
+                },
+                {
+                  "duplicate_row_text_omitted": true,
+                  "identical_text_original_omitted": [
+                    "Importance"
+                  ],
+                  "input_record": 14,
+                  "source_order": 15,
+                  "source_record": 14
+                },
+                {
+                  "duplicate_row_text_omitted": true,
+                  "identical_text_original_omitted": [
+                    "Importance"
+                  ],
+                  "input_record": 15,
+                  "source_order": 16,
+                  "source_record": 15
+                },
+                {
+                  "duplicate_row_text_omitted": true,
+                  "identical_text_original_omitted": [
+                    "Importance"
+                  ],
+                  "input_record": 16,
+                  "source_order": 17,
+                  "source_record": 16
+                },
+                {
+                  "duplicate_row_text_omitted": true,
+                  "identical_text_original_omitted": [
+                    "Importance"
+                  ],
+                  "input_record": 17,
+                  "source_order": 18,
+                  "source_record": 17
+                },
+                {
+                  "duplicate_row_text_omitted": true,
+                  "identical_text_original_omitted": [
+                    "Importance"
+                  ],
+                  "input_record": 18,
+                  "source_order": 19,
+                  "source_record": 18
+                },
+                {
+                  "duplicate_row_text_omitted": true,
+                  "identical_text_original_omitted": [
+                    "Importance"
+                  ],
+                  "input_record": 19,
+                  "source_order": 20,
+                  "source_record": 19
+                },
+                {
+                  "duplicate_row_text_omitted": true,
+                  "identical_text_original_omitted": [
+                    "Importance"
+                  ],
+                  "input_record": 20,
+                  "source_order": 21,
+                  "source_record": 20
+                },
+                {
+                  "duplicate_row_text_omitted": true,
+                  "identical_text_original_omitted": [
+                    "Importance"
+                  ],
+                  "input_record": 21,
+                  "source_order": 22,
+                  "source_record": 21
+                },
+                {
+                  "duplicate_row_text_omitted": true,
+                  "identical_text_original_omitted": [
+                    "Importance"
+                  ],
+                  "input_record": 22,
+                  "source_order": 23,
+                  "source_record": 22
+                },
+                {
+                  "duplicate_row_text_omitted": true,
+                  "identical_text_original_omitted": [
+                    "Importance"
+                  ],
+                  "input_record": 23,
+                  "source_order": 24,
+                  "source_record": 23
+                },
+                {
+                  "duplicate_row_text_omitted": true,
+                  "identical_text_original_omitted": [
+                    "Importance"
+                  ],
+                  "input_record": 24,
+                  "source_order": 25,
+                  "source_record": 24
+                },
+                {
+                  "duplicate_row_text_omitted": true,
+                  "identical_text_original_omitted": [
+                    "Importance"
+                  ],
+                  "input_record": 25,
+                  "source_order": 26,
+                  "source_record": 25
+                },
+                {
+                  "duplicate_row_text_omitted": true,
+                  "identical_text_original_omitted": [
+                    "Importance"
+                  ],
+                  "input_record": 26,
+                  "source_order": 27,
+                  "source_record": 26
+                },
+                {
+                  "duplicate_row_text_omitted": true,
+                  "identical_text_original_omitted": [
+                    "Importance"
+                  ],
+                  "input_record": 27,
+                  "source_order": 28,
+                  "source_record": 27
+                },
+                {
+                  "duplicate_row_text_omitted": true,
+                  "identical_text_original_omitted": [
+                    "Importance"
+                  ],
+                  "input_record": 28,
+                  "source_order": 29,
+                  "source_record": 28
+                },
+                {
+                  "duplicate_row_text_omitted": true,
+                  "identical_text_original_omitted": [
+                    "Importance"
+                  ],
+                  "input_record": 29,
+                  "source_order": 30,
+                  "source_record": 29
+                },
+                {
+                  "duplicate_row_text_omitted": true,
+                  "identical_text_original_omitted": [
+                    "Importance"
+                  ],
+                  "input_record": 30,
+                  "source_order": 31,
+                  "source_record": 30
+                },
+                {
+                  "duplicate_row_text_omitted": true,
+                  "identical_text_original_omitted": [
+                    "Importance"
+                  ],
+                  "input_record": 31,
+                  "source_order": 32,
+                  "source_record": 31
+                },
+                {
+                  "duplicate_row_text_omitted": true,
+                  "identical_text_original_omitted": [
+                    "Importance"
+                  ],
+                  "input_record": 32,
+                  "source_order": 33,
+                  "source_record": 32
+                }
+              ],
+              "source_records": 33,
+              "source_section": 11,
+              "source_text_retained": true
+            },
+            {
+              "input_records": 3,
+              "module": "Education",
+              "record_mapping": [
+                {
+                  "duplicate_row_text_omitted": false,
+                  "identical_text_original_omitted": [],
+                  "input_record": 0,
+                  "source_order": 1,
+                  "source_record": 0
+                },
+                {
+                  "duplicate_row_text_omitted": false,
+                  "identical_text_original_omitted": [],
+                  "input_record": 1,
+                  "source_order": 2,
+                  "source_record": 1
+                },
+                {
+                  "duplicate_row_text_omitted": false,
+                  "identical_text_original_omitted": [],
+                  "input_record": 2,
+                  "source_order": 3,
+                  "source_record": 2
+                }
+              ],
+              "source_records": 3,
+              "source_section": 12,
+              "source_text_retained": true
+            },
+            {
+              "input_records": 10,
+              "module": "EssentialSkills",
+              "record_mapping": [
+                {
+                  "duplicate_row_text_omitted": true,
+                  "identical_text_original_omitted": [
+                    "Importance"
+                  ],
+                  "input_record": 0,
+                  "source_order": 1,
+                  "source_record": 0
+                },
+                {
+                  "duplicate_row_text_omitted": true,
+                  "identical_text_original_omitted": [
+                    "Importance"
+                  ],
+                  "input_record": 1,
+                  "source_order": 2,
+                  "source_record": 1
+                },
+                {
+                  "duplicate_row_text_omitted": true,
+                  "identical_text_original_omitted": [
+                    "Importance"
+                  ],
+                  "input_record": 2,
+                  "source_order": 3,
+                  "source_record": 2
+                },
+                {
+                  "duplicate_row_text_omitted": true,
+                  "identical_text_original_omitted": [
+                    "Importance"
+                  ],
+                  "input_record": 3,
+                  "source_order": 4,
+                  "source_record": 3
+                },
+                {
+                  "duplicate_row_text_omitted": true,
+                  "identical_text_original_omitted": [
+                    "Importance"
+                  ],
+                  "input_record": 4,
+                  "source_order": 5,
+                  "source_record": 4
+                },
+                {
+                  "duplicate_row_text_omitted": true,
+                  "identical_text_original_omitted": [
+                    "Importance"
+                  ],
+                  "input_record": 5,
+                  "source_order": 6,
+                  "source_record": 5
+                },
+                {
+                  "duplicate_row_text_omitted": true,
+                  "identical_text_original_omitted": [
+                    "Importance"
+                  ],
+                  "input_record": 6,
+                  "source_order": 7,
+                  "source_record": 6
+                },
+                {
+                  "duplicate_row_text_omitted": true,
+                  "identical_text_original_omitted": [
+                    "Importance"
+                  ],
+                  "input_record": 7,
+                  "source_order": 8,
+                  "source_record": 7
+                },
+                {
+                  "duplicate_row_text_omitted": true,
+                  "identical_text_original_omitted": [
+                    "Importance"
+                  ],
+                  "input_record": 8,
+                  "source_order": 9,
+                  "source_record": 8
+                },
+                {
+                  "duplicate_row_text_omitted": true,
+                  "identical_text_original_omitted": [
+                    "Importance"
+                  ],
+                  "input_record": 9,
+                  "source_order": 10,
+                  "source_record": 9
+                }
+              ],
+              "source_records": 10,
+              "source_section": 9,
+              "source_text_retained": true
+            },
+            {
+              "input_records": 25,
+              "module": "TransferableSkills",
+              "record_mapping": [
+                {
+                  "duplicate_row_text_omitted": true,
+                  "identical_text_original_omitted": [
+                    "Importance"
+                  ],
+                  "input_record": 0,
+                  "source_order": 1,
+                  "source_record": 0
+                },
+                {
+                  "duplicate_row_text_omitted": true,
+                  "identical_text_original_omitted": [
+                    "Importance"
+                  ],
+                  "input_record": 1,
+                  "source_order": 2,
+                  "source_record": 1
+                },
+                {
+                  "duplicate_row_text_omitted": true,
+                  "identical_text_original_omitted": [
+                    "Importance"
+                  ],
+                  "input_record": 2,
+                  "source_order": 3,
+                  "source_record": 2
+                },
+                {
+                  "duplicate_row_text_omitted": true,
+                  "identical_text_original_omitted": [
+                    "Importance"
+                  ],
+                  "input_record": 3,
+                  "source_order": 4,
+                  "source_record": 3
+                },
+                {
+                  "duplicate_row_text_omitted": true,
+                  "identical_text_original_omitted": [
+                    "Importance"
+                  ],
+                  "input_record": 4,
+                  "source_order": 5,
+                  "source_record": 4
+                },
+                {
+                  "duplicate_row_text_omitted": true,
+                  "identical_text_original_omitted": [
+                    "Importance"
+                  ],
+                  "input_record": 5,
+                  "source_order": 6,
+                  "source_record": 5
+                },
+                {
+                  "duplicate_row_text_omitted": true,
+                  "identical_text_original_omitted": [
+                    "Importance"
+                  ],
+                  "input_record": 6,
+                  "source_order": 7,
+                  "source_record": 6
+                },
+                {
+                  "duplicate_row_text_omitted": true,
+                  "identical_text_original_omitted": [
+                    "Importance"
+                  ],
+                  "input_record": 7,
+                  "source_order": 8,
+                  "source_record": 7
+                },
+                {
+                  "duplicate_row_text_omitted": true,
+                  "identical_text_original_omitted": [
+                    "Importance"
+                  ],
+                  "input_record": 8,
+                  "source_order": 9,
+                  "source_record": 8
+                },
+                {
+                  "duplicate_row_text_omitted": true,
+                  "identical_text_original_omitted": [
+                    "Importance"
+                  ],
+                  "input_record": 9,
+                  "source_order": 10,
+                  "source_record": 9
+                },
+                {
+                  "duplicate_row_text_omitted": true,
+                  "identical_text_original_omitted": [
+                    "Importance"
+                  ],
+                  "input_record": 10,
+                  "source_order": 11,
+                  "source_record": 10
+                },
+                {
+                  "duplicate_row_text_omitted": true,
+                  "identical_text_original_omitted": [
+                    "Importance"
+                  ],
+                  "input_record": 11,
+                  "source_order": 12,
+                  "source_record": 11
+                },
+                {
+                  "duplicate_row_text_omitted": true,
+                  "identical_text_original_omitted": [
+                    "Importance"
+                  ],
+                  "input_record": 12,
+                  "source_order": 13,
+                  "source_record": 12
+                },
+                {
+                  "duplicate_row_text_omitted": true,
+                  "identical_text_original_omitted": [
+                    "Importance"
+                  ],
+                  "input_record": 13,
+                  "source_order": 14,
+                  "source_record": 13
+                },
+                {
+                  "duplicate_row_text_omitted": true,
+                  "identical_text_original_omitted": [
+                    "Importance"
+                  ],
+                  "input_record": 14,
+                  "source_order": 15,
+                  "source_record": 14
+                },
+                {
+                  "duplicate_row_text_omitted": true,
+                  "identical_text_original_omitted": [
+                    "Importance"
+                  ],
+                  "input_record": 15,
+                  "source_order": 16,
+                  "source_record": 15
+                },
+                {
+                  "duplicate_row_text_omitted": true,
+                  "identical_text_original_omitted": [
+                    "Importance"
+                  ],
+                  "input_record": 16,
+                  "source_order": 17,
+                  "source_record": 16
+                },
+                {
+                  "duplicate_row_text_omitted": true,
+                  "identical_text_original_omitted": [
+                    "Importance"
+                  ],
+                  "input_record": 17,
+                  "source_order": 18,
+                  "source_record": 17
+                },
+                {
+                  "duplicate_row_text_omitted": true,
+                  "identical_text_original_omitted": [
+                    "Importance"
+                  ],
+                  "input_record": 18,
+                  "source_order": 19,
+                  "source_record": 18
+                },
+                {
+                  "duplicate_row_text_omitted": true,
+                  "identical_text_original_omitted": [
+                    "Importance"
+                  ],
+                  "input_record": 19,
+                  "source_order": 20,
+                  "source_record": 19
+                },
+                {
+                  "duplicate_row_text_omitted": true,
+                  "identical_text_original_omitted": [
+                    "Importance"
+                  ],
+                  "input_record": 20,
+                  "source_order": 21,
+                  "source_record": 20
+                },
+                {
+                  "duplicate_row_text_omitted": true,
+                  "identical_text_original_omitted": [
+                    "Importance"
+                  ],
+                  "input_record": 21,
+                  "source_order": 22,
+                  "source_record": 21
+                },
+                {
+                  "duplicate_row_text_omitted": true,
+                  "identical_text_original_omitted": [
+                    "Importance"
+                  ],
+                  "input_record": 22,
+                  "source_order": 23,
+                  "source_record": 22
+                },
+                {
+                  "duplicate_row_text_omitted": true,
+                  "identical_text_original_omitted": [
+                    "Importance"
+                  ],
+                  "input_record": 23,
+                  "source_order": 24,
+                  "source_record": 23
+                },
+                {
+                  "duplicate_row_text_omitted": true,
+                  "identical_text_original_omitted": [
+                    "Importance"
+                  ],
+                  "input_record": 24,
+                  "source_order": 25,
+                  "source_record": 24
+                }
+              ],
+              "source_records": 25,
+              "source_section": 10,
+              "source_text_retained": true
+            }
+          ],
+          "version": "jd_modules_v1"
+        },
+        "jd_prompt_sha256": "64929f67616b60fa7f59febec1cbdf809625b348d238ae08363372d1d7c84dab",
+        "material_directory": "Information_Security_Analysts_15-1212.00",
+        "occupation": "information_security_analysts",
+        "onet_code": "15-1212.00",
+        "source_html_sha256": "bb46d674c2f7f02914e447b9f0afa059e944841695cf821042305fb76018c002",
+        "structured_sha256": "84492f19a477c4154356deb16065c4831e0056a0f363afdfa8e688e9983baba9"
+      },
+      "task": "jd",
+      "task_id": "JD01"
+    }
+  },
+  "request_sha256": "3447287a14d7e96fcf46746f7ff147d135f0e999286646896634ce5bb1ab7488",
+  "transport": {
+    "api_timeout_seconds": null,
+    "stream": null
+  }
+}

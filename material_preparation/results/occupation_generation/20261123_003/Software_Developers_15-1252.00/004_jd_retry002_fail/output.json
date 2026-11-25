@@ -1,0 +1,32 @@
+{
+  "run_id": "jd_four_occupations_20261123",
+  "task_id": "JD01",
+  "attempt": 3,
+  "task": "jd",
+  "stage": "pilot",
+  "concurrency": 1,
+  "sequence": 2,
+  "context": {
+    "occupation": "software_developer",
+    "material_directory": "Software_Developers_15-1252.00",
+    "onet_code": "15-1252.00",
+    "structured_sha256": "bc9c9a4f06569637176164b7c0910ba5e8b4cfe448b80f73d59dde281bf5859e",
+    "source_html_sha256": "2cb0cf80cb336d61a8e185243b7cc1859ca8949655d0b01b7caca66769fbc709",
+    "input_json_sha256": "5d95c070c3cc8d0b1b3201f8d023d255adcb66895ac4c7e6a1abdda613902099"
+  },
+  "timestamp_utc": "2026-11-23T14:02:36.746365+00:00",
+  "status": "error",
+  "request_sha256": "4007f8e99f690847312596854e8eebc6f9a443f43898bf8bdf71c9d731bc0da1",
+  "prompt_sha256": "b67914cb5fdd2ab96330be4e9e3aa281f074ddeed6d64c9f666cff7a32dce790",
+  "python_version": "3.14.6",
+  "openai_sdk_version": "2.54.0",
+  "api_timeout_seconds": 600,
+  "program_sha256": "840acefb3202ed75ef0cfc6f00a6f75bda77a6fb1afc015acd733c183e5e4e20",
+  "raw_response": null,
+  "answer": null,
+  "parsed": null,
+  "validation_warnings": [],
+  "error_type": "APIConnectionError",
+  "error_message": "Connection error.",
+  "completed_utc": "2026-11-23T14:03:06.650686+00:00"
+}

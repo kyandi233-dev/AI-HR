@@ -1,0 +1,443 @@
+{
+  "format_version": 3,
+  "run_id": "20261121_003",
+  "created_utc": "2026-11-25T09:44:43.422272+00:00",
+  "aliases": {},
+  "plans": {},
+  "tasks": {},
+  "generated": {},
+  "legacy_link_targets": {},
+  "download_records": [
+    "material_preparation/results/onet_download/occupation_sources_20261121/2026-11-21T13-45-17.386518_00-00.json"
+  ],
+  "task": "onet-download",
+  "download": {
+    "started_utc": "2026-11-21T13:45:17.386230+00:00",
+    "scope": "initial_details_response_only",
+    "registry_sha256": "4941a4370db4ad1e061fa1ed5dd513800385ff63ea66bc891fb0bb7d6d46e0f0",
+    "script_sha256": "c71f041fead5b5e36db0c0905e3a61b91e7c0463723a6abc3901b3948402827e",
+    "occupations": [
+      {
+        "occupation": "software_developer",
+        "onet_code": "15-1252.00",
+        "status": "reused",
+        "url": "https://www.onetonline.org/link/details/15-1252.00"
+      },
+      {
+        "occupation": "business_intelligence",
+        "onet_code": "15-2051.01",
+        "status": "downloaded",
+        "url": "https://www.onetonline.org/link/details/15-2051.01"
+      },
+      {
+        "occupation": "customer_service",
+        "onet_code": "43-4051.00",
+        "status": "downloaded",
+        "url": "https://www.onetonline.org/link/details/43-4051.00"
+      },
+      {
+        "occupation": "logistics_analyst",
+        "onet_code": "13-1081.02",
+        "status": "downloaded",
+        "url": "https://www.onetonline.org/link/details/13-1081.02"
+      },
+      {
+        "occupation": "marketing_managers",
+        "onet_code": "11-2021.00",
+        "status": "downloaded",
+        "url": "https://www.onetonline.org/link/details/11-2021.00"
+      },
+      {
+        "occupation": "human_resources_managers",
+        "onet_code": "11-3121.00",
+        "status": "downloaded",
+        "url": "https://www.onetonline.org/link/details/11-3121.00"
+      },
+      {
+        "occupation": "purchasing_managers",
+        "onet_code": "11-3061.00",
+        "status": "downloaded",
+        "url": "https://www.onetonline.org/link/details/11-3061.00"
+      },
+      {
+        "occupation": "accountants_and_auditors",
+        "onet_code": "13-2011.00",
+        "status": "downloaded",
+        "url": "https://www.onetonline.org/link/details/13-2011.00"
+      },
+      {
+        "occupation": "human_resources_specialists",
+        "onet_code": "13-1071.00",
+        "status": "downloaded",
+        "url": "https://www.onetonline.org/link/details/13-1071.00"
+      },
+      {
+        "occupation": "data_scientists",
+        "onet_code": "15-2051.00",
+        "status": "downloaded",
+        "url": "https://www.onetonline.org/link/details/15-2051.00"
+      },
+      {
+        "occupation": "information_security_analysts",
+        "onet_code": "15-1212.00",
+        "status": "downloaded",
+        "url": "https://www.onetonline.org/link/details/15-1212.00"
+      },
+      {
+        "occupation": "civil_engineers",
+        "onet_code": "17-2051.00",
+        "status": "error",
+        "error": "HTTPSConnectionPool(host='www.onetonline.org', port=443): Max retries exceeded with url: /link/details/17-2051.00 (Caused by SSLError(SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1082)')))"
+      },
+      {
+        "occupation": "electrical_engineers",
+        "onet_code": "17-2071.00",
+        "status": "error",
+        "error": "HTTPSConnectionPool(host='www.onetonline.org', port=443): Max retries exceeded with url: /link/details/17-2071.00 (Caused by SSLError(SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1082)')))"
+      },
+      {
+        "occupation": "mechanical_engineers",
+        "onet_code": "17-2141.00",
+        "status": "downloaded",
+        "url": "https://www.onetonline.org/link/details/17-2141.00"
+      },
+      {
+        "occupation": "chemists",
+        "onet_code": "19-2031.00",
+        "status": "downloaded",
+        "url": "https://www.onetonline.org/link/details/19-2031.00"
+      },
+      {
+        "occupation": "environmental_scientists_and_specialists_including_health",
+        "onet_code": "19-2041.00",
+        "status": "downloaded",
+        "url": "https://www.onetonline.org/link/details/19-2041.00"
+      },
+      {
+        "occupation": "industrial_organizational_psychologists",
+        "onet_code": "19-3032.00",
+        "status": "downloaded",
+        "url": "https://www.onetonline.org/link/details/19-3032.00"
+      },
+      {
+        "occupation": "mental_health_counselors",
+        "onet_code": "21-1014.00",
+        "status": "downloaded",
+        "url": "https://www.onetonline.org/link/details/21-1014.00"
+      },
+      {
+        "occupation": "child_family_and_school_social_workers",
+        "onet_code": "21-1021.00",
+        "status": "downloaded",
+        "url": "https://www.onetonline.org/link/details/21-1021.00"
+      },
+      {
+        "occupation": "community_health_workers",
+        "onet_code": "21-1094.00",
+        "status": "downloaded",
+        "url": "https://www.onetonline.org/link/details/21-1094.00"
+      },
+      {
+        "occupation": "lawyers",
+        "onet_code": "23-1011.00",
+        "status": "downloaded",
+        "url": "https://www.onetonline.org/link/details/23-1011.00"
+      },
+      {
+        "occupation": "paralegals_and_legal_assistants",
+        "onet_code": "23-2011.00",
+        "status": "downloaded",
+        "url": "https://www.onetonline.org/link/details/23-2011.00"
+      },
+      {
+        "occupation": "judicial_law_clerks",
+        "onet_code": "23-1012.00",
+        "status": "downloaded",
+        "url": "https://www.onetonline.org/link/details/23-1012.00"
+      },
+      {
+        "occupation": "elementary_school_teachers_except_special_education",
+        "onet_code": "25-2021.00",
+        "status": "downloaded",
+        "url": "https://www.onetonline.org/link/details/25-2021.00"
+      },
+      {
+        "occupation": "secondary_school_teachers_except_special_and_career_technical_education",
+        "onet_code": "25-2031.00",
+        "status": "downloaded",
+        "url": "https://www.onetonline.org/link/details/25-2031.00"
+      },
+      {
+        "occupation": "librarians_and_media_collections_specialists",
+        "onet_code": "25-4022.00",
+        "status": "downloaded",
+        "url": "https://www.onetonline.org/link/details/25-4022.00"
+      },
+      {
+        "occupation": "graphic_designers",
+        "onet_code": "27-1024.00",
+        "status": "downloaded",
+        "url": "https://www.onetonline.org/link/details/27-1024.00"
+      },
+      {
+        "occupation": "technical_writers",
+        "onet_code": "27-3042.00",
+        "status": "downloaded",
+        "url": "https://www.onetonline.org/link/details/27-3042.00"
+      },
+      {
+        "occupation": "editors",
+        "onet_code": "27-3041.00",
+        "status": "downloaded",
+        "url": "https://www.onetonline.org/link/details/27-3041.00"
+      },
+      {
+        "occupation": "registered_nurses",
+        "onet_code": "29-1141.00",
+        "status": "error",
+        "error": "HTTPSConnectionPool(host='www.onetonline.org', port=443): Max retries exceeded with url: /link/details/29-1141.00 (Caused by ProxyError('Unable to connect to proxy', RemoteDisconnected('Remote end closed connection without response')))"
+      },
+      {
+        "occupation": "pharmacists",
+        "onet_code": "29-1051.00",
+        "status": "downloaded",
+        "url": "https://www.onetonline.org/link/details/29-1051.00"
+      },
+      {
+        "occupation": "physical_therapists",
+        "onet_code": "29-1123.00",
+        "status": "downloaded",
+        "url": "https://www.onetonline.org/link/details/29-1123.00"
+      },
+      {
+        "occupation": "nursing_assistants",
+        "onet_code": "31-1131.00",
+        "status": "downloaded",
+        "url": "https://www.onetonline.org/link/details/31-1131.00"
+      },
+      {
+        "occupation": "medical_assistants",
+        "onet_code": "31-9092.00",
+        "status": "error",
+        "error": "HTTPSConnectionPool(host='www.onetonline.org', port=443): Max retries exceeded with url: /link/details/31-9092.00 (Caused by ProxyError('Unable to connect to proxy', RemoteDisconnected('Remote end closed connection without response')))"
+      },
+      {
+        "occupation": "physical_therapist_assistants",
+        "onet_code": "31-2021.00",
+        "status": "downloaded",
+        "url": "https://www.onetonline.org/link/details/31-2021.00"
+      },
+      {
+        "occupation": "police_and_sheriff_s_patrol_officers",
+        "onet_code": "33-3051.00",
+        "status": "downloaded",
+        "url": "https://www.onetonline.org/link/details/33-3051.00"
+      },
+      {
+        "occupation": "firefighters",
+        "onet_code": "33-2011.00",
+        "status": "downloaded",
+        "url": "https://www.onetonline.org/link/details/33-2011.00"
+      },
+      {
+        "occupation": "security_guards",
+        "onet_code": "33-9032.00",
+        "status": "downloaded",
+        "url": "https://www.onetonline.org/link/details/33-9032.00"
+      },
+      {
+        "occupation": "chefs_and_head_cooks",
+        "onet_code": "35-1011.00",
+        "status": "downloaded",
+        "url": "https://www.onetonline.org/link/details/35-1011.00"
+      },
+      {
+        "occupation": "cooks_restaurant",
+        "onet_code": "35-2014.00",
+        "status": "downloaded",
+        "url": "https://www.onetonline.org/link/details/35-2014.00"
+      },
+      {
+        "occupation": "waiters_and_waitresses",
+        "onet_code": "35-3031.00",
+        "status": "downloaded",
+        "url": "https://www.onetonline.org/link/details/35-3031.00"
+      },
+      {
+        "occupation": "janitors_and_cleaners_except_maids_and_housekeeping_cleaners",
+        "onet_code": "37-2011.00",
+        "status": "downloaded",
+        "url": "https://www.onetonline.org/link/details/37-2011.00"
+      },
+      {
+        "occupation": "landscaping_and_groundskeeping_workers",
+        "onet_code": "37-3011.00",
+        "status": "downloaded",
+        "url": "https://www.onetonline.org/link/details/37-3011.00"
+      },
+      {
+        "occupation": "pest_control_workers",
+        "onet_code": "37-2021.00",
+        "status": "downloaded",
+        "url": "https://www.onetonline.org/link/details/37-2021.00"
+      },
+      {
+        "occupation": "hairdressers_hairstylists_and_cosmetologists",
+        "onet_code": "39-5012.00",
+        "status": "error",
+        "error": "HTTPSConnectionPool(host='www.onetonline.org', port=443): Max retries exceeded with url: /link/details/39-5012.00 (Caused by ProxyError('Unable to connect to proxy', RemoteDisconnected('Remote end closed connection without response')))"
+      },
+      {
+        "occupation": "childcare_workers",
+        "onet_code": "39-9011.00",
+        "status": "downloaded",
+        "url": "https://www.onetonline.org/link/details/39-9011.00"
+      },
+      {
+        "occupation": "animal_trainers",
+        "onet_code": "39-2011.00",
+        "status": "downloaded",
+        "url": "https://www.onetonline.org/link/details/39-2011.00"
+      },
+      {
+        "occupation": "retail_salespersons",
+        "onet_code": "41-2031.00",
+        "status": "downloaded",
+        "url": "https://www.onetonline.org/link/details/41-2031.00"
+      },
+      {
+        "occupation": "insurance_sales_agents",
+        "onet_code": "41-3021.00",
+        "status": "downloaded",
+        "url": "https://www.onetonline.org/link/details/41-3021.00"
+      },
+      {
+        "occupation": "real_estate_sales_agents",
+        "onet_code": "41-9022.00",
+        "status": "downloaded",
+        "url": "https://www.onetonline.org/link/details/41-9022.00"
+      },
+      {
+        "occupation": "billing_and_posting_clerks",
+        "onet_code": "43-3021.00",
+        "status": "downloaded",
+        "url": "https://www.onetonline.org/link/details/43-3021.00"
+      },
+      {
+        "occupation": "receptionists_and_information_clerks",
+        "onet_code": "43-4171.00",
+        "status": "downloaded",
+        "url": "https://www.onetonline.org/link/details/43-4171.00"
+      },
+      {
+        "occupation": "agricultural_equipment_operators",
+        "onet_code": "45-2091.00",
+        "status": "downloaded",
+        "url": "https://www.onetonline.org/link/details/45-2091.00"
+      },
+      {
+        "occupation": "farmworkers_and_laborers_crop_nursery_and_greenhouse",
+        "onet_code": "45-2092.00",
+        "status": "downloaded",
+        "url": "https://www.onetonline.org/link/details/45-2092.00"
+      },
+      {
+        "occupation": "forest_and_conservation_workers",
+        "onet_code": "45-4011.00",
+        "status": "downloaded",
+        "url": "https://www.onetonline.org/link/details/45-4011.00"
+      },
+      {
+        "occupation": "electricians",
+        "onet_code": "47-2111.00",
+        "status": "downloaded",
+        "url": "https://www.onetonline.org/link/details/47-2111.00"
+      },
+      {
+        "occupation": "carpenters",
+        "onet_code": "47-2031.00",
+        "status": "downloaded",
+        "url": "https://www.onetonline.org/link/details/47-2031.00"
+      },
+      {
+        "occupation": "plumbers_pipefitters_and_steamfitters",
+        "onet_code": "47-2152.00",
+        "status": "downloaded",
+        "url": "https://www.onetonline.org/link/details/47-2152.00"
+      },
+      {
+        "occupation": "automotive_service_technicians_and_mechanics",
+        "onet_code": "49-3023.00",
+        "status": "downloaded",
+        "url": "https://www.onetonline.org/link/details/49-3023.00"
+      },
+      {
+        "occupation": "industrial_machinery_mechanics",
+        "onet_code": "49-9041.00",
+        "status": "downloaded",
+        "url": "https://www.onetonline.org/link/details/49-9041.00"
+      },
+      {
+        "occupation": "heating_air_conditioning_and_refrigeration_mechanics_and_installers",
+        "onet_code": "49-9021.00",
+        "status": "downloaded",
+        "url": "https://www.onetonline.org/link/details/49-9021.00"
+      },
+      {
+        "occupation": "machinists",
+        "onet_code": "51-4041.00",
+        "status": "downloaded",
+        "url": "https://www.onetonline.org/link/details/51-4041.00"
+      },
+      {
+        "occupation": "welders_cutters_solderers_and_brazers",
+        "onet_code": "51-4121.00",
+        "status": "downloaded",
+        "url": "https://www.onetonline.org/link/details/51-4121.00"
+      },
+      {
+        "occupation": "bakers",
+        "onet_code": "51-3011.00",
+        "status": "downloaded",
+        "url": "https://www.onetonline.org/link/details/51-3011.00"
+      },
+      {
+        "occupation": "heavy_and_tractor_trailer_truck_drivers",
+        "onet_code": "53-3032.00",
+        "status": "downloaded",
+        "url": "https://www.onetonline.org/link/details/53-3032.00"
+      },
+      {
+        "occupation": "airline_pilots_copilots_and_flight_engineers",
+        "onet_code": "53-2011.00",
+        "status": "downloaded",
+        "url": "https://www.onetonline.org/link/details/53-2011.00"
+      },
+      {
+        "occupation": "industrial_truck_and_tractor_operators",
+        "onet_code": "53-7051.00",
+        "status": "downloaded",
+        "url": "https://www.onetonline.org/link/details/53-7051.00"
+      },
+      {
+        "occupation": "infantry",
+        "onet_code": "55-3016.00",
+        "status": "downloaded",
+        "url": "https://www.onetonline.org/link/details/55-3016.00"
+      },
+      {
+        "occupation": "air_crew_members",
+        "onet_code": "55-3011.00",
+        "status": "downloaded",
+        "url": "https://www.onetonline.org/link/details/55-3011.00"
+      },
+      {
+        "occupation": "command_and_control_center_specialists",
+        "onet_code": "55-3015.00",
+        "status": "downloaded",
+        "url": "https://www.onetonline.org/link/details/55-3015.00"
+      }
+    ],
+    "completed_utc": "2026-11-21T13:48:27.836246+00:00"
+  }
+}

@@ -1,0 +1,474 @@
+{
+  "format_version": 3,
+  "run_id": "20261125_012",
+  "created_utc": "2026-11-25T09:44:37.463358+00:00",
+  "aliases": {
+    "jd": [
+      "jd_20261125",
+      "20261125_012"
+    ],
+    "resume": [
+      "resumes_20261125",
+      "20261125_012"
+    ]
+  },
+  "plans": {
+    "jd": {
+      "count": 2,
+      "occupations": [
+        "information_security_analysts",
+        "software_developer",
+        "data_scientists",
+        "business_intelligence"
+      ],
+      "run_id": "jd_20261125",
+      "stage": "pilot",
+      "task": "jd"
+    },
+    "resume": {
+      "count": 2,
+      "jd_run_id": "jd_20261125",
+      "levels": [
+        "medium",
+        "low"
+      ],
+      "occupations": [
+        "information_security_analysts",
+        "software_developer",
+        "data_scientists",
+        "business_intelligence"
+      ],
+      "run_id": "resumes_20261125",
+      "stage": "pilot",
+      "task": "resume"
+    }
+  },
+  "tasks": {
+    "jd|Business_Intelligence_Analysts_15-2051.01|JD01": {
+      "sequence": 1,
+      "group": "Business_Intelligence_Analysts_15-2051.01",
+      "task_id": "JD01",
+      "task": "jd"
+    },
+    "resume|Business_Intelligence_Analysts_15-2051.01|R01": {
+      "sequence": 2,
+      "group": "Business_Intelligence_Analysts_15-2051.01",
+      "task_id": "R01",
+      "task": "resume"
+    },
+    "resume|Business_Intelligence_Analysts_15-2051.01|R02": {
+      "sequence": 3,
+      "group": "Business_Intelligence_Analysts_15-2051.01",
+      "task_id": "R02",
+      "task": "resume"
+    },
+    "resume|Business_Intelligence_Analysts_15-2051.01|R03": {
+      "sequence": 4,
+      "group": "Business_Intelligence_Analysts_15-2051.01",
+      "task_id": "R03",
+      "task": "resume"
+    },
+    "resume|Business_Intelligence_Analysts_15-2051.01|R04": {
+      "sequence": 5,
+      "group": "Business_Intelligence_Analysts_15-2051.01",
+      "task_id": "R04",
+      "task": "resume"
+    },
+    "jd|Data_Scientists_15-2051.00|JD01": {
+      "sequence": 6,
+      "group": "Data_Scientists_15-2051.00",
+      "task_id": "JD01",
+      "task": "jd"
+    },
+    "resume|Data_Scientists_15-2051.00|R01": {
+      "sequence": 7,
+      "group": "Data_Scientists_15-2051.00",
+      "task_id": "R01",
+      "task": "resume"
+    },
+    "resume|Data_Scientists_15-2051.00|R02": {
+      "sequence": 8,
+      "group": "Data_Scientists_15-2051.00",
+      "task_id": "R02",
+      "task": "resume"
+    },
+    "resume|Data_Scientists_15-2051.00|R03": {
+      "sequence": 9,
+      "group": "Data_Scientists_15-2051.00",
+      "task_id": "R03",
+      "task": "resume"
+    },
+    "resume|Data_Scientists_15-2051.00|R04": {
+      "sequence": 10,
+      "group": "Data_Scientists_15-2051.00",
+      "task_id": "R04",
+      "task": "resume"
+    },
+    "jd|Information_Security_Analysts_15-1212.00|JD01": {
+      "sequence": 11,
+      "group": "Information_Security_Analysts_15-1212.00",
+      "task_id": "JD01",
+      "task": "jd"
+    },
+    "resume|Information_Security_Analysts_15-1212.00|R01": {
+      "sequence": 12,
+      "group": "Information_Security_Analysts_15-1212.00",
+      "task_id": "R01",
+      "task": "resume"
+    },
+    "resume|Information_Security_Analysts_15-1212.00|R02": {
+      "sequence": 13,
+      "group": "Information_Security_Analysts_15-1212.00",
+      "task_id": "R02",
+      "task": "resume"
+    },
+    "resume|Information_Security_Analysts_15-1212.00|R03": {
+      "sequence": 14,
+      "group": "Information_Security_Analysts_15-1212.00",
+      "task_id": "R03",
+      "task": "resume"
+    },
+    "resume|Information_Security_Analysts_15-1212.00|R04": {
+      "sequence": 15,
+      "group": "Information_Security_Analysts_15-1212.00",
+      "task_id": "R04",
+      "task": "resume"
+    },
+    "jd|Software_Developers_15-1252.00|JD01": {
+      "sequence": 16,
+      "group": "Software_Developers_15-1252.00",
+      "task_id": "JD01",
+      "task": "jd"
+    },
+    "resume|Software_Developers_15-1252.00|R01": {
+      "sequence": 17,
+      "group": "Software_Developers_15-1252.00",
+      "task_id": "R01",
+      "task": "resume"
+    },
+    "resume|Software_Developers_15-1252.00|R02": {
+      "sequence": 18,
+      "group": "Software_Developers_15-1252.00",
+      "task_id": "R02",
+      "task": "resume"
+    },
+    "resume|Software_Developers_15-1252.00|R03": {
+      "sequence": 19,
+      "group": "Software_Developers_15-1252.00",
+      "task_id": "R03",
+      "task": "resume"
+    },
+    "resume|Software_Developers_15-1252.00|R04": {
+      "sequence": 20,
+      "group": "Software_Developers_15-1252.00",
+      "task_id": "R04",
+      "task": "resume"
+    }
+  },
+  "generated": {
+    "jd": {
+      "task": "jd",
+      "run_id": "20261125_012",
+      "materials": [
+        {
+          "occupation": "information_security_analysts",
+          "task_id": "JD01",
+          "draft": "material_preparation/drafts/occupations/Information_Security_Analysts_15-1212.00/jd.txt",
+          "draft_sha256": "672518cf571f0e6925f17644bfa89e3eebcfb3219ef82707f35f24421fd54c04",
+          "input": "material_preparation/results/occupation_generation/20261125_012/Information_Security_Analysts_15-1212.00/011_jd/input.json",
+          "output": "material_preparation/results/occupation_generation/20261125_012/Information_Security_Analysts_15-1212.00/011_jd/output.json",
+          "review_flags": []
+        },
+        {
+          "occupation": "software_developer",
+          "task_id": "JD01",
+          "draft": "material_preparation/drafts/occupations/Software_Developers_15-1252.00/jd.txt",
+          "draft_sha256": "651ac481ad3c8e90070b40689e1e784aa751b6d686df83321e39f09e3873c93f",
+          "input": "material_preparation/results/occupation_generation/20261125_012/Software_Developers_15-1252.00/016_jd/input.json",
+          "output": "material_preparation/results/occupation_generation/20261125_012/Software_Developers_15-1252.00/016_jd/output.json",
+          "review_flags": []
+        },
+        {
+          "occupation": "data_scientists",
+          "task_id": "JD01",
+          "draft": "material_preparation/drafts/occupations/Data_Scientists_15-2051.00/jd.txt",
+          "draft_sha256": "6b07b50c18d0ef65473b1ef48af58b56803811074af68833c3e3bf44649ec430",
+          "input": "material_preparation/results/occupation_generation/20261125_012/Data_Scientists_15-2051.00/006_jd/input.json",
+          "output": "material_preparation/results/occupation_generation/20261125_012/Data_Scientists_15-2051.00/006_jd/output.json",
+          "review_flags": []
+        },
+        {
+          "occupation": "business_intelligence",
+          "task_id": "JD01",
+          "draft": "material_preparation/drafts/occupations/Business_Intelligence_Analysts_15-2051.01/jd.txt",
+          "draft_sha256": "4adadef30106f18f605e4ecb666400c37d42fd397d29e44772ccc90efa9e9d4a",
+          "input": "material_preparation/results/occupation_generation/20261125_012/Business_Intelligence_Analysts_15-2051.01/001_jd/input.json",
+          "output": "material_preparation/results/occupation_generation/20261125_012/Business_Intelligence_Analysts_15-2051.01/001_jd/output.json",
+          "review_flags": []
+        }
+      ],
+      "source_run_id": "jd_20261125"
+    },
+    "resume": {
+      "task": "resume",
+      "run_id": "20261125_012",
+      "materials": [
+        {
+          "occupation": "information_security_analysts",
+          "task_id": "R01",
+          "draft": "material_preparation/drafts/occupations/Information_Security_Analysts_15-1212.00/resumes/R01.txt",
+          "draft_sha256": "54550427fa80e909d3ca8dab842e6ec7ed95d2dff5128725bc9c6445bf2b1835",
+          "input": "material_preparation/results/occupation_generation/20261125_012/Information_Security_Analysts_15-1212.00/012_resume_R01/input.json",
+          "output": "material_preparation/results/occupation_generation/20261125_012/Information_Security_Analysts_15-1212.00/012_resume_R01/output.json",
+          "ability_level": "medium",
+          "level_replica": 1,
+          "jd_run_id": "jd_20261125",
+          "review_flags": []
+        },
+        {
+          "occupation": "information_security_analysts",
+          "task_id": "R02",
+          "draft": "material_preparation/drafts/occupations/Information_Security_Analysts_15-1212.00/resumes/R02.txt",
+          "draft_sha256": "8d16a39063f99d9eede16ed7a120451b992ffa9ffe769ebb1397cb35388b7c7d",
+          "input": "material_preparation/results/occupation_generation/20261125_012/Information_Security_Analysts_15-1212.00/013_resume_R02/input.json",
+          "output": "material_preparation/results/occupation_generation/20261125_012/Information_Security_Analysts_15-1212.00/013_resume_R02/output.json",
+          "ability_level": "medium",
+          "level_replica": 2,
+          "jd_run_id": "jd_20261125",
+          "review_flags": []
+        },
+        {
+          "occupation": "information_security_analysts",
+          "task_id": "R03",
+          "draft": "material_preparation/drafts/occupations/Information_Security_Analysts_15-1212.00/resumes/R03.txt",
+          "draft_sha256": "25a41b00b52ecb51c0ccfcb2443fc4331ce10368fba4970f80ec59cf04bd20cb",
+          "input": "material_preparation/results/occupation_generation/20261125_012/Information_Security_Analysts_15-1212.00/014_resume_R03/input.json",
+          "output": "material_preparation/results/occupation_generation/20261125_012/Information_Security_Analysts_15-1212.00/014_resume_R03/output.json",
+          "ability_level": "low",
+          "level_replica": 1,
+          "jd_run_id": "jd_20261125",
+          "review_flags": []
+        },
+        {
+          "occupation": "information_security_analysts",
+          "task_id": "R04",
+          "draft": "material_preparation/drafts/occupations/Information_Security_Analysts_15-1212.00/resumes/R04.txt",
+          "draft_sha256": "a9912304200c9c541125f4900be949417d29fdb37dc074ec014411d158ae0cf6",
+          "input": "material_preparation/results/occupation_generation/20261125_012/Information_Security_Analysts_15-1212.00/015_resume_R04/input.json",
+          "output": "material_preparation/results/occupation_generation/20261125_012/Information_Security_Analysts_15-1212.00/015_resume_R04/output.json",
+          "ability_level": "low",
+          "level_replica": 2,
+          "jd_run_id": "jd_20261125",
+          "review_flags": []
+        },
+        {
+          "occupation": "software_developer",
+          "task_id": "R01",
+          "draft": "material_preparation/drafts/occupations/Software_Developers_15-1252.00/resumes/R01.txt",
+          "draft_sha256": "90a7f538a51db15a1d380aa79fc7c9c705ac0ed37d53d1f0e57798b3eb7000b7",
+          "input": "material_preparation/results/occupation_generation/20261125_012/Software_Developers_15-1252.00/017_resume_R01/input.json",
+          "output": "material_preparation/results/occupation_generation/20261125_012/Software_Developers_15-1252.00/017_resume_R01/output.json",
+          "ability_level": "medium",
+          "level_replica": 1,
+          "jd_run_id": "jd_20261125",
+          "review_flags": []
+        },
+        {
+          "occupation": "software_developer",
+          "task_id": "R02",
+          "draft": "material_preparation/drafts/occupations/Software_Developers_15-1252.00/resumes/R02.txt",
+          "draft_sha256": "ece1fa77553cfb54fa7b9c18d7b844008c5c29feac23ef993a3c3afc3858614f",
+          "input": "material_preparation/results/occupation_generation/20261125_012/Software_Developers_15-1252.00/018_resume_R02/input.json",
+          "output": "material_preparation/results/occupation_generation/20261125_012/Software_Developers_15-1252.00/018_resume_R02/output.json",
+          "ability_level": "medium",
+          "level_replica": 2,
+          "jd_run_id": "jd_20261125",
+          "review_flags": []
+        },
+        {
+          "occupation": "software_developer",
+          "task_id": "R03",
+          "draft": "material_preparation/drafts/occupations/Software_Developers_15-1252.00/resumes/R03.txt",
+          "draft_sha256": "f7eb689949ab7233dafd2f1ce5b1aa9e8af260c8471b86181222b96ab75f357d",
+          "input": "material_preparation/results/occupation_generation/20261125_012/Software_Developers_15-1252.00/019_resume_R03/input.json",
+          "output": "material_preparation/results/occupation_generation/20261125_012/Software_Developers_15-1252.00/019_resume_R03/output.json",
+          "ability_level": "low",
+          "level_replica": 1,
+          "jd_run_id": "jd_20261125",
+          "review_flags": []
+        },
+        {
+          "occupation": "software_developer",
+          "task_id": "R04",
+          "draft": "material_preparation/drafts/occupations/Software_Developers_15-1252.00/resumes/R04.txt",
+          "draft_sha256": "756ab197aa0e32a169bc2eb4235c02cd8b55fe5e01fb5a74e0d97805443e104e",
+          "input": "material_preparation/results/occupation_generation/20261125_012/Software_Developers_15-1252.00/020_resume_R04/input.json",
+          "output": "material_preparation/results/occupation_generation/20261125_012/Software_Developers_15-1252.00/020_resume_R04/output.json",
+          "ability_level": "low",
+          "level_replica": 2,
+          "jd_run_id": "jd_20261125",
+          "review_flags": []
+        },
+        {
+          "occupation": "data_scientists",
+          "task_id": "R01",
+          "draft": "material_preparation/drafts/occupations/Data_Scientists_15-2051.00/resumes/R01.txt",
+          "draft_sha256": "3de508a4133e301076538610962008e880ef15c691c30365cc602e72fcd9177a",
+          "input": "material_preparation/results/occupation_generation/20261125_012/Data_Scientists_15-2051.00/007_resume_R01/input.json",
+          "output": "material_preparation/results/occupation_generation/20261125_012/Data_Scientists_15-2051.00/007_resume_R01/output.json",
+          "ability_level": "medium",
+          "level_replica": 1,
+          "jd_run_id": "jd_20261125",
+          "review_flags": []
+        },
+        {
+          "occupation": "data_scientists",
+          "task_id": "R02",
+          "draft": "material_preparation/drafts/occupations/Data_Scientists_15-2051.00/resumes/R02.txt",
+          "draft_sha256": "9f9ca48c1c9340c80fa4bdb762812fce49e68b0e9f1c2965504557949c2689f8",
+          "input": "material_preparation/results/occupation_generation/20261125_012/Data_Scientists_15-2051.00/008_resume_R02/input.json",
+          "output": "material_preparation/results/occupation_generation/20261125_012/Data_Scientists_15-2051.00/008_resume_R02/output.json",
+          "ability_level": "medium",
+          "level_replica": 2,
+          "jd_run_id": "jd_20261125",
+          "review_flags": []
+        },
+        {
+          "occupation": "data_scientists",
+          "task_id": "R03",
+          "draft": "material_preparation/drafts/occupations/Data_Scientists_15-2051.00/resumes/R03.txt",
+          "draft_sha256": "16b7d35c816f323d770409f9583484a508618e0ba99c551c3e0b9ac1680b97ca",
+          "input": "material_preparation/results/occupation_generation/20261125_012/Data_Scientists_15-2051.00/009_resume_R03/input.json",
+          "output": "material_preparation/results/occupation_generation/20261125_012/Data_Scientists_15-2051.00/009_resume_R03/output.json",
+          "ability_level": "low",
+          "level_replica": 1,
+          "jd_run_id": "jd_20261125",
+          "review_flags": []
+        },
+        {
+          "occupation": "data_scientists",
+          "task_id": "R04",
+          "draft": "material_preparation/drafts/occupations/Data_Scientists_15-2051.00/resumes/R04.txt",
+          "draft_sha256": "943445732f578598e600e9aadd0601a35a604ccaf81bf40e648e517e11db2d25",
+          "input": "material_preparation/results/occupation_generation/20261125_012/Data_Scientists_15-2051.00/010_resume_R04/input.json",
+          "output": "material_preparation/results/occupation_generation/20261125_012/Data_Scientists_15-2051.00/010_resume_R04/output.json",
+          "ability_level": "low",
+          "level_replica": 2,
+          "jd_run_id": "jd_20261125",
+          "review_flags": []
+        },
+        {
+          "occupation": "business_intelligence",
+          "task_id": "R01",
+          "draft": "material_preparation/drafts/occupations/Business_Intelligence_Analysts_15-2051.01/resumes/R01.txt",
+          "draft_sha256": "faa3b3a0c618fc1a4539a490b71849042d65873c1d375dfedc4035734cdfd896",
+          "input": "material_preparation/results/occupation_generation/20261125_012/Business_Intelligence_Analysts_15-2051.01/002_resume_R01/input.json",
+          "output": "material_preparation/results/occupation_generation/20261125_012/Business_Intelligence_Analysts_15-2051.01/002_resume_R01/output.json",
+          "ability_level": "medium",
+          "level_replica": 1,
+          "jd_run_id": "jd_20261125",
+          "review_flags": []
+        },
+        {
+          "occupation": "business_intelligence",
+          "task_id": "R02",
+          "draft": "material_preparation/drafts/occupations/Business_Intelligence_Analysts_15-2051.01/resumes/R02.txt",
+          "draft_sha256": "b570492e182cf3efd620114668b36cba21de0404a1148b2421c07bf1470dc433",
+          "input": "material_preparation/results/occupation_generation/20261125_012/Business_Intelligence_Analysts_15-2051.01/003_resume_R02/input.json",
+          "output": "material_preparation/results/occupation_generation/20261125_012/Business_Intelligence_Analysts_15-2051.01/003_resume_R02/output.json",
+          "ability_level": "medium",
+          "level_replica": 2,
+          "jd_run_id": "jd_20261125",
+          "review_flags": []
+        },
+        {
+          "occupation": "business_intelligence",
+          "task_id": "R03",
+          "draft": "material_preparation/drafts/occupations/Business_Intelligence_Analysts_15-2051.01/resumes/R03.txt",
+          "draft_sha256": "d32f0fb8b1203a1d221cc14782e315cd31a00a2b53ad3736b57da0e7a59abc45",
+          "input": "material_preparation/results/occupation_generation/20261125_012/Business_Intelligence_Analysts_15-2051.01/004_resume_R03/input.json",
+          "output": "material_preparation/results/occupation_generation/20261125_012/Business_Intelligence_Analysts_15-2051.01/004_resume_R03/output.json",
+          "ability_level": "low",
+          "level_replica": 1,
+          "jd_run_id": "jd_20261125",
+          "review_flags": []
+        },
+        {
+          "occupation": "business_intelligence",
+          "task_id": "R04",
+          "draft": "material_preparation/drafts/occupations/Business_Intelligence_Analysts_15-2051.01/resumes/R04.txt",
+          "draft_sha256": "9be8c48397073a00f763cfa30a26afe04a242599244934fc638ad2a24d87b337",
+          "input": "material_preparation/results/occupation_generation/20261125_012/Business_Intelligence_Analysts_15-2051.01/005_resume_R04/input.json",
+          "output": "material_preparation/results/occupation_generation/20261125_012/Business_Intelligence_Analysts_15-2051.01/005_resume_R04/output.json",
+          "ability_level": "low",
+          "level_replica": 2,
+          "jd_run_id": "jd_20261125",
+          "review_flags": []
+        }
+      ],
+      "source_run_id": "resumes_20261125"
+    }
+  },
+  "legacy_link_targets": {
+    "material_preparation/results/jd_generation/Business_Intelligence_Analysts_15-2051.01/jd_20261125/JD01.request.json": "material_preparation/results/occupation_generation/20261125_012/Business_Intelligence_Analysts_15-2051.01/001_jd/input.json",
+    "material_preparation/results/jd_generation/Business_Intelligence_Analysts_15-2051.01/jd_20261125/JD01.prompt.txt": "material_preparation/results/occupation_generation/20261125_012/Business_Intelligence_Analysts_15-2051.01/001_jd/input.json",
+    "material_preparation/results/resume_generation/Business_Intelligence_Analysts_15-2051.01/resumes_20261125/R01.request.json": "material_preparation/results/occupation_generation/20261125_012/Business_Intelligence_Analysts_15-2051.01/002_resume_R01/input.json",
+    "material_preparation/results/resume_generation/Business_Intelligence_Analysts_15-2051.01/resumes_20261125/R01.prompt.txt": "material_preparation/results/occupation_generation/20261125_012/Business_Intelligence_Analysts_15-2051.01/002_resume_R01/input.json",
+    "material_preparation/results/resume_generation/Business_Intelligence_Analysts_15-2051.01/resumes_20261125/R02.request.json": "material_preparation/results/occupation_generation/20261125_012/Business_Intelligence_Analysts_15-2051.01/003_resume_R02/input.json",
+    "material_preparation/results/resume_generation/Business_Intelligence_Analysts_15-2051.01/resumes_20261125/R02.prompt.txt": "material_preparation/results/occupation_generation/20261125_012/Business_Intelligence_Analysts_15-2051.01/003_resume_R02/input.json",
+    "material_preparation/results/resume_generation/Business_Intelligence_Analysts_15-2051.01/resumes_20261125/R03.request.json": "material_preparation/results/occupation_generation/20261125_012/Business_Intelligence_Analysts_15-2051.01/004_resume_R03/input.json",
+    "material_preparation/results/resume_generation/Business_Intelligence_Analysts_15-2051.01/resumes_20261125/R03.prompt.txt": "material_preparation/results/occupation_generation/20261125_012/Business_Intelligence_Analysts_15-2051.01/004_resume_R03/input.json",
+    "material_preparation/results/resume_generation/Business_Intelligence_Analysts_15-2051.01/resumes_20261125/R04.request.json": "material_preparation/results/occupation_generation/20261125_012/Business_Intelligence_Analysts_15-2051.01/005_resume_R04/input.json",
+    "material_preparation/results/resume_generation/Business_Intelligence_Analysts_15-2051.01/resumes_20261125/R04.prompt.txt": "material_preparation/results/occupation_generation/20261125_012/Business_Intelligence_Analysts_15-2051.01/005_resume_R04/input.json",
+    "material_preparation/results/jd_generation/Data_Scientists_15-2051.00/jd_20261125/JD01.request.json": "material_preparation/results/occupation_generation/20261125_012/Data_Scientists_15-2051.00/006_jd/input.json",
+    "material_preparation/results/jd_generation/Data_Scientists_15-2051.00/jd_20261125/JD01.prompt.txt": "material_preparation/results/occupation_generation/20261125_012/Data_Scientists_15-2051.00/006_jd/input.json",
+    "material_preparation/results/resume_generation/Data_Scientists_15-2051.00/resumes_20261125/R01.request.json": "material_preparation/results/occupation_generation/20261125_012/Data_Scientists_15-2051.00/007_resume_R01/input.json",
+    "material_preparation/results/resume_generation/Data_Scientists_15-2051.00/resumes_20261125/R01.prompt.txt": "material_preparation/results/occupation_generation/20261125_012/Data_Scientists_15-2051.00/007_resume_R01/input.json",
+    "material_preparation/results/resume_generation/Data_Scientists_15-2051.00/resumes_20261125/R02.request.json": "material_preparation/results/occupation_generation/20261125_012/Data_Scientists_15-2051.00/008_resume_R02/input.json",
+    "material_preparation/results/resume_generation/Data_Scientists_15-2051.00/resumes_20261125/R02.prompt.txt": "material_preparation/results/occupation_generation/20261125_012/Data_Scientists_15-2051.00/008_resume_R02/input.json",
+    "material_preparation/results/resume_generation/Data_Scientists_15-2051.00/resumes_20261125/R03.request.json": "material_preparation/results/occupation_generation/20261125_012/Data_Scientists_15-2051.00/009_resume_R03/input.json",
+    "material_preparation/results/resume_generation/Data_Scientists_15-2051.00/resumes_20261125/R03.prompt.txt": "material_preparation/results/occupation_generation/20261125_012/Data_Scientists_15-2051.00/009_resume_R03/input.json",
+    "material_preparation/results/resume_generation/Data_Scientists_15-2051.00/resumes_20261125/R04.request.json": "material_preparation/results/occupation_generation/20261125_012/Data_Scientists_15-2051.00/010_resume_R04/input.json",
+    "material_preparation/results/resume_generation/Data_Scientists_15-2051.00/resumes_20261125/R04.prompt.txt": "material_preparation/results/occupation_generation/20261125_012/Data_Scientists_15-2051.00/010_resume_R04/input.json",
+    "material_preparation/results/jd_generation/Information_Security_Analysts_15-1212.00/jd_20261125/JD01.request.json": "material_preparation/results/occupation_generation/20261125_012/Information_Security_Analysts_15-1212.00/011_jd/input.json",
+    "material_preparation/results/jd_generation/Information_Security_Analysts_15-1212.00/jd_20261125/JD01.prompt.txt": "material_preparation/results/occupation_generation/20261125_012/Information_Security_Analysts_15-1212.00/011_jd/input.json",
+    "material_preparation/results/resume_generation/Information_Security_Analysts_15-1212.00/resumes_20261125/R01.request.json": "material_preparation/results/occupation_generation/20261125_012/Information_Security_Analysts_15-1212.00/012_resume_R01/input.json",
+    "material_preparation/results/resume_generation/Information_Security_Analysts_15-1212.00/resumes_20261125/R01.prompt.txt": "material_preparation/results/occupation_generation/20261125_012/Information_Security_Analysts_15-1212.00/012_resume_R01/input.json",
+    "material_preparation/results/resume_generation/Information_Security_Analysts_15-1212.00/resumes_20261125/R02.request.json": "material_preparation/results/occupation_generation/20261125_012/Information_Security_Analysts_15-1212.00/013_resume_R02/input.json",
+    "material_preparation/results/resume_generation/Information_Security_Analysts_15-1212.00/resumes_20261125/R02.prompt.txt": "material_preparation/results/occupation_generation/20261125_012/Information_Security_Analysts_15-1212.00/013_resume_R02/input.json",
+    "material_preparation/results/resume_generation/Information_Security_Analysts_15-1212.00/resumes_20261125/R03.request.json": "material_preparation/results/occupation_generation/20261125_012/Information_Security_Analysts_15-1212.00/014_resume_R03/input.json",
+    "material_preparation/results/resume_generation/Information_Security_Analysts_15-1212.00/resumes_20261125/R03.prompt.txt": "material_preparation/results/occupation_generation/20261125_012/Information_Security_Analysts_15-1212.00/014_resume_R03/input.json",
+    "material_preparation/results/resume_generation/Information_Security_Analysts_15-1212.00/resumes_20261125/R04.request.json": "material_preparation/results/occupation_generation/20261125_012/Information_Security_Analysts_15-1212.00/015_resume_R04/input.json",
+    "material_preparation/results/resume_generation/Information_Security_Analysts_15-1212.00/resumes_20261125/R04.prompt.txt": "material_preparation/results/occupation_generation/20261125_012/Information_Security_Analysts_15-1212.00/015_resume_R04/input.json",
+    "material_preparation/results/jd_generation/Software_Developers_15-1252.00/jd_20261125/JD01.request.json": "material_preparation/results/occupation_generation/20261125_012/Software_Developers_15-1252.00/016_jd/input.json",
+    "material_preparation/results/jd_generation/Software_Developers_15-1252.00/jd_20261125/JD01.prompt.txt": "material_preparation/results/occupation_generation/20261125_012/Software_Developers_15-1252.00/016_jd/input.json",
+    "material_preparation/results/resume_generation/Software_Developers_15-1252.00/resumes_20261125/R01.request.json": "material_preparation/results/occupation_generation/20261125_012/Software_Developers_15-1252.00/017_resume_R01/input.json",
+    "material_preparation/results/resume_generation/Software_Developers_15-1252.00/resumes_20261125/R01.prompt.txt": "material_preparation/results/occupation_generation/20261125_012/Software_Developers_15-1252.00/017_resume_R01/input.json",
+    "material_preparation/results/resume_generation/Software_Developers_15-1252.00/resumes_20261125/R02.request.json": "material_preparation/results/occupation_generation/20261125_012/Software_Developers_15-1252.00/018_resume_R02/input.json",
+    "material_preparation/results/resume_generation/Software_Developers_15-1252.00/resumes_20261125/R02.prompt.txt": "material_preparation/results/occupation_generation/20261125_012/Software_Developers_15-1252.00/018_resume_R02/input.json",
+    "material_preparation/results/resume_generation/Software_Developers_15-1252.00/resumes_20261125/R03.request.json": "material_preparation/results/occupation_generation/20261125_012/Software_Developers_15-1252.00/019_resume_R03/input.json",
+    "material_preparation/results/resume_generation/Software_Developers_15-1252.00/resumes_20261125/R03.prompt.txt": "material_preparation/results/occupation_generation/20261125_012/Software_Developers_15-1252.00/019_resume_R03/input.json",
+    "material_preparation/results/resume_generation/Software_Developers_15-1252.00/resumes_20261125/R04.request.json": "material_preparation/results/occupation_generation/20261125_012/Software_Developers_15-1252.00/020_resume_R04/input.json",
+    "material_preparation/results/resume_generation/Software_Developers_15-1252.00/resumes_20261125/R04.prompt.txt": "material_preparation/results/occupation_generation/20261125_012/Software_Developers_15-1252.00/020_resume_R04/input.json"
+  },
+  "parameters": {
+    "jd": {
+      "model": {
+        "model": "deepseek-flash",
+        "thinking": "disabled",
+        "temperature": 1.0,
+        "max_tokens": 3000
+      },
+      "api_base_url": "https://api.deepseek.com"
+    },
+    "resume": {
+      "model": {
+        "model": "deepseek-flash",
+        "thinking": "disabled",
+        "temperature": 1.0,
+        "max_tokens": 3000
+      },
+      "api_base_url": "https://api.deepseek.com"
+    }
+  }
+}

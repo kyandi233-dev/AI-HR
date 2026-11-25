@@ -1,0 +1,3 @@
+﻿序号,类型,职业或维度,材料编号,目标水平,尝试次数,状态,输入,输出,当前草稿,错误说明
+1,resume,software_developer,R01,,1,ok,material_preparation/results/occupation_generation/20261121_002/Software_Developers_15-1252.00/001_resume_R01/input.json,material_preparation/results/occupation_generation/20261121_002/Software_Developers_15-1252.00/001_resume_R01/output.json,,
+2,resume,software_developer,R02,,1,ok,material_preparation/results/occupation_generation/20261121_002/Software_Developers_15-1252.00/002_resume_R02/input.json,material_preparation/results/occupation_generation/20261121_002/Software_Developers_15-1252.00/002_resume_R02/output.json,,
