@@ -17,6 +17,13 @@ for(let index=0;index<specs.length;index++){
   s.getRange(`A5:${end}5`).values=[spec.headers];
   s.getRange(`A5:${end}5`).format={fill:'#234E70',font:{name:'Microsoft YaHei',size:11,bold:true,color:'#FFFFFF'},wrapText:true,rowHeight:34,verticalAlignment:'center'};
   if(spec.rows.length)s.getRange(`A6:${end}${last}`).values=spec.rows.map(row=>row.map(v=>v&&typeof v==='object'&&v.date?new Date(v.date):v));
+  for(let r=0;r<spec.rows.length;r++)for(let c=0;c<spec.headers.length;c++){
+    const value=spec.rows[r][c];
+    if(typeof value==='string'&&value.startsWith('=HYPERLINK(')){
+      s.getRange(`${col(c+1)}${r+6}`).formulas=[[value]];
+      s.getRange(`${col(c+1)}${r+6}`).format.font={name:'Microsoft YaHei',size:11,color:'#0563C1',underline:'single'};
+    }
+  }
   const widths=spec.group==='occupation'?[25,37,17,11,15,16,18,23,48,17,26,22]:[24,20,20,18,25,52,17,22,22];
   for(let i=0;i<spec.headers.length;i++){
     const letter=col(i+1),name=spec.headers[i];s.getRange(`${letter}1:${letter}${last}`).format.columnWidth=widths[i];
@@ -28,7 +35,7 @@ for(let index=0;index<specs.length;index++){
   s.getRange(`A6:${end}${last}`).format.wrapText=true;s.getRange(`A6:${end}${last}`).format.verticalAlignment='center';
   s.getRange(`A6:${end}${last}`).format.rowHeight=40;
   for(const link of spec.links)s.getRange(link.cell).format.font={name:'Microsoft YaHei',size:11,color:'#0563C1',underline:'single'};
-  s.freezePanes.freezeRows(5);s.freezePanes.freezeColumns(spec.group==='occupation'?4:2);
+  s.freezePanes.freezeRows(5);s.freezePanes.freezeColumns(spec.group==='occupation'?5:2);
   s.tables.add(`A5:${end}${last}`,true,'ReviewerMaterials');
   w.recalculate();
   const out=await SpreadsheetFile.exportXlsx(w);await out.save(path.join(outDir,index+'.authored.xlsx'));

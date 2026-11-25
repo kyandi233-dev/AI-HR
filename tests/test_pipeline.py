@@ -293,8 +293,8 @@ class PipelineTests(unittest.TestCase):
         self.materials()
         golden=c.load_json(ROOT/'tests/fixtures/tasks_before_reorganization.json')
         for kind,expected in golden.items():
-            if kind in ('jd','resume'):
-                continue  # These two protocols were explicitly revised; other goldens stay frozen.
+            if kind in ('jd','resume','resume-review','moral-generate','abc'):
+                continue  # Explicitly revised protocols; other goldens stay frozen.
             original_settings=copy.deepcopy(self.settings)
             profile=original_settings['profiles'][c.TASK_TO_PROFILE[kind]]
             # Replay historical requests with their historical parameters.

@@ -22,6 +22,9 @@ from material_preparation.review_material_links import read_review,external_link
 from material_preparation.resume_inputs import generated_jd
 from material_preparation.review_navigation import xml,encoded,Q
 from material_preparation.reviewer_config import safe_name
+from material_preparation.occupation_review_layout import workbook_jump_formula
+from xml.etree import ElementTree as E
+from material_preparation.review_navigation import REL
 
 OCCUPATION_HEADERS=['材料编号','职业','O*NET编码','材料类型','材料文件','职业资料',
                     '审核结论','问题类型','问题说明','审核日期','材料批次','原稿SHA256']
@@ -118,6 +121,9 @@ def preserve_reviews(path,headers,items):
         row={**item,**previous.get(identity(item),{})}
         for column,target in item['_links'].items():
             if not Path(target).is_file():raise ValueError('链接目标不存在：'+target)
+            if column=='职业资料':
+                row[column]=workbook_jump_formula(target)
+                continue
             row[column]='打开'+('材料' if column in ('材料文件','配对材料文件') else column)
             links.append({'cell':get_column_letter(headers.index(column)+1)+str(number),'target':target})
         values=[]
@@ -144,12 +150,18 @@ def validate(path,payload):
         if actual_ids!=[row[0] for row in payload['rows']]:raise ValueError('个人表材料范围不匹配')
         for n,name in enumerate(payload['headers'],1):
             if name in TECHNICAL and not s.column_dimensions[get_column_letter(n)].hidden:raise ValueError('版本记录列尚未隐藏')
+        if payload['headers']==OCCUPATION_HEADERS:
+            pane=s.sheet_view.pane
+            if pane is None or pane.xSplit!=5 or s.column_dimensions['E'].hidden:
+                raise ValueError('材料文件列需要固定显示')
         for r,expected in enumerate(payload['rows'],FIRST_ROW):
             for col,value in enumerate(expected,1):
                 actual=s.cell(r,col).value
                 if isinstance(value,dict) and 'date' in value:
                     if not isinstance(actual,(date,datetime)) or actual.isoformat()[:10]!=value['date'][:10]:raise ValueError('审核日期未保留')
                 elif actual!=value:raise ValueError('个人表材料或审核值未保留')
+                if isinstance(value,str) and value.startswith('=HYPERLINK(') and s.cell(r,col).hyperlink:
+                    raise ValueError('职业资料仍带旧文件链接')
         for link in payload['links']:
             actual=s[link['cell']].hyperlink
             if not actual or (Path(payload['review']).parent/actual.target).resolve()!=Path(link['target']).resolve():
@@ -157,10 +169,70 @@ def validate(path,payload):
     finally:w.close()
 
 
+def pin_material_column(sheet):
+    """Keep column E visible even when the reviewer's right-hand pane scrolls."""
+    for view in sheet.find(Q('sheetViews')):
+        pane=view.find(Q('pane'))
+        if pane is None:
+            pane=E.Element(Q('pane'));view.insert(0,pane)
+        pane.attrib.update({'xSplit':'5','ySplit':'5','topLeftCell':'F6',
+                            'activePane':'bottomLeft','state':'frozen'})
+        for selection in list(view.findall(Q('selection'))):view.remove(selection)
+        E.SubElement(view,Q('selection'),{'pane':'bottomLeft','activeCell':'E6','sqref':'E6'})
+    cols=sheet.find(Q('cols'))
+    if cols is not None:
+        for col in cols:
+            if int(col.get('min'))<=5<=int(col.get('max')):col.set('hidden','0')
+
+
+def patch_workbook_jumps(path,spec):
+    """Use the master's existing workbook formulas without rebuilding human-edited sheets."""
+    before=path.read_bytes()
+    with ZipFile(path) as z:parts={name:z.read(name) for name in z.namelist()}
+    sheet=xml(parts['xl/worksheets/sheet1.xml'])
+    if spec['headers']==OCCUPATION_HEADERS:pin_material_column(sheet)
+    cells={node.get('r'):node for node in sheet.iter(Q('c'))}
+    changed=set()
+    for r,row in enumerate(spec['rows'],FIRST_ROW):
+        for col,value in enumerate(row,1):
+            if not isinstance(value,str) or not value.startswith('=HYPERLINK('):continue
+            ref=get_column_letter(col)+str(r)
+            cell=cells[ref]
+            for child in list(cell):
+                if child.tag in {Q('f'),Q('v'),Q('is')}:cell.remove(child)
+            cell.set('t','str')
+            E.SubElement(cell,Q('f')).text=value[1:]
+            E.SubElement(cell,Q('v')).text='打开职业资料'
+            changed.add(ref)
+    links=sheet.find(Q('hyperlinks'))
+    if links is not None:
+        for link in list(links):
+            if link.get('ref') in changed:links.remove(link)
+        if not len(links):sheet.remove(links)
+    rel_path='xl/worksheets/_rels/sheet1.xml.rels'
+    if rel_path in parts:
+        rels=xml(parts[rel_path])
+        used={node.get('{'+REL+'}id') for node in sheet.iter() if node.get('{'+REL+'}id')}
+        for rel in list(rels):
+            if rel.get('Type')==REL+'/hyperlink' and rel.get('Id') not in used:rels.remove(rel)
+        parts[rel_path]=encoded(rels)
+    parts['xl/worksheets/sheet1.xml']=encoded(sheet)
+    candidate=path.with_name('.'+path.stem+'.links.pending.xlsx')
+    try:
+        with ZipFile(candidate,'w',ZIP_DEFLATED) as z:
+            for name,raw in parts.items():z.writestr(name,raw)
+        validate(candidate,spec)
+        if path.read_bytes()!=before:raise ValueError('修改链接期间个人表已变化，停止覆盖')
+        candidate.replace(path)
+    finally:
+        if candidate.exists():candidate.unlink()
+
+
 def finish_workbook(source,target,spec):
     external_links(source,target,spec)
     with ZipFile(target) as z:parts={name:z.read(name) for name in z.namelist()}
     s=xml(parts['xl/worksheets/sheet1.xml']);cols=s.find(Q('cols'))
+    if spec['headers']==OCCUPATION_HEADERS:pin_material_column(s)
     for col in cols:
         if all(spec['headers'][n-1] in TECHNICAL for n in range(int(col.get('min')),int(col.get('max'))+1)):
             col.set('hidden','1')
@@ -174,6 +246,7 @@ def run(argv=None):
     p.add_argument('--config',type=Path,default=c.ROOT/'material_preparation/config/human_review.json')
     p.add_argument('--master',type=Path,default=c.ROOT/'material_preparation/review/职业与材料审核.xlsx')
     p.add_argument('--execute',action='store_true')
+    p.add_argument('--links-only',action='store_true',help='局部修复职业资料跳转和材料列显示，保留审核值及其余排版')
     base=Path.home()/'.cache/codex-runtimes/codex-primary-runtime/dependencies/node'
     p.add_argument('--node',type=Path,default=base/'bin/node.exe');p.add_argument('--node-modules',type=Path,default=base/'node_modules')
     args=p.parse_args(argv);config=c.load_json(args.config)
@@ -203,6 +276,21 @@ def run(argv=None):
             except ValueError:pass
     if len(current)==len(specs):
         print('个人表的材料范围、链接及版本均相同；保留各人文件和已填审核内容，不重写Excel。');return 0
+    if args.links_only:
+        for path,sha in protected.items():
+            if c.sha256(Path(path).read_bytes())!=sha:raise ValueError('链接更新前来源已变化')
+        for spec in specs:
+            target=Path(spec['review'])
+            if spec['group']!='occupation' or str(target) in current:continue
+            if c.sha256(target.read_bytes())!=personal_before[str(target)]:raise ValueError('个人表已变化，停止覆盖')
+            patch_workbook_jumps(target,spec)
+        receipt_path=master.parent/'individual_review_manifest.json'
+        receipt=c.load_json(receipt_path) if receipt_path.exists() else {}
+        receipt.update({'updated_utc':c.now(),'workbook_link_style':'master_workbook_jump_formula',
+                        'script_sha256':c.sha256(Path(__file__).read_bytes()),
+                        'files':[{'path':s['review'],'sha256':c.sha256(Path(s['review']).read_bytes()),'rows':len(s['rows'])} for s in specs]})
+        receipt_path.write_text(c.canonical(receipt)+'\n',encoding='utf-8')
+        print('已局部修复职业资料跳转并固定显示材料文件列；其余单元格、审核意见和排版保留。');return 0
     work=Path(tempfile.mkdtemp(prefix='ai_hr_individual_reviews_'))
     subprocess.run(['cmd','/c','mklink','/J',str(work/'node_modules'),str(args.node_modules.resolve())],check=True,capture_output=True)
     builder=Path(__file__).with_suffix('.mjs');shutil.copy2(builder,work/builder.name)

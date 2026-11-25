@@ -24,7 +24,7 @@ def make_tasks(kind, args, occupations, config):
                     conditions.extend([('B',pair['pair_id'],pair['neutral']),('C',pair['pair_id'],pair['negative'])])
             for cond,pid,story in conditions:
                 section=('\n【背景调查补充信息】\n'
-                         '招聘团队通过背景调查收集了候选人的补充信息，调查渠道包括公开社交媒体、熟人访谈及过往任职单位访谈。\n'
+                         '招聘团队收集了候选人在工作之外的补充信息（来源于公开社交媒体动态或熟人访谈片段）：\n'
                          +story+'\n') if story is not None else ''
                 user=render('experiments/exp_3_hiring/prompts/hiring_rating.txt',job_description=info['jd'],resume_text=rtxt,
                          background_section=section,score_rubric=rub)

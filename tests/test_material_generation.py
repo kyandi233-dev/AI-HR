@@ -253,6 +253,13 @@ class GenerationTests(unittest.TestCase):
                   '\n工作经历\n'+'\n'.join(plan['work_periods'])+
                   '\n项目经历／代表性工作成果\n'+plan['project_period']+'\n专业技能\n测试技能')
             validate_resume_text(body,meta)
+            scannable=('求职简历｜'+meta['resume_id']+'\n工作经历\n'+plan['work_periods'][1]+'\n'+plan['work_periods'][0]+
+                       '\n项目经历／代表性工作成果\n'+plan['project_period']+
+                       '\n教育背景\n本科，'+plan['major']+'｜'+plan['school']+'｜'+plan['education_period']+
+                       '\n专业技能\n- 语言：Python')
+            validate_resume_text(scannable,meta)
+            with self.assertRaisesRegex(ValueError,'模糊占位词'):
+                validate_resume_text(scannable.replace(plan['school'],'某某大学'),meta)
             with self.assertRaisesRegex(ValueError,'工作经历日期'):
                 validate_resume_text(body.replace(plan['work_periods'][0],'2020.01—2025.12'),meta)
         self.assertEqual([t['metadata']['employment_plan']['total_work_months'] for t in tasks],[40,46,18,12])

@@ -39,16 +39,28 @@ def date_ranges(text):
             re.findall(r'(\d{4})[.年/-](\d{1,2})月?\s*[—–－至-]\s*(\d{4})[.年/-](\d{1,2})月?',text)]
 
 
+SECTION_TITLES=('教育背景','工作经历','项目经历','专业技能')
+BANNED_PLACEHOLDERS=('某某','××','某公司','某大学','某学院','某信息','某网络','某科技','XX公司','XX大学')
+
+
+def section_slice(content, target):
+    start=content.index(target)+len(target)
+    ends=[content.index(h,start) for h in SECTION_TITLES if h!=target and content.find(h,start)!=-1]
+    return content[start:min(ends)] if ends else content[start:]
+
+
 def validate_resume_text(content,metadata):
-    for title in ('教育背景','工作经历','项目经历','专业技能'):
+    for title in SECTION_TITLES:
         if title not in content: raise ValueError('简历缺少栏目：'+title)
     if metadata['resume_id'] not in content[:100]: raise ValueError('简历编号不匹配')
     if any(label in content for label in ('中等水平','低水平','普通合格','能力较低')):
         raise ValueError('简历正文泄露水平标签')
+    if any(token in content for token in BANNED_PLACEHOLDERS):
+        raise ValueError('简历包含禁用模糊占位词（如某某/××）')
     plan=metadata['employment_plan']
-    education=content.split('教育背景',1)[1].split('工作经历',1)[0]
-    work=content.split('工作经历',1)[1].split('项目经历',1)[0]
-    project=content.split('项目经历',1)[1].split('专业技能',1)[0]
+    education=section_slice(content,'教育背景')
+    work=section_slice(content,'工作经历')
+    project=section_slice(content,'项目经历')
     if date_ranges(education)!=[plan['education_period']] or plan['major'] not in education:
         raise ValueError('教育日期或专业未遵守固定履历配置')
     if sorted(date_ranges(work))!=sorted(plan['work_periods']) or '至今' in work:

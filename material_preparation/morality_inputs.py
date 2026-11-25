@@ -42,11 +42,15 @@ def build_specs(config, protocol, catalog):
             continue
         for variant in range(1, config['variants_per_mfv'] + 1):
             number = item['library_item_number'] * 100 + variant
+            route = (
+                '改编变体1（贴近原场景迁移）：保留原条目的核心人际关系与活动类型，直接转换为成年候选人的日常私人场景（若原条目为校园或职场，仅将人物身份与场所替换为对等的业余或私人生活场景）。'
+                if variant == 1 else
+                f'改编变体{variant}（跨场域迁移）：保留原条目的核心违规机制，但不得沿用原条目的具体活动与场所，必须切换到另一类日常私人生活场域（如亲友聚餐、社区邻里、日常消费、业余社团或结伴出游）。'
+            )
             specs.append({'pair_id': f"{item['foundation'].upper()}_{number:05}",
                           'foundation': item['foundation'], 'source_kind': 'mfv_adaptation',
                           'source_id': item['source_id'], 'variant': variant, 'source': item,
-                          'route': ('保留原条目的关系结构与违规机制，迁移为自然的成人私人事件。' if variant == 1 else
-                                    f'变体{variant}：探索另一种具体日常活动或关系设定，保留违规机制；不得只换措辞。')})
+                          'route': route})
     for foundation in c.FOUNDATIONS:
         axes = protocol['foundations'][foundation]['novel_axes']
         for index in range(config['novel_per_foundation']):
@@ -54,10 +58,31 @@ def build_specs(config, protocol, catalog):
                           'foundation': foundation, 'source_kind': 'principle_extension',
                           'source_id': None, 'variant': index + 1, 'source': None,
                           'axis': axes[index % len(axes)],
-                          'route': f'依据定义与作者编写规则新编第{index + 1}个事件；不得声称是原MFV条目。'})
+                          'route': f'规则新编（第{index + 1}项）：围绕指定场景方向，独立构造一件成年候选人的日常私人事件。'})
     if not specs or len({x['pair_id'] for x in specs}) != len(specs):
         raise ValueError('生成任务为空或编号重复')
     return specs
+
+
+def format_foundation_rules(info):
+    return '\n'.join([
+        f"- 主题：{info['label']}",
+        f"- 概念定义：{info['definition']}",
+        f"- MFV操作化边界：{info['author_operationalization']}",
+        f"- 本研究迁移要求：{info['project_adaptation']}",
+    ])
+
+
+def format_source_material(spec):
+    if spec['source']:
+        src = spec['source']
+        return '\n'.join([
+            f"- 原条目子类别：{src['source_category_label']}",
+            f"- 英文原文：{src['original_en']}",
+            f"- 中文参考译文：{src['translation_zh']}",
+            f"- 原版错误程度均值（0–4）：{src['wrongness_mean_0_4']}",
+        ])
+    return f"- 新编场景方向：{spec['axis']}"
 
 
 def build_tasks(config_path=None):
@@ -65,20 +90,12 @@ def build_tasks(config_path=None):
     tasks = []
     for spec in build_specs(config, protocol, catalog):
         foundation = spec['foundation']
-        if spec['source']:
-            source_material = c.canonical({'source': spec['source'],
-                                          'identifier_note': catalog['provenance']['identifier_note'],
-                                          'source_correction': catalog['provenance']['correction'],
-                                          'evidence_note': catalog['provenance']['evidence_note']})
-        else:
-            source_material = c.canonical({'new_event_direction': spec['axis'],
-                                          'source_note': '依作者规则新编；无对应原条目及原版评分。'})
         prompt = c.render(config['prompt'], pair_id=spec['pair_id'], foundation=foundation,
                           generation_route=spec['route'],
-                          foundation_rules=c.canonical(protocol['foundations'][foundation]),
+                          foundation_rules=format_foundation_rules(protocol['foundations'][foundation]),
                           author_rules='\n'.join('- ' + x for x in protocol['author_general_rules']),
                           study_rules='\n'.join('- ' + x for x in protocol['study_rules']),
-                          source_material=source_material)
+                          source_material=format_source_material(spec))
         metadata = {'pair_id': spec['pair_id'], 'foundation': foundation,
                     'generation_protocol': protocol['protocol_version'], **fingerprints,
                     'spec': spec}
@@ -107,4 +124,3 @@ def validate_generated(parsed, task):
             raise ValueError('生成材料缺少非空字段：' + key)
     if re.sub(r'\s+', '', parsed['neutral']) == re.sub(r'\s+', '', parsed['negative']):
         raise ValueError('中性和负面正文完全相同')
-

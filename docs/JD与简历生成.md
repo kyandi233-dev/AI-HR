@@ -1,177 +1,179 @@
 # JD 与简历生成
 
-## 输入和规则
+本文档规定岗位说明（JD）与候选人简历的来源输入、提示词规范、**简历能力水平操控条件（简历操作）**、程序校验、人工审核与正式导入流程。生成风格与结构化控制参照 Kim 等（ACL 2025）与 PopResume（EMNLP 2026），并与下游实验 3 的评分维度保持严格对应。
 
-职业登记仍用 `material_preparation/config/occupations.json` 中的内部键；新草稿和批准材料目录用英文职业名加 O*NET 编码。
+---
 
-`run_material_generation.py` 只读 `material_preparation/review/职业与材料审核.xlsx` 的“职业汇总”sheet，按 O*NET 编码对应职业。“是否选用”填1或“选用”决定职业范围；新版“JD是否纳入”“简历N是否纳入”填1决定纳入，兼容旧表材料列填“通过”。材料链接和审核决定分列。生成脚本不会代填审核结论，也不会重新保存审核表；运行前应保存 Excel 的最新审核结果。
+## 1. 核心文件与提示词索引
 
-生成读取每个职业现有的 `onet/structured_en.json`，核对职业编码及原始网页摘要，不创建 profile.txt，不依赖公司业务或额外岗位层级。原始存档不改动。
+点击下表链接可直接跳转对应提示词、配置与脚本：
 
-2026-11-24 的 JD 输入由 `config/jd_input_modules.json` 固定九个模块：Overview、Tasks、Detailed Work Activities、Job Zone、Software Skills、Knowledge、Education，以及补充用的 Essential Skills、Transferable Skills。九个模块的条目全部保留，不取前N项，不按分数删除条目，不进行语义去重。去掉链接、控件、来源文件路径等技术字段；字段value与text_original完全相同时只呈现一次，整行文字完全等于已有字段原文拼接时不再重复。名称以外的长说明仍保留；每个模块的source_text也保留，特别是Overview的records不包含完整职业概述，不能只读取其records。
+| 类别 | 文件路径（点击跳转） | 作用说明 |
+|---|---|---|
+| **JD 生成提示词** | [material_preparation/prompts/jd.txt](../material_preparation/prompts/jd.txt) | 将 O*NET 职业资料转换为标准中文社招 JD（含 5 年门槛与加分项）及依据记录 |
+| **简历生成提示词** | [material_preparation/prompts/resume.txt](../material_preparation/prompts/resume.txt) | 按给定槽位与能力档位生成极简词条风格的匿名求职简历 |
+| **简历审读提示词** | [material_preparation/prompts/resume_review.txt](../material_preparation/prompts/resume_review.txt) | 检查简历自然度、时间线自洽性、占位词残留及无关品格标签 |
+| **下游评分标准** | [experiments/exp_3_hiring/prompts/score_rubric.txt](../experiments/exp_3_hiring/prompts/score_rubric.txt) | 实验 3 的四项专业能力评分尺（1–5 分）与招聘推荐指标 |
+| **简历操控配置** | [material_preparation/config/resume_levels.json](../material_preparation/config/resume_levels.json) | 全员统一校企集合、固定时间线、中/低两档操控规则及各职业技术栈槽位 |
+| **JD 输入模块配置** | [material_preparation/config/jd_input_modules.json](../material_preparation/config/jd_input_modules.json) | 固定读取的 O*NET 九个模块清单 |
+| **职业登记表** | [material_preparation/config/occupations.json](../material_preparation/config/occupations.json) | 候选职业的内部键、O*NET 编码与来源网址 |
+| **模型运行配置** | [material_preparation/config/settings.json](../material_preparation/config/settings.json) | 默认模型（`deepseek-flash`）、温度（`1.0`）、`thinking=disabled` 与参考日期 |
+| **人工审核配置** | [material_preparation/config/human_review.json](../material_preparation/config/human_review.json) | 四名独立审核成员名单（`gsc`、`lkx`、`lxy`、`wjy`）及工作簿文件名映射 |
+| **生成与校验脚本** | [generation_inputs.py](../material_preparation/generation_inputs.py) · [generate_jd.py](../material_preparation/generate_jd.py) · [generate_resumes.py](../material_preparation/generate_resumes.py) · [resume_inputs.py](../material_preparation/resume_inputs.py) | O*NET 模块投影、JD 提取核验、简历槽位组装与硬性输出校验 |
+| **批次与审核入口** | [run_material_generation.py](../material_preparation/run_material_generation.py) · [approve_materials.py](../material_preparation/approve_materials.py) · [review_material_links.py](../material_preparation/review_material_links.py) · [export_individual_reviews.py](../material_preparation/export_individual_reviews.py) | 请求预览与执行、批准材料提取导入、审核总表链接维护与四人审核表导出 |
 
-每份request记录的metadata.input_projection保存配置和代码摘要、原栏目位置、逐条映射、条目数量及确切重复字段省略情况。筛选设计及以后如何调整属于脚本配置和运行记录，不写入模型提示词。模型看到所提供的职业内容，按写作规则组织JD。
+---
 
-简历现也读取同一组九个模块，保留原文和来源映射，不再输入整份存档JSON。按用户本轮要求，增加中等、低两种履历目标，规则见下方“分级简历生成”。
+## 2. 职业资料来源与输入预处理条件
 
-提示词是 `material_preparation/prompts/jd.txt`、`resume.txt`，本轮经验门槛统一3年以上；其余生成规则以已确认的提示词正文为准。模型与参数读取 `material_preparation/config/settings.json`。本轮仍使用 deepseek-flash、temperature=1、thinking=disabled、max_tokens=3000；规则和输入可复刻，采样回答不保证逐字重复，原始档案用于回查。
+1. **职业范围确定**：[run_material_generation.py](../material_preparation/run_material_generation.py) 读取 `material_preparation/review/职业与材料审核.xlsx` 的“职业汇总”页，以“是否选用”列填 `1`（或`选用`）确定生成范围。当前选定 4 个职业：
+   - 信息安全分析师（`Information Security Analysts`，`15-1212.00`）
+   - 软件开发工程师（`Software Developers`，`15-1252.00`）
+   - 数据科学家（`Data Scientists`，`15-2051.00`）
+   - 商业智能分析师（`Business Intelligence Analysts`，`15-2051.01`）
+2. **原始存档校验**：读取各职业目录下的 `onet/structured_en.json`，先校验职业编码及 `stored_html_sha256` 与原始网页存档完全一致，不依赖手工 `profile.txt`。
+3. **九个固定模块**：由 [jd_input_modules.json](../material_preparation/config/jd_input_modules.json) 指定读取 `Overview`、`Tasks`、`Detailed Work Activities`、`Job Zone`、`Software Skills`、`Knowledge`、`Education`、`Essential Skills`、`Transferable Skills`。
+4. **JD 与简历的差异化输入投影**：
+   - **JD 生成输入**：完整保留上述九个模块的全部记录与 `source_text`，仅剔除网页链接、控件及完全重复的展示字段，将逐条映射关系记入请求 `metadata.input_projection`。
+   - **简历生成输入**：为消除约 1.5 万 Token 英文分类表对中文简历语体的干扰，[generate_resumes.py](../material_preparation/generate_resumes.py) 仅从同一结构化数据中提取前 10 条核心工作任务（`Tasks`）供业务真实性参考，同时在 `metadata` 中完整保留 `structured_sha256` 与 `jd` 摘要溯源。
 
-## JD 生成
+---
 
-在项目根目录运行：
+## 3. 岗位说明（JD）操作条件
+
+具体提示词见 [prompts/jd.txt](../material_preparation/prompts/jd.txt)，提取与初筛规则见 [generation_inputs.py](../material_preparation/generation_inputs.py)。
+
+- **结构与篇幅**：岗位公告全文控制在 `240—350字`，固定包含 5 个栏目：
+  1. `职位名称`：标准中文岗位名称，不添加初级/高级职级、公司名或细分行业背景。
+  2. `岗位简介`：1—2 句话（`45—75字`）概括核心职能。
+  3. `工作职责`：从 `Tasks` 与 `Detailed Work Activities` 提炼 `5—6条` 主要工作，统一以 `- ` 开头，每条 `14—24字`，一条只写一件事。
+  4. `任职要求`：写 `5条` 以 `- ` 开头的词条（每条 `12—28字`），依次覆盖：学历与对口专业类别（取 `Education` 最高占比层次）、**`5年以上相关工作经验`**（统一设定）、常用语言/工具简称与专业方法（2 条）、问题分析与方案评估认知能力（1 条）。
+  5. `加分项`：从进阶工具或细分技术中选取 `2—3条` 优先条件，以 `- ` 开头，每条 `10—22字`。
+- **梯度留白设计**：将 JD 硬性年限设为 `5年以上` 并单列 `加分项`，使 `3—4年` 经验、掌握常规核心工具但不含高阶加分栈的中等水平候选人无需刻意自我贬低，即可自然落在“基本胜任但未触顶”区间。
+- **术语转换与排除边界**：
+  - 将英文分类名称转换为通用中文行业术语，不生硬直译学科分类名，不照抄过长的商业软件套件全称；若资料已含特定语言框架或数据库（如 `PyTorch/TensorFlow`、`PostgreSQL`），可并列写出对应基础语言简称（`Python`、`SQL`）并在依据记录注明。
+  - **品格与社会性技能排除**：任职要求与加分项严禁写入诚信、沟通、合作、共情、协调、责任心等品格或人际要求；正文不出现 O*NET 栏目名或统计比例。
+- **固定输出区块与无损提取**：模型依次输出 `【依据记录开始】…【依据记录结束】` 与 `【岗位公告开始】…【岗位公告结束】` 两个区块。批准导入时，`extract_jd` 原字节提取岗位公告区块（不润色、不改换行），`review_flags` 自动扫描任职要求及加分项是否混入排除词汇供人工核查。
+
+---
+
+## 4. 简历操作（能力水平操控与常量控制规则）
+
+具体提示词见 [prompts/resume.txt](../material_preparation/prompts/resume.txt)，结构化参数见 [config/resume_levels.json](../material_preparation/config/resume_levels.json)（版本 `resume_levels_unified_pool_v4`），组装与校验见 [generate_resumes.py](../material_preparation/generate_resumes.py) 与 [resume_inputs.py](../material_preparation/resume_inputs.py)。
+
+### 4.1 总体操控原则
+
+每个选用职业生成 **4 份简历**：`R01`、`R02` 为**中等水平**目标，`R03`、`R04` 为**低水平**目标（4 个职业共 16 份）。单次模型调用独立生成 1 份简历。能力差异完全通过客观履历事实（专业对口度、相关工龄与职级、任务独立性、技术掌握深度）呈现：
+- 不在简历正文出现任何水平标签（如“中等水平”“低水平”“普通合格”“能力较低”）；
+- 不用错别字、版式混乱、时间矛盾、身份差异或道德缺陷来制造低水平；
+- 校名、企业名、学历层次、经历段数、项目时长和目标字数在所有候选人之间严格保持恒定。
+
+### 4.2 全员固定常量（消除非目标混淆）
+
+| 控制项 | 全员统一设定 | 控制目的 |
+|---|---|---|
+| **身份与联系方式** | 仅保留编号 `R01—R04`，头部固定为 `邮箱：aaaaa@example.com｜电话：138-0000-0000` | 排除姓名、性别、年龄、地域及人口学代理线索 |
+| **毕业院校** | 统一固定为 **`明远大学`**（本科学历；多学历扩展备选 `海川大学`） | 消除院校声望差异及“某某大学/××学院”占位词 |
+| **任职企业集合** | 按工作段数统一从有序集合 **`["星河信息技术有限公司", "辰光科技有限公司", …]`** 顺序取用（第1段早年经历统一为`星河信息技术有限公司`，第2段近期经历统一为`辰光科技有限公司`） | 消除企业名声望、行业字面暗示差异及“某公司”占位词 |
+| **版式与篇幅** | 全文 `260—360字`；固定顺序为倒序`工作经历`（2段×2条 `- ` 短句）→ `项目经历／代表性工作成果`（1项×2条 `- ` 短句）→ `教育背景` → `专业技能`（2—3条分类词条） | 消除排版质量与文本长度对能力评分的干扰 |
+| **参考基准日期** | `2026-11-15`（所有经历使用明确起止年月，禁用“至今”） | 保证工龄核算精确一致 |
+
+### 4.3 四维能力水平操控条件（对应实验 3 四项能力评分）
+
+| 操控维度（对应 [score_rubric.txt](../experiments/exp_3_hiring/prompts/score_rubric.txt)） | 中等水平（`R01`、`R02`） | 低水平（`R03`、`R04`） |
+|---|---|---|
+| **一、教育与岗位匹配** | **核心对口本科专业** ＋ 列出 3—4 门核心专业课程名称 | **弱相关商管类本科专业** ＋ 仅列 2—3 门基础导论或通识工具课 |
+| **二、相关工作经历**（对照 JD 5年门槛） | **累计 40 个月（`R01`）/ 46 个月（`R02`）**（约 3.3—3.8 年）；职级从`初级/助理工程师`正常晋升至`正式工程师/分析师`；独立完成日常模块开发、常规建模或标准运维，不承担架构主导或团队管理 | **累计 18 个月（`R03`）/ 12 个月（`R04`）**（1—1.5 年）；岗位为`实习生/文员` → `助理`；仅从事数据录入核对、按清单巡检、套用模板或辅助测试，不独立负责核心模块 |
+| **三、专业技能** | 采用 `类别：工具或方法（掌握程度）` 格式；覆盖岗位常规核心工具（标`熟练`/`常规应用`），**留白 JD 中的加分项与高阶工具** | 采用同一格式；仅含办公软件与少量外围工具，明确标注`入门`/`基础语法`/`简单查询`/`套用模板`，缺少岗位核心技术栈 |
+| **四、项目／代表性工作成果** | 固定期间 `2026.06—2026.08`；1 项常规业务项目，分 2 条说明具体技术实现动作与可用交付物（不编造百分比业绩） | 固定期间 `2026.06—2026.08`；1 项小范围辅助支持工作，分 2 条说明按指导完成的基础整理动作与辅助记录文档交付 |
+
+### 4.4 固定时间线参数
+
+- **`R01`（中等，累计 40 个月）**：教育 `2019.09—2023.06`；工作段1 `2023.07—2024.12`，工作段2 `2025.01—2026.10`；项目 `2026.06—2026.08`。
+- **`R02`（中等，累计 46 个月）**：教育 `2018.09—2022.06`；工作段1 `2023.01—2024.06`，工作段2 `2024.07—2026.10`；项目 `2026.06—2026.08`。
+- **`R03`（低水平，累计 18 个月）**：教育 `2020.09—2024.06`；工作段1 `2025.05—2025.12`，工作段2 `2026.01—2026.10`；项目 `2026.06—2026.08`。
+- **`R04`（低水平，累计 12 个月）**：教育 `2020.09—2024.06`；工作段1 `2025.11—2026.04`，工作段2 `2026.05—2026.10`；项目 `2026.06—2026.08`。
+
+### 4.5 四个试点职业的专业、岗位演进与差异化技术栈分配
+
+为防止同一职业下的多份简历逐句照搬 JD 或彼此雷同，[resume_levels.json](../material_preparation/config/resume_levels.json) 按编号预绑定了岗位演进与技术范围：
+
+| 职业 | 编号（水平） | 本科专业 | 岗位演进（早年 → 近期） | 指定技术范围 |
+|---|---|---|---|---|
+| **软件开发工程师** | `R01`（中） | 软件工程 | 初级后端开发工程师 → 软件开发工程师 | Python（熟练）、JavaScript（基础）、SQL；RESTful API、PostgreSQL、Git（熟练）、Docker（基础） |
+| | `R02`（中） | 软件工程 | 助理软件开发工程师 → 软件开发工程师 | Java（常规应用）、SQL；Spring Boot、MySQL、Git（熟练）、Jenkins（基础部署） |
+| | `R03`（低） | 工商管理 | IT技术支持实习生 → 软件开发助理 | Python（基础语法）、HTML/CSS（入门）；PostgreSQL（简单查询）、Git（基础提交） |
+| | `R04`（低） | 工商管理 | 信息系统运维实习生 → 初级软件测试助理 | JavaScript（入门）、SQL（简单查询）；功能测试记录、Git（查看记录）、Excel |
+| **数据科学家** | `R01`（中） | 统计学 | 助理数据分析师 → 数据科学家 | Python（熟练）、SQL（熟练）；Scikit-learn（回归与树模型）、Pandas、Tableau、Git |
+| | `R02`（中） | 统计学 | 数据分析师 → 数据建模工程师 | Python（常规应用）、R（基础）、SQL；PyTorch（基础）、Power BI、PostgreSQL |
+| | `R03`（低） | 市场营销 | 市场调研数据实习生 → 数据分析助理 | Excel（数据透视表）、SPSS（基础描述统计）；SQL（简单查询）、Power BI（套用模板） |
+| | `R04`（低） | 市场营销 | 运营数据录入专员 → 初级数据支持助理 | Excel（常规函数与清洗）、Python（入门脚本）；SAS（基础操作） |
+| **信息安全分析师** | `R01`（中） | 信息安全 | 助理安全运维工程师 → 信息安全分析师 | 防火墙访问策略维护、访问权限审计、Linux基础；Splunk（日志检索）、漏洞扫描工具（常规核查） |
+| | `R02`（中） | 信息安全 | 网络安全专员 → 信息安全分析师 | TCP/IP基础、Wireshark（抓包分析）、入侵告警初筛；系统基线核查、应急演练记录 |
+| | `R03`（低） | 电子商务 | IT机房巡检实习生 → 信息安全运维助理 | 终端杀毒软件状态巡检、账号权限台账整理；Wireshark（基础查看）、Excel |
+| | `R04`（低） | 电子商务 | 信息系统行政助理 → 初级安全合规助理 | 访问申请工单流转、安全培训记录归档；Splunk（按固定模板导出）、Office套件 |
+| **商业智能分析师** | `R01`（中） | 信息管理与信息系统 | 初级数据报表专员 → 商业智能分析师 | SQL（熟练编写查询与视图）、Excel（高级函数）；Power BI（常规仪表板开发与维护）、业务指标梳理 |
+| | `R02`（中） | 信息管理与信息系统 | 运营数据分析员 → 商业智能分析师 | SQL（常规提取与聚合）、Python（基础数据清洗）；Tableau（可视化看板制作）、月度财务与市场报表 |
+| | `R03`（低） | 公共事业管理 | 商务统计实习生 → 数据报表助理 | Excel（常规图表与汇总）、Power BI（日常数据源刷新）；SQL（基础单表查询） |
+| | `R04`（低） | 公共事业管理 | 销售运营数据文员 → 初级业务数据助理 | Excel（基础函数与台账核对）、ERP业务报表常规导出、字段口径登记 |
+
+> 未在 `occupation_slots` 单独列出的其余候选职业，自动继承同一套统一校企集合、时间线及通用职级演进（中等：`初级专员 → 业务专员`；低水平：`业务实习生 → 基础支持助理`）。
+
+### 4.6 输出强校验条件
+
+模型返回文本后，先原样保存原始响应，再由 [resume_inputs.py](../material_preparation/resume_inputs.py) 的 `validate_resume_text` 执行硬性检查：
+1. 必须包含 `教育背景`、`工作经历`、`项目经历`、`专业技能` 四个栏目，且前 100 字符内包含正确的 `{resume_id}`；
+2. 不得出现 `中等水平`、`低水平`、`普通合格`、`能力较低` 等水平控制词；
+3. 不得出现 `某某`、`××`、`某公司`、`某大学`、`某学院`、`某信息`、`某网络`、`某科技`、`XX公司`、`XX大学` 等模糊占位词；
+4. 独立提取各栏目后，校验教育起止年月与本科专业、两段工作起止年月（兼容倒序排列，且不含“至今”）、项目起止年月与配置完全一致。任一条件不满足则记为生成失败，不写入草稿文件。
+
+---
+
+## 5. 运行命令、审核工作流与材料导入
+
+所有命令均在**项目根目录**下执行。默认不加 `--execute` 时仅生成完整提示词与请求预览，不调用模型、不改动任何现有草稿或审核表。
+
+### 5.1 生成 JD 与简历
 
 ```powershell
-# 本轮完整输入预览，不调用模型
-.\.venv\Scripts\python.exe -X utf8 -B material_preparation/run_material_generation.py --task jd --run-id jd_modules_20261124
+# 1. 预览 JD 请求（不调用模型）
+.\.venv\Scripts\python.exe -X utf8 -B material_preparation/run_material_generation.py --task jd --run-id <新JD批次号>
 
-# 本轮实际执行方式，保存全部原始返回片段
-.\.venv\Scripts\python.exe -X utf8 -B material_preparation/run_material_generation.py --task jd --run-id jd_modules_20261124 --execute --stream --api-timeout 600
+# 2. 执行 JD 生成（若已有旧版草稿，须先用 remove_jd_drafts.py 归档清理）
+.\.venv\Scripts\python.exe -X utf8 -B material_preparation/run_material_generation.py --task jd --run-id <新JD批次号> --execute --stream --api-timeout 600
+
+# 3. 预览 16 份分级简历请求（可绑定指定 JD 批次，或省略 --jd-run-id 直接使用已批准导入的 JD）
+.\.venv\Scripts\python.exe -X utf8 -B material_preparation/run_material_generation.py --task resume --levels medium low --count 2 --jd-run-id <JD批次号> --run-id <新简历批次号>
+
+# 4. 执行 16 份简历生成（4 并发独立无状态调用；若已有旧草稿，须先用 archive_resume_drafts.py 归档）
+.\.venv\Scripts\python.exe -X utf8 -B material_preparation/run_material_generation.py --task resume --levels medium low --count 2 --jd-run-id <JD批次号> --run-id <新简历批次号> --execute --stream --api-timeout 180 --concurrency 4
 ```
 
-2026-11-24 用户明确要求删除上一版JD并生成新版。本轮使用新批次 `jd_modules_20261124`，原始调用档案仍保留。旧批次 `jd_four_occupations_20261123` 的四份草稿已经通过 `remove_jd_drafts.py --run-id jd_four_occupations_20261123 --execute` 删除：先校验生成结果记录、每份草稿摘要及旧响应原文，只删除明确对应的jd.txt，不递归删除。删除记录保存在旧批次的 `draft_removal.json`。
+- **不可变与断点续跑**：同一 `run_id` 重复执行自动跳过已成功项；失败项须显式加 `--retry-failed` 重试；更改提示词、配置或参数必须更换新的 `--run-id`。
+- **存档位置**：草稿位于 `material_preparation/drafts/occupations/<英文名_编码>/`（`jd.txt` 与 `resumes/R01.txt—R04.txt`）；完整提示词、请求与流式原始响应位于 `material_preparation/results/jd_generation/`、`resume_generation/` 及 `material_preparation/results/material_generation/<run-id>/`。
 
-此删除操作仅用于本次明确授权，不能作为重新生成时的默认步骤；如果旧路径已经写入新版或人工修改过的内容，删除脚本会停止。新草稿仍写入原有职业目录，完整旧回答保留在旧批次响应档案中。
-
-本轮草稿位于 `material_preparation/drafts/occupations/<英文名_编码>/jd.txt`，包含“依据记录”和“岗位公告”的完整原始回答。新版JD提示词要求一句简介、3—4条职责、4—5条任职要求、少量工具和一条概括1—2项认知能力的要求，正文以约300—450字为目标，依据记录逐条简述。社会性技能及人格品德排除规则继续保留。
-
-本轮四份已成功生成并核验原文一致。岗位公告字符数（含标点、换行）分别为：信息安全分析师517、软件开发人员422、数据科学家375、商业智能分析师473。信息安全与商业智能两份超过提示词的篇幅目标，保留原始输出供人工审核，不手工删改。实际输入token分别为15518、17202、14129、15625。信息安全首次连接失败，显式重试后成功，全部尝试及流式片段保留。
-
-每职业调用目录为 `material_preparation/results/jd_generation/<英文名_编码>/<run-id>/`，包含：
-
-- `JD01.prompt.txt`：实际发送的完整提示词。
-- `JD01.request.json`：完整任务及模型配置。
-- `batch.json`、`records/*.input.json`、`records/*.output.json`、`results.csv`：批次、请求、原始响应、用量、状态等公共档案。
-
-总体记录位于 `material_preparation/results/material_generation/<run-id>/`，包括固定计划 `plan.json`、输入预览记录 `preview_manifest.json` 和生成结果 `generated_manifest.json`。
-
-同一批次重复运行跳过成功调用；输入或参数变化要求新批次。失败调用不自动重试，确需重试时添加 `--retry-failed`。已有不同草稿和已批准材料不会覆盖。原始回答即使被截断或未通过格式检查也保留在响应档案中，不人工修补。
-
-大输入若发生传输超时，可在显式重试时添加 `--api-timeout 600` 延长等待，不改变输入或模型参数；实际等待设置写入各次输出记录。生成结果记录中的 `review_flags` 仅定位需要人工核查的措辞，不改原稿，不代替审核结论。
-
-若非流式连接仍被中途断开，可添加 `--stream`。该方式保留每个原始响应片段在 `raw_response.stream_chunks` 中，按返回顺序连接content得到原始正文，并明确标记为流式拼接响应。发生中途异常时也保留已收到的片段及正文；不会自行补写。各次输入记录的transport字段记录是否流式接收及等待时限。
-
-## 人工审核与导入
-
-审核完整原稿，在 Excel 的“JD是否纳入”列填写1并保存（旧表为“JD”列填“通过”）。然后运行：
+### 5.2 审核总表与四人独立审核表
 
 ```powershell
-# 先预览；未通过的材料不会进入导入计划
-.\.venv\Scripts\python.exe -X utf8 -B material_preparation/approve_materials.py --run-id jd_modules_20261124
+# 更新总表（职业与材料审核.xlsx）的材料文件链接
+.\.venv\Scripts\python.exe -X utf8 -B material_preparation/review_material_links.py --run-id <简历批次号> --jd-run-id <JD批次号> --execute
 
-.\.venv\Scripts\python.exe -X utf8 -B material_preparation/approve_materials.py --run-id jd_modules_20261124 --execute
-```
-
-导入核验草稿摘要、成功调用记录和模型原始回答一致，然后精确提取“【岗位公告开始】”和“【岗位公告结束】”之间的文字，包括原有换行，不strip、不润色。边界缺失、重复、顺序错误或区块外存在额外文字时停止。完整依据记录仍在原稿和响应中。
-
-正式 JD 位于 `material_preparation/approved/occupations/<英文名_编码>/jd.txt`，旁边的 `jd_approval.json` 记录原稿及批准正文摘要和调用来源。未通过、不同内容冲突及被改动的材料均不擅自导入或覆盖。
-
-## 简历生成
-
-仅在已选职业的 JD 均在 Excel 标记通过且已完成导入后执行：
-
-```powershell
-.\.venv\Scripts\python.exe -X utf8 -B material_preparation/run_material_generation.py --task resume --count 2 --run-id resumes_four_occupations_20261123
-.\.venv\Scripts\python.exe -X utf8 -B material_preparation/run_material_generation.py --task resume --count 2 --run-id resumes_four_occupations_20261123 --execute
-```
-
-使用同一结构化来源、批准的纯 JD、简历提示词和固定参考日期。每次调用一份简历。完整草稿在 `drafts/occupations/<英文名_编码>/resumes/R01.txt` 等文件，原始响应仍完整保存。
-
-在“简历N是否纳入”列填写1并保存，再运行 `approve_materials.py --run-id <对应简历批次>` 预览或添加 `--execute` 导入。新版总表已有四份简历及独立纳入列；批准版只按下方已授权的短横线规则统一排版，原始回答完整保留。
-
-## 离线核验
-
-```powershell
-.\.venv\Scripts\python.exe -X utf8 -B -m unittest discover -s tests -v
-```
-
-测试覆盖JSON完整性、来源核验、预览不调用API及不改Excel、原始换行保留、固定边界提取、审核门槛、原稿变动拒绝导入和批准内容冲突保护。既有实验和快照继续进行回归检查。
-
-## 分级简历生成（2026-11-24）
-
-用户明确要求：四个职业分别生成中等、低水平，每职业每水平两份，共16份。此处水平是生成目标，尚未经独立能力评分验证，不自动视作已获得3分或2分的材料。
-
-固定规则在 `material_preparation/config/resume_levels.json`，固定模板在 `material_preparation/prompts/resume.txt`：
-
-- 中等：本科且专业相关，3—4年相关经验，可独立完成常规任务，具备核心技能的常规应用能力，一项常规项目及基本交付。
-- 低：同样本科但专业训练仅部分相关，1—2年相关经历，主要承担基础或辅助任务，仅体现部分核心技能，一项较小范围的基础贡献。保持自然、完整的简历语体，不用格式混乱、身份差异或道德缺陷制造低水平。
-- 两组使用同一JD、同一栏目和相近篇幅，认知能力通过专业经历体现；正文不输出水平、评分或研究标签。R01、R02为中等目标，R03、R04为低水平目标，编号与目标水平关系保留在清单及metadata中。
-
-本轮配置版本为 `resume_levels_fixed_dates_v2`。每份简历明确给定本科专业、教育起止年月、两段任职年月及项目年月：R01、R02分别累计40、46个月相关工作；R03、R04分别累计18、12个月。中等本科专业分别为信息安全、软件工程、统计学、信息管理与信息系统；低水平分别为电子商务、工商管理、市场营销、公共事业管理。实际发送时只加入该份简历对应的日期方案，完整配置及模板摘要记入metadata。
-
-模型原始回答先存档，再检查编号、栏目、水平标签、专业及全部日期是否符合配置；不符合则记录失败，不写入当前草稿，也不改写回答。该校验保证明确事实的执行，不能代替对专业内容、自然性或能力水平的人工/独立评估。字数为写作目标，不以截断文本实现。
-
-本轮直接使用用户认可的 `jd_modules_20261124` 批次原始JD。`resume_inputs.py` 核对原稿、成功响应、请求摘要后，按原有边界提取岗位公告，原样填入简历提示词。不修改Excel的“通过”记录，不写入approved；此来源模式明确记录为generated_batch，后续正式批准仍需人工审核。未显式指定 `--jd-run-id` 时，原有Excel通过及approved文件核验仍然生效。
-
-```powershell
-# 16份完整输入预览
-.\.venv\Scripts\python.exe -X utf8 -B material_preparation/run_material_generation.py --task resume --levels medium low --count 2 --jd-run-id jd_modules_20261124 --run-id resumes_medium_low_dates_20261124
-
-# 正式生成；4个独立请求并发，不共享对话历史
-.\.venv\Scripts\python.exe -X utf8 -B material_preparation/run_material_generation.py --task resume --levels medium low --count 2 --jd-run-id jd_modules_20261124 --run-id resumes_medium_low_dates_20261124 --execute --stream --api-timeout 180 --concurrency 4
-```
-
-同一批次重复执行跳过成功项，失败项需显式添加 `--retry-failed`。`--count` 在指定多水平时指每水平份数；模型参数仍为deepseek-flash、temperature=1、thinking=disabled、max_tokens=3000，参考日期仍固定为2026-11-15。
-
-原始简历存于 `drafts/occupations/<英文名_编码>/resumes/R01.txt` 至 `R04.txt`。本轮输入、原始响应及流式片段在 `results/resume_generation/<英文名_编码>/resumes_medium_low_dates_20261124/`；总体manifest和 `简历生成清单.csv` 在 `results/material_generation/resumes_medium_low_dates_20261124/`。16份均成功生成并通过原文一致性与日期规则检查。清单是程序导出索引，重跑会按记录重建，不用于填写人工审核结论。生成脚本本身不改动审核总表；四份材料的文件入口与独立纳入列见下节。
-
-人工查看发现：当前文本为592—863字符（含英文、标点和换行），部分超过篇幅目标；少数学校或机构仍使用“某某”“××”及“虚构财经类院校”等占位表达，信息安全R01没有列出学校名称。这些原始输出均未修补，应在自然性审核时记录，而不能把日期校验成功理解为全部写作要求已通过。后续若需改善，应修改仓库提示词并另开批次重生成。
-
-首轮 `resumes_medium_low_20261124` 产生13份成功文本、3次连接或超时失败；其中部分履历累计年限未符合生成目标。13份首轮原稿已用 `archive_resume_drafts.py --run-id resumes_medium_low_20261124 --execute` 按原始摘要核验后完整移入各职业首轮调用目录的 `raw_text/`，未手工改写或删除。对应关系与摘要保存在首轮总体目录的 `draft_archival.json`；全部首轮请求与原始响应仍在原处。当前草稿和本轮清单指向固定日期后的16份。
-
-## 总表文件跳转与纳入列（2026-11-24）
-
-当前审核文件仍为 `material_preparation/review/职业与材料审核.xlsx`，只保留“职业汇总”一页。按用户要求移除“人工分类”和嵌入的“简历审核”“JD原文”页。栏目顺序为职业身份、职业资料文件、是否选用，然后依次为：
-
-- JD、JD是否纳入。
-- 简历1（中等，R01）、简历1是否纳入。
-- 简历2（中等，R02）、简历2是否纳入。
-- 简历3（低，R03）、简历3是否纳入。
-- 简历4（低，R04）、简历4是否纳入。
-- 审核备注、审核人、审核日期、资料状态、来源网址；已有自定义栏保留。
-
-材料列是文件链接，点击在默认文本编辑器中打开。相邻的“是否纳入”列独立填写：1为纳入，0为不纳入，留空为尚未审核，也可以选择待定；兼容既有“通过”值。程序不会从链接文字推断批准，也不会自动填写纳入结论。已有职业选用和人工审核值按O*NET编码迁移。职业资料文件继续使用现有工作簿跳转公式。
-
-```powershell
-# 预览，不调用模型、不修改文件
-.\.venv\Scripts\python.exe -X utf8 -B material_preparation/review_material_links.py --run-id resumes_medium_low_dates_20261124 --jd-run-id jd_modules_20261124
-# 更新同一审核总表与同源CSV
-.\.venv\Scripts\python.exe -X utf8 -B material_preparation/review_material_links.py --run-id resumes_medium_low_dates_20261124 --jd-run-id jd_modules_20261124 --execute
-# 核验全部文件目标、审核值和原始档案
-.\.venv\Scripts\python.exe -X utf8 -B material_preparation/review_material_links.py --run-id resumes_medium_low_dates_20261124 --jd-run-id jd_modules_20261124 --verify-only
-```
-
-原有 `review_navigation.py` 命令已转向上述入口。`export_occupation_review.py --summary-only` 识别新版总表并沿用新版布局，不恢复旧的人工分类和审核栏。
-
-JD和简历的文件链接统一指向 `drafts/occupations/<英文名_编码>/` 中的原始生成文本。JD草稿包含依据记录；简历草稿保留模型返回的文字、序号和换行。review目录只保存审核表及审核记录，不保存、加工或另存材料正文。
-
-`approve_materials.py` 与生成入口读取独立的“是否纳入”列，仍需显式运行导入。批准简历先核验原稿与原始响应，再逐字节复制至approved，不调整序号、不拆分段落、不重新排版；JD仍按原有固定边界提取岗位公告。旧格式表的“JD/简历N=通过”继续兼容。本轮没有批准任何材料。
-
-后续生成的 `prompts/resume.txt` 已明确短横线规则及具体模板。16份对应的历史提示词仍完整保存在调用目录；模板变化后应另开批次生成。此次只调整排版和审核表，没有重新调用模型。`review_navigation_manifest.json` 记录源文件摘要、链接、排版副本摘要、脚本摘要和当前布局版本3。
-
-## 四人独立审核文件
-
-成员为gsc、lkx、lxy、wjy。名单、两类文件的实际名称和职业来源批次统一在`config/human_review.json`维护，脚本按名单人数处理。`review/occupation/`沿用`JD+resume_gsc.xlsx`、`lJD+resume_kx.xlsx`、`JD+resume_lxy.xlsx`、`JD+resume_wjy.xlsx`；各一页“材料审核”，链接使用相对路径。`review/mority/`沿用`moral_gsc.xlsx`、`moral_lkx.xlsx`、`moral_lxy.xlsx`、`moral_wjy.xlsx`，附有“定义与标准”页。
-
-```powershell
-# 只预览所选材料，不写任何Excel
-.\.venv\Scripts\python.exe -X utf8 -B material_preparation/export_individual_reviews.py
-# 生成或按编号/版本保留意见后刷新，不调用模型、不更新总表
+# 刷新四名成员（gsc、lkx、lxy、wjy）的个人审核表（按材料编号与原稿版本保留已有意见）
 .\.venv\Scripts\python.exe -X utf8 -B material_preparation/export_individual_reviews.py --execute
 ```
 
-职业范围由总表“是否选用”确定，材料须在指定批次有成功记录且与原始回答一致。个人表当前每人20项：4份JD和16份简历；不列未选中的66个职业，也不提前要求最终材料纳入字段为1。个人表不标示中等/低的预设标签，质量审核关注自然性、职业合理性、内部一致性；经验不足本身不是材料质量错误。
+- **个人审核表**：位于 `material_preparation/review/occupation/`（`JD+resume_gsc.xlsx`、`lJD+resume_kx.xlsx`、`JD+resume_lxy.xlsx`、`JD+resume_wjy.xlsx`），盲去预设水平标签，仅审读自然性、职业合理性与内部一致性（低档简历经验浅属于设计目标，不计作质量错误）。
+- **总表最终决定**：位于 `material_preparation/review/职业与材料审核.xlsx`，“JD是否纳入”“简历1是否纳入—简历4是否纳入”填 `1` 表示批准纳入，`0` 表示不纳入。
 
-新版道德材料由`morality_generation.json`的来源任务池管理，通过`review_config`引用相同成员名单。四份道德表与道德总表由`export_morality_review.py`单独刷新，当前均为268个待生成任务；旧职业导出器不会重建或覆盖它们。正文生成后才可审核，不把待生成任务当作已有材料。
+### 5.3 批准导入与离线测试
 
-黄色列为个人输入：审核结论（可用、需重新生成、不采用）、问题类型、问题说明、审核日期。材料身份、批次和原稿摘要保存在隐藏列。刷新按材料身份保留意见；已审核材料换版或取消选择时停止，制作期间发生的个人修改也不会被覆盖。相同材料范围、版本与链接不重复保存Excel。每个人只维护自己的两份文件，现有总表由负责人保留最终决定；此脚本不汇总意见、不批准材料、不修改任何原稿或排版副本。
+```powershell
+# 预览并导入总表中已标记纳入（=1）的 JD 或简历至 approved/
+.\.venv\Scripts\python.exe -X utf8 -B material_preparation/approve_materials.py --run-id <对应生成批次号>
+.\.venv\Scripts\python.exe -X utf8 -B material_preparation/approve_materials.py --run-id <对应生成批次号> --execute
 
-职业个人表已去掉重复的“对应JD”列；同一职业的JD仍作为独立材料行，通过“材料文件”打开。旧版个人表刷新时按原字段名称迁移并保留已有审核意见，仅去掉这一列；总表与道德个人表保持不变。
+# 运行全套离线回归与校验测试（不消耗 API）
+.\.venv\Scripts\python.exe -X utf8 -B -m unittest discover -s tests -v
+```
 
-`individual_review_manifest.json`保存职业总表、配置、脚本和四份职业个人表的来源记录；`morality_review_manifest.json`保存道德总表、四份道德个人表及其批次。个人表链接直接指向原稿。刷新按材料编号及版本保留人工意见，并沿用配置中的实际文件名；只改名单和审核文件名不改变生成输入或历史批次。
-
-
-## 清理历史审核副本（2026-11-24）
-
-按用户明确授权，`cleanup_review_copies.py --execute` 先把总表及个人表链接改为drafts原稿，再按生成登记逐份核验并删除16份额外的审核副本及空目录。删除范围固定为原 `material_preparation/review/resumes/`；遇到未登记文件、副本被人工改动或仍有工作簿链接依赖时停止，不递归删除其他内容。原始JD、简历、提示词、原始响应与各次调用档案全部保留。清理收据为 `review/review_copy_cleanup.json`，只记录历史删除位置和摘要，不作为运行时正文来源。
-
-本次只修正总表的文件链接，保留其所有单元格内容、审核字段和原生设置。职业个人表保留已有人工意见，道德个人表不改动。`review_material_links.py --links-only --execute` 支持只改链接；以后正常导出、刷新和批准流程均不再创建或格式化正文副本。统一短横线应由提示词约束后续生成；已有原稿格式原样保留，需要重生成时另开批次。
+导入时先核验草稿字节摘要与成功调用原始响应一致：JD 精确提取 `【岗位公告开始】` 与 `【岗位公告结束】` 之间的正文写入 `material_preparation/approved/occupations/<英文名_编码>/jd.txt`，简历逐字节原样复制至 `approved/occupations/<英文名_编码>/resumes/`，并在旁生成 `*_approval.json` 溯源收据。历史批次（如 `jd_modules_20261124`、`resumes_medium_low_dates_20261124`）的原始请求、响应及归档记录均完整保留在 `results/` 对应目录备查。

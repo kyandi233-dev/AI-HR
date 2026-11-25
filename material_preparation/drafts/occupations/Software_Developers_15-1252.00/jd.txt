@@ -1,32 +1,38 @@
 【依据记录开始】
-岗位简介：对应 Overview（研究、设计、开发计算机与网络软件或专用程序，分析用户需求并开发软件方案）；Tasks 第1、8条。
-职责1：分析用户需求与软件需求，判断设计在时间与成本约束下的可行性——Tasks 第1条（重要性77，Core）；Detailed Work Activities 第2条。
-职责2：设计、开发与修改软件系统，并制定测试或验证程序、编程与文档——Tasks 第8条（64，Core）、第2条（73，Core）；Detailed Work Activities 第3、12条。
-职责3：修改现有软件以纠错、适配新硬件或升级接口与性能，并监控系统运行是否符合规格——Tasks 第4条（69，Core）、第12条（78，Supplemental）；Detailed Work Activities 第1、5条。
-职责4：与系统分析师、工程师、程序员等协作确定系统设计、性能要求与接口，并就项目状态与技术问题沟通——Tasks 第3条（69，Core）、第10条（59，Core）；Detailed Work Activities 第6、8条。
-任职要求1（学历）：Education 中85%回答本科，故要求本科及以上；原始比例85%本科、5%副学士、5%硕士，按占比最高层次转换。Job Zone Four 作背景参考。
-任职要求2（经验）：本轮共同设定，3年以上相关工作经验；相关经验范围包括软件开发、软件测试与系统维护等。
-任职要求3（专业知识与工具）：Knowledge 中 Computers and Electronics 重要性94、Mathematics 64；Software Skills 中 Development environment software、Web platform development software、Data base management system software；工具举例取 Git、React、PostgreSQL（各栏目顺序定位）。
-任职要求4（认知能力）：Essential Skills 中 Critical Thinking 72、Active Learning 63；Transferable Skills 中 Complex Problem Solving 60、Judgment and Decision Making 66；合并为分析判断与问题解决能力要求。
-任职要求5（系统分析与程序设计）：Transferable Skills 中 Programming 75、Systems Analysis 63、Systems Evaluation 60；Tasks 第9条（确定系统性能标准）。
+岗位简介：Overview 职业摘要（研究、设计、开发软件并分析用户需求）。
+工作职责：Tasks 第1、3、4、5、9、10条；Detailed Work Activities 第2、3、5、6、9条。
+任职要求：
+- 学历与专业：Education 第1条（Bachelor’s degree required，原始最高占比85%）；Job Zone 第2条。
+- 工作经验：统一设定（5年以上相关工作经验）。
+- 专业技术1：Software Skills 第22、45、66条（开发环境、面向对象开发、Web平台开发）；Tasks 第1、8条。
+- 专业技术2：Software Skills 第16、46条（数据库管理与对象数据库）；Knowledge 第1条。
+- 认知能力：Essential Skills 第1条；Transferable Skills 第2、4条。
+加分项：Software Skills 第13、43、61条（配置管理、程序测试、加密安全工具）。
 【依据记录结束】
 
 【岗位公告开始】
 职位名称：软件开发工程师
 
 岗位简介
-负责研究、设计并开发计算机与网络软件或专用程序，分析用户需求并形成可行的软件解决方案。
+负责分析用户需求并设计、开发与维护软件系统，评估方案在工期与成本约束下的可行性，持续优化系统性能与接口。
 
 工作职责
-1. 分析用户需求与软件需求，评估设计方案在时间与成本约束下的可行性。
-2. 设计、开发并修改软件系统，制定测试或验证程序及相关技术文档。
-3. 修改现有软件以纠正错误、适配新硬件或升级接口与性能，并监控系统运行是否符合规格。
-4. 与系统分析师、工程师、程序员等协作确定系统设计与性能要求，并就项目进展和技术问题保持沟通。
+- 分析用户需求与软件要求，评估设计可行性。
+- 制定软件测试与验证流程及相关文档。
+- 与系统分析、工程及编程人员协作确定系统方案。
+- 修改现有软件以修复缺陷并提升性能。
+- 编写项目规格、进展与状态相关报告。
+- 分析数据以规划新系统安装或改造方案。
 
 任职要求
-1. 本科及以上学历。
-2. 3年以上相关工作经验，具备软件开发、测试或系统维护等实践背景。
-3. 掌握计算机与电子领域知识及必要数学基础，能使用 Git、React、PostgreSQL 等开发与数据工具。
-4. 具备较强的分析判断与问题解决能力，能评估不同方案的优劣并持续学习新技术。
-5. 具备程序设计与系统分析能力，能够确定系统性能标准并据此改进系统表现。
+- 本科及以上学历，计算机、软件工程或相关专业。
+- 5年以上相关工作经验，具备软件系统开发与维护背景。
+- 熟练掌握Java、Python等语言及常用开发框架与工具。
+- 熟悉SQL及主流数据库，能进行数据建模与性能调优。
+- 具备较强的逻辑分析与方案评估能力，能权衡利弊择优决策。
+
+加分项
+- 熟悉容器与配置管理工具（如Docker、Terraform）。
+- 具备自动化测试与持续集成实践经验。
+- 了解加密与安全防护相关技术。
 【岗位公告结束】

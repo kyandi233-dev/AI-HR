@@ -1,13 +1,12 @@
 {
-  "version": "resume_levels_fixed_dates_v2",
+  "version": "resume_levels_unified_pool_v4",
   "levels": {
     "medium": {
-      "name": "中等水平：普通合格、接近岗位基本要求",
-      "education": "本科，专业与目标岗位相关，具备必要专业学习；不增加高学历、名校或突出荣誉。",
-      "experience": "累计3—4年相关工作经历，承担过岗位常规专业任务，可独立完成日常工作，不安排团队管理或大型架构设计职责。",
-      "skills": "具备JD核心知识和技能的常规应用能力，工具选择与经历一致，不写专家级掌握或覆盖全部技术。",
-      "accomplishments": "一项范围清楚的常规项目或专业任务，说明个人工作和基本交付结果，不写重大创新或突出业绩。",
-      "cognitive_evidence": "用识别一般问题、核对信息、比较常规处理方案等经历体现分析和问题解决能力，不直接夸赞能力。",
+      "name": "中等水平",
+      "education": "本科，对口专业，列出3—4门核心专业课程。",
+      "experience": "累计3—4年相关工作经历，从初级岗晋升至常规岗位，独立完成日常模块开发、常规分析或标准运维工作，不涉及架构主导或团队管理。",
+      "skills": "掌握岗位常规核心工具（标注熟练或常规应用），不覆盖JD中的加分项或高阶工具。",
+      "accomplishments": "1项常规业务项目，分2条说明具体技术实现动作与交付结果。",
       "timelines": [
         {
           "education_period": "2019.09—2023.06",
@@ -30,12 +29,11 @@
       ]
     },
     "low": {
-      "name": "低水平：与岗位要求仅部分匹配",
-      "education": "同样为本科，专业与目标岗位仅部分相关；保留一些基础课程或学习经历，但不额外赋予充分的岗位专门训练。",
-      "experience": "累计1—2年相关经历，主要承担助理、基础操作或在他人指导下完成的任务，低于JD的3年门槛；不编写离谱履历或时间矛盾。",
-      "skills": "掌握部分基础知识及常用工具的基本操作，尚未体现JD全部核心技能或独立处理复杂任务的能力。用真实的工作范围体现，不直接自称能力不足。",
-      "accomplishments": "一项较小范围的项目或工作任务，主要提供基础支持，交代可辨认的参与内容和有限交付，不夸大为独立主导。",
-      "cognitive_evidence": "体现按既定步骤整理、核对或完成基础工作，可以识别简单异常并交由他人进一步处理；不虚构灾难性错误、失职或道德问题。",
+      "name": "低水平",
+      "education": "本科，非核心对口专业，列出2—3门基础导论或通识工具课。",
+      "experience": "累计1—2年相关经历，担任实习生或助理岗位，从事数据录入核对、按清单巡检、套用模板或基础辅助测试，不独立负责核心模块。",
+      "skills": "仅掌握少量基础工具的入门操作（标注基础、入门或简单查询），缺少岗位核心技术栈。",
+      "accomplishments": "1项小范围辅助支持工作，分2条说明按指导完成的基础整理工作与辅助文档交付。",
       "timelines": [
         {
           "education_period": "2020.09—2024.06",
@@ -58,6 +56,18 @@
       ]
     }
   },
+  "shared_institutions": {
+    "schools": [
+      "明远大学",
+      "海川大学"
+    ],
+    "companies": [
+      "星河信息技术有限公司",
+      "辰光科技有限公司",
+      "远景软件服务有限公司",
+      "海岳数据技术有限公司"
+    ]
+  },
   "education_majors": {
     "information_security_analysts": {
       "medium": "信息安全",
@@ -74,6 +84,144 @@
     "business_intelligence": {
       "medium": "信息管理与信息系统",
       "low": "公共事业管理"
+    }
+  },
+  "occupation_slots": {
+    "software_developer": {
+      "medium": [
+        {
+          "roles": [
+            "初级后端开发工程师",
+            "软件开发工程师"
+          ],
+          "skill_focus": "Python（熟练）、JavaScript（基础）、SQL；RESTful API、PostgreSQL、Git（熟练）、Docker（基础）"
+        },
+        {
+          "roles": [
+            "助理软件开发工程师",
+            "软件开发工程师"
+          ],
+          "skill_focus": "Java（常规应用）、SQL；Spring Boot、MySQL、Git（熟练）、Jenkins（基础部署）"
+        }
+      ],
+      "low": [
+        {
+          "roles": [
+            "IT技术支持实习生",
+            "软件开发助理"
+          ],
+          "skill_focus": "Python（基础语法）、HTML/CSS（入门）；PostgreSQL（简单查询）、Git（基础提交）"
+        },
+        {
+          "roles": [
+            "信息系统运维实习生",
+            "初级软件测试助理"
+          ],
+          "skill_focus": "JavaScript（入门）、SQL（简单查询）；功能测试记录、Git（查看记录）、Excel"
+        }
+      ]
+    },
+    "data_scientists": {
+      "medium": [
+        {
+          "roles": [
+            "助理数据分析师",
+            "数据科学家"
+          ],
+          "skill_focus": "Python（熟练）、SQL（熟练）；Scikit-learn（回归与树模型）、Pandas、Tableau、Git"
+        },
+        {
+          "roles": [
+            "数据分析师",
+            "数据建模工程师"
+          ],
+          "skill_focus": "Python（常规应用）、R（基础）、SQL；PyTorch（基础）、Power BI、PostgreSQL"
+        }
+      ],
+      "low": [
+        {
+          "roles": [
+            "市场调研数据实习生",
+            "数据分析助理"
+          ],
+          "skill_focus": "Excel（数据透视表）、SPSS（基础描述统计）；SQL（简单查询）、Power BI（套用模板）"
+        },
+        {
+          "roles": [
+            "运营数据录入专员",
+            "初级数据支持助理"
+          ],
+          "skill_focus": "Excel（常规函数与清洗）、Python（入门脚本）；SAS（基础操作）"
+        }
+      ]
+    },
+    "information_security_analysts": {
+      "medium": [
+        {
+          "roles": [
+            "助理安全运维工程师",
+            "信息安全分析师"
+          ],
+          "skill_focus": "防火墙访问策略维护、访问权限审计、Linux基础；Splunk（日志检索）、漏洞扫描工具（常规核查）"
+        },
+        {
+          "roles": [
+            "网络安全专员",
+            "信息安全分析师"
+          ],
+          "skill_focus": "TCP/IP基础、Wireshark（抓包分析）、入侵告警初筛；系统基线核查、应急演练记录"
+        }
+      ],
+      "low": [
+        {
+          "roles": [
+            "IT机房巡检实习生",
+            "信息安全运维助理"
+          ],
+          "skill_focus": "终端杀毒软件状态巡检、账号权限台账整理；Wireshark（基础查看）、Excel"
+        },
+        {
+          "roles": [
+            "信息系统行政助理",
+            "初级安全合规助理"
+          ],
+          "skill_focus": "访问申请工单流转、安全培训记录归档；Splunk（按固定模板导出）、Office套件"
+        }
+      ]
+    },
+    "business_intelligence": {
+      "medium": [
+        {
+          "roles": [
+            "初级数据报表专员",
+            "商业智能分析师"
+          ],
+          "skill_focus": "SQL（熟练编写查询与视图）、Excel（高级函数）；Power BI（常规仪表板开发与维护）、业务指标梳理"
+        },
+        {
+          "roles": [
+            "运营数据分析员",
+            "商业智能分析师"
+          ],
+          "skill_focus": "SQL（常规提取与聚合）、Python（基础数据清洗）；Tableau（可视化看板制作）、月度财务与市场报表"
+        }
+      ],
+      "low": [
+        {
+          "roles": [
+            "商务统计实习生",
+            "数据报表助理"
+          ],
+          "skill_focus": "Excel（常规图表与汇总）、Power BI（日常数据源刷新）；SQL（基础单表查询）"
+        },
+        {
+          "roles": [
+            "销售运营数据文员",
+            "初级业务数据助理"
+          ],
+          "skill_focus": "Excel（基础函数与台账核对）、ERP业务报表常规导出、字段口径登记"
+        }
+      ]
     }
   }
 }

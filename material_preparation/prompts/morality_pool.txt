@@ -1,29 +1,29 @@
-你负责为研究准备行为材料。
+请编写一组候选人工作之外的日常行为材料（含负面道德版与同场域日常中性版）。本次对话独立生成单一编号材料。
 
-【任务身份】
-材料编号：{pair_id}
-目标主题代码：{foundation}
-本次生成方式与差异要求：{generation_route}
+【任务信息】
+- 材料编号：{pair_id}
+- 目标道德基础代码：{foundation}
+- 生成方式与迁移要求：{generation_route}
 
-【概念定义和原作者MFV编写规则】
+【概念定义与原作者MFV编写规则】
 {foundation_rules}
-
-【原作者通用编写原则】
 {author_rules}
 
-【本研究的操作化与写作规则】
+【本研究写作规范】
 {study_rules}
 
-【已有材料或新编方向】
+【来源条目或新编方向】
 {source_material}
 
-请先判断该来源能否改写成成人候选人在私人生活中的具体事件，再构造同一普通活动中的负面与中性两个版本。原条目的推荐状态只提供参考，不能代替对改编文本的检查。
+【不适配（not_adaptable）判定标准】
+出现以下任一情形时，将 status 设为 "not_adaptable"，negative 与 neutral 留空字符串，并在 rejection_reason 中写明具体原因：
+1. 原条目的违规核心依赖职权关系、未成年人特殊处境、刑事重罪、严重躯体伤害或极端性禁忌，温和迁移为成人日常事件后会丧失目标道德基础特征，或无法自然进入公开社媒动态与熟人访谈。
+2. 该生活场景本身无法剥离伤害或义务前提，导致任何同场域记录要么变成主动善举，要么变成见死不救/冷漠失责，无法构造4分日常中性版。
 
-中性版必须与该活动自然相关。它应是同一生活事件中的普通做法，不要把中性写成道德表扬、只说未做坏事，或把已经存在的伤害置之不理。若配对无法自然成立，返回not_adaptable，不要强行编造。
+【格式参考（仅示意句式与同场域中性写法，不沿用桌游情节）】
+- negative：候选人在周末参加朋友组织的桌游聚会时，趁他人不注意偷换计分筹码以赢下牌局。
+- neutral：候选人在周末参加朋友组织的桌游聚会时，与同桌参与者交流新桌面游戏的玩法规则。
 
-正文只写第三人称事件，使用“候选人”。分别检查目标主题、其他主题混入、职业证据、自然中性版本和两版可比性；在review_flags中记录剩余问题，不预设评价结果。
-
-只输出JSON，不输出Markdown。字段如下：
-{{"pair_id":"{pair_id}","foundation":"{foundation}","status":"generated或not_adaptable","scene_summary":"共同生活情境摘要","negative":"负面事件正文","neutral":"中性事件正文","dominant_violation":"用事实说明目标违规机制","adaptation_note":"说明保留与改变的事件要素；新编则说明依据","neutral_rationale":"解释中性行为为何属于同一普通活动，且不构成明显善举或失责","other_foundations":[],"review_flags":[],"rejection_reason":"不适配时说明具体原因；可生成时留空"}}
-
-status为not_adaptable时negative与neutral留空字符串，不输出伪正文；仍填写改编困难与rejection_reason。other_foundations只用care、fairness、loyalty、authority、sanctity、liberty代码。
+【输出格式】
+若存在轻微边界风险填入 review_flags；涉及的次要基础代码（限 care、fairness、loyalty、authority、sanctity、liberty）填入 other_foundations。只输出 JSON 对象，不输出 Markdown 代码块或额外文字：
+{{"pair_id":"{pair_id}","foundation":"{foundation}","status":"generated或not_adaptable","scene_summary":"共同日常场域与关系简述","negative":"负面版本正文（不适配时留空字符串）","neutral":"同场域日常中性版本正文（不适配时留空字符串）","dominant_violation":"用客观事实说明负面版触发目标道德基础的机制","adaptation_note":"说明相对原条目保留与替换的要素，或新编构思依据","neutral_rationale":"说明中性版如何保留同一场域并撤除道德考验","other_foundations":[],"review_flags":[],"rejection_reason":"不适配原因；可生成时留空字符串"}}
