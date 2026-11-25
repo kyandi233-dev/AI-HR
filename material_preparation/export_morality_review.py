@@ -20,14 +20,13 @@ from shared.storage import input_files, request_for
 from shared import material_results as mr
 from material_preparation.morality_inputs import validate_generated
 from material_preparation.run_morality_generation import preview
-from material_preparation.run_material_generation import immutable_bytes
 from material_preparation.export_individual_reviews import finish_workbook
 from material_preparation.reviewer_config import load_team, reviewer_file
 
 FIRST_ROW = 6
-REVIEW_HEADERS = ['材料编号','道德主题','生成状态','配对正文','可理解性','自然性','负面效价','中性效价',
+REVIEW_HEADERS = ['材料编号','道德主题','生成状态','负面版本','中性版本','可理解性','自然性','负面效价','中性效价',
                   '主要主题','配对合理性','明显专业证据','审核结论','问题说明','审核日期','材料版本']
-REVIEW_MANUAL = REVIEW_HEADERS[4:14]
+REVIEW_MANUAL = ['可理解性','自然性','负面效价','中性效价','主要主题','配对合理性','明显专业证据','审核结论','问题说明','审核日期']
 MASTER_MANUAL = ['最终是否纳入','决策备注']
 
 
@@ -101,7 +100,8 @@ def material_rows(tasks, settings, root, run_id):
         spec = task['metadata']['spec']
         expected_req = request_for(task, settings)
         req_sha = c.sha256(c.canonical(expected_req))
-        state, parsed, body, generated_sha = '待生成', None, None, None
+        state, parsed, generated_sha = '待生成', None, None
+        neg_text, neu_text = None, None
         output = None
         if pid in latest:
             record, inp = latest[pid]
@@ -124,10 +124,8 @@ def material_rows(tasks, settings, root, run_id):
                     if c.load_json(draft) != parsed:
                         raise ValueError('草稿与成功响应不一致：' + pid)
                     generated_sha = c.sha256(draft.read_bytes())
-                    body = review_root() / 'materials' / run_id / (pid + '.md')
-                    display = (f'# {pid}\n\n## 负面版本\n\n{parsed["negative"]}\n\n'
-                               f'## 中性版本\n\n{parsed["neutral"]}\n')
-                    immutable_bytes(body, display.encode('utf-8'))
+                    neg_text = parsed['negative']
+                    neu_text = parsed['neutral']
                     state = '已生成'
             else:
                 state = ('待生成' if not out.exists() else
@@ -150,8 +148,9 @@ def material_rows(tasks, settings, root, run_id):
                      '来源方式': 'MFV改编' if spec['source'] else '规则新编',
                      'MFV编号': spec['source']['library_item_number'] if spec['source'] else None,
                      '原条目推荐': ('是' if spec['source']['recommended'] else '否') if spec['source'] else '不适用',
-                     '生成状态': state, '生成备注': '；'.join(notes) or None, '材料版本': version,
-                     '_body': str(body) if body else None, '_prompt': str(latest[pid][1]) if pid in latest else None,
+                     '生成状态': state, '负面版本': neg_text, '中性版本': neu_text,
+                     '生成备注': '；'.join(notes) or None, '材料版本': version,
+                     '_prompt': str(latest[pid][1]) if pid in latest else None,
                      '_parsed': parsed, '_error': (output or {}).get('error_message'),
                      '_request_sha256': req_sha})
     return rows
@@ -165,14 +164,13 @@ def sheet_spec(rows, headers, target):
     values, links = [], []
     for number, row in enumerate(rows, FIRST_ROW):
         output = {**row}
-        for name, key in [('配对正文', '_body'), ('调用输入', '_prompt')]:
-            if name in headers:
-                path = row.get(key)
-                output[name] = '打开正文' if name == '配对正文' and path else ('打开调用输入' if path else None)
-                if path:
-                    if not Path(path).is_file():
-                        raise ValueError('链接目标不存在：' + path)
-                    links.append({'cell': get_column_letter(headers.index(name) + 1) + str(number), 'target': path})
+        if '调用输入' in headers:
+            path = row.get('_prompt')
+            output['调用输入'] = '打开调用输入' if path else None
+            if path:
+                if not Path(path).is_file():
+                    raise ValueError('链接目标不存在：' + path)
+                links.append({'cell': get_column_letter(headers.index('调用输入') + 1) + str(number), 'target': path})
         values.append([serial(output.get(name)) for name in headers])
     return {'headers': headers, 'rows': values, 'links': links, 'review': str(target)}
 
@@ -193,7 +191,7 @@ def make_payload(config, protocol, catalog, tasks, settings, root, run_id):
         specs.append({**sheet_spec(rows, REVIEW_HEADERS, target), 'kind': 'reviewer', 'title': person + ' · 道德材料审核', 'manual': REVIEW_MANUAL})
     master = review_root() / '道德材料汇总.xlsx'
     before[str(master)] = c.sha256(master.read_bytes()) if master.exists() else None
-    headers = ['材料编号','道德主题','来源方式','MFV编号','原条目推荐','生成状态','配对正文','调用输入','生成备注',
+    headers = ['材料编号','道德主题','来源方式','MFV编号','原条目推荐','生成状态','负面版本','中性版本','调用输入','生成备注',
                *people, '最终是否纳入','决策备注','材料版本']
     master_rows = preserve(current, read_saved(master, MASTER_MANUAL))
     for row in master_rows:

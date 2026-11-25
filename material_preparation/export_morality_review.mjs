@@ -40,7 +40,7 @@ function standards(w) {
   const rows=Object.values(p.foundations).map(x=>[x.label,x.definition,x.author_operationalization,x.project_adaptation]);
   table(s,['主题','文献定义','MFV作者操作化与编写边界','本研究的迁移要求'],rows,[20,46,80,70],'FoundationStandards');
   title(s,'定义与审查标准','质量评分1=很差、7=很好；道德效价1=非常不道德、4=中性、7=非常道德。');
-  s.getRange('A4').values=[['先打开正文再填写黄色列；待生成任务不可作材料审核结论。']];
+  s.getRange('A4').values=[['先阅读同行负面版本与中性版本再填写黄色列；待生成任务不可作材料审核结论。']];
   let row=14;
   const sections=[['原作者通用规则',p.author_general_rules],['本研究配对规则',p.study_rules],
                   ['评价说明',[p.human_validation_note,p.review_scale_note,'明显专业证据只作文本初筛，正式岗位关联性仍需结合对应JD；各成员意见不自动转为最终纳入决定。']],
@@ -75,12 +75,12 @@ for(let index=0;index<payload.specs.length;index++){
   const spec=payload.specs[index],w=Workbook.create();
   const s=w.worksheets.add(spec.kind==='master'?'材料汇总':'材料审核');
   const widths=spec.headers.map(h=>({'材料编号':24,'道德主题':20,'来源方式':15,'MFV编号':13,'原条目推荐':15,
-    '生成状态':15,'配对正文':16,'调用输入':18,'生成备注':48,'问题说明':48,'决策备注':48,'材料版本':22,
+    '生成状态':15,'负面版本':46,'中性版本':46,'调用输入':18,'生成备注':48,'问题说明':48,'决策备注':48,'材料版本':22,
     '主要主题':24,'明显专业证据':23,'审核结论':18,'审核日期':17,'最终是否纳入':20}[h]??15));
   const rows=spec.rows.map(row=>row.map(v=>v&&typeof v==='object'&&v.date?new Date(v.date):v));
   const last=table(s,spec.headers,rows,widths,'MoralityReview');
   title(s,spec.title,'黄色列为人工填写；只审查已生成正文。此文件可刷新，按材料编号与版本保留意见。');
-  s.getRange('A4').values=[['未调用模型时正文链接为空；总表导入'+payload.reviewers.length+'名成员意见，最终是否纳入由研究者填写。']];
+  s.getRange('A4').values=[['未调用模型时正文字段为空；总表导入'+payload.reviewers.length+'名成员意见，最终是否纳入由研究者填写。']];
   s.getRange('A2').values=[['计划任务']];s.getRange('B2').values=[[rows.length]];
   const statusCol=col(spec.headers.indexOf('生成状态')+1);
   s.getRange('D2').values=[['已生成正文']];s.getRange('E2').formulas=[[`=COUNTIFS(${statusCol}6:${statusCol}${last},"已生成")`]];

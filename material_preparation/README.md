@@ -35,7 +35,7 @@
 
 `review`只存审核表和审核记录，正文统一来自drafts。已按用户授权删除16份额外排版副本，相关导出、刷新及批准脚本不再创建或加工副本。简历批准时逐字节复制原稿；JD批准时只执行约定的岗位公告边界提取。短横线等格式要求由提示词约束后续生成，已有原始回答不改动。清理脚本为 `cleanup_review_copies.py`，收据记录在 `review/review_copy_cleanup.json`。
 
-个人表的“职业资料”复用总表的 `workbook_jump_formula`，通过 `CELL("filename",A1)` 动态拼接相对于当前工作簿所在目录的本地路径，直接打开目标 `职业资料.xlsx` 的 `Overview!A1`；JD／简历与道德阅读页统一使用正斜杠 `/` 相对文件链接。移动仓库或组员 `git clone` 到其他电脑后无需重跑脚本即可直接跳转；如需对旧文件做局部链接升级，可运行 `export_individual_reviews.py --links-only --execute`，保留现有排版和审核值。
+个人表的“职业资料”复用总表的 `workbook_jump_formula`，通过 `CELL("filename",A1)` 动态拼接相对于当前工作簿所在目录的本地路径，直接打开目标 `职业资料.xlsx` 的 `Overview!A1`；JD／简历文本使用正斜杠 `/` 相对文件链接；道德汇总表与道德个人表直接在表内并列展示`负面版本`与`中性版本`正文，不另建外部阅读文件。移动仓库或组员 `git clone` 到其他电脑后无需重跑脚本即可直接查看或跳转；如需对旧职业表做局部链接升级，可运行 `export_individual_reviews.py --links-only --execute`，保留现有排版和审核值。
 
 当前四份JD与十六份分级简历位于 `results/occupation_generation/20261125_012`，按职业配套。道德当前批次位于 `results/morality_generation/20261124_004`，268项尚未执行。每批只有一份“批次信息.json”和“调用清单.csv”，单次调用只保存input／output；具体读取方法和历史迁移说明见[材料生成记录](../docs/材料生成记录.md)。历史原始回答和已有草稿保持原文，不代填审核结论、不自动放入approved。
 

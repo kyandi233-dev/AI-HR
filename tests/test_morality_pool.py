@@ -130,8 +130,9 @@ class MoralityPoolTests(unittest.TestCase):
             storage.save_draft(task, content, parsed)
             rows = material_rows(tasks, settings, folder, run_id)
             self.assertEqual(rows[0]['生成状态'], '已生成')
-            body = Path(rows[0]['_body']).read_text(encoding='utf-8')
-            self.assertIn(parsed['negative'], body)
+            self.assertEqual(rows[0]['负面版本'], parsed['negative'])
+            self.assertEqual(rows[0]['中性版本'], parsed['neutral'])
+            self.assertFalse((Path(temp) / 'material_preparation/review/mority/materials').exists())
             draft = Path(temp) / 'material_preparation/drafts/morality' / (task['task_id'] + '.json')
             changed = {**parsed, 'negative': '被改写的正文'}
             draft.write_text(c.canonical(changed), encoding='utf-8')
@@ -171,7 +172,8 @@ class MoralityPoolTests(unittest.TestCase):
             row = material_rows(tasks, settings, folder, run_id)[0]
             self.assertEqual(row['生成状态'], '不适配')
             self.assertIn('自然配对不成立', row['生成备注'])
-            self.assertIsNone(row['_body'])
+            self.assertIsNone(row['负面版本'])
+            self.assertIsNone(row['中性版本'])
 
 
 if __name__ == '__main__':
