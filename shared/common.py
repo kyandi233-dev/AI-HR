@@ -41,6 +41,9 @@ def occupations_file():
 
 
 def load_json(path: Path):
+    if not path.is_file():
+        from .material_results import legacy_bytes
+        return json.loads(legacy_bytes(path).decode('utf-8'))
     return json.loads(path.read_text(encoding='utf-8'))
 
 def load_text(path: Path):

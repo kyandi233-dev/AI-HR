@@ -11,6 +11,7 @@ from types import SimpleNamespace
 from shared import common as c
 from shared.api import request_kwargs
 from shared.batch import freeze, validate_run_id
+from shared import material_results as mr
 from shared.storage import path_for, request_for, pending, record_task
 from material_preparation.morality_inputs import build_tasks
 from material_preparation.run_material_generation import immutable_bytes, immutable_json
@@ -21,7 +22,6 @@ def preview(config_path=None, run_id=None):
     run_id = run_id or config['run_id']
     validate_run_id(run_id)
     settings = c.load_settings('moral-generate')
-    root = c.ROOT / 'material_preparation/results/morality_generation' / run_id
     plan = {'task': 'moral-generate', 'run_id': run_id, 'stage': 'pilot', 'occupations': [],
             'protocol_version': protocol['protocol_version'],
             'config': {k: v for k, v in config.items() if k not in ('reviewers', 'review_files', 'review_config')},
@@ -30,20 +30,7 @@ def preview(config_path=None, run_id=None):
     # Validate every request and any previous immutable plan before writing files.
     for task in tasks:
         request_kwargs(settings, task)
-    plan_path = root / 'plan.json'
-    if plan_path.exists():
-        existing = c.load_json(plan_path)
-        existing['config'] = {k: v for k, v in existing['config'].items()
-                              if k not in ('reviewers', 'review_files', 'review_config')}
-        if existing != plan:
-            raise ValueError('已有不同内容，不覆盖：' + str(plan_path))
-        # Historical plans retain their original bytes; reviewer names are not scientific inputs.
-    else:
-        immutable_json(plan_path, plan)
-    for task in tasks:
-        base = path_for(task, run_id)
-        immutable_bytes(base / (task['task_id'] + '.prompt.txt'), task['messages'][0]['content'].encode('utf-8'))
-        immutable_json(base / (task['task_id'] + '.request.json'), request_for(task, settings))
+    root=mr.prepare(tasks,settings,SimpleNamespace(run_id=run_id,stage='pilot',concurrency=1),plan)
     return config, protocol, catalog, tasks, settings, root, run_id
 
 
@@ -55,12 +42,19 @@ def run(argv=None):
     p.add_argument('--source-id', help='例如mfv_003；仅限制本次执行，不改变冻结的总任务池')
     p.add_argument('--limit', type=int)
     p.add_argument('--concurrency', type=int, default=1)
+    p.add_argument('--api-timeout', type=int, help='本次传输等待秒数；不改变提示词和模型参数')
+    p.add_argument('--stream', action='store_true', help='流式接收；完整保留返回片段和拼接原文')
     p.add_argument('--execute', action='store_true')
     p.add_argument('--retry-failed', action='store_true')
     args = p.parse_args(argv)
     if args.concurrency < 1 or (args.limit is not None and args.limit < 1):
         raise ValueError('并发数与limit必须为正整数')
+    if args.api_timeout is not None and args.api_timeout < 1:
+        raise ValueError('等待秒数必须为正整数')
     config, protocol, catalog, tasks, settings, root, run_id = preview(args.config, args.run_id)
+    settings['_stream'] = args.stream
+    if args.api_timeout is not None:
+        settings['api_timeout_seconds'] = args.api_timeout
     execution = SimpleNamespace(task='moral-generate', run_id=run_id, stage='pilot', occupations=[],
                                 concurrency=args.concurrency, retry_failed=args.retry_failed)
     matching = [t for t in tasks if (not args.foundation or t['metadata']['foundation'] == args.foundation)
@@ -91,6 +85,7 @@ def run(argv=None):
     else:
         with ThreadPoolExecutor(max_workers=args.concurrency) as pool:
             statuses = list(pool.map(execute, todo))
+    mr.refresh(root)
     print(f'成功={statuses.count("ok")}；失败={statuses.count("error")}；请刷新道德审核表。')
     return 1 if 'error' in statuses else 0
 

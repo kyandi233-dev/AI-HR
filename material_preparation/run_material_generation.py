@@ -13,6 +13,7 @@ from openpyxl import load_workbook
 from shared import common as c
 from shared.storage import path_for, request_for, write_json, input_files
 from shared.batch import validate_run_id
+from shared import material_results as mr
 from material_preparation.review_schema import approval_value,is_approved
 
 
@@ -52,8 +53,8 @@ def immutable_json(path,value):
 
 def successful_record(task,run_id):
     base=path_for(task,run_id)
-    for inp in reversed(input_files(base,task['task_id'])):
-        out=inp.with_name(inp.name.replace('.input.json','.output.json'))
+    for inp in reversed(mr.inputs(base,task['task_id'],task['task'])):
+        out=mr.output_path(inp)
         if out.exists():
             result=c.load_json(out)
             if result.get('status')=='ok': return inp,out,result
@@ -114,22 +115,9 @@ def run(argv=None):
             _,_,result=successful_record(task,args.run_id)
             if draft.read_bytes().decode('utf-8')!=result['answer']:
                 raise ValueError('草稿与原始响应不同，停止：'+str(draft))
-    root=c.ROOT/'material_preparation/results/material_generation'/args.run_id
     plan={'task':args.task,'run_id':args.run_id,'stage':'pilot','occupations':selected,'count':args.count}
     if args.task=='resume': plan.update(levels=args.levels or ['medium'],jd_run_id=args.jd_run_id)
-    immutable_json(root/'plan.json',plan)
-    previews=[]
-    for task in tasks:
-        base=path_for(task,args.run_id)
-        prompt=base/(task['task_id']+'.prompt.txt')
-        request=base/(task['task_id']+'.request.json')
-        immutable_bytes(prompt,task['messages'][0]['content'].encode('utf-8'))
-        immutable_json(request,request_for(task,settings))
-        previews.append({'occupation':task['metadata']['occupation'],'task_id':task['task_id'],
-                         'prompt':prompt.relative_to(c.ROOT).as_posix(),
-                         'request':request.relative_to(c.ROOT).as_posix(),
-                         'request_sha256':c.sha256(c.canonical(request_for(task,settings)))})
-    immutable_json(root/'preview_manifest.json',{'plan':plan,'requests':previews})
+    root=mr.prepare(tasks,settings,SimpleNamespace(**plan,concurrency=args.concurrency),plan)
     print('已保存完整输入预览：',len(tasks),'份；职业：',', '.join(selected))
     if not args.execute:
         print('未调用模型。执行同一命令并添加 --execute 才开始生成。')
@@ -160,7 +148,7 @@ def run(argv=None):
             inp,out,result=successful_record(task,args.run_id)
         except ValueError:
             continue
-        if c.load_json(inp)['request']!=request_for(task,settings):
+        if not mr.request_equivalent(c.load_json(inp)['request'],request_for(task,settings)):
             raise ValueError('请求记录与预览不一致')
         paths=c.job_files(task['metadata']['occupation'])
         draft=paths['jd_draft'] if args.task=='jd' else paths['drafts']/(task['metadata']['resume_id']+'.txt')
@@ -175,17 +163,7 @@ def run(argv=None):
                           'input':inp.relative_to(c.ROOT).as_posix(),'output':out.relative_to(c.ROOT).as_posix(),
                           **{k:task['metadata'][k] for k in ('ability_level','level_replica','jd_run_id') if k in task['metadata']},
                           'review_flags':flags})
-    write_json(root/'generated_manifest.json',{'task':args.task,'run_id':args.run_id,'materials':generated})
-    if args.task=='resume':
-        with (root/'简历生成清单.csv').open('w',encoding='utf-8-sig',newline='') as f:
-            writer=csv.writer(f)
-            writer.writerow(['职业','O*NET编码','简历编号','目标水平','同水平份数编号','JD来源批次','简历文件','完整提示词'])
-            for item in generated:
-                info=registry[item['occupation']]
-                writer.writerow([info['onet_name'],info['onet_code'],item['task_id'],
-                    {'medium':'中等','low':'低'}[item['ability_level']],item['level_replica'],
-                    item.get('jd_run_id') or 'approved',str(c.ROOT/item['draft']),
-                    str((c.ROOT/item['input']).parent.parent/(item['task_id']+'.prompt.txt'))])
+    mr.save_manifest(args.task,args.run_id,{'task':args.task,'run_id':args.run_id,'materials':generated})
     print('原文及调用记录核验通过：',len(generated),'份；记录：',root.relative_to(c.ROOT))
     return status
 

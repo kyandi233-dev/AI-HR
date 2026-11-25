@@ -26,7 +26,7 @@ python -m venv .venv
 .\.venv\Scripts\python.exe -X utf8 -B material_preparation/fetch_occupations.py --all
 
 # 抓取初始页；默认每职业间隔0.5秒
-.\.venv\Scripts\python.exe -X utf8 -B material_preparation/fetch_occupations.py --all --execute --run-id occupation_sources_20261121
+.\.venv\Scripts\python.exe -X utf8 -B material_preparation/fetch_occupations.py --all --execute
 
 # 只解析已保存的文件，不联网
 .\.venv\Scripts\python.exe -X utf8 -B material_preparation/parse_occupations.py --all
@@ -69,7 +69,7 @@ material_preparation/sources/occupations/Software_Developers_15-1252.00/onet/
 
 仅保留新版：总表的CSV是`review/职业汇总.csv`，导出记录是`review/export_manifest.json`；每个职业新版栏目CSV位于各自的`onet/csv/`。旧版通用明细CSV、旧导出记录和Excel旧备份已按用户要求删除，不再生成双版本目录。
 
-总表使用Excel原生`HYPERLINK("[完整路径]Overview!A1","打开职业资料")`公式，指定目标工作簿及概览页，不使用`file:///`及百分号编码。核验脚本检查70个公式及其目标文件。移动仓库或换电脑后，重新运行`--summary-only`即可按当前路径生成公式。CSV保存显示文字，不包含跳转功能；请用Excel总表审核。
+总表使用基于 `CELL("filename",A1)` 动态解析本地相对路径的 `HYPERLINK` 公式，打开对应 `职业资料.xlsx` 的 `Overview!A1`，不写死本机盘符，也不使用 `file:///` 及百分号编码；外部文本材料统一使用正斜杠 `/` 相对路径，组员 `git clone` 到任意目录或跨系统均可直接跳转。CSV保存显示文字，不包含跳转功能；请用Excel总表审核。
 
 仅在各职业来源和解析结果不变、独立表已经使用新版栏目布局时，可用 `export_occupation_review.py --summary-only` 只更新总表。三个军事职业的初始页面声明不采集军职详细数据，保留概述和职业信息入口，总表标注“资料有限”，不生成不存在的Tasks等清单。
 

@@ -16,7 +16,9 @@ backups/
 
 .venv/
 
-# Each stage keeps its own results. Preserve the existing tracked pilot archive.
+# Material results use onet_download/occupation_generation/morality_generation.
+# Ignore batch payloads; keep the migration map in config/results_layout.json tracked.
+# Preserve the existing tracked experiment pilot archive.
 /material_preparation/results/*/
 /experiments/*/results/*/
 !/experiments/exp_1_principles/results/20261116_principles_pilot_02/

@@ -1,0 +1,14 @@
+{
+  "pair_id": "CARE_01502",
+  "foundation": "care",
+  "status": "generated",
+  "scene_summary": "成年人在亲友聚餐场合中的同龄平辈关系，围绕外貌比较与闲谈展开",
+  "negative": "候选人在亲友聚餐时，当着一桌人的面说堂弟比堂哥耐看多了，还追问堂弟怎么不学着打扮。",
+  "neutral": "候选人在亲友聚餐时，和同桌亲戚聊起最近各自追的剧，说到兴起还互相推荐片单。",
+  "dominant_violation": "当众以他人外貌作高低比较并使对方难堪，直接造成情感伤害",
+  "adaptation_note": "保留原条目“以兄弟外貌比较贬低其中一方”的核心违规机制，将校园同学场景替换为亲友聚餐，关系改为成年平辈亲戚，去除了未成年人处境",
+  "neutral_rationale": "同一聚餐场合与亲戚关系，仅记录日常闲聊与内容推荐，无外貌比较、无难堪处境",
+  "other_foundations": [],
+  "review_flags": [],
+  "rejection_reason": ""
+}

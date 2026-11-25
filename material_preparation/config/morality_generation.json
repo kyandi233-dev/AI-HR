@@ -1,5 +1,5 @@
 {
-  "run_id": "morality_pool_v3_20261124_r2",
+  "run_id": "20261124_004",
   "protocol": "material_preparation/config/morality_protocol.json",
   "catalog": "material_preparation/sources/morality/mfv_catalog.json",
   "include_nonrecommended": true,

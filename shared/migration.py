@@ -29,6 +29,9 @@ def migrate_batch(source):
                 outputs[key]={'raw_response':c.load_json(folder/'raw_response.json') if (folder/'raw_response.json').exists() else None,
                               'answer':(folder/'answer.txt').read_text(encoding='utf-8') if (folder/'answer.txt').exists() else None}
     if not inputs: return
+    from . import material_results as mr
+    if old['task'] in mr.KINDS:
+        raise ValueError('材料档案使用 material_preparation/migrate_result_layout.py 迁移，不使用实验旧格式迁移器')
     target=path_for(inputs[0]['request']['task'],old['run_id'])
     if (target/'batch.json').exists():
         if target==source and c.load_json(target/'batch.json').get('historical_import'):
@@ -82,7 +85,7 @@ def migrate_results():
     # Preserve a former mixed-task CSV as source evidence if one exists.
     old=c.ROOT/'results/all_results.csv'
     if old.exists():
-        archive=c.ROOT/'material_preparation/results/legacy/all_results.csv'
+        archive=c.ROOT/'material_preparation/results/occupation_generation/历史汇总.csv'
         archive.parent.mkdir(parents=True,exist_ok=True)
         if archive.exists():
             if archive.read_bytes()!=old.read_bytes(): raise ValueError('历史总表存档冲突')

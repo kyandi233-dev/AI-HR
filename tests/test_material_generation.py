@@ -7,6 +7,7 @@ from openpyxl import Workbook
 import unittest
 import test_pipeline as pipeline
 from shared import common as c, storage
+from shared import material_results as mr
 from material_preparation.generation_inputs import read_occupation_data,read_jd_occupation_data,project_jd_modules,extract_jd,MARKERS
 from material_preparation.generate_jd import make_tasks
 from material_preparation.run_material_generation import run as generate
@@ -126,12 +127,13 @@ class GenerationTests(unittest.TestCase):
             self.assertEqual(generate(['--task','jd','--run-id','preview','--review',str(review)]),0)
             call.assert_not_called()
         self.assertEqual(review.read_bytes(),before)
-        manifest=c.load_json(self.root/'material_preparation/results/material_generation/preview/preview_manifest.json')
-        self.assertEqual(len(manifest['requests']),1)
-        request=c.load_json(self.root/manifest['requests'][0]['request'])
-        prompt=(self.root/manifest['requests'][0]['prompt']).read_bytes().decode('utf-8')
-        self.assertEqual(request['task']['messages'][0]['content'],prompt)
-        self.assertFalse(list(self.root.rglob('*.output.json')))
+        base=mr.batch_root('jd','preview');records=mr.inputs(base)
+        self.assertEqual(len(records),1)
+        request=c.load_json(records[0])['request']
+        self.assertIn('职业',request['task']['messages'][0]['content'])
+        self.assertFalse(list(base.rglob('output.json')))
+        self.assertFalse(list(base.rglob('*.prompt.txt')))
+        self.assertFalse(list(base.rglob('*.request.json')))
         self.assertEqual(old_draft.read_bytes(),b'Existing original must survive new previews.')
         self.assertIn('input_projection',request['task']['metadata'])
 
@@ -143,7 +145,7 @@ class GenerationTests(unittest.TestCase):
             model_dump=lambda **kw:{'choices':[{'message':{'content':ANSWER}}],'usage':{}})
         with patch.object(storage,'api_request',return_value=(response,{})),patch.dict('os.environ',{'DEEPSEEK_API_KEY':'fake'}):
             generate(['--task','jd','--run-id','new_layout','--review',str(review),'--execute'])
-        manifest=self.root/'material_preparation/results/material_generation/new_layout/generated_manifest.json'
+        manifest=mr.load_manifest('jd','new_layout')
         b=Workbook();s=b.active;s.title='职业汇总'
         s.append(['O*NET Code','是否选用','JD','JD是否纳入','审核备注'])
         s.append(['15-1252.00',1,'打开JD原稿',None,'保留人工备注'])
@@ -183,7 +185,7 @@ class GenerationTests(unittest.TestCase):
             model_dump=lambda **kw:{'choices':[{'message':{'content':ANSWER}}],'usage':{}})
         with patch.object(storage,'api_request',return_value=(response,{})),patch.dict('os.environ',{'DEEPSEEK_API_KEY':'fake'}):
             self.assertEqual(generate(['--task','jd','--run-id','generated','--review',str(review),'--execute']),0)
-        manifest=self.root/'material_preparation/results/material_generation/generated/generated_manifest.json'
+        manifest=mr.load_manifest('jd','generated')
         self.assertEqual(approval_plan(review,manifest),[])
         self.workbook('通过')
         plan=approval_plan(review,manifest)
@@ -204,17 +206,17 @@ class GenerationTests(unittest.TestCase):
         with patch.object(storage,'api_request',return_value=(response,{})),patch.dict('os.environ',{'DEEPSEEK_API_KEY':'fake'}):
             generate(['--task','jd','--run-id','old','--review',str(review),'--execute'])
         from material_preparation.remove_jd_drafts import removal_plan,run as remove
-        root=self.root/'material_preparation/results/material_generation/old'
-        manifest=root/'generated_manifest.json'
+        root=mr.batch_root('jd','old')
+        manifest=mr.load_manifest('jd','old')
         draft=c.job_files('software_developer')['jd_draft']
         saved=draft.read_bytes(); draft.write_bytes(b'User changed this draft')
         with self.assertRaisesRegex(ValueError,'已被修改'): removal_plan(manifest)
         self.assertTrue(draft.exists())
         draft.write_bytes(saved)
-        all_records={p:p.read_bytes() for p in self.root.rglob('*.output.json')}
+        all_records={p:p.read_bytes() for p in root.rglob('output.json')}
         self.assertEqual(remove(['--run-id','old','--execute']),0)
         self.assertFalse(draft.exists())
-        self.assertTrue((root/'draft_removal.json').exists())
+        self.assertTrue(mr.info(root)['draft_removals'])
         self.assertEqual(removal_plan(manifest),[])
         for p,raw in all_records.items(): self.assertEqual(p.read_bytes(),raw)
 

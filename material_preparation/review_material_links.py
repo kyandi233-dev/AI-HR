@@ -18,10 +18,12 @@ from xml.etree import ElementTree as E
 from openpyxl import load_workbook
 from openpyxl.utils import get_column_letter
 from shared import common as c
+from shared import material_results as mr
 from shared.batch import validate_run_id
 from material_preparation.review_schema import HEADERS,LINK_COLUMNS,approval_value
 from material_preparation.review_navigation import xml,encoded,Q,REL,PKG
 from material_preparation.resume_inputs import generated_jd
+from material_preparation.occupation_review_layout import workbook_jump_formula
 
 OLD_LINKS={'JD原稿','中等1（R01）','中等2（R02）','低1（R03）','低2（R04）'}
 
@@ -49,7 +51,7 @@ def model(review,run_id,jd_run_id):
     _,old_rows,extra=read_review(review)
     headers=HEADERS+extra; registry=c.load_json(c.occupations_file())
     by_code={info['onet_code']:slug for slug,info in registry.items()}
-    manifest=c.load_json(c.ROOT/'material_preparation/results/material_generation'/run_id/'generated_manifest.json')
+    manifest=mr.load_manifest('resume',run_id)
     if manifest['task']!='resume': raise ValueError('指定批次不是简历')
     generated={}; sources={}
     for item in manifest['materials']:
@@ -59,7 +61,7 @@ def model(review,run_id,jd_run_id):
         if raw_path!=(c.job_files(slug)['drafts']/(rid+'.txt')).resolve(): raise ValueError('草稿路径不匹配')
         raw=raw_path.read_bytes(); out_path=(c.ROOT/item['output']).resolve(); response=c.load_json(out_path)
         if (c.sha256(raw)!=item['draft_sha256'] or raw.decode('utf-8')!=response.get('answer')
-            or response.get('status')!='ok' or response.get('run_id')!=run_id
+            or response.get('status')!='ok' or not mr.run_matches('resume',run_id,response.get('run_id'))
             or response['raw_response']['choices'][0]['message']['content']!=response['answer']):
             raise ValueError('简历原文或响应记录变化')
         generated[key]={'target':str(raw_path),'sha256':c.sha256(raw)}
@@ -68,6 +70,10 @@ def model(review,run_id,jd_run_id):
     for row_number,old in enumerate(old_rows,2):
         code=old['O*NET Code']; slug=by_code.get(code)
         row={key:old.get(key) for key in headers}
+        if slug and '职业资料文件' in headers:
+            wb_target=c.job_files(slug)['source']/'职业资料.xlsx'
+            if wb_target.is_file():
+                row['职业资料文件']=workbook_jump_formula(wb_target,review)
         for material in ['JD']+[f'简历{i}' for i in range(1,5)]:row[material+'是否纳入']=approval_value(old,material)
         if old.get('人工分类') is not None:removed[code]=old['人工分类']
         for key in LINK_COLUMNS:row[key]=None
@@ -98,7 +104,7 @@ def external_links(book_path,target,payload):
     rels=xml(parts[rel_path]) if rel_path in parts else E.Element('{'+PKG+'}Relationships')
     for n,item in enumerate(payload['links'],1):
         rid='materialLink'+str(n)
-        address=os.path.relpath(item['target'],start=Path(payload['review']).parent)
+        address=os.path.relpath(item['target'],start=Path(payload['review']).parent).replace('\\','/')
         E.SubElement(links,Q('hyperlink'),{'ref':item['cell'],'{'+REL+'}id':rid})
         E.SubElement(rels,'{'+PKG+'}Relationship',{'Id':rid,'Type':REL+'/hyperlink','Target':address,'TargetMode':'External'})
     sheet.find(Q('sheetViews'))[0].set('zoomScale','90')
@@ -123,6 +129,8 @@ def validate(path,payload):
         for item in payload['links']:
             link=s[item['cell']].hyperlink
             if not link or not link.target:raise ValueError('文件链接丢失')
+            if '\\' in link.target or ':' in link.target or link.target.startswith('/'):
+                raise ValueError('文件链接必须为正斜杠相对路径：'+link.target)
             if (Path(payload['review']).parent/link.target).resolve()!=Path(item['target']).resolve():raise ValueError('文件链接目标不匹配')
     finally:w.close()
     for name,sha in payload['sources'].items():
@@ -130,12 +138,24 @@ def validate(path,payload):
 
 
 def retarget_links(review,payload):
-    """Patch native file links only, retaining all existing cells, styles and review inputs."""
+    """Patch native file links and portable workbook jump formulas, retaining all review inputs."""
     before=c.sha256(review.read_bytes())
     with ZipFile(review) as z:parts={name:z.read(name) for name in z.namelist()}
     sheet=xml(parts['xl/worksheets/sheet1.xml']);links=sheet.find(Q('hyperlinks'))
+    cells={node.get('r'):node for node in sheet.iter(Q('c'))}
+    for row_no,row in enumerate(payload['rows'],2):
+        for col_no,value in enumerate(row,1):
+            if not isinstance(value,str) or not value.startswith('=HYPERLINK('):continue
+            ref=get_column_letter(col_no)+str(row_no)
+            cell=cells.get(ref)
+            if cell is None:continue
+            for child in list(cell):
+                if child.tag in {Q('f'),Q('v'),Q('is')}:cell.remove(child)
+            cell.set('t','str')
+            E.SubElement(cell,Q('f')).text=value[1:]
+            E.SubElement(cell,Q('v')).text='打开职业资料'
     rel_path='xl/worksheets/_rels/sheet1.xml.rels';rels=xml(parts[rel_path])
-    by_cell={link.get('ref'):link for link in links}
+    by_cell={link.get('ref'):link for link in links} if links is not None else {}
     ids={rel.get('Id') for rel in rels}
     for n,item in enumerate(payload['links'],1):
         node=by_cell.get(item['cell'])
@@ -144,10 +164,13 @@ def retarget_links(review,payload):
         while rid in ids:rid+='x'
         ids.add(rid);node.attrib.pop('location',None);node.set('{'+REL+'}id',rid)
         E.SubElement(rels,'{'+PKG+'}Relationship',{'Id':rid,'Type':REL+'/hyperlink',
-            'Target':os.path.relpath(item['target'],start=review.parent),'TargetMode':'External'})
+            'Target':os.path.relpath(item['target'],start=review.parent).replace('\\','/'),'TargetMode':'External'})
     used={node.get('{'+REL+'}id') for node in sheet.iter() if node.get('{'+REL+'}id')}
     for rel in list(rels):
-        if rel.get('Type')==REL+'/hyperlink' and rel.get('Id') not in used:rels.remove(rel)
+        if rel.get('Type')==REL+'/hyperlink':
+            if rel.get('Id') not in used:rels.remove(rel)
+            elif rel.get('Target') and not rel.get('Target').lower().startswith(('http:','https:','mailto:')):
+                rel.set('Target',rel.get('Target').replace('\\','/'))
     parts['xl/worksheets/sheet1.xml']=encoded(sheet);parts[rel_path]=encoded(rels)
     candidate=review.with_name('.draft_links_pending.xlsx')
     with ZipFile(candidate,'w',ZIP_DEFLATED) as z:

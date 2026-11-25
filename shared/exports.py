@@ -4,9 +4,7 @@ from . import common as c
 from .storage import results_root, result_roots, input_files
 
 NAMES={'principles':'principles','baseline':'hiring_a_only','abc':'hiring_abc',
-       'moral-check':'moral_check','moral-relevance':'moral_relevance',
-       'resume-review':'resume_review','jd':'jd_generation',
-       'resume':'resume_generation','moral-generate':'moral_generation','moral-review':'morality_review'}
+       'moral-check':'moral_check','moral-relevance':'moral_relevance'}
 IDENTITY=['run_id','stage','task','task_id','attempt','sequence','status','timestamp_utc',
           'occupation','condition','repeat','resume_id','pair_id','background_type',
           'materials_version','materials_sha256']
@@ -63,11 +61,17 @@ def write_csv(path,rows,kind):
 
 
 def export_results(task_filter=None):
+    from . import material_results as mr
+    for parent in (mr.root()/'occupation_generation',mr.root()/'morality_generation'):
+        if parent.exists():
+            for path in parent.glob('*/'+mr.INFO):mr.refresh(path.parent)
+    if task_filter in mr.KINDS:return
     by_kind={}
     paths=sorted(path for root in result_roots() for path in root.rglob('batch.json'))
     for path in paths:
         if 'legacy' in path.relative_to(c.ROOT).parts: continue
         manifest=c.load_json(path); kind=manifest['task']
+        if kind in mr.KINDS:continue
         if task_filter and kind!=task_filter: continue
         rows=batch_rows(path.parent)
         write_csv(path.parent/'results.csv',rows,kind)

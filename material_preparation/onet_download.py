@@ -71,17 +71,26 @@ def main(argv=None):
     select.add_argument('--all', action='store_true')
     parser.add_argument('--execute', action='store_true')
     parser.add_argument('--delay', type=float, default=0.5)
-    parser.add_argument('--run-id', default='occupation_sources')
+    parser.add_argument('--run-id', help='YYYYMMDD_累计编号；省略时按本地日期分配新批次')
     args = parser.parse_args(argv)
     if args.delay < 0:
         parser.error('--delay must be nonnegative')
     from shared.batch import validate_run_id
-    validate_run_id(args.run_id)
+    if args.run_id:validate_run_id(args.run_id)
     manifest = {'started_utc': c.now(), 'scope': 'initial_details_response_only',
                 'registry_sha256': digest(c.occupations_file()),
                 'script_sha256': digest(__file__), 'occupations': []}
-    filename = c.now().replace(':', '-').replace('+', '_') + '.json'
-    destination = c.ROOT / 'material_preparation/results/onet_download' / args.run_id / filename
+    from datetime import datetime,timezone,timedelta
+    import re
+    parent=c.ROOT/'material_preparation/results/onet_download'
+    if args.run_id and re.fullmatch(r'\d{8}_\d{3,}',args.run_id):name=args.run_id
+    else:
+        date=datetime.now(timezone(timedelta(hours=9))).strftime('%Y%m%d')
+        numbers=[int(p.name.rsplit('_',1)[1]) for p in parent.glob('*') if p.is_dir() and re.fullmatch(r'\d{8}_\d{3,}',p.name)]
+        name=f'{date}_{max(numbers,default=0)+1:03}'
+    destination=parent/name/'批次信息.json'
+    if args.execute and destination.exists():raise ValueError('下载批次已存在，请使用新批次号')
+    manifest.update(format_version=3,run_id=name,task='onet-download')
     for index, (slug, info) in enumerate(select_occupations(read_registry(), args.occupation, args.all)):
         if args.execute and index:
             time.sleep(args.delay)
@@ -96,6 +105,8 @@ def main(argv=None):
     manifest['completed_utc'] = c.now()
     if args.execute:
         write_json(destination, manifest)
+        from shared.material_results import refresh
+        refresh(destination.parent)
     errors = sum(x['status'] == 'error' for x in manifest['occupations'])
     print(f"职业={len(manifest['occupations'])} 失败={errors}")
     return 1 if errors else 0

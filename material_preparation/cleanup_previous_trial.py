@@ -57,7 +57,9 @@ def main():
                     'reason': 'User explicitly rejected the prior trial materials'}
         for path in candidates:
             path.unlink()
-        write_json(prep/'results/onet_download/previous_trial_cleanup.json', manifest)
+        from shared import material_results as mr
+        base=mr.batch_root('jd','software_jd_draft_20261121')
+        data=mr.info(base);data['previous_trial_cleanup']=manifest;mr.write(base/mr.INFO,data)
 
 
 if __name__ == '__main__':

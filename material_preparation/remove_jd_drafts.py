@@ -6,12 +6,13 @@ if __name__=='__main__' and not __package__:
 
 import argparse
 from shared import common as c
+from shared import material_results as mr
 from shared.batch import validate_run_id
 from material_preparation.run_material_generation import immutable_json
 
 
 def removal_plan(manifest):
-    data=c.load_json(manifest)
+    data=manifest if isinstance(manifest,dict) else c.load_json(manifest)
     if data['task']!='jd': raise ValueError('仅支持JD草稿')
     planned=[]; seen=set()
     for item in data['materials']:
@@ -22,11 +23,11 @@ def removal_plan(manifest):
         target=(c.ROOT/item['draft']).resolve()
         if target!=expected or not target.is_relative_to((c.ROOT/'material_preparation/drafts/occupations').resolve()):
             raise ValueError('删除目标不属于该职业JD草稿')
-        out=(c.ROOT/item['output']).resolve()
-        if not out.is_relative_to((c.ROOT/'material_preparation/results/jd_generation').resolve()):
+        out=mr.resolve_path(c.ROOT/item['output']).resolve()
+        if not out.is_relative_to((mr.root()/'occupation_generation').resolve()) or c.load_json(out)['task']!='jd':
             raise ValueError('响应档案路径越界')
         response=c.load_json(out)
-        if response['run_id']!=data['run_id'] or response['context']['occupation']!=slug or response['status']!='ok':
+        if not mr.run_matches('jd',data['run_id'],response['run_id']) or response['context']['occupation']!=slug or response['status']!='ok':
             raise ValueError('生成记录与职业或批次不一致')
         if target.exists():
             raw=target.read_bytes()
@@ -41,15 +42,15 @@ def run(argv=None):
     parser.add_argument('--run-id',required=True)
     parser.add_argument('--execute',action='store_true')
     args=parser.parse_args(argv); validate_run_id(args.run_id)
-    base=c.ROOT/'material_preparation/results/material_generation'/args.run_id
-    plan=removal_plan(base/'generated_manifest.json')
+    base=mr.batch_root('jd',args.run_id)
+    plan=removal_plan(mr.load_manifest('jd',args.run_id))
     for item in plan: print('删除：' if args.execute else '预览删除：',item['path'].relative_to(c.ROOT))
     if args.execute and plan:
         log={'run_id':args.run_id,'removed_utc':c.now(),
              'files':[{'path':x['path'].relative_to(c.ROOT).as_posix(),'sha256':x['sha256'],'output':x['output']} for x in plan],
              'preserved':'O*NET sources, prompts, requests, raw responses, all attempts'}
         # Record the checked targets before deletion. No recursive operation.
-        immutable_json(base/'draft_removal.json',log)
+        data=mr.info(base);data.setdefault('draft_removals',[]).append(log);mr.write(base/mr.INFO,data)
         for item in plan:
             if c.sha256(item['path'].read_bytes())!=item['sha256']:
                 raise ValueError('删除前文件内容变化，停止')

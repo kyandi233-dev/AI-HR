@@ -67,7 +67,7 @@ class IndividualReviewTests(unittest.TestCase):
             book.save(target);book.close()
             with ZipFile(target) as z:before={n:z.read(n) for n in z.namelist()}
             rows,links=preserve_reviews(target,OCCUPATION_HEADERS,[material])
-            self.assertEqual(rows[0][5],workbook_jump_formula(source))
+            self.assertEqual(rows[0][5],workbook_jump_formula(source,target))
             self.assertEqual([x['cell'] for x in links],['E6'])
             patch_workbook_jumps(target,{'review':str(target),'headers':OCCUPATION_HEADERS,'rows':rows,'links':links})
             with ZipFile(target) as z:
@@ -75,7 +75,7 @@ class IndividualReviewTests(unittest.TestCase):
                     if name not in {'xl/worksheets/sheet1.xml','xl/worksheets/_rels/sheet1.xml.rels'}:
                         self.assertEqual(z.read(name),data,name)
             book=load_workbook(target);sheet=book.active
-            self.assertEqual(sheet['F6'].value,workbook_jump_formula(source));self.assertIsNone(sheet['F6'].hyperlink)
+            self.assertEqual(sheet['F6'].value,workbook_jump_formula(source,target));self.assertIsNone(sheet['F6'].hyperlink)
             self.assertEqual(sheet['I6'].value,'保留独立意见')
             self.assertEqual(sheet.column_dimensions['I'].width,57)
             self.assertEqual(sheet.freeze_panes,'F6')

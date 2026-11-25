@@ -6,6 +6,7 @@ if __name__=='__main__' and not __package__:
 import argparse
 from pathlib import Path
 from shared import common as c
+from shared import material_results as mr
 from shared.batch import validate_run_id
 from material_preparation.generation_inputs import extract_jd
 from material_preparation.run_material_generation import review_rows,is_selected,immutable_bytes,immutable_json
@@ -15,7 +16,7 @@ from material_preparation.review_schema import approval_value,is_approved
 def approval_plan(review,manifest):
     rows=review_rows(review)
     registry=c.load_json(c.occupations_file())
-    data=c.load_json(manifest)
+    data=manifest if isinstance(manifest,dict) else c.load_json(manifest)
     kind=data['task']
     if kind not in ('jd','resume'): raise ValueError('不支持的材料类型')
     planned=[]; seen=set()
@@ -27,7 +28,7 @@ def approval_plan(review,manifest):
         column='JD' if kind=='jd' else '简历'+str(int(item['task_id'][1:]))
         if not is_selected(row.get('是否选用')) or not is_approved(approval_value(row,column)): continue
         def local(name):
-            path=(c.ROOT/name).resolve()
+            path=mr.resolve_path(c.ROOT/name).resolve()
             if not path.is_relative_to(c.ROOT.resolve()): raise ValueError('记录中的路径越界')
             return path
         draft,inp,out=[local(item[k]) for k in ('draft','input','output')]
@@ -38,7 +39,7 @@ def approval_plan(review,manifest):
             or response.get('raw_response',{}).get('choices',[{}])[0].get('message',{}).get('content')!=response['answer']
             or request['context']['occupation']!=slug or request['task_id']!=item['task_id']
             or response['context']['occupation']!=slug or response['task_id']!=item['task_id']
-            or request['run_id']!=data['run_id'] or response['run_id']!=data['run_id']
+            or not mr.run_matches(kind,data['run_id'],request['run_id']) or not mr.run_matches(kind,data['run_id'],response['run_id'])
             or response['request_sha256']!=request['request_sha256']
             or c.sha256(c.canonical(request['request']))!=request['request_sha256']):
             raise ValueError('草稿或调用记录发生变化：'+slug)
@@ -62,16 +63,17 @@ def approval_plan(review,manifest):
 def run(argv=None):
     parser=argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--run-id',required=True)
+    parser.add_argument('--task',choices=['jd','resume'],help='配套批次包含两类材料时必须明确批准类型')
     parser.add_argument('--review',type=Path,default=c.ROOT/'material_preparation/review/职业与材料审核.xlsx')
     parser.add_argument('--execute',action='store_true')
     args=parser.parse_args(argv); validate_run_id(args.run_id)
-    manifest=c.ROOT/'material_preparation/results/material_generation'/args.run_id/'generated_manifest.json'
-    review_hash=c.sha256(args.review.read_bytes()); manifest_hash=c.sha256(manifest.read_bytes())
+    manifest=mr.manifest_for_id(args.run_id,args.task)
+    review_hash=c.sha256(args.review.read_bytes()); manifest_hash=c.sha256(c.canonical(manifest))
     plan=approval_plan(args.review,manifest)
     print('审核通过、可导入材料：',len(plan),'份')
     for path,_,_,_ in plan: print(path.relative_to(c.ROOT))
     if args.execute:
-        if review_hash!=c.sha256(args.review.read_bytes()) or manifest_hash!=c.sha256(manifest.read_bytes()):
+        if review_hash!=c.sha256(args.review.read_bytes()) or manifest_hash!=c.sha256(c.canonical(mr.manifest_for_id(args.run_id,args.task))):
             raise ValueError('审核表或生成记录在读取期间变化，请重试')
         for path,content,receipt_path,receipt in plan:
             immutable_bytes(path,content); immutable_json(receipt_path,receipt)

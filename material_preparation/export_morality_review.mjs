@@ -75,7 +75,7 @@ for(let index=0;index<payload.specs.length;index++){
   const spec=payload.specs[index],w=Workbook.create();
   const s=w.worksheets.add(spec.kind==='master'?'材料汇总':'材料审核');
   const widths=spec.headers.map(h=>({'材料编号':24,'道德主题':20,'来源方式':15,'MFV编号':13,'原条目推荐':15,
-    '生成状态':15,'配对正文':16,'完整提示词':18,'生成备注':48,'问题说明':48,'决策备注':48,'材料版本':22,
+    '生成状态':15,'配对正文':16,'调用输入':18,'生成备注':48,'问题说明':48,'决策备注':48,'材料版本':22,
     '主要主题':24,'明显专业证据':23,'审核结论':18,'审核日期':17,'最终是否纳入':20}[h]??15));
   const rows=spec.rows.map(row=>row.map(v=>v&&typeof v==='object'&&v.date?new Date(v.date):v));
   const last=table(s,spec.headers,rows,widths,'MoralityReview');

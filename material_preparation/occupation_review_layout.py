@@ -285,14 +285,33 @@ def snapshot_inputs(registry):
 
 
 def local_workbook_link(summary_path, target):
-    """A native relative filename, not a percent-encoded file URI (Excel/WPS compatible)."""
-    return os.path.relpath(Path(target).resolve(), start=Path(summary_path).resolve().parent)
+    """A native POSIX relative path, not a percent-encoded file URI (Excel/WPS Windows+macOS compatible)."""
+    return os.path.relpath(Path(target).resolve(), start=Path(summary_path).resolve().parent).replace('\\', '/')
 
 
-def workbook_jump_formula(target):
-    """Excel workbook reference syntax, opening the Overview sheet without file-URI encoding."""
-    reference = '['+str(Path(target).resolve())+']Overview!A1'
-    return '=HYPERLINK("'+reference.replace('"','""')+'","打开职业资料")'
+def workbook_jump_formula(target, workbook_path=None):
+    """Portable Excel/WPS formula resolving target relative to the opened workbook's folder."""
+    wb = Path(workbook_path) if workbook_path is not None else c.ROOT / 'material_preparation/review/职业与材料审核.xlsx'
+    wb_dir = wb.resolve().parent
+    rel = local_workbook_link(wb, target)
+    parts = rel.split('/')
+    up = 0
+    while up < len(parts) and parts[up] == '..':
+        up += 1
+    down = '/'.join(parts[up:])
+    climbed = []
+    cur = wb_dir
+    for _ in range(up):
+        climbed.append(cur.name)
+        cur = cur.parent
+    cut = sum(len(name) + 1 for name in climbed) + 1
+    escaped_down = down.replace('"', '""')
+    escaped_rel = rel.replace('"', '""')
+    sep_expr = 'MID(CELL("filename",A1),FIND("[",CELL("filename",A1))-1,1)'
+    down_expr = f'SUBSTITUTE("{escaped_down}","/",{sep_expr})' if '/' in down else f'"{escaped_down}"'
+    dynamic = f'"["&LEFT(CELL("filename",A1),FIND("[",CELL("filename",A1))-{cut})&{down_expr}&"]Overview!A1"'
+    fallback = f'"[{escaped_rel}]Overview!A1"'
+    return f'=HYPERLINK(IFERROR({dynamic},{fallback}),"打开职业资料")'
 
 
 def run(argv=None):
@@ -357,7 +376,7 @@ def run(argv=None):
         code = row[HEADERS.index('O*NET Code')]
         if states[code]['source_sha256']:
             sheet.cell(number,5).hyperlink = None
-            sheet.cell(number,5).value = workbook_jump_formula(c.ROOT/states[code]['workbook'])
+            sheet.cell(number,5).value = workbook_jump_formula(c.ROOT/states[code]['workbook'], args.output)
             sheet.cell(number,5).font = Font(color='0563C1',underline='single',size=11)
     book.calculation.fullCalcOnLoad = True
     book.calculation.forceFullCalc = True

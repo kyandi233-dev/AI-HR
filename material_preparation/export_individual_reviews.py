@@ -16,6 +16,7 @@ from zipfile import ZipFile,ZIP_DEFLATED
 from openpyxl import load_workbook
 from openpyxl.utils import get_column_letter
 from shared import common as c
+from shared import material_results as mr
 from shared.batch import validate_run_id
 from material_preparation.run_material_generation import is_selected
 from material_preparation.review_material_links import read_review,external_links
@@ -38,18 +39,17 @@ def occupation_items(master,config):
     _,rows,_=read_review(master);registry=c.load_json(c.occupations_file())
     by_code={info['onet_code']:slug for slug,info in registry.items()}
     selected={row['O*NET Code'] for row in rows if is_selected(row.get('是否选用'))}
-    base=c.ROOT/'material_preparation/results/material_generation'
-    jd_manifest=c.load_json(base/config['jd_run_id']/'generated_manifest.json')
-    resumes=c.load_json(base/config['resume_run_id']/'generated_manifest.json')
+    jd_manifest=mr.load_manifest('jd',config['jd_run_id'])
+    resumes=mr.load_manifest('resume',config['resume_run_id'])
     if jd_manifest['task']!='jd' or resumes['task']!='resume':raise ValueError('材料批次类型不匹配')
     jd_items={item['occupation']:item for item in jd_manifest['materials']}
     output=[]
     def read_generated(item,run_id):
-        path=(c.ROOT/item['draft']).resolve();record=(c.ROOT/item['output']).resolve()
+        path=(c.ROOT/item['draft']).resolve();record=mr.resolve_path(c.ROOT/item['output']).resolve()
         if not path.is_relative_to((c.ROOT/'material_preparation/drafts/occupations').resolve()):raise ValueError('材料路径越界')
         raw=path.read_bytes();response=c.load_json(record)
         if (c.sha256(raw)!=item['draft_sha256'] or response.get('status')!='ok'
-            or response.get('run_id')!=run_id or response.get('answer')!=raw.decode('utf-8')
+            or not mr.run_matches(response['task'],run_id,response.get('run_id')) or response.get('answer')!=raw.decode('utf-8')
             or response['raw_response']['choices'][0]['message']['content']!=response['answer']):
             raise ValueError('原稿或成功生成记录不匹配')
         return path,raw
@@ -122,7 +122,7 @@ def preserve_reviews(path,headers,items):
         for column,target in item['_links'].items():
             if not Path(target).is_file():raise ValueError('链接目标不存在：'+target)
             if column=='职业资料':
-                row[column]=workbook_jump_formula(target)
+                row[column]=workbook_jump_formula(target,path)
                 continue
             row[column]='打开'+('材料' if column in ('材料文件','配对材料文件') else column)
             links.append({'cell':get_column_letter(headers.index(column)+1)+str(number),'target':target})
@@ -160,11 +160,15 @@ def validate(path,payload):
                 if isinstance(value,dict) and 'date' in value:
                     if not isinstance(actual,(date,datetime)) or actual.isoformat()[:10]!=value['date'][:10]:raise ValueError('审核日期未保留')
                 elif actual!=value:raise ValueError('个人表材料或审核值未保留')
-                if isinstance(value,str) and value.startswith('=HYPERLINK(') and s.cell(r,col).hyperlink:
-                    raise ValueError('职业资料仍带旧文件链接')
+                if isinstance(value,str) and value.startswith('=HYPERLINK('):
+                    if s.cell(r,col).hyperlink:raise ValueError('职业资料仍带旧文件链接')
+                    if re.search(r'\[[A-Za-z]:[\\/]',actual or ''):raise ValueError('职业资料公式仍含绝对盘符路径')
         for link in payload['links']:
             actual=s[link['cell']].hyperlink
-            if not actual or (Path(payload['review']).parent/actual.target).resolve()!=Path(link['target']).resolve():
+            if not actual or not actual.target:raise ValueError('个人表链接错误')
+            if '\\' in actual.target or ':' in actual.target or actual.target.startswith('/'):
+                raise ValueError('个人表链接必须使用相对正斜杠路径：'+actual.target)
+            if (Path(payload['review']).parent/actual.target).resolve()!=Path(link['target']).resolve():
                 raise ValueError('个人表链接错误')
     finally:w.close()
 
@@ -214,7 +218,10 @@ def patch_workbook_jumps(path,spec):
         rels=xml(parts[rel_path])
         used={node.get('{'+REL+'}id') for node in sheet.iter() if node.get('{'+REL+'}id')}
         for rel in list(rels):
-            if rel.get('Type')==REL+'/hyperlink' and rel.get('Id') not in used:rels.remove(rel)
+            if rel.get('Type')==REL+'/hyperlink':
+                if rel.get('Id') not in used:rels.remove(rel)
+                elif rel.get('Target') and not rel.get('Target').lower().startswith(('http:','https:','mailto:')):
+                    rel.set('Target',rel.get('Target').replace('\\','/'))
         parts[rel_path]=encoded(rels)
     parts['xl/worksheets/sheet1.xml']=encoded(sheet)
     candidate=path.with_name('.'+path.stem+'.links.pending.xlsx')

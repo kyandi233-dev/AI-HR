@@ -11,7 +11,7 @@
 | 类别 | 文件路径（点击跳转） | 作用说明 |
 |---|---|---|
 | **JD 生成提示词** | [material_preparation/prompts/jd.txt](../material_preparation/prompts/jd.txt) | 将 O*NET 职业资料转换为标准中文社招 JD（含 5 年门槛与加分项）及依据记录 |
-| **简历生成提示词** | [material_preparation/prompts/resume.txt](../material_preparation/prompts/resume.txt) | 按给定槽位与能力档位生成极简词条风格的匿名求职简历 |
+| **简历生成提示词** | [material_preparation/prompts/resume.txt](../material_preparation/prompts/resume.txt) | 按给定槽位与能力档位生成简洁词条式的匿名求职简历 |
 | **简历审读提示词** | [material_preparation/prompts/resume_review.txt](../material_preparation/prompts/resume_review.txt) | 检查简历自然度、时间线自洽性、占位词残留及无关品格标签 |
 | **下游评分标准** | [experiments/exp_3_hiring/prompts/score_rubric.txt](../experiments/exp_3_hiring/prompts/score_rubric.txt) | 实验 3 的四项专业能力评分尺（1–5 分）与招聘推荐指标 |
 | **简历操控配置** | [material_preparation/config/resume_levels.json](../material_preparation/config/resume_levels.json) | 全员统一校企集合、固定时间线、中/低两档操控规则及各职业技术栈槽位 |
@@ -137,20 +137,20 @@
 
 ```powershell
 # 1. 预览 JD 请求（不调用模型）
-.\.venv\Scripts\python.exe -X utf8 -B material_preparation/run_material_generation.py --task jd --run-id <新JD批次号>
+.\.venv\Scripts\python.exe -X utf8 -B material_preparation/run_material_generation.py --task jd --run-id <YYYYMMDD_累计编号>
 
 # 2. 执行 JD 生成（若已有旧版草稿，须先用 remove_jd_drafts.py 归档清理）
-.\.venv\Scripts\python.exe -X utf8 -B material_preparation/run_material_generation.py --task jd --run-id <新JD批次号> --execute --stream --api-timeout 600
+.\.venv\Scripts\python.exe -X utf8 -B material_preparation/run_material_generation.py --task jd --run-id <YYYYMMDD_累计编号> --execute --stream --api-timeout 600
 
 # 3. 预览 16 份分级简历请求（可绑定指定 JD 批次，或省略 --jd-run-id 直接使用已批准导入的 JD）
-.\.venv\Scripts\python.exe -X utf8 -B material_preparation/run_material_generation.py --task resume --levels medium low --count 2 --jd-run-id <JD批次号> --run-id <新简历批次号>
+.\.venv\Scripts\python.exe -X utf8 -B material_preparation/run_material_generation.py --task resume --levels medium low --count 2 --jd-run-id <对应JD批次号> --run-id <同一配套批次号>
 
 # 4. 执行 16 份简历生成（4 并发独立无状态调用；若已有旧草稿，须先用 archive_resume_drafts.py 归档）
-.\.venv\Scripts\python.exe -X utf8 -B material_preparation/run_material_generation.py --task resume --levels medium low --count 2 --jd-run-id <JD批次号> --run-id <新简历批次号> --execute --stream --api-timeout 180 --concurrency 4
+.\.venv\Scripts\python.exe -X utf8 -B material_preparation/run_material_generation.py --task resume --levels medium low --count 2 --jd-run-id <对应JD批次号> --run-id <同一配套批次号> --execute --stream --api-timeout 180 --concurrency 4
 ```
 
 - **不可变与断点续跑**：同一 `run_id` 重复执行自动跳过已成功项；失败项须显式加 `--retry-failed` 重试；更改提示词、配置或参数必须更换新的 `--run-id`。
-- **存档位置**：草稿位于 `material_preparation/drafts/occupations/<英文名_编码>/`（`jd.txt` 与 `resumes/R01.txt—R04.txt`）；完整提示词、请求与流式原始响应位于 `material_preparation/results/jd_generation/`、`resume_generation/` 及 `material_preparation/results/material_generation/<run-id>/`。
+- **存档位置**：草稿位置保持不变；调用位于 `material_preparation/results/occupation_generation/<日期_批次>/<英文名_编码>/<调用>/input.json` 与 `output.json`。当前四份JD和十六份简历位于 `20261125_012`。同轮两阶段共用批次号，后续独立一轮可建新批次引用旧JD，详见[材料生成记录](材料生成记录.md)。
 
 ### 5.2 审核总表与四人独立审核表
 
@@ -169,11 +169,12 @@
 
 ```powershell
 # 预览并导入总表中已标记纳入（=1）的 JD 或简历至 approved/
-.\.venv\Scripts\python.exe -X utf8 -B material_preparation/approve_materials.py --run-id <对应生成批次号>
-.\.venv\Scripts\python.exe -X utf8 -B material_preparation/approve_materials.py --run-id <对应生成批次号> --execute
+.\.venv\Scripts\python.exe -X utf8 -B material_preparation/approve_materials.py --run-id <对应生成批次号> --task jd
+.\.venv\Scripts\python.exe -X utf8 -B material_preparation/approve_materials.py --run-id <对应生成批次号> --task jd --execute
+# 简历导入将 --task jd 换成 --task resume
 
 # 运行全套离线回归与校验测试（不消耗 API）
 .\.venv\Scripts\python.exe -X utf8 -B -m unittest discover -s tests -v
 ```
 
-导入时先核验草稿字节摘要与成功调用原始响应一致：JD 精确提取 `【岗位公告开始】` 与 `【岗位公告结束】` 之间的正文写入 `material_preparation/approved/occupations/<英文名_编码>/jd.txt`，简历逐字节原样复制至 `approved/occupations/<英文名_编码>/resumes/`，并在旁生成 `*_approval.json` 溯源收据。历史批次（如 `jd_modules_20261124`、`resumes_medium_low_dates_20261124`）的原始请求、响应及归档记录均完整保留在 `results/` 对应目录备查。
+导入时先核验草稿字节摘要与成功调用原始响应一致：JD 精确提取 `【岗位公告开始】` 与 `【岗位公告结束】` 之间的正文写入 `material_preparation/approved/occupations/<英文名_编码>/jd.txt`，简历逐字节原样复制至 `approved/occupations/<英文名_编码>/resumes/`，并在旁生成 `*_approval.json` 溯源收据。早期历史批次已按累计编号无损归档至 `material_preparation/results/occupation_generation/<YYYYMMDD_累计编号>/`，新旧路径映射与字节指纹保存在 [results_layout.json](../material_preparation/config/results_layout.json)，详见[材料生成记录](材料生成记录.md)。

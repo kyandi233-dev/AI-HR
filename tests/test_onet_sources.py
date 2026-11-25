@@ -170,6 +170,7 @@ class SourceTests(unittest.TestCase):
         link=local_workbook_link(summary,target)
         self.assertFalse(link.lower().startswith('file:'))
         self.assertNotIn('%',link)
+        self.assertNotIn('\\',link)
         self.assertEqual((summary.parent/link).resolve(),target.resolve())
         book=__import__('openpyxl').Workbook()
         book.active['A1']='打开职业资料'
@@ -181,13 +182,18 @@ class SourceTests(unittest.TestCase):
         finally:
             saved.close()
 
-    def test_excel_workbook_jump_formula_has_unicode_absolute_reference(self):
+    def test_excel_workbook_jump_formula_is_portable_without_hardcoded_root(self):
         from material_preparation.occupation_review_layout import workbook_jump_formula
-        target=self.root/'sources'/'职业资料.xlsx'
-        formula=workbook_jump_formula(target)
-        self.assertEqual(formula,'=HYPERLINK("['+str(target.resolve())+']Overview!A1","打开职业资料")')
-        self.assertNotIn('file:',formula)
+        summary=self.root/'material_preparation/review/职业与材料审核.xlsx'
+        target=self.root/'material_preparation/sources/occupations/Software_Developers_15-1252.00/onet/职业资料.xlsx'
+        formula=workbook_jump_formula(target,summary)
+        self.assertNotIn(str(self.root),formula)
+        self.assertNotIn(':',formula)
+        self.assertNotIn('file:',formula.lower())
         self.assertNotIn('%',formula)
+        self.assertIn('CELL("filename",A1)',formula)
+        self.assertIn('sources/occupations/Software_Developers_15-1252.00/onet/职业资料.xlsx',formula)
+        self.assertIn('Overview!A1',formula)
 
 
 if __name__ == '__main__':

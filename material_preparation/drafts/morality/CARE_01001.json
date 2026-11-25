@@ -1,0 +1,14 @@
+{
+  "pair_id": "CARE_01001",
+  "foundation": "care",
+  "status": "generated",
+  "scene_summary": "成年候选人与亲属在私人聚餐场合的互动",
+  "negative": "候选人在家庭聚餐时，当众调侃堂兄刚经历的分手，反复模仿其被拒绝时的说辞。",
+  "neutral": "候选人在家庭聚餐时，与堂兄聊起最近看过的电影，交流各自的观后感。",
+  "dominant_violation": "候选人以言语在亲属面前公开取笑他人的情感挫折，直接造成对方的情感伤害。",
+  "adaptation_note": "保留原条目中兄弟取笑被甩的核心人际关系与嘲弄活动，将未成年兄弟替换为成年堂兄弟、校园场景替换为家庭聚餐的私人场合。",
+  "neutral_rationale": "中性版同样发生在家庭聚餐的亲属交流中，仅记录普通的电影话题交谈，撤除取笑与情感伤害前提。",
+  "other_foundations": [],
+  "review_flags": [],
+  "rejection_reason": ""
+}

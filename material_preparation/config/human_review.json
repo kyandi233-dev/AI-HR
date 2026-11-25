@@ -1,5 +1,10 @@
 {
-  "reviewers": ["gsc", "lkx", "lxy", "wjy"],
+  "reviewers": [
+    "gsc",
+    "lkx",
+    "lxy",
+    "wjy"
+  ],
   "review_files": {
     "occupation": {
       "gsc": "JD+resume_gsc.xlsx",
@@ -14,7 +19,7 @@
       "wjy": "moral_wjy.xlsx"
     }
   },
-  "jd_run_id": "jd_20261125",
-  "resume_run_id": "resumes_20261125",
+  "jd_run_id": "20261125_012",
+  "resume_run_id": "20261125_012",
   "morality_pairs": []
 }

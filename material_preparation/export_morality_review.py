@@ -17,6 +17,7 @@ from openpyxl import load_workbook
 from openpyxl.utils import get_column_letter
 from shared import common as c
 from shared.storage import input_files, request_for
+from shared import material_results as mr
 from material_preparation.morality_inputs import validate_generated
 from material_preparation.run_morality_generation import preview
 from material_preparation.run_material_generation import immutable_bytes
@@ -98,14 +99,16 @@ def material_rows(tasks, settings, root, run_id):
     for task in tasks:
         pid = task['task_id']
         spec = task['metadata']['spec']
-        req_sha = c.sha256(c.canonical(request_for(task, settings)))
+        expected_req = request_for(task, settings)
+        req_sha = c.sha256(c.canonical(expected_req))
         state, parsed, body, generated_sha = '待生成', None, None, None
         output = None
         if pid in latest:
             record, inp = latest[pid]
-            if c.sha256(c.canonical(record['request'])) != req_sha:
+            if not mr.request_equivalent(record['request'], expected_req):
                 raise ValueError('已有请求与本次协议不一致：' + pid)
-            out = inp.with_name(inp.name.replace('.input.json', '.output.json'))
+            req_sha = record.get('request_sha256') or c.sha256(c.canonical(record['request']))
+            out = mr.output_path(inp)
             output = c.load_json(out) if out.exists() else {}
             if output.get('status') == 'ok':
                 parsed = output['parsed']
@@ -127,7 +130,8 @@ def material_rows(tasks, settings, root, run_id):
                     immutable_bytes(body, display.encode('utf-8'))
                     state = '已生成'
             else:
-                state = '生成失败' if output.get('status') == 'error' else '调用未完成'
+                state = ('待生成' if not out.exists() else
+                         '生成失败' if output.get('status') == 'error' else '调用未完成')
         version = c.sha256(c.canonical({'request': req_sha, 'generated': generated_sha}))
         notes = []
         if parsed:
@@ -147,7 +151,7 @@ def material_rows(tasks, settings, root, run_id):
                      'MFV编号': spec['source']['library_item_number'] if spec['source'] else None,
                      '原条目推荐': ('是' if spec['source']['recommended'] else '否') if spec['source'] else '不适用',
                      '生成状态': state, '生成备注': '；'.join(notes) or None, '材料版本': version,
-                     '_body': str(body) if body else None, '_prompt': str(root / (pid + '.prompt.txt')),
+                     '_body': str(body) if body else None, '_prompt': str(latest[pid][1]) if pid in latest else None,
                      '_parsed': parsed, '_error': (output or {}).get('error_message'),
                      '_request_sha256': req_sha})
     return rows
@@ -161,10 +165,10 @@ def sheet_spec(rows, headers, target):
     values, links = [], []
     for number, row in enumerate(rows, FIRST_ROW):
         output = {**row}
-        for name, key in [('配对正文', '_body'), ('完整提示词', '_prompt')]:
+        for name, key in [('配对正文', '_body'), ('调用输入', '_prompt')]:
             if name in headers:
                 path = row.get(key)
-                output[name] = '打开正文' if name == '配对正文' and path else ('打开提示词' if path else None)
+                output[name] = '打开正文' if name == '配对正文' and path else ('打开调用输入' if path else None)
                 if path:
                     if not Path(path).is_file():
                         raise ValueError('链接目标不存在：' + path)
@@ -189,7 +193,7 @@ def make_payload(config, protocol, catalog, tasks, settings, root, run_id):
         specs.append({**sheet_spec(rows, REVIEW_HEADERS, target), 'kind': 'reviewer', 'title': person + ' · 道德材料审核', 'manual': REVIEW_MANUAL})
     master = review_root() / '道德材料汇总.xlsx'
     before[str(master)] = c.sha256(master.read_bytes()) if master.exists() else None
-    headers = ['材料编号','道德主题','来源方式','MFV编号','原条目推荐','生成状态','配对正文','完整提示词','生成备注',
+    headers = ['材料编号','道德主题','来源方式','MFV编号','原条目推荐','生成状态','配对正文','调用输入','生成备注',
                *people, '最终是否纳入','决策备注','材料版本']
     master_rows = preserve(current, read_saved(master, MASTER_MANUAL))
     for row in master_rows:
@@ -226,7 +230,11 @@ def validate_workbook(path, spec):
                     raise ValueError(f'单元格值不符：{number},{col}')
         for link in spec['links']:
             actual = sheet[link['cell']].hyperlink
-            if not actual or (Path(spec['review']).parent / actual.target).resolve() != Path(link['target']).resolve():
+            if not actual or not actual.target:
+                raise ValueError('审核文件链接错误')
+            if '\\' in actual.target or ':' in actual.target or actual.target.startswith('/'):
+                raise ValueError('审核文件链接必须使用相对正斜杠路径：' + actual.target)
+            if (Path(spec['review']).parent / actual.target).resolve() != Path(link['target']).resolve():
                 raise ValueError('审核文件链接错误')
     finally:
         book.close()

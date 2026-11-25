@@ -62,14 +62,15 @@ class MoralityPoolTests(unittest.TestCase):
             root = Path(temp)
             self.small_project(root)
             *_, folder, _ = preview()
-            before = (folder / 'plan.json').read_bytes()
+            from shared import material_results as mr
+            before = (folder / mr.INFO).read_bytes()
             preview()
-            self.assertEqual((folder / 'plan.json').read_bytes(), before)
+            self.assertEqual((folder / mr.INFO).read_bytes(), before)
             prompt = root / 'material_preparation/prompts/morality_pool.txt'
             prompt.write_text(prompt.read_text(encoding='utf-8') + '\n不同写作要求', encoding='utf-8')
-            with self.assertRaisesRegex(ValueError, '不覆盖'):
+            with self.assertRaisesRegex(ValueError, '输入已变化|计划已变化'):
                 preview()
-            self.assertEqual((folder / 'plan.json').read_bytes(), before)
+            self.assertEqual((folder / mr.INFO).read_bytes(), before)
             self.assertFalse((folder / 'records').exists())
 
     def test_wrong_identity_and_identical_pair_cannot_be_saved(self):
@@ -86,9 +87,10 @@ class MoralityPoolTests(unittest.TestCase):
         with tempfile.TemporaryDirectory() as temp, patch.object(c, 'ROOT', Path(temp)):
             self.small_project(Path(temp))
             _, _, _, tasks, _, folder, _ = preview()
-            plan_path = folder / 'plan.json'
+            from shared import material_results as mr
+            plan_path = folder / mr.INFO
             legacy = c.load_json(plan_path)
-            legacy['config']['reviewers'] = ['oldA', 'oldB', 'oldC']
+            legacy['plans']['moral-generate']['config']['reviewers'] = ['oldA', 'oldB', 'oldC']
             plan_path.write_text(c.canonical(legacy), encoding='utf-8')
             before = plan_path.read_bytes()
             config_path = Path(temp) / 'material_preparation/config/morality_generation.json'
@@ -121,11 +123,10 @@ class MoralityPoolTests(unittest.TestCase):
             parsed = self.generated(task)
             content = json.dumps(parsed, ensure_ascii=False)
             raw = {'choices': [{'message': {'content': content}}]}
-            record_dir = folder / 'records'
-            record_dir.mkdir()
-            (record_dir / (task['task_id'] + '_a01.input.json')).write_text(c.canonical({'task_id': task['task_id'], 'attempt': 1, 'request': storage.request_for(task, settings)}), encoding='utf-8')
+            from shared import material_results as mr
+            inp=mr.inputs(folder,task['task_id'])[0]
             out = {'status': 'ok', 'parsed': parsed, 'answer': content, 'raw_response': raw}
-            (record_dir / (task['task_id'] + '_a01.output.json')).write_text(c.canonical(out), encoding='utf-8')
+            mr.output_path(inp).write_text(c.canonical(out), encoding='utf-8')
             storage.save_draft(task, content, parsed)
             rows = material_rows(tasks, settings, folder, run_id)
             self.assertEqual(rows[0]['生成状态'], '已生成')

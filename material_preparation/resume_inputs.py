@@ -1,5 +1,6 @@
 """Bind an explicitly named generated JD batch without fabricating Excel approval."""
 from shared import common as c
+from shared import material_results as mr
 from shared.batch import validate_run_id
 from material_preparation.generation_inputs import extract_jd
 import re
@@ -7,24 +8,23 @@ import re
 
 def generated_jd(slug,run_id):
     validate_run_id(run_id)
-    manifest=c.ROOT/'material_preparation/results/material_generation'/run_id/'generated_manifest.json'
-    data=c.load_json(manifest)
-    if data['task']!='jd' or data['run_id']!=run_id:
+    data=mr.load_manifest('jd',run_id)
+    if data['task']!='jd' or not mr.run_matches('jd',run_id,data['run_id']):
         raise ValueError('指定批次不是JD生成记录')
     items=[item for item in data['materials'] if item['occupation']==slug]
     if len(items)!=1: raise ValueError('指定JD批次未唯一包含职业：'+slug)
     item=items[0]
     def local(name):
-        p=(c.ROOT/name).resolve()
+        p=mr.resolve_path(c.ROOT/name).resolve()
         if not p.is_relative_to(c.ROOT.resolve()): raise ValueError('JD档案路径越界')
         return p
     draft,inp,out=[local(item[k]) for k in ('draft','input','output')]
     if draft!=c.job_files(slug)['jd_draft'].resolve(): raise ValueError('JD草稿路径不匹配')
     raw=draft.read_bytes(); request=c.load_json(inp); response=c.load_json(out)
     if (c.sha256(raw)!=item['draft_sha256'] or raw.decode('utf-8')!=response.get('answer')
-        or response.get('status')!='ok' or response['run_id']!=run_id
+        or response.get('status')!='ok' or not mr.run_matches('jd',run_id,response['run_id'])
         or response['context']['occupation']!=slug or request['context']['occupation']!=slug
-        or request['run_id']!=run_id or request['request_sha256']!=response['request_sha256']
+        or not mr.run_matches('jd',run_id,request['run_id']) or request['request_sha256']!=response['request_sha256']
         or request['request_sha256']!=c.sha256(c.canonical(request['request']))
         or response['raw_response']['choices'][0]['message']['content']!=response['answer']):
         raise ValueError('指定JD原稿或调用记录已变化：'+slug)

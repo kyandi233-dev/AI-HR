@@ -23,11 +23,21 @@ def compare(actual, expected, label):
             raise ValueError(f'{label}: value mismatch at row {number}')
 
 
-def verify(path):
-    manifest = c.load_json(path.parent/'export_manifest.json')
+def verify_archived_inputs(manifest,strict_templates=False):
+    template_changes=[]
     for relative, sha in manifest['unchanged_inputs'].items():
         if digest(c.ROOT/relative) != sha:
+            if relative.replace('\\','/').startswith('material_preparation/prompts/') and not strict_templates:
+                template_changes.append(relative)
+                continue
             raise ValueError(f'Archived input was changed: {relative}')
+    return template_changes
+
+
+def verify(path,strict_templates=False):
+    manifest = c.load_json(path.parent/'export_manifest.json')
+    changes=verify_archived_inputs(manifest,strict_templates)
+    if changes:print('生成模板相对旧导出已有新版本：',len(changes),'项；原始来源仍严格校验，各次实际提示词以input记录为准。')
     registry = read_registry()
     book = load_workbook(path, read_only=True)
     try:
@@ -61,7 +71,7 @@ def verify(path):
         for row in links_book['职业汇总'].iter_rows(min_row=2):
             code = row[3].value
             expected_target = (c.ROOT/manifest['occupations'][code]['workbook']).resolve()
-            if row[4].value != workbook_jump_formula(expected_target) or row[4].hyperlink:
+            if row[4].value != workbook_jump_formula(expected_target, path) or row[4].hyperlink:
                 raise ValueError(f'Invalid Excel workbook jump formula: {code}')
             if not expected_target.is_file():
                 raise ValueError(f'Workbook target does not exist: {code}: {expected_target}')
@@ -100,4 +110,5 @@ def verify(path):
 if __name__ == '__main__':
     parser=argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--workbook',type=Path,default=c.ROOT/'material_preparation/review/职业与材料审核.xlsx')
-    verify(parser.parse_args().workbook)
+    parser.add_argument('--strict-templates',action='store_true',help='同时要求当前模板与旧导出时版本完全一致')
+    args=parser.parse_args();verify(args.workbook,args.strict_templates)

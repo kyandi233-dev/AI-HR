@@ -24,6 +24,12 @@ def manifest_for(tasks,settings,args):
 
 
 def freeze(tasks,settings,args):
+    from . import material_results as mr
+    if tasks and tasks[0]['task'] in mr.KINDS:
+        kind=tasks[0]['task'];base=mr.batch_root(kind,args.run_id,True)
+        if not mr.is_batch(base) or kind not in mr.info(base).get('plans',{}):
+            mr.prepare(tasks,settings,args)
+        return
     manifest=manifest_for(tasks,settings,args)
     bases={path_for(t,args.run_id) for t in tasks}
     # Check every destination before creating any new manifests.
